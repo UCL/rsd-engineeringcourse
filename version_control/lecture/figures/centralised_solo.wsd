@@ -1,0 +1,27 @@
+state over Server: 1
+parallel {
+	note right of Jim: svn checkout http://mysvn.ucl.ac.uk
+	Server->Jim : Checkout
+}
+parallel {
+	state over Jim: work
+	note right of Jim: vim myfile.py
+}
+parallel {
+ Jim->Server: Commit
+ note right of Jim: svn commit
+}
+state over Server: 2
+parallel {
+note right of Jim 
+	touch mynewfile.yml
+ 	svn add mynewfile.yml
+ 	vim mynewfile.yml
+end note
+state over Jim: work
+}
+parallel {
+ note right of Jim: svn commit
+ Jim->Server: Commit
+}
+state over Server: 3

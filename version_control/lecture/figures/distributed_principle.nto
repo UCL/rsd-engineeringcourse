@@ -1,0 +1,15 @@
+graph {
+	size="6,6";
+	node [image="figure_assets/laptop.png", label=""]
+	overlap = scale;
+	A -- B
+	B -- C
+	B -- D
+	C -- D
+	D -- E
+	E -- F
+	E -- G
+	C -- H
+	C -- I
+	I -- J
+}

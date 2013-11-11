@@ -1,0 +1,26 @@
+digraph {
+	rankdir = "LR"
+    node [image = "figure_assets/redball.png", label="", imagescale=both, shape=none, group = master]
+    edge[weight = 100 ]
+	A -> B
+    B -> C
+    C -> D
+    D -> E
+    E -> F
+    edge [group = branch]
+    edge [ weight = 10 ]
+    B -> C2 [headlabel = "git checkout -b nice_feature"]
+    C2 -> D2
+
+    D2 -> E [label = "git merge nice_feature"]
+    C2 -> C3 [headlabel = "git checkout -b very_nice_feature"]
+    C3 -> D3
+    edge [ weight = 1]
+    node [group = labels]
+    F -> master [dir = "none", style="dotted"]
+    D2 -> nice_feature [dir = "none", style="dotted"]
+    D3 -> very_nice_feature [dir = "none", style="dotted"]
+    master [image = "", label = "master", style=filled, color=yellow, shape=rectangle]
+    nice_feature [image = "", label = "nice_feature", style=filled, color=yellow, shape=rectangle]
+    very_nice_feature [image = "", label = "very_nice_feature", style=filled, color=yellow, shape=rectangle]
+}

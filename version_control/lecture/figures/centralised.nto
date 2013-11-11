@@ -1,0 +1,12 @@
+graph {
+
+	overlap = scale;
+	fontname = courier;
+	C1 -- Server;
+	C2 -- Server;
+	C3 -- Server;
+	Server [label="Server\n (with all \n versions)"];
+	C1 [label="Client \n at v4"]; 
+	C2 [label="Client \n at v3"];
+	C3 [label="Client \n at v4+"];
+}
