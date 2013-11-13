@@ -2,6 +2,6 @@ import rsdpandoc.builders
 import rsdpandoc.globbers
         
 env=Environment(tools=['default',rsdpandoc.builders.add_builders])
-env["HaveWSD"]=True
+#env["HaveWSD"]=True
 report = rsdpandoc.globbers.reveal_layout('lecture.md',env)
 #report = rsdpandoc.globbers.latex_layout('lecture.md',env)
