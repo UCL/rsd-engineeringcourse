@@ -1,6 +1,6 @@
 graph {
 	size="6,6";
-	node [image="figure_assets/laptop.png", label=""]
+	node [image="asset_sources/laptop.png", label=""]
 	overlap = scale;
 	A -- B
 	B -- C

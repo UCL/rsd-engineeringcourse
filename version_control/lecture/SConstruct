@@ -1,42 +1,7 @@
-import os
-
-pandoc_reveal=Builder(action='pandoc -t revealjs -s -V theme=night'+
-	' --css=night.css'+
-	' --css=slidetheme.css'+
-	' --default-image-extension=png'
-	' --mathjax '+
-	' -V revealjs-url=http://lab.hakim.se/reveal-js/'+
-	' $SOURCES -o $TARGET')
-
-# Allow option to accept checked-in versions of WSD figures
-# Because don't want to generate these dynamically in production
-generate_WSD_figures=False
-
-web_sequence_builder=Builder(action='python -m websequence --style magazine --format=png --in $SOURCE --out $TARGET',
-    suffix='.png',
-    src_suffix='.wsd')
-graphviz_dot_builder=Builder(action="dot -Tpng $SOURCE -o $TARGET", suffix=".png", src_suffix=".dot")
-graphviz_neato_builder=Builder(action="neato -Tpng $SOURCE -o $TARGET", suffix=".png", src_suffix=".dot")
-
-env=Environment()
-env.Append(BUILDERS={'WSD':web_sequence_builder})
-env.Append(BUILDERS={'Dot':graphviz_dot_builder})
-env.Append(BUILDERS={'Neato':graphviz_neato_builder})
-env.Append(BUILDERS={'Reveal':pandoc_reveal})
-
-reveal_slides=env.Reveal('reveal/index.html','lecture.md')
-
-def assetpath(node):
-	return os.path.join('reveal','assets',
-		os.path.basename(os.path.splitext(env.GetBuildPath(node))[0])+'.png')
-
-if generate_WSD_figures:
-	for source in Glob('figures/*.wsd'):
-	    png=env.WSD(assetpath(source),source)
-	    Depends(reveal_slides,png)
-for source in Glob('figures/*.dot'):
-    png=env.Dot(assetpath(source),source)
-    Depends(reveal_slides,png)
-for source in Glob('figures/*.nto'):
-	png=env.Neato(assetpath(source),source)
-	Depends(reveal_slides,png)
+import rsdpandoc.builders
+import rsdpandoc.globbers
+        
+env=Environment(tools=['default',rsdpandoc.builders.add_builders])
+env["HaveWSD"]=True
+report = rsdpandoc.globbers.reveal_layout('lecture.md',env)
+#report = rsdpandoc.globbers.latex_layout('lecture.md',env)
