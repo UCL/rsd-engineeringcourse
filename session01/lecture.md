@@ -276,11 +276,42 @@ Hunks
 Git Hunks
 ---------
 
+A "Hunk" is one git change. This changeset has three hunks:
+
+``` diff
++import matplotlib
++import numpy as np
+ 
+ from matplotlib import pylab
+ from matplotlib.backends.backend_pdf import PdfPages
+
++def increment_or_add(key,hash,weight=1):
++       if key not in hash:
++               hash[key]=0
++       hash[key]+=weight
++
+ data_path=os.path.join(os.path.dirname(
+                        os.path.abspath(__file__)),
+-regenerate=False
++regenerate=True
+```
+
 Interactive add
 ---------------
 
-Interactive reset
------------------
+`git add` and `git reset` can be used to stage/unstage a whole file,
+but you can use interactive mode to stage by hunk, choosing
+yes or no for each hunk.
+
+```
+git add -p myfile.py
+
+```
+``` diff
++import matplotlib
++import numpy as np
+#Stage this hunk [y,n,a,d,/,j,J,g,e,?]?
+```
 
 Rebasing
 ========
@@ -437,9 +468,16 @@ and work through [those exercises](http://development.rc.ucl.ac.uk/training/carp
 Further Exercises
 =================
 
+Interactive add
+---------------
 
-Branching
-=========
+Use
+```
+git add -p somefile #Add by hunk 
+git add -i #Consider files interactively
+```
+
+To decide what to add interactively.
 
 Create a branch
 ---------------
@@ -487,6 +525,22 @@ Once you're back on the main branch, try merging in your branch
 ``` bash
 git merge mybranch
 ```
+
+Grab changes from a branch
+--------------------------
+
+Make some changes on one branch, switch back to another, and use:
+
+``` bash
+git checkout <branch> <path>
+```
+
+To grab a file from one branch into another.
+
+Cherry-picking
+--------------
+
+
 
 Creating servers
 ================
