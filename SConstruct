@@ -2,9 +2,9 @@ import rsdpandoc.builders
 import rsdpandoc.globbers
 
 env=Environment(tools=['default',rsdpandoc.builders.add_builders])
-env["HavePIL"]=True
-env["HaveWSD"]=True
-env["HaveWebKit"]=True
+env["HavePIL"]=False
+env["HaveWSD"]=False
+env["HaveWebKit"]=False
 
 sources = [
 	Glob("session*/*.md"),
