@@ -186,7 +186,47 @@ git push sue
    # Default is origin
 ```
 
+Pull Requests
+=============
 
+Forking
+-------
+
+If you want to collaborate with someone, you don't need to give them the right to change your code directly.
+
+You can collaborate through *pull requests* instead of by granting them access.
+
+This has been found to work *much better* than having to decide who should be allowed
+commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
+ 
+Send a pull request
+---------------------
+
+When you've done some work on a fork, you'll want it merged into the main version.
+
+The collaborator can send the main repository a pull request, saying:
+
+> Hey, have a look at what I've done, and if you like it, merge it in.
+
+Accepting a pull request
+------------------------
+
+On GitHub, if a pull request doesn't result in a conflict, there's a big green button that
+you can press to accept it.
+
+If there's a conflict, there won't be a big green button.
+
+Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
+
+To do this, you need to add the collaborator's fork in your repository as a *second remote*
+
+``` bash
+git remote add <remotename> <collaborators URL>
+git pull remotename
+# resolve conflicts
+git commit -a
+git push
+```
 
 Hosting Servers
 ===============
@@ -690,26 +730,16 @@ We use `--set-upstream origin` (Abbreviation `-u`) to tell git that this branch 
 You should be able to see your branch in the list of branches in GitHub.
 
 Pull Requests
-=============
+-------------
 
-Forking
--------
-
-If you want to collaborate with someone, but you don't want to give them the right to change your code directly, you can collaborate through *pull requests* instead of by granting them access.
-
-For this exercise, you should find a partner, who has a repository on GitHub. The example repository from the software carpentry exercises will do. This time, the collaborator, instead of pulling the leader's code, should *fork* it. Go to the repository on GitHub, and hit "fork" top right.
+Find a partner, who has a repository on GitHub. The example repository from the software carpentry exercises will do. This time, the collaborator, instead of pulling the leader's code, should *fork* it. Go to the repository on GitHub, and hit "fork" top right.
 
 A new repository will be created on the collaborator's account, which contains all the same stuff. Clone it with `git clone`.
-
-Pushing to your forks
----------------------
-
-Both of you can make changes.
-
-Now, both of you will be able to push: you're pushing to different repositories!
  
 Create a pull request
 ---------------------
+
+Make some changes on your fork. 
 
 You need to request that the leader accept your changes. The collaborator should go to the page for their *forked* repository and hit the green button to the left of the branch dropdown. On the page that appears, choose "compare across forks".
 
@@ -718,8 +748,6 @@ Choose the right branches and repositories for the "base", the leader's reposito
 Hit "Click to create a pull request for this comparison".
 
 Give the request a title and a comment, and send it.  
-
-Note you can comment on and discuss the contribution using the pull request: this is great for open source projects with many people working together.
 
 Accepting a pull request
 ------------------------
@@ -737,14 +765,6 @@ If there's a conflict, there won't be a big green button.
 Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
 
 To do this, you need to add the collaborator's fork in your repository as a *second remote*
-
-``` bash
-git remote add <remotename> <collaborators URL>
-git pull remotename
-# resolve conflicts
-git commit -a
-git push
-```
 
 Rebasing and squashing
 ======================
