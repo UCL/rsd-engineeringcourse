@@ -429,6 +429,14 @@ and the slithy toves
 danced and span in the waves
 ```
 
+Fast Forwards
+-------------
+
+When Sue now tries to pull Jim's work, the merge will be a *fast forward*:
+
+Jim's work is now based on Sue's, so moving Sue's repository to be in sync with Jim is
+just a question of moving Sue's HEAD label.
+
 Rebasing pros and cons
 ----------------------
 
@@ -439,7 +447,7 @@ If you've already pushed, or anyone else has got your changes, things will get s
 If you know your changes are still secret, it might be better to rebase to keep the history clean.
 If in doubt, just merge.
 
-Using rebase to squash commits
+Thousands of tiny commits
 ------------------------------
 
 A common use of rebase is to rebase your work on top of one of your earlier commits,
@@ -454,7 +462,25 @@ de73 Fix a typo
 ll54 Fix another typo
 ```
 
+Using rebase to squash
+----------------------
 
+``` bash
+git rebase -i ab11 #OR HEAD^^
+```
+
+```
+pick ab11 A great piece of work
+pick de73 Fix a typo
+pick ll54 Fix another typo
+
+# Rebase 60709da..30e0ccb onto 60709da
+#
+# Commands:
+#  p, pick = use commit
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+```
 
 Exercises
 =========
@@ -526,6 +552,45 @@ Once you're back on the main branch, try merging in your branch
 git merge mybranch
 ```
 
+Find out what is on a branch
+----------------------------
+
+In addition to using `git diff` to compare to the state of a branch,
+you can use `git log` to look at lists of commits which are in a branch
+and haven't been merged yet.
+
+```bash
+git log master..experiment
+```
+
+Referencing multiple commits
+----------------------------
+
+Git uses various symbols to refer to sets of commits.
+The double dot `A..B` means "ancestor of B and not ancestor of A"
+
+So in a linear sequence, it does what you'd expect.
+
+But in cases where a history has branches, like `master..experiment`
+It ends up refering to the unmerged content from the experiment branch.
+
+Log of differences
+------------------
+
+``` bash
+git log --left-right master...experiment
+```
+
+```
+< ab34 A commit on master but not experiment
+< d63e ditto
+> l6mn A commit on experiment but not on master
+```
+
+Three dots means "everything which is not a common ancestor".
+
+It therefore will show the differences between branches.
+
 Grab changes from a branch
 --------------------------
 
@@ -540,7 +605,14 @@ To grab a file from one branch into another.
 Cherry-picking
 --------------
 
+Using `git checkout` with a path takes the content of files.
+To grab the content of a specific *commit* from another branch, 
+and apply it as a patch to your branch, use:
 
+```bash
+git cherry-pick <commit>
+git cherry-pick somebranch^^^
+```
 
 Creating servers
 ================
@@ -629,8 +701,7 @@ To do this, you need to add the collaborator's fork in your repository as a *sec
 
 ``` bash
 git remote add <remotename> <collaborators URL>
-git fetch remotename
-git merge remotename
+git pull remotename
 # resolve conflicts
 git commit -a
 git push
@@ -644,3 +715,16 @@ Rebasing
 
 Get together with a partner, or use a branch or a remote of your own, and set yourself up a
 situation where you'd be about to merge. Instead, use a rebase.
+
+Use `git log --graph --oneline` to see how the changes have been applied as a linear sequence.
+
+Squashing
+---------
+
+Make several commits which should really be one, then use
+
+```bash
+git rebase -i <commit>
+```
+to squash them.
+
