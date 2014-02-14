@@ -650,6 +650,45 @@ git remote add <somename> ssh://user@host/mygitserver
 git push
 ```
 
+Referencing remotes
+-------------------
+
+You can always refer to commits on a remote like this:
+
+```
+git fetch
+git log origin.. #abbreviates origin/master..HEAD
+```
+Which will show you what you've done that's not in the remote's master.
+
+You need to fetch, to update the local copy of what's happening remotely.
+
+Remotes and tracking branches
+-----------------------------
+
+```
+git branch -vv
+* develop 583fd97 [origin/develop: ahead 1] More git tips and tricks
+  master  5732041 [origin/master: behind 2] Add generated pdf
+  staging 502fa7b [origin/staging] Copy in notes from old rits training repository
+```
+
+Local branches can be, but do not have to be, connected to remote branches
+They are said to "track" remote branches
+
+Publishing branches
+-------------------
+
+Let the server know there's a new branch with:
+
+```
+git push --set-upstream origin experiment
+```
+
+We use `--set-upstream origin` (Abbreviation `-u`) to tell git that this branch should be pushed to and pulled from origin per default.
+
+You should be able to see your branch in the list of branches in GitHub.
+
 Pull Requests
 =============
 
