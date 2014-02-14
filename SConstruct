@@ -11,5 +11,5 @@ sources = [
 ]
 
 rsdpandoc.globbers.mixed_html_layout(sources,env,asset_sources="session*/figures")
-rsdpandoc.globbers.latex_layout(sources,env,asset_sources="session*/figures")
+#rsdpandoc.globbers.latex_layout(sources,env,asset_sources="session*/figures")
 #rsdpandoc.globbers.latex_layout(sources,env)
