@@ -260,7 +260,7 @@ Next you must add and commit the merged result:
 A suggested commit message appears, which you can accept, and then you can `push` the merged result.
 
 Tagging
-=======
+-------
 
 Easy to read labels for revisions
 Produce real results *only* with tagged revisions
@@ -486,7 +486,7 @@ Exercises
 =========
 
 Catch-up exercises
-==================
+------------------
 
 If you've not done the GitHub exercises from UCL Software Carpentry, then get together with a partner who is in the same boat,
 and work through [those exercises](http://development.rc.ucl.ac.uk/training/carpentry/git.html#example-exercise) as far as [pulling from remotes](http://development.rc.ucl.ac.uk/training/carpentry/git.html#pulling-from-remotes) and then do the section on [Collaboration](http://development.rc.ucl.ac.uk/training/carpentry/git.html#collaboration) as far as [Commit the resolved file](http://development.rc.ucl.ac.uk/training/carpentry/git.html#commit-the-resolved-file)
