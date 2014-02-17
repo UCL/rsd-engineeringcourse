@@ -190,7 +190,7 @@ Use as a web service
 If I take copyleft code, and use it to host a web service, I have not sold the software.
 
 Therefore, under some licenses, I do not have to release any derivative software.
-This "loophole" in the GPL is closed by the LGPL
+This "loophole" in the GPL is closed by the AGPL ("Affero GPL")
 
 Library Linking
 ---------------
