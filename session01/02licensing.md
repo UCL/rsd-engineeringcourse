@@ -248,6 +248,11 @@ Check your license at
 opensource.org for details of how to apply it to your software,
 , e.g. for the [GPL](http://opensource.org/licenses/GPL-3.0#howto)
 
+Choose a license
+-------
+
+See [GitHub's advice on how to choose a license](http://choosealicense.com/)
+
 Open source does not equal free maintainance
 --------------------------------------------
 
