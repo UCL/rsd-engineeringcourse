@@ -17,7 +17,9 @@ Some Issue Trackers
 There are lots of good issue trackers.
 
 The most commonly used open source ones are [Trac](http://trac.edgewall.org/) and [Redmine](http://www.redmine.org/)
+
 Cloud based issue trackers include [Lighthouse](http://lighthouseapp.com/) and [GitHub](https://github.com/blog/831-issues-2-0-the-next-generation)
+
 Commercial solutions include [Jira](https://www.atlassian.com/software/jira)
 
 In this course, we'll use the GitHub issue tracker for our examples.
@@ -57,7 +59,9 @@ Status
 * Underway
 * Blocked
 
-Resolutions:
+
+Resolutions
+-----------
 
 * Resolved
 * Will Not Fix
@@ -67,7 +71,7 @@ Resolutions:
 Bug Triage
 ----------
 
-Some organisations use a severity matrix based on
+Some organisations use a severity matrix based on:
 
 * Severity [Wrong answer, crash, unusable, workaround, cosmetic...]
 * Frequency [All users, most users, some users...]
@@ -83,14 +87,15 @@ Development Cycles
 
 Development goes in *cycles*.
 
+Cycles range in length from a week to three months.
+
 In a given cycle:
 
 * Decide which features should be implemented
 * Decide which bugs should be fixed
+* Move these issues from the Backlog into the current cycle. (Aka Sprint)
 
-Move these issues from the Backlog into the current cycle. (Aka Sprint)
 
-Cycles range in length from a week to three months.
 
 GitHub issues
 -------------
@@ -98,4 +103,4 @@ GitHub issues
 GitHub doesn't have separate fields for status, component, severity etc.
 Instead, it just has labels, which you can create and delete.
 
-See for example (IPython)[https://github.com/ipython/ipython/issues?labels=type-bug&page=1&state=open]
+See for example [IPython](https://github.com/ipython/ipython/issues?labels=type-bug&page=1&state=open)
