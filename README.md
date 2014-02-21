@@ -15,7 +15,7 @@ In this course, you will move beyond programming, to learn how to construct reli
 1.       Code management. Collaborating around code. Distributed version control. Git. Github. Issue tracking. Code review and pull requests. Branches and merging. Software licenses. Citing software. Software sustainability.
 2.       Testing scientific software. Unit testing, regression testing. Test driven design. Expectations and assertions. Mocking. Build-and-test servers. Negative testing. Sensible error messages. Managed logging. Debugging and debuggers. Coverage measurement.
 3.       Best practice in construction. Comments. Coding conventions. Documentation. Refactoring. IDEs. Configuration files. Using libraries.
-4.       Design and development. Object oriented design. Software as engineering. Pragmatic use of diagram languages. Requirements engineering. Agile and Waterfall. Functional and architectural design.                                   
+4.       Design and development. Object oriented design. Software as engineering. Pragmatic use of diagram languages. Requirements engineering. Agile and Waterfall. Functional and architectural design.
 5.        Building and deployment. Build tools. CMake and Scons. Engineering for portability. Packaging. Deploying.
  
 Prerequisites:
@@ -25,3 +25,5 @@ You must also have experience of the Unix shell.
 Examples and exercises for this course will be provided in C++ and Python.  You will therefore find it easiest to follow along if you have experience in at least one of these languages. Appropriate Python experience could be obtained from the Software Carpentry Bootcamp, while C++ experience can be obtained from the RITS C++ course. Previous experience with version control (such as from Software Carpentry) would be helpful.
  
 You are required to bring your own laptop to the course as the classrooms we are using do not have desktop computers.
+
+A change for pedagogical purposes
