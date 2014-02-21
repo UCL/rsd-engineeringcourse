@@ -8,7 +8,7 @@ Catch-up exercises
 If you've not done the GitHub exercises from UCL Software Carpentry, then get together with a partner who is in the same boat,
 and work through [those exercises](http://development.rc.ucl.ac.uk/training/carpentry/git.html#example-exercise) as far as [pulling from remotes](http://development.rc.ucl.ac.uk/training/carpentry/git.html#pulling-from-remotes) and then do the section on [Collaboration](http://development.rc.ucl.ac.uk/training/carpentry/git.html#collaboration) as far as [Commit the resolved file](http://development.rc.ucl.ac.uk/training/carpentry/git.html#commit-the-resolved-file)
 
-Further Exercises
+Further Git Exercises
 =================
 
 Interactive add
@@ -80,7 +80,7 @@ git checkout <branch> file
 
 
 
-Creating servers
+Creating Git Servers
 ================
 
 File system servers
@@ -191,7 +191,7 @@ git rebase -i <commit>
 ```
 to squash them.
 
-Bisect
+Git Bisect
 ======
 
 An example repository
@@ -263,3 +263,24 @@ git bisect good master
 git bisect run python squares.py 2
 > 13cfff692c8c9b9ec3564140c94eb371328cef52 is the first bad commit
 ```
+
+Issue Tracking
+==============
+
+Issue Tracking Exercise
+-----------------------
+
+In GitHub, log an example issue for a bug in some software you are working on or use,
+and also for a feature request.
+
+Think about reproduction steps.
+
+Discuss the issues with a partner.
+
+Licensing
+=========
+
+Licensing
+---------
+
+Discuss software licensing and citation issues with your neighbours.
