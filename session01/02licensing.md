@@ -121,6 +121,9 @@ For example:
 >purposes, but only to eligible users of the software (for example, to another university
 >student or faculty to support joint academic research).
 
+Academic License Proliferation
+---------------------
+
 Please don't do this. Your desire to slightly tweak the terms is harmful to the
 future software ecosystem. Also, 
 
