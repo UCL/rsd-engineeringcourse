@@ -1,5 +1,5 @@
-How to test
-===========
+What to test for
+================
 
 Equivalence partitioning
 ------------------------
@@ -141,3 +141,38 @@ Boundary cases
     What happens if ``atoms`` is an empty list?
 
 * What happens when a matrix/data-frame reaches one row, or one column?
+
+
+Positive *and* Negative tests
+-----------------------------
+
+* **Positive tests**: program/component/unit in normal situations
+
+* **Negative tests**: program/component/unit in pathological functionning mode
+
+<div align="left">
+Bad input should be expected and should fail early and explicitely. 
+
+<div class="fragment roll-in">
+Testing should ensure that explicit failures do indeed happen.
+
+~~~~~~~~~~~~~~~{.python}
+def I_only_accept_positive_numbers(number):
+    # Check input
+    if number < 0: raise ValueError("Input ({0}) is negative".format(number))
+
+    # Do something
+~~~~~~~~~~~~~~~
+
+An in test file: 
+
+~~~~~~~~~~~~~~~{.python}
+def test_I_only_accept_positive_numbers(number):
+    from mymodule import I_only_accept_positive_numbers
+
+    try:  I_only_accept_positive_numbers(0)
+    except: pass
+    else: raise AssertionError("zero did not raise an error")
+~~~~~~~~~~~~~~~
+</div>
+</div>
