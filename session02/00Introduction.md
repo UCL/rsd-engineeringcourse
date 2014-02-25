@@ -1,9 +1,8 @@
 % Research Software Engineering
 % James Hetherington, Mayeul d'Avezac and Jens Nielsen
 
-Testing 
-=======
-
+Testing introduction
+====================
 
 A few reasons not to do testing
 -------------------------------
@@ -13,7 +12,7 @@ A few reasons not to do testing
   .constrastTable strong { color:#FFF7FB; font-style:normal; font-weight:normal }
 </style>
 
-<p class="reveal constrastTable">
+<div class="reveal constrastTable">
   ------------------------------------      -------------------------------------
   Sensibility                               Sense
   ------------------------------------      -------------------------------------
@@ -29,7 +28,7 @@ A few reasons not to do testing
 
   **Will do it later**                      *See above*
   ------------------------------------      -------------------------------------
-</p>
+</div>
 
 
 A few reasons to do testing
@@ -39,14 +38,15 @@ A few reasons to do testing
   .happy em { color:#E9FFF3; font-style:normal; }
 </style>
 
-<p class="reveal happy">
+<div class="reveal happy">
   * **lazyness** *testing saves time*
   * **peace of mind** *tests (should) ensures code is correct*
-  * test is a **runnable specification** *best way to let others know what a function should do and
+  * **runnable specification** *best way to let others know what a function should do and
     not do*
+  * **reproducible debugging** *debugging that happened and is saved for later reuse*
   * code structure / **modularity** *since the code is designed for at least two situations*
   * easier to modify *since results can be tested*
-</p>
+</div>
 
 
 Not a panacea
@@ -57,8 +57,8 @@ Not a panacea
 
 |                               - Steve McConnell
 
-<p class="fragment roll-in">
+<div class="fragment roll-in">
  * Testing won't corrrect a buggy code
  * Testing will tell you were the bugs are...
  * ... if the test cases *cover* the bugs
-</p>
+</div>
