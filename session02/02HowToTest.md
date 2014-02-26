@@ -104,6 +104,7 @@ In silico translation   Compute overlap of two rectangles
      .attr("y", "1em")
 
   function update(fragment) {
+    if(!fragment) return;
     if(!fragment.hasAttribute("text")) return;
     console.log("update: " + fragment.getAttribute("text") + fragment.getAttribute("x"))
     var xPositions = eval(fragment.getAttribute("x"));
@@ -176,3 +177,22 @@ def test_I_only_accept_positive_numbers(number):
 ~~~~~~~~~~~~~~~
 </div>
 </div>
+
+Legacy Code Hardening
+---------------------
+
+* Very difficult to create unit-tests for existing code
+* Easier to run program as a black box:
+
+    ~~~~~~~~~~~~~~~~~
+      setup input
+      run program
+      read output 
+      check output against expected result
+    ~~~~~~~~~~~~~~~~~
+
+<div class="fragment fade-in">
+* Does not test correctness of code
+* Checks code is a similarly wrong on day N as day 0
+</div>
+
