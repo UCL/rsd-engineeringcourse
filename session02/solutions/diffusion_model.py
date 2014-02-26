@@ -17,10 +17,4 @@ def energy(density, coefficient=1):
   # and the right values (positive or null)
   if any(density < 0): raise ValueError("Expected array of *positive* integers.")
   
-  if False:
-    print "hello, I'm not covered"
-
   return coefficient * 0.5 * sum(density * (density - 1))
-
-def this_is_a_fake_routine(something):
-  print "hello, I'm not covered"
