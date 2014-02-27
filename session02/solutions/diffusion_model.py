@@ -15,6 +15,31 @@ def energy(density, coefficient=1):
   if density.dtype.kind != 'i' and len(density) > 0:
     raise TypeError("Expected array of *integers*.")
   # and the right values (positive or null)
-  if any(density < 0): raise ValueError("Expected array of *positive* integers.")
+  if any(density < 0):
+    raise ValueError("Expected array of *positive* integers.")
   
   return coefficient * 0.5 * sum(density * (density - 1))
+
+
+
+def partial_derivative(function, x, index):
+  """ Computes right derivative of function over integers
+
+      :Parameters:
+         function: callable object
+           The function for which to compute the delta/derivative
+         x: array of integers
+           The point at which to compute the right-derivative
+         index: integer
+           Partial derivative direction.
+  """
+  from numpy import array
+  # Computes left value
+  left_value = function(x)
+
+  # Copies and modifies x. Could do it without copy, but that complicates mocking.
+  x = array(x)
+  x[index] += 1
+  right_value = function(x)
+
+  return right_value - left_value

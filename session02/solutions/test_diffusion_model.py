@@ -19,8 +19,8 @@ def test_zero_energy_cases():
 def test_derivative():
   from numpy.random import randint
 
-  # Loop over vectors of different sizes
-  for vector_size in randint(1000, size=30): 
+  # Loop over vectors of different sizes (but not empty)
+  for vector_size in randint(1, 1000, size=30): 
 
     # Create random density of size N
     density = randint(50, size=vector_size)

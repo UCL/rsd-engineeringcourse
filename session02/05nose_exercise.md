@@ -2,7 +2,7 @@ Nose Exercise
 =============
 
 
-Description
+Description {#diffusion}
 -----------
 
 <div align="left">
@@ -41,7 +41,8 @@ In a directory, create two files:
 
           :Parameters:
             density: array of positive integers
-               Number of particles at each position i in the array/geometry
+               Number of particles at each position i 
+               in the array
       """
       # implementation goes here
     ~~~~~~~~~~~~~~~~~~
@@ -50,8 +51,25 @@ In a directory, create two files:
 
     ~~~~~~~~~~~~~~~~~~~~{.python}
     from diffusion_model import energy
-    from nose.tools import assert_true
     def test_energy():
+      """ Optional description for nose reporting """
       # Test something
     ~~~~~~~~~~~~~~~~~~~~
 </div>
+
+Coverage
+--------
+
+<div align="left">
+
+1. Comment out from exception tests in solution 
+1. in solution directory, run
+
+    ~~~~~~~~~~~~~~{.bash}
+    nosetests --with-coverage --cover-package=diffusion_model -v --cover-html
+    ~~~~~~~~~~~~~~
+
+1. Open ``cover/index.html`` for coverage information
+
+</div>
+![](assets/coverage.png)

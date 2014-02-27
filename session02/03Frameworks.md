@@ -49,6 +49,16 @@ Testing Frameworks
     | [pfunit](http://sourceforge.net/projects/pfunit/), works with MPI
     | [fruit](http://fortranxunit.sourceforge.net/), could be unmaintained, not recommended
 
+
+Mocking Frameworks {#MockingFrameworks}
+------------------
+
+* C: [CMocka](http://www.cmocka.org/)
+* C++: [googlemock](https://code.google.com/p/googlemock/)
+* Python: [Mock](http://www.voidspace.org.uk/python/mock/) 
+  ([unittest.mock](http://docs.python.org/dev/library/unittest.mock) in python 3.3),
+  [doublex](https://pypi.python.org/pypi/doublex)
+
 Nose Framework: Usage
 ---------------------
 
