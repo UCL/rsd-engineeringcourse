@@ -125,5 +125,7 @@ def test_input_sanity():
   with assert_raises(TypeError) as exception: mc(lambda x: 0, [1.0, 2, 3])
   with assert_raises(ValueError) as exception: mc(lambda x: 0, [-1, 2, 3])
   with assert_raises(ValueError) as exception: mc(lambda x: 0, [[1, 2, 3], [3, 4, 5]])
+  with assert_raises(ValueError) as exception: mc(lambda x: 0, [3])
+  with assert_raises(ValueError) as exception: mc(lambda x: 0, [0, 0])
 
 

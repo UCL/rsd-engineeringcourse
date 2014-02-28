@@ -58,6 +58,8 @@ class MonteCarlo(object):
       raise ValueError("Density should be an array of *positive* integers.")
     if density.ndim != 1:
       raise ValueError("Density should be an a *1-dimensional* array of positive integers.")
+    if sum(density) == 0: 
+      raise ValueError("Density is empty.")
 
     iteration = 0
     current_energy = energy(density)
