@@ -12,7 +12,7 @@ Tests at different scales
 **Integration testing**     all components together / whole program
 -----------------------     ---------------------------------------------------------
 
-<p></p>
+<br>
 <div class="fragment fade-in">
 Always start at the smallest scale! 
 
