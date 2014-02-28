@@ -95,7 +95,7 @@ cd myotherrepo
 git init --bare
 cd <back to my main repository>
 git remote add localbackup /full/path/to/local/repository
-git push localbackup
+git push -u localbackup master
 ```
 
 You can now work with this local repository, just as with any other git server.
@@ -113,7 +113,7 @@ cd mygitserver
 git init --bare
 exit
 git remote add <somename> ssh://user@host/mygitserver
-git push
+git push -u <somename> master
 ```
 
 Branches and remotes
