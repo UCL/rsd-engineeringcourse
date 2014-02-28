@@ -1,1 +1,15 @@
 _site/
+.sconsign.dblite
+html/index.html
+html/reveal/.DS_Store
+html/reveal/assets/night-ucl-overlay.css
+html/reveal/assets/solarized-ucl-overlay.css
+html/reveal/assets/solarized.css
+html/reveal/index.html
+jekyll.html
+html/assets/callgrind.png
+html/assets/coverage.png
+html/assets/jenkins.png
+html/reveal/assets/callgrind.png
+html/reveal/assets/coverage.png
+html/reveal/assets/jenkins.png
