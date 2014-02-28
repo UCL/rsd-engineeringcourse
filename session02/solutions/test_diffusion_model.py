@@ -8,6 +8,9 @@ def test_energy_fails_on_non_integer_density():
 def test_energy_fails_on_negative_density():
   with assert_raises(ValueError) as exception: energy([-1, 2, 3])
 
+def test_energy_fails_ndimensional_density():
+  with assert_raises(ValueError) as exception: energy([[1, 2, 3], [3, 4, 5]])
+
 def test_zero_energy_cases():
   # Zero energy at zero density
   densities = [ [], [0], [0, 0, 0] ]
