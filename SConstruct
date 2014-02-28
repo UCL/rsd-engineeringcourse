@@ -7,7 +7,7 @@ env["HaveWSD"]=False
 env["HaveWebKit"]=False
 
 sources = [
-	Glob("session*/*.md"),
+	Glob("session0*/*.md"),
 ]
 
 rsdpandoc.globbers.mixed_html_layout(sources,env,asset_sources="session*/figures")
