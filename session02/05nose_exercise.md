@@ -27,6 +27,69 @@ Implementation:
 
 </div>
 
+<svg id="model" width="500" height="300" class="boundary"></svg>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://lab.hakim.se/reveal-js//lib/js/head.min.js" ></script>
+<script src="http://lab.hakim.se/reveal-js//js/reveal.min.js" ></script>
+<style>
+.axis path, .axis line {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+</style>
+<script>
+  var width=100, height=100
+  var svg = d3.select("#model")
+  var svgElement = document.getElementById("boundary");
+  var externalWidth = parseInt(svgElement.getAttribute("width"));
+  var externalHeight = parseInt(svgElement.getAttribute("height"));
+  var numbers = Array.apply(null, Array(10)).map(function (_, i) {return i;});
+
+  var yscale = d3.scale.linear().domain([0, height]).range([0, externalHeight]);
+  var xscale = d3.scale.ordinal().domain(numbers).rangePoints([0, externalWidth-20])
+  var xAxis = d3.svg.axis().orient("bottom").scale(xscale);
+  var margingroup = svg.append("g")
+                       .attr("transform", "translate(10, " + (externalHeight - 50) + ")");
+  var axisgroup = margingroup.append("g").attr("class", "x axis").call(xAxis);
+
+  var nbrects = [0, 0, 3, 5, 8, 4, 2, 1]
+  var rectangles = []
+  for(var j = 0; j < nbrects.length; ++j) {
+    for(var i = 0; i < nbrects[j]; ++i) rectangles.push([j, i])
+  }
+
+  var rectgroup = margingroup.append("g")
+  rectgroup.selectAll("rect").data(rectangles, function(d, i) {return i;}).enter()
+           .append("rect")
+           .attr("x", function(d) { return xscale(d[0]) - 10; })
+           .attr("y", function(d) { return -yscale(d[1] * 8 + 7); })
+           .attr("id", function(d, i) { return "rect" + i; })
+           .attr("width", 20).attr("height", yscale(6)).style("fill", "blue").style("stroke-width", "1px");
+
+  changes = [
+    [2, 1, 0],
+    [15, 5, 4],
+    [15, 6, 2]
+  ];
+  ncalls = 0;
+  function update() {
+     console.log(changes.length)
+     if(ncalls == changes.length) {
+       clearInterval();
+       return;
+     }
+     rectgroup.select("#rect" + changes[ncalls][0])
+       .transition()
+       .duration(750)
+       .attr("x", xscale(changes[ncalls][1]) - 10)
+       .attr("y", -yscale(changes[ncalls][2] * 8 + 7));
+     ncalls += 1
+  }
+  setInterval(update, 1500);
+
+</script>
+
 Starting Point
 --------------
 
