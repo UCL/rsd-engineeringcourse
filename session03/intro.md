@@ -261,7 +261,7 @@ Pedagogical comments
 --------------------
 
 Code that *is* good style, but you're not familiar with, or 
-that colleagues might not be familiar wiht
+that colleagues might not be familiar with
 
 ``` cpp
 for (auto agent : agents) { \\ C++11 range based for loop 
@@ -654,7 +654,7 @@ Replace method arguments with class members
 Smell: A variable is nearly always used in arguments to 
 a class.
 
-```C++
+```cpp
 class Person
 {
 Person();
@@ -666,7 +666,7 @@ float emigrate_probability(age);
 
 After:
 
-```C++
+```cpp
 class Person
 {
 Person(age);
@@ -675,6 +675,7 @@ float death_probability();
 float emigrate_probability();
 }
 ```
+
 Break a large function into smaller units
 -----------------------------------------
 
@@ -786,7 +787,7 @@ Exercise: The Boids
 Flocking
 --------
 
-> The aggregate motion of a flock of birds, a herd of land animals, or a school of fish is a beautiful and familiar part of the natural world. But this type of complex motion is rarely seen in computer animation. This paper explores an approach based on simulation as an alternative to scripting the paths of each bird individually. The simulated flock is an elaboration of a particle system, with the simulated birds being the particles. The aggregate motion of the simulated flock is created by a distributed behavioral model much like that at work in a natural flock; the birds choose their own course. Each simulated bird is implemented as an independent actor that navigates according to its local perception of the dynamic environment, the laws of simulated physics that rule its motion, and a set of behaviors programmed into it by the "animator." The aggregate motion of the simulated flock is the result of the dense interaction of the relatively simple behaviors of the individual simulated birds. 
+> The aggregate motion of a flock of birds, a herd of land animals, or a school of fish is a beautiful and familiar part of the natural world... The aggregate motion of the simulated flock is created by a distributed behavioral model much like that at work in a natural flock; the birds choose their own course. Each simulated bird is implemented as an independent actor that navigates according to its local perception of the dynamic environment, the laws of simulated physics that rule its motion, and a set of behaviors programmed into it... The aggregate motion of the simulated flock is the result of the dense interaction of the relatively simple behaviors of the individual simulated birds. 
 
 -- Craig W. Reynolds, "Flocks, Herds, and Schools: A Distributed Behavioral Model", *Computer Graphics* **21** _4_ 1987, pp 25-34
 See the [original paper](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/)
@@ -887,7 +888,7 @@ git checkout boids.py
 Start Refactoring
 -----------------
 
-Look at the code, consider the [list of refactorings](refactoring-summary), and make changes
+Look at the code, consider the [list of refactorings](#refactoring-summary), and make changes
 
 Each time, do a git commit on your fork, and write a commit message explaining the 
 refactoring you did.
