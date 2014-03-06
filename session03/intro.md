@@ -172,7 +172,6 @@ optparse.py:357:17: E201 whitespace after '{'
 optparse.py:472:29: E221 multiple spaces before operator
 optparse.py:544:21: W601 .has_key() is deprecated, use 'in'
 ```
-
 Comments
 ========
 
@@ -499,6 +498,22 @@ if gene:
     transcribe(gene)
 ```
 
+
+Separate a complex expression into a local variable
+-------------------------------------------------------
+
+Smell: An expression becomes long
+
+``` cpp
+if ((my_name==your_name++)&&flag1||flag2) do_something;
+```
+
+vs
+
+``` cpp
+const bool same_names= (my_name==your_name);
+if (same_names && flag1 || flag2) do_something;
+```
 
 Replace loop with iterator
 --------------------------
