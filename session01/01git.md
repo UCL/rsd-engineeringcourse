@@ -80,6 +80,22 @@ git reset <commit> #Move branch label, and reset index to commit ("--mixed")
 git reset --hard <commit> #Move branch label, and reset staging area and index to commit
 ```
 
+Stash
+-----
+
+If you find you want to switch branch, or pull, but you're not ready to commit,
+you can use
+
+```bash
+git stash
+git checkout master
+...
+git checkout mybranch
+git stash apply
+```
+
+The "Stash" is a way of temporarily saving your working area, and can help out in a pinch.
+
 Branches
 ========
 
@@ -103,17 +119,7 @@ git checkout -b somebranch # Make a new branch
 git checkout master # Switch to an existing branch
 ```
 
-Sharing branches
-----------------
 
-``` Bash
-git push -u origin experiment # Share a recently
-                              # made branch
-git push origin experiment #Republish a branch
-git branch -r #Discover remote branches
-git checkout origin/some_branch #Get a branch
-                                #from a remote
-```
 
 Merging branches
 ----------------
@@ -123,7 +129,7 @@ git checkout master # Switch to master branch
 git checkout mybranch somefolder # Grab code from a branch
 git merge experiment # Merge the branch in
 git branch -d experiment # Delete branch locally
-git push --delete experiment # Delete published branch
+
 ```
 
 A good branch strategy
@@ -134,6 +140,68 @@ A good branch strategy
 * `feature` branches: for specific new ideas
 * `release` branches: when you share code with others
   * Useful for isolated bug fixes
+
+Find out what is on a branch
+----------------------------
+
+In addition to using `git diff` to compare to the state of a branch,
+you can use `git log` to look at lists of commits which are in a branch
+and haven't been merged yet.
+
+```bash
+git log master..experiment
+```
+
+Referencing multiple commits
+----------------------------
+
+Git uses various symbols to refer to sets of commits.
+The double dot `A..B` means "ancestor of B and not ancestor of A"
+
+So in a linear sequence, it does what you'd expect.
+
+But in cases where a history has branches, like `master..experiment`
+It ends up refering to the unmerged content from the experiment branch.
+
+Log of differences
+------------------
+
+``` bash
+git log --left-right master...experiment
+```
+
+```
+< ab34 A commit on master but not experiment
+< d63e ditto
+> l6mn A commit on experiment but not on master
+```
+
+Three dots means "everything which is not a common ancestor".
+
+It therefore will show the differences between branches.
+
+Grab changes from a branch
+--------------------------
+
+Make some changes on one branch, switch back to another, and use:
+
+``` bash
+git checkout <branch> <path>
+```
+
+To grab a file from one branch into another.
+
+Cherry-picking
+--------------
+
+Using `git checkout` with a path takes the content of files.
+To grab the content of a specific *commit* from another branch, 
+and apply it as a patch to your branch, use:
+
+```bash
+git cherry-pick <commit>
+git cherry-pick somebranch^^^
+```
 
 Working with multiple remotes
 =============================
@@ -185,6 +253,94 @@ git push sue
    # Push to a specific remote
    # Default is origin
 ```
+
+Referencing remotes
+-------------------
+
+You can always refer to commits on a remote like this:
+
+```
+git fetch
+git log origin.. #abbreviates origin/master..HEAD
+```
+Which will show you what you've done that's not in the remote's master.
+
+You need to fetch, to update the local copy of what's happening remotely.
+
+Remotes and tracking branches
+-----------------------------
+
+```
+git branch -vv
+* develop 583fd97 [origin/develop: ahead 1] More git tips and tricks
+  master  5732041 [origin/master: behind 2] Add generated pdf
+  staging 502fa7b [origin/staging] Copy in notes from old rits training repository
+```
+
+Local branches can be, but do not have to be, connected to remote branches
+They are said to "track" remote branches
+
+Publishing branches
+-------------------
+
+To let the server know there's a new branch use:
+
+```
+git push --set-upstream origin experiment
+```
+
+We use `--set-upstream origin` (Abbreviation `-u`) to tell git that this branch should be pushed to and pulled from origin per default.
+
+You should be able to see your branch in the list of branches in GitHub.
+
+Sharing branches
+----------------
+
+``` Bash
+git push -u origin experiment # Share a recently
+                              # made branch
+git push origin experiment #Republish a branch
+git branch -r #Discover remote branches
+git checkout origin/some_branch #Get a branch
+                                #from a remote
+```
+
+Pruning branches
+----------------
+
+Once you get good at branches, you'll end up with loads.
+
+Some will be on the remote, and tracked locally.
+Some will be local only.
+Some might be deleted locally, but still on the remote
+
+Deleting local branches is easy:
+
+Pruning locally
+---------------
+
+Which local branches are merged?
+
+``` bash
+git branch --merged
+> deadbranch
+> * master
+git branch -d deadbranch 
+  # -D to force removal if not merged
+git fetch --prune
+  # Remove local branches deleted remotely
+```
+
+Pruning remote branches
+-----------------------
+
+``` bash
+git push --delete experiment # Delete published branch
+git push --prune # Dangerous, remove remote branches deleted locally
+```
+
+If using github, I recommend removing branches using the
+GitHub gui (click branches, then click "view merged branches")
 
 Pull Requests
 =============
@@ -522,268 +678,33 @@ pick ll54 Fix another typo
 #  s, squash = use commit, but meld into previous commit
 ```
 
-Exercises
+Debugging
 =========
 
-Catch-up exercises
-------------------
+Debugging With Git Bisect
+-------------------------
 
-If you've not done the GitHub exercises from UCL Software Carpentry, then get together with a partner who is in the same boat,
-and work through [those exercises](http://development.rc.ucl.ac.uk/training/carpentry/git.html#example-exercise) as far as [pulling from remotes](http://development.rc.ucl.ac.uk/training/carpentry/git.html#pulling-from-remotes) and then do the section on [Collaboration](http://development.rc.ucl.ac.uk/training/carpentry/git.html#collaboration) as far as [Commit the resolved file](http://development.rc.ucl.ac.uk/training/carpentry/git.html#commit-the-resolved-file)
-
-Further Exercises
-=================
-
-Interactive add
----------------
-
-Use
-```
-git add -p somefile #Add by hunk 
-git add -i #Consider files interactively
-```
-
-To decide what to add interactively.
-
-Create a branch
----------------
-
-In your test repository, make yourself a branch.
-
-```bash
-git checkout -b mybranch
-git branch
-```
-
-Switch branches
----------------
-
-Make some changes to it, and try to switch back to the main branch
-(You won't be able to do so if there are uncommitted changes.)
-
-```bash
-git checkout master
-git commit -a
-git checkout master
-```
-
-Stash some changes
-------------------
-
-If you find you want to switch branch, or pull, but you're not ready to commit,
-you can use
-
-```bash
-git stash
-git checkout master
-...
-git checkout mybranch
-git stash apply
-```
-
-The "Stash" is a way of temporarily saving your working area, and can help out in a pinch.
-
-Merge your branch
------------------
-
-Once you're back on the main branch, try merging in your branch
+You can use 
 
 ``` bash
-git merge mybranch
+git bisect
 ```
 
-Find out what is on a branch
-----------------------------
+to find out which commit caused a bug.
 
-In addition to using `git diff` to compare to the state of a branch,
-you can use `git log` to look at lists of commits which are in a branch
-and haven't been merged yet.
-
-```bash
-git log master..experiment
-```
-
-Referencing multiple commits
-----------------------------
-
-Git uses various symbols to refer to sets of commits.
-The double dot `A..B` means "ancestor of B and not ancestor of A"
-
-So in a linear sequence, it does what you'd expect.
-
-But in cases where a history has branches, like `master..experiment`
-It ends up refering to the unmerged content from the experiment branch.
-
-Log of differences
+Git Bisect Details
 ------------------
 
 ``` bash
-git log --left-right master...experiment
+git bisect start
+git bisect good
+git bisect bad
+git bisect good
+git bisect reset
 ```
 
-```
-< ab34 A commit on master but not experiment
-< d63e ditto
-> l6mn A commit on experiment but not on master
-```
-
-Three dots means "everything which is not a common ancestor".
-
-It therefore will show the differences between branches.
-
-Grab changes from a branch
---------------------------
-
-Make some changes on one branch, switch back to another, and use:
-
-``` bash
-git checkout <branch> <path>
-```
-
-To grab a file from one branch into another.
-
-Cherry-picking
---------------
-
-Using `git checkout` with a path takes the content of files.
-To grab the content of a specific *commit* from another branch, 
-and apply it as a patch to your branch, use:
-
-```bash
-git cherry-pick <commit>
-git cherry-pick somebranch^^^
-```
-
-Creating servers
-================
-
-File system servers
--------------------
-
-Try working with multiple remotes by making another server for yourself on your local computer.
-
-``` bash
-cd <somewhere else>
-mkdir myotherrepo
-cd myotherrepo
-git init --bare
-cd <back to my main repository>
-git remote add localbackup /full/path/to/local/repository
-git push localbackup
-```
-
-You can now work with this local repository, just as with any other git server.
-If you have a colleague on a shared file system, you can use this approach to collaborate through that file system.
-
-SSH servers
------------
-
-Try creating a server for yourself using a machine you can SSH to:
+Automated Bisect
 
 ```
-ssh <mymachine>
-mkdir mygitserver
-cd mygitserver
-git init --bare
-exit
-git remote add <somename> ssh://user@host/mygitserver
-git push
+git bisect run py.test
 ```
-
-Referencing remotes
--------------------
-
-You can always refer to commits on a remote like this:
-
-```
-git fetch
-git log origin.. #abbreviates origin/master..HEAD
-```
-Which will show you what you've done that's not in the remote's master.
-
-You need to fetch, to update the local copy of what's happening remotely.
-
-Remotes and tracking branches
------------------------------
-
-```
-git branch -vv
-* develop 583fd97 [origin/develop: ahead 1] More git tips and tricks
-  master  5732041 [origin/master: behind 2] Add generated pdf
-  staging 502fa7b [origin/staging] Copy in notes from old rits training repository
-```
-
-Local branches can be, but do not have to be, connected to remote branches
-They are said to "track" remote branches
-
-Publishing branches
--------------------
-
-Let the server know there's a new branch with:
-
-```
-git push --set-upstream origin experiment
-```
-
-We use `--set-upstream origin` (Abbreviation `-u`) to tell git that this branch should be pushed to and pulled from origin per default.
-
-You should be able to see your branch in the list of branches in GitHub.
-
-Pull Requests
--------------
-
-Find a partner, who has a repository on GitHub. The example repository from the software carpentry exercises will do. This time, the collaborator, instead of pulling the leader's code, should *fork* it. Go to the repository on GitHub, and hit "fork" top right.
-
-A new repository will be created on the collaborator's account, which contains all the same stuff. Clone it with `git clone`.
- 
-Create a pull request
----------------------
-
-Make some changes on your fork. 
-
-You need to request that the leader accept your changes. The collaborator should go to the page for their *forked* repository and hit the green button to the left of the branch dropdown. On the page that appears, choose "compare across forks".
-
-Choose the right branches and repositories for the "base", the leader's repository, and the "head repo", the collaborator's repository. Ask a demonstrator for help if this is confusing. 
-
-Hit "Click to create a pull request for this comparison".
-
-Give the request a title and a comment, and send it.  
-
-Accepting a pull request
-------------------------
-
-The leader should now see a link to the pull request on their github home page. Have a read through the changes, and if you think it's fine, then merge it, using the big green button. The button only appears if GitHub can 
-work out how to merge the fork without conflicts.
-
-If that works, make some more changes, with new pull requests, until you get a conflicted merge, and there's no nice green merge button.
-
-Accepting a conflicted pull request
------------------------------------
-
-If there's a conflict, there won't be a big green button.
-
-Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
-
-To do this, you need to add the collaborator's fork in your repository as a *second remote*
-
-Rebasing and squashing
-======================
-
-Rebasing
---------
-
-Get together with a partner, or use a branch or a remote of your own, and set yourself up a
-situation where you'd be about to merge. Instead, use a rebase.
-
-Use `git log --graph --oneline` to see how the changes have been applied as a linear sequence.
-
-Squashing
----------
-
-Make several commits which should really be one, then use
-
-```bash
-git rebase -i <commit>
-```
-to squash them.
-
