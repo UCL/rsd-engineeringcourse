@@ -565,6 +565,23 @@ birds = [Bird(type) for type in bird_types]
 average_position = average(bird.position for bird in birds)
 ```
 
+Interlude: Object Orientation
+-----------------------------
+
+Next session we'll talk more about object oriented design patterns.
+Here's a quick recap of the basics of object orientation in python:
+
+``` python
+class Person(object):
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def grow_up(self):
+        self.age+=1
+
+james=Person("James",37)
+james.home="London"
+```
 
 Replace function with a method
 ------------------------------
