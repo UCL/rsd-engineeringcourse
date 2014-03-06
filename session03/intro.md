@@ -641,6 +641,7 @@ config=yaml.load(open(
 ```
 
 See [YAML](http://www.yaml.org/) and [PyYaml](http://pyyaml.org/)
+and [Python OS](http://docs.python.org/2/library/os.html)
 
 Replace global variables with function arguments
 ------------------------------------------------
