@@ -554,9 +554,9 @@ average_position = average([bird["position"] for bird in birds])
 After:
 
 ``` python
-class Bird(Object):
-	def __init__(type):
-    from random import random
+class Bird(object):
+	def __init__(self,type):
+        from random import random
 		self.type = type
 		self.position = random()
 		self.velocity = random()
@@ -584,7 +584,7 @@ if can_see(hawk,starling):
 After:
 
 ``` python
-class Bird(Object):
+class Bird(object):
 	def can_see(self,target):
 		return (self.facing-target.facing)<self.viewport
 
@@ -639,6 +639,7 @@ class Hawk(object):
 	def can_see(self,target):
 		return (self.facing-target.facing)<viewport
 ```
+
 Becomes:
 
 ``` python
@@ -706,7 +707,7 @@ def do_calculation():
       for prey in preys:
           predator.predate(prey)
 
-class Predator(Object):
+class Predator(object):
    def predate(self,prey):
       if predator.can_see(prey):
          predator.hunt(prey)
@@ -723,11 +724,11 @@ Smell: You get a lot of version control conflicts
 Before:
 
 ```python
-class One(Object):
+class One(object):
    ...
 
 
-class Two(Object):
+class Two(object):
   def __init__():
     self.child=One()
 ```
@@ -737,7 +738,7 @@ After:
 ``` python
 from anotherfile import One
 
-class Two(Object):
+class Two(object):
    def __init__():
       self.child=One()
 ```
