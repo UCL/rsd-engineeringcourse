@@ -72,7 +72,7 @@ Layout choices
 * Brace style
 * Line length
 * Indentation
-* Whitespace
+* Whitespace/Tabs
 
 Nameing Conventions
 -------------------
@@ -117,14 +117,15 @@ Syntax Choices
 --------------
 
 ``` cpp
-if (variable==anothervariable++)&&flag1||flag2 do_something;
+if ((variable==anothervariable++)&&flag1||flag2) do_something;
 ```
 
 vs
 
 ``` cpp
-anothervariable++
-if ((variable==anothervariable)&&flag1)||flag2 {
+anothervariable++;
+bool const variable_equality = variable == anothervariable;
+if ((variable_equality && flag1) || flag2) {
    do_something;
 }
 ```
@@ -164,8 +165,8 @@ Comments which are obvious
 ---------------------------
 
 ``` cpp
-i++ ; // Add one to i
-j++ ; // Increment the index variable
+i += 1 ; // Add one to i
+j += 1 ; // Increment the index variable
 ```
 
 ``` python
@@ -186,7 +187,7 @@ agt[i].y+=r*cos(agt[i].theta);
 compared to:
 
 ``` cpp
-for (Agent agent in agents){ // C++11 range-based for loop
+for (Agent& agent: agents){ // C++11 range-based for loop
   agent.turn();
   agent.move();
 }
@@ -273,7 +274,7 @@ for (auto agent : agents) { \\ C++11 range based for loop
 def double(decorated_function):
    # Here, the result function forms a closure over the decorated function
    def result_function(input):
-	return decorated_function(decorated_function(input))
+     return decorated_function(decorated_function(input))
    # The returned result is a function
    return result_function
 
@@ -355,7 +356,7 @@ focus on:
 
 * Readable code
 * Automated tests
-* Small code samples showing
+* Small code samples demonstrating how to use the api
 
 Comment-based Documentation tools
 -------------------
@@ -414,9 +415,8 @@ Before:
 data= [math.sin(x) for x in np.arange(0,3.141,3.141/100)]
 result= [0]*100
 for i in range(100):
-   for j in range(100):
-       if i>j:
-           result[j]+=data[i]*data[i-j]/100
+   for j in range(i+1, 100):
+     result[j] += data[i] * data[i-j] / 100
 ```
 
 after:
@@ -427,9 +427,8 @@ pi=3.141
 data= [math.sin(x) for x in np.arange(0,pi,pi/resolution)]
 result= [0]*resolution
 for i in range(resolution):
-   for j in range(resolution):
-       if i>j:
-           result[j]+=data[i]*data[i-j]/resolution
+   for j in range(i + 1, resolution):
+     result[j] += data[i] * data[i-j] / resolution
 ```
 
 Replace repeated code with a function
@@ -473,7 +472,7 @@ if z:
 After:
 
 ``` python
-gene=subsequence(chromosome,start_codon):
+gene = subsequence(chromosome, start_codon)
 if gene:
     transcribe(gene)
 ```
@@ -517,7 +516,8 @@ After:
 import numpy as np
 xcoords=np.arange(start,end,step)
 ```
-See [Numpy](http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html)
+See [Numpy](http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html),
+    [Pandas](http://pandas.pydata.org/)
 
 Replace set of arrays with array of structures
 -------------------------------------
@@ -546,8 +546,9 @@ Smell: A data structure made of nested arrays and dictionaries becomes unwieldy
 Before:
 
 ``` python
-birds=[{"position": random(),"velocity": random(), "type":type for type in bird_types]
-average_position=average([bird["position"]) for bird in birds])
+from random import random
+birds = [{"position": random(), "velocity": random(), "type": type} for type in bird_types]
+average_position = average([bird["position"] for bird in birds])
 ```
 
 After:
@@ -555,10 +556,13 @@ After:
 ``` python
 class Bird(Object):
 	def __init__(type):
-		self.type=type
-		self.position=random()
+    from random import random
+		self.type = type
+		self.position = random()
+		self.velocity = random()
 
-birds=[Bird(type) for type in bird_types]
+birds = [Bird(type) for type in bird_types]
+average_position = average(bird.position for bird in birds)
 ```
 
 
@@ -657,10 +661,10 @@ a class.
 ```cpp
 class Person
 {
-Person();
-float reproduce_probability(age);
-float death_probability(age);
-float emigrate_probability(age);
+  Person();
+  float reproduce_probability(unsigned int age);
+  float death_probability(unsigned int age);
+  float emigrate_probability(unsigned int age);
 }
 ```
 
@@ -669,10 +673,10 @@ After:
 ```cpp
 class Person
 {
-Person(age);
-float reproduce_probability();
-float death_probability();
-float emigrate_probability();
+  Person(unsigned int age);
+  float reproduce_probability();
+  float death_probability();
+  float emigrate_probability();
 }
 ```
 
@@ -686,8 +690,8 @@ Before:
 
 ``` python
 def do_calculation():
-   for predator in birds:
-      for prey in birds:
+   for predator in predators:
+      for prey in preys:
           if predator.can_see(prey):
              predator.hunt(prey)
           if predator.can_reach(prey):
@@ -698,8 +702,8 @@ After:
 
 ``` python
 def do_calculation():
-   for predator in birds:
-      for prey in birds:
+   for predator in predators:
+      for prey in preys:
           predator.predate(prey)
 
 class Predator(Object):
@@ -713,7 +717,7 @@ class Predator(Object):
 Separate code concepts into files or modules
 --------------------------------------------
 
-Smell: You find it hard to locate a piece of code
+Smell: You find it hard to locate a piece of code<br>
 Smell: You get a lot of version control conflicts
 
 Before:
@@ -724,8 +728,8 @@ class One(Object):
 
 
 class Two(Object):
-   def __init__():
-	self.child=One()
+  def __init__():
+    self.child=One()
 ```
 
 After:
