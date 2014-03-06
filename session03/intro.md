@@ -825,7 +825,7 @@ Run bad_boids:
 
 ```bash
 cd bad_boids
-oython bad_boids.py
+python bad_boids.py
 ```
 
 You should be able to see some birds flying around, and then disappearing as they leave the window.
