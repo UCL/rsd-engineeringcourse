@@ -671,6 +671,29 @@ class Hawk(object):
 
 ```
 
+Merge neighbouring loops
+------------------------
+
+Smell: Two neighbouring loops have the same for statement
+
+``` python
+
+for bird in birds:
+    bird.build_nest()
+for bird in birds:
+    bird.lay_eggs()
+``` 
+
+Becomes:
+
+``` python
+for bird in birds:
+    bird.build_nest()
+    bird.lay_eggs()
+```
+
+
+
 Replace method arguments with class members
 ---------------------------------------------
 
