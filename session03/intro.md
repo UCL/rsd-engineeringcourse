@@ -151,6 +151,28 @@ E.g. [Google's guide for R](https://google-styleguide.googlecode.com/svn/trunk/R
 
 E.g. [Google's style guide for C++](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)
 
+Lint
+----
+
+There are automated tools which enforce coding conventions and check for common mistakes.
+
+These are called *linters*
+
+E.g. [pep8](https://pypi.python.org/pypi/pep8)
+
+``` bash
+easy_install pep8
+$ pep8 --first optparse.py
+optparse.py:69:11: E401 multiple imports on one line
+optparse.py:77:1: E302 expected 2 blank lines, found 1
+optparse.py:88:5: E301 expected 1 blank line, found 0
+optparse.py:222:34: W602 deprecated form of raising exception
+optparse.py:347:31: E211 whitespace before '('
+optparse.py:357:17: E201 whitespace after '{'
+optparse.py:472:29: E221 multiple spaces before operator
+optparse.py:544:21: W601 .has_key() is deprecated, use 'in'
+```
+
 Comments
 ========
 
