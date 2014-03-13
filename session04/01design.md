@@ -51,7 +51,7 @@ Instances
 Instance: A particular object *instantiated* from a class.
 
 ``` python
-my_object  =MyClass()
+my_object = MyClass()
 ```
 
 ``` cpp
@@ -66,7 +66,7 @@ Method: A function which is "built in" to a class
 
 ``` python
 class MyClass(object):
-    def someMethod(self,argument):
+    def someMethod(self, argument):
         pass
 
 my_object.someMethod(value)
@@ -74,7 +74,7 @@ my_object.someMethod(value)
 
 ```cpp
 class MyClass {
-    void someMethod(argument){
+    void someMethod(int argument){
     }
 }
 
@@ -88,7 +88,7 @@ Constructor: A special method called when instantiating a new object
 
 ``` python
 class MyClass(object):
-    def __init__(self,argument):
+    def __init__(self, argument):
         pass
 
 my_object = MyClass(value)
@@ -100,7 +100,7 @@ class MyClass {
     }
 }
 
-MyClass my_object=MyClass(value);
+MyClass my_object = MyClass(value);
 
 ```
 Member Variable
@@ -111,9 +111,9 @@ Member variable: a value stored inside an instance of a class.
 ``` python
 class MyClass(object):
     def __init__(self):
-        self.member="Value"
+        self.member = "Value"
 
-my_object=MyClass()
+my_object = MyClass()
 assert(my_object.member == "Value")
 ```
 
@@ -123,11 +123,11 @@ class MyClass {
     : member("Value")
     {
     }
-    string member;
+    std::string member;
 }
 
-MyClass my_object=MyClass(value);
-assert( my_object.value == "Value")
+MyClass my_object = MyClass(value);
+assert( my_object.value == "Value");
 ```
 
 Access control
@@ -137,14 +137,14 @@ Controls whether member variables and methods can be accessed from outside the c
 
 ```python
 class MyClass(object):
-    def __secret_method__(self): pass
+    def __secret_method(self): pass
     def _semi_secret_method(self): pass
     def public_method(self):
-        self.__secret_method__ # OK
+        self.__secret_method__ # OK
 
-MyClass().__secret_method__() #Generates error
-MyClass()._semi_secret_method() #Works, but forbidden by convention
-MyClass().public_method() #OK
+MyClass().__secret_method() # Generates error
+MyClass()._semi_secret_method() # Works, but forbidden by convention
+MyClass().public_method() # OK
 ```
 
 ```cpp
@@ -156,7 +156,7 @@ class MyClass {
     private:
         void private_method(){}
 }
-MyClass x=MyClass();
+MyClass x = MyClass();
 x.public_method(); // OK
 x.private_method(); // Raises error
 ```
@@ -170,7 +170,7 @@ should the storage change, client code doesn't need to change.
 ```python
 class Person(object):
     def __init__(self):
-        self._name="James Hetherington"
+        self._name = "James Hetherington"
 
     @property
     def name(self):
@@ -184,15 +184,15 @@ becomes:
 ```python
 class Person(object):
     def __init__(self):
-        self._first="James"
-        self._second="Hetherington"
+        self._first = "James"
+        self._second = "Hetherington"
 
     @property
     def name(self):
-        return self._first+" "+self._second
+        return self._first + " " + self._second
 
 assert(Person().name == "James Hetherington") 
-#Client code unchanged!
+# Client code unchanged!
 ```
 
 Access methods (C++)
@@ -201,12 +201,12 @@ Access methods (C++)
 ```cpp
 class Person(object){
 private:
-    string first;
-    string second;
+    std::string first;
+    std::string second;
 
 public:
-    string getName():
-        return self._first+" "+self._second;
+    std::string getName():
+        return self._first + " " + self._second;
 }
 ```
 
@@ -292,8 +292,8 @@ class Bird(Animal):
 class Eagle(Bird):
     def hunt(self): print "I'm gonna eatcha!"
 
-Eagle.beBorn() # prints "I exist"
-Eagle.hunt() # prints "I'm gonna eatcha!"
+Eagle.beBorn() # prints "I exist"
+Eagle.hunt() # prints "I'm gonna eatcha!"
 ```
 
 Inheritance terminology
@@ -354,36 +354,36 @@ Before:
 
 ``` python
 class Person(object):
-    def __init__(self,age,job): 
-        self.age=age
-        self.job=job
+    def __init__(self, age, job): 
+        self.age = age
+        self.job = job
 
     def birthday(self): 
-        self.age+=1
+        self.age += 1
 
 class Pet(object):
-    def __init__(self,age,owner): 
-        self.age=age
-        self.owner=owner
+    def __init__(self, age, owner): 
+        self.age = age
+        self.owner = owner
 
     def birthday(self): 
-        self.age+=1
+        self.age += 1
 ```
 
 After:
 
 ``` python
 class Animal(object):
-    def __init__(self,age): 
-        self.age=age
+    def __init__(self, age): 
+        self.age = age
 
     def birthday(self): 
-        self.age+=1
+        self.age += 1
 
-def Person(Animal):
-    def __init__(self,age,job):
-        self.job=job
-        super(Person,self).__init__(age)
+class Person(Animal):
+    def __init__(self, age, job):
+        self.job = job
+        super(Person, self).__init__(age)
 ```
 
 Refactoring to inheritance (C++)
@@ -392,9 +392,9 @@ Refactoring to inheritance (C++)
 ``` cpp
 class Person{
     int age;
-    string job;
-    Person(int age, string job): 
-        age(age),job(job)
+    std::string job;
+    Person(int age, std::string job): 
+        age(age), job(job)
         {}
 }
 
@@ -438,7 +438,7 @@ class Cat(Animal):
     def noise(self):
         return "Miaow"
 
-animals=[Dog(),Dog(),Cat(),Pig(),Cow(),Cat()]
+animals=[Dog(), Dog(), Cat(), Pig(), Cow(), Cat()]
 for animal in animals:
     print animal.noise()
 ```
@@ -458,18 +458,18 @@ to polymorphism is marked as such with the keyword `virtual`:
 
 ``` cpp
 class Animal{
-    virtual string noise(){
+    virtual std::string noise(){
         return "I don't know what noise to make.";
     }
 }
 
 class Dog: public Animal {
-    string noise(){
+    std::string noise(){
         return "Bark";
     }
 }
 
-for Animal &animal: animals {
+for(Animal &animal: animals) {
     cout << animal.noise() << endl;
 }
 ```
@@ -482,14 +482,14 @@ In the above example, we had to put in a dummy noise for Animals that don't know
 Instead, we can deliberately leave this undefined:
 
 ``` cpp
-virtual string noise() =0;
+virtual std::string noise() =0;
 ```
 This means that if we actually instantiate a base animal, calling noise() would cause a crash.
 C++ does not allow classes with pure virtual functions to be instantiated. These are called "abstract classes".
 
 ```cpp
-Animal & x=new Dog(); // OK
-Animal & x=new Animal(); // Doesn't compile.
+Animal & x = new Dog(); // OK
+Animal & x = new Animal(); // Doesn't compile.
 ```
 
 Interfaces
