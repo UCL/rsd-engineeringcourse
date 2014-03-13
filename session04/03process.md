@@ -172,6 +172,7 @@ Conclusion
 ----------
 
 * Don't ignore design
+* See if there's a known design pattern that will help
 * Do try to think about how your code will work before you start typing
 * Do use design tools like UML to think about your design without coding straight away
 * Do try to write down some user stories

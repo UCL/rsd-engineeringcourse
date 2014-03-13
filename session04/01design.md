@@ -492,6 +492,28 @@ Animal & x = new Dog(); // OK
 Animal & x = new Animal(); // Doesn't compile.
 ```
 
+Refactoring to Polymorphism
+---------------------------
+
+Smell: a function uses a big set of `if` statements or a `case` statement to decide what to do:
+
+Before:
+
+``` python
+class Animal(object):
+    def __init__(self,type): self.type=type
+    def noise(self): 
+        if self.type=="Dog"
+            return "Bark"
+        elif self.type=="Cat"
+            return "Miaow"
+        elif self.type=="Cow"
+            return "Moo"
+        ...
+```
+
+which is better replaced by the code above.
+
 Interfaces
 ----------
 
