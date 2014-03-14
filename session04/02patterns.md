@@ -131,9 +131,9 @@ class Boid {
     int y;
     int xv;
     int yv;
-void go_right(){x+=1;}
+    void go_right(){x+=1;}
 }
-vector<Boid> boids(100);
+std::vector<Boid> boids(100);
 ```
 
 numerical code is sometimes faster with raw structures of arrays:
@@ -154,9 +154,9 @@ HandleBody Pattern
 
 ``` cpp
 class Boid{
-static boids & data;
-int handle;
-void go_right(){data.xs[handle]+=1;}
+    static boids & data;
+    int handle;
+    void go_right(){data.xs[handle]+=1;}
 }
 ```
 
@@ -182,7 +182,7 @@ class WeatherSimulation{
         ...
         la_strategy.inverse_matrix(something_else);
     }
-}
+};
 
 mySimulation=new WeatherSimulation(new FFTW(), new BLAS());
 ```
