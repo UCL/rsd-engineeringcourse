@@ -186,5 +186,3 @@ class WeatherSimulation{
 
 mySimulation=new WeatherSimulation(new FFTW(), new BLAS());
 ```
-
-

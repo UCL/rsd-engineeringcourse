@@ -210,6 +210,48 @@ public:
 }
 ```
 
+Class Members
+-------------
+
+*Class*, or *static* members, belong to the class as a whole, and are shared between instances.
+
+``` python
+class Counted(object):
+    number_created=0
+    def __init__(self):
+        Counted.number_created+=1
+
+    @classmethod
+    def howMany(cls):
+        return cls.number_created
+
+Counted.howMany() # 0
+x=Counted()
+Counted.howMany() # 1
+z=[Counted() for x in range(5)]
+Counted.howMany() # 6 
+```
+
+```cpp
+class Counted{
+private:
+    static int number_created;
+public:
+    Counted(){
+        number_created++;
+    }
+    static int howMany(){
+        return number_created;
+    }
+}
+
+Counted::number_created=0;
+cout<< Counted::howMany() << endl;
+Counted x=Counted();
+cout<< Counted::howMany() << endl;
+
+```
+
 Object-Based programming concepts
 ---------------------------------
 
@@ -219,6 +261,7 @@ Object-Based programming concepts
 * Method
 * Constructor
 * Access control
+* Static methods
 * Accessor methods
 
 UML
@@ -488,8 +531,8 @@ This means that if we actually instantiate a base animal, calling noise() would 
 C++ does not allow classes with pure virtual functions to be instantiated. These are called "abstract classes".
 
 ```cpp
-Animal & x = new Dog(); // OK
-Animal & x = new Animal(); // Doesn't compile.
+Animal * x = new Dog(); // OK
+Animal * x = new Animal(); // Doesn't compile.
 ```
 
 Refactoring to Polymorphism
