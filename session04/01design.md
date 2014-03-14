@@ -575,7 +575,7 @@ Interfaces in UML
 
 Interface inheritance in UML is indicated thus:
 
-![Interfaces in UML](http://yuml.me/diagram/plain/class/[<<Animal>>]^-.-[Dog])
+![Interfaces in UML](http://yuml.me/diagram/plain/class/[<<Animal>>]^-.-[Dog]/)
 
 Further UML
 -----------
