@@ -42,7 +42,7 @@ class MyClass(object):
 
 ```cpp
 class MyClass {
-}
+};
 ```
 
 Instances
@@ -76,7 +76,7 @@ my_object.someMethod(value)
 class MyClass {
     void someMethod(int argument){
     }
-}
+};
 
 my_object.someMethod(value);
 ```
@@ -98,7 +98,7 @@ my_object = MyClass(value)
 class MyClass {
     MyClass(argument){
     }
-}
+};
 
 MyClass my_object = MyClass(value);
 
@@ -124,10 +124,10 @@ class MyClass {
     {
     }
     std::string member;
-}
+};
 
-MyClass my_object = MyClass(value);
-assert( my_object.value == "Value");
+MyClass my_object = MyClass();
+assert( my_object.member == "Value");
 ```
 
 Access control
@@ -140,7 +140,7 @@ class MyClass(object):
     def __secret_method(self): pass
     def _semi_secret_method(self): pass
     def public_method(self):
-        self.__secret_method__ # OK
+        self.__secret_method # OK
 
 MyClass().__secret_method() # Generates error
 MyClass()._semi_secret_method() # Works, but forbidden by convention
@@ -155,7 +155,7 @@ class MyClass {
         }
     private:
         void private_method(){}
-}
+};
 MyClass x = MyClass();
 x.public_method(); // OK
 x.private_method(); // Raises error
@@ -199,14 +199,15 @@ Access methods (C++)
 --------------------
 
 ```cpp
-class Person(object){
+class Person{
 private:
     std::string first;
     std::string second;
 
 public:
-    std::string getName():
-        return self._first + " " + self._second;
+    std::string getName(){
+        return first + " " + second;
+    }
 }
 ```
 
@@ -243,7 +244,7 @@ public:
     static int howMany(){
         return number_created;
     }
-}
+};
 
 Counted::number_created=0;
 cout<< Counted::howMany() << endl;
@@ -358,7 +359,7 @@ class Eagle: public Bird {
     Eagle() : Bird() // Constructor initialises base class
     {
     }; 
-}
+};
 ```
 
 Inheritance UML diagrams
@@ -439,7 +440,7 @@ class Person{
     Person(int age, std::string job): 
         age(age), job(job)
         {}
-}
+};
 
 class Pet{
     int age;
@@ -447,7 +448,7 @@ class Pet{
     Pet(int age, Person & owner):
         age(age), owner(owner)
         {}
-}
+};
 ```
 
 Becomes:
@@ -456,14 +457,14 @@ Becomes:
 class Animal{
     int age;
     Animal(int age): age(age) {}
-}
+};
 
 class Pet: public Animal {
     Person & owner;
     Pet(int age, Person & owner):
         Animal(age), owner(owner)
     {}
-}
+};
 ```
 
 Polymorphism
@@ -504,13 +505,13 @@ class Animal{
     virtual std::string noise(){
         return "I don't know what noise to make.";
     }
-}
+};
 
 class Dog: public Animal {
     std::string noise(){
         return "Bark";
     }
-}
+};
 
 for(Animal &animal: animals) {
     cout << animal.noise() << endl;
