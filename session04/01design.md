@@ -336,8 +336,8 @@ class Bird(Animal):
 class Eagle(Bird):
     def hunt(self): print "I'm gonna eatcha!"
 
-Eagle.beBorn() # prints "I exist"
-Eagle.hunt() # prints "I'm gonna eatcha!"
+Eagle().beBorn() # prints "I exist"
+Eagle().hunt() # prints "I'm gonna eatcha!"
 ```
 
 Inheritance terminology
@@ -436,8 +436,8 @@ Refactoring to inheritance (C++)
 ``` cpp
 class Person{
     int age;
-    std::string job;
-    Person(int age, std::string job): 
+    string job;
+    Person(int age, string job): 
         age(age), job(job)
         {}
 };
@@ -513,8 +513,11 @@ class Dog: public Animal {
     }
 };
 
-for(Animal &animal: animals) {
-    cout << animal.noise() << endl;
+vector<Animal*> animals;
+animals.push_back(new Dog());
+animals.push_back(new Cat());
+for(Animal* animal: animals) {
+    cout << animal->noise() << endl;
 }
 ```
 
@@ -526,7 +529,7 @@ In the above example, we had to put in a dummy noise for Animals that don't know
 Instead, we can deliberately leave this undefined:
 
 ``` cpp
-virtual std::string noise() =0;
+virtual string noise() =0;
 ```
 This means that if we actually instantiate a base animal, calling noise() would cause a crash.
 C++ does not allow classes with pure virtual functions to be instantiated. These are called "abstract classes".
@@ -547,11 +550,11 @@ Before:
 class Animal(object):
     def __init__(self,type): self.type=type
     def noise(self): 
-        if self.type=="Dog"
+        if self.type=="Dog":
             return "Bark"
-        elif self.type=="Cat"
+        elif self.type=="Cat":
             return "Miaow"
-        elif self.type=="Cow"
+        elif self.type=="Cow":
             return "Moo"
         ...
 ```
