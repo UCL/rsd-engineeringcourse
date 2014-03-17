@@ -1,6 +1,8 @@
 _site/
 .sconsign.dblite
 html/index.html
+assets
+pdf
 *.pyc
 *.swp
 a.out
