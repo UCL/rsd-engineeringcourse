@@ -14,7 +14,7 @@ Distribution tools
 
 Distribution tools allow one to obtain a working copy of someone else's package.
 
-Language-specific tools: PyPI, Ruby Gems, CPAN
+Language-specific tools: PyPI, Ruby Gems, CPAN, CRAN
 Platform specific packagers e.g. brew, apt/yum
 
 Windows doesn't have anything like `brew install` or `apt-get`
