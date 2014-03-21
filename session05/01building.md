@@ -189,8 +189,8 @@ Internal vs External DSLs
 * An Internal DSL looks superfically like it's own language...
 * But is actually cleverly crafted code hiding a host language
 
-Internal DSLs are best, because you can always use language libraries and
-features you know, and it's one less syntax to learn
+Internal DSLs are best, because you can always use the host language
+libraries and features you know, and it's one less syntax to learn
 
 SCons
 =====
@@ -234,9 +234,9 @@ Scons C++ build worked example
 Scons pipeline worked example
 -----------------------------
 
-* [Pipeline just as a script](http://github.com/jamespjh/greengraph/fragments)
+* [Pipeline just as a script](http://github.com/jamespjh/greengraph/tree/fragments)
 * [Pipeline as a single python program](http://github.com/jamespjh/greengraph/)
-* [Pipeline with SCons](http://github.com/jamespjh/greengraph/scons)
+* [Pipeline with SCons](http://github.com/jamespjh/greengraph/tree/scons)
 
 Generated source files
 ----------------------

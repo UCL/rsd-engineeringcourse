@@ -82,7 +82,7 @@ Homebrew
 
 Homebrew: A ruby DSL, you host off your own webpage
 
-See my [installer for the cppcourse example](http://github.com/jamespjh/reactor)
+See my [installer for the cppcourse example](http://github.com/jamespjh/homebrew-reactor)
 
 If you're on OSX, do:
 
