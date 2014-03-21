@@ -234,9 +234,9 @@ Scons C++ build worked example
 Scons pipeline worked example
 -----------------------------
 
-* [Pipeline just as a script](http://github.com/jamespjh/greengraph/tree/fragments)
+* [Pipeline just as a script](https://github.com/jamespjh/greengraph/blob/fragments/greengraph/pipeline.py)
 * [Pipeline as a single python program](http://github.com/jamespjh/greengraph/)
-* [Pipeline with SCons](http://github.com/jamespjh/greengraph/tree/scons)
+* [Pipeline with SCons](https://github.com/jamespjh/greengraph/blob/scons/greengraph/SConstruct)
 
 Generated source files
 ----------------------
