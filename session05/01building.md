@@ -345,15 +345,15 @@ def check_isnan(context):
     context.Message('Checking for std::isnan... ')
     result = context.TryCompile("""
     #include <cmath>
-    int main(int, char**){return isnan(0);}
+    int main(int, char**){return std::isnan(0);}
     """, '.cpp')
     context.Result(result)
     return result
 
 conf = Configure(env, config_h="config.h",
-  custom_tests = { 'Isnan' : check_isnan })
+    custom_tests = { 'Isnan' : check_isnan })
 if conf.Isnan():
-  conf.Define("HAVE_STD_ISNAN")
+    conf.Define("HAVE_STD_ISNAN")
 env = conf.Finish()
 ```
 
