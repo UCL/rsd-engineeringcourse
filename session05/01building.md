@@ -31,7 +31,7 @@ CMakeFiles/test_SpeciesTest.dir/SpeciesTest.cpp.o
 ```
 
 Analysis pipelines as a build process
---------------------------
+-------------------------------------
 
 However, we often do lots of other things which are conceptually like a build process:
 
@@ -356,6 +356,8 @@ if conf.Isnan():
   conf.Define("HAVE_STD_ISNAN")
 env = conf.Finish()
 ```
+
+```cpp
 #ifdef HAVE_STD_ISNAN
   assert( (!std::isnan(localTau)) );
 #else
