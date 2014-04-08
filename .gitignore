@@ -1,6 +1,11 @@
 _site/
 .sconsign.dblite
 html/index.html
+assets
+pdf
+*.pyc
+*.swp
+a.out
 html/reveal/.DS_Store
 html/reveal/assets/night-ucl-overlay.css
 html/reveal/assets/solarized-ucl-overlay.css
