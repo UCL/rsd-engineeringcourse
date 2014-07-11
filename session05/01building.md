@@ -59,8 +59,6 @@ Metaprogramming
 Another source of a build process is _Metaprogramming_:
 writing a program which writes other programs.
 
-#TODO: Write an example using mako.
-
 Packaging, configuration and deployment
 ------------------------
 
