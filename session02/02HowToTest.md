@@ -1,5 +1,6 @@
-What to test for
-================
+---
+title: How to Test
+---
 
 Equivalence partitioning
 ------------------------

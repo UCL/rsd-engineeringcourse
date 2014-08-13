@@ -1,5 +1,6 @@
-Software Licensing
-==================
+---
+title: Licensing
+---
 
 This course
 -----------

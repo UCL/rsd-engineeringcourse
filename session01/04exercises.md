@@ -1,6 +1,6 @@
-
-Exercises
-=========
+---
+title: Exercises
+---
 
 Catch-up exercises
 ------------------

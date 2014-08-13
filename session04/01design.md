@@ -266,7 +266,7 @@ Object-Based programming concepts
 * Accessor methods
 
 UML
----
+-------
 
 We have seen that these concepts are common between different object oriented languages.
 Thus, when we design our program using these concepts, we can think at an architectural level,

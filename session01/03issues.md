@@ -1,5 +1,6 @@
-Issue Tracking
-==============
+---
+title: Issues
+---
 
 Issues
 ------

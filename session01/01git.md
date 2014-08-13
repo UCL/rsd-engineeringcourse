@@ -1,8 +1,6 @@
-% Collaborating and Managing Code
-% James Hetherington
-
-Git Reminder
-============
+---
+title: Git
+---
 
 Distributed VCS concepts (2)
 ----------------------------
@@ -21,22 +19,22 @@ Distributed VCS concepts (2)
 Solo Workflow
 -----------------------------
 
-![Working alone with git](assets/distributed_solo)
+![Working alone with git](/assets/distributed_solo)
 
 Publishing
 -------------------------------
 
-![Publishing with git](assets/distributed_solo_publishing)
+![Publishing with git](/assets/distributed_solo_publishing)
 
 Teams without conflicts
 ------------------------------------------
 
-![Teamworking in git](assets/distributed_shared_noconflict)
+![Teamworking in git](/assets/distributed_shared_noconflict)
 
 Teams with conflicts
 ------------------------------------------
 
-![Teamworking in git with conflicts](assets/distributed_shared_conflicted)
+![Teamworking in git with conflicts](/assets/distributed_shared_conflicted)
 
 
 Git Theory
@@ -45,7 +43,7 @@ Git Theory
 A revision Graph
 ----------------
 
-![Revisions form a graph](assets/revisions)
+![Revisions form a graph](/assets/revisions)
 
 Git concepts
 ------------------------
@@ -102,7 +100,7 @@ Branches
 Working with branches
 ---------------------
 
-![Using branches](assets/branching)
+![Using branches](/assets/branching)
 
 Working with branches in git
 ----------------------------
@@ -232,17 +230,17 @@ Centralised VCS concepts
 Centralised VCS diagram
 -----------------------
 
-![A centralised server with three clients](assets/centralised)
+![A centralised server with three clients](/assets/centralised)
 
 Distributed VCS in principle
 ----------------------------
 
-![How distributed VCS works in principle](assets/distributed_principle)
+![How distributed VCS works in principle](/assets/distributed_principle)
 
 Distributed VCS in practice
 ----------------------------
 
-![How distributed VCS works in practice](assets/distributed_practice)
+![How distributed VCS works in practice](/assets/distributed_practice)
 
 ``` Bash
 git remote add sue ssh://sue.ucl.ac.uk/somerepo
@@ -542,7 +540,7 @@ Revision de56, child of ab34:
 ```
 It was clear and cold,
 and the slimy monsters
-danced and span in the waves
+danced and spun in the waves
 ```
 
 An example rebase (Sue)

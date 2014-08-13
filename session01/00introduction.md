@@ -1,8 +1,6 @@
-% Research Software Engineering
-% James Hetherington, Mayeul d'Avezac and Jens Nielsen
-
-Introduction
-============
+---
+title: Introduction
+---
 
 Dates
 -----

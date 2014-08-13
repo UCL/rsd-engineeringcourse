@@ -1,5 +1,6 @@
-Packaging
-=========
+---
+title: Packaging
+---
 
 Packaging
 ---------

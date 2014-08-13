@@ -1,5 +1,6 @@
-Building
-========
+---
+title: Building
+---
 
 Building
 --------

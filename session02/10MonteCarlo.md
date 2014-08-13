@@ -1,6 +1,6 @@
-Exercise: Monte-Carlo
-=====================
-
+---
+title: "Exercise: Monte-Carlo"
+---
 
 Description
 -----------

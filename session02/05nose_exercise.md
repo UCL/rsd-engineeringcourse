@@ -1,6 +1,6 @@
-Nose Exercise
-=============
-
+---
+title: Nose
+---
 
 Description {#diffusion}
 -----------

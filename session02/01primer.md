@@ -1,5 +1,6 @@
-Testing primer
-==============
+---
+title: Primer
+---
 
 Tests at different scales
 -------------------------

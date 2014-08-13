@@ -1,5 +1,6 @@
-Floating points problems
-========================
+---
+title: Floating Point
+---
 
 Floating points are not Reals
 -----------------------------

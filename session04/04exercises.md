@@ -1,5 +1,6 @@
-Exercises
-=========
+---
+title: Exercises
+---
 
 Refactoring to classes
 ----------------------

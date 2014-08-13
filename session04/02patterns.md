@@ -1,5 +1,6 @@
-Design Patterns
-===============
+---
+title: Patterns
+---
 
 Class Complexity
 ----------------

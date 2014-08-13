@@ -1,5 +1,7 @@
-Debuggers
-=========
+---
+title: Debugging
+---
+
 
 Step by step through the code
 -----------------------------

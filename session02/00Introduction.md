@@ -1,8 +1,6 @@
-% Research Software Engineering
-% James Hetherington, Mayeul d'Avezac and Jens Nielsen
-
-Testing introduction
-====================
+---
+title: Testing
+---
 
 A few reasons not to do testing
 -------------------------------
