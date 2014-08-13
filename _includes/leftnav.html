@@ -1,0 +1,23 @@
+{% if includeleftnav is defined%}
+<div id="leftcol">
+<nav class="leftnav">
+
+	<ul>
+
+		{% for place in leftnav %}
+			<li><a href="{{place.link}}">{{place.text}}</a></li>
+		{% endfor %}
+		{% for folder in root.children recursive %}
+			{% if folder.index_page %}
+			<li><a href="{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
+			{% endif %}
+			{% if folder.has_children_with_index_pages() %}
+				{{ loop(folder.children) }}
+			{% endif %}
+		{% endfor %}
+
+	</ul>
+
+</nav>
+</div>
+{% endif %}

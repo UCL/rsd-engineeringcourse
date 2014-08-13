@@ -1,0 +1,43 @@
+.md|pandoc:
+    - except: "(index|LICENSE|README)"
+    - pandoc:
+        args: --default-image-extension=png
+
+sources:
+    - .md:
+        - except: "(index|LICENSE|README)"
+
+index.md|jinja|pandoc|-reveal:
+    - sources
+    - pandoc:
+        args: -t revealjs -V theme=night
+            --css=assets/night.css --css=assets/slidetheme.css
+            --css=assets/local_styles.css
+            --default-image-extension=png
+            --highlight-style=zenburn
+            --mathjax
+            -V revealjs-url=http://lab.hakim.se/reveal-js/
+    - output-name: reveal.html
+
+assets:
+    - .css
+    - .png
+    - .svg
+    - .pdf
+
+sequence_charts:
+    - .wsd|wsd:
+        - wsd:
+            style: napkin
+        - output-name: "/assets/{name}.png"
+
+graphs:
+    - .dot|dot:
+        - assets
+        - output-name: "/assets/{name}.png"
+    - .nto|graphviz:
+        - assets
+        - graphviz:
+            args: -Kneato
+        - output-name: "/assets/{name}.png"
+
