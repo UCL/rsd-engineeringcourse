@@ -1,5 +1,5 @@
-.md|pandoc:
-    - except: "(index|LICENSE|README)"
+.md|yamlargs|pandoc:
+    - except: "(LICENSE|README)"
     - pandoc:
         args: --default-image-extension=png
 
@@ -7,7 +7,7 @@ sources:
     - .md:
         - except: "(index|LICENSE|README)"
 
-index.md|jinja|pandoc|-reveal:
+reveal.md|jinja|pandoc|-reveal:
     - sources
     - pandoc:
         args: -t revealjs -V theme=night
@@ -24,20 +24,21 @@ assets:
     - .png
     - .svg
     - .pdf
+    - .js
 
 sequence_charts:
     - .wsd|wsd:
         - wsd:
             style: napkin
-        - output-name: "/assets/{name}.png"
+        - output-name: "/assets/{baserootname}.png"
 
 graphs:
     - .dot|dot:
         - assets
-        - output-name: "/assets/{name}.png"
+        - output-name: "/assets/{baserootname}.png"
     - .nto|graphviz:
         - assets
         - graphviz:
             args: -Kneato
-        - output-name: "/assets/{name}.png"
+        - output-name: "/assets/{baserootname}.png"
 
