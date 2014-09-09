@@ -1,0 +1,138 @@
+<form action="#">
+	<fieldset>
+
+    	<div class="message"><p>Message box</p></div>
+
+    	<div class="warning"><p>Warning message box</p></div>
+
+    	<div class="success"><p>Success message box</p></div>
+
+        	<fieldset>
+            	<label for="text">Text Input <abbr title="Required">*</abbr></label>
+                <input type="text" class="text" id="text">
+                <em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+            	<label for="text">Text Input Error States <abbr title="Required">*</abbr></label>
+                <input type="text" class="text error" id="text">
+                <em class="error">Password is incorrect</em>
+            </fieldset>
+            <fieldset class="inline">
+            	<label for="text">Inline Text Input <abbr title="Required">*</abbr></label>
+                <input type="text" class="text" id="text">
+                <em>Note about this field</em>
+            </fieldset>
+            <fieldset class="prepend">
+            	<label for="text">Text Input with prepended label <abbr title="Required">*</abbr></label>
+                <span>Prepended label</span><input type="text" class="text" id="text">
+                <em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+            	<label for="password">Password</label>
+                <input type="password" class="text" id="password">
+                <em>Note about this field</em>
+           	</fieldset>
+           	<fieldset>
+                <label for="url">Web Address</label>
+                <input type="url" class="text" id="url" placeholder="http://">
+                <em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+            	<legend>Personal Information:</legend>
+                <label for="email">Email Address</label>
+                <input type="email" class="text" id="email" placeholder="bob.smith@ucl.ac.uk">
+                <em>Note about this field</em>
+				</fieldset>
+				<fieldset>
+                <label for="birthday">Birthday</label>
+                <input type="date" name="bday" id="birthday" >
+                <em>Note about this field</em>
+				</fieldset>
+				<fieldset>
+                <label for="phone">Telephone Number</label>
+                <input type="tel" class="text" id="phone" placeholder="+44">
+                <em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+                <label for="phone">Quantity</label>
+            <input type="number" name="quantity" min="1" max="5">
+            <em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+                <label for="phone">Range</label>
+            	<input type="range" name="points" min="1" max="5">
+            	<em>Note about this field</em>
+            </fieldset>
+            <fieldset>
+                <label for="textarea">Textarea</label>
+                <textarea cols="48" rows="8" id="textarea"></textarea>
+                <em class="clear">Note about this field</em>
+            </fieldset>
+            <fieldset>
+                <label for="search">Search</label>
+                <input type="search" class="text" id="search-form"><input type="submit" id="submit" value="Search">
+            </fieldset>
+            <fieldset>
+                <label for="select">Select</label>
+                <select id="select">
+                	<optgroup label="Option Group 1">
+                    	<option>Option One</option>
+                   		<option>Option Two</option>
+                    	<option>Option Three</option>
+                    </optgroup>
+                    <optgroup label="Option Group 2">
+                    	<option>Option One</option>
+                    		<option>Option Two</option>
+                    	<option>Option Three</option>
+                    </optgroup>
+                </select>
+                <em>Note about this selection</em>
+            </fieldset>
+            <fieldset>
+                <label for="checkbox">Single Checkbox</label>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label class="check" for="checkbox">Label</label>
+            </fieldset>
+            <fieldset class="options">
+            	<legend>Checkbox <abbr title="Required">*</abbr></legend>
+                <ul>
+                	<li>
+                		<input type="checkbox" checked="checked" name="checkbox" id="checkbox1">
+                		<label for="checkbox1">Choice A</label>
+                	</li>
+                    <li>
+                    	<input type="checkbox" name="checkbox" id="checkbox2">
+                    	<label for="checkbox2">Choice B</label>
+                    </li>
+                    <li>
+                    	<input type="checkbox" name="checkbox" id="checkbox3">
+                    	<label for="checkbox3">Choice C</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="options">
+                <legend>Radio</legend>
+                <ul>
+                   	<li>
+                   		<input type="radio" checked="checked" class="radio" name="radio" id="radio1">
+                   		<label for="radio1">Option 1</label>
+                   	</li>
+                    <li>
+                    	<input type="radio" class="radio" name="radio" id="radio2">
+                    	<label for="radio2">Option 2</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <label for="file">Upload a file</label>
+                <input type="file" name="file" id="file">
+            </fieldset>
+
+            <div class="submit">
+            	<input type="button" value="Default" class="btn-gradient">
+            	<input type="button" value="Disabled" disabled="disabled" class="btn-gradient disabled">
+                <a class="cancel" href="#">Cancel</a>
+            </div>
+       	</fieldset>
+	</form>
+
