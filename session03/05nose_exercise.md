@@ -2,7 +2,7 @@
 title: Nose
 ---
 
-Description {#diffusion}
+Description {% raw %}{#diffusion}{% endraw %}
 -----------
 
 <div align="left">
@@ -18,15 +18,16 @@ Description:
 
 Implementation:
 
-:   * Given a vector $n$ of positive integers, and of arbitray length 
+:   * Given a vector $n$ of positive integers, and of arbitray length
     * Compute the energy,
 
         $E(n) = \frac{D}{2} \sum_i n_i(n_i - 1),$
-        
+
         where $D$ is a scalar coefficient.
 
 </div>
 
+{% raw %}
 <svg id="model" width="500" height="150" class="boundary"></svg>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="http://lab.hakim.se/reveal-js//lib/js/head.min.js" ></script>
@@ -57,19 +58,19 @@ Implementation:
     var svg = d3.select("#model").append("g")
                 .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
     var numbers = Array.apply(null, Array(10)).map(function (_, i) {return i;});
-    
+
     var yscale = d3.scale.linear().domain([0, height]).range([0, externalDims.height]);
     var xscale = d3.scale.ordinal().domain(numbers).rangePoints([0, externalDims.width])
     var xAxis = d3.svg.axis().orient("bottom").scale(xscale);
-    
+
     // svg.append("rect").attr("x", -margin.left).attr("y", -margin.top)
     //         .attr("height", externalDims.height + margin.bottom + margin.top)
     //         .attr("width", externalDims.width + margin.right + margin.right)
     //         .style("fill", "rgb(100, 100, 100)")
-    
+
     var margingroup = svg.append("g") .attr("transform", "translate(0, " + externalDims.height + ")");
     var axisgroup = margingroup.append("g").attr("class", "x axis").call(xAxis);
-    
+
     var nbrects = [0, 0, 3, 5, 8, 4, 2, 1]
     var rectangles = []
     for(var j = 0; j < nbrects.length; ++j) {
@@ -116,6 +117,7 @@ Implementation:
       // event.previousSlide, event.currentSlide, event.indexh, event.indexv
   } );
 </script>
+{% endraw %}
 
 Starting Point
 --------------
@@ -125,26 +127,26 @@ In a directory, create two files:
 
 * Implementation file: diffusion_model.py
 
-    ~~~~~~~~~~~~~~~~~~{.python}
+``` python
     def energy(density):
       """ Energy associated with the diffusion model
 
           :Parameters:
             density: array of positive integers
-               Number of particles at each position i 
+               Number of particles at each position i
                in the array
       """
       # implementation goes here
-    ~~~~~~~~~~~~~~~~~~
+```
 
 * Testing file: test_diffusion_model.py
 
-    ~~~~~~~~~~~~~~~~~~~~{.python}
+``` python
     from diffusion_model import energy
     def test_energy():
       """ Optional description for nose reporting """
       # Test something
-    ~~~~~~~~~~~~~~~~~~~~
+```
 </div>
 
 Coverage
@@ -152,12 +154,12 @@ Coverage
 
 <div align="left">
 
-1. Comment out from exception tests in solution 
+1. Comment out from exception tests in solution
 1. in solution directory, run
 
-    ~~~~~~~~~~~~~~{.bash}
+``` bash
     nosetests --with-coverage --cover-package=diffusion_model -v --cover-html
-    ~~~~~~~~~~~~~~
+```
 
 1. Open ``cover/index.html`` for coverage information
 

@@ -22,7 +22,8 @@
 <meta name="msapplication-TileImage" content="favicon-144.png">
 
 {% include '_includes/scripts.html' %}
-
+{% set includeleftnav = True %}
+{% set leftnav = [] %}
 {% set crumbs = [{'link': 'http://ucl.ac.uk/isd', 'text': 'ISD'},
 				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/', 'text': 'RITS'},
 				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/research-software', 'text': 'Software Development'},

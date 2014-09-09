@@ -8,22 +8,22 @@ Definition
 <div align="left">
 mock
 
-:    *verb*, 
+:    *verb*,
 
      1. to tease or laugh at in a scornful or contemptuous manner
      1. to make a replica or imitation of something
 
 <div class="fragment roll-in">
-mocking 
+mocking
 
 :    *computer science*, to simulate the behavior of real objects in controlled ways.
 </div>
 
 <div class="fragment roll-in">
-stub routine 
+stub routine
 
 :    A routine that a simulate a more computationally expensive routine, without actually performing
-     any calculation. 
+     any calculation.
 
      Strictly speaking, the term Mocking is reserved for object-oriented approaches
 </div>
@@ -37,7 +37,7 @@ Recording calls with Mock
 <div align="left">
 Mock objects record the calls made to them:
 
-~~~~~~~~~~~~~{.python}
+``` python
 >>> from mock import Mock
 >>> function = Mock(name="myroutine", return_value=2)
 >>> function(1)
@@ -46,11 +46,11 @@ Mock objects record the calls made to them:
 2
 >>> function.mock_calls
 [call(1), call(1, 'hello', {'a': True})]
-~~~~~~~~~~~~~
+```
 
 Mock objects can return different values for each call
 
-~~~~~~~~~~~~~{.python}
+``` python
 >>> function = Mock(name="myroutine", side_effect=[2, "a"])
 >>> function(1)
 2
@@ -58,22 +58,22 @@ Mock objects can return different values for each call
 "a"
 >>> function() # No more values to return --> mock throws a StopIteration exception
 StopIteration error thrown in ....
-~~~~~~~~~~~~~
+```
 
 The arguments of each call can be recovered
 
-~~~~~~~~~~~~~{.python}
+``` python
 >>> function = Mock(name="myroutine", return_value=2)
 >>> function([0, 1], 1)
 2
 >>> name, args, kwargs = function.mock_calls[0]
->>> name # function was called 
+>>> name # function was called
 ''
 >>> args # arguments where those given here
 ([0, 1], 1)
 >>> kwargs # No keyword arguments
 {}
-~~~~~~~~~~~~~
+```
 
 </div>
 
@@ -81,21 +81,21 @@ The arguments of each call can be recovered
 Testing functions that call other functions
 -------------------------------------------
 
-~~~~~~~~~~~~{.python}
+``` python
 def callee(x): pass # Does something complicated
 
 def caller_function(x):
    value = callee(x)
    second_arg = # something complicated with value
    return callee(second_arg)
-~~~~~~~~~~~~
+```
 
 Black-box
 
 :    Give `caller_function` a function for which we think we know the result: e.g. small analytical
      model, rather than big expensive calculation.
 
-     We do not need to know how `caller_function` works. 
+     We do not need to know how `caller_function` works.
 
 Clear-box
 
@@ -103,12 +103,12 @@ Clear-box
      called.
 
      We know something of the internals of `caller_function`. We want to verify that the argument
-     function is called as expected. 
+     function is called as expected.
 
 <br>
 <div align="left" class="frament fade-in">
 `caller_function` must be tested in *isolation* from the rest of the code, so that bugs from one do
-not contaminate the other. 
+not contaminate the other.
 </div>
 
 Exercise: derivative function
@@ -124,7 +124,7 @@ Description
 :   create a function that takes a function, an integer density, and an index $i$, and returns the
     right-derivative   $f(n_i + 1) - f(n_i)$
 
-~~~~~~~~~~~~~~{.python}
+``` python
 def partial_derivative(function, x, index):
   """ Computes right derivative of function over integers
 
@@ -146,6 +146,6 @@ def partial_derivative(function, x, index):
   right_value = function(x)
 
   return right_value - left_value
-~~~~~~~~~~~~~~
+```
 
 </div>

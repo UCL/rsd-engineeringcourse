@@ -1,5 +1,6 @@
-Design
-======
+---
+title: Design
+---
 
 Design
 ------

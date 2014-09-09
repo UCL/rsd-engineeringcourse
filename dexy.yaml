@@ -1,4 +1,4 @@
-.md|yamlargs|pandoc:
+.md|yamlargs|jinja|pandoc:
     - except: "(LICENSE|README)"
     - pandoc:
         args: --default-image-extension=png
@@ -41,4 +41,3 @@ graphs:
         - graphviz:
             args: -Kneato
         - output-name: "/assets/{baserootname}.png"
-

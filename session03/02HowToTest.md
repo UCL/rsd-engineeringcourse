@@ -7,7 +7,7 @@ Equivalence partitioning
 
 Think hard about the different cases the code will run under: this is science, not coding!
 
-
+{% raw %}
 ----------------------  ------------------------------------------------------------------------
 Research Project        Evolution of agricultural fields in Saskatchewan from aerial photography
 
@@ -120,13 +120,15 @@ In silico translation   Compute overlap of two rectangles
     svg.selectAll("text").text("Case: " + fragment.getAttribute("text"))
   }
   function back(fragment) {
-    update(fragment.previousElementSibling) 
+    update(fragment.previousElementSibling)
   }
 
   Reveal.addEventListener( 'fragmentshown', function( event ) { update(event.fragment); });
   Reveal.addEventListener( 'fragmenthidden', function( event ) { back(event.fragment); });
 
 </script>
+
+{% endraw %}
 
 Boundary cases
 --------------
@@ -135,11 +137,11 @@ Boundary cases
 * Where-ever indices appear, check values at ``0``, ``N``, ``N+1``
 * Empty arrays:
 
-    ~~~~~~~~~~~~~~~~~~{.py}
+``` python
     atoms = [read_input_atom(input_atom) for input_atom in input_file]
     energy = force_field(atoms)
-    ~~~~~~~~~~~~~~~~~~
- 
+```
+
     What happens if ``atoms`` is an empty list?
 
 * What happens when a matrix/data-frame reaches one row, or one column?
@@ -153,29 +155,29 @@ Positive *and* Negative tests
 * **Negative tests**: program/component/unit in pathological functionning mode
 
 <div align="left">
-Bad input should be expected and should fail early and explicitely. 
+Bad input should be expected and should fail early and explicitely.
 
 <div class="fragment roll-in">
 Testing should ensure that explicit failures do indeed happen.
 
-~~~~~~~~~~~~~~~{.python}
+``` python
 def I_only_accept_positive_numbers(number):
     # Check input
     if number < 0: raise ValueError("Input ({0}) is negative".format(number))
 
     # Do something
-~~~~~~~~~~~~~~~
+```
 
-An in test file: 
+An in test file:
 
-~~~~~~~~~~~~~~~{.python}
+``` python
 def test_I_only_accept_positive_numbers(number):
     from mymodule import I_only_accept_positive_numbers
 
     try:  I_only_accept_positive_numbers(0)
     except: pass
     else: raise AssertionError("zero did not raise an error")
-~~~~~~~~~~~~~~~
+```
 </div>
 </div>
 
@@ -185,15 +187,14 @@ Legacy Code Hardening
 * Very difficult to create unit-tests for existing code
 * Easier to run program as a black box:
 
-    ~~~~~~~~~~~~~~~~~
+```
       setup input
       run program
-      read output 
+      read output
       check output against expected result
-    ~~~~~~~~~~~~~~~~~
+```
 
 <div class="fragment fade-in">
 * Does not test correctness of code
 * Checks code is a similarly wrong on day N as day 0
 </div>
-

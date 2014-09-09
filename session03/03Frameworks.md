@@ -9,7 +9,7 @@ What a frameworks is for
 
 * Should be easy to add simple test
 * Should be possible to create complex test:
-    * Fixtures 
+    * Fixtures
     * Setup/Tear down
     * Parameterized tests (same test, mostly same input)
 * Run all tests, e.g. ``make test``
@@ -25,7 +25,7 @@ Testing Frameworks
     | Allows running separate executables / test scripts together
     | Great for legacy code hardening
 
-* C unit-tests: 
+* C unit-tests:
     all c++ frameworks,
     [Check](http://check.sourceforge.net/),
     [CUnit](http://cunit.sourceforge.net)
@@ -38,24 +38,24 @@ Testing Frameworks
     | [nose](https://nose.readthedocs.org/en/latest/) includes test discovery, coverage, etc
     | [unittest](http://docs.python.org/2/library/unittest.html) comes with standard python library
 
-* R unit-tests: 
+* R unit-tests:
 
     | [RUnit](http://cran.r-project.org/web/packages/RUnit/index.html)
     | [svUnit](http://cran.r-project.org/web/packages/svUnit/index.html) works with [SciViews](http://www.sciviews.org/) GUI
 
-* Fortran unit-tests: 
+* Fortran unit-tests:
 
     | [funit](http://nasarb.rubyforge.org/funit/)
     | [pfunit](http://sourceforge.net/projects/pfunit/), works with MPI
     | [fruit](http://fortranxunit.sourceforge.net/), could be unmaintained, not recommended
 
 
-Mocking Frameworks {#MockingFrameworks}
+Mocking Frameworks {%raw%} {#MockingFrameworks} {% endraw %}
 ------------------
 
 * C: [CMocka](http://www.cmocka.org/)
 * C++: [googlemock](https://code.google.com/p/googlemock/)
-* Python: [Mock](http://www.voidspace.org.uk/python/mock/) 
+* Python: [Mock](http://www.voidspace.org.uk/python/mock/)
   ([unittest.mock](http://docs.python.org/dev/library/unittest.mock) in python 3.3),
   [doublex](https://pypi.python.org/pypi/doublex)
 
@@ -65,17 +65,17 @@ Nose Framework: Usage
 <div align="left">
 [nose](https://nose.readthedocs.org/en/latest/) is a python framework:
 
-~~~~~~~~~~~~~~{.bash}
+``` bash
 $ cd my_package_directory
 $ nosetests
-~~~~~~~~~~~~~~
+```
 
-~~~~~~~~~~~~~~
+```
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
 OK
-~~~~~~~~~~~~~~
+```
 
 * automagically finds files ``test_*.py``
 * collects all subroutines called ``test_*.py``
@@ -96,8 +96,8 @@ Nose: Writing Tests
 In a file ``test_[meaningful_name].py``:
 
 * Check that something is true
-    
-    ~~~~~~~~~~~~~~~~{.python}
+
+``` python
     from nose.tools import assert_true
     from my_module import my_function
 
@@ -106,22 +106,22 @@ In a file ``test_[meaningful_name].py``:
        actual = my_function(something)
        message = "tests that my function returns true when called with input {0}".format(argument)
        assert_true(actual == True, message)
-    ~~~~~~~~~~~~~~~~
+```
 * Check expected result and actual results are equal
-    
-    ~~~~~~~~~~~~~~~~{.python}
+
+``` python
     def test_set_equality():
        from nose.tools import assert_equal, assert_not_equal
        assert_equal(set([1, 2]), set([2, 1]), "Sets are order independent")
        assert_not_equal(set([1, 2]), set([1, 3]), "Sets elements matter")
-    ~~~~~~~~~~~~~~~~
+```
 
 * Check that an exception is raised
 
-    
-    ~~~~~~~~~~~~~~~~{.python}
+
+``` python
     def test_set_equality():
        from nose.tools import assert_raises
        with assert_raises(ValueError) as exception:
          raise ValueError("I'm the wrong value")
-    ~~~~~~~~~~~~~~~~
+```

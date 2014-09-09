@@ -21,9 +21,9 @@ BDD
      * Translated to code internally by developper
 </div>
 
-~~~~~~~~~~~{.ruby}
+``` ruby
 Scenario: eat 5 out of 12
   Given there are 12 cucumbers
   When I eat 5 cucumbers
   Then I should have 7 cucumbers
-~~~~~~~~~~~
+```

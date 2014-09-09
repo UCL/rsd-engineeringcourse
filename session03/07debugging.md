@@ -15,7 +15,7 @@ Debugger
 
 * Mac -- compiled languages:
   [Xcode](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebugYourApp/DebugYourApp.html)
-* Windows -- compiled languages: 
+* Windows -- compiled languages:
   [Visual Studio](http://msdn.microsoft.com/en-us/library/bb483011.aspx)
 * Linux: [DDD](https://www.gnu.org/software/ddd/)
 * all platforms: [eclipse](http://www.eclipse.org), [gdb](http://www.sourceware.org/gdb/) (DDD and
@@ -23,7 +23,7 @@ Debugger
 * python: [spyder](http://pythonhosted.org/spyder/index.html),
           [pdb](http://docs.python.org/2/library/pdb.html)
 * R: [RStudio](http://www.rstudio.com/ide/docs/debugging/overview),
-  [debug](http://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html), 
+  [debug](http://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html),
   [browser](http://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html)
 
 Using the python debugger
@@ -33,8 +33,8 @@ Using the python debugger
 Copy the following into a file:
 </div>
 
-~~~~~~~~~~~~~~{.python}
-def energy(x): 
+``` python
+def energy(x):
    from numpy import array, sum
    x = array(x)
    return sum(x * (x - 1))
@@ -63,7 +63,7 @@ def partial_derivative(function, x, index):
 
 if __name__ == "__main__":
   partial_derivative(energy, [5, 6, 7, 8, 0, 1], 5)
-~~~~~~~~~~~~~~
+```
 
 
 Basic Navigation:
@@ -74,8 +74,8 @@ Basic command to navigate the code and the python debugger:
 
 * `help`: prints the help
 * `help n`: prints help about command `n`
-* `n`(ext): executes one line of code. Executes and steps **over** functions. 
-* `s`(tep): step into current function in line of code 
+* `n`(ext): executes one line of code. Executes and steps **over** functions.
+* `s`(tep): step into current function in line of code
 * `l`(ist): list program around current position
 * `w`(where): prints current stack (where we are in code)
 * `[enter]`: repeats last command
@@ -91,23 +91,23 @@ Breakpoints
 <div align="left">
 Break points tell debugger where and when to stop
 
-~~~~~~~~~~~~~{.python}
+``` python
 >>> restart  # restart session
 >>> b energy # program will stop when entering energy
 >>> c        # continue program until break point is reached
-~~~~~~~~~~~~~
+```
 
 Alternatively, break-points can be set on files: `b file.py:20` will stop on line 20 of `file.py`.
 
 <div class="fragment=roll in">
 Break-points can run subject  to a given condition evaluating to true
 
-~~~~~~~~~~~~~{.python}
+``` python
 >>> cl # clear all breakpoints
 >>> b energy, x[5] == 2
 >>> restart
 >>> c
-~~~~~~~~~~~~~~
+```
 
 </div>
 

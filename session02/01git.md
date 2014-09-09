@@ -1,5 +1,5 @@
 ---
-title: Git
+title: Git Recap
 ---
 
 Distributed VCS concepts (2)
@@ -193,7 +193,7 @@ Cherry-picking
 --------------
 
 Using `git checkout` with a path takes the content of files.
-To grab the content of a specific *commit* from another branch, 
+To grab the content of a specific *commit* from another branch,
 and apply it as a patch to your branch, use:
 
 ```bash
@@ -323,7 +323,7 @@ Which local branches are merged?
 git branch --merged
 > deadbranch
 > * master
-git branch -d deadbranch 
+git branch -d deadbranch
   # -D to force removal if not merged
 git fetch --prune
   # Remove local branches deleted remotely
@@ -352,7 +352,7 @@ You can collaborate through *pull requests* instead of by granting them access.
 
 This has been found to work *much better* than having to decide who should be allowed
 commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
- 
+
 Send a pull request
 ---------------------
 
@@ -434,23 +434,23 @@ Edit the file. It should look something like this:
 
 > ```
 >     <<<<<<< HEAD  
->     Wales is hillier than England, 
+>     Wales is hillier than England,
 >             but not quite as hilly as Scotland.  
 >     =======  
->     Wales is much hillier than England, 
+>     Wales is much hillier than England,
 >             but not as hilly as Scotland.  
 >     >>>>>>> dba9bbf3bcab1008b4d59342392cc70890aaf8e6
 > ```  
 
-The syntax with `<<<` `===` and `>>>` shows the differences. 
+The syntax with `<<<` `===` and `>>>` shows the differences.
 
-To resolve a conflict, you must manually edit the file, 
+To resolve a conflict, you must manually edit the file,
 to combine the changes as seems sensible and get rid of the symbols.
 
 Next you must add and commit the merged result:
 
-    git commit -a      
-    
+    git commit -a
+
 A suggested commit message appears, which you can accept, and then you can `push` the merged result.
 
 Tagging
@@ -475,7 +475,7 @@ A "Hunk" is one git change. This changeset has three hunks:
 ``` diff
 +import matplotlib
 +import numpy as np
- 
+
  from matplotlib import pylab
  from matplotlib.backends.backend_pdf import PdfPages
 
@@ -556,7 +556,7 @@ and the slimy monsters
 Revision aj72, child of ab34:
 
 ```
-'Twas brillig, 
+'Twas brillig,
 and the slithy toves
 ```
 
@@ -588,7 +588,7 @@ danced and span in the waves
 Revision kp42, child of de56 and of aj72:
 
 ```
-'Twas brillig, 
+'Twas brillig,
 and the slithy toves
 danced and span in the waves
 ```
@@ -597,7 +597,7 @@ An example rebase (Jim rebases)
 ------------------------------
 
 ```bash
-git pull sue --rebase 
+git pull sue --rebase
 # or git rebase mybranch
 ```
 
@@ -611,14 +611,14 @@ and the slimy monsters
 Revision aj72, child of ab34:
 
 ```
-'Twas brillig, 
+'Twas brillig,
 and the slithy toves
 ```
 
 Revision lz46, child of aj72:
 
 ```
-'Twas brillig, 
+'Twas brillig,
 and the slithy toves
 danced and span in the waves
 ```
@@ -682,7 +682,7 @@ Debugging
 Debugging With Git Bisect
 -------------------------
 
-You can use 
+You can use
 
 ``` bash
 git bisect
