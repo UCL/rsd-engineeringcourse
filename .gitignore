@@ -1,4 +1,5 @@
 .dexy
+output-site
 output
 _site/
 .sconsign.dblite
