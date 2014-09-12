@@ -68,7 +68,7 @@ Applicability: Use the Factory method pattern when:
 Factory UML
 -----------
 
-![Structure](http://yuml.me/diagram/scruffy/class/%5BProduct%5D%5E-%5BConcreteProduct%5D,%20%5BCreator|%20%28v%29%20FactoryMethod%28%29%5D%5E-%5BConcreteCreator|%20FactoryMethod%28%29%5D,%20%5BConcreteCreator%5D-.-%3E%5BConcreteProduct%5D/)
+![Structure](session07/figures/factory)
 
 Factory Sample Code
 -------------------
@@ -114,12 +114,12 @@ OpenGL, or a 3d printer, depending on the builder it is given.
 Builder UML
 -----------
 
-![UML](http://yuml.me/diagram/scruffy/class/%5BDirector|Construct%28%29%5D%3C%3E-%3E%5BBuilder|%20%28a%29%20BuildPart%28%29%5D,%20%5BBuilder%5D%5E-%5BConcreteBuilder|%20BuildPart%28%29;GetResult%28%29%20%5D,%5BConcreteBuilder%5D-.-%3E%5BProduct%5D/)
+![UML](session07/figures/builder)
 
 Builder Message Sequence
 ------------------------
 
-![MessageSequence](http://www.websequencediagrams.com/cgi-bin/cdraw?lz=CnBhcnRpY2lwYW50IENsaWVudAAGDURpcmVjdG9yABoOb25jcmV0ZUJ1aWxkZXIKADIGLT4ACQ86IG5ldwAUCQBCCAARBSgANA8pCgBhCAAzEwBiBUZpcnN0UGFydAAJIVNlY29uZAAGJVRoaXIAJAYAgSoZR2V0UmVzdWx0Cg&s=rose&h=lrr6P4-8b14Xsl0t)
+![MessageSequence](session07/figures/builder_seq)
 
 Fast Arrays
 -----------

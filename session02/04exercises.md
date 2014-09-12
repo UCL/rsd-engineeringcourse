@@ -16,7 +16,7 @@ Interactive add
 
 Use
 ```
-git add -p somefile #Add by hunk 
+git add -p somefile #Add by hunk
 git add -i #Consider files interactively
 ```
 

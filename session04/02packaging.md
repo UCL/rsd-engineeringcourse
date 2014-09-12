@@ -28,20 +28,7 @@ When planning to package a project for distribution, defining a suitable
 project layout is essential.
 
 ```
-├── README.md
-├── LICENSE.md
-├── setup.py
-├── scripts
-│   └── greengraph
-└── greengraph
-    ├── __init__.py
-    ├── __main__.py
-    ├── greengraph.py
-    └── test
-        ├── __init__.py
-        ├── fixtures
-        │   └── london.png
-        └── test_greengraph.py
+![](session04/figures/tree)
 ```
 
 Using setuptools

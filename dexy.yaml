@@ -1,14 +1,23 @@
-.md|yamlargs|jinja|pandoc:
-    - except: "(LICENSE|README)"
+.md|yamlargs|jinja|resub|pandoc:
+    - except: "(LICENSE|README|reveal|notes)"
+    - resub:
+        expressions:
+            - ['session../figures/','figures/']
     - pandoc:
         args: --default-image-extension=png
 
 sources:
     - .md:
         - except: "(index|LICENSE|README)"
+        - output: False
 
-reveal.md|jinja|pandoc|-reveal:
+reveal.md|jinja|pandoc|-reveal|h:
     - sources
+    - assets
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
     - pandoc:
         args: -t revealjs -V theme=night
             --css=assets/night.css --css=assets/slidetheme.css
@@ -17,7 +26,22 @@ reveal.md|jinja|pandoc|-reveal:
             --highlight-style=zenburn
             --mathjax
             -V revealjs-url=http://lab.hakim.se/reveal-js/
-    - output-name: reveal.html
+
+notes.md|jinja|pandoc|p:
+    - sources
+    - assets
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - pandoc:
+        args: --template=report
+              -V documentclass=scrartcl
+              -V links-as-notes
+             --filter pandoc-citeproc
+             --default-image-extension=png
+             -V linkcolor="uclmidgreen"
+             --number-sections
 
 assets:
     - .css
@@ -30,14 +54,15 @@ sequence_charts:
     - .wsd|wsd:
         - wsd:
             style: napkin
-        - output-name: "/assets/{baserootname}.png"
+
+uml:
+    - .yuml|yuml
 
 graphs:
     - .dot|dot:
         - assets
-        - output-name: "/assets/{baserootname}.png"
+
     - .nto|graphviz:
         - assets
         - graphviz:
             args: -Kneato
-        - output-name: "/assets/{baserootname}.png"

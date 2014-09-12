@@ -164,4 +164,4 @@ Coverage
 1. Open ``cover/index.html`` for coverage information
 
 </div>
-![](assets/coverage.png)
+![](session03/figures/coverage.png)

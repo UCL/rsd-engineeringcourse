@@ -58,3 +58,10 @@ Setup
 You are required to bring your own laptop to the course as the classrooms we are
  using do not have desktop computers.
 Setup instructions are [online](http://development.rc.ucl.ac.uk/training/carpentry/setup.html) .
+
+Versions
+--------
+
+You can find the course notes as HTML via the navigation bar to the left.
+
+The [slides](reveal.html) and [pdf](notes.pdf) are also available.

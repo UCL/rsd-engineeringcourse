@@ -19,22 +19,22 @@ Distributed VCS concepts (2)
 Solo Workflow
 -----------------------------
 
-![Working alone with git](/assets/distributed_solo)
+![Working alone with git](session02/figures/distributed_solo)
 
 Publishing
 -------------------------------
 
-![Publishing with git](/assets/distributed_solo_publishing)
+![Publishing with git](session02/figures/distributed_solo_publishing)
 
 Teams without conflicts
 ------------------------------------------
 
-![Teamworking in git](/assets/distributed_shared_noconflict)
+![Teamworking in git](session02/figures/distributed_shared_noconflict)
 
 Teams with conflicts
 ------------------------------------------
 
-![Teamworking in git with conflicts](/assets/distributed_shared_conflicted)
+![Teamworking in git with conflicts](session02/figures/distributed_shared_conflicted)
 
 
 Git Theory
@@ -43,7 +43,7 @@ Git Theory
 A revision Graph
 ----------------
 
-![Revisions form a graph](/assets/revisions)
+![Revisions form a graph](session02/figures/revisions)
 
 Git concepts
 ------------------------
@@ -60,7 +60,7 @@ The Levels of Git
 ----------------
 
 ![The relationship between the staging area, working directory, and
-repositories in git.](assets/distributed_concepts)
+repositories in git.](session02/figures/distributed_concepts)
 
 Git Reset
 =========
@@ -100,7 +100,7 @@ Branches
 Working with branches
 ---------------------
 
-![Using branches](/assets/branching)
+![Using branches](session02/figures/branching)
 
 Working with branches in git
 ----------------------------
@@ -230,17 +230,17 @@ Centralised VCS concepts
 Centralised VCS diagram
 -----------------------
 
-![A centralised server with three clients](/assets/centralised)
+![A centralised server with three clients](session02/figures/centralised)
 
 Distributed VCS in principle
 ----------------------------
 
-![How distributed VCS works in principle](/assets/distributed_principle)
+![How distributed VCS works in principle](session02/figures/distributed_principle)
 
 Distributed VCS in practice
 ----------------------------
 
-![How distributed VCS works in practice](/assets/distributed_practice)
+![How distributed VCS works in practice](session02/figures/distributed_practice)
 
 ``` Bash
 git remote add sue ssh://sue.ucl.ac.uk/somerepo

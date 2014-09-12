@@ -11,7 +11,7 @@ Goal
     1. run tests after each commit to github (or other)
     1. run tests on different platforms
 
-![Soon at a UCL near you!](assets/jenkins.png)
+![Soon at a UCL near you!](session03/figures/jenkins)
 
 
 Memory and Profiling
@@ -25,7 +25,7 @@ Memory and Profiling
 * Profiling the code with [callgrind](http://valgrind.org/docs/manual/cl-manual.html)
   `valgrind --tool=callgrind program`
 
-    ![](assets/callgrind.png)
+    ![](session03/figures/callgrind)
  
  
     <div align="left">
