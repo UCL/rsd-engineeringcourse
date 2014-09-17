@@ -38,7 +38,6 @@ notes.md|jinja|pandoc|p:
         args: --template=report
               -V documentclass=scrartcl
               -V links-as-notes
-             --filter pandoc-citeproc
              --default-image-extension=png
              -V linkcolor="uclmidgreen"
              --number-sections
