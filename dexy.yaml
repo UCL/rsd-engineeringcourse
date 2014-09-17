@@ -35,12 +35,13 @@ notes.md|jinja|pandoc|p:
     - report.latex
     - uml
     - pandoc:
-        args: --template=report
+        args:
               -V documentclass=scrartcl
               -V links-as-notes
              --default-image-extension=png
              -V linkcolor="uclmidgreen"
              --number-sections
+             -H report.latex
 
 assets:
     - .css
