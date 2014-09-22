@@ -25,7 +25,7 @@ Synopsis
 
 1. Why use scripting languages? An overview of the available
    options. Python. IPython and the IPython notebook.
-   Programming with lists. Data structures: arrays, dictionaries, and sets. Modules.
+   Programming with lists. Data structures: arrays, dictionaries, and sets. Modules. Working with files and the OS.
 2. Collaborating around code. Version control. Git. Github. Issue tracking. Code review. Branches and merging.
 3. Testing. Unit testing and regression testing. Test driven design. Exceptions and assertions. Mocking.
    Automated and interactive testing. Build-and-test servers. Negative testing and defensive programming.
@@ -36,7 +36,7 @@ Synopsis
 7. Object-oriented python. Object oriented design. Software as engineering. Pragmatic use of diagram
    languages. Requirements engineering. Agile and Waterfall. Functional and architectural design.
 8. Best practice in construction. Comments. Coding conventions. Documentation with Sphinx. Refactoring.
-   IDEs. Design and development. Working with files and the OS.
+   IDEs. Design and development.
 9. Libraries for research python (1): Matplotlib. Numpy.
 10. Libraries for research python (2): Scipy. Pandas
 
