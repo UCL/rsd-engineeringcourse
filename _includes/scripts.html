@@ -9,7 +9,7 @@
 		//if old browser load the shiv
 		,nope : [
 			'//static.ucl.ac.uk/js/html5.js'
-			,'/js/lib/respond.min.js'
+			,'{{siteroot}}/js/lib/respond.min.js'
 		]
 	});
 	//set conditional assets for main.js
@@ -22,11 +22,11 @@
 	}
 </script>
 
-<script src="/js/lib/require.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="{{siteroot}}/js/lib/require.min.js"></script>
+<script src="{{siteroot}}/js/main.js"></script>
 <script>
 	require.config({
-	    baseUrl: "/js/lib",
+	    baseUrl: "{{siteroot}}/js/lib",
 	    paths: {
 	    	app: '../app'
 	    }
