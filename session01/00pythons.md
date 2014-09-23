@@ -64,7 +64,6 @@ In [2]: exit
 $ wget https://raw.githubusercontent.com/UCL/rsd-engineeringcourse/staging/session01/notebooks/eight.ipynb
 $ ipython notebook eight.ipynb
 ```
-
 ... look in your browser ...
 
 ## Install Python and IPython Notebook
