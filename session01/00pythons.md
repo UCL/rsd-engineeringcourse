@@ -61,7 +61,7 @@ In [2]: exit
 ## IPython Notebook
 
 ``` bash
-$ wget eight.ipynb
+$ wget https://raw.githubusercontent.com/UCL/rsd-engineeringcourse/staging/session01/notebooks/eight.ipynb
 $ ipython notebook eight.ipynb
 ```
 
