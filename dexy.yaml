@@ -1,5 +1,6 @@
 .md|yamlargs|jinja|resub|pandoc:
-    - except: "(LICENSE|README|reveal|notes)"
+    - intro.md
+    - except: "(LICENSE|README|all)"
     - resub:
         expressions:
             - ['session../figures/','figures/']
@@ -8,16 +9,17 @@
 
 sources:
     - .md:
-        - except: "(index|LICENSE|README)"
-        - output: False
+      - except: "session02/*"
+      - output: False
 
-reveal.md|jinja|pandoc|-reveal|h:
+all.md|jinja|pandoc|-reveal|h:
     - sources
     - assets
     - sequence_charts
     - graphs
     - report.latex
     - uml
+    - output-name: reveal.html
     - pandoc:
         args: -t revealjs -V theme=night
             --css=assets/night.css --css=assets/slidetheme.css
@@ -27,13 +29,14 @@ reveal.md|jinja|pandoc|-reveal|h:
             --mathjax
             -V revealjs-url=http://lab.hakim.se/reveal-js/
 
-notes.md|jinja|pandoc|p:
+all.md|jinja|pandoc|p:
     - sources
     - assets
     - sequence_charts
     - graphs
     - report.latex
     - uml
+    - output-name: notes.pdf
     - pandoc:
         args:
               -V documentclass=scrartcl

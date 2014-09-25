@@ -8,7 +8,7 @@
 			{% endfor %}
 		{% endif %}
 		{% for ancestor in nav.ancestors %}
-			<li><a href="{{siteroot}}/{{ancestor.location | e}}">{{ancestor.index_page.title()}}</a></li>
+			<li><a href="{{siteroot}}{{ancestor.location | e}}">{{ancestor.index_page.title()}}</a></li>
 		{% endfor %}
  	</ul>
 </nav>
