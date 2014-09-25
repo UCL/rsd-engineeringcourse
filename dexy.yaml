@@ -1,5 +1,7 @@
 .md|yamlargs|jinja|resub|pandoc:
     - intro.md
+    - pythons
+    - data
     - except: "(LICENSE|README|all)"
     - resub:
         expressions:
@@ -7,14 +9,26 @@
     - pandoc:
         args: --default-image-extension=png
 
+pythons:
+    - .py|idio|pycon|pyg:
+       - data
+    - .py|idio|t
+
+data:
+    - .csv
+
+notebooks:
+    - .ipynb|ipynb
+
 sources:
     - .md:
-      - except: "session02/*"
       - output: False
 
 all.md|jinja|pandoc|-reveal|h:
     - sources
     - assets
+    - pythons
+    - data
     - sequence_charts
     - graphs
     - report.latex
@@ -31,7 +45,9 @@ all.md|jinja|pandoc|-reveal|h:
 
 all.md|jinja|pandoc|p:
     - sources
+    - pythons
     - assets
+    - data
     - sequence_charts
     - graphs
     - report.latex
