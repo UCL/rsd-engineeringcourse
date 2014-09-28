@@ -17,9 +17,6 @@ pythons:
 data:
     - .csv
 
-notebooks:
-    - .ipynb|ipynb
-
 sources:
     - .md:
       - output: False
