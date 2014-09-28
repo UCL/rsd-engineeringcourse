@@ -137,12 +137,10 @@ which can be used repeatedly:
 {{d['session01/python/analyzer.py|idio|t']['analyze']}}
 ```
 
-TODO: Show figure
-
 Note that the only way Python knows that we're done with our function block is by unindenting!
+
 Note that the result of type(image) is `matplotlib.figure.Figure`: the `matplotlib` library defines
-its own new type, called a `class`, with its own methods, like `add_subplot`. We'll learn more about classes
-later.
+its own new type, called a `class`, with its own methods, like `add_subplot`.
 
 ## Make it a module
 

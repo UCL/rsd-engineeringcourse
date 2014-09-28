@@ -2,7 +2,7 @@
     - intro.md
     - pythons
     - data
-    - except: "(LICENSE|README|all)"
+    - except: "(LICENSE|README|all.md)"
     - resub:
         expressions:
           - ['session../python/','python/']

@@ -45,4 +45,5 @@ Setup
 You are required to bring your own laptop to the course as the classrooms we are
  using do not have desktop computers.
 
-
+We have provided [setup](installation) instructions for installing the software needed for the course on
+your computer.

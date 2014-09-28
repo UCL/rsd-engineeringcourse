@@ -4,7 +4,7 @@ data=numpy.loadtxt(fname='../data/inflammation-01.csv',
         delimiter=',')
 
 from matplotlib import pyplot as plt
-figure = plt.figure()
+figure = plt.figure(figsize=(7.0, 3.0))
 figure.add_axes([0,0,1,1])
 figure.axes[0].imshow(data)
 figure.savefig('image.png')

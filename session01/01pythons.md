@@ -61,11 +61,12 @@ In [2]: exit
 ## IPython Notebook
 
 ``` bash
-$ wget https://raw.githubusercontent.com/UCL/rsd-engineeringcourse/staging/session01/notebooks/eight.ipynb
-$ ipython notebook eight.ipynb
+$ git clone https://github.com/UCL/rsd-engineeringcourse.git
+$ cd rsd-engineeringcourse/session01/notebooks
+$ ipython notebook
 ```
 ... look in your browser ...
 
 ## Install Python and IPython Notebook
 
-* The demonstrators will assist with [installing IPython](http://ipython.org/install.html)
+* The demonstrators will assist with [installing IPython and git](installation)
