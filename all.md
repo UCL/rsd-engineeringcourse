@@ -1,3 +1,8 @@
+---
+title: Research Software Engineering with Python
+subtitle: Tools for reproducible computational research
+---
+
 {{d['intro.md']}}
 {{d['session01/index.md']}}
 {{d['session01/01pythons.md']}}

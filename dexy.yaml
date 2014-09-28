@@ -5,12 +5,13 @@
     - except: "(LICENSE|README|all)"
     - resub:
         expressions:
-            - ['session../figures/','figures/']
+          - ['session../python/','python/']
+          - ['session../figures/','figures/']
     - pandoc:
         args: --default-image-extension=png
 
 pythons:
-    - .py|idio|pycon|pyg:
+    - .py|idio|pycon:
        - data
     - .py|idio|t
 
@@ -18,10 +19,10 @@ data:
     - .csv
 
 sources:
-    - .md:
+    - .md|yamlargs:
       - output: False
 
-all.md|jinja|pandoc|-reveal|h:
+all.md|jinja|jinja|pandoc|-reveal|h:
     - sources
     - assets
     - pythons
@@ -40,7 +41,7 @@ all.md|jinja|pandoc|-reveal|h:
             --mathjax
             -V revealjs-url=http://lab.hakim.se/reveal-js/
 
-all.md|jinja|pandoc|p:
+all.md|jinja|jinja|pandoc|p:
     - sources
     - pythons
     - assets

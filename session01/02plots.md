@@ -2,9 +2,9 @@
 title: Simple data manipulation and plotting
 ---
 
-## Working with and visualising data
+# Working with and visualising data
 
-# Why write software to manage your data and plots? 
+## Why write software to manage your data and plots? 
 
 We should use programs for our entire research pipeline.
 
@@ -18,14 +18,14 @@ checked.
 It should be *good* code, because research conclusions are just as wrong if the
 plotting script is wrong as if the code that generates the data is wrong.
 
-# Analysing patient data
+## Analysing patient data
 
 (The next few slides are taken from Software Carpentry materials and are (CC-BY) the contributors at
 https://github.com/swcarpentry/bc/blob/master/team.md)
 
 You can follow along in an [IPython Notebook](session01/notebooks/01-numpy.nb)
 
-# The data
+## The data
 
 
 Imagine you are studying inflammation in patients who have been given a new treatment for arthritis, 
@@ -38,7 +38,7 @@ The first few rows of our first file look like this:
 {{d['session01/data/inflammation-01.csv'][0:500]}}...
 ```
 
-# The task
+## The task
 
 We want to:
 
@@ -49,7 +49,7 @@ We want to:
 This will give us a good overview of various concepts in Python, which we'll
 return to some of after this initial survey.
 
-# Loading data
+## Loading data
 
 It's almost always wrong to do things yourself.
 
@@ -59,19 +59,17 @@ Python makes it easy to find and use other people's libraries.
 In this case, we want to use a python library to load and parse the csv data, and manipulate it as 
 a matrix.
 
-{{d['session01/python/numpy_nb.py|idio|pycon|pyg']['Starting']}}
-
+``` python
+{{d['session01/python/numpy_nb.py|idio|pycon']['Starting']}}
+```
 Here we've called a **function** `loadtxt` from a **module** `numpy`, and
 assigned it to a **variable** data. This course assumes you're happy with very basic
 programming concepts like function and variable. The IPython notebook contains more detail.
 
-# Types
+## Types
 
-```python
-print type(data)
-<type 'numpy.ndarray'>
-print data.shape
-(60, 40)
+``` python
+{{d['session01/python/numpy_nb.py|idio|pycon']['Types1']}}
 ```
 
 We've jumped straight in and used a `numpy.ndarray` (numerical python) matrix type for our data.
@@ -81,39 +79,34 @@ For now, it's important to know that Python variables have a type, that differen
 but that, unlike C++ or Fortran, you don't need to say what type of variable something is before you use it.
 
 ```python
-print [type("Hello"),type(1), type([1,2,3])]
-[<type 'str'>, <type 'int'>, <type 'list'>]
+{{d['session01/python/numpy_nb.py|idio|pycon']['Types2']}}
 ```
 
-# Slicing and methods 
+## Slicing
 
 We can **slice** elements from arrays and matrices:
 
 ```python
-print 'first value in data:', data[0, 0] #Top left element
-print data[0:4, 0:10] # Top left few elements
-print data[:3, 36:] #First three lines, last few columns
-print data[:-1,:] #All but the last line, all columns
+{{d['session01/python/numpy_nb.py|idio|pycon']['Slicing']}}
 ```
+
+## Methods
 
 We can apply **methods** to objects. Which methods are available depend on the object's type:
 
+``` python
+{{d['session01/python/numpy_nb.py|idio|pycon']['Methods']}}
 ```
-print data.mean() # 6.14875
-print data.std() # 4.613
-patient_zero=data[0, :]
-print 'maximum inflammation for patient 0:', patient_0.max()
-print 'maximum inflammation for patient 2:', data[2, :].max()
-```
+
+## Numpy Tools
 
 Numpy provides cool tools like:
 
-```
-print data.mean(axis=1) # Average over days, per patient
-print data.mean(axis=0) # Average over patients, per day
+``` python
+{{d['session01/python/numpy_nb.py|idio|pycon']['Axes']}}
 ```
 
-# Plotting
+## Plotting
 
 > The purpose of computing is insight, not numbers
 --- Richard Hamming
@@ -124,28 +117,23 @@ plt.imshow(data)
 plt.show()
 ```
 
-TODO generate figure
+![](session01/python/image.png)
 
-# Something isn't right here
+## Something isn't right here
 ``` python
-print 'maximum inflammation per day'
 plt.plot(data.max(axis=0))
-plt.show()
-
-print 'minimum inflammation per day'
-plt.plot(data.min(axis=0))
 plt.show()
 ```
 
-TODO generate figure
+![](session01/python/dayrange.png)
 
-# Make it a function
+## Make it a function
 
 So we've built some figures which help us analyse these data sets.
 
 We know we're going to have lots of similar experiments, so we'll want to wrap the code up into a **function**
 which can be used repeatedly:
-
+``` python
 {{d['session01/python/analyzer.py|idio|t']['analyze']}}
 ```
 
@@ -156,7 +144,7 @@ Note that the result of type(image) is `matplotlib.figure.Figure`: the `matplotl
 its own new type, called a `class`, with its own methods, like `add_subplot`. We'll learn more about classes
 later.
 
-# Make it a module
+## Make it a module
 
 We'd like our function to be usable by other people. So we'll wrap it up as it's own module.
 We copy it out of the notebook into a file, and add a wrapper function to make it easy to call it to
@@ -171,7 +159,7 @@ Here we see a conditional, a default argument value, and use of a library functi
 
 We can use this in other code, with, for example `import analyzer` and analyzer.generate('inflammation-01.csv', 'dest.png')
 
-# Loop over many files
+## Loop over many files
 
 We'd like to be able to analyse many files at once.
 
@@ -180,7 +168,7 @@ We'd like to be able to analyse many files at once.
 ```
 
 
-# Call from the command line
+## Call from the command line
 
 We'll also add some magic to make it work as a command line tool:
 

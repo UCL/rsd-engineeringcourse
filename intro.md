@@ -1,5 +1,6 @@
-Introduction
--------
+#Introduction
+
+## Purpose
 
 In this course, you will move beyond programming, to learn how to construct reliable, readable,
 efficient research software in a collaborative environment. The emphasis is on practical techniques,
@@ -43,4 +44,5 @@ Setup
 
 You are required to bring your own laptop to the course as the classrooms we are
  using do not have desktop computers.
+
 
