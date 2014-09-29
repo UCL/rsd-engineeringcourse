@@ -13,7 +13,10 @@
 pythons:
     - .py|idio|pycon:
        - data
+       - .py
     - .py|idio|t
+    - .py:
+       - output: False
 
 data:
     - .csv

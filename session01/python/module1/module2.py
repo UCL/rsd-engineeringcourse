@@ -1,0 +1,1 @@
+hello = "Greetings, Dr Hetherington"
