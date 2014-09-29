@@ -33,6 +33,7 @@ print count_to_five[1]
 print full[3:-4]
 print len(various_things)
 print "John" in name
+print count_to_five[0:2]*3
 
 ### "Mutable"
 
@@ -45,6 +46,11 @@ print " ".join(name)
 
 my_tuple = ("Hello", "World")
 my_tuple[0]="Goodbye"
+
+### "Unpacking"
+
+zero, one, two = range(3)
+print one
 
 ### "Equality"
 
@@ -86,4 +92,5 @@ print my_dict
 ### "Set"
 
 unique_letters = set("".join(name))
+print unique_letters
 print "".join(sorted(unique_letters))

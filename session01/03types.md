@@ -46,6 +46,14 @@ a `len` operator and so on:
 {{d['session01/python/structures.py|idio|pycon']["Sequence"]}}
 ```
 
+## Unpacking
+
+Sequences can be **unpacked** from sequences:
+
+``` python
+{{d['session01/python/structures.py|idio|pycon']["Unpacking"]}}
+```
+
 ## Concepts and Duck Typing
 
 We call the set of things that behave like arrays from the point of
