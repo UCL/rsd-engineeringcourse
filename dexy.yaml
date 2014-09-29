@@ -13,6 +13,8 @@
 pythons:
     - .py|idio|pycon:
        - data
+       - pycon:
+           add-new-files: True
     - .py|idio|t
 
 data:
