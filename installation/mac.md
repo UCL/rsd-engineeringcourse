@@ -44,7 +44,7 @@ below. But not essential for Software Carpentry. Homebrew requires the Xcode too
 Install Homebrew via typing this at a terminal:
 
 ``` bash
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 and then type.
