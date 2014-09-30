@@ -10,22 +10,86 @@ This is a intensive, practical course.
 Synopsis
 --------
 
-1. Why use scripting languages? An overview of the available
-   options. Python. IPython and the IPython notebook.
-   Programming with lists. Data structures: arrays, dictionaries, and sets. Modules. Working with files and the OS.
-2. Collaborating around code. Version control. Git. Github. Issue tracking. Code review. Branches and merging.
-3. Testing. Unit testing and regression testing. Test driven design. Exceptions and assertions. Mocking.
-   Automated and interactive testing. Build-and-test servers. Negative testing and defensive programming.
-   Coverage. Duck typing. Logging.
-4. Using libraries. Pypy. Packaging with setuptools. Software licensing and releases. Profiling and debugging.
-5. List comprehensions. Iterables. Functional python. Map and reduce. Context managers and decorators.
-6. Language bindings: calling C++ from Python.
-7. Object-oriented python. Object oriented design. Software as engineering. Pragmatic use of diagram
-   languages. Requirements engineering. Agile and Waterfall. Functional and architectural design.
-8. Best practice in construction. Comments. Coding conventions. Documentation with Sphinx. Refactoring.
-   IDEs. Design and development.
-9. Libraries for research python (1): Matplotlib. Numpy.
-10. Libraries for research python (2): Scipy. Pandas
+## Lesson 1
+
+* Why use scripting languages? 
+* Python. IPython and the IPython notebook.
+* Programming with lists. Data structures: arrays, dictionaries, and sets. 
+* Modules.
+
+## Lesson 2
+
+* Collaborating around code. Version control.
+* Git. Github. Issue tracking.
+* Code review.
+* Branches and merging.
+
+## Lesson 3
+
+* Testing.
+* Unit testing and regression testing.
+* Test driven design.
+* Exceptions and assertions.
+* Mocking.
+* Automated and interactive testing.
+* Build-and-test servers.
+* Negative testing and defensive programming.
+* Coverage.
+* Duck typing.
+* Logging.
+
+## Lesson 4
+
+* Using libraries.
+* The Python package index.
+* Packaging with setuptools.
+* Software licensing and releases.
+* Profiling and debugging.
+* Working with files and the OS.
+* Working with the web
+
+## Lesson 5
+
+* Tricks for not repeating yourself
+* Iterables and generators
+* Functional python.
+* Map and reduce.
+* Context managers and decorators.
+* Metaprogramming
+
+## Lesson 6
+
+* Object-oriented python.
+* Object oriented design.
+* Software as engineering.
+* Pragmatic use of diagram languages.
+* Requirements engineering.
+* Agile and Waterfall.
+* Functional and architectural design.
+
+## Lesson 7
+
+* Best practice in construction.
+* Comments.
+* Coding conventions.
+* Documentation with Sphinx.
+* Refactoring.
+* IDEs and editors
+* Design and development.
+
+## Lession 8
+
+* Matplotlib.
+* Numpy.
+
+## Lesson 9
+
+* Scipy
+* Pandas
+
+## Lesson 10
+
+* Language bindings: calling C++ from Python.
 
 Prerequisites
 -------------
