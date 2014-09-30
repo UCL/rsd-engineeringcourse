@@ -65,6 +65,8 @@ $ git clone https://github.com/UCL/rsd-engineeringcourse.git
 $ cd rsd-engineeringcourse/session01/notebooks
 $ ipython notebook
 ```
+
+![](session01/python/eight.png)
 ... look in your browser ...
 
 ## Install Python and IPython Notebook
