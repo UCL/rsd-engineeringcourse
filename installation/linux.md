@@ -76,8 +76,3 @@ git config --global core.editor NameofYourEditorHere
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing
 `bash`.
 
-CMake
------
-
-Again, install the appropriate package with apt-get or yum (`cmake`)
-
