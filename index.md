@@ -7,12 +7,11 @@ title: Research Software Development with Python
 Dates
 -----
 
-Tuesdays 2:00pm - 5:00pm
+Wednesdays 09:00am - 12:00pm
 
-September 30th
-October 7th, 14th, 21st, 28th
-November 4th, 11th, 18th, 25th
-December 2nd
+October 1st, 8th, 15th, 22st, 29th
+November 5th, 12th, 19th, 26th
+December 3nd
 
 Versions
 --------

@@ -6,7 +6,7 @@ title: Python
 
 ## Why teach Python?
 
-* In this first session, we will introduce [Python](python.org).
+* In this first session, we will introduce [Python](http://www.python.org).
 * This course is about good programming for research.
 * It's not mainly about Python.
 * But we have to use some language.

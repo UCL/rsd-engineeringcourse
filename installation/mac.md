@@ -44,7 +44,7 @@ below. But not essential for Software Carpentry. Homebrew requires the Xcode too
 Install Homebrew via typing this at a terminal:
 
 ``` bash
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 and then type.
@@ -114,17 +114,6 @@ pip install [package-name]
 *  scipy
 *  matplotlib
 *  ipython[all]
-
-CMake
------
-
-Just do
-
-``` Bash
-brew install cmake
-```
-
-(If you're not using homebrew, you can get the [package directly](http://www.cmake.org/cmake/resources/software.html))
 
 Editor and shell
 ----------------
