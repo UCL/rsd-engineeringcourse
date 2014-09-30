@@ -55,6 +55,9 @@ brew doctor
 
 And read the output to verify that everything is working as expected.
 
+If you are already running MacPorts or another package manager for OSX we don't recommend
+installing homebrew.
+
 
 Python
 ------
@@ -98,8 +101,9 @@ python --version
 Which should print:
 
 ```
-Python 2.7.6
+Python 2.7.8
 ```
+The System Python version on OSX Mavericks is 2.7.5
 
 Then install additional python packages by executing the following.
 
@@ -114,6 +118,14 @@ pip install [package-name]
 *  scipy
 *  matplotlib
 *  ipython[all]
+
+The following packages should be installed automatically as dependencies. But we recommend 
+installing them manually just in case. 
+
+*  tornado
+*  jinja2
+*  pyzmq
+
 
 Editor and shell
 ----------------
