@@ -98,8 +98,9 @@ python --version
 Which should print:
 
 ```
-Python 2.7.6
+Python 2.7.8
 ```
+The System Python version on OSX Mavericks is 2.7.5
 
 Then install additional python packages by executing the following.
 
