@@ -15,8 +15,6 @@ pythons:
        - data
        - .py
     - .py|idio|t
-    - .py:
-       - output: False
 
 data:
     - .csv
@@ -43,6 +41,17 @@ all.md|jinja|jinja|pandoc|-reveal|h:
             --highlight-style=zenburn
             --mathjax
             -V revealjs-url=http://lab.hakim.se/reveal-js/
+
+all.md|jinja|jinja:
+    - sources
+    - assets
+    - pythons
+    - data
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - output-name: notes.md
 
 all.md|jinja|jinja|pandoc|p:
     - sources
