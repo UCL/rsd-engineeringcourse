@@ -55,6 +55,9 @@ brew doctor
 
 And read the output to verify that everything is working as expected.
 
+If you are already running MacPorts or another package manager for OSX we don't recommend
+installing homebrew.
+
 
 Python
 ------
