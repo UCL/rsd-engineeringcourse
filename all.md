@@ -1,6 +1,5 @@
 ---
 title: Research Software Engineering with Python
-subtitle: Tools for reproducible computational research
 author: James Hetherington and Matt Clarkson
 ---
 
