@@ -115,17 +115,6 @@ pip install [package-name]
 *  matplotlib
 *  ipython[all]
 
-CMake
------
-
-Just do
-
-``` Bash
-brew install cmake
-```
-
-(If you're not using homebrew, you can get the [package directly](http://www.cmake.org/cmake/resources/software.html))
-
 Editor and shell
 ----------------
 
