@@ -119,6 +119,14 @@ pip install [package-name]
 *  matplotlib
 *  ipython[all]
 
+The following packages should be installed automatically as dependencies. But we recommend 
+installing them manually just in case. 
+
+*  tornado
+*  jinja2
+*  pyzmq
+
+
 Editor and shell
 ----------------
 
