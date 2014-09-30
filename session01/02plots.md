@@ -139,6 +139,8 @@ which can be used repeatedly:
 
 Note that the only way Python knows that we're done with our function block is by unindenting!
 
+## User defined types. 
+
 Note that the result of type(image) is `matplotlib.figure.Figure`: the `matplotlib` library defines
 its own new type, called a `class`, with its own methods, like `add_subplot`.
 

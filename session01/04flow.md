@@ -88,7 +88,7 @@ for example, to iterate over the items in a dictionary as pairs:
 {{d['session01/python/flow.py|idio|pycon']['Items']}}
 ```
 
-## Break, Continue, and Else
+## Break, Continue
 
 * Continue skips to the next turn of a loop
 * Break stops the loop early
@@ -96,6 +96,8 @@ for example, to iterate over the items in a dictionary as pairs:
 ``` python
 {{d['session01/python/flow.py|idio|pycon']['Break']}}
 ```
+
+## Break, Continue and Else
 
 * An else clause on a loop is executed iff the end of the loop is reached 
 
