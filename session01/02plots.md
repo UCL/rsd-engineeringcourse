@@ -23,7 +23,7 @@ plotting script is wrong as if the code that generates the data is wrong.
 (The next few slides are taken from Software Carpentry materials and are (CC-BY) the contributors at
 https://github.com/swcarpentry/bc/blob/master/team.md)
 
-You can follow along in an [IPython Notebook](session01/notebooks/01-numpy.nb)
+You can follow along in an [IPython Notebook](http://nbviewer.ipython.org/github/UCL/rsd-engineeringcourse/blob/staging/session01/notebooks/session1.ipynb)
 
 ## The data
 
