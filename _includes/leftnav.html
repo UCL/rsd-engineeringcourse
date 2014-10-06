@@ -8,7 +8,7 @@
 		{% endfor %}
 		{% for folder in sorted(navtree.root.children, key=attrgetter('location')) %}
 			{% if folder.index_page %}
-      {% if "session01" in folder.location or 'installation' in folder.location %}
+      {% if folder.location in ['session01', 'session02', 'installation']%}
 			<li><a href="{{siteroot}}{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
 			{% endif %}
 			{% if folder.has_children_with_index_pages() %}
