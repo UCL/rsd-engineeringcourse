@@ -1,5 +1,5 @@
 ---
-title: Git Recap
+title: Further Git
 ---
 
 Distributed VCS concepts (2)
@@ -200,6 +200,18 @@ and apply it as a patch to your branch, use:
 git cherry-pick <commit>
 git cherry-pick somebranch^^^
 ```
+
+Tagging
+-------
+
+Easy to read labels for revisions
+Produce real results *only* with tagged revisions
+
+``` Bash
+git tag -a v1.3
+git push --tags
+```
+
 
 Working with multiple remotes
 =============================
@@ -405,63 +417,6 @@ You can clone the materials for this course:
 
 ``` bash
 git clone git@github.com:UCL/rsd-engineeringcourse.git
-```
-
-Conflicts
-=========
-
-Conflicts
----------
-
-Content from different branches or remotes, when merged, can *conflict*.
-
-When you pull, instead of offering a commit message, it says:
-
-> ```
-> CONFLICT (content): Merge conflict in index.md  
-> Automatic merge failed; fix conflicts
->    and then commit the result.  
-> ```
-
-Resolving conflicts
--------------------
-
-Git couldn't work out how to merge the two different sets of changes.
-
-You now need to manually resolve the conflict.
-
-Edit the file. It should look something like this:
-
-> ```
->     <<<<<<< HEAD  
->     Wales is hillier than England,
->             but not quite as hilly as Scotland.  
->     =======  
->     Wales is much hillier than England,
->             but not as hilly as Scotland.  
->     >>>>>>> dba9bbf3bcab1008b4d59342392cc70890aaf8e6
-> ```  
-
-The syntax with `<<<` `===` and `>>>` shows the differences.
-
-To resolve a conflict, you must manually edit the file,
-to combine the changes as seems sensible and get rid of the symbols.
-
-Next you must add and commit the merged result:
-
-    git commit -a
-
-A suggested commit message appears, which you can accept, and then you can `push` the merged result.
-
-Tagging
--------
-
-Easy to read labels for revisions
-Produce real results *only* with tagged revisions
-
-``` Bash
-git tag -a v1.3
-git push --tags
 ```
 
 Hunks
@@ -706,3 +661,122 @@ Automated Bisect
 ```
 git bisect run py.test
 ```
+
+An example repository
+---------------------
+
+In a nice open source example, I found an arbitrary exemplar on github
+
+``` bash
+git clone git@github.com:shawnsi/bisectdemo.git
+cd bisectdemo
+python squares.py 2 # 4
+```
+
+This has been set up to break itself at a random commit, and leave you to use
+bisect to work out where it has broken:
+
+``` bash
+./breakme.sh
+```
+
+Which will make a bunch of commits, of which one is broken, and leave you in the broken one
+
+``` bash
+python squares.py 2 # Error message
+
+Getting started with your bisect
+--------------------------------
+
+``` bash
+git bisect start
+git bisect bad # We know the current state is broken
+git checkout master
+git bisect good # Or just git bisect good master
+```
+
+Note it needs one known good and one known bad commit to get started
+
+Solving Manually
+----------------
+
+``` bash
+python squares.py 2
+git bisect good #OR bad
+python squares.py
+git bisect good #OR bad
+```
+
+And eventually:
+
+``` bash
+git bisect good
+> Bisecting: 0 revisions left to test after this (roughly 0 steps)
+python squares.py 9
+> TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+git bisect bad
+> 13cfff692c8c9b9ec3564140c94eb371328cef52 is the first bad commit
+> Author: Shawn Siefkas <shawn.siefkas@meredith.com>
+> Date:   Thu Nov 14 09:23:55 2013 -0600
+> Breaking argument type
+git bisect reset
+```
+
+Solving automatically
+---------------------
+
+``` bash
+git bisect bad HEAD # We know the current state is broken
+git bisect good master
+git bisect run python squares.py 2
+> 13cfff692c8c9b9ec3564140c94eb371328cef52 is the first bad commit
+```
+
+
+GitHub pages
+============
+
+Yaml Frontmatter
+----------------
+
+GitHub will publish repositories containing markdown as web pages, automatically. 
+
+You'll need to add this content:
+
+> ```
+>    ---
+>    ---
+> ```
+
+A pair of lines with three dashes, to the top of each markdown file. This is how GitHub knows which markdown files to make into web pages.
+[Here's why](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) for the curious. 
+
+The gh-pages branch
+-------------------
+
+GitHub creates github pages when you use a special named branch.
+
+This is best used to create documentation for a program you write, but you can use it for anything.
+
+``` Bash
+git checkout -b gh-pages
+git push -u origin gh-pages
+```
+    
+The first time you do this, GitHub takes a few minutes to generate your pages. The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
+
+Markdown Hyperlinks
+-------------------
+
+You can use this syntax
+
+    [link text](URL)
+    
+To create hyperlinks in your pages, so you can link between your documents. Try it! 
+
+UCL layout for GitHub pages
+--------------------------
+
+You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, but after the class, you might want to try this.
+
+
