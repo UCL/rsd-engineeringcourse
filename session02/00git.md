@@ -2,54 +2,8 @@
 title: Git and GitHub
 ---
 
-Introduction
-============
-
-What Version Control is For
----------------------------
-
-* Managing Code Inventory
-    * "When did I introduce this bug"?
-    * Undoing Mistakes
-* Working with other programmers
-    * "How can I merge my work with Jim's"
-
-What is version control?
-------------------------
-
-Do some programming
-
-`my_vcs commit`
-
-Program some more
-
-Realise mistake
-
-`my_vcs rollback`
-
-Mistake is undone
-
-What is version control? (Team version)
----------------------------------------
-
-Sue                 James
------------------- ------   
-`my_vcs commit`     
-                    Join the team
-                    `my_vcs checkout`
-                    Do some programming
-                    `my_vcs commit`
-`my_vcs update`		
-Do some programming Do some programming
-					`my_vcs commit`
-`my_vcs update`
-`my_vcs merge`
-`my_vcs commit`
-
-Scope
------
-
-This course will use the `git` version control system, but much of what you learn will be valid with other version control tools you may encounter, including subversion (`svn`) and mercurial (`hg`).
+Practicing with Git
+===================
 
 Example Exercise
 ----------------
@@ -112,31 +66,6 @@ First, we should configure Git to know our name and email address:
 git config --global user.name "Your Name Here"
 git config --global user.email "your_email@ucl.ac.uk"
 ```
-
-Configuring Git with your editor
---------------------------------
-
-In the setup you did in preparing for software carpentry, you should have told Git where to find your editor, if you haven't,
-do this now:
-
-``` Bash
-git config --global core.editor "myeditor"
-```
-
-You can find out what you currently have with:
-
-``` Bash
-git config --get core.editor
-```
-
-e.g. on windows with Notepad++:
-
-``` Bash
-git config --global core.editor "'C:/Program Files (x86)/Notepad++
-   /notepad++.exe' -multiInst  -nosession -noPlugin"
-```
-
-I'm going to be using `vim` as my editor, but you can use whatever editor you prefer. (Windows users could use "Notepad++", Mac users could use "textmate" or "sublime text", linux users could use `vim`, `nano` or `emacs`.)
 
 Initialising the repository
 ---------------------------
@@ -219,6 +148,31 @@ And note the confirmation from Git:
 > ```
 
 There's a lot of output there you can ignore for now.
+
+Configuring Git with your editor
+--------------------------------
+
+In the setup, you should have told Git where to find your editor, if you haven't,
+the previous step didn't work. Do this now:
+
+``` Bash
+git config --global core.editor "myeditor"
+```
+
+You can find out what you currently have with:
+
+``` Bash
+git config --get core.editor
+```
+
+e.g. on windows with Notepad++:
+
+``` Bash
+git config --global core.editor "'C:/Program Files (x86)/Notepad++
+   /notepad++.exe' -multiInst  -nosession -noPlugin"
+```
+
+I'm going to be using `vim` as my editor, but you can use whatever editor you prefer. (Windows users could use "Notepad++", Mac users could use "textmate" or "sublime text", linux users could use `vim`, `nano` or `emacs`.)
 
 Git log
 -------

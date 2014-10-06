@@ -1,0 +1,14 @@
+Working Directory -> Staging Area : git add
+Staging Area -> Local Repository : git commit
+Working Directory -> Local Repository : git commit -a
+Staging Area -> Working Directory : git checkout
+Local Repository -> Staging Area : git reset
+Local Repository -> Working Directory : git checkout HEAD
+parallel {
+Local Repository -> Staging Area: git reset --hard
+Staging Area -> Working Directory: git reset --hard
+}
+Local Repository -> Remote Repository : git push
+Remote Repository -> Local Repository : git fetch
+Local Repository -> Working Directory : git merge
+Remote Repository -> Working Directory : git pull
