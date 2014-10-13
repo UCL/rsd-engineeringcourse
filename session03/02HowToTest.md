@@ -2,6 +2,9 @@
 title: How to Test
 ---
 
+How to Test
+===========
+
 Equivalence partitioning
 ------------------------
 

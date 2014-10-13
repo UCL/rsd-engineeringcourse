@@ -3,7 +3,10 @@ title: Exercises
 ---
 
 Pull Request Exercise
----------------------
+=====================
+
+Submitting a pull request
+-------------------------
 
 * Fork [The test sample repository](https://github.com/ucl-rc-training/git-notes-with-mistakes) on GitHub
 * Clone your copy locally.

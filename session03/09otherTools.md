@@ -2,6 +2,9 @@
 title: Other Tools
 ---
 
+Jenkins
+=======
+
 Test Servers
 ------------
 
@@ -11,7 +14,7 @@ Goal
     1. run tests after each commit to github (or other)
     1. run tests on different platforms
 
-![Soon at a UCL near you!](session03/figures/jenkins)
+![Now at a UCL near you!](session03/figures/jenkins)
 
 
 Memory and Profiling

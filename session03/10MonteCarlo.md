@@ -2,15 +2,18 @@
 title: "Exercise: Monte-Carlo"
 ---
 
-Description
------------
+Exercise
+========
+
 
 Goal
+----
 
 :    Perform Monte-Carlo over diffusion model
 
 
 Description
+-----------
 
 :    Given an input function (energy) and starting point (density) and a temperature $T$
 
@@ -27,6 +30,7 @@ Description
 
 
 Caveats
+-------
 
 :    * should work for (m)any energy function(s)
      * separate tests for separate steps! What constitute a step?
@@ -34,6 +38,20 @@ Caveats
 
 
 Bonus
+-----
 
 :    * Use debugger to stop code at each iteration
      * Use [matplotlib](http://matplotlib.org/) to plot density at each iteration
+
+Assessment
+----------
+
+* You will not be required to submit a full solution to pass
+* This is a pass/fail exercise
+* To pass:
+  * Several relevant functions, in appropriate python modules
+  * With appropriate, sensibly structured unit tests
+  * With version control history showing tests being developed alongside code
+
+Submit your code by emailing rc-softdev@ucl.ac.uk with a link to a repository on your GitHub account
+containing your solution.

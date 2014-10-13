@@ -1,6 +1,9 @@
 ---
-title: Nose
+title: Classroom Exercise
 ---
+
+Classroom Exercise: Energy Calculation
+======================================
 
 Description {% raw %}{#diffusion}{% endraw %}
 -----------
