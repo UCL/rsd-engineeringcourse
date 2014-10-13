@@ -2,6 +2,9 @@
 title: Licensing
 ---
 
+Software Licensing
+==================
+
 This course
 -----------
 

@@ -2,6 +2,9 @@
 title: Floating Point
 ---
 
+Testing with Floating Points
+============================
+
 Floating points are not Reals
 -----------------------------
 

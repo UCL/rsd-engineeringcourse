@@ -2,6 +2,8 @@
 title: Debugging
 ---
 
+Using a Debugger
+================
 
 Step by step through the code
 -----------------------------
