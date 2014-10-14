@@ -93,7 +93,8 @@ vector_of_reals = array([0.1, 0.2, 0.3, 0.4]) * pi
 ```
 
 
-[Numpy](http://www.numpy.org/) ships with a number of tests to make comparison easy:
+Numpy ships with a number of assertions (in ``numpy.testing``) to make
+comparison easy:
 
 ``` python
 def test_compare_vectors_of_reals():

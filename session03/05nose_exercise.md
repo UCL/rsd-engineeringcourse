@@ -5,16 +5,12 @@ title: Classroom Exercise
 Classroom Exercise: Energy Calculation
 ======================================
 
-Description {% raw %}{#diffusion}{% endraw %}
------------
+Diffusion Model in 1D {% raw %}{#diffusion}{% endraw %}
+---------------------
 
 <div align="left">
 
-Goal:
-
-:   implement simple and unphysical 1-dimensional diffusion model
-
-Description:
+Description: simplistic 1-dimensional diffusion model
 
 :   * Particles are on a 1d axis
     * Particles do not want to be where there are other particles
@@ -131,40 +127,41 @@ In a directory, create two files:
 * Implementation file: diffusion_model.py
 
 ``` python
-    def energy(density):
-      """ Energy associated with the diffusion model
+def energy(density, coeff=1.0):
+  """ Energy associated with the diffusion model
 
-          :Parameters:
-            density: array of positive integers
-               Number of particles at each position i
-               in the array
-      """
-      # implementation goes here
+      Parameters
+      ----------
+
+      density: array of positive integers
+          Number of particles at each position i in the array
+      coeff: float
+          Diffusion coefficient.
+  """
+  # implementation goes here
 ```
 
 * Testing file: test_diffusion_model.py
 
 ``` python
-    from diffusion_model import energy
-    def test_energy():
-      """ Optional description for nose reporting """
-      # Test something
+from diffusion_model import energy
+def test_energy():
+  """ Optional description for nose reporting """
+  # Test something
 ```
+
 </div>
 
 Coverage
 --------
 
-<div align="left">
 
 1. Comment out from exception tests in solution
 1. in solution directory, run
-
-``` bash
+    ``` bash
     nosetests --with-coverage --cover-package=diffusion_model -v --cover-html
-```
-
+    ```
 1. Open ``cover/index.html`` for coverage information
 
-</div>
+
 ![](session03/figures/coverage.png)

@@ -25,32 +25,34 @@ Testing Frameworks
 
 * Language agnostic: [CTest](http://www.cmake.org/cmake/help/v2.8.12/ctest.html)
 
-    | Allows running separate executables / test scripts together
+    | Test runner for executables, bash scripts, etc...
     | Great for legacy code hardening
 
 * C unit-tests:
     all c++ frameworks,
     [Check](http://check.sourceforge.net/),
     [CUnit](http://cunit.sourceforge.net)
+
 * C++ unit-tests:
+    [CppTest](http://cpptest.sourceforge.net/),
+    [Boost::Test](http://www.boost.org/doc/libs/1_55_0/libs/test/doc/html/index.html),
     [google-test](https://code.google.com/p/googletest/),
-    [Boot::Test](http://www.boost.org/doc/libs/1_55_0/libs/test/doc/html/index.html),
-    [CppTest](http://cpptest.sourceforge.net/)
+    [Catch](https://github.com/philsquared/Catch) (best)
+
 * Python unit-tests:
 
     | [nose](https://nose.readthedocs.org/en/latest/) includes test discovery, coverage, etc
     | [unittest](http://docs.python.org/2/library/unittest.html) comes with standard python library
+    | [py.test](http://pytest.org/latest/), branched off of nose
 
 * R unit-tests:
-
-    | [RUnit](http://cran.r-project.org/web/packages/RUnit/index.html)
-    | [svUnit](http://cran.r-project.org/web/packages/svUnit/index.html) works with [SciViews](http://www.sciviews.org/) GUI
+    [RUnit](http://cran.r-project.org/web/packages/RUnit/index.html),
+    [svUnit](http://cran.r-project.org/web/packages/svUnit/index.html)
+    (works with [SciViews](http://www.sciviews.org/) GUI)
 
 * Fortran unit-tests:
-
-    | [funit](http://nasarb.rubyforge.org/funit/)
-    | [pfunit](http://sourceforge.net/projects/pfunit/), works with MPI
-    | [fruit](http://fortranxunit.sourceforge.net/), could be unmaintained, not recommended
+    [funit](http://nasarb.rubyforge.org/funit/),
+    [pfunit](http://sourceforge.net/projects/pfunit/)(works with MPI)
 
 
 Mocking Frameworks {%raw%} {#MockingFrameworks} {% endraw %}
@@ -101,30 +103,29 @@ In a file ``test_[meaningful_name].py``:
 * Check that something is true
 
 ``` python
-    from nose.tools import assert_true
-    from my_module import my_function
+from nose.tools import assert_true
+from my_module import my_function
 
-    def test_my_function_returns_true():
-       argument = "something, anything"
-       actual = my_function(something)
-       message = "tests that my function returns true when called with input {0}".format(argument)
-       assert_true(actual == True, message)
+def test_my_function_returns_true():
+    argument = "something, anything"
+    actual = my_function(something)
+    assert_true(actual, "some description")
 ```
+
 * Check expected result and actual results are equal
 
 ``` python
-    def test_set_equality():
-       from nose.tools import assert_equal, assert_not_equal
-       assert_equal(set([1, 2]), set([2, 1]), "Sets are order independent")
-       assert_not_equal(set([1, 2]), set([1, 3]), "Sets elements matter")
+def test_set_equality():
+    from nose.tools import assert_equal, assert_not_equal
+    assert_equal(set([1, 2]), set([2, 1]), "Sets are order independent")
+    assert_not_equal(set([1, 2]), set([1, 3]), "Sets elements matter")
 ```
 
 * Check that an exception is raised
 
-
 ``` python
-    def test_set_equality():
-       from nose.tools import assert_raises
-       with assert_raises(ValueError) as exception:
-         raise ValueError("I'm the wrong value")
+def test_exception_is_raised():
+    from nose.tools import assert_raises
+    with assert_raises(ValueError) as exception:
+        raise ValueError("I'm the wrong value")
 ```

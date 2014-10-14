@@ -8,16 +8,11 @@ Testing
 A few reasons not to do testing
 -------------------------------
 
-<style type="text/css">
-  .constrastTable em { color:#E9FFF3; font-style:normal; }
-  .constrastTable strong { color:#FFF7FB; font-style:normal; font-weight:normal }
-</style>
-
 <div class="reveal constrastTable">
   ------------------------------------      -------------------------------------
   Sensibility                               Sense
   ------------------------------------      -------------------------------------
-  **It's boring**                           *Yup*
+  **It's boring**                           *Maybe*
 
   **Code is just a one off throwaway**      *As with most research codes*
 
@@ -34,10 +29,6 @@ A few reasons not to do testing
 
 A few reasons to do testing
 ---------------------------
-
-<style type="text/css">
-  .happy em { color:#E9FFF3; font-style:normal; }
-</style>
 
 <div class="reveal happy">
   * **lazyness** *testing saves time*
