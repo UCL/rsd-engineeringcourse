@@ -83,7 +83,7 @@ OK
 ```
 
 * automagically finds files ``test_*.py``
-* collects all subroutines called ``test_*.py``
+* collects all subroutines called ``test_*``
 * runs tests and reports results
 
 <br>
