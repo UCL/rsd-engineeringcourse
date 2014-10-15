@@ -17,7 +17,7 @@ Description: simplistic 1-dimensional diffusion model
 
 Implementation:
 
-:   * Given a vector $n$ of positive integers, and of arbitray length
+:   * Given a vector $n$ of positive integers, and of arbitrary length
     * Compute the energy,
 
         $E(n) = \frac{D}{2} \sum_i n_i(n_i - 1),$
