@@ -122,7 +122,7 @@ Post-Mortem
 Debugging when something goes wrong:
 
 1. add `raise Exception("OMG!")` somewhere in the code
-1. run `python -m file.py`
+1. run `python -m pdb file.py`
 1. hit `c`
 
 <br>
