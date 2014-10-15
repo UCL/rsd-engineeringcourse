@@ -57,7 +57,6 @@ Or relative:
 
 ``` python
 def test_compare_two_scalars():
-  from math import abs
   from nose.tools import assert_almost_equal
   magnitude = 0.7
   assert_almost_equal(0.7, 0.7 + 1e-5, delta = magnitude * 1e-5)
