@@ -23,7 +23,7 @@ sources:
     - .md|yamlargs:
       - output: False
 
-all.md|jinja|jinja|pandoc|-reveal|h:
+all.md|jinja|jinja|pandoc|-reveal|resub|h:
     - sources
     - assets
     - pythons
@@ -32,11 +32,14 @@ all.md|jinja|jinja|pandoc|-reveal|h:
     - graphs
     - report.latex
     - uml
+    - resub:
+        expressions:
+          - ['{{root}}','']
     - output-name: reveal.html
     - pandoc:
         args: -t revealjs -V theme=night
-            --css=assets/night.css --css=assets/slidetheme.css
-            --css=assets/local_styles.css
+            --css={{root}}/css/night.css
+            --css={{root}}/css/slidetheme.css
             --default-image-extension=png
             --highlight-style=zenburn
             --mathjax
