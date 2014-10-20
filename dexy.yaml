@@ -1,0 +1,97 @@
+.md|yamlargs|jinja|resub|pandoc:
+    - intro.md
+    - pythons
+    - data
+    - except: "(LICENSE|README|all.md)"
+    - resub:
+        expressions:
+          - ['session../python/','python/']
+          - ['session../figures/','figures/']
+    - pandoc:
+        args: --default-image-extension=png
+
+pythons:
+    - .py|idio|pycon:
+       - data
+       - .py
+    - .py|idio|t
+
+data:
+    - .csv
+
+sources:
+    - .md|yamlargs:
+      - output: False
+
+all.md|jinja|jinja|pandoc|-reveal|h:
+    - sources
+    - assets
+    - pythons
+    - data
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - output-name: reveal.html
+    - pandoc:
+        args: -t revealjs -V theme=night
+            --css=assets/night.css --css=assets/slidetheme.css
+            --css=assets/local_styles.css
+            --default-image-extension=png
+            --highlight-style=zenburn
+            --mathjax
+            -V revealjs-url=http://lab.hakim.se/reveal-js/
+
+all.md|jinja|jinja:
+    - sources
+    - assets
+    - pythons
+    - data
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - output-name: notes.md
+
+all.md|jinja|jinja|pandoc|p:
+    - sources
+    - pythons
+    - assets
+    - data
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - output-name: notes.pdf
+    - pandoc:
+        args:
+              -V documentclass=scrartcl
+              -V links-as-notes
+             --default-image-extension=png
+             -V linkcolor="uclmidgreen"
+             --number-sections
+             -H report.latex
+
+assets:
+    - .css
+    - .png
+    - .svg
+    - .pdf
+    - .js
+
+sequence_charts:
+    - .wsd|wsd:
+        - wsd:
+            style: napkin
+
+uml:
+    - .yuml|yuml
+
+graphs:
+    - .dot|dot:
+        - assets
+
+    - .nto|graphviz:
+        - assets
+        - graphviz:
+            args: -Kneato

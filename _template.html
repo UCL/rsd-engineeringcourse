@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<meta name="author" content="UCL" />
+<meta name="description" content="{{d.title}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+{% set includeleftnav = True %}
+{% set leftnav = [] %}
+{% set crumbs = [{'link': 'http://ucl.ac.uk/isd', 'text': 'ISD'},
+				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/', 'text': 'RITS'},
+				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/research-software', 'text': 'Software Development'},
+				 {'link': 'http://development.rc.ucl.ac.uk/training', 'text': 'Training'}
+				] %}
+{% set contact = 'http://www.ucl.ac.uk/research-it-services/partner-with-us' %}
+{% set sitetitle = 'Research Software Development with Python' %}
+{% set siteroot = '/training/engineering' %}
+{% include '_includes/social.html' %}
+{% include '_includes/scripts.html' %}
+
+<title>{{title}}</title>
+
+<link href="{{siteroot}}/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{siteroot}}/css/highlight.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{siteroot}}/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<!--[if IE]><link href="/css/ie.min.css" rel="stylesheet" /><![endif]-->
+<!--[if lt IE 8]><link href="/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
+
+
+<link rel="shortcut icon" href="{{siteroot}}/images/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="favicon-144.png">
+
+</head>
+
+<body id="index">
+
+	{% include '_includes/navigation.html' %}
+
+		<div id="site-content" class="wrapper">
+
+			<header id="header-mobile" class="default-header">
+
+				<a id="nav-mobile-menu" href="#"><img src="/images/mob-nav.png" alt="Menu" /></a>
+
+			</header>
+
+		  <div id="main" class="clearfix">
+
+				<div id="content">
+
+					{%include '_includes/breadcrumb.html' %}
+
+					<!-- start main slot where silva content gets rendered-->
+
+					<div class="content-main">
+
+						<article>
+
+							{{content}}
+
+							</article>
+
+						<p class="mod">Page last modified on <span class="lastMod">{{ today }}</span>
+						</p>
+
+					</div>
+
+					{% if d.sidebar is defined %}
+					<div class="content-sidebar">
+
+						<h1>{{ d.sidebar.title }}</h1>
+
+						<p>{{ d.sidebar.text }}</p>
+
+					</div>
+					{% endif %}
+
+					<!-- end main slot where silva content gets rendered-->
+
+				</div>
+
+				<!--End last modified info-->
+			</div>
+
+
+		</div><!-- end #site-content -->
+
+		{% include '_includes/footer.html' %}
+
+</body>
+</html>

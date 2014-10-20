@@ -1,0 +1,2 @@
+reporter:ws:
+    default: True

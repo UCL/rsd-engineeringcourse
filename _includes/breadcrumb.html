@@ -1,0 +1,14 @@
+
+<nav id="breadcrumb" class="clearfix">
+	<ul>
+  		<li><a href="http://www.ucl.ac.uk/">UCL</a></li>
+  		{% if crumbs is defined %}
+			{% for crumb in crumbs %}
+			<li><a href="{{crumb.link}}">{{crumb.text}}</a></li>
+			{% endfor %}
+		{% endif %}
+		{% for ancestor in nav.ancestors %}
+			<li><a href="{{siteroot}}{{ancestor.location | e}}">{{ancestor.index_page.title()}}</a></li>
+		{% endfor %}
+ 	</ul>
+</nav>

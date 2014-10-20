@@ -1,7 +1,9 @@
+.dexy
+output-site
+output
 _site/
 .sconsign.dblite
 html/index.html
-assets
 pdf
 *.pyc
 *.swp

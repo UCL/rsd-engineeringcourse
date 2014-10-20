@@ -1,0 +1,32 @@
+{% if includeleftnav is defined%}
+<div id="leftcol">
+<nav class="leftnav">
+	<ul>
+
+		{% for place in leftnav %}
+			<li><a href="{{place.link}}">{{place.text}}</a></li>
+		{% endfor %}
+		{% for folder in sorted(navtree.root.children, key=attrgetter('location')) %}
+			{% if folder.index_page %}
+      {% if "session01" in folder.location or 'installation' in folder.location or 'session02' in folder.location or 'session03' in folder.location %}
+			<li><a href="{{siteroot}}{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
+			{% endif %}
+			{% if folder.has_children_with_index_pages() %}
+				{{ loop(folder.children) }}
+			{% endif %}
+			{% if folder == nav %}
+			<ul>
+			{% for doc in sorted(folder.docs, key=attrgetter('name')) %}
+				{% if doc != folder.index_page and doc.ext == ".html" %}
+					<li><a href="{{siteroot}}/{{doc.name}}">{{doc.title()}}</a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			{% endif %}
+      {% endif %}
+		{% endfor %}
+	</ul>
+
+</nav>
+</div>
+{% endif %}
