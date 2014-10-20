@@ -1,0 +1,11 @@
+reporter:supplementary:
+    supplementary-location: ../../indigo/workspace
+    root: '/training/engineering'
+    site_title: 'Research Software Development With Python'
+    crumbs:
+        - [ISD, 'http://ucl.ac.uk/isd']
+        - [RITS, 'http://www.ucl.ac.uk/isd/staff/research_services/']
+        - ['Software Development', 'http://www.ucl.ac.uk/isd/staff/research_services/research-software']
+        - [Training, 'http://development.rc.ucl.ac.uk/training']
+    include_leftnav: True
+    default: True
