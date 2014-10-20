@@ -33,10 +33,10 @@ sin(realpi)
 ### 'FolderModules'
 
 import module1
-module1.hello
+print module1.hello
 
 import module1.module2
-module1.module2.hello
+print module1.module2.hello
 
 ### 'RelativeImport'
 import module1.module3

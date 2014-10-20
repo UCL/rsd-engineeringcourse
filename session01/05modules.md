@@ -8,99 +8,73 @@ title: Functions and modules
 
 We use `def` to define a function, and `return` to pass back a value:
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['Function']}}
-```
+{{ pyfrag('functions','Function') }}
 
 ## Side effects
 
 Functions can do things to change their **mutable** arguments,
 so `return` is optional.
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['SideEffect']}}
-```
+{{ pyfrag('functions','SideEffect') }}
 
 ## Early Return
 
 Return without arguments can be used to exit early from a function
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['EarlyReturn']}}
-```
+{{ pyfrag('functions','EarlyReturn') }}
 
 ## Unpacking arguments
 
 If a vector is supplied to a function with a '*', its elements
 are used to fill each of a function's arguments. 
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['UnpackingArguments']}}
-```
+{{ pyfrag('functions','UnpackingArguments') }}
 
 This can be quite powerful:
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['UnpackingPower']}}
-```
+{{ pyfrag('functions','UnpackingPower') }}
 
 ## Sequence Arguments
 
 Similiarly, if a `*` is used in the definition of a function, multiple
 arguments are absorbed into a tuple:
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['SequenceArguments']}}
-```
+{{ pyfrag('functions','SequenceArguments') }}
 
 ## Keyword Arguments
 
 If two asterisks are used, named arguments are supplied as a dictionary:
 
-``` python
-{{d['session01/python/functions.py|idio|pycon']['KeywordArguments']}}
-```
+{{ pyfrag('functions','KeywordArguments') }}
 
 # Modules
 
 ## File Modules
 Each python file defines a module, which can be imported from with import:
 
-File pretty.py:
-
-``` python
-{{d['session01/python/pretty.py|idio|t']['Arrow']}}
-```
+{{ notebookfile('pretty') }}
 
 Another file:
 
-``` python
-{{d['session01/python/modules.py|idio|pycon']['FileImport']}}
-```
+{{ pyfrag('modules','FileImport') }}
 
 ## Module Variables
 
 Modules can contain variables as well as functions, and these can be changed.
 
-``` python
-{{d['session01/python/modules.py|idio|pycon']['ModuleVariable']}}
-```
+{{ pyfrag('modules','ModuleVariable') }}
 
 ## Importing from modules
 
 Things can be imported from modules to become part of the current module
 
-``` python
-{{d['session01/python/modules.py|idio|pycon']['ImportFrom']}}
-```
+{{ pyfrag('modules','ImportFrom') }}
 
 ## Import and rename
 
 You can rename things as you import them to avoid clashes or for convenience
 
-``` python
-{{d['session01/python/modules.py|idio|pycon']['ImportAlias']}}
-```
+{{ pyfrag('modules','ImportAlias') }}
 
 ## Folders as modules
 
@@ -115,32 +89,16 @@ module1
     `-- __init__.py
 ```
 
-```python
-{{d['session01/python/modules.py|idio|pycon']['FolderModules']}}
-```
+{{ notebookfile('module1/__init__')}}
 
-`module1/__init__.py`:
+{{ notebookfile('module1/module2') }}
 
-```python
-{{d['session01/python/module1/__init__.py|idio|t']}}
-```
-
-`module1/module2.py`:
-
-```python
-{{d['session01/python/module1/module2.py|idio|t']}}
-```
+{{ pyfrag('modules','FolderModules') }}
 
 ## Relative Import
 
 Inside packages, you can use `..` to refer to the parent module
 
-`module1/module3/__init__.py`:
+{{ notebookfile('module1/module3/__init__')}}
 
-```python
-{{d['session01/python/module1/module3/__init__.py|idio|t']}}
-```
-
-```python
-{{d['session01/python/modules.py|idio|pycon']['RelativeImport']}}
-```
+{{ pyfrag('modules','RelativeImport') }}

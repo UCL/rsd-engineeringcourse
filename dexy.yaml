@@ -1,8 +1,8 @@
-.md|yamlargs|jinja|resub|pandoc:
-    - intro.md
-    - pythons
-    - data
-    - except: "(LICENSE|README|all.md)"
+.md|yamlargs|hd|jinja|resub|pandoc:
+    - inputs
+    - except: "(LICENSE|README|slides|notebook|all)"
+    - hd:
+          header: macros/header.jinja
     - resub:
         expressions:
           - ['session../python/','python/']
@@ -10,32 +10,17 @@
     - pandoc:
         args: --default-image-extension=png
 
-pythons:
-    - .py|idio|pycon:
-       - data
-       - .py
-    - .py|idio|t
 
-data:
-    - .csv
-
-sources:
-    - .md|yamlargs:
-      - output: False
-
-all.md|jinja|jinja|pandoc|-reveal|resub|h:
-    - sources
-    - assets
-    - pythons
-    - data
-    - sequence_charts
-    - graphs
-    - report.latex
-    - uml
+"**/slides.md|jinja|hd|jinja|pandoc|-reveal|resub|h":
+    - inputs
+    - hd:
+          header: macros/header.jinja
     - resub:
         expressions:
+          - ['session../python/','python/']
+          - ['session../figures/','figures/']
           - ['{{root}}','']
-    - output-name: reveal.html
+    - output-name: "{dirname}/slides.html"
     - pandoc:
         args: -t revealjs -V theme=night
             --css={{root}}/css/night.css
@@ -46,35 +31,18 @@ all.md|jinja|jinja|pandoc|-reveal|resub|h:
             --mathjax
             -V revealjs-url=http://lab.hakim.se/reveal-js/
 
-all.md|jinja|jinja:
-    - sources
-    - assets
-    - pythons
-    - data
-    - sequence_charts
-    - graphs
-    - report.latex
-    - uml
-    - output-name: notes.md
 
-all.md|jinja|jinja|pandoc|p:
-    - sources
-    - pythons
-    - assets
-    - data
-    - sequence_charts
-    - graphs
-    - report.latex
-    - uml
-    - output-name: notes.pdf
-    - pandoc:
-        args:
-              -V documentclass=scrartcl
-              -V links-as-notes
-             --default-image-extension=png
-             -V linkcolor="uclmidgreen"
-             --number-sections
-             -H report.latex
+"**/notebook.md|jinja|hd|jinja|resub|mdjup":
+    - inputs
+    - mdjup:
+          python_only: True
+    - hd:
+          header: macros/header.jinja
+    - output-name: "{dirname}/python/{dirname}.ipynb"
+    - resub:
+        expressions:
+          - ['session../python/','../python/']
+          - ['session../figures/','../figures/']
 
 assets:
     - .css
@@ -82,6 +50,22 @@ assets:
     - .svg
     - .pdf
     - .js
+
+pythons:
+    - .py|idio|pycon:
+       - data
+    - .py|idio|t
+
+data:
+    - .csv
+
+sources:
+    - .md|yamlargs:
+      - output: False
+
+jinjas:
+    - .jinja:
+      - output: False
 
 sequence_charts:
     - .wsd|wsd:
@@ -99,3 +83,14 @@ graphs:
         - assets
         - graphviz:
             args: -Kneato
+
+inputs:
+    - sources
+    - pythons
+    - assets
+    - data
+    - sequence_charts
+    - graphs
+    - report.latex
+    - uml
+    - jinjas

@@ -1,7 +1,6 @@
 ---
 title: Simple data manipulation and plotting
 ---
-
 # Working with and visualising data
 
 ## Why write software to manage your data and plots? 
@@ -59,18 +58,15 @@ Python makes it easy to find and use other people's libraries.
 In this case, we want to use a python library to load and parse the csv data, and manipulate it as 
 a matrix.
 
-``` python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Starting']}}
-```
+{{ pyfrag('numpy_nb','Starting') }}
+
 Here we've called a **function** `loadtxt` from a **module** `numpy`, and
 assigned it to a **variable** data. This course assumes you're happy with very basic
 programming concepts like function and variable. The IPython notebook contains more detail.
 
 ## Types
 
-``` python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Types1']}}
-```
+{{ pyfrag('numpy_nb','Types1') }}
 
 We've jumped straight in and used a `numpy.ndarray` (numerical python) matrix type for our data.
 It's similar to a basic python `Array` type; we'll talk more about the differences later.
@@ -78,38 +74,38 @@ It's similar to a basic python `Array` type; we'll talk more about the differenc
 For now, it's important to know that Python variables have a type, that different types behave differently,
 but that, unlike C++ or Fortran, you don't need to say what type of variable something is before you use it.
 
-```python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Types2']}}
-```
+{{ pyfrag('numpy_nb','Types2') }}
 
 ## Slicing
 
 We can **slice** elements from arrays and matrices:
 
-```python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Slicing']}}
-```
+{{ pyfrag('numpy_nb','Slicing') }}
 
 ## Methods
 
 We can apply **methods** to objects. Which methods are available depend on the object's type:
 
-``` python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Methods']}}
-```
+{{ pyfrag('numpy_nb','Methods') }}
 
 ## Numpy Tools
 
 Numpy provides cool tools like:
 
-``` python
-{{d['session01/python/numpy_nb.py|idio|pycon']['Axes']}}
-```
+{{ pyfrag('numpy_nb','Axes') }}
 
 ## Plotting
 
 > The purpose of computing is insight, not numbers
 --- Richard Hamming
+{% if notebook  %}
+
+Tell IPython to show plots inline in the notebook
+
+``` python
+%matplotlib inline
+```
+{% endif %}
 
 ``` python
 from matplotlib import pyplot as plt
@@ -117,15 +113,19 @@ plt.imshow(data)
 plt.show()
 ```
 
+{% if not notebook %}
+
 ![](session01/python/image.png)
+{% endif %}
 
 ## Something isn't right here
 ``` python
 plt.plot(data.max(axis=0))
 plt.show()
 ```
-
+{% if not notebook %}
 ![](session01/python/dayrange.png)
+{% endif %}
 
 ## Make it a function
 
@@ -133,9 +133,8 @@ So we've built some figures which help us analyse these data sets.
 
 We know we're going to have lots of similar experiments, so we'll want to wrap the code up into a **function**
 which can be used repeatedly:
-``` python
-{{d['session01/python/analyzer.py|idio|t']['analyze']}}
-```
+
+{{ pyfrag('analyzer','analyze') }}
 
 Note that the only way Python knows that we're done with our function block is by unindenting!
 
@@ -150,10 +149,13 @@ We'd like our function to be usable by other people. So we'll wrap it up as it's
 We copy it out of the notebook into a file, and add a wrapper function to make it easy to call it to
 produce an output on disk instead of in a notebook:
 
+{% if notebook %}
+
+{{notebookfile('analyzer')}}
+
+{% else %}
 `analyzer.py`:
-``` python
-{{d['session01/python/analyzer.py|idio|t']['generate']}}
-```
+{{ pyfrag('analyzer','generate') }}
 
 Here we see a conditional, a default argument value, and use of a library function to remove a file extension.
 
@@ -163,27 +165,28 @@ We can use this in other code, with, for example `import analyzer` and analyzer.
 
 We'd like to be able to analyse many files at once.
 
-``` python
-{{d['session01/python/analyzer.py|idio|t']['bulk_generate']}}
-```
+{{ pyfrag('analyzer','bulk_generate') }}
 
+{% endif %}
 
 ## Call from the command line
 
 We'll also add some magic to make it work as a command line tool:
 
-```
+``` bash
 #!/usr/bin/env python
-...
 {{d['session01/python/analyzer.py|idio|t']['main']}}
 ```
 
 So now we can do:
 
-```bash
-chmod u+x analysis.py
-./analysis.py data/*.csv
-open data/inflammation-01.png
+```
+{% if notebook %}
+%%bash
+{% endif %}
+chmod u+x analyzer.py
+./analyzer.py ../data/*.csv
+open ../data/inflammation-01.png
 ```
 
 

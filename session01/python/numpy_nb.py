@@ -20,7 +20,7 @@ print data[:-1,:] #All but the last line, all columns
 print data.mean() # 6.14875
 print data.std() # 4.613
 patient_zero=data[0, :]
-print 'maximum inflammation for patient 0:', patient_0.max()
+print 'maximum inflammation for patient 0:', patient_zero.max()
 print 'maximum inflammation for patient 2:', data[2, :].max()
 
 ### "Axes"

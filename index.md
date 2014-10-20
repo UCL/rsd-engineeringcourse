@@ -18,4 +18,4 @@ Versions
 
 You can find the course notes as HTML via the navigation bar to the left.
 
-The [slides](reveal.html) and [pdf](notes.pdf) are also available.
+The [pdf](notes.pdf) are also available in  a printable pdf format.
