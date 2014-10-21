@@ -4,6 +4,7 @@ import yaml
 deployed_path="/training/engineering"
 
 plugin=yaml.load(open('dexyplugin.yaml'))
+plugin['reporter:supplementary']['supplementary-location']='../indigo'
 plugin['reporter:supplementary']['root']=deployed_path
 yaml.dump(plugin,open('dexyplugin.yaml','w'))
 
