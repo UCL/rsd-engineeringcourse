@@ -15,6 +15,7 @@ Synopsis
 * Why use scripting languages? 
 * Python. IPython and the IPython notebook.
 * Programming with lists. Data structures: arrays, dictionaries, and sets. 
+* Duck typing.
 * Modules.
 
 ## Lesson 2
@@ -23,6 +24,7 @@ Synopsis
 * Git. Github. Issue tracking.
 * Code review.
 * Branches and merging.
+* Software licensing and releases.
 
 ## Lesson 3
 
@@ -34,19 +36,19 @@ Synopsis
 * Automated and interactive testing.
 * Build-and-test servers.
 * Negative testing and defensive programming.
+* Profiling and debugging.
 * Coverage.
-* Duck typing.
-* Logging.
 
 ## Lesson 4
 
 * Using libraries.
 * The Python package index.
 * Packaging with setuptools.
-* Software licensing and releases.
-* Profiling and debugging.
+* Build tools. SCons.
 * Working with files and the OS.
 * Working with the web
+* Working with command line arguments
+* Brief introduction to functional programming
 
 ## Lesson 5
 
@@ -76,6 +78,7 @@ Synopsis
 * Refactoring.
 * IDEs and editors
 * Design and development.
+* Logging.
 
 ## Lession 8
 
@@ -89,7 +92,8 @@ Synopsis
 
 ## Lesson 10
 
-* Language bindings: calling C++ from Python.
+* Language bindings: calling C++ from Python
+* Deployment: getting your code to where it needs to run
 
 Prerequisites
 -------------

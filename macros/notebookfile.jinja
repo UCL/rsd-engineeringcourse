@@ -1,13 +1,25 @@
 {% macro notebookfile(file) %}
+{% extension = file.split('.')[1] %)
+{% if extension == 'py':
+     lang='python'
+   elif extension == 'md':
+     lang='markdown'
+   elif extension == 'sh':
+     lang='bash'
+   elif extension == 'yaml':
+     lang='yaml'
+%}
 {% if ".ipynb" in s.output_name() %}
 ``` python
-%%writefile {{file}}.py
-{{d['python/'+file+'.py|idio|t']}}
+%%writefile {{file}}
+{{d['python/'+file+'|idio|t']}}
 ```
 {% else %}
-{{file}}.py:
-``` python
-{{d['python/'+file+'.py|idio|t']}}
+{{file}}:
+{% if lang != markdown %}
+``` {{lang}}
+{% endif %}
+{{d['python/'+file+'|idio|t']}}
 ```
 {% endif %}
 {% endmacro %}

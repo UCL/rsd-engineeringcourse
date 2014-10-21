@@ -151,7 +151,7 @@ produce an output on disk instead of in a notebook:
 
 {% if notebook %}
 
-{{notebookfile('analyzer')}}
+{{notebookfile('analyzer.py')}}
 
 {% else %}
 `analyzer.py`:
@@ -184,9 +184,6 @@ So now we can do:
 {% if notebook %}
 %%bash
 {% endif %}
-chmod u+x analyzer.py
-./analyzer.py ../data/*.csv
-open ../data/inflammation-01.png
 ```
 
 

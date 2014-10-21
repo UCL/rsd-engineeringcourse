@@ -363,3 +363,21 @@ env = conf.Finish()
   assert( (!isnan(localTau)) );
 #endif
 ```
+
+Using CMake or SCons to generate installers
+--------------------------------------------
+
+You can use CMake or SCons to generate installers for Windows and Linux.
+
+CMake has the [CPack](http://www.cmake.org/cmake/help/v2.8.8/cpack.html)
+extension which can build dpkg, rpm and windows installers.
+
+SCons has the "Packaging" Builder:
+
+``` python
+env = Environment(tools=['default', 'packaging'])
+env.Install('/bin/', 'my_program')
+env.Package( NAME           = 'foo',
+             VERSION        = '1.2.3',
+             PACKAGETYPE    = 'rpm')
+```
