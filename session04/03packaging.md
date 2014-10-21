@@ -29,6 +29,33 @@ project layout is essential.
 
 {{ bashfile('tree.sh') }}
 
+``` tree
+|-- CITATION.md
+|-- Greetings.egg-info
+|   |-- PKG-INFO
+|   |-- SOURCES.txt
+|   |-- dependency_links.txt
+|   |-- requires.txt
+|   `-- top_level.txt
+|-- LICENSE.md
+|-- README.md
+|-- greetings
+|   |-- CITATION.md
+|   |-- LICENSE.md
+|   |-- README.md
+|   |-- __init__.py
+|   |-- command.py
+|   |-- greeter.py
+|   `-- test
+|       |-- __init__.py
+|       |-- fixtures
+|       |   `-- samples.yaml
+|       `-- test_greeter.py
+|-- scripts
+|   `-- greet
+`-- setup.py
+```
+
 Using setuptools
 ----------------
 
@@ -147,7 +174,7 @@ system dependent.)
 
 If you want to install a package, but keep working on it, you can do
 
-```
+``` raw-python
 sudo python setup.py develop
 ```
 

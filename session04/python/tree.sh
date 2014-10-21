@@ -1,1 +1,1 @@
-tree --charset ascii greetings
+#tree --charset ascii greetings
