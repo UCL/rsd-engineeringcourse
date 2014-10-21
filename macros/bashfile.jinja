@@ -1,13 +1,12 @@
-{% macro notebookfile(file) %}
+{% macro bashfile(file) %}
 {% if ".ipynb" in s.output_name() %}
 ``` python
-%%writefile {{file}}.py
-{{d['python/'+file+'.py|idio|t']}}
+%%bash
+{{d['python/'+file+'|idio|t']}}
 ```
 {% else %}
-{{file}}.py:
 ``` python
-{{d['python/'+file+'.py|idio|t']}}
+{{d['python/'+file+'|idio|bash']}}
 ```
 {% endif %}
 {% endmacro %}

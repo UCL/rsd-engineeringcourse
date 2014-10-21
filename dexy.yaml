@@ -1,6 +1,6 @@
 .md|yamlargs|hd|jinja|resub|pandoc:
     - inputs
-    - except: "(LICENSE|README|slides|notebook|all)"
+    - except: "(LICENSE|README|slides|notebook|all|CITATION)"
     - hd:
           header: macros/header.jinja
     - resub:
@@ -53,17 +53,23 @@ assets:
 
 pythons:
     - .py|idio|pycon:
+       - except: setup.py|greeter.py
        - data
+       - session04/python/greetings/scripts/greet
     - .py|idio|t
+    - .py:
+        output: False
 
 bashes:
   - .sh|idio|bash:
-    - pythons
+    - .py
+    - .csv
   - .sh|idio|t
 
 
 data:
     - .csv
+    - .yaml
 
 sources:
     - .md|yamlargs:
@@ -101,3 +107,5 @@ inputs:
     - report.latex
     - uml
     - jinjas
+    - session04/python/greetings/scripts/greet
+

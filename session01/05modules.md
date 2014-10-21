@@ -52,7 +52,7 @@ If two asterisks are used, named arguments are supplied as a dictionary:
 ## File Modules
 Each python file defines a module, which can be imported from with import:
 
-{{ notebookfile('pretty') }}
+{{ notebookfile('pretty.py') }}
 
 Another file:
 
@@ -89,9 +89,9 @@ module1
     `-- __init__.py
 ```
 
-{{ notebookfile('module1/__init__')}}
+{{ notebookfile('module1/__init__.py')}}
 
-{{ notebookfile('module1/module2') }}
+{{ notebookfile('module1/module2.py') }}
 
 {{ pyfrag('modules','FolderModules') }}
 
@@ -99,6 +99,6 @@ module1
 
 Inside packages, you can use `..` to refer to the parent module
 
-{{ notebookfile('module1/module3/__init__')}}
+{{ notebookfile('module1/module3/__init__.py')}}
 
 {{ pyfrag('modules','RelativeImport') }}

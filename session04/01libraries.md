@@ -164,9 +164,10 @@ And you can download files from the web, accessing headers and the body of the r
 
 Libraries even allow you to parse HTML content, to find the data you want within a page:
 
-{{ pyfrag('web'), 'parse' }}
+{{ pyfrag('web', 'parse')}}
 
 {% if notebook %}
+import IPython
 IPython.core.display.Image(map_image.content)
 {% else %}
 ![Image downloaded from google using requests]('session04/python/web.png')

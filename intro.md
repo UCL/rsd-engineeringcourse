@@ -44,7 +44,6 @@ Synopsis
 * Using libraries.
 * The Python package index.
 * Packaging with setuptools.
-* Build tools. SCons.
 * Working with files and the OS.
 * Working with the web
 * Working with command line arguments
@@ -93,6 +92,7 @@ Synopsis
 ## Lesson 10
 
 * Language bindings: calling C++ from Python
+* Build tools. SCons.
 * Deployment: getting your code to where it needs to run
 
 Prerequisites

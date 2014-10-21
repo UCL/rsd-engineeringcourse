@@ -83,22 +83,38 @@ Write an executable script
 Write an entry point script stub
 --------------------------------
 
-{{ notebookfile('greetings/greetings/greeter')}}
+{% if notebook %}
+``` python
+%%writefile greetings/greetings/greet
+
+{{d['session04/python/greetings/scripts/greet']}}
+```
+{% else %}
+greetings/greetings/greet :
+``` python
+{{d['session04/python/greetings/scripts/greet']}}
+```
+{% endif %}
 
 Write a readme file
 -------------------
-
-{{ notebookfile('greetings/greetings/README.md')}}
-
+e.g.:
+```
+{{ d['session04/python/greetings/greetings/README.md']}}
+```
 Write a license file
 -------------------
-
-{{ notebookfile('greetings/greetings/LICENSE.md')}}
+e.g.:
+```
+{{ d['session04/python/greetings/greetings/LICENSE.md']}}
+```
 
 Write a citation file
 -------------------
-
-{{ notebookfile('greetings/greetings/CITATION.md') }}
+e.g.:
+```
+{{ d['session04/python/greetings/greetings/CITATION.md'] }}
+```
 
 Define packages and executables
 -------------------------------
@@ -112,7 +128,11 @@ Separating the script from the logical module made this possible:
 
 {{ notebookfile('greetings/greetings/test/test_greeter.py')}}
 
-{{ notebookfile('greetings/greetings/test/fixtures/examples.yaml') }}
+Add a fixtures file:
+
+``` yaml 
+{{ d['session04/python/greetings/greetings/test/fixtures/samples.yaml'] }}
+```
 
 Developer Install
 -----------------

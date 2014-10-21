@@ -75,7 +75,7 @@ def show_green_in_png(data):
     result.save(buffer)
     return buffer.getvalue()
 
-### "Points"""
+### "points"
 
 from numpy import linspace
 def location_sequence(start,end,steps):
@@ -90,7 +90,7 @@ def location_sequence(start,end,steps):
             for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)]
 
 
-### "Save"
+### "save"
 import matplotlib.pyplot as plt
 plt.plot([count_green_in_png(map_at(*location,zoom=10,satellite=True))
             for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])

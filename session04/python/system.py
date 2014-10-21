@@ -4,7 +4,7 @@ from os.path import join, dirname, abspath
 datapath=join(dirname(dirname(dirname(abspath(__file__)))), 'session01', 'data', 'inflammation-01.csv')
 newpath=join(dirname(__file__), 'midvals.yaml')
 
-### "file"
+### "files"
 source = open(datapath)
 import csv
 reader = csv.reader(source)
