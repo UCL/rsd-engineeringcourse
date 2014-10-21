@@ -1,3 +1,25 @@
 ---
 title: Libraries
 ---
+
+Libraries
+=========
+
+Libraries are awesome
+---------------------
+
+The strength of a language lies as much in the set of libraries available, as it does
+in the language itself.
+
+A great set of libraries allows for a very powerful programming style:
+
+* Write minimal code yourself
+* Choose the right libraries
+* Plug them together
+* Create immpressive results
+
+Not only is this efficient with your programming time, it's also more efficient with computer
+time.
+
+The chances are any algorithm you might want to use has already been programmed better by someone else.
+

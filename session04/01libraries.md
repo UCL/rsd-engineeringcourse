@@ -23,6 +23,9 @@ time.
 
 The chances are any algorithm you might want to use has already been programmed better by someone else.
 
+Careful use of Libraries
+========================
+
 Drawbacks of libraries.
 ----------------------
 
