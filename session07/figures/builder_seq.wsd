@@ -1,9 +1,0 @@
-participant Client
-participant Director
-participant ConcreteBuilder
-Client->ConcreteBuilder: new
-Client->Director: new(ConcreteBuilder)
-Director->ConcreteBuilder: BuildFirstPart
-Director->ConcreteBuilder: BuildSecondPart
-Director->ConcreteBuilder: BuildThirdPart
-Client->ConcreteBuilder: GetResult
