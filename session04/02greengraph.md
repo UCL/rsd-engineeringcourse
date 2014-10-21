@@ -64,8 +64,7 @@ behaves like a file:
 
 {% if notebook %}
 ```python
-IPython.core.display.Image(get_map_at(*london_location,satellite=True).read())
-IPython.core.display.Image(show_green_in_png(get_map_at(*london_location,satellite=True)))
+IPython.core.display.Image(show_green_in_png(map_at(*london_location,satellite=True)))
 ```
 {% else %}
 ![The green bits of London](session04/python/green.png)
@@ -83,10 +82,12 @@ The results
 -----------
 
 {% if notebook %}
+``` python
 import matplotlib.pyplot as plt
 %matplotlib inline
-plt.plot([count_green_in_png(get_map_at(*location,zoom=10,satellite=True))
+plt.plot([count_green_in_png(get_map(*location,zoom=10,satellite=True))
             for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])
+```
 {% else %}
 {{ pyfrag('greengraph', 'save') }}
 ![The density of green space between London and Birmingham](session04/python/greengraph.png)

@@ -110,6 +110,13 @@ Operating system paths and files
 When loading and saving files, standard libraries allow you to manage file names,
 in an operating-system independent way:
 
+{% if notebook %}
+``` python
+__file__ = "session04.ipynb" # No __file__ in notebook!
+```
+{% endif %}
+
+
 {{ pyfrag('system', 'paths', execute=False) }}
 
 And you'll want to be able to read and write to files:
@@ -149,8 +156,10 @@ Libraries even allow you to parse HTML content, to find the data you want within
 {{ pyfrag('web', 'parse')}}
 
 {% if notebook %}
+``` python
 import IPython
-IPython.core.display.Image(map_image.content)
+IPython.core.display.Image(map_here.content)
+```
 {% else %}
 ![Image downloaded from google using requests](session04/python/map.png)
 {% endif %}

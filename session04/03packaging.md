@@ -46,7 +46,8 @@ And the package will be then available to use everywhere on the system:
 
 ``` python
 import greetings
-print greetings.greet("James","Hetherington")
+from greetings.greeter import greet
+print greetings.greeter.greet("James","Hetherington")
 ```
 
 And the scripts are now available as command line commands:
@@ -61,7 +62,7 @@ We could now submit "greeter" to PyPI for approval, so everyone could `pip insta
 
 However, when using git, we don't even need to do that: we can install directly from any git URL:
 
-```
+``` bash
 sudo pip install git+git://github.com/jamespjh/greeter
 greet Humphry Appleby --title Sir
 ```
@@ -99,20 +100,20 @@ greetings/greetings/greet :
 Write a readme file
 -------------------
 e.g.:
-```
+``` markdown
 {{ d['session04/python/greetings/greetings/README.md']}}
 ```
 Write a license file
 -------------------
 e.g.:
-```
+``` markdown
 {{ d['session04/python/greetings/greetings/LICENSE.md']}}
 ```
 
 Write a citation file
 -------------------
 e.g.:
-```
+``` markdown
 {{ d['session04/python/greetings/greetings/CITATION.md'] }}
 ```
 
