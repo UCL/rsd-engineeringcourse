@@ -10,19 +10,17 @@ print london_location
 ### "URL"
 import requests
 def map_at(lat,long, satellite=False,zoom=12,size=(400,400),sensor=False):
-  base="http://maps.googleapis.com/maps/api/staticmap?"
-  
-  params=dict(
-    sensor= str(sensor).lower(),
-    zoom= zoom,
-    size= "x".join(map(str,size)),
-    center= ",".join(map(str,(lat,long))),
-    style="feature:all|element:labels|visibility:off"
-  )
-  if satellite:
-    params["maptype"]="satellite"
-
-  return requests.get(base,params=params)
+    base="http://maps.googleapis.com/maps/api/staticmap?"
+    params=dict(
+        sensor= str(sensor).lower(),
+        zoom= zoom,
+        size= "x".join(map(str,size)),
+        center= ",".join(map(str,(lat,long))),
+        style="feature:all|element:labels|visibility:off"
+    )
+    if satellite:
+        params["maptype"]="satellite"
+    return requests.get(base,params=params)
 
 
 map_response=map_at(51.5072, -0.1275, zoom=10)
@@ -75,6 +73,8 @@ def show_green_in_png(data):
     result.save(buffer)
     return buffer.getvalue()
 
+
+
 ### "points"
 
 from numpy import linspace
@@ -92,6 +92,9 @@ def location_sequence(start,end,steps):
 
 ### "save"
 import matplotlib.pyplot as plt
+with open('green.png','w') as green:
+    green.write(show_green_in_png(map_at(*london_location,zoom=10,satellite=True)))
+
 plt.plot([count_green_in_png(map_at(*location,zoom=10,satellite=True))
-            for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])
+          for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])
 plt.savefig('greengraph.png')

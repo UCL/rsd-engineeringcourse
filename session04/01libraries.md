@@ -2,27 +2,6 @@
 title: Libraries
 ---
 
-Libraries
-=========
-
-Libraries are awesome
----------------------
-
-The strength of a language lies as much in the set of libraries available, as it does
-in the language itself.
-
-A great set of libraries allows for a very powerful programming style:
-
-* Write minimal code yourself
-* Choose the right libraries
-* Plug them together
-* Create immpressive results
-
-Not only is this efficient with your programming time, it's also more efficient with computer
-time.
-
-The chances are any algorithm you might want to use has already been programmed better by someone else.
-
 Careful use of Libraries
 ========================
 
@@ -131,11 +110,11 @@ Operating system paths and files
 When loading and saving files, standard libraries allow you to manage file names,
 in an operating-system independent way:
 
-{{ pyfrag('system', 'paths') }}
+{{ pyfrag('system', 'paths', execute=False) }}
 
 And you'll want to be able to read and write to files:
 
-{{ pyfrag('system','files') }}
+{{ pyfrag('system','files', execute=False) }}
 
 Note the use of the `csv` library to read csv files as well.
 
@@ -144,7 +123,7 @@ Context managers
 
 There's a better way to handle opening and closing files
 
-{{ pyfrag('system', 'context') }}
+{{ pyfrag('system', 'context', execute=False) }}
 
 This syntax using `with` is called a context manager.
 It is used when a library wants stuff to happen both before **and** after client code is called.
@@ -173,5 +152,5 @@ Libraries even allow you to parse HTML content, to find the data you want within
 import IPython
 IPython.core.display.Image(map_image.content)
 {% else %}
-![Image downloaded from google using requests]('session04/python/web.png')
+![Image downloaded from google using requests](session04/python/map.png)
 {% endif %}

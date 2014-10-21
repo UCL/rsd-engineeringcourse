@@ -16,7 +16,7 @@ A great set of libraries allows for a very powerful programming style:
 * Write minimal code yourself
 * Choose the right libraries
 * Plug them together
-* Create immpressive results
+* Create impressive results
 
 Not only is this efficient with your programming time, it's also more efficient with computer
 time.

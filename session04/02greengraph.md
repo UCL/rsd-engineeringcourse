@@ -42,8 +42,6 @@ We'll therefore need to use a library to build this URL, and fetch the result
 ```python
 IPython.core.display.Image(map_png.content)
 ```
-{% else %}
-![A map downloaded from the Google API](session04/python/map.png)
 {% endif %}
 
 Finding the green bits
@@ -70,7 +68,7 @@ IPython.core.display.Image(get_map_at(*london_location,satellite=True).read())
 IPython.core.display.Image(show_green_in_png(get_map_at(*london_location,satellite=True)))
 ```
 {% else %}
-![The green bits of London](session04/python/map.png)
+![The green bits of London](session04/python/green.png)
 {% endif %}
 
 Points in between
@@ -91,7 +89,7 @@ plt.plot([count_green_in_png(get_map_at(*location,zoom=10,satellite=True))
             for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])
 {% else %}
 {{ pyfrag('greengraph', 'save') }}
-![The density of green space between London and Birmingham](session04/python/map.png)
+![The density of green space between London and Birmingham](session04/python/greengraph.png)
 {% endif %}
 
 

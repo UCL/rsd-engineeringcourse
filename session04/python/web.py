@@ -1,7 +1,9 @@
 ### "URL"
 
 import requests
-ucl=requests.get('http://en.wikipedia.org/wiki/University_College_London')
+ucl=requests.get(
+    'http://en.wikipedia.org/wiki/University_College_London'
+)
 map_here=requests.get('http://maps.googleapis.com/maps/api/staticmap',
         params={'center':"51.5, -0.1", 'size':"400x400", 'zoom':10})
 print ucl.url

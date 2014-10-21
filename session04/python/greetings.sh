@@ -4,5 +4,3 @@ chmod u+x greeter.py
 ./greeter.py James Hetherington
 ./greeter.py --polite James Hetherington
 ./greeter.py James Hetherington --title Dr
-./greeter.py James
-

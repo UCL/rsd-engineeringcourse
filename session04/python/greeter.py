@@ -6,8 +6,7 @@ if __name__ == "__main__":
     parser.add_argument('--polite','-p', action="store_true")
     parser.add_argument('personal')
     parser.add_argument('family')
-    #arguments= parser.parse_args()
-    arguments= parser.parse_args(["Dr", "Hetherington"]) # Work around dexy bug
+    arguments= parser.parse_args()
     greeting= "How do you do, " if arguments.polite else "Hey, "
     if arguments.title:
         greeting+=arguments.title+" "
