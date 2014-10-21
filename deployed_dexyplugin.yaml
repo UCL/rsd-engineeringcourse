@@ -1,5 +1,5 @@
 reporter:supplementary:
-    supplementary-location: ../../indigo/workspace
+    supplementary-location: ../indigo/
     root: '/training/engineering'
     site_title: 'Research Software Development With Python'
     crumbs:
