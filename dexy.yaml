@@ -44,6 +44,20 @@
           - ['session../python/','../python/']
           - ['session../figures/','../figures/']
 
+all.md|jinja|hd|jinja|pandoc|p:
+    - inputs
+    - output-name: notes.pdf
+    - hd:
+          header: macros/header.jinja
+    - pandoc:
+        args:
+             -V documentclass=book
+             -V links-as-notes
+             --default-image-extension=png
+             -V linkcolor="uclmidgreen"
+             --number-sections
+             -H report.latex
+
 assets:
     - .css
     - .png
@@ -56,6 +70,7 @@ pythons:
        - except: setup.py|greeter.py
        - data
        - session04/python/greetings/scripts/greet
+       - .py
     - .py|idio|t
     - .py:
         output: False

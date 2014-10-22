@@ -25,7 +25,7 @@ Geolocation
 Google provides a service to go from "London" to 51.51N, 0.1275W. Fortunately, there's a very nice library
 on PyPI to access it: `pip install geopy`
 
-{{ pyfrag('greengraph','geolocation') }}
+{{ pyfrag('04','greengraph','geolocation') }}
 
 Addressing the google maps API
 ------------------------------
@@ -36,7 +36,9 @@ Google maps has a static API to obtain satellite images with URLs like this:
 
 We'll therefore need to use a library to build this URL, and fetch the result
 
-{{ pyfrag('greengraph','URL') }}
+`sudo pip install pypng` will get you this library.
+
+{{ pyfrag('04','greengraph','URL') }}
 
 {% if notebook %}
 ```python
@@ -51,7 +53,7 @@ Finding the green bits
 
 We'll need a library to parse `.png` image files and determine which bits are green:
 
-{{ pyfrag('greengraph', 'png')}}
+{{ pyfrag('04','greengraph', 'png')}}
 
 Checking our code
 -----------------
@@ -62,7 +64,7 @@ verification. Let's look which bits are green by building a new png.
 We could write the new png to disk, but we can use `StringIO` to get a string in memory which
 behaves like a file:
 
-{{ pyfrag('greengraph', 'visualise') }}
+{{ pyfrag('04','greengraph', 'visualise') }}
 
 {% if notebook %}
 ```python
@@ -78,7 +80,7 @@ Points in between
 We need all the points equally spaced between two locations.
 Numpy has a routine for just this:
 
-{{ pyfrag('greengraph','points') }}
+{{ pyfrag('04','greengraph','points') }}
 
 The results
 -----------
@@ -91,7 +93,7 @@ plt.plot([count_green_in_png(get_map(*location,zoom=10,satellite=True))
             for location in location_sequence(geolocate("London"),geolocate("Birmingham"),10)])
 ```
 {% else %}
-{{ pyfrag('greengraph', 'save') }}
+{{ pyfrag('04','greengraph', 'save') }}
 ![The density of green space between London and Birmingham](session04/python/greengraph.png)
 {% endif %}
 

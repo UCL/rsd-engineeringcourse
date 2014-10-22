@@ -58,7 +58,7 @@ Python makes it easy to find and use other people's libraries.
 In this case, we want to use a python library to load and parse the csv data, and manipulate it as 
 a matrix.
 
-{{ pyfrag('numpy_nb','Starting') }}
+{{ pyfrag('01','numpy_nb','Starting') }}
 
 Here we've called a **function** `loadtxt` from a **module** `numpy`, and
 assigned it to a **variable** data. This course assumes you're happy with very basic
@@ -66,7 +66,7 @@ programming concepts like function and variable. The IPython notebook contains m
 
 ## Types
 
-{{ pyfrag('numpy_nb','Types1') }}
+{{ pyfrag('01','numpy_nb','Types1') }}
 
 We've jumped straight in and used a `numpy.ndarray` (numerical python) matrix type for our data.
 It's similar to a basic python `Array` type; we'll talk more about the differences later.
@@ -74,25 +74,25 @@ It's similar to a basic python `Array` type; we'll talk more about the differenc
 For now, it's important to know that Python variables have a type, that different types behave differently,
 but that, unlike C++ or Fortran, you don't need to say what type of variable something is before you use it.
 
-{{ pyfrag('numpy_nb','Types2') }}
+{{ pyfrag('01','numpy_nb','Types2') }}
 
 ## Slicing
 
 We can **slice** elements from arrays and matrices:
 
-{{ pyfrag('numpy_nb','Slicing') }}
+{{ pyfrag('01','numpy_nb','Slicing') }}
 
 ## Methods
 
 We can apply **methods** to objects. Which methods are available depend on the object's type:
 
-{{ pyfrag('numpy_nb','Methods') }}
+{{ pyfrag('01','numpy_nb','Methods') }}
 
 ## Numpy Tools
 
 Numpy provides cool tools like:
 
-{{ pyfrag('numpy_nb','Axes') }}
+{{ pyfrag('01','numpy_nb','Axes') }}
 
 ## Plotting
 
@@ -134,7 +134,7 @@ So we've built some figures which help us analyse these data sets.
 We know we're going to have lots of similar experiments, so we'll want to wrap the code up into a **function**
 which can be used repeatedly:
 
-{{ pyfrag('analyzer','analyze') }}
+{{ pyfrag('01','analyzer','analyze') }}
 
 Note that the only way Python knows that we're done with our function block is by unindenting!
 
@@ -151,11 +151,11 @@ produce an output on disk instead of in a notebook:
 
 {% if notebook %}
 
-{{notebookfile('analyzer.py')}}
+{{notebookfile('01','analyzer.py')}}
 
 {% else %}
 `analyzer.py`:
-{{ pyfrag('analyzer','generate') }}
+{{ pyfrag('01','analyzer','generate') }}
 
 Here we see a conditional, a default argument value, and use of a library function to remove a file extension.
 
@@ -165,7 +165,7 @@ We can use this in other code, with, for example `import analyzer` and analyzer.
 
 We'd like to be able to analyse many files at once.
 
-{{ pyfrag('analyzer','bulk_generate') }}
+{{ pyfrag('01','analyzer','bulk_generate') }}
 
 {% endif %}
 

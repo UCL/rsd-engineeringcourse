@@ -1,4 +1,4 @@
-{% macro notebookfile(file) %}
+{% macro notebookfile(session,file) %}
 {% set extension = 'py'  %}
 {% if extension == 'py' %}
 {% set lang='python' %}
@@ -12,14 +12,14 @@
 {% if ".ipynb" in s.output_name() %}
 ``` python
 %%writefile {{file}}
-{{d['python/'+file+'|idio|t']}}
+{{d['session'+session+'/python/'+file+'|idio|t']}}
 ```
 {% else %}
 {{file}}:
 {% if lang != markdown %}
 ``` {{lang}}
 {% endif %}
-{{d['python/'+file+'|idio|t']}}
+{{d['session'+session+'/python/'+file+'|idio|t']}}
 ```
 {% endif %}
 {% endmacro %}

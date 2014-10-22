@@ -55,7 +55,7 @@ Testing Frameworks
     [pfunit](http://sourceforge.net/projects/pfunit/)(works with MPI)
 
 
-Mocking Frameworks {%raw%} {#MockingFrameworks} {% endraw %}
+Mocking Frameworks
 ------------------
 
 * C: [CMocka](http://www.cmocka.org/)

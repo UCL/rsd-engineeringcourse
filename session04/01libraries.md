@@ -86,9 +86,9 @@ Packages from PyPI are installed using Pip.
 
 ``` bash
 pip list # See what you have installed
-pip search <term> # Search PyPI for a package
-sudo pip install <package> # install a package
-sudo pip install <package> --upgrade # upgrade
+pip search <term> # Search PyPI for a package
+sudo pip install <package> # install a package
+sudo pip install <package> --upgrade # upgrade
 sudo pip uninstall <package>
 ```
 
@@ -100,9 +100,9 @@ Argparse
 
 This is the standard library for building programs with a command-line interface.
 
-{{ notebookfile('greeter.py') }}
+{{ notebookfile('04','greeter.py') }}
 
-{{ bashfile('greetings.sh') }}
+#{{ bashfile('04','greetings.sh') }}
 
 Operating system paths and files
 ------------------
@@ -112,16 +112,16 @@ in an operating-system independent way:
 
 {% if notebook %}
 ``` python
-__file__ = "session04.ipynb" # No __file__ in notebook!
+__file__ = "session04.ipynb" # No __file__ in notebook!
 ```
 {% endif %}
 
 
-{{ pyfrag('system', 'paths', execute=False) }}
+{{ pyfrag('04','system', 'paths', execute=False) }}
 
 And you'll want to be able to read and write to files:
 
-{{ pyfrag('system','files', execute=False) }}
+{{ pyfrag('04','system','files', execute=False) }}
 
 Note the use of the `csv` library to read csv files as well.
 
@@ -130,7 +130,7 @@ Context managers
 
 There's a better way to handle opening and closing files
 
-{{ pyfrag('system', 'context', execute=False) }}
+{{ pyfrag('04','system', 'context', execute=False) }}
 
 This syntax using `with` is called a context manager.
 It is used when a library wants stuff to happen both before **and** after client code is called.
@@ -145,15 +145,15 @@ can't appear in URLs, composing ?foo=bar web argument strings and so on.
 
 We can use the [requests](http://docs.python-requests.org/en/latest/) library from PyPI for this.
 
-{{ pyfrag('web', 'URL') }}
+{{ pyfrag('04','web', 'URL') }}
 
 And you can download files from the web, accessing headers and the body of the response:
 
-{{ pyfrag('web', 'download') }}
+{{ pyfrag('04','web', 'download') }}
 
 Libraries even allow you to parse HTML content, to find the data you want within a page:
 
-{{ pyfrag('web', 'parse')}}
+{{ pyfrag('04','web', 'parse')}}
 
 {% if notebook %}
 ``` python

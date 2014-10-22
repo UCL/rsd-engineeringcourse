@@ -1,14 +1,14 @@
-{% macro pyfrag(file, segment, execute=True) %}
+{% macro pyfrag(session, file, segment, execute=True) %}
 {% if ".ipynb" in s.output_name() %}
 ``` python
-{{d['python/'+file+'.py|idio|t'][segment]}}
+{{d['session'+session+'/python/'+file+'.py|idio|t'][segment]}}
 ```
 {% else %}
 ``` python
 {% if execute %}
-{{d['python/'+file+'.py|idio|pycon'][segment]}}
+{{d['session'+session+'/python/'+file+'.py|idio|pycon'][segment]}}
 {% else %}
-{{d['python/'+file+'.py|idio|t'][segment]}}
+{{d['session'+session+'/python/'+file+'.py|idio|t'][segment]}}
 {% endif %}
 ```
 {% endif %}

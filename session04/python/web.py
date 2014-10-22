@@ -17,8 +17,9 @@ with open('map.png','w') as map_image:
 ### "parse"
 # pip install beautifulsoup4
 from bs4 import BeautifulSoup
+import re # Python regular expression library
 wikipage=BeautifulSoup(ucl.text)
 # HTML looks like <span class="latitude">value</span>
-latitude=wikipage.find(class_='latitude').string
-longitude=wikipage.find(class_='longitude').string
-print 'Coordinates:', latitude, longitude
+motto=wikipage.find(text=re.compile("Motto"))
+
+#print 'Coordinates:', latitude, longitude

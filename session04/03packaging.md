@@ -27,14 +27,14 @@ Laying out a project
 When planning to package a project for distribution, defining a suitable
 project layout is essential.
 
-{{ bashfile('tree.sh') }}
+{{ bashfile('04','tree.sh') }}
 
 Using setuptools
 ----------------
 
 To make python code into a package, we have to write a `setupfile`:
 
-{{ notebookfile('greetings/setup.py') }}
+{{ notebookfile('04','greetings/setup.py') }}
 
 We can now install this code with
 
@@ -52,7 +52,7 @@ print greetings.greeter.greet("James","Hetherington")
 
 And the scripts are now available as command line commands:
 
-{{ bashfile('greetings_installed.sh') }}
+{{ bashfile('04','greetings_installed.sh') }}
 
 
 Installing from GitHub
@@ -74,12 +74,12 @@ Convert the script to a module
 
 Of course, there's more to do when taking code from a quick script and turning it into a proper module:
 
-{{ notebookfile('greetings/greetings/greeter.py') }}
+{{ notebookfile('04','greetings/greetings/greeter.py') }}
 
 Write an executable script
 --------------------------
 
-{{ notebookfile('greetings/greetings/command.py') }}
+{{ notebookfile('04','greetings/greetings/command.py') }}
 
 Write an entry point script stub
 --------------------------------
@@ -120,14 +120,14 @@ e.g.:
 Define packages and executables
 -------------------------------
 
-{{ bashfile('setup_greetings_module.sh') }}
+{{ bashfile('04','setup_greetings_module.sh') }}
 
 Write some unit tests
 ---------------------
 
 Separating the script from the logical module made this possible:
 
-{{ notebookfile('greetings/greetings/test/test_greeter.py')}}
+{{ notebookfile('04','greetings/greetings/test/test_greeter.py')}}
 
 Add a fixtures file:
 

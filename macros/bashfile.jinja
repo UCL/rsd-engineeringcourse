@@ -1,12 +1,12 @@
-{% macro bashfile(file) %}
+{% macro bashfile(session,file) %}
 {% if ".ipynb" in s.output_name() %}
 ``` python
 %%bash
-{{d['python/'+file+'|idio|t']}}
+{{d['session'+session+'/python/'+file+'|idio|t']}}
 ```
 {% else %}
 ``` python
-{{d['python/'+file+'|idio|bash']}}
+{{d['session'+session+'/python/'+file+'|idio|bash']}}
 ```
 {% endif %}
 {% endmacro %}

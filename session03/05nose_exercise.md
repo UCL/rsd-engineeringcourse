@@ -5,7 +5,7 @@ title: Classroom Exercise
 Classroom Exercise: Energy Calculation
 ======================================
 
-Diffusion Model in 1D {% raw %}{#diffusion}{% endraw %}
+Diffusion Model in 1D
 ---------------------
 
 <div align="left">

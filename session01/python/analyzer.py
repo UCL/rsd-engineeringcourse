@@ -5,19 +5,15 @@ from matplotlib import pyplot as plt
 def analyze(filename):
     data = np.loadtxt(fname=filename, delimiter=',')
     figure = plt.figure(figsize=(10.0, 3.0))
-
     subplot_average=figure.add_subplot(1, 3, 1)
     subplot_average.set_ylabel('average')
     subplot_average.plot(data.mean(0))
-
     subplot_max=figure.add_subplot(1, 3, 2)
     subplot_max.set_ylabel('max')
     subplot_max.plot(data.max(0))
-
     subplot_min=figure.add_subplot(1, 3, 3)
     subplot_min.set_ylabel('min')
     subplot_min.plot(data.min(0))
-
     figure.tight_layout()
     return figure
 

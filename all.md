@@ -4,6 +4,7 @@ author: James Hetherington and Matt Clarkson
 ---
 
 {{d['intro.md']}}
+\part{Python}
 {{d['session01/index.md']}}
 {{d['session01/01pythons.md']}}
 {{d['session01/02plots.md']}}
@@ -11,12 +12,14 @@ author: James Hetherington and Matt Clarkson
 {{d['session01/04flow.md']}}
 {{d['session01/05modules.md']}}
 {{d['session01/06exercise.md']}}
+\part{Version Control}
 {{d['session02/index.md']}}
 {{d['session02/00git.md']}}
 {{d['session02/01advanced.md']}}
 {{d['session02/02licensing.md']}}
 {{d['session02/03issues.md']}}
 {{d['session02/04exercises.md']}}
+\part{Testing}
 {{d['session03/index.md']}}
 {{d['session03/01primer.md']}}
 {{d['session03/02HowToTest.md']}}
@@ -28,3 +31,9 @@ author: James Hetherington and Matt Clarkson
 {{d['session03/08Methodology.md']}}
 {{d['session03/09otherTools.md']}}
 {{d['session03/10MonteCarlo.md']}}
+\part{Packaging}
+{{d['session04/index.md']}}
+{{d['session04/01libraries.md']}}
+{{d['session04/02greengraph.md']}}
+{{d['session04/03packaging.md']}}
+{{d['session04/05exercises.md']}}

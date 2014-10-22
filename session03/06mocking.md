@@ -31,7 +31,6 @@ stub routine
      Strictly speaking, the term Mocking is reserved for object-oriented approaches
 </div>
 
-For libraries/frameworks, see [this slide](#/MockingFrameworks).
 </div>
 
 Recording calls with Mock
