@@ -64,7 +64,7 @@ bashes:
   - .sh|idio|bash:
     - .py
     - .csv
-    - except: analyze.sh|greetings_installed.sh
+    - except: analyze.sh
   - .sh|idio|t
 
 
