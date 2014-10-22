@@ -120,20 +120,20 @@ Write a readme file
 -------------------
 e.g.:
 ``` markdown
-{{ d['session04/python/greetings/greetings/README.md']}}
+{{ d['session04/python/greetings/README.md']}}
 ```
 Write a license file
 -------------------
 e.g.:
 ``` markdown
-{{ d['session04/python/greetings/greetings/LICENSE.md']}}
+{{ d['session04/python/greetings/LICENSE.md']}}
 ```
 
 Write a citation file
 -------------------
 e.g.:
 ``` markdown
-{{ d['session04/python/greetings/greetings/CITATION.md'] }}
+{{ d['session04/python/greetings/CITATION.md'] }}
 ```
 
 Define packages and executables
