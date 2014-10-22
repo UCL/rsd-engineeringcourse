@@ -1,4 +1,4 @@
-{% macro bashfile(file, execute=True) %}
+{% macro bashfile(file) %}
 {% if ".ipynb" in s.output_name() %}
 ``` python
 %%bash
@@ -6,11 +6,7 @@
 ```
 {% else %}
 ``` python
-{% if execute==True %}
 {{d['python/'+file+'|idio|bash']}}
-{% else %}
-{{d['python/'+file+'|idio|t']}}
-{% endif %}
 ```
 {% endif %}
 {% endmacro %}

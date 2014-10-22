@@ -52,7 +52,7 @@ print greetings.greeter.greet("James","Hetherington")
 
 And the scripts are now available as command line commands:
 
-{{ bashfile('greetings_installed.sh', execute=False) }}
+{{ bashfile('greetings_installed.sh') }}
 
 
 Installing from GitHub
