@@ -30,19 +30,11 @@ project layout is essential.
 {{ bashfile('tree.sh') }}
 
 ``` tree
+greetings
 |-- CITATION.md
-|-- Greetings.egg-info
-|   |-- PKG-INFO
-|   |-- SOURCES.txt
-|   |-- dependency_links.txt
-|   |-- requires.txt
-|   `-- top_level.txt
 |-- LICENSE.md
 |-- README.md
 |-- greetings
-|   |-- CITATION.md
-|   |-- LICENSE.md
-|   |-- README.md
 |   |-- __init__.py
 |   |-- command.py
 |   |-- greeter.py
