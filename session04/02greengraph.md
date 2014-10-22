@@ -40,6 +40,8 @@ We'll therefore need to use a library to build this URL, and fetch the result
 
 {% if notebook %}
 ```python
+import IPython
+map_png=map_at(*london_location)
 IPython.core.display.Image(map_png.content)
 ```
 {% endif %}

@@ -27,10 +27,6 @@ map_response=map_at(51.5072, -0.1275, zoom=10)
 url=map_response.url
 print url
 
-import IPython
-map_png=map_at(*london_location)
-IPython.core.display.Image(map_png.content)
-
 ### "png"
 
 def is_green(r,g,b):
