@@ -48,18 +48,19 @@ This is a intensive, practical course.
 * Working with command line arguments
 * Brief introduction to functional programming
 
-### Lesson 5
+### Lesson 6
 
-* Tricks for not repeating yourself
-* Iterables and generators
-* Functional python.
-* Map and reduce.
-* Context managers and decorators.
-* Metaprogramming
+* Best practice in construction.
+* Comments.
+* Coding conventions.
+* Basic object-oriented python
+* Refactoring.
+* Design and development.
+* Documentation with Sphinx.
 
-### Lesson 6
+### Lesson 5
 
-* Object-oriented python.
+* Further object-oriented python.
 * Object oriented design.
 * Software as engineering.
 * Pragmatic use of diagram languages.
@@ -69,13 +70,13 @@ This is a intensive, practical course.
 
 ### Lesson 7
 
-* Best practice in construction.
-* Comments.
-* Coding conventions.
-* Documentation with Sphinx.
-* Refactoring.
+* Tricks for not repeating yourself
+* Iterables and generators
+* Functional python.
+* Map and reduce.
+* Context managers and decorators.
+* Metaprogramming
 * IDEs and editors
-* Design and development.
 * Logging.
 
 ### Lession 8

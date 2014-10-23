@@ -1,3 +1,3 @@
 ---
-title: Design
+title: Functions
 ---

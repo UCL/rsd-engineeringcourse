@@ -1,3 +1,3 @@
 ---
-title: Language Bindings
+title: Design
 ---

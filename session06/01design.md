@@ -2,137 +2,33 @@
 title: Design
 ---
 
-Design
-------
+##Design
+
+###Design
 
 In this session, we will finally discuss the thing most people think of when they refer to "Software Engineering": the deliberate *design* of software.
 We will discuss processes and methodologies for planned development of large-scale software projects: *Software Architecture*.
 
-Object-Oriented Design
-----------------------
+###Object-Oriented Design
 
 The software engineering community has, in large part, focused on an object-oriented approach to the design and development of large scale software systems.
 The basic concepts of object orientation are necessary to follow much of the software engineering conversation. We will therefore recap some of these.
 
-Design processes
-----------------
+###Design processes
 
 In addition to object-oriented architecture, software engineers have focused on the development of processes for robust, reliable software development. 
 These codified ways of working hope to enable organisations to repeatably and reliably complete complex software projects in a way that minimises both development 
 and maintainance costs, and meets user requirements.
 
-Design and research
--------------------
+###Design and research
 
 Software engineering theory has largely been developed in the context of commercial software companies.
 
 The extent to which the practices and processes developed for commercial software are applicable in a research context is itself an active area of research.
 
-Recap of Objects and Classes
-===================
+##More on objects
 
-Classes
------
-
-Class: A user-defined type
-
-```python
-class MyClass(object):
-    pass
-```
-
-```cpp
-class MyClass {
-};
-```
-
-Instances
----------
-
-Instance: A particular object *instantiated* from a class.
-
-``` python
-my_object = MyClass()
-```
-
-``` cpp
-MyClass  my_object = MyClass();
-MyClass* my_object = new MyClass();
-```
-
-Method
-------
-
-Method: A function which is "built in" to a class
-
-``` python
-class MyClass(object):
-    def someMethod(self, argument):
-        pass
-
-my_object.someMethod(value)
-```
-
-```cpp
-class MyClass {
-    void someMethod(int argument){
-    }
-};
-
-my_object.someMethod(value);
-```
-
-Constructor
------------
-
-Constructor: A special method called when instantiating a new object
-
-``` python
-class MyClass(object):
-    def __init__(self, argument):
-        pass
-
-my_object = MyClass(value)
-```
-
-``` cpp
-class MyClass {
-    MyClass(argument){
-    }
-};
-
-MyClass my_object = MyClass(value);
-
-```
-Member Variable
----------------
-
-Member variable: a value stored inside an instance of a class.
-
-``` python
-class MyClass(object):
-    def __init__(self):
-        self.member = "Value"
-
-my_object = MyClass()
-assert(my_object.member == "Value")
-```
-
-``` cpp
-class MyClass {
-    MyClass()
-    : member("Value")
-    {
-    }
-    std::string member;
-};
-
-MyClass my_object = MyClass();
-assert( my_object.member == "Value");
-```
-
-Access control
---------------
+###Access control
 
 Controls whether member variables and methods can be accessed from outside the class.
 
@@ -162,8 +58,7 @@ x.public_method(); // OK
 x.private_method(); // Raises error
 ```
 
-Access methods
---------------
+###Access methods
 
 Members should be private and accessed by accessors, so that
 should the storage change, client code doesn't need to change.
@@ -196,8 +91,7 @@ assert(Person().name == "James Hetherington")
 # Client code unchanged!
 ```
 
-Access methods (C++)
---------------------
+###Access methods (C++)
 
 ```cpp
 class Person{
@@ -212,8 +106,7 @@ public:
 }
 ```
 
-Class Members
--------------
+###Class Members
 
 *Class*, or *static* members, belong to the class as a whole, and are shared between instances.
 
@@ -254,20 +147,7 @@ cout<< Counted::howMany() << endl;
 
 ```
 
-Object-Based programming concepts
----------------------------------
-
-* Class
-* Instance
-* Member variable
-* Method
-* Constructor
-* Access control
-* Static methods
-* Accessor methods
-
-UML
--------
+###UML
 
 We have seen that these concepts are common between different object oriented languages.
 Thus, when we design our program using these concepts, we can think at an architectural level,
@@ -279,8 +159,7 @@ aspects of software design.
 Computer scientists get worked up about formal correctness of UML diagrams and learning the conventions precisely.
 Working programmers can still benefit from using UML to describe their designs.
 
-UML for objects
----------------
+###UML for objects
 
 UML represents class members and methods like this:
 
@@ -295,24 +174,20 @@ http://yuml.me/diagram/boring/class/[ClassName|+publicmember;-privatemember|
 
 using the [YUML](http://yuml.me/) online UML drawing tool.
 
-Inheritance
-===========
+##Inheritance
 
-Object-based vs object-oriented
--------------------------------
+###Object-based vs object-oriented
 
 Using Objects doesn't mean your code is object-oriented.
 
 Object-oriented programs make use of *inheritance*.
 
-Inheritance
------------
+###Inheritance
 
 * Inheritance allows related classes to share code
 * Inheritance allows a program to reflect the *ontology* of kinds of thing in a program.
 
-Ontology and inheritance
-------------------------
+###Ontology and inheritance
 
 * A bird is a kind of animal
 * An eagle is a kind of bird
@@ -323,8 +198,7 @@ Ontology and inheritance
 * Only eagles hunt
 * Only starlings flock
 
-Inheritance in python
----------------------
+###Inheritance in python
 
 ``` python
 class Animal(object):
@@ -341,8 +215,7 @@ Eagle().beBorn() # prints "I exist"
 Eagle().hunt() # prints "I'm gonna eatcha!"
 ```
 
-Inheritance terminology
------------------------
+###Inheritance terminology
 
 A *derived class* _derives_ from a *base class*
 
@@ -352,8 +225,7 @@ A *subclass* _inherits_ from a *superclass*
 
 E.g. "Eagle is a subclass of the Animal superclass."
 
-Inheritance in C++
-------------------
+###Inheritance in C++
 
 ``` cpp
 class Eagle: public Bird {
@@ -363,23 +235,20 @@ class Eagle: public Bird {
 };
 ```
 
-Inheritance UML diagrams
-------------------------
+###Inheritance UML diagrams
 
 UML shows inheritance with an open triangular arrow pointing from subclass to superclass.
 
 ![Bird inheritance diagram](session07/figures/inheritance)
 
-Aggregation vs Inheritance
---------------------------
+###Aggregation vs Inheritance
 
 If one object *has* or *owns* one or more objects, this is *not* inheritance.
 
 For example, the Boids model from last week owned several Boids,
 each Boid owned two 2-vectors, one for position and one for velocity.
 
-Aggregation in UML
-------------------
+###Aggregation in UML
 
 The Boids situation can be represented thus:
 
@@ -390,8 +259,7 @@ The open diamond indicates Aggregation, the closed diamond composition.
 
 The asterisk represents cardinality, a model may contain multiple Boids.
 
-Refactoring to inheritance
---------------------------
+###Refactoring to inheritance
 
 Smell: Repeated code between two classes which are both ontologically subtypes of something
 
@@ -431,8 +299,7 @@ class Person(Animal):
         super(Person, self).__init__(age)
 ```
 
-Refactoring to inheritance (C++)
---------------------------------
+###Refactoring to inheritance (C++)
 
 ``` cpp
 class Person{
@@ -468,11 +335,9 @@ class Pet: public Animal {
 };
 ```
 
-Polymorphism
-============
+##Polymorphism
 
-Polymorphism
-------------
+###Polymorphism
 
 ``` python
 class Dog(Animal):
@@ -494,8 +359,7 @@ If two classes support the same method, but it does different things for the two
 then if an object is of an unknown class, calling the method will invoke the version for
 whatever class the instance is an instance of.
 
-Polymorphism and Inheritance
-----------------------------
+###Polymorphism and Inheritance
 
 In C++, where arrays have to contain things of the same type, polymorphism requires
 that all the objects share a common superclass, and that the method which is to be subject
@@ -522,8 +386,7 @@ for(Animal* animal: animals) {
 }
 ```
 
-Pure Virtual Functions
-----------------------
+###Pure Virtual Functions
 
 In the above example, we had to put in a dummy noise for Animals that don't know what type they are.
 
@@ -540,8 +403,7 @@ Animal * x = new Dog(); // OK
 Animal * x = new Animal(); // Doesn't compile.
 ```
 
-Refactoring to Polymorphism
----------------------------
+###Refactoring to Polymorphism
 
 Smell: a function uses a big set of `if` statements or a `case` statement to decide what to do:
 
@@ -562,8 +424,7 @@ class Animal(object):
 
 which is better replaced by the code above.
 
-Interfaces
-----------
+###Interfaces
 
 In C++, it is common to define classes which consist *only* of pure virtual functions, and no data members.
 These special kinds of classes are called *interfaces*.
@@ -571,15 +432,13 @@ These special kinds of classes are called *interfaces*.
 While C++ allows classes to inherit from more than one superclass, this is generally considered bad style,
 unless all but one of the superclasses are interfaces.
 
-Interfaces in UML
------------------
+###Interfaces in UML
 
 Interface inheritance in UML is indicated thus:
 
 ![Interfaces in UML](session07/figures/interface)
 
-Further UML
------------
+###Further UML
 
 UML is a much larger diagram language than the aspects we've shown here.
 

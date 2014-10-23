@@ -1,149 +1,68 @@
 ---
-title: Construction
+title: Conventions
 ---
 
-Construction
-============
+##Coding Conventions
 
-Construction
-------------
+###One code, many layouts:
 
-Software *design* gets a lot of press (Object orientation, UML, design patterns)
+Consider the following fragment of python:
 
-In this session we're going to look at advice on software *construction*
+{{pyfrag('05','conventions','dense')}}
 
-Coding Conventions
-==================
+this could also have been written:
 
-One code, many layouts:
------------------------
+{{pyfrag('05','conventions','sparse')}}
 
-Consider the following fragment of C++
-
-``` cpp
-reactor::Species & reactor::ReactionSystem::NewSpecies(const std::string &name){
-	species.push_back(new Species(name));
-	return *species.back();
-}
-```
-
-This could also have been written:
-
-``` cpp
-using namespace std;
-
-namespace reactor
-{
-
- species & reactionsystem::new_species(const string& a_Name)
- {
-
-  species.push_back( new species( name ));
-  return *(species.back());
-
- }
-}
-```
-
-So many choices
----------------
+###So many choices
 
 * Layout
 * Naming
 * Syntax choices
 
-Layout
------------
+###Layout
 
-```cpp
-declaration {
-   contents
-}
-```
+{{pyfrag('05','conventions','layout1')}}
+{{pyfrag('05','conventions','layout2')}}
 
-vs
-
-```cpp
-declaration
-{
-	contents
-}
-```
-
-Layout choices
------------
+###Layout choices
 
 * Brace style
 * Line length
 * Indentation
 * Whitespace/Tabs
 
-Nameing Conventions
--------------------
+###Naming Conventions
 
-``` cpp
-ClassName
-methodName
-variable_name
-```
+{{pyfrag('05','conventions','naming1')}}
+{{pyfrag('05','conventions','naming2')}}
 
-vs
-
-```cpp
-ClassName
-method_name
-l_local_variable
-m_instance_variable
-s_class_variable
-```
-
-Hungarian Notation
--------------
+###Hungarian Notation
 
 Prefix denotes *type*:
 
-``` c
-lAnInteger
-lpAPointer
-szAString
-rwAMatrixRow
-```
+{{pyfrag('05','conventions','naming3')}}
 
-Newlines
---------
+###Newlines
 
 * Newlines make code easier to read
 * Newlines make less code fit on a screen
 
 Use newlines to describe your code's *rhythm*
 
-Syntax Choices
---------------
+###Syntax Choices
 
-``` cpp
-if ((variable==anothervariable++)&&flag1||flag2) do_something;
-```
+{{pyfrag('05','conventions','syntax1')}}
+{{pyfrag('05','conventions','syntax2')}}
 
-vs
-
-``` cpp
-anothervariable++;
-bool const variable_equality = variable == anothervariable;
-if ((variable_equality && flag1) || flag2) {
-   do_something;
-}
-```
-
-Syntax choices
---------------
+###Syntax choices
 
 * Compound statements
 * Explicit operator precedence
 * Compound controlled statements
 * Namespace choices
 
-Coding Conventions
-------------------
+###Coding Conventions
 
 You should try to have an agreed policy for your team for these matters.
 
@@ -155,8 +74,7 @@ E.g. [Google's guide for R](https://google-styleguide.googlecode.com/svn/trunk/R
 
 E.g. [Google's style guide for C++](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)
 
-Lint
-----
+###Lint
 
 There are automated tools which enforce coding conventions and check for common mistakes.
 
@@ -176,18 +94,15 @@ optparse.py:357:17: E201 whitespace after '{'
 optparse.py:472:29: E221 multiple spaces before operator
 optparse.py:544:21: W601 .has_key() is deprecated, use 'in'
 ```
-Comments
-========
+##Comments
 
-Bad Comments
---------
+###Bad Comments
 
 "I write good code, you can tell by the number of comments."
 
 This is wrong.
 
-Comments which are obvious
----------------------------
+###Comments which are obvious
 
 ``` cpp
 i += 1 ; // Add one to i
@@ -198,8 +113,7 @@ j += 1 ; // Increment the index variable
 for element in array: # Loop over elements
 ```
 
-Comments which could be replaced by better style
-------------------------------------------------
+###Comments which could be replaced by better style
 
 ```cpp
 for (int i=0;i<agent_count;i++){ // for each agent
@@ -227,8 +141,7 @@ Agent::move(){
 }
 ```
 
-Comments which could be replaced by better style
-------------------------------------------------
+###Comments which could be replaced by better style
 
 
 “The proper use of comments is to compensate for our failure to express yourself in code. 
@@ -236,8 +149,7 @@ Note that I used the word failure. I meant it. Comments are always failures.”
 
 -- Robert Martin, [Clean Code](http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882).
 
-Comments which belong in an issue tracker
------------------------------------------
+###Comments which belong in an issue tracker
 
 ``` cpp
 delete x; // Code crashes here sometimes
@@ -263,8 +175,7 @@ if (x->safe()){ // Guard added as temporary fix to #32
 
 is OK.
 
-Comments which only make sense to the author today
---------------------------------------------------
+###Comments which only make sense to the author today
 
 ``` cpp
 agent.turn(); // Turtle Power!
@@ -272,19 +183,16 @@ agent.move();
 delete *agent; // Shredder!
 ```
 
-Comments which are unpublishable
---------------------------------
+###Comments which are unpublishable
 
 ``` cpp
 // Stupid supervisor made me write this code
 // So I did it while very very drunk.
 ```
 
-Good comments
-=============
+##Good comments
 
-Pedagogical comments
---------------------
+###Pedagogical comments
 
 Code that *is* good style, but you're not familiar with, or 
 that colleagues might not be familiar with
@@ -308,8 +216,7 @@ def try_me_twice():
    pass
 ```
 
-Documentation as comments
--------------------------
+###Documentation as comments
 
 ``` cpp
 //! \brief Creates parameter structure from HDF5 input.
@@ -325,8 +232,7 @@ template<t_dimensionality DIMS, class T_SCALAR KWAVE_MACRO>
     return parameters_from_hdf5<DIMS, t_real>(HDF5_File(_filename, _flags));
   }
 ```
-Documentation as comments
--------------------------
+###Documentation as comments
 
 ``` python
 def complex(real=0.0, imag=0.0):
@@ -348,8 +254,7 @@ def complex(real=0.0, imag=0.0):
 ```
 
 
-Other good comments
--------------------
+###Other good comments
 
 ``` cpp
 double angle; // clockwise from +ve y-axis
@@ -362,19 +267,16 @@ for (unsigned collisionType = 0; collisionType < COLLISION_TYPES; collisionType+
 }
 ```
 
-Documentation
-=============
+##Documentation
 
-Documentation is hard
----------------------
+###Documentation is hard
 
 * Good documentation is hard, and very expensive.
 * Bad documentation is detrimental.
 * Good documentation quickly becomes bad if not kept up-to-date with code changes.
 * Professional companies pay large teams of documentation writers.
 
-Prefer readable code with tests and vignettes
----------------------------------------------
+###Prefer readable code with tests and vignettes
 
 If you don't have the capacity to maintain great documentation,
 focus on:
@@ -383,8 +285,7 @@ focus on:
 * Automated tests
 * Small code samples demonstrating how to use the api
 
-Comment-based Documentation tools
--------------------
+###Comment-based Documentation tools
 
 Documentation tools can produce extensive documentation about your code by pulling out comments near the beginning of functions,
 together with the signature, into a web page.
@@ -401,11 +302,9 @@ and the [corresponding source code](https://github.com/bempp/bempp/blob/master/p
 
 [Roxygen](http://www.rstudio.com/ide/docs/packages/documentation) is good for R.
 
-Refactoring
-===========
+##Refactoring
 
-Refactoring
------------
+###Refactoring
 
 To refactor is to:
 
@@ -414,23 +313,20 @@ To refactor is to:
 * But which leaves the actual behaviour of the program completely unchanged.
 
 
-A word from the Master
-----------------------
+###A word from the Master
 
 > Refactoring is a controlled technique for improving the design of an existing code base. Its essence is applying a series of small behavior-preserving transformations, each of which "too small to be worth doing". However the cumulative effect of each of these transformations is quite significant. By doing them in small steps you reduce the risk of introducing errors. You also avoid having the system broken while you are carrying out the restructuring - which allows you to gradually refactor a system over an extended period of time.
 
 -- Martin Fowler
 
-List of known refactorings
---------------------------
+###List of known refactorings
 
 The next few sections will present some known refactorings
 
 We'll show before and after code, present any new coding techniques needed to do the refactoring,
 and describe *code smells*: how you know you need to refactor.
 
-Replace magic numbers with constants
-------------------------------------
+###Replace magic numbers with constants
 
 Smell: Raw numbers appear in your code
 
@@ -456,8 +352,7 @@ for i in range(resolution):
      result[j] += data[i] * data[i-j] / resolution
 ```
 
-Replace repeated code with a function
--------------------------------------
+###Replace repeated code with a function
 
 Smell: Fragments of repeated code appear
 
@@ -481,8 +376,7 @@ if can_see(starling,hawk):
 	starling.flee()
 ```
 
-Change of variable name
------------------------
+###Change of variable name
 
 Smell: Code needs a comment to explain what it is for
 
@@ -503,8 +397,7 @@ if gene:
 ```
 
 
-Separate a complex expression into a local variable
--------------------------------------------------------
+###Separate a complex expression into a local variable
 
 Smell: An expression becomes long
 
@@ -519,8 +412,7 @@ const bool same_names= (my_name==your_name);
 if (same_names && flag1 || flag2) do_something;
 ```
 
-Replace loop with iterator
---------------------------
+###Replace loop with iterator
 
 Smell: Loop variable is an integer from 1 to something
 
@@ -540,8 +432,7 @@ for value in data:
 	sum+=value
 ```
 
-Replace hand-written code with library code
--------------------------------------------
+###Replace hand-written code with library code
 
 Smell: It feels like surely someone else must have done this at some point
 
@@ -560,8 +451,7 @@ xcoords=np.arange(start,end,step)
 See [Numpy](http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html),
     [Pandas](http://pandas.pydata.org/)
 
-Replace set of arrays with array of structures
--------------------------------------
+###Replace set of arrays with array of structures
 
 Smell: A function needs to work corresponding indices of several arrays:
 
@@ -579,8 +469,7 @@ def can_see(source,target):
 	return (source["facing"]-target["facing"])<source["viewport"]
 ```
 
-Replace add-hoc structure with user defined classes
----------------------------------------------------
+###Replace add-hoc structure with user defined classes
 
 Smell: A data structure made of nested arrays and dictionaries becomes unwieldy
 
@@ -606,8 +495,7 @@ birds = [Bird(type) for type in bird_types]
 average_position = average(bird.position for bird in birds)
 ```
 
-Interlude: Object Orientation
------------------------------
+###Interlude: Object Orientation
 
 Next session we'll talk more about object oriented design patterns.
 Here's a quick recap of the basics of object orientation in python:
@@ -624,8 +512,7 @@ james=Person("James",37)
 james.home="London"
 ```
 
-Replace function with a method
-------------------------------
+###Replace function with a method
 
 Smell: A function is always called with the same kind of thing
 
@@ -650,8 +537,7 @@ if hawk.can_see(starling):
 	hawk.hunt()
 ```
 
-Replace constants with a configuration file
--------------------------------------------
+###Replace constants with a configuration file
 
 Smell: You need to change your code file to explore different research scenarios
 
@@ -684,8 +570,7 @@ config=yaml.load(open(
 See [YAML](http://www.yaml.org/) and [PyYaml](http://pyyaml.org/)
 and [Python OS](http://docs.python.org/2/library/os.html)
 
-Replace global variables with function arguments
-------------------------------------------------
+###Replace global variables with function arguments
 
 Smell: A global variable is assigned and then used inside a called function:
 
@@ -712,8 +597,7 @@ class Hawk(object):
 
 ```
 
-Merge neighbouring loops
-------------------------
+###Merge neighbouring loops
 
 Smell: Two neighbouring loops have the same for statement
 
@@ -735,8 +619,7 @@ for bird in birds:
 
 
 
-Replace method arguments with class members
----------------------------------------------
+###Replace method arguments with class members
 
 Smell: A variable is nearly always used in arguments to 
 a class.
@@ -763,8 +646,7 @@ class Person
 }
 ```
 
-Break a large function into smaller units
------------------------------------------
+###Break a large function into smaller units
 
 Smell: A function or subroutine no longer fits on a page in your editor
 Smell: A line of code is indented more than three levels
@@ -797,8 +679,7 @@ class Predator(object):
          predator.eat(prey)
 ```
 
-Separate code concepts into files or modules
---------------------------------------------
+###Separate code concepts into files or modules
 
 Smell: You find it hard to locate a piece of code<br>
 Smell: You get a lot of version control conflicts
@@ -826,8 +707,7 @@ class Two(object):
 ```
 
 
-Refactoring is a safe way to improve code
------------------------------------------
+###Refactoring is a safe way to improve code
 
 You may think you can see how to rewrite a whole codebase to be better
 
@@ -836,8 +716,7 @@ However, you may well get lost halfway through the exercise.
 By making the changes as small, reversible, incremental steps,
 you can reach your target design more reliably.
 
-Tests and Refactoring
----------------------
+###Tests and Refactoring
 
 Badly structured code cannot be unit tested. There are no "units".
 
@@ -847,8 +726,7 @@ This will allow you to *Refactor with confidence*
 
 As you refactor, if you create any new units (functions, modules, classes)
 
-Refactoring Summary
--------------------
+###Refactoring Summary
 
 * Replace magic numbers with constants
 * Replace repeated code with a function
@@ -868,26 +746,22 @@ And many more
 
 Read [The Refactoring Book](http://www.amazon.co.uk/Refactoring-Improving-Design-Existing-Technology/dp/0201485672)
 
-Exercise: The Boids
-===================
+##Exercise: The Boids
 
-Flocking
---------
+###Flocking
 
 > The aggregate motion of a flock of birds, a herd of land animals, or a school of fish is a beautiful and familiar part of the natural world... The aggregate motion of the simulated flock is created by a distributed behavioral model much like that at work in a natural flock; the birds choose their own course. Each simulated bird is implemented as an independent actor that navigates according to its local perception of the dynamic environment, the laws of simulated physics that rule its motion, and a set of behaviors programmed into it... The aggregate motion of the simulated flock is the result of the dense interaction of the relatively simple behaviors of the individual simulated birds. 
 
 -- Craig W. Reynolds, "Flocks, Herds, and Schools: A Distributed Behavioral Model", *Computer Graphics* **21** _4_ 1987, pp 25-34
 See the [original paper](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/)
 
-Boids
------
+###Boids
 
 * Collision Avoidance: avoid collisions with nearby flockmates
 * Velocity Matching: attempt to match velocity with nearby flockmates
 * Flock Centering: attempt to stay close to nearby flockmates
 
-Bad_Boids
----------
+###Bad_Boids
 
 I have written some _very bad_ code implementing Boids, based on [Konrad Parker's](http://www.kfish.org/) pseudocode.
 
@@ -901,8 +775,7 @@ git clone https://github.com/yourname/bad-boids.git
 ```
 
 
-Look at the birdies!
---------------------
+###Look at the birdies!
 
 Run bad_boids:
 
@@ -913,13 +786,11 @@ python bad_boids.py
 
 You should be able to see some birds flying around, and then disappearing as they leave the window.
 
-Your Task
----------
+###Your Task
 
 Transform bad_boids into better code, while making sure it still works.
 
-A regression test
------------------
+###A regression test
 
 First, have a look at the regression test I made.
 
@@ -939,8 +810,7 @@ fixture_file.write(yaml.dump(fixture))
 fixture_file.close()
 ```
 
-A regression test
------------------
+###A regression test
 
 Then, I used the fixture file to define the test:
 
@@ -957,8 +827,7 @@ def test_bad_boids_regression():
     assert_equal(regression_data["after"],boid_data)
 ```
 
-Make the regression test fail
------------------------------
+###Make the regression test fail
 
 Check the tests pass:
 
@@ -972,8 +841,7 @@ Edit the file to make the test fail, see the fail, then reset it:
 git checkout boids.py
 ```
 
-Start Refactoring
------------------
+###Start Refactoring
 
 Look at the code, consider the [list of refactorings](#refactoring-summary), and make changes
 

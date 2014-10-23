@@ -2,8 +2,9 @@
 title: Patterns
 ---
 
-Class Complexity
-----------------
+##Patterns
+
+###Class Complexity
 
 We've seen that using object orientation can produce quite complex class structures, with classes owning each other, instantiating each other,
 and inheriting from each other.
@@ -12,8 +13,7 @@ There are lots of different ways to design things, and decisions to make.
 
 > Should I inherit from this class, or own it as a member variable? ("is a" vs "has a")
 
-Design Patterns
----------------
+###Design Patterns
 
 Programmers have noticed that there are certain ways of arranging classes that work better than others.
 
@@ -22,8 +22,7 @@ These are called "design patterns".
 They were first collected on one of the [world's first Wikis](http://c2.com/cgi/wiki?WelcomeVisitors), 
 as the [Portland Pattern Repository](http://c2.com/cgi-bin/wiki?PatternIndex)
 
-Reading a pattern
------------------
+###Reading a pattern
 
 A description of a pattern in a book such as the [Gang Of Four](http://www.amazon.co.uk/Design-patterns-elements-reusable-object-oriented/dp/0201633612)
 book usually includes:
@@ -38,8 +37,7 @@ book usually includes:
 * Implementation
 * Sample Code
 
-Introducing Some Patterns
--------------------------
+###Introducing Some Patterns
 
 There are lots and lots of design patterns, and it's a great literature to get into to
 read about design questions in programming and learn from other people's experience.
@@ -52,8 +50,7 @@ We'll just show a few in this session:
 * Strategy
 
 
-Factory Method
---------------
+###Factory Method
 
 Here's what the Gang of Four Book says about Factory Method:
 
@@ -65,13 +62,11 @@ Applicability: Use the Factory method pattern when:
 * A class can't anticipate the class of objects it must create
 * A class wants its subclasses to specify the objects it creates
 
-Factory UML
------------
+###Factory UML
 
 ![Structure](session07/figures/factory)
 
-Factory Sample Code
--------------------
+###Factory Sample Code
 
 ```cpp
 Product * Creator::Create (ProductId id) {
@@ -82,8 +77,7 @@ Product * Creator::Create (ProductId id) {
 }
 ```
 
-Antipattern
------------
+###Antipattern
 
 I personally have got into a terrible tangle trying to make base classes which somehow
 "promote" themselves into a derived class based on some code in the base class.
@@ -93,8 +87,7 @@ of doing things.
 
 What I should have written was a Creator with a FactoryMethod.
 
-Builder
--------
+###Builder
 
 Intent: Separate the steps for constructing of a complex object from its final representation.
 
@@ -111,18 +104,15 @@ Maze * MazeGame::CreateMaze (MazeBuilder& builder){
 Polymorphism is used, so that `CreateMaze` can create a maze using Ascii graphics,
 OpenGL, or a 3d printer, depending on the builder it is given.
 
-Builder UML
------------
+###Builder UML
 
 ![UML](session07/figures/builder)
 
-Builder Message Sequence
-------------------------
+###Builder Message Sequence
 
 ![MessageSequence](session07/figures/builder_seq)
 
-Fast Arrays
------------
+###Fast Arrays
 
 Object oriented programming works best using *Arrays Of Structures*:
 
@@ -150,8 +140,7 @@ struct boids{
 
 How can we do object oriented programming, and still get maximum HPC performance?
 
-HandleBody Pattern
------------------
+###HandleBody Pattern
 
 ``` cpp
 class Boid{
@@ -164,8 +153,7 @@ class Boid{
 With this approach, code can often make use of memory locality, while still writing
 object-oriented looking client code.
 
-Strategy
---------
+###Strategy
 
 Define a family of algorithms, encapsulate each one, and make them interchangeable. 
 Strategy lets the algorithm vary independently from clients that use it.

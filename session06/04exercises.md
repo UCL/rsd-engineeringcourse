@@ -2,13 +2,13 @@
 title: Exercises
 ---
 
-Refactoring to classes
-----------------------
+##Exercises
+
+###Refactoring to classes
 
 Complete the exercise on Boids from last week, as far as creating a class for a Boid, if you haven't already.
 
-Refactoring to Inheritance and Polymorphism
--------------------------------------------
+###Refactoring to Inheritance and Polymorphism
 
 In the Eagle branch in my Boids repository you will find an extension of Boids to support multiple kinds of Bird.
 You will see that this suffers from the use of an `if (type)` statement which would be
@@ -27,8 +27,7 @@ git merge jamespjh/eagle
 git push -u origin eagle
 ```  
 
-Refactoring to Patterns
------------------------
+###Refactoring to Patterns
 
 The way in which we construct our Boids model's bird content, specifying each of the
 model parameters as a constructor, and add birds using `initialise_random`
