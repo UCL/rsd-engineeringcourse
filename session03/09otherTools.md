@@ -2,11 +2,9 @@
 title: Other Tools
 ---
 
-Jenkins
-=======
+##Jenkins
 
-Test Servers
-------------
+###Test Servers
 
 Goal 
 
@@ -17,8 +15,7 @@ Goal
 ![Now at a UCL near you!](session03/figures/jenkins)
 
 
-Memory and Profiling
---------------------
+###Memory and Profiling
 
 * Checking for memory leaks with [valgrind](http://valgrind.org/):
   `valgrind --leak-check=full program`

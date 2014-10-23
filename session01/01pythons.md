@@ -2,9 +2,9 @@
 title: Many kinds of Python
 ---
 
-# Many kinds of Python
-
 ## Many kinds of Python
+
+### Many kinds of Python
 
 There are many different ways to use Python:
 
@@ -13,7 +13,7 @@ There are many different ways to use Python:
 * IPython
 * IPython Notebook
 
-## Python at the command line
+### Python at the command line
 
 ``` bash
 $ python
@@ -27,7 +27,7 @@ $ python -c "print 2*4"
 8
 ```
 
-## Python scripts
+### Python scripts
 
 ``` bash
 $echo "print 2*4" > eight.py
@@ -40,7 +40,7 @@ $./eight
 8
 ```
 
-## IPython
+### IPython
 
 ``` bash
 $ ipython
@@ -58,17 +58,17 @@ Out[1]: 8
 In [2]: exit
 ```
 
-## IPython Notebook
+### IPython Notebook
 
 ``` bash
 $ git clone https://github.com/UCL/rsd-engineeringcourse.git
 $ cd rsd-engineeringcourse/session01/notebooks
-$ ipython notebook
+notebook
 ```
 
 ![](session01/python/eight.png)
 ... look in your browser ...
 
-## Install Python and IPython Notebook
+### Install Python and IPython Notebook
 
 * The demonstrators will assist with [installing IPython and git](installation)

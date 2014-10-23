@@ -1,9 +1,9 @@
 ---
 title: Simple data manipulation and plotting
 ---
-# Working with and visualising data
+## Working with and visualising data
 
-## Why write software to manage your data and plots? 
+### Why write software to manage your data and plots? 
 
 We should use programs for our entire research pipeline.
 
@@ -17,14 +17,14 @@ checked.
 It should be *good* code, because research conclusions are just as wrong if the
 plotting script is wrong as if the code that generates the data is wrong.
 
-## Analysing patient data
+### Analysing patient data
 
 (The next few slides are taken from Software Carpentry materials and are (CC-BY) the contributors at
 https://github.com/swcarpentry/bc/blob/master/team.md)
 
 You can follow along in an [IPython Notebook](http://nbviewer.ipython.org/github/UCL/rsd-engineeringcourse/blob/staging/session01/notebooks/session1.ipynb)
 
-## The data
+### The data
 
 
 Imagine you are studying inflammation in patients who have been given a new treatment for arthritis, 
@@ -37,7 +37,7 @@ The first few rows of our first file look like this:
 {{d['session01/data/inflammation-01.csv'][0:500]}}...
 ```
 
-## The task
+### The task
 
 We want to:
 
@@ -48,7 +48,7 @@ We want to:
 This will give us a good overview of various concepts in Python, which we'll
 return to some of after this initial survey.
 
-## Loading data
+### Loading data
 
 It's almost always wrong to do things yourself.
 
@@ -64,7 +64,7 @@ Here we've called a **function** `loadtxt` from a **module** `numpy`, and
 assigned it to a **variable** data. This course assumes you're happy with very basic
 programming concepts like function and variable. The IPython notebook contains more detail.
 
-## Types
+### Types
 
 {{ pyfrag('01','numpy_nb','Types1') }}
 
@@ -76,25 +76,25 @@ but that, unlike C++ or Fortran, you don't need to say what type of variable som
 
 {{ pyfrag('01','numpy_nb','Types2') }}
 
-## Slicing
+### Slicing
 
 We can **slice** elements from arrays and matrices:
 
 {{ pyfrag('01','numpy_nb','Slicing') }}
 
-## Methods
+### Methods
 
 We can apply **methods** to objects. Which methods are available depend on the object's type:
 
 {{ pyfrag('01','numpy_nb','Methods') }}
 
-## Numpy Tools
+### Numpy Tools
 
 Numpy provides cool tools like:
 
 {{ pyfrag('01','numpy_nb','Axes') }}
 
-## Plotting
+### Plotting
 
 > The purpose of computing is insight, not numbers
 --- Richard Hamming
@@ -118,7 +118,7 @@ plt.show()
 ![](session01/python/image.png)
 {% endif %}
 
-## Something isn't right here
+### Something isn't right here
 ``` python
 plt.plot(data.max(axis=0))
 plt.show()
@@ -127,7 +127,7 @@ plt.show()
 ![](session01/python/dayrange.png)
 {% endif %}
 
-## Make it a function
+### Make it a function
 
 So we've built some figures which help us analyse these data sets.
 
@@ -138,12 +138,12 @@ which can be used repeatedly:
 
 Note that the only way Python knows that we're done with our function block is by unindenting!
 
-## User defined types. 
+### User defined types. 
 
 Note that the result of type(image) is `matplotlib.figure.Figure`: the `matplotlib` library defines
 its own new type, called a `class`, with its own methods, like `add_subplot`.
 
-## Make it a module
+### Make it a module
 
 We'd like our function to be usable by other people. So we'll wrap it up as it's own module.
 We copy it out of the notebook into a file, and add a wrapper function to make it easy to call it to
@@ -161,7 +161,7 @@ Here we see a conditional, a default argument value, and use of a library functi
 
 We can use this in other code, with, for example `import analyzer` and analyzer.generate('inflammation-01.csv', 'dest.png')
 
-## Loop over many files
+### Loop over many files
 
 We'd like to be able to analyse many files at once.
 
@@ -169,12 +169,12 @@ We'd like to be able to analyse many files at once.
 
 {% endif %}
 
-## Call from the command line
+### Call from the command line
 
 We'll also add some magic to make it work as a command line tool:
 
 ``` bash
-#!/usr/bin/env python
+##!/usr/bin/env python
 {{d['session01/python/analyzer.py|idio|t']['main']}}
 ```
 

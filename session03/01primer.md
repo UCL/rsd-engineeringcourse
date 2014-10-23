@@ -2,8 +2,9 @@
 title: Primer
 ---
 
-Tests at different scales
--------------------------
+##Testing Primer
+
+###Tests at different scales
 
 -----------------------     ---------------------------------------------------------
 **Unit testing**            smallest logical block of work (often < 10 lines of code)
@@ -23,8 +24,7 @@ If unit test is too complicated, go smaller.
 </div>
 
 
-Testing vocabulary
-------------------
+###Testing vocabulary
 
 * **fixture** input data
 * **action** function that is being tested

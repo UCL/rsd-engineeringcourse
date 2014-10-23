@@ -2,11 +2,9 @@
 title: Testing
 ---
 
-Testing
-=======
+##Testing
 
-A few reasons not to do testing
--------------------------------
+###A few reasons not to do testing
 
 <div class="reveal constrastTable">
   ------------------------------------      -------------------------------------
@@ -27,8 +25,7 @@ A few reasons not to do testing
 </div>
 
 
-A few reasons to do testing
----------------------------
+###A few reasons to do testing
 
 <div class="reveal happy">
   * **lazyness** *testing saves time*
@@ -41,8 +38,7 @@ A few reasons to do testing
 </div>
 
 
-Not a panacea
--------------
+###Not a panacea
 
 > Trying to improve the quality of software by doing more testing is like trying to lose weight by
 > weighting yourself more often.

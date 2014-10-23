@@ -2,8 +2,9 @@
 title: Further Git
 ---
 
-Distributed VCS concepts (2)
-----------------------------
+##Further Git
+
+###Distributed VCS concepts (2)
 
 * You have a *working copy*
 * You pick a subset of the changes in your working copy
@@ -16,37 +17,30 @@ Distributed VCS concepts (2)
 * You **push** to **remote** repositories to share or publish
 * You **pull** (or fetch) to bring in changes from a remote
 
-Solo Workflow
------------------------------
+###Solo Workflow
 
 ![Working alone with git](session02/figures/distributed_solo)
 
-Publishing
--------------------------------
+###Publishing
 
 ![Publishing with git](session02/figures/distributed_solo_publishing)
 
-Teams without conflicts
-------------------------------------------
+###Teams without conflicts
 
 ![Teamworking in git](session02/figures/distributed_shared_noconflict)
 
-Teams with conflicts
-------------------------------------------
+###Teams with conflicts
 
 ![Teamworking in git with conflicts](session02/figures/distributed_shared_conflicted)
 
 
-Git Theory
-==========
+##Git Theory
 
-A revision Graph
-----------------
+###A revision Graph
 
 ![Revisions form a graph](session02/figures/revisions)
 
-Git concepts
-------------------------
+###Git concepts
 
 * Each revision has a parent that it is based on
 * These revisions form a graph
@@ -56,17 +50,14 @@ Git concepts
 * Branches, tags, and HEAD are labels pointing at revisions
 * Some operations (like fast forward merges) just move labels.
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 repositories in git.](session02/figures/distributed_concepts)
 
-Git Reset
-=========
+##Git Reset
 
-Reset for understanding
------------------------
+###Reset for understanding
 
 Understanding all the things `git reset` can do requires a good
 grasp of git theory.
@@ -78,8 +69,7 @@ git reset <commit> #Move branch label, and reset index to commit ("--mixed")
 git reset --hard <commit> #Move branch label, and reset staging area and index to commit
 ```
 
-Stash
------
+###Stash
 
 If you find you want to switch branch, or pull, but you're not ready to commit,
 you can use
@@ -94,16 +84,13 @@ git stash apply
 
 The "Stash" is a way of temporarily saving your working area, and can help out in a pinch.
 
-Branches
-========
+##Branches
 
-Working with branches
----------------------
+###Working with branches
 
 ![Using branches](session02/figures/branching)
 
-Working with branches in git
-----------------------------
+###Working with branches in git
 
 ``` Bash
 git branch # Tell me what branches exist
@@ -119,8 +106,7 @@ git checkout master # Switch to an existing branch
 
 
 
-Merging branches
-----------------
+###Merging branches
 
 ``` Bash
 git checkout master # Switch to master branch
@@ -130,8 +116,7 @@ git branch -d experiment # Delete branch locally
 
 ```
 
-A good branch strategy
-----------------------
+###A good branch strategy
 
 * A `production` branch: code used for active work
 * A `develop` branch: for general new code
@@ -139,8 +124,7 @@ A good branch strategy
 * `release` branches: when you share code with others
   * Useful for isolated bug fixes
 
-Find out what is on a branch
-----------------------------
+###Find out what is on a branch
 
 In addition to using `git diff` to compare to the state of a branch,
 you can use `git log` to look at lists of commits which are in a branch
@@ -150,8 +134,7 @@ and haven't been merged yet.
 git log master..experiment
 ```
 
-Referencing multiple commits
-----------------------------
+###Referencing multiple commits
 
 Git uses various symbols to refer to sets of commits.
 The double dot `A..B` means "ancestor of B and not ancestor of A"
@@ -161,8 +144,7 @@ So in a linear sequence, it does what you'd expect.
 But in cases where a history has branches, like `master..experiment`
 It ends up refering to the unmerged content from the experiment branch.
 
-Log of differences
-------------------
+###Log of differences
 
 ``` bash
 git log --left-right master...experiment
@@ -178,8 +160,7 @@ Three dots means "everything which is not a common ancestor".
 
 It therefore will show the differences between branches.
 
-Grab changes from a branch
---------------------------
+###Grab changes from a branch
 
 Make some changes on one branch, switch back to another, and use:
 
@@ -189,8 +170,7 @@ git checkout <branch> <path>
 
 To grab a file from one branch into another.
 
-Cherry-picking
---------------
+###Cherry-picking
 
 Using `git checkout` with a path takes the content of files.
 To grab the content of a specific *commit* from another branch,
@@ -201,8 +181,7 @@ git cherry-pick <commit>
 git cherry-pick somebranch^^^
 ```
 
-Tagging
--------
+###Tagging
 
 Easy to read labels for revisions
 Produce real results *only* with tagged revisions
@@ -213,11 +192,9 @@ git push --tags
 ```
 
 
-Working with multiple remotes
-=============================
+##Working with multiple remotes
 
-Distributed versus centralised
-------------------------------
+###Distributed versus centralised
 
 Centralised                      Distributed
 ------------------               --------------
@@ -227,8 +204,7 @@ To access history, need internet History always available
 You commit to remote server      Users synchronise histories
 cvs, subversion(svn)             git, mercurial (hg), bazaar (bzr)
 
-Centralised VCS concepts
-------------------------
+###Centralised VCS concepts
 
 * There is one, linear history of changes on the server or **repository**
 * Each revision has a unique, sequential identifier (1,2,3,4...)
@@ -239,18 +215,15 @@ Centralised VCS concepts
   * You have to **resolve conflicts**
   * Then you commit
 
-Centralised VCS diagram
------------------------
+###Centralised VCS diagram
 
 ![A centralised server with three clients](session02/figures/centralised)
 
-Distributed VCS in principle
-----------------------------
+###Distributed VCS in principle
 
 ![How distributed VCS works in principle](session02/figures/distributed_principle)
 
-Distributed VCS in practice
-----------------------------
+###Distributed VCS in practice
 
 ![How distributed VCS works in practice](session02/figures/distributed_practice)
 
@@ -264,8 +237,7 @@ git push sue
    # Default is origin
 ```
 
-Referencing remotes
--------------------
+###Referencing remotes
 
 You can always refer to commits on a remote like this:
 
@@ -277,8 +249,7 @@ Which will show you what you've done that's not in the remote's master.
 
 You need to fetch, to update the local copy of what's happening remotely.
 
-Remotes and tracking branches
------------------------------
+###Remotes and tracking branches
 
 ```
 git branch -vv
@@ -290,8 +261,7 @@ git branch -vv
 Local branches can be, but do not have to be, connected to remote branches
 They are said to "track" remote branches
 
-Publishing branches
--------------------
+###Publishing branches
 
 To let the server know there's a new branch use:
 
@@ -303,8 +273,7 @@ We use `--set-upstream origin` (Abbreviation `-u`) to tell git that this branch 
 
 You should be able to see your branch in the list of branches in GitHub.
 
-Sharing branches
-----------------
+###Sharing branches
 
 ``` Bash
 git push -u origin experiment # Share a recently
@@ -315,8 +284,7 @@ git checkout origin/some_branch #Get a branch
                                 #from a remote
 ```
 
-Pruning branches
-----------------
+###Pruning branches
 
 Once you get good at branches, you'll end up with loads.
 
@@ -326,8 +294,7 @@ Some might be deleted locally, but still on the remote
 
 Deleting local branches is easy:
 
-Pruning locally
----------------
+###Pruning locally
 
 Which local branches are merged?
 
@@ -341,8 +308,7 @@ git fetch --prune
   # Remove local branches deleted remotely
 ```
 
-Pruning remote branches
------------------------
+###Pruning remote branches
 
 ``` bash
 git push --delete experiment # Delete published branch
@@ -352,11 +318,9 @@ git push --prune # Dangerous, remove remote branches deleted locally
 If using github, I recommend removing branches using the
 GitHub gui (click branches, then click "view merged branches")
 
-Pull Requests
-=============
+##Pull Requests
 
-Forking
--------
+###Forking
 
 If you want to collaborate with someone, you don't need to give them the right to change your code directly.
 
@@ -365,8 +329,7 @@ You can collaborate through *pull requests* instead of by granting them access.
 This has been found to work *much better* than having to decide who should be allowed
 commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
 
-Send a pull request
----------------------
+###Send a pull request
 
 When you've done some work on a fork, you'll want it merged into the main version.
 
@@ -374,8 +337,7 @@ The collaborator can send the main repository a pull request, saying:
 
 > Hey, have a look at what I've done, and if you like it, merge it in.
 
-Accepting a pull request
-------------------------
+###Accepting a pull request
 
 On GitHub, if a pull request doesn't result in a conflict, there's a big green button that
 you can press to accept it.
@@ -394,11 +356,9 @@ git commit -a
 git push
 ```
 
-Hosting Servers
-===============
+##Hosting Servers
 
-Hosting a local server
-----------------------
+###Hosting a local server
 
 * Any repository can be a remote for pulls
 * Can pull/push over shared folders or ssh
@@ -406,8 +366,7 @@ Hosting a local server
 * Use `git init --bare` to make a copy for pushing
 * You don't need to create a "server"
 
-Hosting a server in the cloud
------------------------------
+###Hosting a server in the cloud
 
 GitHub and Bitbucket can be used to create repositories in the cloud.
 
@@ -419,11 +378,9 @@ You can clone the materials for this course:
 git clone git@github.com:UCL/rsd-engineeringcourse.git
 ```
 
-Hunks
-=====
+##Hunks
 
-Git Hunks
----------
+###Git Hunks
 
 A "Hunk" is one git change. This changeset has three hunks:
 
@@ -445,8 +402,7 @@ A "Hunk" is one git change. This changeset has three hunks:
 +regenerate=True
 ```
 
-Interactive add
----------------
+###Interactive add
 
 `git add` and `git reset` can be used to stage/unstage a whole file,
 but you can use interactive mode to stage by hunk, choosing
@@ -462,11 +418,9 @@ git add -p myfile.py
 #Stage this hunk [y,n,a,d,/,j,J,g,e,?]?
 ```
 
-Rebasing
-========
+##Rebasing
 
-Rebase vs merge
----------------
+###Rebase vs merge
 
 A git *merge* is only one of two ways to get someone else's work into yours.
 The other is called a rebase.
@@ -478,8 +432,7 @@ In a rebase, git tries to work out
 
 Git will invent some new revisions, and the result will be a repository with an apparently linear history.
 
-An example rebase (Jim)
----------------------
+###An example rebase (Jim)
 
 Initial state:
 
@@ -498,8 +451,7 @@ and the slimy monsters
 danced and spun in the waves
 ```
 
-An example rebase (Sue)
----------------------
+###An example rebase (Sue)
 
 Revision ab34:
 
@@ -515,8 +467,7 @@ Revision aj72, child of ab34:
 and the slithy toves
 ```
 
-An example rebase (Jim merges)
-------------------------------
+###An example rebase (Jim merges)
 
 
 ```bash
@@ -548,8 +499,7 @@ and the slithy toves
 danced and span in the waves
 ```
 
-An example rebase (Jim rebases)
-------------------------------
+###An example rebase (Jim rebases)
 
 ```bash
 git pull sue --rebase
@@ -578,16 +528,14 @@ and the slithy toves
 danced and span in the waves
 ```
 
-Fast Forwards
--------------
+###Fast Forwards
 
 When Sue now tries to pull Jim's work, the merge will be a *fast forward*:
 
 Jim's work is now based on Sue's, so moving Sue's repository to be in sync with Jim is
 just a question of moving Sue's HEAD label.
 
-Rebasing pros and cons
-----------------------
+###Rebasing pros and cons
 
 Some people like the clean, apparently linear history.
 But *rebase rewrites history*.
@@ -596,8 +544,7 @@ If you've already pushed, or anyone else has got your changes, things will get s
 If you know your changes are still secret, it might be better to rebase to keep the history clean.
 If in doubt, just merge.
 
-Thousands of tiny commits
-------------------------------
+###Thousands of tiny commits
 
 A common use of rebase is to rebase your work on top of one of your earlier commits,
 in interactive mode, to "squash" several commits that should really be one:
@@ -611,8 +558,7 @@ de73 Fix a typo
 ll54 Fix another typo
 ```
 
-Using rebase to squash
-----------------------
+###Using rebase to squash
 
 ``` bash
 git rebase -i ab11 #OR HEAD^^
@@ -631,11 +577,9 @@ pick ll54 Fix another typo
 #  s, squash = use commit, but meld into previous commit
 ```
 
-Debugging
-=========
+##Debugging
 
-Debugging With Git Bisect
--------------------------
+###Debugging With Git Bisect
 
 You can use
 
@@ -645,8 +589,7 @@ git bisect
 
 to find out which commit caused a bug.
 
-Git Bisect Details
-------------------
+###Git Bisect Details
 
 ``` bash
 git bisect start
@@ -662,8 +605,7 @@ Automated Bisect
 git bisect run py.test
 ```
 
-An example repository
----------------------
+###An example repository
 
 In a nice open source example, I found an arbitrary exemplar on github
 
@@ -685,8 +627,7 @@ Which will make a bunch of commits, of which one is broken, and leave you in the
 ``` bash
 python squares.py 2 # Error message
 
-Getting started with your bisect
---------------------------------
+###Getting started with your bisect
 
 ``` bash
 git bisect start
@@ -697,8 +638,7 @@ git bisect good # Or just git bisect good master
 
 Note it needs one known good and one known bad commit to get started
 
-Solving Manually
-----------------
+###Solving Manually
 
 ``` bash
 python squares.py 2
@@ -722,8 +662,7 @@ git bisect bad
 git bisect reset
 ```
 
-Solving automatically
----------------------
+###Solving automatically
 
 ``` bash
 git bisect bad HEAD # We know the current state is broken
@@ -733,11 +672,9 @@ git bisect run python squares.py 2
 ```
 
 
-GitHub pages
-============
+##GitHub pages
 
-Yaml Frontmatter
-----------------
+###Yaml Frontmatter
 
 GitHub will publish repositories containing markdown as web pages, automatically. 
 
@@ -751,8 +688,7 @@ You'll need to add this content:
 A pair of lines with three dashes, to the top of each markdown file. This is how GitHub knows which markdown files to make into web pages.
 [Here's why](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) for the curious. 
 
-The gh-pages branch
--------------------
+###The gh-pages branch
 
 GitHub creates github pages when you use a special named branch.
 
@@ -765,8 +701,7 @@ git push -u origin gh-pages
     
 The first time you do this, GitHub takes a few minutes to generate your pages. The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
 
-Markdown Hyperlinks
--------------------
+###Markdown Hyperlinks
 
 You can use this syntax
 
@@ -774,8 +709,7 @@ You can use this syntax
     
 To create hyperlinks in your pages, so you can link between your documents. Try it! 
 
-UCL layout for GitHub pages
---------------------------
+###UCL layout for GitHub pages
 
 You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, but after the class, you might want to try this.
 

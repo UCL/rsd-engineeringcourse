@@ -2,12 +2,10 @@
 title: "Exercise: Monte-Carlo"
 ---
 
-Exercise: Monte-Carlo
-=====================
+##Exercise: Monte-Carlo
 
 
-Description: Implement and test a simple Monte-Carlo algorithm
---------------------------------------------------------------
+###Description: Implement and test a simple Monte-Carlo algorithm
 
 <div align="left" style="position:relative;left:15px">
 Given an input function (energy) and starting point (density) and a temperature $T$
@@ -25,22 +23,19 @@ Given an input function (energy) and starting point (density) and a temperature 
 </div>
 
 
-Caveats
--------
+###Caveats
 
 * should work for (m)any energy function(s)
 * separate tests for separate steps! What constitute a step?
 * test should not depend on other parts of code
 
 
-Bonus
------
+###Bonus
 
 * Use debugger to stop code at each iteration
 * Use [matplotlib](http://matplotlib.org/) to plot density at each iteration
 
-Assessment
-----------
+###Assessment
 
 * You will not be required to submit a full solution to pass
 * This is a pass/fail exercise

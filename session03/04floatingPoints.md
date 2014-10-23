@@ -2,11 +2,9 @@
 title: Floating Point
 ---
 
-Testing with Floating Points
-============================
+##Testing with Floating Points
 
-Floating points are not Reals
------------------------------
+###Floating points are not Reals
 
 <div align="left">
 Floating points are inaccurate representations of real numbers:
@@ -40,8 +38,7 @@ The result should be `2e-8`.
 </div>
 
 
-Comparing floating points
--------------------------
+###Comparing floating points
 
 <div align="left">
 Comparison can be absolute:
@@ -79,8 +76,7 @@ then `magnitude = 1e15`.
 </div>
 
 
-Comparing vectors of floating points
-------------------------------------
+###Comparing vectors of floating points
 
 <div align="left">
 Numerical vectors are best represented using [numpy](http://www.numpy.org/).

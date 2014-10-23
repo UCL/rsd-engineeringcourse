@@ -2,11 +2,9 @@
 title: Debugging
 ---
 
-Using a Debugger
-================
+##Using a Debugger
 
-Step by step through the code
------------------------------
+###Step by step through the code
 
 Debugger
 
@@ -28,8 +26,7 @@ Debugger
   [debug](http://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html),
   [browser](http://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html)
 
-Using the python debugger
--------------------------
+###Using the python debugger
 
 <div align="left">
 Copy the following into a file:
@@ -68,8 +65,7 @@ if __name__ == "__main__":
 ```
 
 
-Basic Navigation:
------------------
+###Basic Navigation:
 
 <div align="left">
 Basic command to navigate the code and the python debugger:
@@ -87,8 +83,7 @@ The python debugger is a python shell: it can print and compute values, and even
 of the variables at that point in the program.
 </div>
 
-Breakpoints
------------
+###Breakpoints
 
 <div align="left">
 Break points tell debugger where and when to stop
@@ -115,8 +110,7 @@ Break-points can run subject  to a given condition evaluating to true
 
 </div>
 
-Post-Mortem
------------
+###Post-Mortem
 
 <div align="left">
 Debugging when something goes wrong:

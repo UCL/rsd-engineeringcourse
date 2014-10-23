@@ -2,11 +2,9 @@
 title: How to Test
 ---
 
-How to Test
-===========
+##How to Test
 
-Equivalence partitioning
-------------------------
+###Equivalence partitioning
 
 Think hard about the different cases the code will run under: this is science, not coding!
 
@@ -133,8 +131,7 @@ In silico translation   Compute overlap of two rectangles
 
 {% endraw %}
 
-Boundary cases
---------------
+###Boundary cases
 
 * Limit between two equivalence classes: edge and corner sharing fields
 * Where-ever indices appear, check values at ``0``, ``N``, ``N+1``
@@ -150,8 +147,7 @@ Boundary cases
 * What happens when a matrix/data-frame reaches one row, or one column?
 
 
-Positive *and* Negative tests
------------------------------
+###Positive *and* Negative tests
 
 * **Positive tests**: program/component/unit in normal situations
 
@@ -184,8 +180,7 @@ def test_I_only_accept_positive_numbers(number):
 </div>
 </div>
 
-Legacy Code Hardening
----------------------
+###Legacy Code Hardening
 
 * Very difficult to create unit-tests for existing code
 * Easier to run program as a black box:

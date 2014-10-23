@@ -2,11 +2,9 @@
 title: Libraries
 ---
 
-Careful use of Libraries
-========================
+##Careful use of Libraries
 
-Drawbacks of libraries.
-----------------------
+###Drawbacks of libraries.
 
 * Sometimes, libraries are not looked after by their creator: code that is not maintained *rots*:
   * It no longer works with later versions of *upstream* libraries.
@@ -17,15 +15,13 @@ Drawbacks of libraries.
   * For libraries in pure python, this is almost never a problem
   * But many libraries involve *compiled components*: these can be hard to install.
 
-Contribute, don't duplicate
----------------------------
+###Contribute, don't duplicate
 
 * You have a duty to the ecosystem of scholarly software:
   * If there's a tool or algorithm you need, find a project which provides it.
   * If there are features missing, or problems with it, fix them, [don't create your own](http://xkcd.com/927/) library.
 
-How to choose a library
------------------------
+###How to choose a library
 
 * When was the last commit?
 * How often are there commits?
@@ -47,8 +43,7 @@ How to choose a library
 * Are different versions of the library clearly labeled with version numbers?
 * Is there a changelog?
 
-Sensible Version Numbering
---------------------------
+###Sensible Version Numbering
 
 The best approach to version numbers clearly distinguishes kinds of change:
 
@@ -60,11 +55,9 @@ Given a version number MAJOR.MINOR.PATCH, e.g. 2.11.14 increment the:
 
 This is called [Semantic Versioning](http://semver.org)
 
-Python Libraries
-================
+##Python Libraries
 
-The Python Standard Library
----------------------------
+###The Python Standard Library
 
 Python comes with a powerful [standard library](https://docs.python.org/2/library/).
 
@@ -72,15 +65,13 @@ Learning python is as much about learning this library as learning the language 
 
 You've already seen a few packages in this library: `math`, `pdb`, `pytest`, `datetime`.
 
-The Python Package Index
-------------------------
+###The Python Package Index
 
 Python's real power, however, comes with the Python Package Index: [PyPI](https://pypi.python.org/pypi).
 This is a huge array of libraries, with all kinds of capabilities, all easily installable from the 
 command line or through your Python distribution.
 
-Pip
------
+###Pip
 
 Packages from PyPI are installed using Pip.
 
@@ -92,20 +83,17 @@ sudo pip install <package> --upgrade # upgrade
 sudo pip uninstall <package>
 ```
 
-Some libraries
-==============
+##Some libraries
 
-Argparse
---------
+###Argparse
 
 This is the standard library for building programs with a command-line interface.
 
 {{ notebookfile('04','greeter.py') }}
 
-#{{ bashfile('04','greetings.sh') }}
+{{ bashfile('04','greetings.sh') }}
 
-Operating system paths and files
-------------------
+###Operating system paths and files
 
 When loading and saving files, standard libraries allow you to manage file names,
 in an operating-system independent way:
@@ -125,8 +113,7 @@ And you'll want to be able to read and write to files:
 
 Note the use of the `csv` library to read csv files as well.
 
-Context managers
-----------------
+###Context managers
 
 There's a better way to handle opening and closing files
 
@@ -137,8 +124,7 @@ It is used when a library wants stuff to happen both before **and** after client
 
 Here, [`yaml`](http://www.yaml.org) is another standard file format for data files similar to XML or CSV.
 
-Working with web resources
---------------------------
+###Working with web resources
 
 To interact with resources on the web, you need a way to work with URLs: escaping characters that
 can't appear in URLs, composing ?foo=bar web argument strings and so on.

@@ -11,7 +11,7 @@
         args: --default-image-extension=png
 
 
-"**/slides.md|jinja|hd|jinja|pandoc|-reveal|resub|h":
+"**/slides.md|jinja|hd|jinja|resub|pandoc|-reveal|resub|h":
     - inputs
     - hd:
           header: macros/header.jinja
@@ -20,6 +20,7 @@
           - ['session../python/','python/']
           - ['session../figures/','figures/']
           - ['{{root}}','']
+          - ['^##','#']
     - output-name: "{dirname}/slides.html"
     - pandoc:
         args: -t revealjs -V theme=night

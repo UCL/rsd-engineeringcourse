@@ -2,11 +2,9 @@
 title: Libraries example
 ---
 
-Graph of Green Spaces
-=====================
+##Graph of Green Spaces
 
-The problem
------------
+###The problem
 
 Let's look at an extended example of using libraries to work with Python to analyse data.
 
@@ -19,16 +17,14 @@ We'd like to know how density of green space varies as we move from city centre 
     * In this toy example: bits that are green!
 * Plot a graph
 
-Geolocation
------------
+###Geolocation
 
 Google provides a service to go from "London" to 51.51N, 0.1275W. Fortunately, there's a very nice library
 on PyPI to access it: `pip install geopy`
 
 {{ pyfrag('04','greengraph','geolocation') }}
 
-Addressing the google maps API
-------------------------------
+###Addressing the google maps API
 
 Google maps has a static API to obtain satellite images with URLs like this:
 
@@ -48,15 +44,13 @@ IPython.core.display.Image(map_png.content)
 ```
 {% endif %}
 
-Finding the green bits
-----------------------
+###Finding the green bits
 
 We'll need a library to parse `.png` image files and determine which bits are green:
 
 {{ pyfrag('04','greengraph', 'png')}}
 
-Checking our code
------------------
+###Checking our code
 
 We could write some unit tests, but for something like this, visualisation is the key to
 verification. Let's look which bits are green by building a new png.
@@ -74,16 +68,14 @@ IPython.core.display.Image(show_green_in_png(map_at(*london_location,satellite=T
 ![The green bits of London](session04/python/green.png)
 {% endif %}
 
-Points in between
------------------
+###Points in between
 
 We need all the points equally spaced between two locations.
 Numpy has a routine for just this:
 
 {{ pyfrag('04','greengraph','points') }}
 
-The results
------------
+###The results
 
 {% if notebook %}
 ``` python

@@ -2,32 +2,27 @@
 title: Git and GitHub
 ---
 
-Practicing with Git
-===================
+##Practicing with Git
 
-Example Exercise
-----------------
+###Example Exercise
 
 In this course, we will use, as an example, the development of a few text files containing a description of a topic of your choice. 
 
 This could be your research, a hobby of yours, or something else. In the end, we will show you how to display the content of these files as a very simple website. 
 
-Programming and documents
--------------------------
+###Programming and documents
 
 The purpose of this exercise is to learn how to use Git to manage program code you write, not simple text website content, but we'll just use these text files instead of code for now, so as not to confuse matters with trying to learn version control while thinking about programming too. 
 
 In later parts of the course, you will use the version control tools you learn today with actual Python code.
 
-Markdown
---------
+###Markdown
 
 The text files we create will use a simple "wiki" markup style called [markdown](http://daringfireball.net/projects/markdown/basics) to show formatting. This is the convention used in this file, too. 
 
 You can view the content of this file in the way Markdown renders it by looking on the [web](https://github.com/UCL/ucl_software_carpentry/blob/master/git/git_instructions.md), and compare the [raw text](https://raw.github.com/UCL/ucl_software_carpentry/master/git/git_instructions.md).
 
-Displaying Text in this Tutorial
---------------------------------
+###Displaying Text in this Tutorial
 
 This tutorial is based on use of the Git command line. Commands you can type will look like this:
 
@@ -45,8 +40,7 @@ Content you should replace with appropriate content related to your example, in 
 
 > Something about mountains
 
-Setting up somewhere to work
-----------------------------
+###Setting up somewhere to work
 
 ``` Bash
 mkdir my_swcarpentry_solutions/
@@ -54,11 +48,9 @@ mkdir my_swcarpentry_solutions/my_swcarpentry_git_solution
 cd my_swcarpentry_solutions/my_swcarpentry_git_solution
 ```
 
-Solo work
-============
+##Solo work
 
-Configuring Git with your name and email
-----------------------------------------
+###Configuring Git with your name and email
 
 First, we should configure Git to know our name and email address:
 
@@ -67,8 +59,7 @@ git config --global user.name "Your Name Here"
 git config --global user.email "your_email@ucl.ac.uk"
 ```
 
-Initialising the repository
----------------------------
+###Initialising the repository
 
 Now, we will tell Git to track the content of this folder as a git "repository".
 
@@ -97,8 +88,7 @@ git status
 >    #    and use "git add" to track) 
 >```
 
-A first example file
---------------------
+###A first example file
 
 So let's create an example file, and see how to start to manage a history of changes to it. 
 
@@ -113,8 +103,7 @@ cat index.md
 >    England is not very mountainous.   
 >    But has some tall hills, and maybe a mountain or two depending on your definition.    
 
-Telling Git about the File
---------------------------
+###Telling Git about the File
 
 So, let's tell Git that `index.md` is a file which is important, and we would like to keep track of its history:
 
@@ -124,8 +113,7 @@ git add index.md
    
 Don't forget: Any files in repositories which you want to "track" need to be added with `git add` after you create them.
 
-Our first commit
-----------------
+###Our first commit
 
 Now, we need to tell Git to record the first version of this file in the history of changes:
 
@@ -149,8 +137,7 @@ And note the confirmation from Git:
 
 There's a lot of output there you can ignore for now.
 
-Configuring Git with your editor
---------------------------------
+###Configuring Git with your editor
 
 In the setup, you should have told Git where to find your editor, if you haven't,
 the previous step didn't work. Do this now:
@@ -174,8 +161,7 @@ git config --global core.editor "'C:/Program Files (x86)/Notepad++
 
 I'm going to be using `vim` as my editor, but you can use whatever editor you prefer. (Windows users could use "Notepad++", Mac users could use "textmate" or "sublime text", linux users could use `vim`, `nano` or `emacs`.)
 
-Git log
--------
+###Git log
 
 Git now has one change in its history:
 
@@ -192,8 +178,7 @@ git log
 
 You can see the commit message, author, and date...
 
-Hash Codes
-----------
+###Hash Codes
 
 The commit "hash code", 
 
@@ -203,8 +188,7 @@ is a unique identifier of that particular revision.
 
 (This is a really long code, but whenever you need to use it, you can just use the first few characters, however many characters is long enough to make it unique, `c438` for example. )
 
-Nothing to see here
--------------------
+###Nothing to see here
 
 Note that git will now tell us that our "working directory" is up-to-date with the repository: there are no changes to the files that aren't recorded in the repository history:
 
@@ -216,8 +200,7 @@ git status
 > # nothing to commit (working directory clean)
 > ```
 
-Making another change
----------------------
+###Making another change
 
 Make a change to the file:
 
@@ -232,8 +215,7 @@ cat index.md
 >    But it has some tall hills, and maybe a mountain or two depending on your definition.  
 >    Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.   
 
-Unstaged changes
-----------------
+###Unstaged changes
 
 ``` Bash
     git status
@@ -259,8 +241,7 @@ Git will only commit changes to files that you choose to include in each commit.
 
 This is a difference from other version control systems, where committing will affect all changed files. 
 
-Staging a file to be included in the next commit
-------------------------------------------------
+###Staging a file to be included in the next commit
 
 To include the file in the next commit, we have a few choices. This is one of the things to be careful of with git: there are lots of ways to do similar things, and it can be hard to keep track of them all. 
 
@@ -272,22 +253,19 @@ This says "include in the next commit, all files which have ever been included b
 
 Note that `git add` is the command we use to introduce git to a new file, but also the command we use to "stage" a file to be included in the next commit. 
 
-The staging area
-----------------
+###The staging area
 
 The "staging area" or "index" is the git jargon for the place which contains the list of changes which will be included in the next commit.
 
 You can include specific changes to specific files with git add, commit them, add some more files, and commit them. (You can even add specific changes within a file to be included in the index.)
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 repositories in git.](session02/figures/distributed_concepts_local)
 
 
-Review of status
-----------------
+###Review of status
 
 ``` Bash
 git status
@@ -302,8 +280,7 @@ git status
 >    #  
 > ```
 
-Commit the mistake
-------------------
+###Commit the mistake
 
 ``` Bash
 git commit
@@ -326,8 +303,7 @@ git log
 
 Great, we now have a file which contains a mistake.
 
-Carry on regardless
--------------------
+###Carry on regardless
 
 In a while, we'll use Git to roll back to the last correct version: this is one of the main reasons we wanted to use version control, after all! But for now, let's do just as we would if we were writing code, not notice our mistake and keep working...
 
@@ -338,8 +314,7 @@ cat index.md
 
 >  Mountains and Hills in the UK  
 
-Commit with a built-in-add
-------------------------
+###Commit with a built-in-add
 
 ``` Bash
 git commit -a
@@ -347,8 +322,7 @@ git commit -a
 
 This last command, `git commit -a` automatically adds changes to all tracked files to the staging area, as part of the commit command. So, if you never want to just add changes to some tracked files but not others, you can just use this and forget about the staging area!
 
-Review of changes
------------------
+###Review of changes
 
 ``` Bash
 git log | head
@@ -374,16 +348,13 @@ git log --oneline
 > c438f17 First commit of discourse on UK topography  
 > ```
 
-Git Solo Workflow
------------------------------
+###Git Solo Workflow
 
 ![Working alone with git](session02/figures/distributed_solo) 
 
-Fixing Mistakes
-===============
+##Fixing Mistakes
 
-Reverting
----------
+###Reverting
  
 Ok, so now we'd like to undo the nasty commit with the lie about Mount Fictional.
 
@@ -391,8 +362,7 @@ Ok, so now we'd like to undo the nasty commit with the lie about Mount Fictional
 
 A commit window pops up, with some default text which you can accept and save. 
 
-Conflicted reverts
-------------------
+###Conflicted reverts
 
 You may, depending on the changes you've tried to make, get an error message here. 
 
@@ -400,8 +370,7 @@ If this happens, it is because git could not automagically decide how to combine
 
 If that happens, you need to manually edit the file to fix the problem. [Skip ahead][Resolving conflicts] or ask a demonstrator to help.
 
-Review of changes
------------------    
+###Review of changes
 
 The file should now contain the change to the title, but not the extra line with the lie. Note the log:
 
@@ -413,21 +382,18 @@ The file should now contain the change to the title, but not the extra line with
 >    This reverts commit 50280520d33592d093773dfd3e5de4c3da7e1a09.   
 > ```
 
-Antipatch
----------
+###Antipatch
 
 Notice how the mistake has stayed in the history.
 
 There is a new commit which undoes the change: this is colloquially called an "antipatch". 
 This is nice: you have a record of the full story, including the mistake and its correction.
 
-Rewriting history
------------------
+###Rewriting history
 
 It is possible, in git, to remove the most recent change altogether, "rewriting history". Let's make another bad change, and see how to do this.
 
-A new lie
----------
+###A new lie
 
 ``` Bash
 vim index.md
@@ -446,8 +412,7 @@ git log | head
 
 
 
-Referring to changes with HEAD and ^
-------------------------------------
+###Referring to changes with HEAD and ^
 
 The commit we want to revert to is the one before the latest.
 
@@ -455,8 +420,7 @@ The commit we want to revert to is the one before the latest.
 
 We could have used the hash code to reference this, but you can also refer to the commit before the `HEAD` as `HEAD^`, the one before that as `HEAD^^`, the one before that as `HEAD~3`.
 
-Using reset to rewrite history
-------------------------------
+###Using reset to rewrite history
 
 ``` Bash
 git reset HEAD^
@@ -478,13 +442,11 @@ git log --oneline
 >    c438f17 First commit of discourse on UK topography  
 > ```
 
-Covering your tracks
---------------------
+###Covering your tracks
 
 The silly spelling is gone, and *it isn't even in the log*. This approach to fixing mistakes, "rewriting history" with `reset`, instead of adding an antipatch with `revert` is dangerous, and we don't recommend it. But you may want to do it for small silly mistakes, such as to correct a commit message.
 
-Resetting the working area
---------------------------
+###Resetting the working area
 
 When git reset removes commits, it leaves your working directory unchanged -- so you can keep the work in the bad change if you want. 
 
@@ -496,24 +458,20 @@ I'm going to get rid of the silly spelling, and I didn't do `--hard`, so I'll re
 git checkout index.md
 ```
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 repository in git.](session02/figures/distributed_concepts_fixing)    
 
-Publishing
-==========
+##Publishing
 
-Sharing your work
------------------
+###Sharing your work
 
 So far, all our work has been on our own computer. But a big part of the point of version control is keeping your work safe, on remote servers. Another part is making it easy to share your work with the world In this example, we'll be using the "GitHub" cloud repository to store and publish our work. 
 
 If you have not done so already, you should create an account on GitHub: go to [https://github.com/](https://github.com/), fill in a username and password, and click on "sign up for free". 
 
-SSH keys and GitHub
--------------------
+###SSH keys and GitHub
 
 You may want to set things up so that you don't have to keep typing in your password whenever you interact with GitHub via the command line.
 
@@ -521,15 +479,13 @@ You can do this with an "ssh keypair". You may have created a keypair in the Sof
 
 If you have difficulties, the instructions for this are [on the GitHub website](https://help.github.com/articles/generating-ssh-keys). Ask your demonstrator for help here if you need it.
 
-Creating a repository
----------------------
+###Creating a repository
 
 Ok, let's create a repository to store our work. Hit "new repository" on the right of the github home screen, or click [here](https://github.com/new). 
 
 Fill in a short name, and a description. Choose a "public" repository. Don't choose to add a Readme.
 
-Paying for GitHub
-------------------
+###Paying for GitHub
 
 For this software carpentry course, you should use public repositories in your personal account for your example work: it's good to share! GitHub is free for open source, but in general, charges a fee if you want to keep your work private. 
 
@@ -539,8 +495,7 @@ Students can get free private repositories on GitHub, by going to [https://githu
 
 UCL pays for private GitHub repositories for UCL research groups: you can find the service details on our [web page](../../infrastructure/github.html).
 
-Adding a new remote to your repository
---------------------------------------
+###Adding a new remote to your repository
 
 Instructions will appear, once you've created the repository, as to how to add this new "remote" server to your repository, in the lower box on the screen. Mine say:
 
@@ -552,8 +507,7 @@ git push -u origin master
 
 Follow these instructions.
 
-Remotes
--------
+###Remotes
 
 The first command sets up the server as a new `remote`, called `origin`. 
 
@@ -563,29 +517,24 @@ Usually, commands that work with remotes allow you to specify the remote to use,
 
 Here, `git push` will push your whole history onto the server, and now you'll be able to see it on the internet! Refresh your web browser where the instructions were, and you'll see your repository!
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 repository in git.](session02/figures/distributed_concepts_publishing) 
 
-Distributed VCS With Publishing
--------------------------------
+###Distributed VCS With Publishing
 
 ![Publishing with git](session02/figures/distributed_solo_publishing)
 
-Playing with GitHub
--------------------
+###Playing with GitHub
 
 Take a few moments to click around and work your way through the GitHub interface. Try clicking on 'index.md' to see the content of the file: notice how the markdown renders prettily.
 
 Click on "commits" near the top of the screen, to see all the changes you've made. Click on the commit number next to the right of a change, to see what changes it includes: removals are shown in red, and additions in green.
 
-Working with multiple files
-===========================
+##Working with multiple files
 
-Some new content
-----------------
+###Some new content
 
 So far, we've only worked with one file. Let's add another:
 
@@ -599,8 +548,7 @@ cat lakeland.md
 >  
 >    Cumbria has some pretty hills, and lakes too.  
 
-Git will not by default commit your new file
------------------------------------------------
+###Git will not by default commit your new file
 
 ``` Bash
     git commit -a
@@ -619,8 +567,7 @@ Git will not by default commit your new file
 
 This didn't do anything, because we've not told git to track the new file yet.
 
-Tell git about the new file
----------------------------
+###Tell git about the new file
 
 ``` Bash
 git add lakeland.md
@@ -646,11 +593,9 @@ git push
 
 Visit GitHub, and notice this change is on your repository on the server. We could have said `git push origin` to specify the remote to use, but origin is the default.
 
-Editing directly on GitHub
-==========================
+##Editing directly on GitHub
 
-Editing directly on GitHub
---------------------------
+###Editing directly on GitHub
 
 Note that you can also make changes in the GitHub website itself. Visit one of your files, and hit "edit".
 
@@ -658,8 +603,7 @@ Make a change in the edit window, and add an appropriate commit message.
 
 That change now appears on the website, but not in your local copy. (Verify this). 
 
-Pulling from remotes
---------------------
+###Pulling from remotes
 
 To get the change into your local copy, do:
 
@@ -681,34 +625,28 @@ git pull
 
 and check the change is now present on your local version. `git pull` will fetch changes on the server into your local copy: this is important when you are collaborating with others, as we shall see.
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 local and remote repositories in git.](session02/figures/distributed_concepts_sharing)
 
-Collaboration
-=============
+##Collaboration
 
-Form a team
------------
+###Form a team
 
 Now we're going to get to the most important question of all with Git and GitHub: working with others.
 
 Organise into pairs. You're going to be working on the website of one of the two of you, together, so decide who is going to be the leader, and who the collaborator.
 
-Distributed VCS in principle
-----------------------------
+###Distributed VCS in principle
 
 ![How distributed VCS works in principle](session02/figures/distributed_principle)
 
-Distributed VCS in practice
-----------------------------
+###Distributed VCS in practice
 
 ![How distributed VCS works in practice](session02/figures/distributed_practice)
 
-Giving permission
------------------
+###Giving permission
 
 The leader needs to let the collaborator have the right to make changes to his code.
 
@@ -716,8 +654,7 @@ In GitHub, go to `settings` on the right, then `collaborators` on the left.
 
 Add the user name of your collaborator to the box. They now have the right to push to your repository.
 
-Obtaining a colleague's code
-----------------------------
+###Obtaining a colleague's code
 
 Next, the collaborator needs to get a copy of the leader's code. Make yourself a space to put it:
 
@@ -736,8 +673,7 @@ Copy the URL into your clipboard by clicking on the icon to the right of the URL
    git clone git@github.com:/... #Subsitute the right URL from your clipboard
 ```
 
-Nonconflicting changes
----------------------
+###Nonconflicting changes
 
 Now, both of you should make some changes. To start with, make changes to *different* files. This will mean your work doesn't "conflict". Later, we'll see how to deal with changes to a shared file.
 
@@ -745,8 +681,7 @@ Both of you should commit, but not push.
 
 One of you should now push with `git push`
 
-Rejected push
--------------
+###Rejected push
 
 The other should then push, but should receive an error message:
 
@@ -771,25 +706,21 @@ Do as it suggests:
     git pull
 
 
-Merge commits
--------------
-    
+###Merge commits
+
 Note a window pops up with a suggested default commit message. This commit is special: it is a *merge* commit. It is a commit which combines your collaborator's work with your own.
 
 Now, push again with `git push`. This time it works. If you look on GitHub, you'll now see that it contains both sets of changes.
 
-Nonconflicted commits to the same file
---------------------------------------
+###Nonconflicted commits to the same file
 
 Go through the whole process again, but this time, both of you should make changes to a single file, but make sure that you don't touch the same *line*. Again, the merge should work as before.
 
-Sharing without conflicts
-------------------------------------------
+###Sharing without conflicts
 
 ![Teamworking in git](session02/figures/distributed_shared_noconflict)
 
-Conflicting commits
--------------------
+###Conflicting commits
 
 Finally, go through the process again, but this time, make changes which touch the same line.
 
@@ -801,8 +732,7 @@ When you pull, instead of offering a commit message, it says:
 >    and then commit the result.  
 > ```
 
-Resolving conflicts
--------------------
+###Resolving conflicts
 
 Git couldn't work out how to merge the two different sets of changes.
 
@@ -824,8 +754,7 @@ The syntax with `<<<` `===` and `>>>` shows the differences.
 
 Manually edit the file, to combine the changes as seems sensible and get rid of the symbols.
 
-Commit the resolved file
-------------------------
+###Commit the resolved file
 
 Now commit the merged result:
 
@@ -833,27 +762,22 @@ Now commit the merged result:
     
 A suggested commit message appears, which you can accept, and then you can `push` the merged result. Check everything is fine on GitHub.
 
-A revision graph
-----------------
+###A revision graph
 
 ![Revisions form a graph](session02/figures/revisions)
 
-Distributed VCS in teams with conflicts
-------------------------------------------
+###Distributed VCS in teams with conflicts
 
 ![Teamworking in git with conflicts](session02/figures/distributed_shared_conflicted)
 
-The Levels of Git
-----------------
+###The Levels of Git
 
 ![The relationship between the staging area, working directory, and
 local and remote repositories in git.](session02/figures/distributed_concepts_all)
 
-Social Coding
-=============
+##Social Coding
 
-GitHub as a social network
---------------------------
+###GitHub as a social network
 
 In addition to being a repository for code, and a way to publish code, GitHub is a social network.  
 

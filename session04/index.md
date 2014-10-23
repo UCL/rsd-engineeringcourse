@@ -2,11 +2,9 @@
 title: Libraries
 ---
 
-Libraries
-=========
+##Libraries
 
-Libraries are awesome
----------------------
+###Libraries are awesome
 
 The strength of a language lies as much in the set of libraries available, as it does
 in the language itself.

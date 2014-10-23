@@ -2,16 +2,16 @@
 title: Packaging
 ---
 
-Packaging
----------
+##Packaging
+
+###Packaging
 
 Once we've made a working program, we'd like to be able to share it with others.
 
 A good cross-platform build tool is the most important thing: you can always
 have collaborators build from source.
 
-Distribution tools
-------------------
+###Distribution tools
 
 Distribution tools allow one to obtain a working copy of someone else's package.
 
@@ -21,16 +21,14 @@ Platform specific packagers e.g. brew, apt/yum
 Windows doesn't have anything like `brew install` or `apt-get`
 You have to build an 'installer'.
 
-Laying out a project
---------------------
+###Laying out a project
 
 When planning to package a project for distribution, defining a suitable
 project layout is essential.
 
 {{ bashfile('04','tree.sh') }}
 
-Using setuptools
-----------------
+###Using setuptools
 
 To make python code into a package, we have to write a `setupfile`:
 
@@ -55,8 +53,7 @@ And the scripts are now available as command line commands:
 {{ bashfile('04','greetings_installed.sh') }}
 
 
-Installing from GitHub
-----------------------
+###Installing from GitHub
 
 We could now submit "greeter" to PyPI for approval, so everyone could `pip install` it.
 
@@ -69,20 +66,17 @@ greet Humphry Appleby --title Sir
 
 Try it!
 
-Convert the script to a module
-------------------------------
+###Convert the script to a module
 
 Of course, there's more to do when taking code from a quick script and turning it into a proper module:
 
 {{ notebookfile('04','greetings/greetings/greeter.py') }}
 
-Write an executable script
---------------------------
+###Write an executable script
 
 {{ notebookfile('04','greetings/greetings/command.py') }}
 
-Write an entry point script stub
---------------------------------
+###Write an entry point script stub
 
 {% if notebook %}
 ``` python
@@ -97,33 +91,28 @@ greetings/greetings/greet :
 ```
 {% endif %}
 
-Write a readme file
--------------------
+###Write a readme file
 e.g.:
 ``` markdown
 {{ d['session04/python/greetings/README.md']}}
 ```
-Write a license file
--------------------
+###Write a license file
 e.g.:
 ``` markdown
 {{ d['session04/python/greetings/LICENSE.md']}}
 ```
 
-Write a citation file
--------------------
+###Write a citation file
 e.g.:
 ``` markdown
 {{ d['session04/python/greetings/CITATION.md'] }}
 ```
 
-Define packages and executables
--------------------------------
+###Define packages and executables
 
 {{ bashfile('04','setup_greetings_module.sh') }}
 
-Write some unit tests
----------------------
+###Write some unit tests
 
 Separating the script from the logical module made this possible:
 
@@ -135,8 +124,7 @@ Add a fixtures file:
 {{ d['session04/python/greetings/greetings/test/fixtures/samples.yaml'] }}
 ```
 
-Developer Install
------------------
+###Developer Install
 
 If you modify your source files, you would now find it appeared as if the program doesn't change.
 
@@ -151,8 +139,7 @@ If you want to install a package, but keep working on it, you can do
 sudo python setup.py develop
 ```
 
-Distributing compiled code
---------------------------
+###Distributing compiled code
 
 If you're working in C++ or Fortran, there is no language specific repository.
 You'll need to write platform installers for as many platforms as you want to
@@ -165,8 +152,7 @@ Typically:
 * `homebrew` on OSX (Possibly `macports` as well)
 * An executable `msi` installer for Windows.
 
-Homebrew
---------
+###Homebrew
 
 Homebrew: A ruby DSL, you host off your own webpage
 

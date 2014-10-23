@@ -2,11 +2,9 @@
 title: Tools
 ---
 
-Testing Frameworks
-==================
+##Testing Frameworks
 
-What a frameworks is for
-------------------------
+###What a frameworks is for
 
 <p align="left">Frameworks should simplify our lives:</p>
 
@@ -20,8 +18,7 @@ What a frameworks is for
 * **Report failing tests**
 * Additional goodies, such as code coverage
 
-Testing Frameworks
-------------------
+###Testing Frameworks
 
 * Language agnostic: [CTest](http://www.cmake.org/cmake/help/v2.8.12/ctest.html)
 
@@ -55,8 +52,7 @@ Testing Frameworks
     [pfunit](http://sourceforge.net/projects/pfunit/)(works with MPI)
 
 
-Mocking Frameworks
-------------------
+###Mocking Frameworks
 
 * C: [CMocka](http://www.cmocka.org/)
 * C++: [googlemock](https://code.google.com/p/googlemock/)
@@ -64,8 +60,7 @@ Mocking Frameworks
   ([unittest.mock](http://docs.python.org/dev/library/unittest.mock) in python 3.3),
   [doublex](https://pypi.python.org/pypi/doublex)
 
-Nose Framework: Usage
----------------------
+###Nose Framework: Usage
 
 <div align="left">
 [nose](https://nose.readthedocs.org/en/latest/) is a python framework:
@@ -94,8 +89,7 @@ Some options:
 * compute coverage: `nosetests --with-coverage`
 </div>
 
-Nose: Writing Tests
--------------------
+###Nose: Writing Tests
 
 <div align="left">
 In a file ``test_[meaningful_name].py``:

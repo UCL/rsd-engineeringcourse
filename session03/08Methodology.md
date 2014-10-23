@@ -2,17 +2,14 @@
 title: Methodology
 ---
 
-Test Driven Development
-=======================
+##Test Driven Development
 
-Test-driven development
------------------------
+###Test-driven development
 
 ![Developing with TDD: Write test, see it fail](session03/figures/tdd)
 
 
-Behavior Driven Development
----------------------------
+###Behavior Driven Development
 
 <div align="left">
 BDD

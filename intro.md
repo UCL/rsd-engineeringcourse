@@ -1,16 +1,15 @@
-#Introduction
+##Introduction
 
-## Purpose
+### Purpose
 
 In this course, you will move beyond programming, to learn how to construct reliable, readable,
 efficient research software in a collaborative environment. The emphasis is on practical techniques,
 tips, and technologies to effectively build and maintain complex code.
 This is a intensive, practical course.
 
-Synopsis
---------
+##Synopsis
 
-## Lesson 1
+### Lesson 1
 
 * Why use scripting languages? 
 * Python. IPython and the IPython notebook.
@@ -18,7 +17,7 @@ Synopsis
 * Duck typing.
 * Modules.
 
-## Lesson 2
+### Lesson 2
 
 * Collaborating around code. Version control.
 * Git. Github. Issue tracking.
@@ -26,7 +25,7 @@ Synopsis
 * Branches and merging.
 * Software licensing and releases.
 
-## Lesson 3
+### Lesson 3
 
 * Testing.
 * Unit testing and regression testing.
@@ -39,7 +38,7 @@ Synopsis
 * Profiling and debugging.
 * Coverage.
 
-## Lesson 4
+### Lesson 4
 
 * Using libraries.
 * The Python package index.
@@ -49,7 +48,7 @@ Synopsis
 * Working with command line arguments
 * Brief introduction to functional programming
 
-## Lesson 5
+### Lesson 5
 
 * Tricks for not repeating yourself
 * Iterables and generators
@@ -58,7 +57,7 @@ Synopsis
 * Context managers and decorators.
 * Metaprogramming
 
-## Lesson 6
+### Lesson 6
 
 * Object-oriented python.
 * Object oriented design.
@@ -68,7 +67,7 @@ Synopsis
 * Agile and Waterfall.
 * Functional and architectural design.
 
-## Lesson 7
+### Lesson 7
 
 * Best practice in construction.
 * Comments.
@@ -79,36 +78,35 @@ Synopsis
 * Design and development.
 * Logging.
 
-## Lession 8
+### Lession 8
 
 * Matplotlib.
 * Numpy.
 
-## Lesson 9
+### Lesson 9
 
 * Scipy
 * Pandas
 
-## Lesson 10
+### Lesson 10
 
 * Language bindings: calling C++ from Python
 * Build tools. SCons.
 * Deployment: getting your code to where it needs to run
 
-Prerequisites
--------------
+## Course processes
+
+###Prerequisites
 
 Prior knowledge of at least one programming language, including variables, control flow, and functions.
 
-Exercises
----------
+###Exercises
 
 Examples and exercises for this course will be provided in Python.  
 Python will be introduced during this course, but we will assume you can already
 program. That means that you may find supplementary python content useful.
 
-Setup
------
+###Setup
 
 You are required to bring your own laptop to the course as the classrooms we are
  using do not have desktop computers.

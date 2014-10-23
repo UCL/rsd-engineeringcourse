@@ -2,11 +2,9 @@
 title: Issues
 ---
 
-Software Issue Management
-=========================
+##Software Issue Management
 
-Issues
-------
+###Issues
 
 Code has *bugs*.
 
@@ -15,8 +13,7 @@ It also has things it should do *features*.
 A good project has an organised way of managing these.
 To do this you should use an Issue Tracker.
 
-Some Issue Trackers
--------------------
+###Some Issue Trackers
 
 There are lots of good issue trackers.
 
@@ -28,8 +25,7 @@ Commercial solutions include [Jira](https://www.atlassian.com/software/jira)
 
 In this course, we'll use the GitHub issue tracker for our examples.
 
-Anatomy Of An Issue
--------------------
+###Anatomy Of An Issue
 
 * Reporter
 * Description
@@ -39,8 +35,7 @@ Anatomy Of An Issue
 * Status
 * Severity
 
-Reporting a Bug
-------------------
+###Reporting a Bug
 
 The description should make the bug reproducible:
 
@@ -49,14 +44,12 @@ The description should make the bug reproducible:
 
 If possible, submit a minimal reproducing code fragment.
 
-Owning an Issue
----------------
+###Owning an Issue
 
 * Whoever the issue is assigned to works next
 * If an issue needs someone else's work, assign it to them.
 
-Status 
-------
+###Status 
 
 * Submitted
 * Accepted
@@ -64,30 +57,26 @@ Status
 * Blocked
 
 
-Resolutions
------------
+###Resolutions
 
 * Resolved
 * Will Not Fix
 * Not reproducible
 * Not a bug (working as intended)
 
-Bug Triage
-----------
+###Bug Triage
 
 Some organisations use a severity matrix based on:
 
 * Severity [Wrong answer, crash, unusable, workaround, cosmetic...]
 * Frequency [All users, most users, some users...]
 
-The Backlog
------------
+###The Backlog
 
 The list of all the bugs that need to be fixed or
 features that have been requested is called the "backlog".
 
-Development Cycles
-------------------
+###Development Cycles
 
 Development goes in *cycles*.
 
@@ -101,8 +90,7 @@ In a given cycle:
 
 
 
-GitHub issues
--------------
+###GitHub issues
 
 GitHub doesn't have separate fields for status, component, severity etc.
 Instead, it just has labels, which you can create and delete.

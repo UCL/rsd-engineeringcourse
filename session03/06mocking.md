@@ -2,11 +2,9 @@
 title: Mocking
 ---
 
-Mocking
-=======
+##Mocking
 
-Definition
-----------
+###Definition
 
 <div align="left">
 mock
@@ -33,8 +31,7 @@ stub routine
 
 </div>
 
-Recording calls with Mock
--------------------------
+###Recording calls with Mock
 
 <div align="left">
 Mock objects record the calls made to them:
@@ -72,8 +69,7 @@ StopIteration error thrown in ....
 </div>
 
 
-Testing functions that call other functions
--------------------------------------------
+###Testing functions that call other functions
 
 ``` python
 def minimize(model, start_input):
@@ -100,8 +96,7 @@ Clear-box
 `minimize` must be tested in *isolation* from the rest of the code!
 </div>
 
-Exercise: derivative function
------------------------------
+###Exercise: derivative function
 
 <div align="left">
 Goal

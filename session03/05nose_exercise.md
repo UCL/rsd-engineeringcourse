@@ -2,11 +2,9 @@
 title: Classroom Exercise
 ---
 
-Classroom Exercise: Energy Calculation
-======================================
+##Classroom Exercise: Energy Calculation
 
-Diffusion Model in 1D
----------------------
+###Diffusion Model in 1D
 
 <div align="left">
 
@@ -118,8 +116,7 @@ Implementation:
 </script>
 {% endraw %}
 
-Starting Point
---------------
+###Starting Point
 
 <div align="left">
 In a directory, create two files:
@@ -152,8 +149,7 @@ def test_energy():
 
 </div>
 
-Solution
---------
+###Solution
 
 Don't look till after class!
 
@@ -161,8 +157,7 @@ Here is one solution:
    * Function: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusion_model.py
    * Test: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/test_diffusion_model.py
 
-Coverage
---------
+###Coverage
 
 
 1. Comment out from exception tests in solution
