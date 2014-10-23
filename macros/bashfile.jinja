@@ -5,7 +5,12 @@
 {{d['session'+session+'/python/'+file+'|idio|t']}}
 ```
 {% else %}
-``` python
+
+``` bash
+{{d['session'+session+'/python/'+file+'|idio|t']}}
+```
+
+```
 {{d['session'+session+'/python/'+file+'|idio|bash']}}
 ```
 {% endif %}
