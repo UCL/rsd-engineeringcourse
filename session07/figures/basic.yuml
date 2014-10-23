@@ -1,0 +1,1 @@
+[ClassName|+public_member;-private_member|+publicMethod();-privateMethod()]
