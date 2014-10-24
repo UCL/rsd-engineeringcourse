@@ -69,23 +69,6 @@ that colleagues might not be familiar with
 
 {{pyfrag('05','comments','teaching')}}
 
-###Documentation as comments
-
-{{pyfrag('05','comments','docstring')}}
-
-{% if notebook %}
-``` python
-help(complex)
-```
-{% else %}
-```
-help(complex)
-|  complex(real[, imag]) -> complex number
-|
-|  Create a complex number from a real part and an optional imaginary part.
-|  This is equivalent to (real + imag*1j) where imag defaults to 0.
-```
-{% endif %}
 ###Other good comments
 
 Comments which explain coding definitions or reasons for programming choices.

@@ -68,7 +68,7 @@ assets:
 
 pythons:
     - .py|idio|pycon:
-       - except: setup.py|greeter.py
+       - except: setup.py|greeter.py|conf.py
        - data
        - session04/python/greetings/scripts/greet
        - .py
@@ -80,9 +80,14 @@ bashes:
   - .sh|idio|bash:
     - .py
     - .csv
-    - except: analyze.sh
+    - except: analyze.sh|sphinx.sh
   - .sh|idio|t
 
+session05/python/sphinx.sh|bash:
+  - .py
+  - .rst
+  - bash:
+        add-new-files: True 
 
 data:
     - .csv
@@ -91,6 +96,7 @@ data:
 sources:
     - .md|yamlargs:
       - output: False
+    - .rst|idio|t
 
 jinjas:
     - .jinja:

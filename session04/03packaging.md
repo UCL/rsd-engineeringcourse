@@ -72,6 +72,9 @@ Of course, there's more to do when taking code from a quick script and turning i
 
 {{ notebookfile('04','greetings/greetings/greeter.py') }}
 
+The documentation string explains how to use the function; don't worry about this for now, we'll consider
+this next time.
+
 ###Write an executable script
 
 {{ notebookfile('04','greetings/greetings/command.py') }}
