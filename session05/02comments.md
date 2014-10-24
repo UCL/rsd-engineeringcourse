@@ -31,7 +31,7 @@ Is good. But:
 
 is probably better.
 
-###Comments which could be replaced by better style
+###Comments vs expressive code 
 
 > The proper use of comments is to compensate for our failure to express yourself in code. 
 Note that I used the word failure. I meant it. Comments are always failures.

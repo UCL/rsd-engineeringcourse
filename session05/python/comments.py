@@ -52,7 +52,8 @@ agents[:]=[]# Shredder!
 ### "teaching"
 # This is how you define a decorator in python
 def double(decorated_function):
-    # Here, the result function forms a closure over the decorated function
+   # Here, the result function forms a closure over 
+   # the decorated function
    def result_function(input):
        return decorated_function(decorated_function(input))
    # The returned result is a function
