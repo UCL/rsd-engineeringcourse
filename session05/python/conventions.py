@@ -58,9 +58,9 @@ iOffset=1
 offset =1
 anothervariable=1
 flag1=True
+variable=1
 flag2=False
 def do_something(): pass
-variable=1
 
 ### "naming3"
 
