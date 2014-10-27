@@ -35,27 +35,13 @@ and describe *code smells*: how you know you need to refactor.
 
 Smell: Raw numbers appear in your code
 
-Before:
+Before
 
-``` python
-data= [math.sin(x) for x in np.arange(0,3.141,3.141/100)]
-result= [0]*100
-for i in range(100):
-   for j in range(i+1, 100):
-     result[j] += data[i] * data[i-j] / 100
-```
+{{pyfrag('05','refactoring','magic_before')}}
 
 after:
 
-``` python
-resolution=100
-pi=3.141
-data= [math.sin(x) for x in np.arange(0,pi,pi/resolution)]
-result= [0]*resolution
-for i in range(resolution):
-   for j in range(i + 1, resolution):
-     result[j] += data[i] * data[i-j] / resolution
-```
+{{pyfrag('05','refactoring','magic_after')}}
 
 ###Replace repeated code with a function
 
@@ -63,23 +49,11 @@ Smell: Fragments of repeated code appear
 
 Before:
 
-``` python
-if abs(hawk.facing-starling.facing)<hawk.viewport:
-	hawk.hunting()
-if abs(starling.facing-hawk.facing)<starling.viewport:
-	starling.flee()
-```
+{{pyfrag('05','refactoring','function_before')}}
 
 After:
 
-``` python
-def can_see(source,target):
-	return (source.facing-target.facing)<source.viewport
-if can_see(hawk,starling):
-	hawk.hunting()
-if can_see(starling,hawk):
-	starling.flee()
-```
+{{pyfrag('05','refactoring','function_after')}}
 
 ###Change of variable name
 
@@ -87,35 +61,22 @@ Smell: Code needs a comment to explain what it is for
 
 Before:
 
-``` python
-z=find(x,y):
-if z:
-   ribe(x)
-```
+{{pyfrag('05','refactoring','names_before')}}
 
 After:
 
-``` python
-gene = subsequence(chromosome, start_codon)
-if gene:
-    transcribe(gene)
-```
+{{pyfrag('05','refactoring','names_after')}}
 
 
 ###Separate a complex expression into a local variable
 
 Smell: An expression becomes long
 
-``` cpp
-if ((my_name==your_name++)&&flag1||flag2) do_something;
-```
+{{pyfrag('05','refactoring','temporary_before')}}
 
 vs
 
-``` cpp
-const bool same_names= (my_name==your_name);
-if (same_names && flag1 || flag2) do_something;
-```
+{{pyfrag('05','refactoring','temporary_after')}}
 
 ###Replace loop with iterator
 
@@ -123,19 +84,11 @@ Smell: Loop variable is an integer from 1 to something
 
 Before:
 
-``` python
-sum=0
-for i in range(resolution):
-	sum+=data[i]	
-```
+{{pyfrag('05','refactoring','iterator_before')}}
 
 After:
 
-``` python
-sum=0
-for value in data:
-	sum+=value
-```
+{{pyfrag('05','refactoring','iterator_after')}}
 
 ###Replace hand-written code with library code
 
@@ -143,16 +96,11 @@ Smell: It feels like surely someone else must have done this at some point
 
 Before:
 
-``` python
-xcoords=[start+i*step for i in range(int((end-start)/step))]
-```
+{{pyfrag('05','refactoring','library_before')}}
 
 After:
 
-``` python
-import numpy as np
-xcoords=np.arange(start,end,step)
-```
+{{pyfrag('05','refactoring','library_after')}}
 
 See [Numpy](http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html),
     [Pandas](http://pandas.pydata.org/)
@@ -163,19 +111,13 @@ Smell: A function needs to work corresponding indices of several arrays:
 
 Before:
 
-``` python
-def can_see(index,source_angles,target_angles,source_viewports):
-	return abs(source_angles[i]-target_angles[i])<source_viewports[i]
-```
+{{pyfrag('05','refactoring','arrays')}}
 
 After:
 
-``` python
-def can_see(source,target):
-	return (source["facing"]-target["facing"])<source["viewport"]
-```
+{{pyfrag('05','refactoring','structures')}}
 
-Warning: this refactoring improves readability but can make code slower,
+Warning: this refactoring greatly improves readability but can make code slower,
 depending on memory layout. Be careful.
 
 ###Replace constants with a configuration file
@@ -184,29 +126,13 @@ Smell: You need to change your code file to explore different research scenarios
 
 Before:
 
-``` python
-flight_speed=2.0 # mph
-bounds=[0,0,100,100]
-turning_circle=3.0 # m
-bird_counts: {"hawk": 5, "starling": 500}
-```
+{{pyfrag('05','refactoring','config_before')}}
 
 After:
 
-``` yaml
-# config.yml
-bounds: [0,0,100,100]
-counts:
-	hawk: 5
-	starling: 500
-speed: 2.0
-turning_circle: 3.0
-```
+{{notebookfile('05','config.yaml')}}
 
-``` python
-config=yaml.load(open(
-	os.path.join(os.path.dirname(__file__),"config.yml")))
-```
+{{pyfrag('05','refactoring','config_after')}}
 
 See [YAML](http://www.yaml.org/) and [PyYaml](http://pyyaml.org/)
 and [Python OS](http://docs.python.org/2/library/os.html)
@@ -215,82 +141,36 @@ and [Python OS](http://docs.python.org/2/library/os.html)
 
 Smell: A global variable is assigned and then used inside a called function:
 
-``` python
-viewport=pi/4
-if hawk.can_see(starling):
-	hawk.hunt(starling)
-
-class Hawk(object):
-	def can_see(self,target):
-		return (self.facing-target.facing)<viewport
-```
+{{pyfrag('05','refactoring','globals')}}
 
 Becomes:
 
-``` python
-viewport=pi/4
-if hawk.can_see(starling,viewport):
-	hawk.hunt(starling)
-
-class Hawk(object):
-	def can_see(self,target,viewport):
-		return (self.facing-target.facing)<viewport
-
-```
+{{pyfrag('05','refactoring','arguments')}}
 
 ###Merge neighbouring loops
 
 Smell: Two neighbouring loops have the same for statement
 
-``` python
-
-for bird in birds:
-    bird.build_nest()
-for bird in birds:
-    bird.lay_eggs()
-``` 
+{{pyfrag('05','refactoring','loops')}}
 
 Becomes:
 
-``` python
-for bird in birds:
-    bird.build_nest()
-    bird.lay_eggs()
-```
+{{pyfrag('05','refactoring','merged')}}
 
 
 ###Break a large function into smaller units
 
 Smell: A function or subroutine no longer fits on a page in your editor
 Smell: A line of code is indented more than three levels
+Smell: A piece of code interacts with the surrounding code through just a few variables
 
 Before:
 
-``` python
-def do_calculation():
-   for predator in predators:
-      for prey in preys:
-          if predator.can_see(prey):
-             predator.hunt(prey)
-          if predator.can_reach(prey):
-             predator.eat(prey)
-```
+{{pyfrag('05','refactoring','subroutine_before')}}
 
 After:
 
-``` python
-def do_calculation():
-   for predator in predators:
-      for prey in preys:
-          predator.predate(prey)
-
-class Predator(object):
-   def predate(self,prey):
-      if predator.can_see(prey):
-         predator.hunt(prey)
-      if predator.can_reach(prey):
-         predator.eat(prey)
-```
+{{pyfrag('05','refactoring','subroutine_after')}}
 
 ###Separate code concepts into files or modules
 
@@ -300,25 +180,11 @@ Smell: You get a lot of version control conflicts
 
 Before:
 
-```python
-class One(object):
-   ...
-
-
-class Two(object):
-  def __init__():
-    self.child=One()
-```
+{{pyfrag('05','refactoring','files_before')}}
 
 After:
 
-``` python
-from anotherfile import One
-
-class Two(object):
-   def __init__():
-      self.child=One()
-```
+{{pyfrag('05','refactoring','files_after')}}
 
 ###Refactoring is a safe way to improve code
 
