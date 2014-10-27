@@ -123,9 +123,7 @@ Separating the script from the logical module made this possible:
 
 Add a fixtures file:
 
-``` yaml 
-{{ d['session04/python/greetings/greetings/test/fixtures/samples.yaml'] }}
-```
+{{ notebookfile('04','greetings/greetings/test/fixtures/samples.yaml')}}
 
 ###Developer Install
 

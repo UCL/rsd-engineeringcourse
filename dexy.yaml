@@ -92,6 +92,7 @@ session05/python/sphinx.sh|bash:
 data:
     - .csv
     - .yaml
+    - .yaml|idio|t
 
 sources:
     - .md|yamlargs:

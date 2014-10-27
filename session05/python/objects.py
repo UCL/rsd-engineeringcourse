@@ -26,6 +26,7 @@ my_object = MyClass()
 class MyClass(object):
     def someMethod(self, argument):
         pass
+
 my_object=MyClass()
 my_object.someMethod(value)
 ### "constructor"
@@ -43,7 +44,10 @@ my_object = MyClass()
 assert(my_object.member == "Value")
 ### "structure_before"
 from random import random
-birds = [{"position": random(), "velocity": random(), "type": kind} for kind in bird_types]
+birds = [{"position": random(),
+          "velocity": random(),
+          "type": kind} for kind in bird_types]
+
 average_position = average([bird["position"] for bird in birds])
 ### "structure_after"
 class Bird(object):
@@ -61,6 +65,7 @@ def can_see(source,target):
 
 if can_see(hawk,starling):
     hawk.hunt()
+
 ### "method_after"
 class Bird(object):
     def can_see(self,target):
@@ -68,6 +73,7 @@ class Bird(object):
 
 if hawk.can_see(starling):
     hawk.hunt()
+
 ### "member_before"
 class Person(object):
     def __init__(self, genes):
@@ -75,6 +81,7 @@ class Person(object):
     def reproduce_probability(self,age): pass
     def death_probability(self,age): pass
     def emigrate_probability(self,age): pass
+
 ### "member_after"
 class Person(object):
     def __init__(self, genes, age):
@@ -83,6 +90,7 @@ class Person(object):
     def reproduce_probability(self): pass
     def death_probability(self): pass
     def emigrate_probability(self): pass
+
 ### "global_before"
 name="James"
 birthday=[19,10,76]
@@ -91,6 +99,7 @@ if today==birthday[0:2]:
     print "Happy Birthday, ", name
 else:
     print "No birthday for you today."
+
 ### "global_after"
 class Person(object):
     def __init__(self, birthday, name):

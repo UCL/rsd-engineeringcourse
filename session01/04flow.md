@@ -25,14 +25,14 @@ You can choose how much indentation to use, so long as you
 are consistent, but four spaces is
 conventional. Please do not use tabs.
 
-{{ pyfrag('01','flow','Indentation') }}
+{{ pyfrag('01','flow','Indentation', check_errors=False) }}
 
 ### Pass
 
 A statement expecting identation must have some indented code.
 This can be annoying when commenting things out. (With `#`)
 
-{{ pyfrag('01','flow','EmptyIndent') }}
+{{ pyfrag('01','flow','EmptyIndent', check_errors=False) }}
 
 So the `pass` statement is used to do nothing.
 

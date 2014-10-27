@@ -42,23 +42,29 @@ for i in range(resolution):
 ### "function_before"
 if abs(hawk.facing-starling.facing)<hawk.viewport:
     hawk.hunting()
+
 if abs(starling.facing-hawk.facing)<starling.viewport:
     starling.flee()
 ### "function_after"
 def can_see(source,target):
     return (source.facing-target.facing)<source.viewport
+
 if can_see(hawk,starling):
     hawk.hunting()
+
 if can_see(starling,hawk):
     starling.flee()
+
 ### "names_before"
 z=find(x,y)
 if z:
     ribe(x)
+
 ### "names_after"
 gene = subsequence(chromosome, start_codon)
 if gene:
     transcribe(gene)
+
 ### "temporary_before"
 if ((my_name==your_name) and flag1 or flag2): do_something()
 ### "temporary_after"
@@ -69,10 +75,12 @@ if same_names and flags_OK: do_something()
 sum=0
 for i in range(resolution):
     sum+=data[i]	
+
 ### "iterator_after"
 sum=0
 for value in data:
     sum+=value
+
 ### "library_before"
 xcoords=[start+i*step for i in range(int((end-start)/step))]
 ### "library_after"
@@ -81,17 +89,19 @@ xcoords=np.arange(start,end,step)
 ### "arrays"
 def can_see(index,source_angles,target_angles,source_viewports):
     return abs(source_angles[i]-target_angles[i])<source_viewports[i]
+
 ### "structures"
 def can_see(source,target):
     return (source["facing"]-target["facing"])<source["viewport"]
+
 ### "config_before"
 flight_speed=2.0 # mph
 bounds=[0,0,100,100]
 turning_circle=3.0 # m
 bird_counts= {"hawk": 5, "starling": 500}
 ### "config_after"
-config=yaml.load(open(
-    os.path.join(os.path.dirname(__file__),"config.yaml")))
+config=yaml.load(open("config.yaml"))
+
 ### "globals"
 viewport=pi/4
 if hawk.can_see(starling):
@@ -100,6 +110,7 @@ if hawk.can_see(starling):
 class Hawk(object):
     def can_see(self,target):
         return (self.facing-target.facing)<viewport
+
 ### "arguments"
 viewport=pi/4
 if hawk.can_see(starling,viewport):
@@ -112,12 +123,15 @@ class Hawk(object):
 ### "loops"
 for bird in birds:
     bird.build_nest()
+
 for bird in birds:
     bird.lay_eggs()
+
 ### "merged"
-    for bird in birds:
-        bird.build_nest()
-        bird.lay_eggs()
+for bird in birds:
+    bird.build_nest()
+    bird.lay_eggs()
+
 ### "subroutine_before"
 def do_calculation():
     for predator in predators:
@@ -126,6 +140,7 @@ def do_calculation():
                 predator.hunt(prey)
             if predator.can_reach(prey):
                 predator.eat(prey)
+
 ### "subroutine_after"
 def do_calculation():
     for predator in predators:
@@ -137,6 +152,7 @@ def predate(predator,prey):
         predator.hunt(prey)
     if predator.can_reach(prey):
         predator.eat(prey)
+
 ### "files_before"
 class One(object):
     pass
@@ -145,6 +161,7 @@ class One(object):
 class Two(object):
     def __init__():
         self.child=One()
+
 ### "files_after"
 from anotherfile import One
 

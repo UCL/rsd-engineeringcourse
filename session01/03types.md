@@ -62,7 +62,7 @@ An array can be modified:
 ### Tuples
 A `tuple` is an immutable sequence:
 
-{{ pyfrag('01','structures','Tuple') }}
+{{ pyfrag('01','structures','Tuple', check_errors=False) }}
 
 `str`, `int` and `float` are all immutable too.
 
@@ -93,7 +93,7 @@ that things would totally break of you changed a key in a dictionary.
 
 So, you can only use **immutable** things as keys.
 
-{{ pyfrag('01','structures','ImmutableKeys') }}
+{{ pyfrag('01','structures','ImmutableKeys', check_errors=False) }}
 
 ### No guarantee of order
 
