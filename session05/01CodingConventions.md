@@ -1,7 +1,6 @@
 ---
 title: Conventions
 ---
-
 ##Coding Conventions
 
 ###One code, many layouts:
