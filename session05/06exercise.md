@@ -1,5 +1,5 @@
 ---
-title: Comments
+title: Exercise
 ---
 
 ##Exercise: The Boids
