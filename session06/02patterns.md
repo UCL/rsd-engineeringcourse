@@ -49,7 +49,6 @@ We'll just show a few in this session:
 * Handle-Body
 * Strategy
 
-
 ###Factory Method
 
 Here's what the Gang of Four Book says about Factory Method:
@@ -68,31 +67,48 @@ Applicability: Use the Factory method pattern when:
 
 ###Factory Sample Code
 
-```cpp
-Product * Creator::Create (ProductId id) {
-    if (id == MINE) return new MyProduct;
-    if (id == YOURS) return new YourProduct;
-    // repeat for remaining products
-    return 0;
-}
+```python
+class Model(object):
+  def __init__(config_path, individual_factory):
+    self.entites=[]
+    for entity in yaml.load(open(config_path)) 
+      self.entities.append(individual_factory.create(entity['species']))
+  def simulate(self):
+    for entity in entities:
+      for target in entities:
+        entity.interact(target)
+      entity.simulate()
+
+class 2DFactory(object):
+  def create(self, species):
+    return 2DAnimal(species)
+
+class RemoteFactory(object):
+  def __init__(self, url):
+    self.url=url
+    connection=AmazonCompute.connect(url)
+  def create(self, species):
+    return OnlineAnimal(species, connection)
+
+class RobotFactory(object): pass
 ```
 
-###Antipattern
+###Refactoring to Patterns
 
 I personally have got into a terrible tangle trying to make base classes which somehow
 "promote" themselves into a derived class based on some code in the base class.
 
 This is an example of an "Antipattern": like a Smell, this is a recognised Wrong Way
-of doing things. 
+of doing things.
 
 What I should have written was a Creator with a FactoryMethod.
 
 ###Builder
 
-Intent: Separate the steps for constructing of a complex object from its final representation.
+Intent: Separate the steps for constructing a complex object from its final representation.
 
-```cpp
-Maze * MazeGame::CreateMaze (MazeBuilder& builder){
+```python 
+CreateMaze(builder){
     builder.BuildMaze();
     builder.BuildRoom(1);
     builder.BuildRoom(2);
@@ -111,47 +127,6 @@ OpenGL, or a 3d printer, depending on the builder it is given.
 ###Builder Message Sequence
 
 ![MessageSequence](session07/figures/builder_seq)
-
-###Fast Arrays
-
-Object oriented programming works best using *Arrays Of Structures*:
-
-```cpp
-class Boid {
-    int x;
-    int y;
-    int xv;
-    int yv;
-    void go_right(){x+=1;}
-}
-std::vector<Boid> boids(100);
-```
-
-numerical code is sometimes faster with raw structures of arrays:
-
-```cpp
-struct boids{
-    int xs[100];
-    int ys[100];
-    int xvs[100];
-    int yvs[100];
-}
-```
-
-How can we do object oriented programming, and still get maximum HPC performance?
-
-###HandleBody Pattern
-
-``` cpp
-class Boid{
-    static boids & data;
-    int handle;
-    void go_right(){data.xs[handle]+=1;}
-}
-```
-
-With this approach, code can often make use of memory locality, while still writing
-object-oriented looking client code.
 
 ###Strategy
 

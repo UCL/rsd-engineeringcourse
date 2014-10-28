@@ -72,7 +72,9 @@ This is a intensive, practical course.
 
 * Tricks for not repeating yourself
 * Iterables and generators
+* Exceptions
 * Functional python.
+* Operator Overloading
 * Map and reduce.
 * Context managers and decorators.
 * Metaprogramming
