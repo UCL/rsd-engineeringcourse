@@ -39,3 +39,12 @@ author: James Hetherington and Matt Clarkson
 {{d['session04/02greengraph.md']}}
 {{d['session04/03packaging.md']}}
 {{d['session04/05exercises.md']}}
+\chapter{Construction}
+{{d['session05/index.md']}}
+{{d['session05/01CodingConventions.md']}}
+{{d['session05/02comments.md']}}
+{{d['session05/03documentation.md']}}
+{{d['session05/04refactoring.md']}}
+{{d['session05/05objects.md']}}
+{{d['session05/06exercise.md']}}
+

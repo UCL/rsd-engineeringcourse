@@ -2,6 +2,16 @@
 title: Conventions
 ---
 
+{% if notebook %}
+##Setup
+
+{{pyfrag('05','comments','setup')}}
+{{pyfrag('05','objects','setup')}}
+{{pyfrag('05','conventions','setup')}}
+{{pyfrag('05','refactoring','setup')}}
+Define some mocks so that the notebook will work
+{% endif %}
+
 ##Coding Conventions
 
 ###One code, many layouts:
