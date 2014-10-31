@@ -90,7 +90,7 @@ sphinx-build . doc
 
 ### Sphinx output
 
-Sphinx's output is [html](http://localhost:8085/session05/python/GreetingsDoc/). 
+Sphinx's output is [html](session05/python/GreetingsDoc/). 
 We've just created a simple single function's documentation, but Sphinx will create
 multiple nested pages of documentation automatically for many functions.
 

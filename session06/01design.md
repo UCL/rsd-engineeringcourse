@@ -26,7 +26,7 @@ class Particle {
     std::vector<double> position;
     std::vector<double> velocity;
     Particle(std::vector<double> position, std::vector<double> velocity);
-    move(double delta_t);
+    void move(double delta_t);
 }
 ```
 

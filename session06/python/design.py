@@ -26,7 +26,6 @@ class Person(object):
     def __init__(self):
         self._first = "James"
         self._second = "Hetherington"
-
     @property
     def name(self):
         return self._first + " " + self._second
@@ -36,7 +35,6 @@ assert(Person().name == "James Hetherington")
 class Person(object):
     def __init__(self):
         self._name = "James Hetherington"
-
     def name(self):
         return self._name
 
@@ -46,7 +44,6 @@ class Counted(object):
     number_created=0
     def __init__(self):
         Counted.number_created+=1
-
     @classmethod
     def howMany(cls):
         return cls.number_created
@@ -83,7 +80,6 @@ class Person(object):
     def __init__(self, age, job): 
         self.age = age
         self.job = job
-
     def birthday(self): 
         self.age += 1
 
@@ -91,14 +87,12 @@ class Pet(object):
     def __init__(self, age, owner): 
         self.age = age
         self.owner = owner
-
     def birthday(self): 
         self.age += 1
 ### "inheritance_factor2"
 class Animal(object):
     def __init__(self, age): 
         self.age = age
-
     def birthday(self): 
         self.age += 1
 
@@ -141,7 +135,7 @@ animals=[Dog(), Worm(), Pig(), Cow(), Poodle()]
 for animal in animals:
     print animal.noise()
 ### "undefined"
-    class Animal(object): pass
+class Animal(object): pass
 
 class Worm(Animal): pass
 

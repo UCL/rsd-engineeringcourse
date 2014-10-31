@@ -10,7 +10,8 @@ class View(object):
         self.figure=plt.figure()
         axes=plt.axes()
         self.model=model
-        self.scatter=axes.scatter(model.agent_locations()[:,1],model.agent_locations()[:,2])
+        self.scatter=axes.scatter(model.agent_locations()[:,1],
+                model.agent_locations()[:,2])
     def update(self):
         self.scatter.set_offsets(model.agent_locations())
 ### "controller"

@@ -180,7 +180,7 @@ Consider the sequence of sunspot observations:
 {% if notebook %}
 plt.plot(*load_sunspots())
 {% else %}
-![Sunspot cycle 1700-2014](spots.png)
+![Sunspot cycle 1700-2014](session06/python/spots.png)
 {% endif %}
 
 ###Sunspot cycle has periodicity
@@ -190,7 +190,7 @@ plt.plot(*load_sunspots())
 {% if notebook %}
 plt.plot(spectrum)
 {% else %}
-![Sunspot cycle fourier spectrum](fixed.png)
+![Sunspot cycle fourier spectrum](session06/python/fixed.png)
 {% endif %}
 
 ###Years are not constant length
@@ -285,7 +285,7 @@ Use these new tools to compare solutions
 plt.plot(*comparison)
 plt.xlim(0,16)
 {% else %}
-![3 ways to calculate a frequency spectrum for sunspot data](comparison.png)
+![3 ways to calculate a frequency spectrum for sunspot data](session06/python/comparison.png)
 {% endif %}
 
 ###Deviation of year length from average
@@ -293,7 +293,7 @@ plt.xlim(0,16)
 {% if notebook %}
 plt.plot(deviation)
 {% else %}
-![Deviation of year length from average 1700-2014](deviation.png)
+![Deviation of year length from average 1700-2014](session06/python/deviation.png)
 {% endif %}
 
 ## Model-View-Controller

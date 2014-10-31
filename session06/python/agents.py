@@ -6,6 +6,7 @@ class AgentModel(object):
         agent.interact(target)
       agent.simulate()
 ### "construct"
+class AgentModel(object):
   def __init__(self, config):
     self.agents=[]
     for agent_config in config:
