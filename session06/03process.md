@@ -76,7 +76,7 @@ permits us to reason about the effects of composition.
 
 ###Software is not made of bricks
 
-Third, software systems operate in a domain determined principally by arbitrary rules about information and symbolic communication whilst the
+> Third, software systems operate in a domain determined principally by arbitrary rules about information and symbolic communication whilst the
 operation of physical systems is governed by the laws of physics.
 Finally, software is readily changeable and thus is changed, it is used in settings where our uncertainty leads us to anticipate the need to change.
 
@@ -102,11 +102,11 @@ In 2001, authors including Martin Folwer, Ward Cunningham and Kent Beck met in a
 
 ###Agile is not absence of process
 
-> The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology. 
-> We want to restore a balance. We embrace modeling, but not in order to file some diagram in a dusty corporate repository. 
-> We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes. We plan, but recognize the 
-> limits of planning in a turbulent environment. Those who would brand proponents of XP or SCRUM or any of the other 
-> Agile Methodologies as "hackers" are ignorant of both the methodologies and the original definition of the term hacker.
+> The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology.
+> We want to restore a balance. We embrace modeling, but not in order to file some diagram in a dusty corporate repository.
+> We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes. We plan, but recognize the
+> limits of planning in a turbulent environment. Those who would brand proponents of XP or SCRUM or any of the other
+> Agile Methodologies as "hackers" are ignorant of both the methodologies and the original definition of the term hacker
 
 -- Jim Highsmith.
 

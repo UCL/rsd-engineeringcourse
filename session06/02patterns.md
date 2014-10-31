@@ -178,7 +178,7 @@ Consider the sequence of sunspot observations:
 {{ pyfrag('06','sunspot', 'load_data')}}
 
 {% if notebook %}
-plt.plot(sunspot_values)
+plt.plot(*load_sunspots())
 {% else %}
 ![Sunspot cycle 1700-2014](spots.png)
 {% endif %}
@@ -195,13 +195,11 @@ plt.plot(spectrum)
 
 ###Years are not constant length
 
-{{ pyfrag('06','sunspot', 'deviation')}}
+There's a potential problem with this analysis however:
 
-{% if notebook %}
-plt.plot(year_deviation)
-{% else %}
-![Sunspot cycle 1700-2014](deviation.png)
-{% endif %}
+* Years are not constant length
+* Leap years exist
+* But, the Fast Fourier Transform assumes evenly spaced intervals
 
 ###Uneven time series
 
@@ -238,9 +236,48 @@ of derived classes would explode: `class SunspotAnalyzerSplineFFTTrapeziumNearMo
 
 ###Strategy Pattern for Algorithms
 
-{{ pyfrag('06','sunspot', 'strategy')}}
+First, we'll define a helper class for our time series.
 
-{{ pyfrag('06','sunspot', 'composites')}}
+{% if notebook %}
+
+{{ pyfrag('06','sunspot', 'imports')}}
+{% endif %}
+
+{{ pyfrag('06','sunspot', 'Series')}}
+
+###Strategy Pattern for Algorithms
+
+Then, our class which contains the analysis code, *except* the numerical methods
+
+{{ pyfrag('06','sunspot', 'Client')}}
+###Strategy Pattern for Algorithms
+
+Our existing simple fourier strategy
+
+{{ pyfrag('06','sunspot', 'Naive')}}
+###Strategy Pattern for Algorithms
+
+A strategy based on interpolation to a spline
+
+{{ pyfrag('06','sunspot', 'Spline')}}
+
+###Strategy Pattern for Algorithms
+
+A strategy using the Lomb-Scargle Periodogram
+
+{{ pyfrag('06','sunspot', 'Lomb')}}
+
+###Strategy Pattern for Algorithms
+
+Define our concrete solutions with particular strategies
+
+{{ pyfrag('06','sunspot', 'Declare')}}
+
+###Strategy Pattern for Algorithms
+
+Use these new tools to compare solutions
+
+{{ pyfrag('06','sunspot', 'Analyze')}}
 
 ###Comparison of different algorithms for frequency spectrum of sunspots.
 
@@ -249,6 +286,16 @@ plt.plot(*comparison)
 plt.xlim(0,16)
 {% else %}
 ![3 ways to calculate a frequency spectrum for sunspot data](comparison.png)
+{% endif %}
+
+###Deviation of year length from average
+
+{{ pyfrag('06','sunspot', 'deviation')}}
+
+{% if notebook %}
+plt.plot(year_deviation)
+{% else %}
+![Deviation of year length from average 1700-2014](deviation.png)
 {% endif %}
 
 ## Model-View-Controller
