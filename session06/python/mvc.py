@@ -1,9 +1,9 @@
-### "Model"
+### "model"
 class Model(object):
     def simulation_step():
         # Maths Here
         pass
-### "View"
+### "view"
 class View(object):
     def __init__(self, model):
         from matplotlib import pyplot as plt
@@ -13,7 +13,7 @@ class View(object):
         self.scatter=axes.scatter(model.agent_locations()[:,1],model.agent_locations()[:,2])
     def update(self):
         self.scatter.set_offsets(model.agent_locations())
-### "Controller"
+### "controller"
 def Controller(object):
     def __init__(self):
         self.model=Model() # Or use Builder

@@ -98,7 +98,7 @@ But in Python this is unnecessary.
 
 *Class*, or *static* members, belong to the class as a whole, and are shared between instances.
 
-{{pyfrag('06','design','classmember')}}
+{{pyfrag('06','design','classmethod')}}
 
 ### Object-based vs Object-Oriented
 

@@ -175,7 +175,7 @@ Strategy lets the algorithm vary independently from clients that use it.
 
 Consider the sequence of sunspot observations:
 
-{{ pyfrag('06','sunspot', 'load_data')}}
+{{ pyfrag('06','sunspots', 'load_data')}}
 
 {% if notebook %}
 plt.plot(*load_sunspots())
@@ -185,7 +185,7 @@ plt.plot(*load_sunspots())
 
 ###Sunspot cycle has periodicity
 
-{{ pyfrag('06','sunspot', 'naive_fft')}}
+{{ pyfrag('06','sunspots', 'naive_fft')}}
 
 {% if notebook %}
 plt.plot(spectrum)
@@ -240,44 +240,44 @@ First, we'll define a helper class for our time series.
 
 {% if notebook %}
 
-{{ pyfrag('06','sunspot', 'imports')}}
+{{ pyfrag('06','sunspots', 'imports')}}
 {% endif %}
 
-{{ pyfrag('06','sunspot', 'Series')}}
+{{ pyfrag('06','sunspots', 'Series')}}
 
 ###Strategy Pattern for Algorithms
 
 Then, our class which contains the analysis code, *except* the numerical methods
 
-{{ pyfrag('06','sunspot', 'Client')}}
+{{ pyfrag('06','sunspots', 'Client')}}
 ###Strategy Pattern for Algorithms
 
 Our existing simple fourier strategy
 
-{{ pyfrag('06','sunspot', 'Naive')}}
+{{ pyfrag('06','sunspots', 'Naive')}}
 ###Strategy Pattern for Algorithms
 
 A strategy based on interpolation to a spline
 
-{{ pyfrag('06','sunspot', 'Spline')}}
+{{ pyfrag('06','sunspots', 'Spline')}}
 
 ###Strategy Pattern for Algorithms
 
 A strategy using the Lomb-Scargle Periodogram
 
-{{ pyfrag('06','sunspot', 'Lomb')}}
+{{ pyfrag('06','sunspots', 'Lomb')}}
 
 ###Strategy Pattern for Algorithms
 
 Define our concrete solutions with particular strategies
 
-{{ pyfrag('06','sunspot', 'Declare')}}
+{{ pyfrag('06','sunspots', 'Declare')}}
 
 ###Strategy Pattern for Algorithms
 
 Use these new tools to compare solutions
 
-{{ pyfrag('06','sunspot', 'Analyze')}}
+{{ pyfrag('06','sunspots', 'Analyze')}}
 
 ###Comparison of different algorithms for frequency spectrum of sunspots.
 
@@ -290,10 +290,8 @@ plt.xlim(0,16)
 
 ###Deviation of year length from average
 
-{{ pyfrag('06','sunspot', 'deviation')}}
-
 {% if notebook %}
-plt.plot(year_deviation)
+plt.plot(deviation)
 {% else %}
 ![Deviation of year length from average 1700-2014](deviation.png)
 {% endif %}

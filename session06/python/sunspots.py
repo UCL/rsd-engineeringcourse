@@ -123,7 +123,7 @@ lomb_model=AnalyseSunspotData(LombFrequencyStrategy())
 nearest_model=AnalyseSunspotData(FourierNearestFrequencyStrategy())
 
 
-### "Analyse"
+### "Analyze"
 
 comparison=fourier_model.frequency_data().inverse_plot_data+['r']
 comparison+=lomb_model.frequency_data().inverse_plot_data+['g']
