@@ -19,14 +19,7 @@ The concepts we have introduced are common between different object oriented lan
 Thus, when we design our program using these concepts, we can think at an architectural level,
 independent of language syntax.
 
-```python
-class Particle(object):
-    def __init__(self, position, velocity):
-       self.position=position
-       self.velocity=velocity
-    def move(self, delta_t):
-       self.position+= self.velocity*delta_t
-```
+{{pyfrag('06','design','pyclass')}}
 
 ``` cpp
 class Particle {
@@ -78,48 +71,18 @@ Languages provide features to implement this: access control.
 
 In python, we use leading underscores to control whether member variables and methods can be accessed from outside the class.
 
-```python
-class MyClass(object):
-    def __private_method(self): pass
-    def _private_method(self): pass
-    def public_method(self):
-        self.__secret_method # OK
-
-MyClass().__private_method() # Generates error
-MyClass()._private_method() # Works, but forbidden by convention
-MyClass().public_method() # OK
-```
+{{pyfrag('06','design','hiding')}}
 
 ###Property accessors
 
 Python provides a mechanism to make functions appear to be variables. This can be used if you want to
 change the way a class is implemented without changing the interface:
 
-Members should be private and accessed by accessors, so that
-should the storage change, client code doesn't need to change.
-
-```python
-class Person(object):
-    def __init__(self):
-        self.name = "James Hetherington"
-
-assert(Person().name == "James Hetherington")
-```
+{{pyfrag('06','design','accessors1')}}
 
 becomes:
 
-```python
-class Person(object):
-    def __init__(self):
-        self._first = "James"
-        self._second = "Hetherington"
-
-    @property
-    def name(self):
-        return self._first + " " + self._second
-
-assert(Person().name == "James Hetherington")
-```
+{{pyfrag('06','design','accessors2')}}
 
 Note that the code behaves the same way to the outside user.
 The implementation detail is hidden by private variables.
@@ -127,16 +90,7 @@ In languages without this feature, such as C++, it is best to always
 make data private, and always
 access data through functions:
 
-``` python
-class Person(object):
-    def __init__(self):
-        self._name = "James Hetherington"
-
-    def name(self):
-        return self._name
-
-assert(Person().name() == "James Hetherington")
-```
+{{pyfrag('06','design','accessors3')}}
 
 But in Python this is unnecessary.
 
@@ -144,22 +98,7 @@ But in Python this is unnecessary.
 
 *Class*, or *static* members, belong to the class as a whole, and are shared between instances.
 
-``` python
-class Counted(object):
-    number_created=0
-    def __init__(self):
-        Counted.number_created+=1
-
-    @classmethod
-    def howMany(cls):
-        return cls.number_created
-
-Counted.howMany() # 0
-x=Counted()
-Counted.howMany() # 1
-z=[Counted() for x in range(5)]
-Counted.howMany() # 6 
-```
+{{pyfrag('06','design','classmember')}}
 
 ### Object-based vs Object-Oriented
 
@@ -187,20 +126,7 @@ To understand object-oriented programming, we need to introduce **polymorphism**
 
 ###Inheritance in python
 
-``` python
-class Animal(object):
-    def beBorn(self): print "I exist"
-    def die(self): print "Argh!"
-
-class Bird(Animal):
-    def fly(self): print "Whee!"
-
-class Eagle(Bird):
-    def hunt(self): print "I'm gonna eatcha!"
-
-Eagle().beBorn()
-Eagle().hunt()
-```
+{{pyfrag('06','design','inheritance')}}
 
 ###Inheritance terminology
 
@@ -214,16 +140,7 @@ Eagle().hunt()
 
 ###Inheritance and constructors
 
-``` python
-class Animal(object):
-    def __init__(self, age):
-        self.age=age
-
-class Person(Animal):
-    def __init__(self, age, name):
-        super(Person, self).__init__(age)
-        self.name=name
-```
+{{pyfrag('06','design','super')}}
 
 ###Inheritance UML diagrams
 
@@ -255,57 +172,17 @@ Smell: Repeated code between two classes which are both ontologically subtypes o
 
 Before:
 
-``` python
-class Person(object):
-    def __init__(self, age, job): 
-        self.age = age
-        self.job = job
-
-    def birthday(self): 
-        self.age += 1
-
-class Pet(object):
-    def __init__(self, age, owner): 
-        self.age = age
-        self.owner = owner
-
-    def birthday(self): 
-        self.age += 1
-```
+{{pyfrag('06','design','inheritance_factor1')}}
 
 After:
 
-``` python
-class Animal(object):
-    def __init__(self, age): 
-        self.age = age
-
-    def birthday(self): 
-        self.age += 1
-
-class Person(Animal):
-    def __init__(self, age, job):
-        self.job = job
-        super(Person, self).__init__(age)
-```
+{{pyfrag('06','design','inheritance_factor2')}}
 
 ##Polymorphism
 
 ###Polymorphism
 
-``` python
-class Dog(object):
-    def noise(self):
-        return "Bark"
-
-class Cat(object):
-    def noise(self):
-        return "Miaow"
-
-animals=[Dog(), Dog(), Cat(), Pig(), Cow(), Cat()]
-for animal in animals:
-    print animal.noise()
-```
+{{pyfrag('06','design','polymorphism')}}
 
 This will print "Bark Bark Miaow Oink Moo Miaow"
 
@@ -323,23 +200,15 @@ Noisy concept.)
 A common base class is used where there is a likely **default** that you want several
 of the derived classes to have.
 
-``` cpp
-class Animal(object):
-    def noise(self): return "I don't make a noise."
+{{pyfrag('06','design','base')}}
 
-class Dog(Animal):
-    def noise(self): return "Bark"
+###Undefined Functions and Polymorphism
 
-class Worm(Animal):
-    pass
+In the above example, we put in a dummy noise for Animals that don't know what type they are.
 
-class Poodle(Animal):
-    pass
+Instead, we can explicitly deliberately leave this undefined, and we get a crash if we access an undefined method.
 
-animals=[Dog(), Worm(), Pig(), Cow(), Poodle()]
-for animal in animals:
-    print animal.noise()
-```
+{{pyfrag('06','design','undefined')}}
 
 ###Refactoring to Polymorphism
 
@@ -347,19 +216,25 @@ Smell: a function uses a big set of `if` statements or a `case` statement to dec
 
 Before:
 
-``` python
-class Animal(object):
-    def __init__(self,type): self.type=type
-    def noise(self): 
-        if self.type=="Dog":
-            return "Bark"
-        elif self.type=="Cat":
-            return "Miaow"
-        elif self.type=="Cow":
-            return "Moo"
-```
+{{pyfrag('06','design','case')}}
 
 which is better replaced by the code above.
+
+###Interfaces and concepts
+
+In C++, it is common to define classes which declare dummy methods, called "virtual" methods, which specify
+the methods which derived classes must implement. Classes which define these methods, which cannot be instantiated
+into actual objects, are called "abstract base" classes or "interfaces".
+
+Python's Duck Typing approach means explicitly declaring these is unnesssary: any class concept which implements
+appropriately named methods will do. These as user-defined **concepts**, just as "iterable" or "container" are 
+built-in Python concepts. A class is said to "implement and interface" or "satisfy a concept".
+
+###Interfaces in UML
+
+Interfaces implementation in UML is indicated thus:
+
+![Interfaces in UML](session07/figures/interface)
 
 ###Further UML
 

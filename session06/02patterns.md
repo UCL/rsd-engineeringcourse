@@ -49,7 +49,9 @@ We'll just show a few in this session:
 * Handle-Body
 * Strategy
 
-###Factory Method
+##Factory Pattern
+
+###Factory Pattern
 
 Here's what the Gang of Four Book says about Factory Method:
 
@@ -61,37 +63,47 @@ Applicability: Use the Factory method pattern when:
 * A class can't anticipate the class of objects it must create
 * A class wants its subclasses to specify the objects it creates
 
+This is pretty hard to understand, so let's look at an example.
+
 ###Factory UML
 
-![Structure](session07/figures/factory)
+![Structure](session06/figures/factory)
 
-###Factory Sample Code
+###Factory Example
 
-```python
-class Model(object):
-  def __init__(config_path, individual_factory):
-    self.entites=[]
-    for entity in yaml.load(open(config_path)) 
-      self.entities.append(individual_factory.create(entity['species']))
-  def simulate(self):
-    for entity in entities:
-      for target in entities:
-        entity.interact(target)
-      entity.simulate()
+An "agent based model" is one like the Boids model from last week:
+agents act and interact under certain rules. Complex phenomena can be described by simple
+agent behaviours.
 
-class 2DFactory(object):
-  def create(self, species):
-    return 2DAnimal(species)
+{{pyfrag('06','agents','model')}}
 
-class RemoteFactory(object):
-  def __init__(self, url):
-    self.url=url
-    connection=AmazonCompute.connect(url)
-  def create(self, species):
-    return OnlineAnimal(species, connection)
+###Agent model constructor
 
-class RobotFactory(object): pass
-```
+This logic is common to many kinds of Agent based model, so we can imagine a common class
+for agent based models: the constructor could parse a configuration specifying how many agents of each type to create,
+their initial conditions and so on.
+
+However, this common constructor doesn't know what kind of agent to create; as a common base, it could be a model of boids,
+or the agents could be remote agents on foreign servers, or they could even be physical hardware robots connected to the driving model
+over Wifi!
+
+We need to defer the construction of the agents. We can do this with polymorphism: each derived class of the ABM can have an appropriate
+method to create its agents:
+
+{{pyfrag('06','agents','construct')}}
+
+This is the *factory method* pattern: a common design solution to the need to defer the construction of daughter objects to a derived class.
+
+###Agent derived classes
+
+{{pyfrag('06','agents','boids')}}
+
+Agents are the base product, boids or robots are a ConcreteProduct.
+
+{{pyfrag('06','agents','web')}}
+
+There is no need to define an explicit base interface for the "Agent" concept in Python: anything that responds to "simulate" and "interact" 
+methods will do: this is our Agent concept.
 
 ###Refactoring to Patterns
 
@@ -103,50 +115,165 @@ of doing things.
 
 What I should have written was a Creator with a FactoryMethod.
 
-###Builder
+##Builder
+
+###Builder Pattern
 
 Intent: Separate the steps for constructing a complex object from its final representation.
 
-```python 
-CreateMaze(builder){
-    builder.BuildMaze();
-    builder.BuildRoom(1);
-    builder.BuildRoom(2);
-    builder.BuildDoor(1,2);
-    return builder.GetMaze();
-}
-```
+![UML](session06/figures/builder)
 
-Polymorphism is used, so that `CreateMaze` can create a maze using Ascii graphics,
-OpenGL, or a 3d printer, depending on the builder it is given.
+###Builder example
 
-###Builder UML
+Let's continue our Agent Based modelling example.
 
-![UML](session07/figures/builder)
+There's a lot more to defining a model than just adding agents of different kinds: we need to define boundary conditions,
+specify wind speed or light conditions.
+
+We could define all of this for an imagined advanced Model with a very very long constructor, with lots of optional arguments:
+
+{{pyfrag('06','builder','nobuilder')}}
+
+###Builder preferred to complex constructor
+
+However, long constructors easily become very complicated. Instead, it can be cleaner to define a Builder for models. A builder is like a 
+deferred factory: each step of the construction process is implemented as an individual method call, and the completed object
+is returned when the model is ready.
+
+{{pyfrag('06','builder','builder')}}
+
+Inheritance of an Abstract Builder for multiple concrete builders could be used where there might be multiple ways to build models
+with the same set of calls to the builder: for example a version of the model builder yielding models which can be executed
+in parallel on a remote cluster.
+
+###Using a builder
+
+{{pyfrag('06','builder','use')}}
+
+###Avoid staged construction without a builder.
+
+We could, of course, just add all the building methods to the model itself, rather than having the model be yielded from a separate builder.
+
+This is an antipattern that is often seen: a class whose `__init__` constructor alone is insufficient for it to be ready to use. A series of
+methods must be called, in the right order, in order for it to be ready to use.
+
+This results in very fragile code: its hard to keep track of whether an object instance is "ready" or not. Use of the builder pattern to
+keep deferred construction in 
 
 ###Builder Message Sequence
 
-![MessageSequence](session07/figures/builder_seq)
+![MessageSequence](session06/figures/builder_seq)
 
-###Strategy
+##Strategy
+
+##Strategy Pattern
 
 Define a family of algorithms, encapsulate each one, and make them interchangeable. 
 Strategy lets the algorithm vary independently from clients that use it.
 
-For example, we pass a `MatrixOperations` object to a complex numerical method. The method delegates
-all it's linear algebra needs to the strategy, allowing the strategy to change without the
-method changing.
+###Strategy pattern example: sunspots
 
-``` cpp
-class WeatherSimulation{
-    WeatherSimulation(FourierTransformStrategy &, LinearAlgebraStrategy &);
+Consider the sequence of sunspot observations:
 
-    DoSimulation(){
-        fourier_strategy.transform(something);
-        ...
-        la_strategy.inverse_matrix(something_else);
-    }
-};
+{{ pyfrag('06','sunspot', 'load_data')}}
 
-mySimulation=new WeatherSimulation(new FFTW(), new BLAS());
-```
+{% if notebook %}
+plt.plot(sunspot_values)
+{% else %}
+![Sunspot cycle 1700-2014](spots.png)
+{% endif %}
+
+###Sunspot cycle has periodicity
+
+{{ pyfrag('06','sunspot', 'naive_fft')}}
+
+{% if notebook %}
+plt.plot(spectrum)
+{% else %}
+![Sunspot cycle fourier spectrum](fixed.png)
+{% endif %}
+
+###Years are not constant length
+
+{{ pyfrag('06','sunspot', 'deviation')}}
+
+{% if notebook %}
+plt.plot(year_deviation)
+{% else %}
+![Sunspot cycle 1700-2014](deviation.png)
+{% endif %}
+
+###Uneven time series
+
+The Fast Fourier Transform cannot be applied to uneven time series.
+
+We could:
+
+* Ignore this problem, and assume the effect is small
+* Interpolate and resample to even times
+* Use a method which is robust to unevenly sampled series, such as LSSA
+
+We also want to find the period of the strongest periodic signal in the data, there are
+various different methods we could use for this also, such as integrating the fourier series
+by quadrature to find the mean frequency, or choosing the largest single value. 
+
+###Uneven time series design
+
+We could implement a base class for our common code between the different approaches,
+and define derived classes for each different algorithmic approach. However, this has drawbacks:
+
+* The constructors for each derived class will need arguments for all the numerical method's control parameters,
+such as the degree of spline for the interpolation method, the order of quadrature for integrators, and so on.
+* Where we have multiple algorithmic choices to make (interpolator, periodogram, peak finder...) the number
+of derived classes would explode: `class SunspotAnalyzerSplineFFTTrapeziumNearMode` is a bit unweildy.
+* The algorithmic choices are not then available for other projects
+* This design doesn't fit with a clean Ontology of "kinds of things": there's no Abstract Base for spectrogram generators...
+
+###Strategy Pattern for Algorithms
+
+* We implement each algorithm for generating a spectrum as its own Strategy class.
+* They all implement a common interface
+* Arguments to strategy constructor specify parameters of algorithms, such as spline degree
+* One strategy instance for each algorithm is passed to the constructor for the overall analysis
+
+###Strategy Pattern for Algorithms
+
+{{ pyfrag('06','sunspot', 'strategy')}}
+
+{{ pyfrag('06','sunspot', 'composites')}}
+
+###Comparison of different algorithms for frequency spectrum of sunspots.
+
+{% if notebook %}
+plt.plot(*comparison)
+plt.xlim(0,16)
+{% else %}
+![3 ways to calculate a frequency spectrum for sunspot data](comparison.png)
+{% endif %}
+
+## Model-View-Controller
+
+### Separate graphics from science!
+
+Whenever we are coding a simulation or model we want to:
+
+* Implement the maths of the model
+* Visualise, plot, or print out what is going on.
+
+We often see scientific programs where the code which is used to display what is happening is mixed up with the
+mathematics of the analysis. This is hard to understand.
+
+We can do better by separating the `Model` from the `View`, and using a "`Controller`" to manage them.
+
+### Model
+
+{{ pyfrag('06','mvc', 'model')}}
+
+### View
+
+{{ pyfrag('06','mvc', 'view')}}
+
+
+### Controller
+
+{{ pyfrag('06','mvc', 'controller')}}

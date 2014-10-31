@@ -46,7 +46,7 @@ components built by colleagues that don't work together, or code that the progra
 
 ###Problems with Waterfall
 
-Waterfall results in a contractual approach to development, building an us-and-them relationship between users, business types, designers, and programmers. 
+Waterfall results in a contractual approach to development, building an us-and-them relationship between users, business types, designers, and programmers.
 
 > I built what the design said, so I did my job.
 
@@ -57,18 +57,28 @@ Waterfall results in excessive adherence to a plan, even when mistakes in the de
 
 ###Software is not made of bricks
 
-The waterfall approach to software engineering comes from the engineering tradition applied to building physical objects, 
+The waterfall approach to software engineering comes from the engineering tradition applied to building physical objects,
 where Architects and Engineers design buildings, and builders build them according to the design.
 
 Software is intrinsically different:
 
 ###Software is not made of bricks
 
-> Software is not the same 'stuff' as that from which physical systems are constructed. Software systems differ in material respects from physical systems. Much of this has been rehearsed by Fred Brooks in his classic ['No Silver Bullet'](http://ieeexplore.ieee.org/xpl/login.jsp?reload=true&tp=&arnumber=1663532&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1663532) paper. First, complexity and scale are different in the case of software systems: relatively functionally simple software systems comprise more independent parts, placed in relation to each other, than do physical systems of equivalent functional value. Second, and clearly linked to this, we do not have well developed components and composition mechanisms from which to build software systems (though clearly we are working hard on providing these) nor do we have a straightforward mathematical account that permits us to reason about the effects of composition. 
+> Software is not the same 'stuff' as that from which physical systems are constructed.
+Software systems differ in material respects from physical systems.
+Much of this has been rehearsed by Fred Brooks in his classic
+['No Silver Bullet'](http://ieeexplore.ieee.org/xpl/login.jsp?reload=true&tp=&arnumber=1663532&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1663532) paper.
+First, complexity and scale are different in the case of software systems: relatively functionally simple software systems comprise more independent parts, placed
+in relation to each other, than do physical systems of equivalent functional value.
+Second, and clearly linked to this, we do not have well developed components and composition mechanisms from which to build
+software systems (though clearly we are working hard on providing these) nor do we have a straightforward mathematical account that
+permits us to reason about the effects of composition.
 
 ###Software is not made of bricks
 
-Third, software systems operate in a domain determined principally by arbitrary rules about information and symbolic communication whilst the operation of physical systems is governed by the laws of physics. Finally, software is readily changeable and thus is changed, it is used in settings where our uncertainty leads us to anticipate the need to change.
+Third, software systems operate in a domain determined principally by arbitrary rules about information and symbolic communication whilst the
+operation of physical systems is governed by the laws of physics.
+Finally, software is readily changeable and thus is changed, it is used in settings where our uncertainty leads us to anticipate the need to change.
 
 -- Prof. [Anthony Finkelstein](http://blog.prof.so/), UCL Dean of Engineering, and Professor of Software Systems Engineering
 

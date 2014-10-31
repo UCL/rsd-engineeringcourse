@@ -14,20 +14,14 @@ In the Eagle branch in my Boids repository you will find an extension of Boids t
 You will see that this suffers from the use of an `if (type)` statement which would be
 better implemented with inheritance and polymorphism.
 
-To get hold of my Eagle code, you should either add my repository as a second remote and pull from there,
-or make a pull request into your fork of boids from my repository and then pull from your own repository.
-
-To add my repository as a second remote:
+To access the Eagle branch:
 
 ``` bash
-git remote add jamespjh https://github.com/jamespjh/bad-boids
-git fetch jamespjh
-git checkout -b eagle
-git merge jamespjh/eagle
-git push -u origin eagle
-```  
+cd <repository>
+git checkout eagle
+```
 
-###Refactoring to Patterns
+###Refactoring to Patterns: Builder
 
 The way in which we construct our Boids model's bird content, specifying each of the
 model parameters as a constructor, and add birds using `initialise_random`
@@ -37,4 +31,19 @@ Create a `ModelBuilder` class with methods to define model parameters and to
 add a random boid and boid or boids from data, using the Builder pattern.
 
 You could even create two subclasses of `ModelBuilder` to build either random boids
-or boids from a dataset, or have both choices be different methods of a 
+or boids from a dataset.
+
+###Refactoring to Patterns: Model/View
+
+You can apply Model/View to create a separate class to visualise boid models using Matplotlib,
+and even perhaps write another viewer to visualise the boids in a different way: perhaps as graphs over time
+of dispersal, distance from flock to eagle and average velocity.
+
+###Using UML
+
+You should also use [YUML](http://yuml.me) or another UML tool to visualise your class structure.
+
+You don't have to do all these things to pass the assignment: any minimally object-oriented implementation of the boids
+will pass.
+
+
