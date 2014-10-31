@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 ### "load_data"
 
 def load_sunspots():
+     url_base="http://www.quandl.com/api/v1/datasets/SIDC/SUNSPOTS_A.csv"
      x=requests.get(url_base,params={'trim_start':'1700-12-31',
                                         'trim_end':'2014-01-01',
                                         'sort_order':'asc'})
@@ -28,11 +29,11 @@ plt.plot(spots)
 plt.savefig('spots.png')
 
 ### "naive_fft"
-
 spectrum=rfft(spots)
-plt.plot(spots)
 
 ### "FFT figure"
+plt.figure()
+plt.plot(abs(spectrum))
 plt.savefig('fixed.png')
 
 ### "Series"
@@ -95,7 +96,6 @@ class FourierSplineFrequencyStrategy(object):
     def next_power_of_two(self, value):
         "Return the next power of 2 above value"
         return 2**(1+int(log(value)/log(2)))
-
     def transform(self, series):
         spline=UnivariateSpline(series.times, series.values)
         # Linspace will give us *evenly* spaced points in the series
@@ -132,9 +132,12 @@ deviation=365*(fourier_model.series.times-linspace(fourier_model.series.start,fo
 
 ### "FinalPlots"
 
+plt.figure()
 plt.plot(*comparison)
 plt.xlim(0,16)
 plt.savefig('comparison.png')
+
+plt.figure()
 plt.plot(deviation)
 plt.savefig('deviation.png')
 

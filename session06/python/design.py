@@ -7,13 +7,12 @@ class Particle(object):
     def move(self, delta_t):
        self.position+= self.velocity*delta_t
 ### "hiding"
-       class MyClass(object):
+class MyClass(object):
     def __private_method(self): pass
     def _private_method(self): pass
-    def public_method(self):
-        self.__secret_method # OK
+    def public_method(self): pass
 
-MyClass().__private_method() # Generates error
+#MyClass().__private_method() # Generates error
 MyClass()._private_method() # Works, but forbidden by convention
 MyClass().public_method() # OK
 ### "accessors1"
@@ -80,7 +79,7 @@ class Person(Animal):
         super(Person, self).__init__(age)
         self.name=name
 ### "inheritance_factor1"
-        class Person(object):
+class Person(object):
     def __init__(self, age, job): 
         self.age = age
         self.job = job
@@ -96,7 +95,7 @@ class Pet(object):
     def birthday(self): 
         self.age += 1
 ### "inheritance_factor2"
-        class Animal(object):
+class Animal(object):
     def __init__(self, age): 
         self.age = age
 
@@ -108,7 +107,7 @@ class Person(Animal):
         self.job = job
         super(Person, self).__init__(age)
 ### "polymorphism"
-        class Dog(object):
+class Dog(object):
     def noise(self):
         return "Bark"
 
@@ -116,11 +115,17 @@ class Cat(object):
     def noise(self):
         return "Miaow"
 
+class Pig(object):
+    def noise(self): return "Oink"
+
+class Cow(object):
+    def noise(self): return "Moo"
+
 animals=[Dog(), Dog(), Cat(), Pig(), Cow(), Cat()]
 for animal in animals:
     print animal.noise()
 ### "base"
-    class Animal(object):
+class Animal(object):
     def noise(self): return "I don't make a noise."
 
 class Dog(Animal):
@@ -140,7 +145,7 @@ for animal in animals:
 
 class Worm(Animal): pass
 
-Worm().noise()
+# Worm().noise() # Generates error
 ### "case"
 class Animal(object):
     def __init__(self,type): self.type=type

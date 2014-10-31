@@ -1,3 +1,7 @@
+### "Setup"
+
+from mock import Mock
+
 ### "nobuilder"
 
 class Model(object):
@@ -13,14 +17,14 @@ Model=Mock()
 ### "builder"
 
 class ModelBuilder(object):
-    def start_model():
+    def start_model(self):
         self.model=Model()
-    def set_bounds(xlim, ylim):
+    def set_bounds(self, xlim, ylim):
         self.model.xlim=xlim
         self.model.ylim=ylim
-    def add_agent(xpos, ypos):
+    def add_agent(self, xpos, ypos):
         pass # Implementation here
-    def finished_model():
+    def finish(self):
         return self.model
 
 ### "use"
