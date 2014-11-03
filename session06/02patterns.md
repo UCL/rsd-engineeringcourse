@@ -118,8 +118,7 @@ What I should have written was a Creator with a FactoryMethod.
 ##Builder
 
 {% if notebook %}
-
-{{ pyfrag('06','sunspots', 'Setup')}}
+{{ pyfrag('06','builder', 'setup')}}
 {% endif %}
 
 ###Builder Pattern

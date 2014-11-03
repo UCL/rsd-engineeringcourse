@@ -9,7 +9,7 @@ title: Design
 In this session, we will finally discuss the thing most people think of when they refer to "Software Engineering": the deliberate *design* of software.
 We will discuss processes and methodologies for planned development of large-scale software projects: *Software Architecture*.
 
-This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session06/python/session06.ipynb)
+This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session06/session06/python/session06.ipynb)
 
 ###Object-Oriented Design
 
