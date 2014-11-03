@@ -60,14 +60,9 @@ In [2]: exit
 
 ### IPython Notebook
 
-``` bash
-$ git clone https://github.com/UCL/rsd-engineeringcourse.git
-$ cd rsd-engineeringcourse/session01/notebooks
-notebook
-```
+This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session01/session01/python/session01.ipynb)
 
 ![](session01/python/eight.png)
-... look in your browser ...
 
 ### Install Python and IPython Notebook
 

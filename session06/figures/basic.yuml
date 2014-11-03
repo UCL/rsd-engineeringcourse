@@ -1,1 +1,1 @@
-[ClassName|+public_member;-private_member|+publicMethod();-privateMethod()]
+[Particle|position;velocity|move()]

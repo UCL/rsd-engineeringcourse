@@ -21,3 +21,4 @@ time.
 
 The chances are any algorithm you might want to use has already been programmed better by someone else.
 
+This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session04/session04/python/session04.ipynb)

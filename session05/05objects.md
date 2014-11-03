@@ -85,7 +85,7 @@ Smell: A global variable is referenced by a few functions
 
 {{pyfrag('05','objects','global_before')}}
 
-{{pyfrag('05','objects','global_before')}}
+{{pyfrag('05','objects','global_after')}}
 
 ###Object Oriented Refactoring Summary
 

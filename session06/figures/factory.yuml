@@ -1,1 +1,1 @@
-%5BProduct%5D%5E-%5BConcreteProduct%5D,%20%5BCreator|%20%28v%29%20FactoryMethod%28%29%5D%5E-%5BConcreteCreator|%20FactoryMethod%28%29%5D,%20%5BConcreteCreator%5D-.-%3E%5BConcreteProduct%5D
+[Product]^-[ConcreteProduct], [Creator| (v) FactoryMethod()]^-[ConcreteCreator| FactoryMethod()], [ConcreteCreator]-.->[ConcreteProduct]

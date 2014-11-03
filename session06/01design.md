@@ -1,157 +1,46 @@
 ---
-title: Design
+title: Object Orientation
 ---
 
-##Design
+##More on Objects
 
-###Design
+###Object Based Programming Recap
 
-In this session, we will finally discuss the thing most people think of when they refer to "Software Engineering": the deliberate *design* of software.
-We will discuss processes and methodologies for planned development of large-scale software projects: *Software Architecture*.
+We saw last lesson how to 
 
-###Object-Oriented Design
+* create our own classes
+* store data with member variables
+* add functionality with member functions
+* initialise objects with constructors
 
-The software engineering community has, in large part, focused on an object-oriented approach to the design and development of large scale software systems.
-The basic concepts of object orientation are necessary to follow much of the software engineering conversation. We will therefore recap some of these.
+###Class design
 
-###Design processes
+The concepts we have introduced are common between different object oriented languages.
+Thus, when we design our program using these concepts, we can think at an architectural level,
+independent of language syntax.
 
-In addition to object-oriented architecture, software engineers have focused on the development of processes for robust, reliable software development. 
-These codified ways of working hope to enable organisations to repeatably and reliably complete complex software projects in a way that minimises both development 
-and maintainance costs, and meets user requirements.
+{{pyfrag('06','design','pyclass')}}
 
-###Design and research
-
-Software engineering theory has largely been developed in the context of commercial software companies.
-
-The extent to which the practices and processes developed for commercial software are applicable in a research context is itself an active area of research.
-
-##More on objects
-
-###Access control
-
-Controls whether member variables and methods can be accessed from outside the class.
-
-```python
-class MyClass(object):
-    def __secret_method(self): pass
-    def _semi_secret_method(self): pass
-    def public_method(self):
-        self.__secret_method # OK
-
-MyClass().__secret_method() # Generates error
-MyClass()._semi_secret_method() # Works, but forbidden by convention
-MyClass().public_method() # OK
-```
-
-```cpp
-class MyClass {
-    public:
-        void public_method(){
-            private_method(); //OK
-        }
-    private:
-        void private_method(){}
-};
-MyClass x = MyClass();
-x.public_method(); // OK
-x.private_method(); // Raises error
-```
-
-###Access methods
-
-Members should be private and accessed by accessors, so that
-should the storage change, client code doesn't need to change.
-
-```python
-class Person(object):
-    def __init__(self):
-        self._name = "James Hetherington"
-
-    @property
-    def name(self):
-        return self._name
-
-assert(Person().name == "James Hetherington")
-```
-
-becomes:
-
-```python
-class Person(object):
-    def __init__(self):
-        self._first = "James"
-        self._second = "Hetherington"
-
-    @property
-    def name(self):
-        return self._first + " " + self._second
-
-assert(Person().name == "James Hetherington") 
-# Client code unchanged!
-```
-
-###Access methods (C++)
-
-```cpp
-class Person{
-private:
-    std::string first;
-    std::string second;
-
-public:
-    std::string getName(){
-        return first + " " + second;
-    }
+``` cpp
+class Particle {
+    std::vector<double> position;
+    std::vector<double> velocity;
+    Particle(std::vector<double> position, std::vector<double> velocity);
+    void move(double delta_t);
 }
 ```
 
-###Class Members
-
-*Class*, or *static* members, belong to the class as a whole, and are shared between instances.
-
-``` python
-class Counted(object):
-    number_created=0
-    def __init__(self):
-        Counted.number_created+=1
-
-    @classmethod
-    def howMany(cls):
-        return cls.number_created
-
-Counted.howMany() # 0
-x=Counted()
-Counted.howMany() # 1
-z=[Counted() for x in range(5)]
-Counted.howMany() # 6 
-```
-
-```cpp
-class Counted{
-private:
-    static int number_created;
-public:
-    Counted(){
-        number_created++;
-    }
-    static int howMany(){
-        return number_created;
-    }
-};
-
-Counted::number_created=0;
-cout<< Counted::howMany() << endl;
-Counted x=Counted();
-cout<< Counted::howMany() << endl;
-
+``` fortran
+type particle
+    real :: position
+    real :: velocity
+  contains
+    procedure :: init
+    procedure :: move
+end type particle
 ```
 
 ###UML
-
-We have seen that these concepts are common between different object oriented languages.
-Thus, when we design our program using these concepts, we can think at an architectural level,
-independent of language syntax.
 
 UML is a conventional diagrammatic notation used to describe "class structures" and other higher level
 aspects of software design.
@@ -163,26 +52,63 @@ Working programmers can still benefit from using UML to describe their designs.
 
 UML represents class members and methods like this:
 
-![Basic class UML](session07/figures/basic)
+![Basic class UML](session06/figures/basic.png)
 
 (The above diagram is generated by the following:
 
-```
-http://yuml.me/diagram/boring/class/[ClassName|+publicmember;-privatemember|
-+publicMethod();-privateMethod()]
+``` raw
+http://yuml.me/diagram/boring/class/[Particle|position;velocity|move()]
 ```
 
 using the [YUML](http://yuml.me/) online UML drawing tool.
 
-##Inheritance
+##Information Hiding
 
-###Object-based vs object-oriented
+Sometimes, our design for a program would be broken if users start messing around with variables we don't want them to change.
+
+Robust class design requires consideration of which subroutines are intended for users to use, and which are internal.
+Languages provide features to implement this: access control. 
+
+In python, we use leading underscores to control whether member variables and methods can be accessed from outside the class.
+
+{{pyfrag('06','design','hiding')}}
+
+###Property accessors
+
+Python provides a mechanism to make functions appear to be variables. This can be used if you want to
+change the way a class is implemented without changing the interface:
+
+{{pyfrag('06','design','accessors1')}}
+
+becomes:
+
+{{pyfrag('06','design','accessors2')}}
+
+Note that the code behaves the same way to the outside user.
+The implementation detail is hidden by private variables.
+In languages without this feature, such as C++, it is best to always
+make data private, and always
+access data through functions:
+
+{{pyfrag('06','design','accessors3')}}
+
+But in Python this is unnecessary.
+
+###Class Members
+
+*Class*, or *static* members, belong to the class as a whole, and are shared between instances.
+
+{{pyfrag('06','design','classmethod')}}
+
+### Object-based vs Object-Oriented
+
+So far we have seen only object-based programming, not object-oriented programming.
 
 Using Objects doesn't mean your code is object-oriented.
 
-Object-oriented programs make use of *inheritance*.
+To understand object-oriented programming, we need to introduce **polymorphism** and **inheritance**.
 
-###Inheritance
+##Inheritance
 
 * Inheritance allows related classes to share code
 * Inheritance allows a program to reflect the *ontology* of kinds of thing in a program.
@@ -200,61 +126,42 @@ Object-oriented programs make use of *inheritance*.
 
 ###Inheritance in python
 
-``` python
-class Animal(object):
-    def beBorn(self): print "I exist"
-    def die(self): print "Argh!"
-
-class Bird(Animal):
-    def fly(self): print "Whee!"
-
-class Eagle(Bird):
-    def hunt(self): print "I'm gonna eatcha!"
-
-Eagle().beBorn() # prints "I exist"
-Eagle().hunt() # prints "I'm gonna eatcha!"
-```
+{{pyfrag('06','design','inheritance')}}
 
 ###Inheritance terminology
 
-A *derived class* _derives_ from a *base class*
-
-A *subclass* _inherits_ from a *superclass*
+* A *derived class* _derives_ from a *base class*
+* A *subclass* _inherits_ from a *superclass*
 
 (These are different terms for the same thing.)
 
-E.g. "Eagle is a subclass of the Animal superclass."
+* Eagle is a subclass of the Animal superclass.
+* Animal is the base class of the Eagle derived class
 
-###Inheritance in C++
+###Inheritance and constructors
 
-``` cpp
-class Eagle: public Bird {
-    Eagle() : Bird() // Constructor initialises base class
-    {
-    }; 
-};
-```
+{{pyfrag('06','design','super')}}
 
 ###Inheritance UML diagrams
 
 UML shows inheritance with an open triangular arrow pointing from subclass to superclass.
 
-![Bird inheritance diagram](session07/figures/inheritance)
+![Bird inheritance diagram](session06/figures/inheritance.png)
 
 ###Aggregation vs Inheritance
 
 If one object *has* or *owns* one or more objects, this is *not* inheritance.
 
-For example, the Boids model from last week owned several Boids,
-each Boid owned two 2-vectors, one for position and one for velocity.
+For example, in my solution to the Boids task from last week, the overal Model owned several Boids,
+and each Boid owned two 2-vectors, one for position and one for velocity.
 
 ###Aggregation in UML
 
 The Boids situation can be represented thus:
 
-![Boid aggregation diagram](session07/figures/aggregation)
+![Boid aggregation diagram](session06/figures/aggregation.png)
 
-The open diamond indicates Aggregation, the closed diamond composition. 
+The open diamond indicates **Aggregation**, the closed diamond **composition**.
 (A given boid might belong to multiple models, a given position vector is forever part of the corresponding Boid.)
 
 The asterisk represents cardinality, a model may contain multiple Boids.
@@ -265,93 +172,17 @@ Smell: Repeated code between two classes which are both ontologically subtypes o
 
 Before:
 
-``` python
-class Person(object):
-    def __init__(self, age, job): 
-        self.age = age
-        self.job = job
-
-    def birthday(self): 
-        self.age += 1
-
-class Pet(object):
-    def __init__(self, age, owner): 
-        self.age = age
-        self.owner = owner
-
-    def birthday(self): 
-        self.age += 1
-```
+{{pyfrag('06','design','inheritance_factor1')}}
 
 After:
 
-``` python
-class Animal(object):
-    def __init__(self, age): 
-        self.age = age
-
-    def birthday(self): 
-        self.age += 1
-
-class Person(Animal):
-    def __init__(self, age, job):
-        self.job = job
-        super(Person, self).__init__(age)
-```
-
-###Refactoring to inheritance (C++)
-
-``` cpp
-class Person{
-    int age;
-    string job;
-    Person(int age, string job): 
-        age(age), job(job)
-        {}
-};
-
-class Pet{
-    int age;
-    Person & owner;
-    Pet(int age, Person & owner):
-        age(age), owner(owner)
-        {}
-};
-```
-
-Becomes:
-
-``` cpp
-class Animal{
-    int age;
-    Animal(int age): age(age) {}
-};
-
-class Pet: public Animal {
-    Person & owner;
-    Pet(int age, Person & owner):
-        Animal(age), owner(owner)
-    {}
-};
-```
+{{pyfrag('06','design','inheritance_factor2')}}
 
 ##Polymorphism
 
 ###Polymorphism
 
-``` python
-class Dog(Animal):
-    def noise(self):
-        return "Bark"
-
-class Cat(Animal):
-    def noise(self):
-        return "Miaow"
-
-animals=[Dog(), Dog(), Cat(), Pig(), Cow(), Cat()]
-for animal in animals:
-    print animal.noise()
-```
+{{pyfrag('06','design','polymorphism')}}
 
 This will print "Bark Bark Miaow Oink Moo Miaow"
 
@@ -361,47 +192,23 @@ whatever class the instance is an instance of.
 
 ###Polymorphism and Inheritance
 
-In C++, where arrays have to contain things of the same type, polymorphism requires
-that all the objects share a common superclass, and that the method which is to be subject
-to polymorphism is marked as such with the keyword `virtual`:
+Often, polymorphism uses multiple derived classes with a common base class.
+However, duck typing in Python means that all that is required is that the 
+types support a common **Concept** (Such as iterable, or container, or, in this case, the
+Noisy concept.)
 
-``` cpp
-class Animal{
-    virtual std::string noise(){
-        return "I don't know what noise to make.";
-    }
-};
+A common base class is used where there is a likely **default** that you want several
+of the derived classes to have.
 
-class Dog: public Animal {
-    std::string noise(){
-        return "Bark";
-    }
-};
+{{pyfrag('06','design','base')}}
 
-vector<Animal*> animals;
-animals.push_back(new Dog());
-animals.push_back(new Cat());
-for(Animal* animal: animals) {
-    cout << animal->noise() << endl;
-}
-```
+###Undefined Functions and Polymorphism
 
-###Pure Virtual Functions
+In the above example, we put in a dummy noise for Animals that don't know what type they are.
 
-In the above example, we had to put in a dummy noise for Animals that don't know what type they are.
+Instead, we can explicitly deliberately leave this undefined, and we get a crash if we access an undefined method.
 
-Instead, we can deliberately leave this undefined:
-
-``` cpp
-virtual string noise() =0;
-```
-This means that if we actually instantiate a base animal, calling noise() would cause a crash.
-C++ does not allow classes with pure virtual functions to be instantiated. These are called "abstract classes".
-
-```cpp
-Animal * x = new Dog(); // OK
-Animal * x = new Animal(); // Doesn't compile.
-```
+{{pyfrag('06','design','undefined')}}
 
 ###Refactoring to Polymorphism
 
@@ -409,34 +216,25 @@ Smell: a function uses a big set of `if` statements or a `case` statement to dec
 
 Before:
 
-``` python
-class Animal(object):
-    def __init__(self,type): self.type=type
-    def noise(self): 
-        if self.type=="Dog":
-            return "Bark"
-        elif self.type=="Cat":
-            return "Miaow"
-        elif self.type=="Cow":
-            return "Moo"
-        ...
-```
+{{pyfrag('06','design','case')}}
 
 which is better replaced by the code above.
 
-###Interfaces
+###Interfaces and concepts
 
-In C++, it is common to define classes which consist *only* of pure virtual functions, and no data members.
-These special kinds of classes are called *interfaces*.
+In C++, it is common to define classes which declare dummy methods, called "virtual" methods, which specify
+the methods which derived classes must implement. Classes which define these methods, which cannot be instantiated
+into actual objects, are called "abstract base" classes or "interfaces".
 
-While C++ allows classes to inherit from more than one superclass, this is generally considered bad style,
-unless all but one of the superclasses are interfaces.
+Python's Duck Typing approach means explicitly declaring these is unnesssary: any class concept which implements
+appropriately named methods will do. These as user-defined **concepts**, just as "iterable" or "container" are 
+built-in Python concepts. A class is said to "implement and interface" or "satisfy a concept".
 
 ###Interfaces in UML
 
-Interface inheritance in UML is indicated thus:
+Interfaces implementation in UML is indicated thus:
 
-![Interfaces in UML](session07/figures/interface)
+![Interfaces in UML](session06/figures/interface.png)
 
 ###Further UML
 

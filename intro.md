@@ -48,7 +48,7 @@ This is a intensive, practical course.
 * Working with command line arguments
 * Brief introduction to functional programming
 
-### Lesson 6
+### Lesson 5
 
 * Best practice in construction.
 * Comments.
@@ -58,7 +58,7 @@ This is a intensive, practical course.
 * Design and development.
 * Documentation with Sphinx.
 
-### Lesson 5
+### Lesson 6
 
 * Further object-oriented python.
 * Object oriented design.
@@ -72,7 +72,9 @@ This is a intensive, practical course.
 
 * Tricks for not repeating yourself
 * Iterables and generators
+* Exceptions
 * Functional python.
+* Operator Overloading
 * Map and reduce.
 * Context managers and decorators.
 * Metaprogramming
