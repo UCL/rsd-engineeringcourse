@@ -1,4 +1,4 @@
-### "Imports"
+### "imports"
 
 from numpy import linspace,exp,log,sqrt, array
 import math
@@ -73,7 +73,8 @@ class AnalyseSunspotData(object):
                                         'sort_order':'asc'})
         secs_per_year=(datetime(2014,1,1)-datetime(2013,1,1)
                 ).total_seconds()
-        data=csv.reader(StringIO(x.text)) #Convert requests result to look
+        data=csv.reader(StringIO(x.text)) #Convert requests
+                                          #result to look
                                           #like a file buffer before
                                           #reading with CSV
         data.next() # Skip header row

@@ -67,7 +67,7 @@ This is pretty hard to understand, so let's look at an example.
 
 ###Factory UML
 
-![Structure](session06/figures/factory)
+![Structure](session06/figures/factory.png)
 
 ###Factory Example
 
@@ -117,11 +117,16 @@ What I should have written was a Creator with a FactoryMethod.
 
 ##Builder
 
+{% if notebook %}
+
+{{ pyfrag('06','sunspots', 'Setup')}}
+{% endif %}
+
 ###Builder Pattern
 
 Intent: Separate the steps for constructing a complex object from its final representation.
 
-![UML](session06/figures/builder)
+![UML](session06/figures/builder.png)
 
 ###Builder example
 
@@ -139,7 +144,10 @@ We could define all of this for an imagined advanced Model with a very very long
 However, long constructors easily become very complicated. Instead, it can be cleaner to define a Builder for models. A builder is like a 
 deferred factory: each step of the construction process is implemented as an individual method call, and the completed object
 is returned when the model is ready.
+{% if notebook %}
 
+{{pyfrag('06','builder','simplemodel')}}
+{% endif %}
 {{pyfrag('06','builder','builder')}}
 
 Inheritance of an Abstract Builder for multiple concrete builders could be used where there might be multiple ways to build models
@@ -162,9 +170,16 @@ keep deferred construction in
 
 ###Builder Message Sequence
 
-![MessageSequence](session06/figures/builder_seq)
+![MessageSequence](session06/figures/builder_seq.png)
 
 ##Strategy
+
+
+{% if notebook %}
+
+{{ pyfrag('06','sunspots', 'imports')}}
+%matplotlib inline
+{% endif %}
 
 ##Strategy Pattern
 
@@ -178,7 +193,10 @@ Consider the sequence of sunspot observations:
 {{ pyfrag('06','sunspots', 'load_data')}}
 
 {% if notebook %}
-plt.plot(*load_sunspots())
+``` python
+spots=load_sunspots()
+plt.plot(spots)
+```
 {% else %}
 ![Sunspot cycle 1700-2014](session06/python/spots.png)
 {% endif %}
@@ -188,7 +206,9 @@ plt.plot(*load_sunspots())
 {{ pyfrag('06','sunspots', 'naive_fft')}}
 
 {% if notebook %}
+``` python
 plt.plot(spectrum)
+```
 {% else %}
 ![Sunspot cycle fourier spectrum](session06/python/fixed.png)
 {% endif %}
@@ -237,12 +257,6 @@ of derived classes would explode: `class SunspotAnalyzerSplineFFTTrapeziumNearMo
 ###Strategy Pattern for Algorithms
 
 First, we'll define a helper class for our time series.
-
-{% if notebook %}
-
-{{ pyfrag('06','sunspots', 'imports')}}
-{% endif %}
-
 {{ pyfrag('06','sunspots', 'Series')}}
 
 ###Strategy Pattern for Algorithms
@@ -282,8 +296,10 @@ Use these new tools to compare solutions
 ###Comparison of different algorithms for frequency spectrum of sunspots.
 
 {% if notebook %}
+``` python
 plt.plot(*comparison)
 plt.xlim(0,16)
+```
 {% else %}
 ![3 ways to calculate a frequency spectrum for sunspot data](session06/python/comparison.png)
 {% endif %}

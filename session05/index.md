@@ -10,6 +10,9 @@ Software *design* gets a lot of press (Object orientation, UML, design patterns)
 
 In this session we're going to look at advice on software *construction*
 
+
+This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session05/python/session05.ipynb)
+
 ###Construction vs Design
 
 For a given piece of code, there exist several different ways one could write it:
