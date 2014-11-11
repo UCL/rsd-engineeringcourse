@@ -55,6 +55,7 @@ We can make this even prettier: let's make another variable pointing to our defi
 And now we can do the real magic:
 
 {{pyfrag('07','all','currying')}}
+### Closures
 You may have noticed something a bit weird:
 
 In the definition of `define_adder`, `increment` is a local variable. It should have gone out of scope and died at the end of the definition. How can the amount the returned adder function is adding still be kept?
@@ -67,6 +68,8 @@ You can close over global module variables as well:
 And note that the closure stores a reference to the variable in the surrounding scope: ("Late Binding")
 
 {{pyfrag('07','all','late')}}
+
+### Map and Reduce
 We often want to apply a function to each variable in an array, to return a new array. We can do this with a list comprehension:
 
 {{pyfrag('07','all','comprehension2')}}
