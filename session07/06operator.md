@@ -1,8 +1,17 @@
 ---
 title: Operator Overloading
 ---
-{% if not notebook %}
 ## Operator overloading
+### Operator overloading
+
+{% if notebook %}
+
+We need to use a metaprogramming trick to make this notebook work.
+I want to be able to put explanatory text in between parts of a class definition,
+so I'll define a decorator to help me build up a class definition gradually.
+
+{{pyfrag('07','all','magic')}}
+{% endif %}
 
 Imagine we wanted to make a library to describe some kind of symbolic algebra system:
 
@@ -18,8 +27,8 @@ What we'd really like is to have `2x+y` give an appropriate expression.
 
 First, we'll define things so that we can construct our terms and expressions in different ways.
 
-{{pyfrag{'07','all','Polyconstruct'}}}
-{{pyfrag{'07','all','ExpressionConstruct'}}}
+{{pyfrag('07','all','Polyconstruct')}}
+{{pyfrag('07','all','ExpressionConstruct')}}
 
 We could define add() and multiply() operations on expressions and terms:
 
@@ -34,6 +43,8 @@ This is better, but we still can't write the expression in a 'natural' way.
 
 However, we can define what `*` and `+` do when applied to Terms!:
 
+{{pyfrag('07','all','Overloads')}}
+{{pyfrag('07','all','ExpressionOverloads')}}
 {{pyfrag('07','all','withop')}}
 
 This is called operator overloading. We can define what add and multiply mean when applied to our class.
@@ -42,6 +53,8 @@ Note that this only works so far if we multiply on the right-hand-side!
 However, we can define a multiplication that works backwards, which is used as a fallback if the left multiply raises an error:
 
 {{pyfrag('07','all','RightOp')}}
+{{pyfrag('07','all','RightOpTerm')}}
+
 
 {{pyfrag('07','all','RightUse')}}
 
@@ -68,4 +81,3 @@ If you want to know more about the topics in this lecture, using a different
 language syntax, I recommend you watch the [Abelson and Sussman](https://www.youtube.com/watch?v=2Op3QLzMgSY)
 "Structure and Interpretation of Computer Programs" lectures. These are the Computer Science
 equivalent of the Feynman Lectures!
-{% endif %}

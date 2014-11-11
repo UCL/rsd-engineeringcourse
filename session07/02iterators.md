@@ -2,7 +2,9 @@
 title: Iterators and Generators
 ---
 
-## Iterators
+## Iterators and Generators
+
+### Iterators
 
 We've seen that in Python, anything which can be iterated over is called an iterable:
 
@@ -39,14 +41,16 @@ For the iterator protocol, the protocol that defines things that support `for x 
 {{pyfrag('07','all','iterator_protocol')}}
 
 In fact, if, to be iterated over, a class just wants to behave as if it were some other iterable, you can just implement `__iter__` and return `iter(some_other_iterable)`, without implementing `next`.  For example, an image class might want to implement some metadata, but behave just as if it were just a 1-d pixel array when being iterated:
-
+{% if not notebook %}
+![](session07/python/colors.png)
+{% endif %}
 {{pyfrag('07','all','iterable_protocol')}}
 
 Technically, the **iterator** protocol is to implement both `__iter__` and
 `next`, while the **iterable** protocol is to implement `__iter__` and return
 an **iterator**.
 
-## Generators
+### Generators
 
 There's a fair amount of "boiler-plate" in the above class-based definition of
 an iterable. Python provides another way to specify something
@@ -57,6 +61,10 @@ which meets the iterator protocol: generators.
 A function which has `yield` statements instead of a `return` statement returns
 **temporarily**. Each call of next() returns control to the function. Where it
 left off. Control passes back-and-forth between the generator and the caller.
-Our fibonnaci example therefore becomes:
+Our fibonacci example therefore becomes:
 
 {{pyfrag('07','all','fib_generator')}}
+{% if not notebook %}
+![](session07/python/fibonacci.png)
+{% endif %}
+

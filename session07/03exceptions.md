@@ -3,6 +3,7 @@ title: Exceptions
 ---
 
 ## Exceptions
+### Exceptions
 
 When we learned about testing, we saw that Python complains when things go wrong by raising an "Exception" naming a type of error:
 
@@ -50,7 +51,7 @@ the call stack: control can jump arbitrarily far in the program: up to the `exce
 
 {{pyfrag('07','all','stackexample')}}
 
-## Design with Exceptions
+### Design with Exceptions
 
 Now we know how exceptions work, we need to think about the design implications... How best to use them.
 

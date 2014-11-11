@@ -2,7 +2,8 @@
 title: Context managers and decorators
 ---
 
-## Context managers
+## Context managers and decorators
+### Context managers
 
 We saw that instead of separately `open`ing and `close`ing a file, we can have
 the file be automatically closed using a context manager:
@@ -21,7 +22,7 @@ However, this is pretty verbose! Again, a generator with `yield` makes for an ea
 {{pyfrag('07','all','context_generator')}}
 Again, we use `yield` to temporarily return from a function.
 
-## Decorators
+### Decorators
 
 When doing functional programming, we may often want to define mutator
 functions which take in one function and return a new function, such as our
@@ -45,7 +46,7 @@ seen @contextmanager, @classmethod and @attribute. The @contextmanager
 metafunction, for example, takes in an iterator, and yields a class conforming
 to the context manager protocol.
 
-## Testing and functional programming.
+### Testing and functional programming.
 
 A few weeks ago we saw a test which loaded its test cases from a YAML file and
 asserted each input with each output. This was nice and concise, but had one

@@ -1,8 +1,8 @@
 ---
 title: Metaprogramming
 ---
-
-## Metaprogramming class attributes
+## Metaprogramming
+### Metaprogramming class attributes
 
 In our introductory metaprogramming example, we were working in the root namespace of a module, using the globals() function.
 
@@ -31,10 +31,8 @@ function with locals() but this *cannot safely be written to*. Lack of safe
 programmatic creation of local variables is a flaw in Python.
 
 {{pyfrag('07','all','locals')}}
-{{pyfrag('07','all','574')}}
-{{pyfrag('07','all','575')}}
 
-## Metaprogramming warning!
+### Metaprogramming warning!
 
 Use this stuff **sparingly**!
 

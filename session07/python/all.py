@@ -1,5 +1,3 @@
-## Introduction
-
 ### "variables"
 
 bananas=0
@@ -63,14 +61,13 @@ print kiwis.count
 baskets={}
 for name in basket_names:
     baskets[name]=Basket()
+
 print baskets['kiwis'].count
 
 ### "comprehension"
 
 baskets={name:Basket() for name in baskets}
 print baskets['kiwis'].count
-
-## Functional Programming
 
 ### "add"
 
@@ -84,6 +81,7 @@ add(5,6)
 
 def add_five(a):
     return a+5
+
 add_five(6)
 
 ### "funcgen"
@@ -127,6 +125,7 @@ def deferred_greeting():
     def greet():
         print "Hello"
     return greet
+
 friendlyfunction=deferred_greeting()
 
 # Do something else
@@ -134,8 +133,6 @@ print "Just passing the time..."
 
 # OK, Go!
 friendlyfunction()
-
-
 
 ### "curry"
 
@@ -170,7 +167,7 @@ name="Matt"
 
 greet()
 
-### "comprehension"
+### "comprehension2"
 
 numbers=range(10)
 
@@ -208,7 +205,6 @@ def accumulate(initial, operation, data):
     for x in data:
         accumulator=operation(accumulator, x)
     return accumulator
-
 
 def my_sum(data):
     def _add(a,b):
@@ -252,9 +248,8 @@ data=[
     "CGGGTAAACG",
     "GATTACA"
 ]
+
 most_Gs_in_any_sequence(data)
-
-
 
 ### "lambda_same"
 
@@ -263,8 +258,6 @@ func_name=lambda a,b,c : a+b+c
 def func_name(a,b,c):
     a+b+c
 
-
-
 ### "lambda_closure"
 
 def most_of_given_base_in_any_sequence(sequences, base):
@@ -272,15 +265,12 @@ def most_of_given_base_in_any_sequence(sequences, base):
 
 most_of_given_base_in_any_sequence(data,'A')
 
-
 ### "pretty_max"
 
-def my_max(data): return reduce(lambda a,b: a if a>b else b, data, sys.float_info.min)
+def my_max(data): return reduce(lambda a,b: a if a>b else b, data,
+        sys.float_info.min)
 
 my_max([2,5,10,-11,-5])
-
-
-
 
 ### "funcalgo"
 
@@ -292,19 +282,23 @@ solve_me=lambda x: x**2-x
 print newton(solve_me, 2), newton(solve_me,0.2)
 
 xs=linspace(-1,2,50)
-plt.plot(xs,map(solve_me,xs),xs,zeros(50))
-
-### derivative
+solved=[xs,map(solve_me,xs),xs,zeros(50)]
+plt.plot(*solved)
+### "solved_savefig"
+plt.savefig('solved.png')
+### "derivative"
 
 def derivative(func, eps):
     def _func_derived(x):
         return (func(x+eps)-func(x))/eps
     return _func_derived
 
-plt.plot(xs,map(solve_me,xs),xs,map(derivative(solve_me,0.01),xs))
-
-newton(derivative(solve_me,0.01),0)
-
+derived=(xs,map(solve_me,xs),xs,map(derivative(solve_me,0.01),xs))
+plt.plot(*derived)
+print newton(derivative(solve_me,0.01),0)
+### "derivative_savefig"
+plt.savefig('derived.png')
+plt.figure()
 ### "stdlib"
 
 import scipy.misc
@@ -315,8 +309,6 @@ def derivative(func):
     return _func_derived
 
 newton(derivative(solve_me),0)
-
-## Iterators
 
 
 ### "iterable"
@@ -330,6 +322,7 @@ print range(10)
 
 total=0
 for x in range(int(1e6)): total+= x
+
 print total
 
 
@@ -347,11 +340,13 @@ print a.next()
 print a.next()
 
 print a.next()
+
 with assert_raises(StopIteration):
     print a.next()
 
 total=0
 for x in xrange(int(1e6)): total+= x
+
 print total
 
 ### "iteritems"
@@ -360,7 +355,7 @@ print baskets.items()
 
 print baskets.iteritems()
 
-### "iterator_protocol "
+### "iterator_protocol"
 
 class fib_iterator(object):
     def __init__(self, limit, seed1=1, seed2=1):
@@ -370,9 +365,11 @@ class fib_iterator(object):
     def __iter__(self):
         return self
     def next(self):
-        self.previous, self.current=self.current, self.previous+self.current
+        (self.previous, self.current)=(
+                self.current, self.previous+self.current)
         self.limit -=1
-        if self.limit<0: raise StopIteration() # This will be explained in a few slides!
+        if self.limit<0: raise StopIteration() # This will be 
+                                 # explained in a few slides!
         return self.current
 
 x=fib_iterator(5)
@@ -414,9 +411,10 @@ print image.channels
 from webcolors import rgb_to_name
 for pixel in image:
     print rgb_to_name(pixel)
+### iterable_savefig
 
-## Generators
-
+plt.savefig('colors.png')
+plt.figure()
 
 ### "generator"
 
@@ -427,6 +425,7 @@ def my_generator():
 x=my_generator()
 print x.next()
 print x.next()
+
 with assert_raises(StopIteration):
     print x.next()
 
@@ -439,13 +438,13 @@ def yield_fibs(limit, seed1=1,seed2=1):
         limit-=1
         current, previous = current+previous, current
         yield current
+
 print sum(yield_fibs(5))
 
 plt.plot(list(yield_fibs(20)))
-
-## Exceptions
-
-
+### "fib_plot"
+plt.savefig('fibonacci.png')
+plt.figure()
 ### "divzero"
 with assert_raises(ZeroDivisionError):
     1/0
@@ -491,6 +490,7 @@ try:
 except IOError:
     user="anonymous"
     password=None
+
 print user
 
 ### "omnicatch"
@@ -502,6 +502,7 @@ try:
 except:
     user="anonymous"
     password=None
+
 print user
 
 ### "threereads"
@@ -675,8 +676,6 @@ except:
     # Do this code here if anything goes wrong
     raise
 
-## Context managers
-
 
 ### "context"
 
@@ -709,8 +708,6 @@ def verbose_context(name):
 with verbose_context("James") as shouty:
     print "Doing it, ",  shouty
 
-## Decorators
-
 ### "repeater"
 
 def repeater(func, count):
@@ -728,7 +725,7 @@ fiftyroots=repeater(sqrt,50)
 
 print fiftyroots(100)
 
-### "resetrequired"
+### "reset_required"
 
 def reset_required(func):
     def _with_data_save(self, *args):
@@ -740,10 +737,8 @@ class SomeClass(object):
     def __init__(self):
         self.data=[]
         self.stored_data=[]
-
     def _step1(self, ins):
         self.data=[x*2 for x in ins]
-
     step1=reset_required(_step1)
 
 x=SomeClass()
@@ -756,7 +751,7 @@ print x.data
 
 print x.stored_data
 
-### "resetdecorator"
+### "reset_decorator"
 
 def reset_required(func):
     def _with_data_save(self, *args):
@@ -768,7 +763,6 @@ class SomeClass(object):
     def __init__(self):
         self.data=[]
         self.stored_data=[]
-        
     @reset_required
     def step1(self, ins):
         self.data=[x*2 for x in ins]
@@ -778,8 +772,6 @@ x.step1("Hello")
 x.step1("World")
 print x.stored_data
 
-## Testing and functional programming.
-
 
 ### "test_generator"
 
@@ -788,7 +780,9 @@ def assert_examplar(**fixture):
     assert_equal(greet(**fixture), answer)
 
 def test_greeter():
-    with open(os.path.join(os.path.dirname(__file__),'fixtures','samples.yaml')) as fixtures_file:
+    with open(os.path.join(os.path.dirname(
+        __file__),'fixtures','samples.yaml')
+        ) as fixtures_file:
         fixtures=yaml.load(fixtures_file)
         for fixture in fixtures:
             yield assert_exemplar(**fixture)
@@ -802,7 +796,8 @@ def my_assert_raises(exception):
     except exception:
         pass
     else:
-        raise Exception("Expected,", exception, " to be raised, nothing was.")
+        raise Exception("Expected,", exception, 
+                " to be raised, nothing was.")
 
 ### "decorate_raises"
 
@@ -830,11 +825,8 @@ def my_raises(func, exception):
     return _output
 
 
-## Metaprogramming class attributes
 
-
-
-### "setattr"
+### "getattr"
 
 class Boring(object): pass
 
@@ -902,25 +894,17 @@ class Person(object):
        self.job=job
        self.children_count=children_count
 
-
-
-
-
-## Operator overloading
-
-
 ### "algebra1"
 
 class Term(object):
     def __init__(self, symbols=[], powers=[], coefficient=1):
         self.coefficient=coefficient
-        self.data={symbol: exponent for symbol,exponent in zip(symbols, powers)}
+        self.data={symbol: exponent for symbol,exponent
+                in zip(symbols, powers)}
 
 class Expression(object):
     def __init__(self, terms):
         self.terms=terms
-
-
 
 ### "algebra2"
 
@@ -929,6 +913,20 @@ second=Term(['x'],[1],7)
 third=Term([],[],2)
 result=Expression([first, second, third])
 
+
+### "magic"
+
+def extend(class_to_extend):
+    """ Metaprogramming to allow gradual implementation
+    of class during notebook. Thanks to
+    http://www.ianbicking.org/blog/2007/08/opening-python-classes.html """
+    def decorator(extending_class):
+        for name, value in extending_class.__dict__.iteritems():
+            if name in ['__dict__','__module__', '__weakref__', '__doc__']:
+                continue
+            setattr(class_to_extend,name,value)
+        return class_to_extend
+    return decorator
 
 ### "Polyconstruct"
 
@@ -958,14 +956,19 @@ class Term(object):
         self.coefficient=coefficient
     def from_lists(self, symbols=[], powers=[], coefficient=1):
         self.coefficient=coefficient
-        self.data={symbol: exponent for symbol,exponent in zip(symbols, powers)}
+        self.data={symbol: exponent for symbol,exponent
+                in zip(symbols, powers)}
 ### "OperatorFunctions"
+
+@extend(Term)
+class Term(object):
     def add(self, *others):
         return Expression((self,)+others)
     def multiply(self, *others):
         result_data=dict(self.data)
         result_coeff=self.coefficient
-        # Convert arguments to Terms first if they are constants or integers
+        # Convert arguments to Terms first if they are
+        # constants or integers
         others=map(Term,others)
         for another in others:
             for symbol, exponent in another.data.iteritems():
@@ -975,23 +978,34 @@ class Term(object):
                     result_data[symbol]=another.data[symbol]
             result_coeff*=another.coefficient
         return Term(result_data,result_coeff)
-### Overloads    
+
+### "Overloads"    
+@extend(Term)
+class Term(object):
     def __add__(self, other):
         return self.add(other)
     def __mul__(self, other):
         return self.multiply(other)
+
+### "RightOpTerm"
+@extend(Term)
+class Term(object):
     def __rmul__(self, other):
         return self.__mul__(other)
     def __radd__(self, other):
         return self.__add__(other)
-### StringOverload    
+
+### "StringOverload"
+@extend(Term)
+class Term(object):
     def __str__(self):
         def symbol_string(symbol, power):
             if power==1:
                 return symbol
             else:
                 return symbol+'^'+str(power)
-        symbol_strings=[symbol_string(symbol, power) for symbol, power in self.data.iteritems()]
+        symbol_strings=[symbol_string(symbol, power)
+                for symbol, power in self.data.iteritems()]
         prod='*'.join(symbol_strings)
         if not prod:
             return str(self.coefficient)
@@ -1000,12 +1014,15 @@ class Term(object):
         else:
             return str(self.coefficient)+'*'+prod
 
-### ExpressionConstruct
+### "ExpressionConstruct"
 
 class Expression(object):
     def __init__(self, terms=[]):
         self.terms=list(terms)
-### ExpressionFunctions
+
+### "ExpressionFunctions"
+@extend(Expression)
+class Expression(object):
     def add(self, *others):
         result=Expression(self.terms)
         for another in others:
@@ -1014,15 +1031,25 @@ class Expression(object):
             else:
                 result.terms+=another.terms
         return result
-### ExpressionOverloads
+
+### "ExpressionOverloads"
+@extend(Expression)
+class Expression(object):
     def multiply(self, another):
         # Distributive law left as exercise
         pass
     def __add__(self, other):
         return self.add(other)
+
+### "RightOp"
+@extend(Expression)
+class Expression(object):
     def __radd__(self, other):
         return self.__add__(other)
-### ExpressionStringOverload
+
+### "ExpressionStringOverload"
+@extend(Expression)
+class Expression(object):
     def __str__(self):
         return '+'.join(map(str,self.terms))
 
@@ -1072,9 +1099,3 @@ class MyCallable(object):
 x=MyCallable()
 
 x("James")
-
-### "591"
-
-from IPython.display import YouTubeVideo
-YouTubeVideo('2Op3QLzMgSY')
-

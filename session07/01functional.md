@@ -1,8 +1,8 @@
 ---
 title: Functional Programming
 ---
-
-## Functional Programming
+## Functional programming
+### Functional Programming
 
 Understanding to think in a *functional programming* style is almost as
 important as object orientation for building DRY, clear scientific software,
@@ -18,7 +18,7 @@ in theory, you only ever need functions with **one** argument, even when you thi
 Let's define a program to add two numbers:
 
 {{pyfrag('07','all','add')}}
-How can we do this, in a version which only defined functions of one argument?
+How could we do this, in a fictional version of Python which only defined functions of one argument?
 In order to understand this, we'll have to understand several of the concepts
 of functional programming. Let's start with a program which just adds five to
 something:
@@ -69,7 +69,7 @@ And note that the closure stores a reference to the variable in the surrounding 
 {{pyfrag('07','all','late')}}
 We often want to apply a function to each variable in an array, to return a new array. We can do this with a list comprehension:
 
-{{pyfrag('07','all','comprehension')}}
+{{pyfrag('07','all','comprehension2')}}
 But this is sufficiently common that there's a quick built-in:
 
 {{pyfrag('07','all','map')}}
@@ -135,7 +135,7 @@ The above fragment defined a lambda function as a **closure** over `base`. If yo
 
 {{pyfrag('07','all','pretty_max')}}
 
-## Using functional programming
+### Using functional programming
 
 Probably the most common use in research computing for functional programming
 is the application of a numerical method to a function. For example:
@@ -146,10 +146,15 @@ is the application of a numerical method to a function. For example:
 {% endif %}
 
 {{pyfrag('07','all','funcalgo')}}
-
+{% if not notebook %}
+![](session07/python/solved.png)
+{% endif %}
 Sometimes such tools return another function:
 
 {{pyfrag('07','all','derivative')}}
+{% if not notebook %}
+![](session07/python/derived.png)
+{% endif %}
 
 Of course, coding your own numerical methods is bad:
 

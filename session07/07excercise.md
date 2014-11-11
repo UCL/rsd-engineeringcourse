@@ -2,7 +2,7 @@
 title: Exercise
 ---
 ## Exercise
-
+### Exercise
 Numbers have units. $5\mathrm{m}^2$ is not $5\mathrm{J}$. $6\mathrm{J}$ is the
 same as $6\mathrm{kg}\mathrm{m}^2\mathrm{s}^{2}$ which is the same as
 $2\mathrm{N} \cdot 3\mathrm{m}$
