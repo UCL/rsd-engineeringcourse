@@ -53,3 +53,12 @@ author: James Hetherington and Matt Clarkson
 {{d['session06/02patterns.md']}}
 {{d['session06/03process.md']}}
 {{d['session06/04exercises.md']}}
+\chapter{DRY Programming Tricks}
+{{d['session07/index.md']}}
+{{d['session07/01functional.md']}}
+{{d['session07/02iterators.md']}}
+{{d['session07/03exceptions.md']}}
+{{d['session07/04context.md']}}
+{{d['session07/05meta.md']}}
+{{d['session07/06operator.md']}}
+{{d['session07/07excercise.md']}}
