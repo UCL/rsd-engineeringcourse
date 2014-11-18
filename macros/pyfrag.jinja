@@ -1,6 +1,9 @@
-{% macro pyfrag(session, file, segment, execute=True, check_errors=False) %}
+{% macro pyfrag(session, file, segment, execute=True, check_errors=False, timed=False) %}
 {% if ".ipynb" in s.output_name() %}
 ``` python
+{% if timed %}
+%%timeit
+{% endif %}
 {{d['session'+session+'/python/'+file+'.py|idio|t'][segment]}}
 ```
 {% else %}
@@ -15,5 +18,8 @@
 {{d['session'+session+'/python/'+file+'.py|idio|t'][segment]}}
 {% endif %}
 ```
+{% if timed %}
+Taking: {{timed}} on my example run.
+{% endif %}
 {% endif %}
 {% endmacro %}
