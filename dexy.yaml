@@ -64,6 +64,7 @@ assets:
     - .png
     - .svg
     - .pdf
+    - .ipynb
     - .js
 
 pythons:

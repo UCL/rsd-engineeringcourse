@@ -27,7 +27,7 @@ For a complex number $c$, $c$ is in the Mandelbrot set if the series $z_{i+1}=z_
 Traditionally, we plot a color showing how many steps are needed for
 $\left|z_i\right|>2$, whereupon we are sure the series will diverge.
 
-### SimpleImplementation
+### Simple Implementation
 
 {{pyfrag('08','mandel','TrivialMandel')}}
 
@@ -58,7 +58,7 @@ And it gives the same answer:
 
 The remainder of this lecture is presented as IPython Notebooks
 
-[MandelbrotSets](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/python/Mandels.ipynb)
+[MandelbrotSets](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session08/Mandels.ipynb)
 [NumPy](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session08/Numpy.ipynb)
 [Scaling](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session08/Scaling.ipynb)
 [Cython](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session08/Cython.ipynb)
