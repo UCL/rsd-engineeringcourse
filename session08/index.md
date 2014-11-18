@@ -64,3 +64,9 @@ The remainder of this lecture is presented as IPython Notebooks
 [Cython](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session08/Cython.ipynb)
 
 These will be integrated into the rest of the lectures in due course.
+
+## Exercise: Numpy and the Boids
+
+Reimplement the boids using NumPy.
+Make it as fast as you can: measure the performance versus the default bad_boids and your best object oriented solution.
+**Don't** base your NumPy solution on your object oriented solution: I recommend you go back to the original bad boids and start again as you numpify.
