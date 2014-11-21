@@ -2,38 +2,6 @@
 title: Further Git
 ---
 
-##Further Git
-
-###Distributed VCS concepts (2)
-
-* You have a *working copy*
-* You pick a subset of the changes in your working copy
-  to add to the next commit
-* Changes to be included in the next commit are kept in a
-  **staging area** (a.k.a. **index**)
-* When you commit you commit:
-  * From the staging area
-  * To the local repository
-* You **push** to **remote** repositories to share or publish
-* You **pull** (or fetch) to bring in changes from a remote
-
-###Solo Workflow
-
-![Working alone with git](session02/figures/distributed_solo)
-
-###Publishing
-
-![Publishing with git](session02/figures/distributed_solo_publishing)
-
-###Teams without conflicts
-
-![Teamworking in git](session02/figures/distributed_shared_noconflict)
-
-###Teams with conflicts
-
-![Teamworking in git with conflicts](session02/figures/distributed_shared_conflicted)
-
-
 ##Git Theory
 
 ###A revision Graph
@@ -318,44 +286,6 @@ git push --prune # Dangerous, remove remote branches deleted locally
 If using github, I recommend removing branches using the
 GitHub gui (click branches, then click "view merged branches")
 
-##Pull Requests
-
-###Forking
-
-If you want to collaborate with someone, you don't need to give them the right to change your code directly.
-
-You can collaborate through *pull requests* instead of by granting them access.
-
-This has been found to work *much better* than having to decide who should be allowed
-commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
-
-###Send a pull request
-
-When you've done some work on a fork, you'll want it merged into the main version.
-
-The collaborator can send the main repository a pull request, saying:
-
-> Hey, have a look at what I've done, and if you like it, merge it in.
-
-###Accepting a pull request
-
-On GitHub, if a pull request doesn't result in a conflict, there's a big green button that
-you can press to accept it.
-
-If there's a conflict, there won't be a big green button.
-
-Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
-
-To do this, you need to add the collaborator's fork in your repository as a *second remote*
-
-``` bash
-git remote add <remotename> <collaborators URL>
-git pull remotename
-# resolve conflicts
-git commit -a
-git push
-```
-
 ##Hosting Servers
 
 ###Hosting a local server
@@ -417,6 +347,21 @@ git add -p myfile.py
 +import numpy as np
 #Stage this hunk [y,n,a,d,/,j,J,g,e,?]?
 ```
+
+
+###SSH keys and GitHub
+
+You may want to set things up so that you don't have to keep typing in your
+password whenever you interact with GitHub via the command line.
+
+You can do this with an "ssh keypair". You may have created a keypair in the
+Software Carpentry shell training. Go to the [ssh settings
+page](https://github.com/settings/ssh) on GitHub and upload your public key by
+copying the content from your computer. (Probably at .ssh/id_rsa.pub)
+
+If you have difficulties, the instructions for this are [on the GitHub
+website](https://help.github.com/articles/generating-ssh-keys). Ask your
+demonstrator for help here if you need it.
 
 ##Rebasing
 
@@ -711,6 +656,8 @@ To create hyperlinks in your pages, so you can link between your documents. Try 
 
 ###UCL layout for GitHub pages
 
-You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, but after the class, you might want to try this.
+You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), 
+and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, 
+but after the class, you might want to try this.
 
 

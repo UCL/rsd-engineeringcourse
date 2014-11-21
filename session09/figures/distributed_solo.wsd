@@ -1,0 +1,54 @@
+participant "Jim's repo"
+participant "Jim's index"
+participant Jim
+parallel{
+state over Jim: work
+note right of Jim: vim myfile1.py
+}
+parallel{
+note right of Jim: git init
+Jim->Jim's index: create
+Jim's index->Jim's repo: create
+}
+parallel{
+Jim->Jim's index: add
+note right of Jim: git add .
+}
+parallel{
+note right of Jim: git commit
+Jim's index->Jim's repo: Commit
+}
+parallel{
+note right of Jim:
+	vim myfile2.py
+	vim myfile1.py
+end note
+state over Jim: work
+state over "Jim's repo": a1c3
+}
+parallel{
+Jim->Jim's index: Add
+note right of Jim: git add myfile2.py
+}
+parallel{
+Jim's index->Jim's repo: Commit
+note right of Jim: git commit
+note left of "Jim's repo": 
+	Only changes to file2 
+	get into commit
+end note
+}
+parallel{
+state over Jim: work
+note right of Jim
+	vim myfile2.py
+	vim myfile1.py
+end note
+state over "Jim's repo": acb2
+}
+parallel{
+note right of Jim: git commit -a
+Jim->Jim's index: add
+Jim's index->Jim's repo: commit
+note left of "Jim's repo": All changes get in
+}

@@ -1,0 +1,4 @@
+Working Directory -> Staging Area : git add
+Staging Area -> Local Repository : git commit
+Working Directory -> Local Repository : git commit -a
+Local Repository -> Remote Repository : git push
