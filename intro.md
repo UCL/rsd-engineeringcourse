@@ -22,7 +22,7 @@ This is a intensive, practical course.
 * Collaborating around code. Version control.
 * Git. Github. Issue tracking.
 * Code review.
-* Branches and merging.
+* Merging.
 * Software licensing and releases.
 
 ### Lesson 3
@@ -83,19 +83,22 @@ This is a intensive, practical course.
 
 ### Lession 8
 
-* Matplotlib.
+* Performance programming
 * Numpy.
+* Container asymptotic performance performance
+* Cython and linking C to Python
 
 ### Lesson 9
 
-* Scipy
-* Pandas
+* Further git
+* Rebasing
+* Branching
+* GitHub pages
+* Creating servers
 
 ### Lesson 10
 
-* Language bindings: calling C++ from Python
-* Build tools. SCons.
-* Deployment: getting your code to where it needs to run
+* Solutions to exercises
 
 ## Course processes
 

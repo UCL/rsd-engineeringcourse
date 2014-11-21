@@ -2,38 +2,6 @@
 title: Further Git
 ---
 
-##Further Git
-
-###Distributed VCS concepts (2)
-
-* You have a *working copy*
-* You pick a subset of the changes in your working copy
-  to add to the next commit
-* Changes to be included in the next commit are kept in a
-  **staging area** (a.k.a. **index**)
-* When you commit you commit:
-  * From the staging area
-  * To the local repository
-* You **push** to **remote** repositories to share or publish
-* You **pull** (or fetch) to bring in changes from a remote
-
-###Solo Workflow
-
-![Working alone with git](session02/figures/distributed_solo)
-
-###Publishing
-
-![Publishing with git](session02/figures/distributed_solo_publishing)
-
-###Teams without conflicts
-
-![Teamworking in git](session02/figures/distributed_shared_noconflict)
-
-###Teams with conflicts
-
-![Teamworking in git with conflicts](session02/figures/distributed_shared_conflicted)
-
-
 ##Git Theory
 
 ###A revision Graph
@@ -191,6 +159,28 @@ git tag -a v1.3
 git push --tags
 ```
 
+##Working with generated files
+
+###Gitignore
+
+Use .gitignore files to tell Git not to pay attention to files with certain paths:
+
+```
+*.o
+*.exe
+*.tmp
+```
+
+###Git clean
+
+```
+git clean
+```
+
+With -f: don't prompt
+with -d: remove directories
+with -x: Also remote .gitignored files
+with -X: Only remove .gitignore files
 
 ##Working with multiple remotes
 
@@ -318,44 +308,6 @@ git push --prune # Dangerous, remove remote branches deleted locally
 If using github, I recommend removing branches using the
 GitHub gui (click branches, then click "view merged branches")
 
-##Pull Requests
-
-###Forking
-
-If you want to collaborate with someone, you don't need to give them the right to change your code directly.
-
-You can collaborate through *pull requests* instead of by granting them access.
-
-This has been found to work *much better* than having to decide who should be allowed
-commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
-
-###Send a pull request
-
-When you've done some work on a fork, you'll want it merged into the main version.
-
-The collaborator can send the main repository a pull request, saying:
-
-> Hey, have a look at what I've done, and if you like it, merge it in.
-
-###Accepting a pull request
-
-On GitHub, if a pull request doesn't result in a conflict, there's a big green button that
-you can press to accept it.
-
-If there's a conflict, there won't be a big green button.
-
-Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
-
-To do this, you need to add the collaborator's fork in your repository as a *second remote*
-
-``` bash
-git remote add <remotename> <collaborators URL>
-git pull remotename
-# resolve conflicts
-git commit -a
-git push
-```
-
 ##Hosting Servers
 
 ###Hosting a local server
@@ -377,6 +329,38 @@ You can clone the materials for this course:
 ``` bash
 git clone git@github.com:UCL/rsd-engineeringcourse.git
 ```
+
+###File system servers
+
+Classroom exercise: Try working with multiple remotes by making another server for yourself on your local computer.
+
+``` bash
+cd <somewhere else>
+mkdir myotherrepo
+cd myotherrepo
+git init --bare
+cd <back to my main repository>
+git remote add localbackup /full/path/to/local/repository
+git push -u localbackup master
+```
+
+You can now work with this local repository, just as with any other git server.
+If you have a colleague on a shared file system, you can use this approach to collaborate through that file system.
+
+###SSH servers
+
+Classroom exercise: Try creating a server for yourself using a machine you can SSH to:
+
+```
+ssh <mymachine>
+mkdir mygitserver
+cd mygitserver
+git init --bare
+exit
+git remote add <somename> ssh://user@host/mygitserver
+git push -u <somename> master
+```
+
 
 ##Hunks
 
@@ -417,6 +401,20 @@ git add -p myfile.py
 +import numpy as np
 #Stage this hunk [y,n,a,d,/,j,J,g,e,?]?
 ```
+
+
+###SSH keys and GitHub
+
+Classroom exercise: If you haven't already, you should set things up so that you don't have to keep typing in your
+password whenever you interact with GitHub via the command line.
+
+You can do this with an "ssh keypair". You may have created a keypair in the
+Software Carpentry shell training. Go to the [ssh settings
+page](https://github.com/settings/ssh) on GitHub and upload your public key by
+copying the content from your computer. (Probably at .ssh/id_rsa.pub)
+
+If you have difficulties, the instructions for this are [on the GitHub
+website](https://help.github.com/articles/generating-ssh-keys). 
 
 ##Rebasing
 
@@ -577,6 +575,23 @@ pick ll54 Fix another typo
 #  s, squash = use commit, but meld into previous commit
 ```
 
+###Rebasing
+
+Classroom exercise: Get together with a partner, or use a branch or a remote of your own, and set yourself up a
+situation where you'd be about to merge. Instead, use a rebase.
+
+Use `git log --graph --oneline` to see how the changes have been applied as a linear sequence.
+
+###Squashing
+
+Classrooom exercise: Make several commits which should really be one, then use
+
+```bash
+git rebase -i <commit>
+```
+to squash them.
+
+
 ##Debugging
 
 ###Debugging With Git Bisect
@@ -699,7 +714,9 @@ git checkout -b gh-pages
 git push -u origin gh-pages
 ```
     
-The first time you do this, GitHub takes a few minutes to generate your pages. The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
+The first time you do this, GitHub takes a few minutes to generate your pages. 
+
+The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
 
 ###Markdown Hyperlinks
 
@@ -711,6 +728,8 @@ To create hyperlinks in your pages, so you can link between your documents. Try 
 
 ###UCL layout for GitHub pages
 
-You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, but after the class, you might want to try this.
+You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), 
+and [how it looks](http://ucl.github.com/ucl-github-pages-example). We won't go into the detail of this now, 
+but after the class, you might want to try this.
 
 

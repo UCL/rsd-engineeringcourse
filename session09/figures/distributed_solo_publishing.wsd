@@ -1,0 +1,34 @@
+participant Origin
+participant "Jim's repo"
+participant "Jim's index"
+participant Jim
+
+parallel{
+Origin->Jim's repo: clone
+Jim's repo->Jim's index: clone
+Jim's index->Jim: clone
+note right of Jim: git clone git@github.com:ucl/mycode.git
+}
+state over Jim: work
+parallel{
+note right of Jim: git add --update
+Jim->Jim's index: add
+}
+parallel{
+note right of Jim: git commit
+Jim's index->Jim's repo: Commit
+}
+parallel{
+note right of Jim: git push
+Jim's repo->Origin: push
+}
+state over Jim: work
+parallel{
+note right of Jim: git commit -a
+Jim->Jim's index: add
+Jim's index->Jim's repo: commit
+}
+parallel{
+Jim's repo->Origin: push
+note right of Jim: git push
+}

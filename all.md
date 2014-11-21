@@ -17,7 +17,6 @@ author: James Hetherington and Matt Clarkson
 \chapter{Version Control}
 {{d['session02/index.md']}}
 {{d['session02/00git.md']}}
-{{d['session02/01advanced.md']}}
 {{d['session02/02licensing.md']}}
 {{d['session02/03issues.md']}}
 {{d['session02/04exercises.md']}}
@@ -62,3 +61,6 @@ author: James Hetherington and Matt Clarkson
 {{d['session07/05meta.md']}}
 {{d['session07/06operator.md']}}
 {{d['session07/07excercise.md']}}
+\chapter{Further Git}
+{{d['session09/index.md']}}
+{{d['session09/01advanced.md']}}

@@ -1,0 +1,66 @@
+participant Jim as J
+participant "Jim's repo" as Jr
+participant Origin as O
+participant "Sue's repo" as Sr
+participant Sue as S
+
+parallel{
+state over J: work
+state over S: work
+}
+
+parallel{
+note left of J: git commit -a
+J -> Jr: commit
+S -> Sr: commit
+note right of S: git commit -a
+}
+
+parallel{
+Sr->O: push
+note right of S: git push
+}
+parallel{
+note left of J
+	git push
+	Error: ! [rejected]
+end note
+Jr-->O: failed push
+}
+parallel{
+O->Jr: pull
+Jr->J: pull
+note left of J: git pull
+}         
+ 
+parallel{
+state over J: resolve conflicts
+note left of J: vim conflictedfile.py
+state over S: work
+}
+
+parallel{
+note left of J: git commit -a
+note right of S: git commit -a
+S->Sr: commit
+J->Jr: commit
+}
+parallel{
+state over J: work
+state over S: work 
+}
+
+parallel{
+Jr->O: push
+S->Sr: commit
+note left of J
+	git push
+end note
+note right of S: git commit -a
+}
+
+parallel{
+note right of S: git pull
+O->Sr: pull
+Sr->S: pull
+}

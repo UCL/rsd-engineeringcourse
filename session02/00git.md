@@ -471,14 +471,6 @@ So far, all our work has been on our own computer. But a big part of the point o
 
 If you have not done so already, you should create an account on GitHub: go to [https://github.com/](https://github.com/), fill in a username and password, and click on "sign up for free". 
 
-###SSH keys and GitHub
-
-You may want to set things up so that you don't have to keep typing in your password whenever you interact with GitHub via the command line.
-
-You can do this with an "ssh keypair". You may have created a keypair in the Software Carpentry shell training. Go to the [ssh settings page](https://github.com/settings/ssh) on GitHub and upload your public key by copying the content from your computer. (Probably at .ssh/id_rsa.pub)
-
-If you have difficulties, the instructions for this are [on the GitHub website](https://help.github.com/articles/generating-ssh-keys). Ask your demonstrator for help here if you need it.
-
 ###Creating a repository
 
 Ok, let's create a repository to store our work. Hit "new repository" on the right of the github home screen, or click [here](https://github.com/new). 
@@ -786,4 +778,43 @@ You can follow the public work of other coders: go to the profile of your collab
 [Here's mine](https://github.com/jamespjh) : if you want to you can follow me.
 
 Using GitHub to build up a good public profile of software projects you've worked on is great for your CV!
+
+
+##Pull Requests
+
+###Forking
+
+If you want to collaborate with someone, you don't need to give them the right to change your code directly.
+
+You can collaborate through *pull requests* instead of by granting them access.
+
+This has been found to work *much better* than having to decide who should be allowed
+commit access. You can hit "fork" on any github repo, or git clone from any repo you have access to.
+
+###Send a pull request
+
+When you've done some work on a fork, you'll want it merged into the main version.
+
+The collaborator can send the main repository a pull request, saying:
+
+> Hey, have a look at what I've done, and if you like it, merge it in.
+
+###Accepting a pull request
+
+On GitHub, if a pull request doesn't result in a conflict, there's a big green button that
+you can press to accept it.
+
+If there's a conflict, there won't be a big green button.
+
+Instead, the leader needs to get hold of the collaborators' code, and merge it in manually.
+
+To do this, you need to add the collaborator's fork in your repository as a *second remote*
+
+``` bash
+git remote add <remotename> <collaborators URL>
+git pull remotename
+# resolve conflicts
+git commit -a
+git push
+```
 
