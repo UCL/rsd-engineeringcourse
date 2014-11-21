@@ -159,6 +159,28 @@ git tag -a v1.3
 git push --tags
 ```
 
+##Working with generated files
+
+###Gitignore
+
+Use .gitignore files to tell Git not to pay attention to files with certain paths:
+
+```
+*.o
+*.exe
+*.tmp
+```
+
+###Git clean
+
+```
+git clean
+```
+
+With -f: don't prompt
+with -d: remove directories
+with -x: Also remote .gitignored files
+with -X: Only remove .gitignore files
 
 ##Working with multiple remotes
 
@@ -308,6 +330,38 @@ You can clone the materials for this course:
 git clone git@github.com:UCL/rsd-engineeringcourse.git
 ```
 
+###File system servers
+
+Classroom exercise: Try working with multiple remotes by making another server for yourself on your local computer.
+
+``` bash
+cd <somewhere else>
+mkdir myotherrepo
+cd myotherrepo
+git init --bare
+cd <back to my main repository>
+git remote add localbackup /full/path/to/local/repository
+git push -u localbackup master
+```
+
+You can now work with this local repository, just as with any other git server.
+If you have a colleague on a shared file system, you can use this approach to collaborate through that file system.
+
+###SSH servers
+
+Classroom exercise: Try creating a server for yourself using a machine you can SSH to:
+
+```
+ssh <mymachine>
+mkdir mygitserver
+cd mygitserver
+git init --bare
+exit
+git remote add <somename> ssh://user@host/mygitserver
+git push -u <somename> master
+```
+
+
 ##Hunks
 
 ###Git Hunks
@@ -351,7 +405,7 @@ git add -p myfile.py
 
 ###SSH keys and GitHub
 
-You may want to set things up so that you don't have to keep typing in your
+Classroom exercise: If you haven't already, you should set things up so that you don't have to keep typing in your
 password whenever you interact with GitHub via the command line.
 
 You can do this with an "ssh keypair". You may have created a keypair in the
@@ -360,8 +414,7 @@ page](https://github.com/settings/ssh) on GitHub and upload your public key by
 copying the content from your computer. (Probably at .ssh/id_rsa.pub)
 
 If you have difficulties, the instructions for this are [on the GitHub
-website](https://help.github.com/articles/generating-ssh-keys). Ask your
-demonstrator for help here if you need it.
+website](https://help.github.com/articles/generating-ssh-keys). 
 
 ##Rebasing
 
@@ -522,6 +575,23 @@ pick ll54 Fix another typo
 #  s, squash = use commit, but meld into previous commit
 ```
 
+###Rebasing
+
+Classroom exercise: Get together with a partner, or use a branch or a remote of your own, and set yourself up a
+situation where you'd be about to merge. Instead, use a rebase.
+
+Use `git log --graph --oneline` to see how the changes have been applied as a linear sequence.
+
+###Squashing
+
+Classrooom exercise: Make several commits which should really be one, then use
+
+```bash
+git rebase -i <commit>
+```
+to squash them.
+
+
 ##Debugging
 
 ###Debugging With Git Bisect
@@ -644,7 +714,9 @@ git checkout -b gh-pages
 git push -u origin gh-pages
 ```
     
-The first time you do this, GitHub takes a few minutes to generate your pages. The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
+The first time you do this, GitHub takes a few minutes to generate your pages. 
+
+The website will appear at `http://username.github.com/repositoryname`, for example, here's [mine](http://jamespjh.github.com/jh-ucl-swcarpentry-answers/)
 
 ###Markdown Hyperlinks
 
