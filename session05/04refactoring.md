@@ -35,7 +35,7 @@ and describe *code smells*: how you know you need to refactor.
 
 Smell: Raw numbers appear in your code
 
-Before
+Before: 
 
 {{pyfrag('05','refactoring','magic_before')}}
 

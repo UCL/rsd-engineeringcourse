@@ -154,8 +154,8 @@ def test_energy():
 Don't look till after class!
 
 Here is one solution:
-   * Function: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusion_model.py
-   * Test: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/test_diffusion_model.py
+* Function: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusion_model.py
+* Test: https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/test_diffusion_model.py
 
 ###Coverage
 

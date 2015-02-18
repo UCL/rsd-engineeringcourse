@@ -7,7 +7,7 @@ title: Comments
 ###Why comment?
 
 * You're writing code for people, as well as computers.
-* Comments can help you build code, by respresenting your design
+* Comments can help you build code, by representing your design
 * Comments explain subtleties in the code which are not obvious from the syntax
 * Comments explain *why* you wrote the code the way you did
 
