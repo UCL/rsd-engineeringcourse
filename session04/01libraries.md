@@ -7,19 +7,19 @@ title: Libraries
 ###Drawbacks of libraries.
 
 * Sometimes, libraries are not looked after by their creator: code that is not maintained *rots*:
-  * It no longer works with later versions of *upstream* libraries.
-  * It doesn't work on newer platforms or systems.
-  * Features that are needed now, because the field has moved on, are not added
+    * It no longer works with later versions of *upstream* libraries.
+    * It doesn't work on newer platforms or systems.
+    * Features that are needed now, because the field has moved on, are not added
 
 * Sometimes, libraries are hard to get working:
-  * For libraries in pure python, this is almost never a problem
-  * But many libraries involve *compiled components*: these can be hard to install.
+    * For libraries in pure python, this is almost never a problem
+    * But many libraries involve *compiled components*: these can be hard to install.
 
 ###Contribute, don't duplicate
 
 * You have a duty to the ecosystem of scholarly software:
-  * If there's a tool or algorithm you need, find a project which provides it.
-  * If there are features missing, or problems with it, fix them, [don't create your own](http://xkcd.com/927/) library.
+    * If there's a tool or algorithm you need, find a project which provides it.
+    * If there are features missing, or problems with it, fix them, [don't create your own](http://xkcd.com/927/) library.
 
 ###How to choose a library
 
