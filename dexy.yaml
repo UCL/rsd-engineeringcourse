@@ -24,13 +24,13 @@
     - output-name: "{dirname}/slides.html"
     - pandoc:
         args: -t revealjs -V theme=night
-            --css={{root}}/css/night.css
+            --css=http://lab.hakim.se/reveal-js/css/theme/night.css
             --css={{root}}/css/ucl_reveal.css
             --css={{root}}/css/slidetheme.css
             --default-image-extension=png
             --highlight-style=zenburn
             --mathjax
-            -V revealjs-url=http://lab.hakim.se/reveal-js/
+            -V revealjs-url=http://lab.hakim.se/reveal-js
 
 
 "**/notebook.md|jinja|hd|jinja|resub|mdjup":
