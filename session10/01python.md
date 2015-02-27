@@ -1,6 +1,7 @@
 ---
 title: Python
 ---
+
 ## Python
 
 ### Python

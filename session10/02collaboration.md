@@ -1,6 +1,7 @@
 ---
 title: Collaboration
 ---
+
 ## Collaboration
 
 ### Collaboration
