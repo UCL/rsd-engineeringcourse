@@ -3,6 +3,7 @@ title: Research Software Engineering with Python
 author: James Hetherington and Matt Clarkson
 ---
 
+{{d['intro.md']}}
 {{d['session10/python.md']}}
 {{d['session10/collaboration.md']}}
 {{d['session10/testing.md']}}

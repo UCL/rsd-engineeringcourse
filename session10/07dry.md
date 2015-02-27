@@ -1,6 +1,7 @@
 ---
 title: DRY programming tricks
 ---
+
 ## DRY programming tricks
 
 ### DRY programming tricks
