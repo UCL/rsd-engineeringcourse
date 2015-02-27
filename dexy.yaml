@@ -76,6 +76,8 @@ pythons:
     - .py|idio|t
     - .py:
         output: False
+    - pycon:
+        timeout: 20
 
 bashes:
   - .sh|idio|bash:
