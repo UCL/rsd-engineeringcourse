@@ -2,6 +2,7 @@
 title: Further Git
 ---
 ## Further Git
+
 ### Further Git
 
-This lecture will review the lecture on further Git and go over the solutions to the assessed exercise.
+Mastering Git opens up a powerful set of tools for collaborative programming. In this session we took a more in depth look at Git, reviewing features such as branching and tagging, looking at the process of merging code in more detail, and showing how Git can be used to publish a website.

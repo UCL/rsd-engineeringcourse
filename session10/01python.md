@@ -2,6 +2,7 @@
 title: Python
 ---
 ## Python
+
 ### Python
 
-This lecture will review the introductory lecture on python.
+Our first session looked at the basics of programming in Python, covering data types, control and flow, functions, and modules. We also set up our tools for future work, including Python, IPython Notebook, Git, and Github.

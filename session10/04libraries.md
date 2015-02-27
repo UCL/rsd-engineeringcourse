@@ -2,6 +2,7 @@
 title: Libraries
 ---
 ## Libraries
+
 ### Libraries
 
-This lecture will review the lecture on libraries and go over the solutions to the assessed exercise.
+Libraries make us powerful. In this session we demonstrated how existing libraries could help us to find and download a map from the web and measure the density of green space. Our exercise focused on packaging code to make it easy to share and reuse.
