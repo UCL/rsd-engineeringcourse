@@ -14,3 +14,12 @@ Construction is about we use letters and symbols to build readable, meaningful s
 * refactoring code with classes
 
 Our exercise put this knowledge into practice by refactoring 'Bad Boids', some intentionally-bad code that mimicked the motion of a flock of birds.
+
+### Refactoring bad-boids
+
+<!--
+
+Commit log for sample solution:
+https://github.com/jamespjh/bad-boids/commits/better_boids
+
+-->

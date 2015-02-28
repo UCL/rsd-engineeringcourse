@@ -14,3 +14,11 @@ Profiling allows us to spot and address performance issues with our code. The se
 * demonstrated the speed benefits of Cython
 
 Returning to the Boids code for our exercise, we sought to reimplement the model with NumPy and Cython to make it run as fast as possible.
+
+### Optimising the boids
+
+<!--
+
+Sample solution:
+TO DO.
+-->
