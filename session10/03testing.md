@@ -10,13 +10,14 @@ Tests save time, improve code quality, and give peace of mind. In the testing se
 
 ### The Monte-Carlo exercise
 
-<!--
+We were looking for:
 
-What we were looking for:
 * Tidy, well commented code with consistent syntax (e.g. PEP8)
-* 
+* Appropriate use of functions and/or classes
+* Sensibly written set of tests
+* Evidence of tests written alongside code in the commit history
 
+<!--
 Sample solution:
 https://github.com/UCL/rsd-engineeringcourse/tree/master/session03/solutions
-
 -->

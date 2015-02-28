@@ -17,6 +17,14 @@ Our exercise put this knowledge into practice by refactoring 'Bad Boids', some i
 
 ### Refactoring bad-boids
 
+We were looking for:
+
+* Readable code and sensible tests (always!)
+* Appropriate refactoring
+    - cleaning up syntax (whitespace; repetition; unnecessary code)
+    - named variables replacing hardcoded values
+    - relevant use of functions and/or classes
+
 <!--
 
 Commit log for sample solution:

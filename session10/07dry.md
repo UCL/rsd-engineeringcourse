@@ -10,6 +10,13 @@ Unnecessary code is a home for unnecessary mistakes, so **d**on't **r**epeat **y
 
 ### Writing a library to handle units
 
+We were looking for:
+
+* Readable code and sensible tests (always!)
+* Simple, well-structured library
+* Clear system for defining units (e.g.)
+* Operator overloading for handling units (\*,==,+)
+
 <!--
 
 Sample solution:

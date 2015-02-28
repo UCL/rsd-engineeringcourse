@@ -10,6 +10,14 @@ Libraries make us powerful. In this session we demonstrated how existing librari
 
 ### Packaging the greengraph code
 
+We were looking for:
+
+* Readable code and sensible tests (always!)
+* Well-structured package
+    - Appropriate file structure
+    - Packaging instructions in a setup.py file
+    - License and documentation
+
 <!--
 
 Sample solution:

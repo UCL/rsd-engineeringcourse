@@ -17,6 +17,15 @@ Returning to the Boids code for our exercise, we sought to reimplement the model
 
 ### Optimising the boids
 
+We were looking for:
+
+* Readable code and sensible tests (always!)
+* Profiling to assess performance
+* Attempts to optimise, for example with:
+    - Appropriate use of data types
+    - Cython and/or NumPy
+    - Arraywise operations
+
 <!--
 
 Sample solution:

@@ -17,7 +17,14 @@ We applied the newly-gained knowledge to refactor our (now Good!) Boids code wit
 
 ### Adding an eagle to the boids
 
+We were looking for:
+
 <!--
+
+* Readable code and sensible tests (always!)
+* Object-oriented code
+* Polymorphism and inheritance
+* Unified Modelling Language
 
 Sample solution:
 https://github.com/jamespjh/bad-boids/commits/eagle
