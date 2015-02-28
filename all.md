@@ -64,3 +64,5 @@ author: James Hetherington and Matt Clarkson
 \chapter{Further Git}
 {{d['session09/index.md']}}
 {{d['session09/01advanced.md']}}
+\chapter{Recap}
+{{d['session10/index.md']}}
