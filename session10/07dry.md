@@ -14,7 +14,7 @@ We were looking for:
 
 * Readable code and sensible tests (always!)
 * Simple, well-structured library
-* Clear system for defining units (e.g.)
+* Clear system for unit definitions
 * Operator overloading for handling units (\*,==,+)
 
 <!--
