@@ -28,7 +28,27 @@ We were looking for:
     - Arraywise operations
 
 <!--
+### Title
 
-Sample solution:
+Before:
+
+``` python
+
+```
+
+After:
+
+``` python
+
+```
+!-->
+
+<!--
+### Sample solution
+
+A sample solution is available at: 
 TO DO.
 -->
+
+
+

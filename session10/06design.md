@@ -26,7 +26,23 @@ We were looking for:
 * Unified Modelling Language for visualisation of classes
 
 <!--
+### Title
 
-Sample solution:
+Before:
+
+``` python
+
+```
+
+After:
+
+``` python
+
+```
+!-->
+
+### Sample solution
+
+A sample solution, with full commit history, is available at: 
 https://github.com/jamespjh/bad-boids/commits/eagle
--->
+

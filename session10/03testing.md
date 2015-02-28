@@ -12,12 +12,14 @@ Tests save time, improve code quality, and give peace of mind. In the testing se
 
 We were looking for:
 
-* Tidy, well commented code with consistent syntax (e.g. PEP8)
+* Tidy, well commented code with consistent syntax (e.g. [PEP8](https://www.python.org/dev/peps/pep-0008/))
 * Appropriate use of functions and/or classes
-* Sensibly written set of tests
+* Sensible set of tests
 * Evidence of tests written alongside code in the commit history
 
-<!--
-Sample solution:
+### Sample solution
+
+A sample solution is available at: 
 https://github.com/UCL/rsd-engineeringcourse/tree/master/session03/solutions
--->
+
+

@@ -12,8 +12,8 @@ Our second session reviewed the elements of collaborative programming, looking a
 
 We were looking for:
 
-* Forked repository
-* Found and fixed an error
-* Committed the fix and pushed the change to the fork
-* Submitted a pull request to the upstream repository
+* The sample repository to be forked
+* An error to be found and fixed
+* The fix to be committed and pushed to the forked repository
+* A pull request submitted to the upstream repository
 

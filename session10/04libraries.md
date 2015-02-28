@@ -19,8 +19,23 @@ We were looking for:
     - License and documentation
 
 <!--
+### Title
 
-Sample solution:
+Before:
+
+``` python
+
+```
+
+After:
+
+``` python
+
+```
+!-->
+
+### Sample solution
+
+A sample solution is available at: 
 https://github.com/jamespjh/greengraph
 
--->

@@ -18,7 +18,23 @@ We were looking for:
 * Operator overloading for handling units (\*,==,+)
 
 <!--
+### Title
 
-Sample solution:
+Before:
+
+``` python
+
+```
+
+After:
+
+``` python
+
+```
+!-->
+
+### Sample solution
+
+A sample solution is available at: 
 https://github.com/tompollard/rsd-engineeringcourse/tree/solution_07ex/session07/solutions/uclunit
--->
+
