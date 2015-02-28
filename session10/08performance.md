@@ -24,6 +24,7 @@ We were looking for:
 * Attempts to optimise, for example with:
     - Appropriate use of data types
     - Cython and/or NumPy
+    - Vectorisation of loops
     - Arraywise operations
 
 <!--
