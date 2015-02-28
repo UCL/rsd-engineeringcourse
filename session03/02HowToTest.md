@@ -134,7 +134,7 @@ In silico translation   Compute overlap of two rectangles
 ###Boundary cases
 
 * Limit between two equivalence classes: edge and corner sharing fields
-* Where-ever indices appear, check values at ``0``, ``N``, ``N+1``
+* Wherever indices appear, check values at ``0``, ``N``, ``N+1``
 * Empty arrays:
 
 ``` python
@@ -151,10 +151,10 @@ In silico translation   Compute overlap of two rectangles
 
 * **Positive tests**: program/component/unit in normal situations
 
-* **Negative tests**: program/component/unit in pathological functionning mode
+* **Negative tests**: program/component/unit in pathological functioning mode
 
 <div align="left">
-Bad input should be expected and should fail early and explicitely.
+Bad input should be expected and should fail early and explicitly.
 
 <div class="fragment roll-in">
 Testing should ensure that explicit failures do indeed happen.
@@ -167,7 +167,7 @@ def I_only_accept_positive_numbers(number):
     # Do something
 ```
 
-An in test file:
+And in a test file:
 
 ``` python
 def test_I_only_accept_positive_numbers(number):

@@ -14,10 +14,10 @@ title: Methodology
 <div align="left">
 BDD
 
-:    * Plain english description of scenario
+:    * Plain English description of scenario
      * Communicates behavior of code, rather than how code works
-     * Simple enought for thesis director to understand
-     * Translated to code internally by developper
+     * Simple enough for thesis director to understand
+     * Translated to code internally by developer
 </div>
 
 ``` ruby
