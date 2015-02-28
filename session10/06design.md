@@ -19,12 +19,13 @@ We applied the newly-gained knowledge to refactor our (now Good!) Boids code wit
 
 We were looking for:
 
-<!--
-
 * Readable code and sensible tests (always!)
-* Object-oriented code
-* Polymorphism and inheritance
-* Unified Modelling Language
+* Object-orientation
+* Polymorphism and/or inheritance
+* Use of design pattern/s
+* Unified Modelling Language for visualisation of classes
+
+<!--
 
 Sample solution:
 https://github.com/jamespjh/bad-boids/commits/eagle
