@@ -38,7 +38,19 @@ We were looking for:
 
 ### Configuration file for definitions
 
+Units can be defined in a configuration file and imported as a dictionary using the YAML library.
 
+``` yaml
+length: 
+  meters: 1.
+  millimeters: 0.001
+  centimeters: 0.01
+  kilometers: 1000.
+
+weight:
+  grams: 1.
+  ...
+```
 
 <!--
 ### Title
