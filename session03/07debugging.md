@@ -2,7 +2,7 @@
 title: Debugging
 ---
 
-##Using a Debugger
+##Using a debugger
 
 ###Step by step through the code
 
@@ -65,7 +65,7 @@ if __name__ == "__main__":
 ```
 
 
-###Basic Navigation:
+###Basic navigation:
 
 <div align="left">
 Basic command to navigate the code and the python debugger:
@@ -110,7 +110,7 @@ Break-points can run subject  to a given condition evaluating to true
 
 </div>
 
-###Post-Mortem
+###Post-mortem
 
 <div align="left">
 Debugging when something goes wrong:
