@@ -23,42 +23,38 @@ To create tests, break the task into logical, bite-size chunks. For example:
 
 ``` python
 def test_input_sanity():
-    """ Check incorrect input do fail """
+    """ Check incorrect inputs do fail """
     pass
 
 def test_move_particle_one_over():
     """ Check density is change by a particle hopping left or right. """
     pass
 
-def test_equal_probability():
-    """ Check particles have equal probability of movement. """
-    pass
-
-def test_stop_simulation():
-    """ Checks that if observe returns False, iteration stops. """
+def test_accept_change():
+    """ Check that move is accepted if second energy is lower """
     pass
 ```
 
 ### Using functions and classes
 
-
-
-
-<!--
-### Command line script
-
-Before:
+We can repeat the logic of writing tests to organise our code into functions and classes:
 
 ``` python
+class MonteCarlo(object):
+    """ A simple Monte Carlo implementation """
 
+    def __init__(self, temperature=100, itermax=100):
+        """ Initialise simulation with inputs """
+        pass
+
+    def change_density(self, density):
+        """ Move one particle left or right. """
+        pass
+
+    def accept_change(self, prior, successor):
+        """ Returns true if should accept change. """
+        pass
 ```
-
-After:
-
-``` python
-
-```
-!-->
 
 ### Sample solution
 
