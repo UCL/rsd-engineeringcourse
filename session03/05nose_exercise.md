@@ -151,7 +151,7 @@ def test_energy():
 
 ###Solution
 
-Don't look until after class! We have implemented sample solutions for the [function](https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusionmodel/diffusion_model.py) and [tests](https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusionmodel/test_diffusion_model.py) for you to review.
+Don't look until after class! We have implemented sample solutions of the [functions](https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusionmodel/diffusion_model.py) and [tests](https://github.com/UCL/rsd-engineeringcourse/blob/staging/session03/solutions/diffusionmodel/test_diffusion_model.py) for you to review.
 
 ###Coverage
 
