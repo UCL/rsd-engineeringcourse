@@ -6,7 +6,7 @@ title: DRY programming tricks
 
 ### DRY programming tricks
 
-Unnecessary code is a home for unnecessary mistakes, so **d**on't **r**epeat **y**ourself. This session explored techniques for refactoring away repetitive code, and introduced the concepts of functional programming, exception handling, decorators, and operator overloading. Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts.
+Unnecessary code is a home for unnecessary mistakes, so _**d**_on't _**r**_epeat _**y**_ourself. This session explored techniques for refactoring away repetitive code, and introduced the concepts of functional programming, exception handling, decorators, and operator overloading. Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts.
 
 ### Writing a library to handle units
 
@@ -14,6 +14,7 @@ We were looking for:
 
 * Readable code and sensible tests (always!)
 * Simple, well-structured library
+* Definition of an ```IncompatibleUnitsError``` exception
 * Clear system for unit definitions
 * Operator overloading for handling units (\*,==,+)
 
@@ -36,6 +37,16 @@ We were looking for:
         └── units.yaml
 ```
 
+### Defining custom exceptions
+
+We can define our own exceptions by inheriting from the Exception class:
+
+``` python
+# Define our custom exception
+class IncompatibleUnitsError(Exception):
+    pass
+```
+
 ### Configuration file for definitions
 
 Units can be defined in a configuration file and imported as a dictionary using the YAML library.
@@ -52,21 +63,18 @@ weight:
   ...
 ```
 
-<!--
-### Title
+### Operator overloading
 
-Before:
-
-``` python
-
-```
-
-After:
+Operator overloading can be used to define custom behaviours for 'magic' methods such as __eq__ (==), _mul__ (\*), __add__ (+), and __sub__ (-). For example:
 
 ``` python
-
+# Base unit
+class Unit(object):
+    ...
+    # Create NumberUnit when Unit is multiplied by numerical value
+    def __rmul__(self, other):
+        return NumberUnit(self, other)
 ```
-!-->
 
 ### Sample solution
 
