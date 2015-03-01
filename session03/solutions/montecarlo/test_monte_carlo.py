@@ -3,6 +3,19 @@
 from nose.tools import assert_equal, assert_almost_equal, assert_true, assert_raises
 from monte_carlo import MonteCarlo
 
+def test_input_sanity():
+    """ Check incorrect input do fail """
+
+    with assert_raises(NotImplementedError) as exception: MonteCarlo(temperature=0e0)
+    with assert_raises(ValueError) as exception: MonteCarlo(temperature=-1e0)
+  
+    mc = MonteCarlo()
+    with assert_raises(TypeError) as exception: mc(lambda x: 0, [1.0, 2, 3])
+    with assert_raises(ValueError) as exception: mc(lambda x: 0, [-1, 2, 3])
+    with assert_raises(ValueError) as exception: mc(lambda x: 0, [[1, 2, 3], [3, 4, 5]])
+    with assert_raises(ValueError) as exception: mc(lambda x: 0, [3])
+    with assert_raises(ValueError) as exception: mc(lambda x: 0, [0, 0])
+
 def test_move_particle_one_over():
     """ Check density is change by a particle hopping left or right. """
     from numpy import nonzero, multiply
@@ -113,18 +126,4 @@ def test_stop_simulation():
 
     assert_equal(len(mc.observe.mock_calls), 2)
     assert_equal(len(energy.mock_calls), 3) # one extra call to get first energy
-
-def test_input_sanity():
-    """ Check incorrect input do fail """
-
-    with assert_raises(NotImplementedError) as exception: MonteCarlo(temperature=0e0)
-    with assert_raises(ValueError) as exception: MonteCarlo(temperature=-1e0)
-  
-    mc = MonteCarlo()
-    with assert_raises(TypeError) as exception: mc(lambda x: 0, [1.0, 2, 3])
-    with assert_raises(ValueError) as exception: mc(lambda x: 0, [-1, 2, 3])
-    with assert_raises(ValueError) as exception: mc(lambda x: 0, [[1, 2, 3], [3, 4, 5]])
-    with assert_raises(ValueError) as exception: mc(lambda x: 0, [3])
-    with assert_raises(ValueError) as exception: mc(lambda x: 0, [0, 0])
-
 
