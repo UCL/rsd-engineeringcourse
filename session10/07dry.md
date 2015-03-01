@@ -17,6 +17,29 @@ We were looking for:
 * Clear system for unit definitions
 * Operator overloading for handling units (\*,==,+)
 
+### Project layout
+
+``` bash
+└── uclunit
+    ├── CITATION.md
+    ├── LICENSE.md
+    ├── README.md
+    ├── demo.py
+    ├── setup.py
+    ├── test
+    │   ├── __init__.py
+    │   └── tests.py
+    └── uclunit
+        ├── __init__.py
+        ├── convert.py
+        ├── loadunits.py
+        └── units.yaml
+```
+
+### Configuration file for definitions
+
+
+
 <!--
 ### Title
 
