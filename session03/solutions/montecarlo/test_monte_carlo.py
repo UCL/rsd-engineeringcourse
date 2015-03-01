@@ -57,7 +57,6 @@ def test_accept_change():
         delta = 3e0 / sqrt(len(accepted))
     )
 
-
 def test_main_algorithm():
     """ Check set path through main algorithm """
     from mock import Mock, call

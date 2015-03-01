@@ -10,7 +10,6 @@ class MonteCarlo(object):
         self.itermax = itermax
         """ Maximum number of iterations """
 
-
     def change_density(self, density):
         """ Move one particle left or right. """
         from numpy import sum, array
@@ -35,14 +34,12 @@ class MonteCarlo(object):
         result[location + direction]  += 1
         return result
 
-
     def accept_change(self, prior, successor): 
         """ Returns true if should accept change. """
         from numpy import exp
         from numpy.random import uniform
         if successor <= prior: return True
         return exp(-(successor - prior) / self.temperature) > uniform()
-
 
     def __call__(self, energy, density):
         """ Runs Monte-carlo """
