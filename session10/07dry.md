@@ -10,7 +10,7 @@ Unnecessary code is a home for unnecessary mistakes, so _**d**_on't _**r**_epeat
 
 ### Writing a library to handle units
 
-We were looking for:
+We are looking for:
 
 * Readable code and sensible tests (always!)
 * Simple, well-structured library

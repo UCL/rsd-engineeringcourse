@@ -10,7 +10,7 @@ Our second session reviewed the elements of collaborative programming, looking a
 
 ### Fixing an error in the sample repository
 
-We were looking for:
+We are looking for:
 
 * The sample repository to be forked
 * An error to be found and fixed

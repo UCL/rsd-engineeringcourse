@@ -17,7 +17,7 @@ Returning to the Boids code for our exercise, we sought to reimplement the model
 
 ### Optimising the boids
 
-We were looking for:
+We are looking for:
 
 * Readable code and sensible tests (always!)
 * Profiling to assess performance

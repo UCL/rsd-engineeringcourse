@@ -10,7 +10,7 @@ Tests save time, improve code quality, and give peace of mind. In the testing se
 
 ### The Monte-Carlo exercise
 
-We were looking for:
+We are looking for:
 
 * Tidy, well commented code with consistent syntax (e.g. [PEP8](https://www.python.org/dev/peps/pep-0008/))
 * Appropriate use of functions and/or classes

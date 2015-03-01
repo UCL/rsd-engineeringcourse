@@ -17,7 +17,7 @@ We applied the newly-gained knowledge to refactor our (now Good!) Boids code wit
 
 ### Adding an eagle to the boids
 
-We were looking for:
+We are looking for:
 
 * Readable code and sensible tests (always!)
 * Object-orientation

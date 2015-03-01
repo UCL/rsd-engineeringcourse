@@ -17,7 +17,7 @@ Our exercise put this knowledge into practice by refactoring 'Bad Boids', some i
 
 ### Refactoring bad-boids
 
-We were looking for:
+We are looking for:
 
 * Readable code and sensible tests (always!)
 * Appropriate refactoring
