@@ -52,6 +52,7 @@ def test_equal_probability():
     )
 
 def test_accept_change():
+    """ Check that move is accepted if second energy is lower """
     from numpy import sqrt, count_nonzero, exp
 
     mc = MonteCarlo(temperature=100.0)
