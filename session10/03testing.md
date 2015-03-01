@@ -17,6 +17,22 @@ We are looking for:
 * Sensible set of tests
 * Evidence of tests written alongside code in the commit history
 
+<!--
+### Command line script
+
+Before:
+
+``` python
+
+```
+
+After:
+
+``` python
+
+```
+!-->
+
 ### Sample solution
 
 A sample solution is available at: 
