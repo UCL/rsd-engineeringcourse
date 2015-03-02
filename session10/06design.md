@@ -68,5 +68,5 @@ Comment:
 ### Sample solution
 
 A sample solution, with full commit history, is available at: 
-https://github.com/jamespjh/bad-boids/commits/eagle
+[https://github.com/jamespjh/bad-boids/commits/eagle](https://github.com/jamespjh/bad-boids/commits/eagle)
 

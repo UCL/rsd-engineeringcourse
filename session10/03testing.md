@@ -67,6 +67,6 @@ class MonteCarlo(object):
 ### Sample solution
 
 A sample solution is available at: 
-https://github.com/UCL/rsd-engineeringcourse/tree/staging/session03/solutions
+[https://github.com/UCL/rsd-engineeringcourse/tree/staging/session03/solutions](https://github.com/UCL/rsd-engineeringcourse/tree/staging/session03/solutions)
 
 

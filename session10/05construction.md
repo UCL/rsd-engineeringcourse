@@ -97,5 +97,5 @@ def test_boid_interaction_avoidance():
 ### Sample solution
 
 A sample solution, with full commit history, is available at: 
-https://github.com/jamespjh/bad-boids/commits/better_boids
+[https://github.com/jamespjh/bad-boids/commits/better_boids](https://github.com/jamespjh/bad-boids/commits/better_boids)
 
