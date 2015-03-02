@@ -20,21 +20,45 @@ We applied the newly-gained knowledge to refactor our (now Good!) Boids code wit
 We are looking for:
 
 * Readable code and sensible tests (always!)
-* Object-orientation
+* Object-orientated code
 * Polymorphism and/or inheritance
 * Use of design pattern/s
 * Unified Modelling Language for visualisation of classes
 
 <!--
-### Title
+### Polymorphism and inheritance
 
-Before:
+Comment:
 
 ``` python
 
 ```
+!-->
 
-After:
+<!--
+### Design patterns
+
+Comment:
+
+``` python
+
+```
+!-->
+
+<!--
+### Unified Modelling Language
+
+Comment:
+
+``` python
+
+```
+!-->
+
+<!--
+### Title
+
+Comment:
 
 ``` python
 

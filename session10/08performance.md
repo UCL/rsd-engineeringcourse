@@ -28,6 +28,10 @@ We are looking for:
     - Arraywise operations
 
 <!--
+Reminder about the importance of tests, which most people completing the exercise neglected. Also, if refactoring, keep the original functionality. Still need to plot. Still need to be able to run.
+-->
+
+<!--
 ### Title
 
 Before:

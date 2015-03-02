@@ -4,12 +4,12 @@ author: James Hetherington and Matt Clarkson
 ---
 
 {{d['intro.md']}}
-{{d['session10/python.md']}}
-{{d['session10/collaboration.md']}}
-{{d['session10/testing.md']}}
-{{d['session10/libraries.md']}}
-{{d['session10/construction.md']}}
-{{d['session10/design.md']}}
-{{d['session10/dry_programming.md']}}
-{{d['session10/performance_programming.md']}}
-{{d['session10/further_git.md']}}
+{{d['session10/01python.md']}}
+{{d['session10/02collaboration.md']}}
+{{d['session10/03testing.md']}}
+{{d['session10/04libraries.md']}}
+{{d['session10/05construction.md']}}
+{{d['session10/06design.md']}}
+{{d['session10/07dry.md']}}
+{{d['session10/08performance.md']}}
+{{d['session10/09furthergit.md']}}
