@@ -6,12 +6,12 @@ title: Performance computing
 
 ### Performance computing
 
-Profiling allows us to spot and address performance issues with our code. The session on performance programming showed: 
+Profiling allows us to spot and address performance issues with our code. The session on performance programming explored: 
 
-* how the NumPy library can be used to carry out faster array-wise operations
-* looked at the implications of data type on performance
-* introduced the Big O notation
-* demonstrated the speed benefits of Cython
+* faster, array-wise operations using NumPy
+* implications of data type on performance
+* the Big O notation
+* speed benefits of Cython
 
 Returning to the Boids code for our exercise, we sought to reimplement the model with NumPy and Cython to make it run as fast as possible.
 
@@ -26,6 +26,7 @@ We are looking for:
     - Cython and/or NumPy
     - Vectorisation of loops
     - Arraywise operations
+
 
 <!--
 Reminder about the importance of tests, which most people completing the exercise neglected. Also, if refactoring, keep the original functionality. Still need to plot. Still need to be able to run.
