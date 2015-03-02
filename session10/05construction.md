@@ -77,7 +77,7 @@ class Boid(object):
 For example, use of fixtures:
 
 ``` python
-    def test_bad_boids_regression():
+def test_bad_boids_regression():
     boids=bd.Boids(0.01/50,10,100,0.125/50)
     regression_data=yaml.load(open(os.path.join(os.path.dirname(__file__),
         'fixture.yml'))) ... 

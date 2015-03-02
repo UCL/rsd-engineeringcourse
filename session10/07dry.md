@@ -6,7 +6,11 @@ title: DRY programming tricks
 
 ### DRY programming tricks
 
-Unnecessary code is a home for unnecessary mistakes, so _**d**_on't _**r**_epeat _**y**_ourself. This session explored techniques for refactoring away repetitive code, and introduced the concepts of functional programming, exception handling, decorators, and operator overloading. Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts.
+Unnecessary code is a home for unnecessary mistakes, so __**d**__on't __**r**__epeat __**y**__ourself! 
+
+This session explored techniques for refactoring away repetitive code, and introduced the concepts of functional programming, exception handling, decorators, and operator overloading. 
+
+Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts.
 
 ### Writing a library to handle units
 
