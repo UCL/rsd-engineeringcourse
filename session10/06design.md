@@ -13,9 +13,9 @@ Deliberate design can help us to complete complex software projects, repeatably 
 * design patterns
 * processes, such as Agile, in the context of design
 
-### Adding an eagle to the boids
+### An eagle in the boids
 
-We applied the newly-gained knowledge to refactor our (now Good!) Boids code with elements of inheritance, polymorphism, and pattern design. The new code was then visualised in Unified Modelling Language. 
+We applied our new knowledge to refactor our (now-good!) boids code with elements of object orientation.
 
 We are looking for:
 
