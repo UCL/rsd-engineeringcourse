@@ -45,7 +45,7 @@ We'll begin by separating out the code used to model our boids from the code use
 
 ### Refactor with inheritance
 
-We can move towards object oriented code by creating separate subclasses for our different species of bird:
+We can move towards object orientation by creating separate subclasses for our different species of bird:
 
 ``` python
 # Create super class

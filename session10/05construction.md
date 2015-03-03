@@ -48,7 +48,7 @@ class Boid(object):
         separation=other.position-self.position
         separation_sq=separation.dot(separation)
 
-         # Fly towards the middle
+        # Fly towards the middle
         delta_v+=separation*self.owner.flock_attraction
 ```
 
