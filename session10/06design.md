@@ -120,6 +120,6 @@ Comment:
 
 ### Sample solution
 
-A sample solution, with full commit history, is available at: 
+A sample solution is available at: 
 [https://github.com/tompollard/bad-boids/commits/eagle](https://github.com/tompollard/bad-boids/commits/eagle)
 
