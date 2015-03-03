@@ -14,7 +14,7 @@ Our second session reviewed the elements of collaborative programming, looking a
 
 ### Fixing an error in the sample repository
 
-Together we identified and fixed errors in a repository on GitHub. In this exercise, We are looking for:
+Together we identified and fixed errors in a repository on GitHub. In this exercise, we were looking for:
 
 * The sample repository to be forked
 * An error to be found and fixed
