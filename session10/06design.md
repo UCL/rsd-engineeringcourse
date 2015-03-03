@@ -67,7 +67,26 @@ class Eagle(Boid):
     ...
 ```
 
+### Counting boids
 
+We'll also add a class variable, just because we can, to help us to keep track of the number of boids:
+
+``` python 
+class Boid(object):
+    number_created=0
+    def __init__(self,x,y,xv,yv,owner,species):
+        Boid.number_created+=1
+        self.position=array([x,y])
+        self.velocity=array([xv,yv])
+        self.owner=owner
+        self.species=species
+    @classmethod
+    def howMany(cls):
+        return cls.number_created
+
+print Boid.howMany()
+'50'
+```
 
 <!--
 ### Design patterns
@@ -102,5 +121,5 @@ Comment:
 ### Sample solution
 
 A sample solution, with full commit history, is available at: 
-[https://github.com/jamespjh/bad-boids/commits/eagle](https://github.com/jamespjh/bad-boids/commits/eagle)
+[https://github.com/tompollard/bad-boids/commits/eagle](https://github.com/tompollard/bad-boids/commits/eagle)
 
