@@ -107,15 +107,16 @@ def update_boids_faster(boids):
     pass
 ```
 
-We now have two functions, which should do the same thing at different speeds:
+We now have two functions, which, eventually, should do the same thing at different speeds:
 
 * ```update_boids()```
 * ```update_boids_faster()```
 
-We will also add the new function to our test framework (it'll fail the tests to begin with) :
+
+We will also add the new function to our test framework, using the nose_parameterized decorator. We're expecting it to fail the tests to begin with:
 
 ``` python
-# nose_paramaterized lets us use the @parameterized decorator
+# nose_parameterized lets us use the @parameterized decorator
 # to pass a list of functions through each test
 from nose_parameterized import parameterized
 
