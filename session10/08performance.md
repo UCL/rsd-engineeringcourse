@@ -174,7 +174,7 @@ update_boids(boids)
 
 %%timeit
 update_boids_faster(boids)
-'Best of 3: 945 &micro; per loop'
+'Best of 3: 945 µs per loop'
 ```
 
 
