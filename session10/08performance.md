@@ -72,8 +72,6 @@ Before thinking about performance, we'll update our tests. Our boids should exhi
 * attempt to match speed with nearby boids
 * move according to velocity
 
-We'll write several tests, including the following one:
-
 ``` python 
 def test_only_one_boid_shows_no_flocking_behaviour():
     x_pos,y_pos,x_vel,y_vel = [1.0],[1.0],[2.0],[7.0]
@@ -97,7 +95,7 @@ autopep8 boids.py
 autopep8 -i boids.py
 ```
 
-### Performance improvement
+### Making a start
 
 We'll first add an empty function to contain our soon-to-be-faster code:
 
@@ -107,12 +105,15 @@ def update_boids_faster(boids):
     pass
 ```
 
+### Two competing functions
+
 We now have two functions, which, eventually, should do the same thing at different speeds:
 
 * ```update_boids()```
 * ```update_boids_faster()```
 
-
+### Updating our tests
+  
 We will also add the new function to our test framework, using the nose_parameterized decorator. We're expecting it to fail the tests to begin with:
 
 ``` python
@@ -127,7 +128,7 @@ def test_only_one_boid_shows_no_flocking_behaviour(update_function):
     update_function(boid)
 ```
 
-### Vectorisation
+### Refactor a loop
 
 Our current ```update_boids()``` function uses a loop to update the position of boids based on their velocities:
 
@@ -137,7 +138,7 @@ for i in range(len(xs)):
     xs[i] = xs[i] + xvs[i]
     ys[i] = ys[i] + yvs[i]
 ```
-
+  
 We'll replace this loop with a vectorised version (NB: we will also need to modify our function to ```return``` the updated values because this operation creates a copy, rather than modifying in-place):
 
 ``` python
@@ -149,6 +150,8 @@ xs = xs + xvs
 ys = ys + yvs
 ```
 
+### More loops
+  
 We'll also replace the nested loops used to compute velocity towards the middle of the flock with a vectorised approach:
 
 ``` python
@@ -158,6 +161,8 @@ xvs = xvs - newxs
 newys = (ys - np.sum(ys)/float(boid_num)) * 0.01
 yvs = yvs - newys
 ```
+
+### Timing it
 
 After our changes:
 
