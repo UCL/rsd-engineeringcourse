@@ -27,7 +27,7 @@ We are looking for:
 
 ### Separation of concerns
 
-We'll begin by separating out the code used to model our boids from the code used for animation.
+We'll begin by separating out the code used to model our boids from the code used for animation:
 
 ``` python
 + view_boids.py
@@ -43,15 +43,31 @@ We'll begin by separating out the code used to model our boids from the code use
 +        frames=50, interval=50)
 ```
 
-<!--
-### Polymorphism and inheritance
+### Refactor with inheritance
 
-Comment:
+We can move towards object oriented code by creating separate subclasses for our different species of bird:
 
 ``` python
+# Create super class
+class Boid(object):
+    def __init__(self,x,y,xv,yv,owner,species):
+        self.position=array([x,y])
+        self.velocity=array([xv,yv])
+        self.owner=owner
+        self.species=species
 
+class Starling(Boid):
+    def __init__(self,x,y,xv,yv,owner):
+        super(Starling, self).__init__(x,y,xv,yv,owner,'Starling')
+    ...
+
+class Eagle(Boid):
+    def __init__(self,x,y,xv,yv,owner):
+        super(Eagle, self).__init__(x,y,xv,yv,owner,'Eagle')
+    ...
 ```
-!-->
+
+
 
 <!--
 ### Design patterns
