@@ -35,7 +35,7 @@ git checkout -b perform
 
 ### A little tidying...
 
-We'll begin with a little housekeeping, first by putting the step that initialises the boids into a function, taking us from:
+We'll begin with some housekeeping by putting the step that initialises the boids into a function, which takes us from:
 
 ``` python
 boids_x=[random.uniform(-450,50.0) for x in range(50)]
@@ -48,6 +48,7 @@ boids=(boids_x,boids_y,boid_x_velocities,boid_y_velocities)
 to:
 
 ``` python
+# initialise a flock of boids
 def initialise_boids(number_of_boids):
     boid_rng = range(number_of_boids)
     boids_x=[random.uniform(-450,50.0) for boid in boid_rng]
@@ -59,12 +60,12 @@ def initialise_boids(number_of_boids):
 ```
 
 <!--
-Reminder about the importance of tests, which most people completing the exercise neglected. Also, if refactoring, keep the original functionality. Still need to plot. Still need to be able to run.
+Reminder about the importance of tests, which most people completing the exercise neglected.
 -->
 
 ### Write tests
 
-Before thinking about performance, we'll update our tests. Our boids should exhibit the following behaviour:
+Before thinking about performance, we'll update our tests. A flock of boids should exhibit the following behaviour:
 
 * fly towards the centre of a flock
 * fly away from nearby boids
@@ -72,6 +73,7 @@ Before thinking about performance, we'll update our tests. Our boids should exhi
 * move according to velocity
 
 ``` python 
+# No flocking behaviour
 def test_only_one_boid_shows_no_flocking_behaviour():
     x_pos,y_pos,x_vel,y_vel = [1.0],[1.0],[2.0],[7.0]
     boid = (x_pos, y_pos, x_vel, y_vel)
@@ -96,9 +98,10 @@ autopep8 -i boids.py
 
 ### Making a start
 
-We'll first add an empty function to contain our soon-to-be-faster code:
+Let's add an empty function to contain our soon-to-be-faster code:
 
 ``` python
+# Getting ready to optimise
 def update_boids_faster(boids):
     ''' This is where our faster boids will live '''
     pass
@@ -106,14 +109,14 @@ def update_boids_faster(boids):
 
 ### Two competing functions
 
-We now have two functions, which, eventually, should do the same thing at different speeds:
+We now have two functions, which will do the same thing at different speeds, if all goes to plan:
 
 * ```update_boids()```
 * ```update_boids_faster()```
 
 ### Updating our tests
   
-We will also add the new function to our test framework, using the nose_parameterized decorator. We're expecting it to fail the tests to begin with:
+We should include the new function in our test framework, which we can do with the nose_parameterized decorator. We're expecting it to fail the tests to begin with:
 
 ``` python
 # nose_parameterized lets us use the @parameterized decorator
@@ -142,9 +145,6 @@ We'll replace this loop with a vectorised version:
 
 ``` python
 # Move according to velocities
-# for i in range(len(xs)):
-#   xs[i]=xs[i]+xvs[i]
-#   ys[i]=ys[i]+yvs[i]
 xs = xs + xvs
 ys = ys + yvs
 ```
@@ -163,7 +163,7 @@ yvs = yvs - newys
 
 ### More refactoring
 
-We can optimise further to perform the operations on the boids array in-place, instead of copying and unpacking to the xs, ys, xvs, and yvs.
+We can perform the operations on the boids array in-place, instead of copying to the xs, ys, xvs, and yvs variables.
 
 ``` python
 # Fly towards the middle
@@ -188,7 +188,7 @@ update_boids_faster(boids)
 
 ### Sample solution
 
-A sample solution with clean commit history is available at: 
+A sample solution with cleanish commit history is available at: 
 [https://github.com/tompollard/bad-boids/commits/perform](https://github.com/tompollard/bad-boids/commits/perform)
 
 
