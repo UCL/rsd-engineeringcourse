@@ -14,11 +14,9 @@ Unnecessary code is a home for unnecessary mistakes, so **d**on't **r**epeat **y
 * decorators
 * operator overloading. 
 
-Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts.
-
 ### Writing a library to handle units
 
-We are looking for:
+Our exercise was to write a library to handle quantities with units, creating an opportunity to apply some of these concepts. We are looking for:
 
 * Readable code and sensible tests (always!)
 * Simple, well-structured library

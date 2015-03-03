@@ -13,9 +13,9 @@ Construction is about we use letters and symbols to build readable, meaningful s
 * progressive improvement of code with refactoring
 * refactoring code with classes
 
-Our exercise put this knowledge into practice by refactoring 'Bad Boids', some intentionally-bad code that mimicked the motion of a flock of birds.
-
 ### Refactoring bad-boids
+
+Our exercise put our knowledge into practice by refactoring 'Bad Boids', some intentionally-bad code that mimicked the motion of a flock of birds. 
 
 We are looking for:
 

@@ -16,11 +16,9 @@ Libraries make us powerful. In this session we reviewed:
 
 During the session we demonstrated how existing libraries enable us to find and download a map from the web and measure the density of green space. 
 
-Our exercise focused on packaging code to make it easy to share and reuse.
-
 ### Packaging the greengraph code
 
-We are looking for:
+Our exercise focused on packaging code to make it easy to share and reuse. We are looking for:
 
 * Readable code and sensible tests (always!)
 * Well-structured package

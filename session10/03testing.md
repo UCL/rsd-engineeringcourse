@@ -12,11 +12,9 @@ Tests save time, improve code quality, and give peace of mind. In the testing se
 * mocking and debugging
 * test-driven development. 
 
-Our exercise was to apply this new knowledge to implement and test a Monte-Carlo algorithm.
-
 ### The Monte-Carlo exercise
 
-We are looking for:
+The exercise was to apply our new knowledge to implement and test a Monte-Carlo algorithm. We are looking for:
 
 * Tidy, well-commented code with consistent syntax (e.g. [PEP8](https://www.python.org/dev/peps/pep-0008/))
 * Sensible set of tests
