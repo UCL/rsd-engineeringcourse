@@ -6,11 +6,12 @@ title: Further Git
 
 ### Further Git
 
-Mastering Git opens up a powerful set of tools for collaborative programming.
+Mastering Git opens up a powerful set of tools for collaborative programming.In this session we took a more in depth look at Git, reviewing areas such as:
 
-In this session we took a more in depth look at Git, reviewing features such as:
-
-* branching and tagging
-* how to merge code
+* key concepts in distributed and centralised version control
+* workflows for solo- and team-working
+* revision history
+* good branching strategy
+* merging, cherry-picking, tagging, and checking the log
 * publishing a website.
 

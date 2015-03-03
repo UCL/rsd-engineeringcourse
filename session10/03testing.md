@@ -6,9 +6,7 @@ title: Testing
 
 ### Testing
 
-Tests save time, improve code quality, and give peace of mind. 
-
-In the testing session, we learnt about:
+Tests save time, improve code quality, and give peace of mind. In the testing session, we learnt about:
 
 * how to incorporate tests using frameworks like Nose
 * mocking and debugging

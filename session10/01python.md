@@ -8,7 +8,9 @@ title: Python
 
 Our first session looked at the basics of programming in Python, covering data types, control and flow, functions, and modules. 
 
-In preparation for later work, we set up our tools, including:
+### Preparing our working environment
+
+In preparation for later work we set up our tools, including:
 
 * Python
 * IPython Notebook

@@ -6,7 +6,15 @@ title: Libraries
 
 ### Libraries
 
-Libraries make us powerful. In this session we demonstrated how existing libraries could help us to find and download a map from the web and measure the density of green space. 
+Libraries make us powerful. In this session we reviewed:
+
+* good practice in selecting libraries
+* tools for package management
+* methods for promoting cross-platform independence when creating libraries
+* good practice in defining a project layout
+* tools for packaging and distributing our own libraries
+
+During the session we demonstrated how existing libraries enable us to find and download a map from the web and measure the density of green space. 
 
 Our exercise focused on packaging code to make it easy to share and reuse.
 
