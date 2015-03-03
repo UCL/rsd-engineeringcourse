@@ -130,17 +130,48 @@ def test_only_one_boid_shows_no_flocking_behaviour(update_function):
 
 ### Vectorisation
 
-Our current ```update_boids()``` function uses nested loops to fly boids towards the middle of the flock:
+Our current ```update_boids()``` function uses a loop to update the position of boids based on their velocities:
+
+``` python
+# Move according to velocities
+for i in range(len(xs)):
+    xs[i] = xs[i] + xvs[i]
+    ys[i] = ys[i] + yvs[i]
+```
+
+We'll replace this loop with a vectorised version (NB: we will also need to modify our function to ```return``` the updated values because this operation creates a copy, rather than modifying in-place):
+
+``` python
+# Move according to velocities
+# for i in range(len(xs)):
+#   xs[i]=xs[i]+xvs[i]
+#   ys[i]=ys[i]+yvs[i]
+xs = xs + xvs
+ys = ys + yvs
+```
+
+We'll also replace the nested loops used to compute velocity towards the middle of the flock with a vectorised approach:
 
 ``` python
 # Fly towards the middle
-for i in range(len(xs)):
-    for j in range(len(xs)):
-        xvs[i] = xvs[i] + (xs[j] - xs[i]) * 0.01 / len(xs)
+newxs = (xs - np.sum(xs)/float(boid_num)) * 0.01
+xvs = xvs - newxs
+newys = (ys - np.sum(ys)/float(boid_num)) * 0.01
+yvs = yvs - newys
 ```
 
-We'll replace these loops with a vectorised version:
+After our changes:
 
+``` python
+# initialise with 200 boids
+%%timeit
+update_boids(boids)
+'10 loops, best of 3: 81.1 ms per loop'
+
+%%timeit
+update_boids_faster(boids)
+'100 loops, best of 3: 1.97 ms per loop'
+```
 
 ### Sample solution
 
