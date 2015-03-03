@@ -6,7 +6,7 @@ title: Construction
 
 ### Construction
 
-Construction is about we use letters and symbols to build readable, meaningful software. Our session covered: 
+Construction is about how we use letters and symbols to build readable, meaningful software. Our session covered: 
 
 * conventions of layout and syntax
 * how to write comments and documentation
