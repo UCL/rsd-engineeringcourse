@@ -35,7 +35,7 @@ git checkout -b perform
 
 ### A little tidying...
 
-We'll begin with some housekeeping by putting the step that initialises the boids into a function, which takes us from:
+We'll then do some housekeeping. For example, by putting the step that initialises the boids into a function, which takes us from:
 
 ``` python
 boids_x=[random.uniform(-450,50.0) for x in range(50)]

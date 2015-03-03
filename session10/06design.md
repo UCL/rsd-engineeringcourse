@@ -27,7 +27,7 @@ We are looking for:
 
 ### Separation of concerns
 
-We'll begin by separating out the code used to model our boids from the code used for animation:
+We'll begin by separating the model from the animation:
 
 ``` python
 + view_boids.py
