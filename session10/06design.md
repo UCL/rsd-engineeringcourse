@@ -69,7 +69,7 @@ class Eagle(Boid):
 
 ### Counting boids
 
-We'll also add a class variable, just because we can, to help us to keep track of the number of boids:
+We'll also add a class member, just because we can, to help us to keep track of the number of boids:
 
 ``` python 
 class Boid(object):
