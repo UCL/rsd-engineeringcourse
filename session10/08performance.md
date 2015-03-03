@@ -22,8 +22,7 @@ Returning to the Boids code for our exercise, we sought to reimplement the model
 * Attempts to optimise, for example with:
     - Appropriate use of data types
     - Cython and/or NumPy
-    - Vectorisation of loops
-    - Arraywise operations
+    - Vectorisation and arraywise operations
 
 ### Create a new working branch
 
