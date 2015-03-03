@@ -25,6 +25,24 @@ We are looking for:
 * Use of design pattern/s
 * Unified Modelling Language for visualisation of classes
 
+### Separation of concerns
+
+We'll begin by separating out the code used to model our boids from the code used for animation.
+
+``` python
++ view_boids.py
+
++ from boids import Boids
++ from matplotlib import pyplot as plt
++ from matplotlib import animation
+...
++ def animate(frame):
++    boids.update()
++    scatter.set_offsets(zip(boids.xs,boids.ys))
++    anim = animation.FuncAnimation(figure, animate,
++        frames=50, interval=50)
+```
+
 <!--
 ### Polymorphism and inheritance
 

@@ -187,14 +187,6 @@ update_boids_faster(boids)
 'Best of 3: 945 µs per loop'
 ```
 
-
-<!-- 
-Current version
-update_boids: Best of 3: 365 ms per loop 
-update_boids_faster: Best of 3: 945 µs per loop
-
--->
-
 ### Sample solution
 
 A sample solution with clean commit history is available at: 
