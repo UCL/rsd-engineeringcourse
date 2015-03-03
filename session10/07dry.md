@@ -6,7 +6,7 @@ title: DRY programming tricks
 
 ### DRY programming tricks
 
-Unnecessary code is a home for unnecessary mistakes, so __**d**__on't __**r**__epeat __**y**__ourself! 
+Unnecessary code is a home for unnecessary mistakes, so **d**on't **r**epeat **y**ourself! 
 
 This session explored techniques for refactoring away repetitive code, and introduced the concepts of functional programming, exception handling, decorators, and operator overloading. 
 
@@ -69,7 +69,7 @@ weight:
 
 ### Operator overloading
 
-Operator overloading can be used to define custom behaviours for 'magic' methods such as __eq__ (==), _mul__ (\*), __add__ (+), and __sub__ (-). For example:
+Operator overloading can be used to define custom behaviours for 'magic' methods such as \_\_eq\_\_ (==), \_\_mul\_\_ (\*), \_\_add\_\_ (+), and \_\_sub\_\_ (-). For example:
 
 ``` python
 # Base unit
