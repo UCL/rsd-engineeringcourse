@@ -139,7 +139,7 @@ for i in range(len(xs)):
     ys[i] = ys[i] + yvs[i]
 ```
   
-We'll replace this loop with a vectorised version (NB: we will also need to modify our function to ```return``` the updated values because this operation creates a copy, rather than modifying in-place):
+We'll replace this loop with a vectorised version:
 
 ``` python
 # Move according to velocities
@@ -160,6 +160,16 @@ newxs = (xs - np.sum(xs)/float(boid_num)) * 0.01
 xvs = xvs - newxs
 newys = (ys - np.sum(ys)/float(boid_num)) * 0.01
 yvs = yvs - newys
+```
+
+### More refactoring
+
+We can optimise further to perform the operations on the boids array in-place, instead of copying and unpacking to the xs, ys, xvs, and yvs.
+
+``` python
+# Fly towards the middle
+boids[2:,:]-= 0.01*(boids[0:2,:]- \
+    np.sum(boids[0:2,:,np.newaxis],1)/boid_num)
 ```
 
 ### Timing it
