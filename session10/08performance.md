@@ -167,15 +167,23 @@ yvs = yvs - newys
 After our changes:
 
 ``` python
-# initialise with 200 boids
+# initialise with 100 boids
 %%timeit
 update_boids(boids)
-'10 loops, best of 3: 81.1 ms per loop'
+'Best of 3: 365 ms per loop'
 
 %%timeit
 update_boids_faster(boids)
-'100 loops, best of 3: 1.97 ms per loop'
+'Best of 3: 945 &micro; per loop'
 ```
+
+
+<!-- 
+Current version
+update_boids: Best of 3: 365 ms per loop 
+update_boids_faster: Best of 3: 945 µs per loop
+
+-->
 
 ### Sample solution
 

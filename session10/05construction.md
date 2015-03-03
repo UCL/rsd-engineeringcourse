@@ -21,7 +21,7 @@ We are looking for:
 
 * Readable code and sensible tests (always!)
 * Appropriate refactoring
-    - cleaning up syntax (whitespace; repetition; unnecessary code)
+    - cleaning up whitespace, repetition, unnecessary code
     - named variables replacing hardcoded values
     - relevant use of functions and/or classes
 
@@ -83,7 +83,7 @@ def test_bad_boids_regression():
         'fixture.yml'))) ... 
 ```
 
-... and expected behaviour:
+... and tests that define expected behaviour:
 
 ``` python
 def test_boid_interaction_avoidance():
