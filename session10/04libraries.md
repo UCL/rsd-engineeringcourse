@@ -52,7 +52,7 @@ from setuptools import setup, find_packages
 setup(
     name = "GreenGraph",
     version = "0.1",
-    packages = find_packages(exclude=['*test']),
+    packages = find_packages(exclude=['*test']), # dependencies
     scripts = ['scripts/greengraph'],
 
     install_requires = ['numpy','geopy','pypng'],

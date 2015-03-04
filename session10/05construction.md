@@ -15,7 +15,7 @@ Construction is about how we use letters and symbols to build readable, meaningf
 
 ### Refactoring bad-boids
 
-Our exercise put our knowledge into practice by refactoring 'Bad Boids', some intentionally-bad code that mimicked the motion of a flock of birds. 
+Our exercise put our knowledge into practice by refactoring 'bad-boids', some intentionally-bad code that mimics the motion of a flock of birds. 
 
 We are looking for:
 
