@@ -151,7 +151,7 @@ ys = ys + yvs
 
 ### Show me the boids
 
-Visualisation is a useful tool for checking that our code is behaving as expected. After making changes, we'll re-run our animation to check the flocking boids:
+Visualisation is useful for checking that our code is behaving as expected. After refactoring, we'll re-run our animation to check the flocking boids:
 
 ![Snapshot of the boids animation](session10/figures/visualise_boids.png)
 
