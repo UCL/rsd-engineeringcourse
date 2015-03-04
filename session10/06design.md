@@ -50,20 +50,19 @@ We can move towards object orientation by creating separate subclasses for our d
 ``` python
 # Create super class
 class Boid(object):
-    def __init__(self,x,y,xv,yv,owner,species):
+    def __init__(self,x,y,xv,yv,owner):
         self.position=array([x,y])
         self.velocity=array([xv,yv])
         self.owner=owner
-        self.species=species
 
 class Starling(Boid):
     def __init__(self,x,y,xv,yv,owner):
-        super(Starling, self).__init__(x,y,xv,yv,owner,'Starling')
+        super(Starling, self).__init__(x,y,xv,yv,owner)
     ...
 
 class Eagle(Boid):
     def __init__(self,x,y,xv,yv,owner):
-        super(Eagle, self).__init__(x,y,xv,yv,owner,'Eagle')
+        super(Eagle, self).__init__(x,y,xv,yv,owner)
     ...
 ```
 
@@ -74,12 +73,11 @@ We'll also add a class member, just because we can, to keep track of the total n
 ``` python 
 class Boid(object):
     number_created=0
-    def __init__(self,x,y,xv,yv,owner,species):
+    def __init__(self,x,y,xv,yv,owner):
         Boid.number_created+=1
         self.position=array([x,y])
         self.velocity=array([xv,yv])
         self.owner=owner
-        self.species=species
     @classmethod
     def howMany(cls):
         return cls.number_created
