@@ -116,7 +116,7 @@ We now have two functions, which will do the same thing at different speeds, if 
 
 ### Updating our tests
   
-We should include the new function in our test framework, which we can do with the nose_parameterized decorator. We're expecting it to fail the tests to begin with:
+We should include the new function in our test framework, which we can do with the nose_parameterized decorator:
 
 ``` python
 # nose_parameterized lets us use the @parameterized decorator
@@ -148,6 +148,12 @@ We'll replace this loop with a vectorised version:
 xs = xs + xvs
 ys = ys + yvs
 ```
+
+### Show me the boids
+
+Visualisation is a useful tool for checking that our code is behaving as expected. After making changes, we'll re-run our animation to check the flocking boids:
+
+![Snapshot of the boids animation](session10/figures/visualise_boids.png)
 
 ### More loops
   
