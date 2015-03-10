@@ -1,5 +1,5 @@
-img[src*="engineering/session06/figures/factory.png"], 
-img[src*="/session06/figures/builder.png"] {
+img[src*="/engineering/session06/figures/factory.png"], 
+img[src*="http://development.rc.ucl.ac.uk/training/engineering/session06/figures/builder.png"] {
     max-width: 400px !important;
     vertical-align: middle;
 }
