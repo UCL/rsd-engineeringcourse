@@ -1,5 +1,8 @@
 img[src*="figures/factory.png"], 
-img[src*="figures/builder.png"] {
-    max-width: 400px !important;
+img[src*="figures/builder.png"],
+img[src*="figures/builder_seq.png"], 
+img[src*="python/eight.png"],
+img[src*="figures/visualise_boids.png"] {
+    max-width: 600px;
     vertical-align: middle;
 }
