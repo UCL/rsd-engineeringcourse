@@ -1,5 +1,5 @@
 img[src*="figures/factory.png"], 
-img[src*="/figures/builder.png"] {
+img[src*="figures/builder.png"] {
     max-width: 400px !important;
     vertical-align: middle;
 }
