@@ -1,10 +1,13 @@
-img[src*="figures/factory.png"], 
-img[src*="figures/builder.png"],
+img[src*="figures/factory.png"],
 img[src*="figures/builder_seq.png"], 
 img[src*="python/eight.png"],
 img[src*="figures/visualise_boids.png"],
 img[src*="figures/tdd.png"] {
-    max-width: 600px;
-    max-height: 1000px;
+    max-width: 500px;
+    vertical-align: middle;
+}
+
+img[src*="figures/builder.png"] {
+    max-width: 280px;
     vertical-align: middle;
 }
