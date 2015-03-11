@@ -62,7 +62,7 @@ In [2]: exit
 
 This lecture is available as an [IPython Notebook](http://nbviewer.ipython.org/url/development.rc.ucl.ac.uk/training/engineering/session01/session01/python/session01.ipynb)
 
-![](session01/python/eight.png)
+![](session01/figures/eight.png)
 
 ### Install Python and IPython Notebook
 

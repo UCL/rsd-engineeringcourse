@@ -1,6 +1,5 @@
 img[src*="figures/factory.png"],
-img[src*="figures/builder_seq.png"], 
-img[src*="python/eight.png"],
+img[src*="figures/eight.png"],
 img[src*="figures/visualise_boids.png"],
 img[src*="figures/tdd.png"] {
     max-width: 500px;
