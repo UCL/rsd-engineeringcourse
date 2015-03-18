@@ -4,8 +4,8 @@ reporter:supplementary:
     crumbs:
         - ['ISD', 'http://ucl.ac.uk/isd']
         - ['OUR SERVICES', 'http://ucl.ac.uk/isd/services']
-        - ['RESEARCH IT', 'http://www.ucl.ac.uk/isd/services/research_services/']
-        - ['TRAINING', 'http://www.ucl.ac.uk/isd/services/research_services/training']
+        - ['RESEARCH IT', 'http://www.ucl.ac.uk/isd/services/research-it/']
+        - ['TRAINING', 'http://www.ucl.ac.uk/isd/services/research-it/training']
         - ['RESOURCES', 'http://development.rc.ucl.ac.uk/training']
     include_leftnav: True
     default: True
