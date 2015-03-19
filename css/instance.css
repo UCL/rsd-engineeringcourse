@@ -1,0 +1,12 @@
+img[src*="figures/factory.png"],
+img[src*="figures/eight.png"],
+img[src*="figures/visualise_boids.png"],
+img[src*="figures/tdd.png"] {
+    max-width: 500px;
+    vertical-align: middle;
+}
+
+img[src*="figures/builder.png"] {
+    max-width: 280px;
+    vertical-align: middle;
+}
