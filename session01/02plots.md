@@ -21,7 +21,7 @@ plotting script is wrong as if the code that generates the data is wrong.
 
 <div class="credit">
 Credit: the following slides are based on [Software Carpentry](http://software-carpentry.org/) materials by the [Software Carpentry Team]
-(https://github.com/swcarpentry/bc/blob/master/team.md), released under a [CC BY 4.0 license](http://software-carpentry.org/license.html).
+(http://software-carpentry.org/pages/team.html), released under a [CC BY 4.0 license](http://software-carpentry.org/license.html).
 </div>
 
 You can follow along in an [IPython Notebook](http://nbviewer.ipython.org/github/UCL/rsd-engineeringcourse/blob/staging/session01/notebooks/session1.ipynb)
