@@ -6,9 +6,9 @@ title: Licensing
 
 ###This course
 
-This course is distributed under the CC-BY license.
+This course is distributed under the [Creative Commons By Attribution license](https://creativecommons.org/licenses/by/3.0/).
 Which means you can modify it, and use it to teach your own course,
-so long as you credit UCL RITS.
+so long as you credit [UCL Research IT Services](http://www.ucl.ac.uk/research-it-services/homepage).
 
 ###Disclaimer
 
@@ -16,8 +16,8 @@ I'm going to attempt to give some basic advice on software license choice.
 
 But:
 
-* I am NOT A LAWYER
-* Everyone's opinion differs (And flamewars are boring)
+* I am NOT a lawyer
+* Everyone's opinion differs (and flamewars are boring)
 
 If you care, read the [O'Reilly book](http://www.amazon.co.uk/Understanding-Open-Source-Software-Licensing-ebook/dp/B0026OR3J4/ref=tmm_kin_title_0).
 
@@ -57,7 +57,7 @@ Plently of people open source their software and sell:
 * Add-ons e.g. [Puppet](http://puppetlabs.com/puppet/enterprise-vs-open-source)
 * Server software which open source client software talks to e.g. [GitHub API clients](https://github.com/octokit/octokit.rb)
 
-###Plagiarism vs Self-promotion
+###Plagiarism vs self-promotion
 
 Many researchers worry about people stealing their work, if they open source their code.
 
@@ -123,7 +123,7 @@ future software ecosystem. Also,
 
 * Unless you are a lawyer, you cannot do this safely!*
 
-###Licenses for Code, Content, and Data.
+###Licenses for code, content, and data.
 
 Licenses designed for code should not be used to license data or prose.
 
@@ -153,7 +153,7 @@ If you want to force other people using your code to make derivatives open sourc
 If you want to use code that has a permissive license, it's safe to use it and keep your code secret.
 If you want to use code that has a copyleft license, you'll have to release your code under such a license.
 
-###Academic Use Only
+###Academic use only
 
 Some researchers want to make their code free for Academic use only.
 None of the standard licenses state this, and this is a reason why academic bespoke licenses proliferate.
@@ -183,7 +183,7 @@ If I take copyleft code, and use it to host a web service, I have not sold the s
 Therefore, under some licenses, I do not have to release any derivative software.
 This "loophole" in the GPL is closed by the AGPL ("Affero GPL")
 
-###Library Linking
+###Library linking
 
 If I use your code just as a library, without modifying it or including it directly in my own code, 
 does the copyleft term of the GPL apply?
@@ -192,7 +192,7 @@ does the copyleft term of the GPL apply?
 
 If you don't want it to, use the LGPL. ("Lesser GPL"). This has an exception for linking libraries.
 
-###Citing Software
+###Citing software
 
 Almost all software licenses require people to credit you for what they used. ("Attribution")
 
@@ -240,7 +240,7 @@ opensource.org for details of how to apply it to your software,
 
 See [GitHub's advice on how to choose a license](http://choosealicense.com/)
 
-###Open source does not equal free maintainance
+###Open source does not equal free maintenance
 
 One common misunderstanding of open source software is that you'll automatically get loads of contributors from around the internets.
 This is wrong. Most open source projects get no commits from anyone else.

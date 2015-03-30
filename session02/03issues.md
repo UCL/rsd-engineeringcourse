@@ -56,7 +56,6 @@ If possible, submit a minimal reproducing code fragment.
 * Underway
 * Blocked
 
-
 ###Resolutions
 
 * Resolved
@@ -87,8 +86,6 @@ In a given cycle:
 * Decide which features should be implemented
 * Decide which bugs should be fixed
 * Move these issues from the Backlog into the current cycle. (Aka Sprint)
-
-
 
 ###GitHub issues
 
