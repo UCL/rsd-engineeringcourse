@@ -17,6 +17,7 @@ img[src*="figures/builder.png"] {
     font-size: 90%;
     font-style: italic;
     padding-left: 1em;
+    padding-bottom: 2em;
 }
 
 article ul, article ol {
