@@ -10,3 +10,8 @@ img[src*="figures/builder.png"] {
     max-width: 280px;
     vertical-align: middle;
 }
+
+.figure .caption {
+    font-size: 90%;
+    font-style: italic;
+}

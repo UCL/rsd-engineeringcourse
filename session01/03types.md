@@ -5,7 +5,7 @@ title: Structures and Types
 
 ## Data in Python
 
-### Floats and integers
+### Floats and integers
 
 Python has two core numeric types:
 {{ pyfrag('01','structures','Numerical') }}
@@ -17,7 +17,7 @@ useful operations.
 
 {{ pyfrag('01','structures','String') }}
 
-### Coersion
+### Coersion
 
 The name of a type can be used to convert between types:
 
@@ -36,7 +36,7 @@ a `len` operator and so on:
 
 {{ pyfrag('01','structures','Sequence') }}
 
-### Unpacking
+### Unpacking
 
 Sequences can be **unpacked** from sequences:
 
