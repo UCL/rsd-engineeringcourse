@@ -19,13 +19,14 @@ plotting script is wrong as if the code that generates the data is wrong.
 
 ### Analysing patient data
 
+<div class="credit">
 (The next few slides are taken from Software Carpentry materials and are (CC-BY) the contributors at
 https://github.com/swcarpentry/bc/blob/master/team.md)
+</div>
 
 You can follow along in an [IPython Notebook](http://nbviewer.ipython.org/github/UCL/rsd-engineeringcourse/blob/staging/session01/notebooks/session1.ipynb)
 
 ### The data
-
 
 Imagine you are studying inflammation in patients who have been given a new treatment for arthritis, 
 and need to analyze the first dozen data sets. The data sets are stored in 

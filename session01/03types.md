@@ -2,7 +2,6 @@
 title: Structures and Types
 ---
 
-
 ## Data in Python
 
 ### Floats and integers

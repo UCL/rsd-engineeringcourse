@@ -1,7 +1,4 @@
-img[src*="figures/factory.png"],
-img[src*="figures/eight.png"],
-img[src*="figures/visualise_boids.png"],
-img[src*="figures/tdd.png"] {
+img[src*=".png"][src^="figures"] {
     max-width: 500px;
     vertical-align: middle;
     padding-left: 1em;
@@ -9,8 +6,6 @@ img[src*="figures/tdd.png"] {
 
 img[src*="figures/builder.png"] {
     max-width: 280px;
-    vertical-align: middle;
-    padding-left: 1em;
 }
 
 .figure .caption {
@@ -26,4 +21,13 @@ article ul, article ol {
 
 article ul ul, article ol ul {
     padding-left: 1em;
+}
+
+article .credit {
+    background-color: lightgrey;
+    width: 700px;
+    padding: 25px;
+    margin: 25px;
+    font-style: italic;
+    border: 1px solid grey;
 }
