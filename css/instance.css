@@ -4,14 +4,17 @@ img[src*="figures/visualise_boids.png"],
 img[src*="figures/tdd.png"] {
     max-width: 500px;
     vertical-align: middle;
+    padding-left: 1em;
 }
 
 img[src*="figures/builder.png"] {
     max-width: 280px;
     vertical-align: middle;
+    padding-left: 1em;
 }
 
 .figure .caption {
     font-size: 90%;
     font-style: italic;
+    padding-left: 1em;
 }

@@ -48,7 +48,7 @@ We want to:
 This will give us a good overview of various concepts in Python, which we'll
 return to some of after this initial survey.
 
-### Loading data
+### Loading data
 
 It's almost always wrong to do things yourself.
 
