@@ -18,3 +18,11 @@ img[src*="figures/builder.png"] {
     font-style: italic;
     padding-left: 1em;
 }
+
+article ul, article ol {
+    padding-left: 1em;
+}
+
+article ul ul, article ol ul {
+    padding-left: 1em;
+}
