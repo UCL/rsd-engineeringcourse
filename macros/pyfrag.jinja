@@ -8,18 +8,18 @@
 ```
 {% else %}
 ``` python
-{% if execute %}
-{% if check_errors %}
+{% if execute -%}
+{% if check_errors -%}
 {{d['session'+session+'/python/'+file+'.py|idio|pycon'][segment]|assert_does_not_contain("Error")}}
 {% else %}
 {{d['session'+session+'/python/'+file+'.py|idio|pycon'][segment]}}
-{% endif %}
-{% else %}
+{%- endif %}
+{% else -%}
 {{d['session'+session+'/python/'+file+'.py|idio|t'][segment]}}
-{% endif %}
+{%- endif %}
 ```
-{% if timed %}
+{% if timed -%}
 Taking: {{timed}} on my example run.
-{% endif %}
-{% endif %}
+{%- endif %}
+{%- endif %}
 {% endmacro %}
