@@ -7,6 +7,7 @@ title: Structures and Types
 ### Floats and integers
 
 Python has two core numeric types:
+
 {{ pyfrag('01','structures','Numerical') }}
 
 ### Strings

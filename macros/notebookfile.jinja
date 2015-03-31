@@ -9,12 +9,12 @@
 {% elif extension == 'yaml' %}
 {% set lang='yaml' %}
 {% endif %}
-{% if ".ipynb" in s.output_name() %}
+{% if ".ipynb" in s.output_name() -%}
 ``` python
 %%writefile {{file}}
 {{d['session'+session+'/python/'+file+'|idio|t']}}
 ```
-{% else %}
+{% else -%}
 {{file}}:
 {% if lang != markdown %}
 ``` {{lang}}
