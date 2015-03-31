@@ -27,10 +27,6 @@ Goal:
 
     ![](session03/figures/callgrind)
  
- 
-    <div align="left">
-    * Python: [profile](http://docs.python.org/2/library/profile.html)
-    * R: [Rprof](http://stat.ethz.ch/R-manual/R-devel/library/utils/html/Rprof.html)
-    </div>
-
+* Python: [profile](http://docs.python.org/2/library/profile.html)
+* R: [Rprof](http://stat.ethz.ch/R-manual/R-devel/library/utils/html/Rprof.html)
 
