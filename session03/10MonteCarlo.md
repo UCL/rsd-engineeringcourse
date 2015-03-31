@@ -7,7 +7,6 @@ title: "Exercise: Monte-Carlo"
 
 ###Description: Implement and test a simple Monte-Carlo algorithm
 
-<div align="left" style="position:relative;left:15px">
 Given an input function (energy) and starting point (density) and a temperature $T$
 
 1. Compute energy at current density
@@ -20,8 +19,6 @@ Given an input function (energy) and starting point (density) and a temperature 
        accept move only if $P_0 > P_1$
 
 1. Repeat
-</div>
-
 
 ###Caveats
 
