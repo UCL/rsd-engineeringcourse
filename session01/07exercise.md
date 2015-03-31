@@ -6,19 +6,22 @@ title: Exercise
 
 ### Exercises
 
-* Each week during the course, there will be an assessed homework exercise.
-* This will be a pass/fail exercise, submitted through Git, which we will learn about next week.
+- Each week during the course, there will be an assessed homework exercise.
+- This will be a pass/fail exercise, submitted through Git.
 
-This first week, the exercise will not be assessed, since we're still getting the tools up and running.
+This week the exercise will not be assessed, since we're still getting the tools up and running.
 
 ### Installation of Python and IPython Notebook
 
-Instead, please concentrate on making sure you've completed the installation instructions, and can run a 
-python file on your computer through the command line, and load an IPython notebook.
+Please concentrate on making sure that you have:
+
+- completed the installation instructions
+- can run a python file on your computer through the command line
+- can load an IPython notebook.
 
 ### Installation of Git
 
-Please make sure you can run Git at the command line ready for next session:
+Please make sure you can run Git at the command line:
 
 ``` bash
 git --version
@@ -32,13 +35,12 @@ cd ..
 rm -rf git_test
 ```
 
-### Sign up on GitHub
+### Sign up on GitHub
 
-Go to [GitHub](http://github.com) and create yourself an account, if you haven't already
+Go to [GitHub](http://github.com) and create yourself an account, if you haven't already.
 
 ### Look at some IPython Notebooks
 
-Download yourself some IPython notebooks from [NBViewer](http://nbviewer.ipython.org)
-Load them up, and have a play.
+Download yourself some IPython notebooks from [NBViewer](http://nbviewer.ipython.org). Load them up, and have a play.
 
 
