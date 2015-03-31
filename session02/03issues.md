@@ -6,9 +6,7 @@ title: Issues
 
 ###Issues
 
-Code has *bugs*.
-
-It also has things it should do *features*.
+Code has *bugs*. It also has *features*, things it should do.
 
 A good project has an organised way of managing these. Generally you should use an issue tracker.
 
