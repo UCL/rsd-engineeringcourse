@@ -32,12 +32,11 @@ If a unit test is too complicated, go smaller.
 * **actual result**: the output that is obtained
 * **coverage**: Proportion of all possible paths in the code that the tests take
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~{.fortran}
-    if(energy > 0) then
-       ! Do this 
-    else 
-       ! Do that
-    endif
-    ~~~~~~~~~~~~~~~~~~~~~~~~
+``` python
+if energy > 0:
+    ! Do this 
+else:
+    ! Do that
+```
 
 Is there a test for `energy > 0` and `energy <= 0`?
