@@ -5,17 +5,14 @@ title: Simple data manipulation and plotting
 
 ### Why write software to manage your data and plots? 
 
-We should use programs for our entire research pipeline.
+When data is manipulated in spreadsheets, the changes cannot be shared or checked.
+
+If we use programs for our entire research pipeline, the process is recorded for clarity and reproducibility.
 
 Not just main simulation or numerical code, but also the small scripts which we use to
 tidy up data and produce plots. 
 
-This should be code, so that the whole research pipeline
-is recorded for reproducibility. Data manipulation in spreadsheets cannot be shared or
-checked. 
-
-It should be *good* code, because research conclusions are just as wrong if the
-plotting script is wrong as if the code that generates the data is wrong.
+It should be *good* code, because every step in the pipeline is important. Errors when plotting may be as damaging as errors when generating data.
 
 ### Analysing patient data
 
