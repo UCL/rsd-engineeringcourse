@@ -106,10 +106,10 @@ print first_negative
 
 ### 'Zip'
 
-negatives = zip(range(10), [-1.0*x for x in range(10)])
+negatives = zip(range(5), [-1.0*x for x in range(5)])
 print negatives
 
 neg_dict=dict(negatives)
-print neg_dict[5]
+print neg_dict[4]
 
 
