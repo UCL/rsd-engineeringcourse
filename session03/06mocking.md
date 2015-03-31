@@ -60,6 +60,8 @@ StopIteration error thrown in ....
 
 ###Testing functions that call other functions
 
+<div align="left">
+
 ``` python
 def minimize(model, start_input):
     start_value = model(start_input)
@@ -69,7 +71,9 @@ def minimize(model, start_input):
 
 **Black-box**
 
-`model` is a function for which we think we know the result: e.g. small analytical model, rather than big expensive calculation. Internals of `minimize` are irrelevant. Only the result matters.
+`model` is a function for which we think we know the result: e.g. small analytical model, rather than big expensive calculation. 
+
+Internals of `minimize` are irrelevant. Only the result matters.
 
 **Clear-box**
 
@@ -79,11 +83,14 @@ def minimize(model, start_input):
 `minimize` must be tested in *isolation* from the rest of the code!
 </div>
 
+</div>
+
 ###Exercise: derivative function
 
 **Goal**
 
-Compute the derivative of the diffusion model from [the previous exercise](#/diffusion).
+Compute the derivative of the diffusion model 
+from [the previous exercise](#/diffusion).
 
 **Description**
 
