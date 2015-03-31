@@ -6,23 +6,15 @@ title: Classroom exercise
 
 ###Diffusion model in 1D
 
-<div align="left">
-
 Description: simplistic 1-dimensional diffusion model
 
-:   * Particles are on a 1d axis
-    * Particles do not want to be where there are other particles
+- Particles are on a 1d axis
+- Particles do not want to be where there are other particles
 
 Implementation:
 
-:   * Given a vector $n$ of positive integers, and of arbitrary length
-    * Compute the energy,
-
-        $E(n) = \frac{D}{2} \sum_i n_i(n_i - 1),$
-
-        where $D$ is a scalar coefficient.
-
-</div>
+- Given a vector $n$ of positive integers, and of arbitrary length
+- Compute the energy, $E(n) = \frac{D}{2} \sum_i n_i(n_i - 1),$ where $D$ is a scalar coefficient.
 
 {% raw %}
 <svg id="model" width="500" height="150" class="boundary"></svg>
@@ -118,7 +110,6 @@ Implementation:
 
 ###Starting point
 
-<div align="left">
 In a directory, create two files:
 
 * Implementation file: diffusion_model.py
@@ -146,8 +137,6 @@ def test_energy():
   """ Optional description for nose reporting """
   # Test something
 ```
-
-</div>
 
 ###Solution
 
