@@ -2,13 +2,13 @@
 title: Git and GitHub
 ---
 
-##Practicing with Git
+##Practising with Git
 
 ###Example Exercise
 
 In this course, we will use, as an example, the development of a few text files containing a description of a topic of your choice. 
 
-This could be your research, a hobby of yours, or something else. In the end, we will show you how to display the content of these files as a very simple website. 
+This could be your research, a hobby, or something else. In the end, we will show you how to display the content of these files as a very simple website. 
 
 ###Programming and documents
 

@@ -4,27 +4,34 @@ title: Collaboration
 
 ##Introduction
 
-###What Version Control is For
+### Why version control?
 
-* Managing Code Inventory
-    * "When did I introduce this bug"?
-    * Undoing Mistakes
-* Working with other programmers
-    * "How can I merge my work with Jim's"
+Version control helps us to manage code:
 
-###What is version control?
+- maintain backups
+- review history ("When did I introduce this bug"?)
+- undo mistakes
+- keep track of versions
 
-Do some programming
+Version control helps us to work collaboratively:
+
+- "How can I share my code?"
+- "How can I submit a change to someone else's code?"
+- "How can I merge my work with Sue's?"
+
+###How do we use version control?
+
+Do some programming, then commit our work:
 
 `my_vcs commit`
 
-Program some more
+Program some more.
 
-Realise mistake
+Spot a mistake:
 
 `my_vcs rollback`
 
-Mistake is undone
+Mistake is undone.
 
 ###What is version control? (Team version)
 
