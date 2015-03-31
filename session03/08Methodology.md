@@ -8,17 +8,12 @@ title: Methodology
 
 ![Developing with TDD: Write test, see it fail](session03/figures/tdd)
 
-
 ###Behaviour driven development
 
-<div align="left">
-BDD
-
-:    * Plain English description of scenario
-     * Communicates behavior of code, rather than how code works
-     * Simple enough for thesis director to understand
-     * Translated to code internally by developer
-</div>
+- Plain English description of scenario
+- Communicates behavior of code, rather than how code works
+- Simple enough for thesis director to understand
+- Translated to code internally by developer
 
 ``` ruby
 Scenario: eat 5 out of 12
