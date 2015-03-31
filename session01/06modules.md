@@ -5,11 +5,11 @@ title: Modules
 ## Modules
 
 ### File modules
-Each python file defines a module, which can be imported from with import:
+Each python file defines a module:
 
 {{ notebookfile('01','pretty.py') }}
 
-Another file:
+Modules can be imported to another file with `import`:
 
 {{ pyfrag('01','modules','FileImport') }}
 
@@ -25,16 +25,15 @@ Things can be imported from modules to become part of the current module
 
 {{ pyfrag('01','modules','ImportFrom') }}
 
-### Import and rename
+### Import and rename
 
-You can rename things as you import them to avoid clashes or for convenience
+You can rename things as you import them for convenience, or to avoid clashes:
 
 {{ pyfrag('01','modules','ImportAlias') }}
 
-### Folders as modules
+### Packages (folders as modules)
 
-If you make a folder with a special file called __init__.py in, the *folder* becomes
-a module, and can contain other modules. It is referred to as a package:
+If we create an empty file called `__init__.py` and place it in a folder, the *folder* becomes a module. We call this a package:
 
 ``` tree
 module1
@@ -57,3 +56,4 @@ Inside packages, you can use `..` to refer to the parent module
 {{ notebookfile('01','module1/module3/__init__.py')}}
 
 {{ pyfrag('01','modules','RelativeImport') }}
+
