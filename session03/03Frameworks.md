@@ -62,7 +62,6 @@ Frameworks should simplify our lives:
 
 ###Nose framework: usage
 
-<div align="left">
 [nose](https://nose.readthedocs.org/en/latest/) is a python framework:
 
 ``` bash
@@ -81,13 +80,11 @@ OK
 * collects all subroutines called ``test_*``
 * runs tests and reports results
 
-<br>
 Some options:
 
 * help: `nosetests --help`
 * test only a given file: `nosetests test_file.py`
 * compute coverage: `nosetests --with-coverage`
-</div>
 
 ###Nose: writing tests
 
