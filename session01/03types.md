@@ -41,7 +41,7 @@ Sequences can be **unpacked** from sequences:
 
 {{ pyfrag('01','structures','Unpacking') }}
 
-### Concepts and Duck Typing
+### Concepts and duck typing
 
 We call the set of things that behave like arrays from the point of
 view of slicing "sequences". 
@@ -65,7 +65,7 @@ A `tuple` is an immutable sequence:
 
 `str`, `int` and `float` are all immutable too.
 
-### Identity vs Equality
+### Identity vs equality
 
 Having the same data is different from being the same actual object
 in memory:
@@ -84,19 +84,17 @@ Python supports an "associative array":
 
 {{ pyfrag('01','structures','Sequence') }}
 
-### Immutable Keys Only
+### Immutable keys only
 
-The way in which dictionaries work is one of the coolest things in computer science:
-the "hash table". We'll look more into this later, but the consequence of this is
-that things would totally break of you changed a key in a dictionary.
+The way in which dictionaries work, with a "hash table", is one of the coolest things in computer science. A consequence of the way dictionaries work is that changing the key breaks the dictionary.
 
-So, you can only use **immutable** things as keys.
+So, you can only use **immutable** things as keys:
 
 {{ pyfrag('01','structures','ImmutableKeys', check_errors=False) }}
 
 ### No guarantee of order
 
-Another consequence of the way dictionaries work is that there's no guaranteed order among the
+Another consequence of the way dictionaries work is that there is no guaranteed order among the
 elements:
 
 {{ pyfrag('01','structures','Unordered') }}
@@ -105,6 +103,6 @@ elements:
 
 A set works like a dictionary, but with just keys.
 
-There's no guaranteed order, elements cannot occur twice.
+There is no guaranteed order, and elements cannot occur twice.
 
 {{ pyfrag('01','structures','Set') }}
