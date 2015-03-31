@@ -25,10 +25,11 @@ You can follow along in an [IPython Notebook](http://nbviewer.ipython.org/github
 
 ### The data
 
-Imagine you are studying inflammation in patients who have been given a new treatment for arthritis, 
-and need to analyze the first dozen data sets. The data sets are stored in 
-comma-separated values (CSV) format: 
-each row holds information for a single patient, and the columns represent successive days. 
+Imagine you are studying inflammation in patients who have been given a new treatment for arthritis. You would like to analyze the first dozen datasets. 
+
+The datasets are stored in 
+comma-separated values (CSV) format. Rows hold measurements for a single patient. Columns represents successive days. 
+
 The first few rows of our first file look like this:
 
 ``` csv
@@ -39,7 +40,7 @@ The first few rows of our first file look like this:
 
 We want to:
 
-*   load that data into memory,
+*   load the data into memory,
 *   calculate the average inflammation per day across all patients, and
 *   plot the result.
 
@@ -48,26 +49,26 @@ return to some of after this initial survey.
 
 ### Loading data
 
-It's almost always wrong to do things yourself.
+It is almost always wrong to do things yourself.
 
-Someone's probably written a program already. 
+Someone has probably written a program already. 
 Python makes it easy to find and use other people's libraries.
 
-In this case, we want to use a python library to load and parse the csv data, and manipulate it as 
+In this case, we want to use a python library to load and parse the CSV data, and manipulate it as 
 a matrix.
 
 {{ pyfrag('01','numpy_nb','Starting') }}
 
 Here we've called a **function** `loadtxt` from a **module** `numpy`, and
-assigned it to a **variable** data. This course assumes you're happy with very basic
-programming concepts like function and variable. The IPython notebook contains more detail.
+assigned it to a **variable** data. This course assumes that you're happy with basic
+programming concepts like functions and variables. The IPython notebook contains more detail.
 
 ### Types
 
 {{ pyfrag('01','numpy_nb','Types1') }}
 
 We've jumped straight in and used a `numpy.ndarray` (numerical python) matrix type for our data.
-It's similar to a basic python `Array` type; we'll talk more about the differences later.
+Numpy arrays are similar to the basic python `Array` type; we'll talk more about the differences later.
 
 For now, it's important to know that Python variables have a type, that different types behave differently,
 but that, unlike C++ or Fortran, you don't need to say what type of variable something is before you use it.
