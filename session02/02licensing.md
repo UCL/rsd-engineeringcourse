@@ -4,76 +4,56 @@ title: Licensing
 
 ##Software Licensing
 
-###This course
+###Reuse
 
-This course is distributed under the [Creative Commons By Attribution license](https://creativecommons.org/licenses/by/3.0/).
-Which means you can modify it, and use it to teach your own course,
-so long as you credit [UCL Research IT Services](http://www.ucl.ac.uk/research-it-services/homepage).
+This course is distributed under the [Creative Commons By Attribution license](https://creativecommons.org/licenses/by/3.0/), which means you can modify and reuse the materials, so long as you credit [UCL Research IT Services](http://www.ucl.ac.uk/research-it-services/homepage).
 
 ###Disclaimer
 
-I'm going to attempt to give some basic advice on software license choice.
+Here we attempt to give some basic advice on choosing a license for your software. But:
 
-But:
+* we are NOT lawyers
+* opinions differ (and flamewars are boring)
+* this training does NOT constitute legal advice. 
 
-* I am NOT a lawyer
-* Everyone's opinion differs (and flamewars are boring)
+For an in-depth discussion of software licenses, read the [O'Reilly book](http://www.amazon.co.uk/Understanding-Open-Source-Software-Licensing-ebook/dp/B0026OR3J4/ref=tmm_kin_title_0).
 
-If you care, read the [O'Reilly book](http://www.amazon.co.uk/Understanding-Open-Source-Software-Licensing-ebook/dp/B0026OR3J4/ref=tmm_kin_title_0).
+Your department, or UCL, may have policies about applying licenses to code you create while a UCL employee or student. This training doesn't address this issue, and does not represent UCL policy -- seek advice from your supervisor or manager if concerned.
 
-This training does not constitute legal advice.
+###Choose a license
 
-Your department, or UCL, may have policies about applying licenses to code you create while a UCL employee or student.
-This training doesn't address this issue, and does not represent UCL policy -- 
-seek advice from your supervisor or manager if concerned.
+It is important to choose a license and to create a *license file* to tell people what it is. 
 
-###Have a License File
+The license lets people know whether they can reuse your code and
+under what terms. [This course has one](https://github.com/UCL/rsd-engineeringcourse/blob/master/LICENSE.md), for example.
 
-The most important thing is that you should always choose a license,
-even if it is a traditional (C) all rights reserved,
-and create a *license file* to tell people what it is.
-
-GitHub will offer to do this automatically when you create a new repository.
-
-Your license file should typically be called LICENSE.txt or similar.
-
-[This course has one](https://github.com/UCL/rsd-engineeringcourse/blob/master/LICENSE.md)
-
-License files are important to let people know whether they can reuse your code, and
-under what terms.
+Your license file should typically be called LICENSE.txt or similar. GitHub will offer to create a license file automatically when you create a new repository.
 
 ###Open source doesn't stop you making money
 
-The most important misconception about open source software is the thought that
-open source means you can't make any money.
+A common misconception about open source software is the thought that
+open source means you can't make any money. This is *wrong*. 
 
-This is *wrong*.
-
-Plently of people open source their software and sell:
+Plenty of people open source their software and profit from:
 
 * The software under a different license e.g. [Saxon](http://saxon.sourceforge.net/)
-* Consulting e.g. [Continuum](http://continuum.io/consulting) who help maintain NumPy
-* Manuals e.g. [VTK](http://www.vtk.org/)
-* Add-ons e.g. [Puppet](http://puppetlabs.com/puppet/enterprise-vs-open-source)
-* Server software which open source client software talks to e.g. [GitHub API clients](https://github.com/octokit/octokit.rb)
+* Consulting. For example: [Continuum](http://continuum.io/consulting) who help maintain NumPy
+* Manuals. For example: [VTK](http://www.vtk.org/)
+* Add-ons. For example: [Puppet](http://puppetlabs.com/puppet/enterprise-vs-open-source)
+* Server software, which open source client software interacts with. For example: [GitHub API clients](https://github.com/octokit/octokit.rb)
 
-###Plagiarism vs self-promotion
+###Plagiarism vs promotion
 
-Many researchers worry about people stealing their work, if they open source their code.
+Many researchers worry about people stealing their work if they open source their code. But often the biggest problem is not theft, but the fact no one is aware of your work.
 
-Often, your biggest problem is not theft, but the fact no one is aware of your work.
-
-Open source is a great way to increase the slim probabilty that someone else on the planet will care
-about your work enough to cite you.
+Open source is a way to increase the probability that someone else on the planet will care enough about your work to cite you.
 
 So when thinking about whether to open source your code, think about whether you're more worried about
 anonymity or theft.
 
 ###Your code *is* good enough
 
-New coders worry that they'll be laughed at if they put their code online.
-
-Don't worry. Everyone, including people who've been coding for decades, 
+New coders worry that they'll be laughed at if they put their code online. Don't worry. Everyone, including people who've been coding for decades, 
 writes shoddy code that is full of bugs.
 
 The only thing that will make your code better, is *other people reading it*. 
@@ -84,9 +64,7 @@ Find a buddy, and get them to comment on it.
 
 ###Worry about license compatibility and proliferation
 
-Not all open source code can be used in all projects.
-
-Some licenses are legally incompatible.
+Not all open source code can be used in all projects. Some licenses are legally incompatible.
 
 This is a huge and annoying problem. 
 As an author, you might not care, but you can't anticipate the exciting uses people might find by
@@ -98,7 +76,7 @@ Then people will understand. *Don't make up your own*.
 When you're about to use a license, see if there's a more common one which is recommended, e.g.:
 using the [opensource.org proliferation report](http://opensource.org/proliferation-report)
 
-###Academic License Proliferation
+###Academic license proliferation
 
 Academics often write their own license terms for their software.
 
@@ -116,12 +94,8 @@ For example:
 >purposes, but only to eligible users of the software (for example, to another university
 >student or faculty to support joint academic research).
 
-###Academic License Proliferation
-
 Please don't do this. Your desire to slightly tweak the terms is harmful to the
-future software ecosystem. Also, 
-
-* Unless you are a lawyer, you cannot do this safely!*
+future software ecosystem. Also, *Unless you are a lawyer, you cannot do this safely!*
 
 ###Licenses for code, content, and data.
 
@@ -131,12 +105,12 @@ Don't use Creative Commons for software, or GPL for a book.
 
 ###Licensing issues
 
-* Permissive vs Share-Alike
-* Noncommercial and Academic Use Only
+* Permissive vs share-alike
+* Non-commercial and academic Use Only
 * Patents
 * Use as a web service
 
-###Permissive vs Share-Alike
+###Permissive vs share-alike
 
 Some licenses require all derived software to be licensed under terms that are similarly free.
 Such licenses are called "Share Alike" or "Copyleft".
@@ -155,10 +129,10 @@ If you want to use code that has a copyleft license, you'll have to release your
 
 ###Academic use only
 
-Some researchers want to make their code free for Academic use only.
+Some researchers want to make their code free for 'academic use only'.
 None of the standard licenses state this, and this is a reason why academic bespoke licenses proliferate.
 
-However, there is no need for this, in my opinion.
+However, there is no need for this, in our opinion.
 
 *Use of a standard Copyleft license precludes derived software from being sold without also publishing the source*
 
@@ -169,7 +143,7 @@ but offer the code under more permissive terms, allowing for commercial use, for
 
 ###Patents
 
-Intellectual property law distinguishes Copyright from Patents. 
+Intellectual property law distinguishes copyright from patents. 
 This is a complex field, which I am far from qualified to teach!
 
 People who think carefully about intellectual property law distinguish software licenses
@@ -194,12 +168,12 @@ If you don't want it to, use the LGPL. ("Lesser GPL"). This has an exception for
 
 ###Citing software
 
-Almost all software licenses require people to credit you for what they used. ("Attribution")
+Almost all software licenses require people to credit you for what they used ("attribution").
 
 In an academic context, it is useful to offer a statement as to how best to do this,
 citing *which paper to cite in all papers which use the software*.
 
-This is best done in a [CITATION](http://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files) file in your repository.
+This is best done with a [CITATION](http://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files) file in your repository.
 
 ```
  To cite ggplot2 in publications, please use:
@@ -233,8 +207,7 @@ Typically, every file should contain something like:
 ```
 
 Check your license at
-opensource.org for details of how to apply it to your software,
-, e.g. for the [GPL](http://opensource.org/licenses/GPL-3.0#howto)
+[opensource.org](http://opensource.org/) for details of how to apply it to your software. For example, for the [GPL](http://opensource.org/licenses/GPL-3.0#howto)
 
 ###Choose a license
 

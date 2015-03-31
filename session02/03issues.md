@@ -2,7 +2,7 @@
 title: Issues
 ---
 
-##Software Issue Management
+##Managing software issues
 
 ###Issues
 
@@ -10,20 +10,19 @@ Code has *bugs*.
 
 It also has things it should do *features*.
 
-A good project has an organised way of managing these.
-To do this you should use an Issue Tracker.
+A good project has an organised way of managing these. Generally you should use an issue tracker.
 
 ###Some Issue Trackers
 
 There are lots of good issue trackers.
 
-The most commonly used open source ones are [Trac](http://trac.edgewall.org/) and [Redmine](http://www.redmine.org/)
+The most commonly used open source ones are [Trac](http://trac.edgewall.org/) and [Redmine](http://www.redmine.org/).
 
-Cloud based issue trackers include [Lighthouse](http://lighthouseapp.com/) and [GitHub](https://github.com/blog/831-issues-2-0-the-next-generation)
+Cloud based issue trackers include [Lighthouse](http://lighthouseapp.com/) and [GitHub](https://github.com/blog/831-issues-2-0-the-next-generation).
 
-Commercial solutions include [Jira](https://www.atlassian.com/software/jira)
+Commercial solutions include [Jira](https://www.atlassian.com/software/jira).
 
-In this course, we'll use the GitHub issue tracker for our examples.
+In this course, we'll be using the GitHub issue tracker.
 
 ###Anatomy Of An Issue
 
@@ -46,7 +45,7 @@ If possible, submit a minimal reproducing code fragment.
 
 ###Owning an Issue
 
-* Whoever the issue is assigned to works next
+* Whoever the issue is assigned to works next.
 * If an issue needs someone else's work, assign it to them.
 
 ###Status 

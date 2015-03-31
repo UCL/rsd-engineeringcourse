@@ -2,7 +2,7 @@
 title: Primer
 ---
 
-##Testing Primer
+##Testing primer
 
 ###Tests at different scales
 
@@ -26,12 +26,11 @@ If a unit test is too complicated, go smaller.
 
 ###Testing vocabulary
 
-* **fixture** input data
-* **action** function that is being tested
-* **expected result** the output that should be obtained
-* **actual result** the output that is obtained
-
-* **coverage** Proportion of all possible paths in the code that the tests take
+* **fixture**: input data
+* **action**: function that is being tested
+* **expected result**: the output that should be obtained
+* **actual result**: the output that is obtained
+* **coverage**: Proportion of all possible paths in the code that the tests take
 
     ~~~~~~~~~~~~~~~~~~~~~~~~{.fortran}
     if(energy > 0) then
@@ -41,4 +40,4 @@ If a unit test is too complicated, go smaller.
     endif
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Is there a test for `energy > 0` and `energy <= 0`?
+Is there a test for `energy > 0` and `energy <= 0`?
