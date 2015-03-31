@@ -2,9 +2,9 @@
 title: Floating Point
 ---
 
-##Testing with Floating Points
+##Testing with floating points
 
-###Floating points are not Reals
+###Floating points are not reals
 
 <div align="left">
 Floating points are inaccurate representations of real numbers:

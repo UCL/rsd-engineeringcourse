@@ -4,7 +4,7 @@ title: Tools
 
 ##Testing frameworks
 
-###What a frameworks is for
+###Why use testing frameworks?
 
 <p align="left">Frameworks should simplify our lives:</p>
 
@@ -18,7 +18,7 @@ title: Tools
 * **Report failing tests**
 * Additional goodies, such as code coverage
 
-###Testing frameworks
+###Common testing frameworks
 
 * Language agnostic: [CTest](http://www.cmake.org/cmake/help/v2.8.12/ctest.html)
 

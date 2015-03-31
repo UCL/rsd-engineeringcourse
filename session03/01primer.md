@@ -30,7 +30,7 @@ If a unit test is too complicated, go smaller.
 * **action**: function that is being tested
 * **expected result**: the output that should be obtained
 * **actual result**: the output that is obtained
-* **coverage**: Proportion of all possible paths in the code that the tests take
+* **coverage**: proportion of all possible paths in the code that the tests take
 
 ``` python
 if energy > 0:

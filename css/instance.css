@@ -1,4 +1,5 @@
-img[src*=".png"][src^="figures"] {
+img[src*=".png"][src^="figures"],
+img[src*=".png"][src^="python"] {
     max-width: 500px;
     vertical-align: middle;
     padding-left: 1em;

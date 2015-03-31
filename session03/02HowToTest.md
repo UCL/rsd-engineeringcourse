@@ -147,7 +147,7 @@ In silico translation   Compute overlap of two rectangles
 * What happens when a matrix/data-frame reaches one row, or one column?
 
 
-###Positive *and* Negative tests
+###Positive *and* negative tests
 
 * **Positive tests**: program/component/unit in normal situations
 
@@ -180,7 +180,7 @@ def test_I_only_accept_positive_numbers(number):
 </div>
 </div>
 
-###Legacy Code Hardening
+###Legacy code hardening
 
 * Very difficult to create unit-tests for existing code
 * Easier to run program as a black box:
