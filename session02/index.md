@@ -4,7 +4,7 @@ title: Collaboration
 
 ##Introduction
 
-### Why version control?
+### Why use version control?
 
 Version control helps us to manage code:
 

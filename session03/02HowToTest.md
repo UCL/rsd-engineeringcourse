@@ -138,12 +138,11 @@ In silico translation   Compute overlap of two rectangles
 * Empty arrays:
 
 ``` python
-    atoms = [read_input_atom(input_atom) for input_atom in input_file]
-    energy = force_field(atoms)
+atoms = [read_input_atom(input_atom) for input_atom in input_file]
+energy = force_field(atoms)
 ```
 
-    What happens if ``atoms`` is an empty list?
-
+* What happens if ``atoms`` is an empty list?
 * What happens when a matrix/data-frame reaches one row, or one column?
 
 
@@ -185,11 +184,11 @@ def test_I_only_accept_positive_numbers(number):
 * Very difficult to create unit-tests for existing code
 * Easier to run program as a black box:
 
-```
-      setup input
-      run program
-      read output
-      check output against expected result
+``` 
+setup input
+run program
+read output
+check output against expected result
 ```
 
 <div class="fragment fade-in">

@@ -22,7 +22,7 @@ Commercial solutions include [Jira](https://www.atlassian.com/software/jira).
 
 In this course, we'll be using the GitHub issue tracker.
 
-###Anatomy Of An Issue
+###Anatomy of an issue
 
 * Reporter
 * Description
@@ -41,7 +41,7 @@ The description should make the bug reproducible:
 
 If possible, submit a minimal reproducing code fragment.
 
-###Owning an Issue
+###Owning an issue
 
 * Whoever the issue is assigned to works next.
 * If an issue needs someone else's work, assign it to them.
@@ -60,19 +60,19 @@ If possible, submit a minimal reproducing code fragment.
 * Not reproducible
 * Not a bug (working as intended)
 
-###Bug Triage
+###Bug triage
 
 Some organisations use a severity matrix based on:
 
 * Severity [Wrong answer, crash, unusable, workaround, cosmetic...]
 * Frequency [All users, most users, some users...]
 
-###The Backlog
+###The backlog
 
 The list of all the bugs that need to be fixed or
 features that have been requested is called the "backlog".
 
-###Development Cycles
+###Development cycles
 
 Development goes in *cycles*.
 

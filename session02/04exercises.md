@@ -2,7 +2,7 @@
 title: Exercises
 ---
 
-##Pull Request Exercise
+##Pull request exercise
 
 ###Submitting a pull request
 

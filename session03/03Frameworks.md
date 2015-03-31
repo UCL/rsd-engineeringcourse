@@ -6,7 +6,7 @@ title: Tools
 
 ###Why use testing frameworks?
 
-<p align="left">Frameworks should simplify our lives:</p>
+Frameworks should simplify our lives:
 
 * Should be easy to add simple test
 * Should be possible to create complex test:

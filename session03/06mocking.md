@@ -17,7 +17,7 @@ mock
 <div class="fragment roll-in">
 mocking
 
-:    *computer science*, to simulate the behavior of real objects in controlled ways.
+:    *computer science*, to simulate the behaviour of real objects in controlled ways.
 </div>
 
 <div class="fragment roll-in">
@@ -31,7 +31,7 @@ stub routine
 
 </div>
 
-###Recording calls with Mock
+###Recording calls with mock
 
 <div align="left">
 Mock objects record the calls made to them:
