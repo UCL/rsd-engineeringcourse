@@ -1,55 +1,10 @@
 ---
-title: Functions and modules
+title: Modules
 ---
-
-## Functions 
-
-### Definition
-
-We use `def` to define a function, and `return` to pass back a value:
-
-{{ pyfrag('01','functions','Function') }}
-
-### Side effects
-
-Functions can do things to change their **mutable** arguments,
-so `return` is optional.
-
-{{ pyfrag('01','functions','SideEffect') }}
-
-### Early Return
-
-Return without arguments can be used to exit early from a function
-
-{{ pyfrag('01','functions','EarlyReturn') }}
-
-### Unpacking arguments
-
-If a vector is supplied to a function with a '*', its elements
-are used to fill each of a function's arguments. 
-
-{{ pyfrag('01','functions','UnpackingArguments') }}
-
-This can be quite powerful:
-
-{{ pyfrag('01','functions','UnpackingPower') }}
-
-### Sequence Arguments
-
-Similiarly, if a `*` is used in the definition of a function, multiple
-arguments are absorbed into a tuple:
-
-{{ pyfrag('01','functions','SequenceArguments') }}
-
-### Keyword Arguments
-
-If two asterisks are used, named arguments are supplied as a dictionary:
-
-{{ pyfrag('01','functions','KeywordArguments') }}
 
 ## Modules
 
-### File Modules
+### File modules
 Each python file defines a module, which can be imported from with import:
 
 {{ notebookfile('01','pretty.py') }}
@@ -58,7 +13,7 @@ Another file:
 
 {{ pyfrag('01','modules','FileImport') }}
 
-### Module Variables
+### Module variables
 
 Modules can contain variables as well as functions, and these can be changed.
 
@@ -95,7 +50,7 @@ module1
 
 {{ pyfrag('01','modules','FolderModules') }}
 
-### Relative Import
+### Relative import
 
 Inside packages, you can use `..` to refer to the parent module
 
