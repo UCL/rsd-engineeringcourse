@@ -104,6 +104,7 @@ __file__ = "session04.ipynb" # No __file__ in notebook!
 ```
 {% endif %}
 
+
 {{ pyfrag('04','system', 'paths', execute=False) }}
 
 And you'll want to be able to read and write to files:
