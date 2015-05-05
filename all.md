@@ -62,6 +62,9 @@ author: James Hetherington and Matt Clarkson
 {{d['session07/05meta.md']}}
 {{d['session07/06operator.md']}}
 {{d['session07/07excercise.md']}}
+\chapter{Performance programming}}
+This lecture is not yet available in PDF form.
+Please refer to the online notes.
 \chapter{Further Git}
 {{d['session09/index.md']}}
 {{d['session09/01advanced.md']}}
