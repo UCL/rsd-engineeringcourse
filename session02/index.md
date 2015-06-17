@@ -12,9 +12,6 @@ title: Collaboration
 - Collaborative Version Control
 
 
-### ![introduction](session02/figures/phdcomic.png)
-
-
 ### What's version control?
 
 Tool for __managing changes__ to a set of files.
