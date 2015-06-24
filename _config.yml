@@ -10,15 +10,15 @@ defaults:
 
 crumbs:
   - link: http://www.ucl.ac.uk/ISD
-      text: ISD
+    text: ISD
   - link: http://www.ucl.ac.uk/isd/services
-      text: OUR SERVICES
+    text: OUR SERVICES
   - link: http://www.ucl.ac.uk/isd/services/research_it
-      text: RESEARCH IT
+    text: RESEARCH IT
   - link: http://www.ucl.ac.uk/isd/services/research_it/training
-      text: TRAINING
+    text: TRAINING
   - link: http://development.rc.ucl.ac.uk/training
-      text: MATERIALS
+    text: MATERIALS
 
 markdown: redcarpet
 redcarpet:

@@ -29,10 +29,6 @@ default: _site
 %.html: %.ipyhtml Makefile
 	yamlheader 
 
-site-styles/ipython.css: dummy.ipynb
-	mkdir -p site-styles
-	ipython nbconvert --to html --template styles.tpl --stdout $< > $@
-
 remaster.zip: Makefile
 	rm -f remaster.zip
 	wget https://github.com/UCL-RITS/indigo-jekyll/archive/remaster.zip
@@ -52,9 +48,9 @@ indigo: indigo-jekyll-remaster Makefile
 	touch indigo
 
 _site: indigo \
-	     session01/data.html session01/control.html session01/functions.html \
-			 session01/modules.html session01/pythons.html session01/types.html \
-			 site_styles/ipython.css
+	     session01/01data.html session01/03control.html session01/04functions.html \
+			 session01/05modules.html session01/00pythons.html session01/02types.html \
+			 session01/06exercise.html
 	jekyll build	
 
 clean:
