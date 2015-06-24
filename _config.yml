@@ -9,8 +9,16 @@ defaults:
     values: {layout: default}
 
 crumbs:
-  - {link: 'http://research-programming.ucl.ac.uk', text: Research Programming Hub}
-  - {link: 'http://research-programming.ucl.ac.uk/training', text: Research Programming Training}
+  - link: http://www.ucl.ac.uk/ISD
+      text: ISD
+  - link: http://www.ucl.ac.uk/isd/services
+      text: OUR SERVICES
+  - link: http://www.ucl.ac.uk/isd/services/research_it
+      text: RESEARCH IT
+  - link: http://www.ucl.ac.uk/isd/services/research_it/training
+      text: TRAINING
+  - link: http://development.rc.ucl.ac.uk/training
+      text: MATERIALS
 
 markdown: redcarpet
 redcarpet:
