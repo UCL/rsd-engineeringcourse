@@ -1,0 +1,35 @@
+participant Sue
+participant Server
+participant Jim
+note over Server: 3
+
+Server->Sue: Update
+note left: svn update
+
+Server->Jim: Update
+note right: svn up 
+
+note over Jim: vim sharedfile.py
+
+note over Sue: nano sharedfile.py
+
+Jim->Server: Commit
+note right: svn commit
+
+note over Server: 4
+
+Sue-->Server: Failed commit
+note left
+  svn commit
+  ! svn: out of date: 'sharedfile.py'
+end note
+
+Server->Sue: Update
+note left: svn up
+
+note left of Sue: nano sharedfile.py
+
+Sue->Server: Commit
+note left: svn ci
+
+note over Server: 5

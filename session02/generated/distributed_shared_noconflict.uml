@@ -1,0 +1,60 @@
+participant Jim as J
+participant "Jim's repo" as Jr
+participant Origin as O
+participant "Sue's repo" as Sr
+participant Sue as S
+
+
+note over J: work
+
+create Jr
+J->Jr: init
+note left: git init
+
+note left of J: git add mycode
+
+J->Jr: commit
+note left: git commit
+
+note left of J: git remote add origin	git@github.com:ucl/foo.git
+
+Jr->O: git push -u origin master
+note left: git push
+
+create Sr
+O->Sr: clone
+
+create S
+Sr->S: clone
+note right: git clone git@github.com:ucl/foo.git
+
+note over S: work
+
+S->Sr: commit
+note right: git commit -a
+
+Sr->O: push
+note right: git push
+
+O->Jr: fetch
+note left: git fetch
+
+Jr->J: merge
+note left: git merge
+
+note over J: work
+
+J->Jr: commit
+note left: git commit -a
+
+Jr->O: push
+note left: git push
+
+
+O->Sr: pull
+Sr->S: pull
+note right: git pull
+
+
+
+

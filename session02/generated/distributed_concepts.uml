@@ -1,0 +1,12 @@
+participant "Working Directory" as W
+participant "Staging Area" as S
+participant "Local Repository" as L
+participant "Remote Repository" as R
+
+W -> S : git add
+S -> L : git commit
+W -> L : git commit -a
+L -> R : git push
+R -> L : git fetch
+L -> W : git merge
+R -> W : git pull

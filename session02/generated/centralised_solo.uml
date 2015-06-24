@@ -1,0 +1,27 @@
+@startuml
+note over Server: 1
+
+Server->Jim : Checkout
+note right: svn checkout http://mysvn.ucl.ac.uk
+
+note over Jim: work
+note right: vim myfile.py
+
+Jim->Server: Commit
+note right: svn commit
+
+note over Server: 2
+
+note right of Jim
+  touch mynewfile.yml
+  svn add mynewfile.yml
+  vim mynewfile.yml
+end note
+
+note over Jim: work
+
+Jim->Server: Commit
+note right: svn commit
+
+note over Server: 3
+@enduml

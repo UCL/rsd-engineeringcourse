@@ -1,0 +1,51 @@
+participant Jim as J
+participant "Jim's repo" as Jr
+participant Origin as O
+participant "Sue's repo" as Sr
+participant Sue as S
+
+note over J: work
+note over S: work
+
+J -> Jr: commit
+note left: git commit -a
+
+S -> Sr: commit
+note right: git commit -a
+
+Sr->O: push
+note right: git push
+
+note left of J
+	git push
+	Error: ! [rejected]
+end note
+Jr-->O: failed push
+
+O->Jr: pull
+Jr->J: pull
+note left: git pull
+
+note over J: resolve conflicts
+note left of J: vim conflictedfile.py
+note over S: work
+
+S->Sr: commit
+note right: git commit -a
+
+J->Jr: commit
+note left: git commit -a
+
+note over J: work
+note over S: work 
+
+Jr->O: push
+note left: git push
+
+S->Sr: commit
+note right: git commit -a
+
+O->Sr: pull
+Sr->S: pull
+note right: git pull
+

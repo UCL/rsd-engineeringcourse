@@ -1,0 +1,47 @@
+participant "Jim's repo" as R
+participant "Jim's index" as I
+participant Jim
+
+note right of Jim: vim myfile1.py
+
+note right of Jim: git init
+create I
+Jim->I: add
+
+create R
+Jim->R: add
+
+note right: git add .
+
+I->R: Commit
+note right: git commit
+
+note over R: a1c3
+
+note right of Jim
+  vim myfile2.py
+  vim myfile1.py
+end note
+
+Jim->I: Add
+note right: git add myfile2.py
+
+I->R: Commit
+note right: git commit
+
+note over R: acb2
+
+note left of R
+	Only changes to file2 
+	get into commit
+end note
+
+note right of Jim
+	vim myfile2.py
+	vim myfile1.py
+end note
+
+note right of Jim: git commit -a
+Jim->I: add
+I->R: commit
+note left of R: All changes get in

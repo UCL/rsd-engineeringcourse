@@ -1,0 +1,12 @@
+graph {
+	overlap = scale;
+	fontname = courier;
+	C1 -- Server;
+	C2 -- Server;
+	C3 -- Server;
+	C3 -- C2 [style="dotted"]
+	Server [label="Github's copy\n with a,b,c,d",peripheries=2];
+	C1 [label="Sue's copy\n with a,b,d"]; 
+	C2 [label="Jim's copy\n with a,b,c,d"];
+	C3 [label="Phil's copy\n with a,b,c,d,e"];
+}

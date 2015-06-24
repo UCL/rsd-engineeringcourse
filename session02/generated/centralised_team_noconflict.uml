@@ -1,0 +1,30 @@
+participant Sue
+participant Server
+participant Jim
+note over Server: 1
+
+Server->Jim : Checkout
+note right: svn checkout http://ucl.ac.uk/ourcode
+
+Server->Sue: Checkout
+note left: svn co http://ucl.ac.uk/ourcode
+
+note over Jim: nano jimfile.py
+
+Jim->Server: Commit
+note right: svn commit
+
+note over Server: 2
+
+Server->Sue: Update
+note left: svn update
+
+note over Sue
+	cat jimfile.py
+	notepad++ suefile.py
+end note
+
+Sue->Server: Commit
+note left: svn commit
+
+note over Server: 3

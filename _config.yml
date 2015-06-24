@@ -1,0 +1,17 @@
+contact: http://www.ucl.ac.uk/research-it-services/partner-with-us
+
+title: "MPHYG001: Research Software Engineering With Python"
+includeleftnav: True
+short: MPHYG0001
+
+defaults:
+  - scope: {path: ""}
+    values: {layout: default}
+
+crumbs:
+  - {link: 'http://research-programming.ucl.ac.uk', text: Research Programming Hub}
+  - {link: 'http://research-programming.ucl.ac.uk/training', text: Research Programming Training}
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough","tables"]

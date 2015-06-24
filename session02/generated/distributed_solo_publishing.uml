@@ -1,0 +1,34 @@
+participant Origin
+participant "Jim's repo" as R
+participant "Jim's index" as I
+participant Jim
+
+create R
+Origin->R: clone
+
+create I
+R->I: clone
+
+I->Jim: clone
+note right: git clone git@github.com:ucl/mycode.git
+
+note over Jim: work
+
+Jim->I: add
+note right: git add --update
+
+I->R: Commit
+note right: git commit
+
+R->Origin: push
+note right: git push
+
+note over Jim: work
+
+Jim->I: add
+I->R: commit
+note right: git commit -a
+
+R->Origin: push
+note right: git push
+
