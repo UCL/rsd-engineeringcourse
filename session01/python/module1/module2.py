@@ -1,1 +1,0 @@
-hello = "Greetings, Dr Hetherington"

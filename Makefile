@@ -23,6 +23,16 @@ default: _site
 %.png: %.uml Makefile
 	plantuml -p < $< > $@
 
+%.html: %.ipynb Makefile jekyll.tpl
+	ipython nbconvert --to html --template jekyll.tpl --execute --stdout $< > $@
+
+%.html: %.ipyhtml Makefile
+	yamlheader 
+
+site-styles/ipython.css: dummy.ipynb
+	mkdir -p site-styles
+	ipython nbconvert --to html --template styles.tpl --stdout $< > $@
+
 remaster.zip: Makefile
 	rm -f remaster.zip
 	wget https://github.com/UCL-RITS/indigo-jekyll/archive/remaster.zip
@@ -41,7 +51,10 @@ indigo: indigo-jekyll-remaster Makefile
 	cp -r indigo-jekyll-remaster/indigo/favicon* .
 	touch indigo
 
-_site: session02/slides.html indigo
+_site: indigo \
+	     session01/data.html session01/control.html session01/functions.html \
+			 session01/modules.html session01/pythons.html session01/types.html \
+			 site_styles/ipython.css
 	jekyll build	
 
 clean:
