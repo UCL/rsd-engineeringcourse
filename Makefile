@@ -29,22 +29,22 @@ default: _site
 %.html: %.ipyhtml Makefile
 	yamlheader 
 
-remaster.zip: Makefile
-	rm -f remaster.zip
-	wget https://github.com/UCL-RITS/indigo-jekyll/archive/remaster.zip
+master.zip: Makefile
+	rm -f master.zip
+	wget https://github.com/UCL-RITS/indigo-jekyll/archive/master.zip
 
-indigo-jekyll-remaster: Makefile remaster.zip
-	rm -rf indigo-jekyll-remaster
-	unzip remaster.zip
-	touch indigo-jekyll-remaster
+indigo-jekyll-master: Makefile master.zip
+	rm -rf indigo-jekyll-master
+	unzip master.zip
+	touch indigo-jekyll-master
 
-indigo: indigo-jekyll-remaster Makefile
-	cp -r indigo-jekyll-remaster/indigo/images .
-	cp -r indigo-jekyll-remaster/indigo/js .
-	cp -r indigo-jekyll-remaster/indigo/css .
-	cp -r indigo-jekyll-remaster/indigo/_includes .
-	cp -r indigo-jekyll-remaster/indigo/_layouts .
-	cp -r indigo-jekyll-remaster/indigo/favicon* .
+indigo: indigo-jekyll-master Makefile
+	cp -r indigo-jekyll-master/indigo/images .
+	cp -r indigo-jekyll-master/indigo/js .
+	cp -r indigo-jekyll-master/indigo/css .
+	cp -r indigo-jekyll-master/indigo/_includes .
+	cp -r indigo-jekyll-master/indigo/_layouts .
+	cp -r indigo-jekyll-master/indigo/favicon* .
 	touch indigo
 
 _site: indigo \
@@ -58,5 +58,5 @@ clean:
 	rm -rf session*/*.html
 	rm -f index.html
 	rm -rf _site
-	rm -rf images js css _includes _layouts favicon* remaster.zip indigo-jekyll-remaster
+	rm -rf images js css _includes _layouts favicon* master.zip indigo-jekyll-master
 
