@@ -8,6 +8,8 @@ defaults:
   - scope: {path: ""}
     values: {layout: default}
 
+baseurl: /training/engineering
+
 crumbs:
   - link: http://www.ucl.ac.uk/ISD
     text: ISD
