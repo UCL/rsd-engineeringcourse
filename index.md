@@ -7,11 +7,7 @@ title: Research Software Development with Python
 Dates
 -----
 
-Wednesdays 09:00am - 12:00pm
-
-October 1st, 8th, 15th, 22st, 29th
-November 5th, 12th, 19th, 26th
-December 3nd
+There are no planned dates for this course at the moment.
 
 Versions
 --------
