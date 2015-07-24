@@ -25,3 +25,6 @@ crumbs:
 markdown: redcarpet
 redcarpet:
   extensions: ["strikethrough","tables"]
+
+
+include: [ _static, _sources]
