@@ -4,10 +4,7 @@ title: Research Software Development with Python
 
 {{d['intro.md']}}
 
-Dates
------
-
-There are no planned dates for this course at the moment.
+{{d['dates.md']}}
 
 Versions
 --------
