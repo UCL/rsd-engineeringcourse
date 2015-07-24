@@ -1,1 +1,0 @@
-[Model]<>-*>[Boid],[Boid]position++->[Vector],[Boid]velocity++->[Vector]
