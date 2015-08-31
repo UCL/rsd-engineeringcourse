@@ -86,29 +86,29 @@ preview: ready
 	jekyll serve
 
 clean:
-	rm -f session*/generated/*.png
-	rm -rf session*/*.html
-	rm -f session*/*.pyc
+	rm -f 0*/generated/*.png
+	rm -rf 0*/*.html
+	rm -f 0*/*.pyc
 	rm -f index.html
 	rm -rf _site
 	rm -rf images js css _includes _layouts favicon* master.zip indigo-jekyll-master
 	rm -f indigo
-	rm -f session01/analyzer.py
-	rm -f session01/eight
-	rm -f session01/eight.py
-	rm -rf session01/module1/
-	rm -f session01/pretty.py
+	rm -f 01python/analyzer.py
+	rm -f 01python/eight
+	rm -f 01python/eight.py
+	rm -rf 01python/module1/
+	rm -f 01python/pretty.py
 	rm -f session*/*.nbconvert.ipynb
 	rm -rf session*/*.v2.ipynb
 	rm -rf combined*
 	rm -f notes.pdf
 	rm -f notes.tex
-	rm -f session04/greeter.py
-	rm -f session04/map.png
-	rm -f session05/anotherfile.py
-	rm -f session05/config.yaml
-	rm -f session05/context.py
-	rm -f session06/fixed.png
-	rm -f session07/datasource*.yaml
-	rm -f session07/example.yaml
+	rm -f 04packaging/greeter.py
+	rm -f 04packaging/map.png
+	rm -f 05construction/anotherfile.py
+	rm -f 05construction/config.yaml
+	rm -f 05construction/context.py
+	rm -f 06design/fixed.png
+	rm -f 07dry/datasource*.yaml
+	rm -f 07dry/example.yaml
 	rm -f notebooks.zip
