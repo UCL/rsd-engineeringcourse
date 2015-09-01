@@ -14,13 +14,11 @@ crumbs:
   - link: http://www.ucl.ac.uk/ISD
     text: ISD
   - link: http://www.ucl.ac.uk/isd/services
-    text: OUR SERVICES
+    text: Our services
   - link: http://www.ucl.ac.uk/isd/services/research-it
-    text: RESEARCH IT
+    text: Research IT
   - link: http://www.ucl.ac.uk/isd/services/research-it/training
-    text: TRAINING
-  - link: http://development.rc.ucl.ac.uk/training
-    text: MATERIALS
+    text: Training
 
 markdown: redcarpet
 redcarpet:
