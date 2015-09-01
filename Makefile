@@ -6,7 +6,7 @@ PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
            --default-image-extension=png --highlight-style=zenburn --mathjax -V revealjs-url=http://lab.hakim.se/reveal-js
 
-NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(wildcard session*/*.ipynb))
+NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(wildcard ch*/*.ipynb))
 
 HTMLS=$(NOTEBOOKS:.ipynb=.html)
 
@@ -38,7 +38,7 @@ default: _site
 	ipython nbconvert --to notebook --nbformat 2 --stdout $< > $@
 
 %.nbconvert.ipynb: %.ipynb
-	ipython nbconvert --to notebook --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
+	ipython nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
 notes.pdf: combined.ipynb Makefile
 	ipython nbconvert --to pdf --template latex.tplx $<
@@ -86,29 +86,29 @@ preview: ready
 	jekyll serve
 
 clean:
-	rm -f 0*/generated/*.png
-	rm -rf 0*/*.html
-	rm -f 0*/*.pyc
+	rm -f ch*/generated/*.png
+	rm -rf ch*/*.html
+	rm -f ch*/*.pyc
 	rm -f index.html
 	rm -rf _site
 	rm -rf images js css _includes _layouts favicon* master.zip indigo-jekyll-master
 	rm -f indigo
-	rm -f 01python/analyzer.py
-	rm -f 01python/eight
-	rm -f 01python/eight.py
-	rm -rf 01python/module1/
-	rm -f 01python/pretty.py
-	rm -f session*/*.nbconvert.ipynb
-	rm -rf session*/*.v2.ipynb
+	rm -f ch01python/analyzer.py
+	rm -f ch01python/eight
+	rm -f ch01python/eight.py
+	rm -rf ch01python/module1/
+	rm -f ch01python/pretty.py
+	rm -f ch*/*.nbconvert.ipynb
+	rm -rf ch*/*.v2.ipynb
 	rm -rf combined*
 	rm -f notes.pdf
 	rm -f notes.tex
-	rm -f 04packaging/greeter.py
-	rm -f 04packaging/map.png
-	rm -f 05construction/anotherfile.py
-	rm -f 05construction/config.yaml
-	rm -f 05construction/context.py
-	rm -f 06design/fixed.png
-	rm -f 07dry/datasource*.yaml
-	rm -f 07dry/example.yaml
+	rm -f ch04packaging/greeter.py
+	rm -f ch04packaging/map.png
+	rm -f ch05construction/anotherfile.py
+	rm -f ch05construction/config.yaml
+	rm -f ch05construction/context.py
+	rm -f ch06design/fixed.png
+	rm -f ch07dry/datasource*.yaml
+	rm -f ch07dry/example.yaml
 	rm -f notebooks.zip
