@@ -1,5 +1,10 @@
 ---
-title: Session 5
+title: Construction and Design
 ---
 
-Some content
+* Coding conventions
+* Comments
+* Refactoring
+* Documentation
+* Object Orientation
+* Design Patterns

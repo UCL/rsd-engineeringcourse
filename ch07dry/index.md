@@ -1,5 +1,9 @@
 ---
-title: Session 7
+title: Advanced Programming Techniques
 ---
 
-Some content
+* Functional programming
+* Metaprogramming
+* Duck typing and exceptions
+* Operator overloading
+* Iterators and Generators

@@ -2,4 +2,8 @@
 title: Performance Programming
 ---
 
-Some content
+* Optimisation
+* Profiling
+* Scaling laws
+* NumPy
+* Cython
