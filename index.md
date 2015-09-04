@@ -14,96 +14,76 @@ This is a intensive, practical course.
 
 ##Synopsis
 
-### Lesson 1
+### Introduction to Python
 
 * Why use scripting languages? 
 * Python. IPython and the IPython notebook.
-* Programming with lists. Data structures: arrays, dictionaries, and sets. 
-* Duck typing.
-* Modules.
+* Data structures: list, dictionaries, and sets. 
+* List comprehensions
+* Functions in Python
+* Modules in Python
+* An introduciton to classes
 
-### Lesson 2
+### Research Data in Python
 
-* Collaborating around code. Version control.
-* Git. Github. Issue tracking.
-* Code review.
-* Merging.
-* Software licensing and releases.
+* Working with files on the disk
+* Interacting with the internet
+* JSON and YAML
+* Plotting with Matplotlib
+* Animations with Matplotlib
 
-### Lesson 3
+### Version Control
 
-* Testing.
-* Unit testing and regression testing.
-* Test driven design.
-* Exceptions and assertions.
-* Mocking.
-* Automated and interactive testing.
-* Build-and-test servers.
-* Negative testing and defensive programming.
-* Profiling and debugging.
-* Coverage.
-
-### Lesson 4
-
-* Using libraries.
-* The Python package index.
-* Packaging with setuptools.
-* Working with files and the OS.
-* Working with the web
-* Working with command line arguments
-* Brief introduction to functional programming
-
-### Lesson 5
-
-* Best practice in construction.
-* Comments.
-* Coding conventions.
-* Basic object-oriented python
-* Refactoring.
-* Design and development.
-* Documentation with Sphinx.
-
-### Lesson 6
-
-* Further object-oriented python.
-* Object oriented design.
-* Software as engineering.
-* Pragmatic use of diagram languages.
-* Requirements engineering.
-* Agile and Waterfall.
-* Functional and architectural design.
-
-### Lesson 7
-
-* Tricks for not repeating yourself
-* Iterables and generators
-* Exceptions
-* Functional python.
-* Operator Overloading
-* Map and reduce.
-* Context managers and decorators.
-* Metaprogramming
-* IDEs and editors
-* Logging.
-
-### Lession 8
-
-* Performance programming
-* Numpy.
-* Container asymptotic performance performance
-* Cython and linking C to Python
-
-### Lesson 9
-
-* Further git
-* Rebasing
+* Why use version control
+* Solo use of version control
+* Publishing your code to GitHub
+* Collaborating with others through Git
 * Branching
-* GitHub pages
-* Creating servers
+* Rebasing and Merging
+* Debugging with GitBisect
+* Forks, Pull Requests and the GitHub Flow
 
-### Lesson 10
+### Testing your code
 
-* Solutions to exercises
+* Why test?
+* Unit testing and regression testing
+* Negative testing
+* Mocking
+* Debugging
+* Continuous Integration
+
+### Software Projects
+
+* Turning your code into a package
+* Releasing code
+* Choosing an open-source license
+* Software project management
+* Organising issues and tasks
+
+### Construction and Design
+
+* Coding conventions
+* Comments
+* Refactoring
+* Documentation
+* Object Orientation
+* Design Patterns
+
+### Advanced Programming Techniques
+
+* Functional programming
+* Metaprogramming
+* Duck typing and exceptions
+* Operator overloading
+* Iterators and Generators
+
+### Programming for Speed
+
+* Optimisation
+* Profiling
+* Scaling laws
+* NumPy
+* Cython
 
 ## Course processes
 

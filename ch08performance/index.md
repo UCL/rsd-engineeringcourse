@@ -1,5 +1,5 @@
 ---
-title: Performance Programming
+title: Programming for Speed
 ---
 
 * Optimisation

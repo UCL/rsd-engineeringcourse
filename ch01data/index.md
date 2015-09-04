@@ -1,5 +1,5 @@
 ---
-title: Data in Python
+title: Research Data in Python
 ---
 
 * Working with files on the disk
