@@ -1,0 +1,28 @@
+contact: http://www.ucl.ac.uk/research-it-services/partner-with-us
+
+title: "MPHYG001: Research Software Engineering With Python"
+includeleftnav: True
+short: MPHYG0001
+
+defaults:
+  - scope: {path: ""}
+    values: {layout: default}
+
+baseurl: /training/engineering
+
+crumbs:
+  - link: http://www.ucl.ac.uk/ISD
+    text: ISD
+  - link: http://www.ucl.ac.uk/isd/services
+    text: Our services
+  - link: http://www.ucl.ac.uk/isd/services/research-it
+    text: Research IT
+  - link: http://www.ucl.ac.uk/isd/services/research-it/training
+    text: Training
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough","tables"]
+
+
+include: [ _static, _sources]
