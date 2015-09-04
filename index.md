@@ -5,8 +5,6 @@ layout: default
 
 ##Introduction
 
-### Purpose
-
 In this course, you will move beyond programming, to learn how to construct reliable, readable,
 efficient research software in a collaborative environment. The emphasis is on practical techniques,
 tips, and technologies to effectively build and maintain complex code.
