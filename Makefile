@@ -38,7 +38,7 @@ default: _site
 	ipython nbconvert --to notebook --nbformat 2 --stdout $< > $@
 
 %.nbconvert.ipynb: %.ipynb
-	ipython nbconvert --to notebook --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
+	ipython nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
 notes.pdf: combined.ipynb Makefile
 	ipython nbconvert --to pdf --template latex.tplx $<
