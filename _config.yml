@@ -26,3 +26,8 @@ redcarpet:
 
 
 include: [ _static, _sources]
+exclude: 
+  - "*/*.nbconvert.ipynb" 
+  - "*/*.v2.ipynb"
+  - "combined_files"
+  - "combined.ipynb"

@@ -80,10 +80,10 @@ plantuml.jar:
 .PHONY: ready
 
 _site: ready
-	jekyll build	
+	jekyll build --verbose
 
 preview: ready
-	jekyll serve
+	jekyll serve --verbose
 
 clean:
 	rm -f ch*/generated/*.png
