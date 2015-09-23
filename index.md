@@ -20,7 +20,7 @@ your computer.
  
 ##Registration
 
-MRes/MSc students should speak to their course directors. Post-graduate students and post-doctoral staff register at [UCL Market Place](http://onlinestore.ucl.ac.uk/browse/extra_info.asp?compid=1&modid=5&deptid=126&catid=40&prodid=116]
+Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers. Other UCL graduate students or post-doctoral staff can register at [UCL Market Place](http://onlinestore.ucl.ac.uk/browse/extra_info.asp?compid=1&modid=5&deptid=126&catid=40&prodid=116)
 
 Further information on the [UCL EPSRC Centre for Doctoral Training in Medical Imaging](http://medicalimaging-cdt.ucl.ac.uk/programmes)
 
