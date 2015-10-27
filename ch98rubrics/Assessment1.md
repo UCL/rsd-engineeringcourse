@@ -23,10 +23,7 @@ For this coursework assignment, you are expected to submit a short report and yo
 The purpose of the report is to answer the non-coding questions below, to present your results and provide a brief
 description of your design choices and implementation. The report need not be very long or overly detailed,
 but should provide a succinct record of your coursework. The report must have a cover sheet
-stating your name, your student number, and the code of the module (MPHYG002).
-Marks will be deducted for poorly commented and difficult to understand code at the discretion of the marker.
-It is also worth bearing in mind that most of the marks for each task are awarded for a
-sensible attempt even if the code does not work correctly or the final numerical outputs are incorrect.
+stating your name, your student number, and the code of the module (MPHYG001).
 
 Submission
 ----------
@@ -36,10 +33,10 @@ The code and report must be submitted as a single zip or tgz archive of a folder
 Your report should be included as a PDF file, report.pdf, in the root folder of your archive.
 
 All coursework should be submitted electronically through the Moodle for the course.
-The code can be zipped up and emailed along with your report. There is no need to include your source code
+There is no need to include your source code
 in your report, but you can refer to it and if necessary reproduce lines if it helps to explain your solution.
-The deadline for submissions is 5pm on Tuesday 17th March. An acknowledgement of
-receipt will be sent out after each submission.
+The deadline for submissions is 5pm on Tuesday 26th November. An acknowledgement of
+receipt will be sent out after each submission. Marks will be available by 10th December.
 
 Marks Scheme
 ------------
