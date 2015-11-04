@@ -4,7 +4,9 @@ MPHYG001 First Continuous Assessment: Packaging Greengraph
 Summary
 -------
 
-In an appendix, taken from http://development.rc.ucl.ac.uk/training/engineering/ch01data/110Capstone.html,
+In an appendix, taken from
+http://development.rc.ucl.ac.uk/training/
+engineering/ch01data/110Capstone.html,
 are classes which generate a graph of the proportion of green pixels in a series of satellite images between two points.
 
 Your task is to take this code, and do the work needed to make it into a proper package which could be released,
@@ -71,10 +73,12 @@ class Greengraph(object):
     def __init__(self, start, end):
         self.start=start
         self.end=end
-        self.geocoder=geopy.geocoders.GoogleV3(domain="maps.google.co.uk")
+        self.geocoder=geopy.geocoders.GoogleV3(
+          domain="maps.google.co.uk")
 
     def geolocate(self, place):
-        return self.geocoder.geocode(place, exactly_one=False)[0][1]
+        return self.geocoder.geocode(place,
+            exactly_one=False)[0][1]
 
     def location_sequence(self, start,end,steps):
       lats = np.linspace(start[0], end[0], steps)
@@ -89,7 +93,8 @@ class Greengraph(object):
                     steps)]
 
 class Map(object):
-    def __init__(self, lat, long, satellite=True, zoom=10, size=(400,400), sensor=False):
+    def __init__(self, lat, long, satellite=True,
+           zoom=10, size=(400,400), sensor=False):
         base="http://maps.googleapis.com/maps/api/staticmap?"
 
         params=dict(
@@ -103,8 +108,10 @@ class Map(object):
         if satellite:
             params["maptype"]="satellite"
 
-        self.image = requests.get(base, params=params).content # Fetch our PNG image data
-        self.pixels= img.imread(StringIO(self.image)) # Parse our PNG image as a numpy array
+        self.image = requests.get(base, params=params).content
+        # Fetch our PNG image data
+        self.pixels= img.imread(StringIO(self.image))
+        # Parse our PNG image as a numpy array
 
     def green(self, threshold):
         # Use NumPy to build an element-by-element logical array
