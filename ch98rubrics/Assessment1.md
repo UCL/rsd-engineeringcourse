@@ -36,7 +36,7 @@ All coursework should be submitted electronically through the Moodle for the cou
 There is no need to include your source code
 in your report, but you can refer to it and if necessary reproduce lines if it helps to explain your solution.
 The deadline for submissions is 5pm on Tuesday 26th November. An acknowledgement of
-receipt will be sent out after each submission. Marks will be available by 10th December.
+receipt will be sent out after each submission. Marks will be available by 22nd December.
 
 Marks Scheme
 ------------
