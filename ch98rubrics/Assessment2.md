@@ -37,7 +37,7 @@ Your report should be included as a PDF file, report.pdf, in the root folder of 
 All coursework should be submitted electronically through the Moodle for the course.
 There is no need to include your source code
 in your report, but you can refer to it and if necessary reproduce lines if it helps to explain your solution.
-The deadline for submission is March 7th, 2016. Marks will be available by 22nd April.
+The deadline for submission is February 29th, 2016. Marks will be available by 21st March.
 
 Marks Scheme
 ------------
