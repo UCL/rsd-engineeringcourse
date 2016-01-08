@@ -18,8 +18,7 @@ version = '0.1'
 release = '0.1'
 exclude_patterns = ['_build']
 pygments_style = 'sphinx'
-html_theme = 'default'
-html_static_path = ['_static']
+html_theme = 'alabaster'
 htmlhelp_basename = 'Greetingsdoc'
 latex_elements = {
 }
