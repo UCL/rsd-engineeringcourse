@@ -7,12 +7,62 @@
 % Inherit from the specified cell style.
 ((* extends cell_style *))
 
+((* block definitions *))
+(((super()  )))
+\definecolor{uclmidgreen}{RGB}{130,141,55}
+
+((* endblock definitions *))
+
+((* block packages *))
+((( super() )))
+
+\usepackage{lettrine} % Package to accentuate the first letter of the text
+\usepackage{fix-cm}	 % Custom font sizes - used for the initial letter in the document
+\usepackage{sectsty} % Enables custom section titles
+\usepackage{titling} % Allows custom title configuration
+\usepackage{picture}
+\usepackage{eso-pic}
+\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+((* endblock packages *))
+
+((* block commands *))
+
+((( super() )))
+
+\newcommand{\initial}[1]{ % Defines the command and style for the first letter
+\lettrine[lines=3,lhang=0.3,nindent=0em]{
+\color{DarkGreen}
+{\textsf{#1}}}{}}
+
+\newcommand{\HorRule}{\color{DarkSeaGreen} \rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
+
+\sectionfont{\color{uclmidgreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
+\subsectionfont{\color{DarkSeaGreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
+
+((* endblock commands *))
+
 ((* block title *))
 \title{An introduction to Python Programming for Research}
 ((* endblock title *))
 
 ((* block author *))
-\author{James Hetherington}
+\author{James Hetherington and Matt Clarkson}
+
+\pretitle{
+\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{38}{38} \usefont{OT1}{phv}{b}{n} \color{uclmidgreen} \selectfont} % Horizontal rule before the title
+
+\posttitle{\par\end{flushleft}\begin{flushleft}\fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{Black} \selectfont
+Building and maintaining readable, reliable and efficient scientific software.
+\end{flushleft}\vskip 0.5em} % Whitespace under the title and subtitle
+
+\preauthor{\begin{flushleft}\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{uclmidgreen}} % Author font configuration
+
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} % Configuration for the institution name
+
+University College London% Your institution
+
+\par\end{flushleft}\HorRule} % Horizontal rule after the title
+
 ((* endblock author *))
 
 %===============================================================================
@@ -21,9 +71,16 @@
 
 ((* block predoc *))
     ((( super() )))
-    ((* block tableofcontents *))\tableofcontents((* endblock tableofcontents *))
+    \AddToShipoutPicture{\put(0,\dimexpr\paperheight-1.8cm){%
+      \makebox[\paperwidth]{\includegraphics[width=\paperwidth,height=1.8cm]{bannermidgreen.pdf}}%
+    }}
 
-    
+((* block tableofcontents *))
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+((* endblock tableofcontents *))
+
+
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
 \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
