@@ -127,7 +127,6 @@ This course may not be audited.
   </tr>
  </tbody>
 </table>
- 
 ###Exercises
 
 Examples and exercises for this course will be provided in Python.  

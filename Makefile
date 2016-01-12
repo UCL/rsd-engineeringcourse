@@ -1,6 +1,6 @@
 PANDOC=pandoc
 
-ROOT="/training/rcwithcpp"
+ROOT="/training/engineering"
 
 PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css/theme/night.css \
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
@@ -38,7 +38,7 @@ default: _site
 	ipython nbconvert --to notebook --nbformat 2 --stdout $< > $@
 
 %.nbconvert.ipynb: %.ipynb
-	ipython nbconvert --allow-errors --to notebook --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
+	ipython nbconvert --to notebook --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
 latexr.tplx: latex.tplx
 	sed s:bannermidgreen.pdf:`pwd`/bannermidgreen.pdf: $< > $@

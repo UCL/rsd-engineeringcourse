@@ -10,7 +10,7 @@
 ((* block definitions *))
 (((super()  )))
 \definecolor{uclmidgreen}{RGB}{130,141,55}
-
+\definecolor{verypalegreen}{RGB}{252,255,250}
 ((* endblock definitions *))
 
 ((* block packages *))
@@ -23,6 +23,9 @@
 \usepackage{picture}
 \usepackage{eso-pic}
 \usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+\usepackage{libertine}
+\usepackage{framed}
+\usepackage[T1]{fontenc}
 ((* endblock packages *))
 
 ((* block commands *))
@@ -38,6 +41,18 @@
 
 \sectionfont{\color{uclmidgreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
 \subsectionfont{\color{DarkSeaGreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
+
+\let\oldquote\quote
+\let\endoldquote\endquote
+\newcommand*\openquote{\makebox(25,-22){\scalebox{5}{\color{DarkGreen}``}}}
+\newcommand*\closequote{\makebox(25,-22){\scalebox{5}{\color{DarkGreen}''}}}
+\colorlet{shadecolor}{verypalegreen}
+\makeatletter
+\def\shadequote{\begin{snugshade}\begin{oldquote}\openquote}
+\def\endshadequote{%
+  \closequote\end{oldquote}\end{snugshade}}
+\renewenvironment{quote}{\begin{shadequote}}{\end{shadequote}}
+\makeatother
 
 ((* endblock commands *))
 
