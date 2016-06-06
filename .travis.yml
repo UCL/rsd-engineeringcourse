@@ -4,7 +4,7 @@ python:
 addons:
   apt:
     sources:
-      - ppa:brightbox/ruby-ng
+      - sourceline: ppa:brightbox/ruby-ng
     packages:
       - pandoc
       - ruby2.2
