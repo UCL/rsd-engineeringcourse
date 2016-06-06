@@ -6,9 +6,9 @@ addons:
     packages:
     - pandoc
     - texlive-latex-recommended
-    - texlive-pictures
 
 install:
+- tlmgr install adjustbox
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
 - gem install jekyll
