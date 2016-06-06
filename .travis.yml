@@ -16,7 +16,6 @@ install:
 - gem install jekyll
 script:
 - make
-- deploy.sh
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
