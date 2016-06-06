@@ -32,23 +32,23 @@ default: _site
    java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
 
 %.html: %.nbconvert.ipynb Makefile jekyll.tpl
-	ipython nbconvert --to html  --template jekyll.tpl --stdout $< > $@
+  jupyter nbconvert --to html  --template jekyll.tpl --stdout $< > $@
 
 %.v2.ipynb: %.nbconvert.ipynb
-	ipython nbconvert --to notebook --nbformat 2 --stdout $< > $@
+	jupyter nbconvert --to notebook --nbformat 2 --stdout $< > $@
 
 %.nbconvert.ipynb: %.ipynb
-	ipython nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
+	jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
 notes.pdf: combined.ipynb Makefile
-	ipython nbconvert --to pdf --template latex.tplx $<
+	jupyter nbconvert --to pdf --template latex.tplx $<
 	mv combined.pdf notes.pdf
 
 combined.ipynb: $(EXECUTED)
 	python nbmerge.py $^ $@
 
 notes.tex: combined.ipynb Makefile
-	ipython nbconvert --to latex --template latex.tplx $<
+	jupyter nbconvert --to latex --template latex.tplx $<
 	mv combined.tex notes.tex
 
 notebooks.zip: ${NBV2}

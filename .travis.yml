@@ -6,6 +6,7 @@ addons:
     packages:
     - pandoc
     - texlive-latex-recommended
+    - texlive-latex-extra
     - texlive-xetex
     - texlive-luatex
 
