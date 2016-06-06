@@ -1,17 +1,25 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 addons:
   apt:
     sources:
-      - sourceline: ppa:brightbox/ruby-ng
+    - sourceline: ppa:brightbox/ruby-ng
     packages:
-      - pandoc
-      - ruby2.2
+    - pandoc
+    - ruby2.2
+    - ruby-switch
+    - texlive-latex-recommended
+    - texlive-xetex
+    - texlive-luatex
+    - bundler
 install:
-  - pip install --upgrade pip setuptools wheel
-  - pip install -r requirements.txt
-  - gem install jekyll
-# command to run tests
+- pip install --upgrade pip setuptools wheel
+- pip install -r requirements.txt
+- ruby-switch --set ruby2.2
+- gem install jekyll
 script:
-  - make
+- make
+before_install:
+- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
+  -in deploy_key.enc -out deploy_key -d
