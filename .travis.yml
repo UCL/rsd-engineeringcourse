@@ -3,6 +3,8 @@ python:
   - "2.7"
 addons:
   apt:
+    sources:
+      - ppa:brightbox/ruby-ng
     packages:
       - pandoc
       - ruby2.2
