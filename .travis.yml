@@ -1,21 +1,19 @@
 language: python
 python:
 - '2.7'
+rvm:
+- 2.2
 addons:
   apt:
-    sources:
-    - sourceline: ppa:brightbox/ruby-ng
     packages:
     - pandoc
-    - ruby2.2
-    - ruby-switch
     - texlive-latex-recommended
     - texlive-xetex
     - texlive-luatex
+
 install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
-- ruby-switch --set ruby2.2
 - gem install jekyll
 script:
 - make
