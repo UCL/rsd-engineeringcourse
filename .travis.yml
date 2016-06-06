@@ -19,6 +19,7 @@ before_install:
   -in deploy_key.enc -out deploy_key -d
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
+- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 after_success:
 - chmod 600 deploy_key
 - mv deploy_key ~/.ssh/id_rsa
