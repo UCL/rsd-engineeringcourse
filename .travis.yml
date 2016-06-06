@@ -1,8 +1,6 @@
 language: python
 python:
 - '2.7'
-rvm:
-- 2.2
 addons:
   apt:
     packages:
@@ -21,6 +19,8 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
+- rvm get stable --auto-dotfiles
+- rvm install 2.3.1
 after_success:
 - chmod 600 deploy_key
 - mv deploy_key ~/.ssh/id_rsa
