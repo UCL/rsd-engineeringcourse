@@ -20,7 +20,7 @@ before_install:
   -in deploy_key.enc -out deploy_key -d
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
-- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20160208/texlive.tar.xz | tar -JxC $HOME/texlive
+- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
 
 after_success:
 - chmod 600 deploy_key
