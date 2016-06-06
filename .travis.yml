@@ -7,6 +7,7 @@ addons:
       - pandoc
       - ruby-dev
 install:
+  - pip install --upgrade pip setuptools wheel
   - pip install -r requirements.txt
   - gem install jekyll
 # command to run tests
