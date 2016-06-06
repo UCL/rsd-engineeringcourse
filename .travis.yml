@@ -6,7 +6,7 @@ addons:
     packages:
     - pandoc
     - texlive-latex-recommended
-    - texlive-generic-recommended
+    - texlive-pictures
 
 install:
 - pip install --upgrade pip setuptools wheel
