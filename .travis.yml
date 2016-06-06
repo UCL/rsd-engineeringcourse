@@ -5,9 +5,10 @@ addons:
   apt:
     packages:
       - pandoc
-      - jekyll
+      - ruby-dev
 install:
   - pip install -r requirements.txt
+  - gem install jekyll
 # command to run tests
 script:
   - make
