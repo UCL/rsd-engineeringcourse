@@ -1,0 +1,9 @@
+jupyter
+numpy
+scipy
+pandas
+nose
+mako
+cython
+pyzmq
+matplotlib
