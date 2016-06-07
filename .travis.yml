@@ -8,10 +8,10 @@ addons:
 
 install:
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-#- pip install --upgrade pip setuptools wheel
-#- pip install -r requirements.txt
-#- gem install jekyll
-#- gem install redcarpet
+- pip install --upgrade pip setuptools wheel
+- pip install -r requirements.txt
+- gem install jekyll
+- gem install redcarpet
 script:
 - make
 before_install:
