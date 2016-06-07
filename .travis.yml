@@ -25,4 +25,4 @@ after_success:
 - chmod 600 deploy_key
 - mv deploy_key ~/.ssh/id_rsa
 - git add -f _site
-- git push -f gh-pages
+- git push -f -u origin gh-pages
