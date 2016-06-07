@@ -31,4 +31,4 @@ after_success:
 - git config --global user.email "jamespjh@gmail.com"
 - git config --global user.name "Pushed by Travis CI"
 - git commit -m "Pushed by Travis"
-- git subtree push site $SSH_REPO gh-pages
+- git subtree push --prefix _site $SSH_REPO gh-pages
