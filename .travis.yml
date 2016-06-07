@@ -26,5 +26,6 @@ before_install:
 - rvm install 2.3.1
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
 after_success:
+- git checkout -b gh-pages
 - git add -f _site
 - git push -f -u $SSH_REPO gh-pages
