@@ -8,8 +8,6 @@ addons:
 
 install:
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-- tlmgr update --self
-- tlmgr install adjustbox
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
 - gem install jekyll
