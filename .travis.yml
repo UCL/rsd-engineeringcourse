@@ -28,4 +28,5 @@ before_install:
 after_success:
 - git checkout -b gh-pages
 - git add -f _site
+- git commit -m "Pushed by Travis"
 - git push -f -u $SSH_REPO gh-pages
