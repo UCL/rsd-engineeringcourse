@@ -13,7 +13,7 @@ install:
 #- gem install jekyll
 #- gem install redcarpet
 script:
-- mkdir _site; echo "<head>Hello</head><body>Hello</body>" > _site/index.html # make
+- make
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
