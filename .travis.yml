@@ -26,9 +26,11 @@ before_install:
 - rvm install 2.3.1
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
 after_success:
+- cd _site
+- git init
 - git checkout -b gh-pages
-- git add -f _site
 - git config --global user.email "jamespjh@gmail.com"
 - git config --global user.name "Pushed by Travis CI"
 - git commit -m "Pushed by Travis"
-- git push $SSH_REPO `git subtree split --prefix _site gh-pages`:gh-pages --force
+- git add origin $SSH_REPO
+- git push -u origin gh-pages
