@@ -17,7 +17,7 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
-- eval `ssh agent -s`
+- eval `ssh-agent -s`
 - chmod 600 deploy_key
 - ssh-add deploy_key
 - rvm get stable --auto-dotfiles
