@@ -17,6 +17,8 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
+- REPO=`git config remote.origin.url`
+- SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 - eval `ssh-agent -s`
 - chmod 600 deploy_key
 - ssh-add deploy_key
@@ -25,4 +27,4 @@ before_install:
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
 after_success:
 - git add -f _site
-- git push -f -u origin gh-pages
+- git push -f -u $SSH_REPO gh-pages
