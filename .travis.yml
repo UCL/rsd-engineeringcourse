@@ -13,6 +13,7 @@ install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
 - gem install jekyll
+- gem install redcarpet
 script:
 - make
 before_install:
