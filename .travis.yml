@@ -34,4 +34,4 @@ after_success:
 - git add .
 - git commit -m "Pushed by Travis"
 - git remote add origin $SSH_REPO
-- git push -u origin gh-pages
+- git push -f -u origin gh-pages
