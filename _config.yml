@@ -8,7 +8,7 @@ defaults:
   - scope: {path: ""}
     values: {layout: default}
 
-baseurl: /training/engineering
+baseurl: /rsd-engineeringcourse
 
 crumbs:
   - link: http://www.ucl.ac.uk/ISD
@@ -26,8 +26,8 @@ redcarpet:
 
 
 include: [ _static, _sources]
-exclude: 
-  - "*/*.nbconvert.ipynb" 
+exclude:
+  - "*/*.nbconvert.ipynb"
   - "*/*.v2.ipynb"
   - "combined_files"
   - "combined.ipynb"
