@@ -25,7 +25,10 @@ redcarpet:
   extensions: ["strikethrough","tables"]
 
 
-include: [ _static, _sources]
+include:
+  - "ch04packaging/greetings/doc/_static"
+  - "ch04packaging/greetings/doc/_static"
+  - "ch04packaging/greetings/doc/_modules"
 exclude:
   - "*/*.nbconvert.ipynb"
   - "*/*.v2.ipynb"
