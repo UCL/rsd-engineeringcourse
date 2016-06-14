@@ -27,6 +27,15 @@ before_install:
 - ssh-add deploy_key
 - ssh-add git_teach_push
 - ssh-add git_teach_push2
+- ssh-add -l
+- mkdir tmp
+- cd tmp
+- git init
+- git remote add origin git@github.com/UCL/github-example
+- echo "foo" > foo.txt
+- git add foo.txt
+- git commit -am "Test commit"
+- git push
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz
