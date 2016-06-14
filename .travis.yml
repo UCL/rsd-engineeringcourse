@@ -31,7 +31,7 @@ before_install:
 - mkdir tmp
 - cd tmp
 - git init
-- git remote add origin git@github.com/UCL/github-example
+- git remote add origin git@github.com:/UCL/github-example
 - echo "foo" > foo.txt
 - git config --global user.email "jamespjh@gmail.com"
 - git config --global user.name "Pushed by Travis CI"
