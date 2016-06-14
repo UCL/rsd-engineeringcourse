@@ -5,7 +5,6 @@ addons:
   apt:
     packages:
     - pandoc
-
 install:
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 - pip install --upgrade pip setuptools wheel
@@ -16,15 +15,22 @@ script:
 - make
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
+  -in git_teach_push2.enc -out git_teach_push2 -d
+- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
+  -in git_teach_push.enc -out git_teach_push -d
+- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in deploy_key.enc -out deploy_key -d
 - REPO=`git config remote.origin.url`
 - SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 - eval `ssh-agent -s`
 - chmod 600 deploy_key
 - ssh-add deploy_key
+- ssh-add git_teach_push
+- ssh-add git_teach_push2
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
-- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
+- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz
+  | tar -JxC $HOME/texlive
 after_success:
 - cd _site
 - git init
