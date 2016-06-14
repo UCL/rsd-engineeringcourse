@@ -37,7 +37,7 @@ before_install:
 - git config --global user.name "Pushed by Travis CI"
 - git add foo.txt
 - git commit -am "Test commit"
-- git push
+- git push -u origin master
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz
