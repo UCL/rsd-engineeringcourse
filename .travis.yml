@@ -15,11 +15,8 @@ script:
 - make
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
-  -in git_teach_push2.enc -out git_teach_push2 -d
-- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
-  -in git_teach_push.enc -out git_teach_push -d
-- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
-  -in deploy_key.enc -out deploy_key -d
+  -in secrets.tar.enc -out secrets.tar -d
+- tar -xvf secrets.tar
 - REPO=`git config remote.origin.url`
 - SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 - eval `ssh-agent -s`
