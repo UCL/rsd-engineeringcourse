@@ -15,6 +15,7 @@ addons:
     - texlive-fonts-recommended
     - texlive-latex-recommended
     - texlive-xetex
+    - latex-xcolor
 install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
