@@ -29,8 +29,6 @@ before_install:
 - eval `ssh-agent -s`
 - chmod 600 deploy_key
 - ssh-add deploy_key
-- rvm get stable --auto-dotfiles
-- rvm install 2.3.1
 after_success:
 - cd _site
 - git init
