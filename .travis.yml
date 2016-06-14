@@ -1,3 +1,5 @@
+dist: trusty
+sudo: required
 language: python
 python:
 - '2.7'
@@ -6,8 +8,12 @@ addons:
   apt:
     packages:
     - pandoc
+    - texlive-latex-base
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+    - texlive-latex-recommended
+    - texlive-xetex
 install:
-- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
 - gem install jekyll
@@ -25,8 +31,6 @@ before_install:
 - ssh-add deploy_key
 - rvm get stable --auto-dotfiles
 - rvm install 2.3.1
-- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz
-  | tar -JxC $HOME/texlive
 after_success:
 - cd _site
 - git init
