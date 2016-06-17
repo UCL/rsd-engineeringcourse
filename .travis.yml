@@ -8,8 +8,6 @@ cache:
   - apt
 addons:
   apt:
-    sources:
-      sourceline: 'ppa:mc3man/trusty-media'
     packages:
     - pandoc
     - texlive-latex-base
@@ -37,6 +35,7 @@ before_install:
 - eval `ssh-agent -s`
 - chmod 600 deploy_key
 - ssh-add deploy_key
+- sudo add-apt-repository -y ppa:mc3man/trusty-media
 after_success:
 - cd _site
 - git init
