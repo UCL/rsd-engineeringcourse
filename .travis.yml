@@ -16,13 +16,13 @@ addons:
     - texlive-latex-recommended
     - texlive-generic-recommended
     - texlive-xetex
-    - ffmpeg
     - latex-xcolor
 install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
 - pip install git+https://github.com/jakevdp/JSAnimation.git
-- gem install jekyll
+- gem install liquid -v 3.0.6
+- gem install jekyll -v 3.1.6
 - gem install redcarpet
 script:
 - make
@@ -37,6 +37,7 @@ before_install:
 - ssh-add deploy_key
 - sudo add-apt-repository -y ppa:mc3man/trusty-media
 - sudo apt-get -y update
+- sudo apt-get -y install ffmpeg
 after_success:
 - cd _site
 - git init
