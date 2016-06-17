@@ -8,6 +8,8 @@ cache:
   - apt
 addons:
   apt:
+    sources:
+      sourceline: 'ppa:mc3man/trusty-media'
     packages:
     - pandoc
     - texlive-latex-base
@@ -16,10 +18,12 @@ addons:
     - texlive-latex-recommended
     - texlive-generic-recommended
     - texlive-xetex
+    - ffmpeg
     - latex-xcolor
 install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
+- pip install git+https://github.com/jakevdp/JSAnimation.git
 - gem install jekyll
 - gem install redcarpet
 script:
