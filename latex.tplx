@@ -7,77 +7,12 @@
 % Inherit from the specified cell style.
 ((* extends cell_style *))
 
-((* block definitions *))
-(((super()  )))
-\definecolor{uclmidgreen}{RGB}{130,141,55}
-\definecolor{verypalegreen}{RGB}{252,255,250}
-((* endblock definitions *))
-
-((* block packages *))
-((( super() )))
-
-\usepackage{lettrine} % Package to accentuate the first letter of the text
-\usepackage{fix-cm}	 % Custom font sizes - used for the initial letter in the document
-\usepackage{sectsty} % Enables custom section titles
-\usepackage{titling} % Allows custom title configuration
-\usepackage{picture}
-\usepackage{eso-pic}
-\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
-\usepackage{libertine}
-\usepackage{framed}
-\usepackage[T1]{fontenc}
-((* endblock packages *))
-
-((* block commands *))
-
-((( super() )))
-
-\newcommand{\initial}[1]{ % Defines the command and style for the first letter
-\lettrine[lines=3,lhang=0.3,nindent=0em]{
-\color{DarkGreen}
-{\textsf{#1}}}{}}
-
-\newcommand{\HorRule}{\color{DarkSeaGreen} \rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
-
-\sectionfont{\color{uclmidgreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
-\subsectionfont{\color{DarkSeaGreen} \usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
-
-\let\oldquote\quote
-\let\endoldquote\endquote
-\newcommand*\openquote{\makebox(25,-22){\scalebox{5}{\color{DarkGreen}``}}}
-\newcommand*\closequote{\makebox(25,-22){\scalebox{5}{\color{DarkGreen}''}}}
-\colorlet{shadecolor}{verypalegreen}
-\makeatletter
-\def\shadequote{\begin{snugshade}\begin{oldquote}\openquote}
-\def\endshadequote{%
-  \closequote\end{oldquote}\end{snugshade}}
-\renewenvironment{quote}{\begin{shadequote}}{\end{shadequote}}
-\makeatother
-
-((* endblock commands *))
-
 ((* block title *))
 \title{An introduction to Python Programming for Research}
 ((* endblock title *))
 
 ((* block author *))
-\author{James Hetherington and Matt Clarkson}
-
-\pretitle{
-\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{38}{38} \usefont{OT1}{phv}{b}{n} \color{uclmidgreen} \selectfont} % Horizontal rule before the title
-
-\posttitle{\par\end{flushleft}\begin{flushleft}\fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{Black} \selectfont
-Building and maintaining readable, reliable and efficient scientific software.
-\end{flushleft}\vskip 0.5em} % Whitespace under the title and subtitle
-
-\preauthor{\begin{flushleft}\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{uclmidgreen}} % Author font configuration
-
-\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} % Configuration for the institution name
-
-University College London% Your institution
-
-\par\end{flushleft}\HorRule} % Horizontal rule after the title
-
+\author{James Hetherington}
 ((* endblock author *))
 
 %===============================================================================
@@ -86,33 +21,9 @@ University College London% Your institution
 
 ((* block predoc *))
     ((( super() )))
-    \AddToShipoutPicture{\put(0,\dimexpr\paperheight-1.8cm){%
-      \makebox[\paperwidth]{\includegraphics[width=\paperwidth,height=1.8cm]{bannermidgreen.pdf}}%
-    }}
-
-((* block tableofcontents *))
-  \hypersetup{linkcolor=black}
-  \tableofcontents
-((* endblock tableofcontents *))
+    ((* block tableofcontents *))\tableofcontents((* endblock tableofcontents *))
 
 
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 ((* endblock predoc *))

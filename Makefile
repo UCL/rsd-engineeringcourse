@@ -1,6 +1,6 @@
 PANDOC=pandoc
 
-ROOT="/training/engineering"
+ROOT=""
 
 PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css/theme/night.css \
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
@@ -32,26 +32,23 @@ default: _site
    java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
 
 %.html: %.nbconvert.ipynb Makefile jekyll.tpl
-	ipython nbconvert --to html  --template jekyll.tpl --stdout $< > $@
+	jupyter nbconvert --to html  --template jekyll.tpl --stdout $< > $@
 
 %.v2.ipynb: %.nbconvert.ipynb
-	ipython nbconvert --to notebook --nbformat 2 --stdout $< > $@
+	jupyter nbconvert --to notebook --nbformat 2 --stdout $< > $@
 
 %.nbconvert.ipynb: %.ipynb
-	ipython nbconvert --to notebook --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
+	jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
-latexr.tplx: latex.tplx
-	sed s:bannermidgreen.pdf:`pwd`/bannermidgreen.pdf: $< > $@
-
-notes.pdf: combined.ipynb Makefile latexr.tplx
-	ipython nbconvert --to pdf --template latexr.tplx $<
+notes.pdf: combined.ipynb Makefile
+	jupyter nbconvert --to pdf --template latex.tplx $<
 	mv combined.pdf notes.pdf
 
 combined.ipynb: $(EXECUTED)
 	python nbmerge.py $^ $@
 
 notes.tex: combined.ipynb Makefile
-	ipython nbconvert --to latex --template latex.tplx $<
+	jupyter nbconvert --to latex --template latex.tplx $<
 	mv combined.tex notes.tex
 
 notebooks.zip: ${NBV2}

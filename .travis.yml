@@ -1,0 +1,50 @@
+dist: trusty
+sudo: required
+language: python
+python:
+- '2.7'
+cache:
+  - pip
+  - apt
+addons:
+  apt:
+    packages:
+    - pandoc
+    - texlive-latex-base
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+    - texlive-latex-recommended
+    - texlive-generic-recommended
+    - texlive-xetex
+    - latex-xcolor
+install:
+- pip install --upgrade pip setuptools wheel
+- pip install -r requirements.txt
+- pip install git+https://github.com/jakevdp/JSAnimation.git
+- gem install liquid -v 3.0.6
+- gem install jekyll -v 3.1.6
+- gem install redcarpet
+script:
+- make
+before_install:
+- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
+  -in secrets.tar.enc -out secrets.tar -d
+- tar -xvf secrets.tar
+- REPO=`git config remote.origin.url`
+- SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
+- eval `ssh-agent -s`
+- chmod 600 deploy_key
+- ssh-add deploy_key
+- sudo add-apt-repository -y ppa:mc3man/trusty-media
+- sudo apt-get -y update
+- sudo apt-get -y install ffmpeg
+after_success:
+- cd _site
+- git init
+- git checkout -b gh-pages
+- git config --global user.email "jamespjh@gmail.com"
+- git config --global user.name "Pushed by Travis CI"
+- git add .
+- git commit -m "Pushed by Travis"
+- git remote add origin $SSH_REPO
+- git push -f -u origin gh-pages
