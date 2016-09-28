@@ -4,6 +4,7 @@
 a.anchor-link { visibility:hidden; }
 div.prompt {display:none }
 div.output_area {background-color: #f8f8f8}
+div.output_stderr {background-color: #fff0f0}
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
