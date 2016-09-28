@@ -12,3 +12,4 @@ matplotlib-venn
 pypng
 sphinx
 numpydoc
+requests
