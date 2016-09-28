@@ -25,6 +25,7 @@ install:
 - gem install jekyll -v 3.1.6
 - gem install redcarpet
 script:
+- python -c "import matplotlib.pyplot"
 - make
 before_install:
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
