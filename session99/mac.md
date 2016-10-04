@@ -5,13 +5,11 @@ title: Mac OSX
 Mac
 ===
 
-Mavericks
+Upgrade OSX
 ---------
 
 We do not recommend following this training on older versions of OSX without an app store: upgrade
-to OSX Mavericks. It should be possible to complete the instructions on any OSX version with the
-App store (Snow Leopard (10.6) and newer) However, we recommend upgrading to Mavericks if possible
-since this is the most well tested.
+to at least OSX Mavericks.
 
 XCode and Command line tools
 ----------------------------
@@ -63,15 +61,10 @@ Python
 ------
 
 We recommend installing a complete scientific python distribution. One of these is
-Enthought Canopy.
-The Enthought Canopy python distribution exists in two different versions. A basic free version
-with a limited number of packages (Canopy express) and a non free full version. The full version
-can be obtained free of charge for academic use. Register with [Enthought Scientific Computing](https://enthought.com/products/canopy/academic/) using your UCL
-e-mail address for an academic licence.
+Anaconda.
 
-You may then use your Enthought user account to sign into the installed application and activate the
-academic version. Canopy comes with a package manager from where it is possible to install and
-update a large number of python packaged. The packages installed by default should cover our needs.
+Please download and install the Python 3.5 version of [Anaconda](https://www.continuum.io/downloads)
+
 
 Python from Homebrew
 --------------------
