@@ -9,18 +9,10 @@ Python
 ------
 
 We recommend installing a complete scientific python distribution. One of these is
-Enthought Canopy.
-The Enthought Canopy python distribution exists in two different versions. A basic free version with
-a limited number of packages (Canopy express) and a non free full version. The full version can be
-obtained free of charge for academic use. Register with
-[Enthought Scientific Computing](https://enthought.com/products/canopy/academic/) using your UCL
-e-mail address for an academic licence. After registering download and install the Canopy package
-for your operating system. If prompted make sure that you select Enthought as your default Python
-interpreter.
+Anaconda.
 
-You may then use your Enthought user account to sign into the installed application. Canopy comes
-with a package manager from where it is possible to install and update all the shipped python
-packaged. The packages installed by default should cover our needs.
+Please download and install [Anaconda](https://www.continuum.io/downloads).
+(Python 3.5 version.)
 
 Sophos
 ------
