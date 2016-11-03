@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from greeter import greet
+from .greeter import greet # Note python 3 relative import
 
 def process():
    parser = ArgumentParser(description = "Generate appropriate greetings")
@@ -11,8 +11,8 @@ def process():
 
    arguments= parser.parse_args()
 
-   print greet(arguments.personal, arguments.family, 
-               arguments.title, arguments.polite)
+   print(greet(arguments.personal, arguments.family, 
+               arguments.title, arguments.polite))
 
 if __name__ == "__main__":
     process()
