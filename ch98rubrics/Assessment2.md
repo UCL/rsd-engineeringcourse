@@ -5,8 +5,7 @@ Summary
 -------
 
 In an appendix, taken from https://github.com/jamespjh/bad-boids,
-is a very poor implementation of the Boids flocking example, described at
-http://development.rc.ucl.ac.uk/training/engineering/ch01data/084Boids.html
+is a very poor implementation of the Boids flocking example from the course.
 
 Your task is to take this code, and build from it a clean implementation of the
 flocking code, finishing with an appropriate object oriented design, using the
@@ -37,7 +36,7 @@ Your report should be included as a PDF file, report.pdf, in the root folder of 
 All coursework should be submitted electronically through the Moodle for the course.
 There is no need to include your source code
 in your report, but you can refer to it and if necessary reproduce lines if it helps to explain your solution.
-The deadline for submission is February 29th, 2016. Marks will be available by 21st March.
+The deadline for submission is February 24th, 2017. Marks will be available by 20st March.
 
 Marks Scheme
 ------------
