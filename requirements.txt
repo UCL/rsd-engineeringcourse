@@ -13,3 +13,5 @@ pypng
 sphinx
 numpydoc
 requests
+pyyaml
+
