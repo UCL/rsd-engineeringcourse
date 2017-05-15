@@ -12,6 +12,7 @@ addons:
     - pandoc
     - texlive-latex-base
     - texlive-latex-extra
+    - tree 
     - texlive-fonts-recommended
     - texlive-latex-recommended
     - texlive-generic-recommended
@@ -20,6 +21,7 @@ addons:
 install:
 - pip install --upgrade pip setuptools wheel
 - pip install -r requirements.txt
+- pip install git+https://github.com/jamespjh/greeter.git
 - pip install git+https://github.com/jakevdp/JSAnimation.git
 - gem install liquid -v 3.0.6
 - gem install jekyll -v 3.1.6
