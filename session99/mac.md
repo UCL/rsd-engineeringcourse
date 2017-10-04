@@ -69,14 +69,14 @@ Please download and install the Python 3.5 version of [Anaconda](https://www.con
 Python from Homebrew
 --------------------
 
-Alternatively if you wish to install python manually you can use Homebrew. 
-OSX ships with python and some packages. However this has known limitations and we do not recommend it. 
+Alternatively if you wish to install python manually you can use Homebrew.
+OSX ships with python and some packages. However this has known limitations and we do not recommend it.
 You can install a new version of python from Homebrew with the following.
 Please follow the instructions above to install the Xcode tools and Homebrew before attempting
 this.
 
 ```bash
-brew install python
+brew install python3
 ```
 
 In order to ensure that this version of python is selected over the OSX default version you should
@@ -94,30 +94,30 @@ python --version
 Which should print:
 
 ```
-Python 2.7.8
+Python 3.6.1
 ```
-The System Python version on OSX Mavericks is 2.7.5
+This will result in an installation of `python3` and `pip3` which you can use to have access to the latest python features which will be taught in this course.
 
 Then install additional python packages by executing the following.
 
 brew install [package-name]
 *  pkg-config
 *  freetype
-*  gfortran
+*  gcc
 
-pip install [package-name]
+pip3 install [package-name]
 *  numpy
-*  nose
 *  scipy
 *  matplotlib
 *  ipython[all]
 
-The following packages should be installed automatically as dependencies. But we recommend 
-installing them manually just in case. 
+The following packages should be installed automatically as dependencies. But we recommend
+installing them manually just in case.
 
 *  tornado
 *  jinja2
 *  pyzmq
+*  nose
 
 
 Editor and shell
@@ -137,4 +137,3 @@ git config --global core.editor /Applications/TextEdit.app/Contents/MacOS/TextEd
 
 The default terminal on OSX should also be sufficient. If you want a more advanced terminal
 [iTerm2](http://www.iterm2.com/) is an alternative.
-
