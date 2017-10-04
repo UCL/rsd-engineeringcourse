@@ -103,7 +103,7 @@ Then install additional python packages by executing the following.
 brew install [package-name]
 *  pkg-config
 *  freetype
-*  gfortran
+*  gcc
 
 pip3 install [package-name]
 *  numpy
