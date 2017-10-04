@@ -107,7 +107,6 @@ brew install [package-name]
 
 pip3 install [package-name]
 *  numpy
-*  nose
 *  scipy
 *  matplotlib
 *  ipython[all]
@@ -118,6 +117,7 @@ installing them manually just in case.
 *  tornado
 *  jinja2
 *  pyzmq
+*  nose
 
 
 Editor and shell
