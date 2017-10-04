@@ -16,7 +16,7 @@ What we're installing
 ---------------------
 
 For the software carpentry session on programming, we'll be using the language *Python* and in
-particular version 2.7. We will use the *Enthought Canopy* python distribution which contains a good
+particular versions >= 3.5. We will use the *Enthought Canopy* python distribution which contains a good
 collection of the most common *Python* modules as well as *IPython* (an improved *Python*
 interpreter) and the IPython notebook (a useful web-based user interface that allows you to create
 documents that combine text and *Python* code, executable with the same browser window).  We'll need
@@ -31,4 +31,3 @@ We will be using UCL's [eduroam](http://www.ucl.ac.uk/isd/staff/wireless/eduroam
 to the internet for this work.
 
 So you should ensure you have eduroam installed and working.
-
