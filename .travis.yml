@@ -26,7 +26,7 @@ install:
 - gem install liquid -v 3.0.6
 - gem install jekyll -v 3.1.6
 - gem install redcarpet
-- python2 -m pip install "IPython<6.0.0"
+- python2 -m pip install "IPython<6.0.0" --user
 - python2 -m pip install ipykernel
 - python2 -m ipykernel install --user
 script:
@@ -34,7 +34,7 @@ script:
 - make
 before_install:
 # Remove the MongoDB repo as their GPG key has expired.
-- sudo rm /etc/apt/sources.list.d/mongodb-3.2.list
+# - sudo rm /etc/apt/sources.list.d/mongodb-3.2.list
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xvf secrets.tar
