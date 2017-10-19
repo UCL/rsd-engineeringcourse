@@ -27,7 +27,7 @@ install:
 - gem install jekyll -v 3.1.6
 - gem install redcarpet
 - python2 -m pip install "IPython<6.0.0" --user
-- python2 -m pip install ipykernel
+- python2 -m pip install ipykernel --user
 - python2 -m ipykernel install --user
 script:
 - python -c "import matplotlib.pyplot"
