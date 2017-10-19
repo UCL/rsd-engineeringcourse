@@ -12,7 +12,7 @@ addons:
     - pandoc
     - texlive-latex-base
     - texlive-latex-extra
-    - tree 
+    - tree
     - texlive-fonts-recommended
     - texlive-latex-recommended
     - texlive-generic-recommended
@@ -33,6 +33,8 @@ script:
 - python -c "import matplotlib.pyplot"
 - make
 before_install:
+# Remove the MongoDB repo as their GPG key has expired.
+- sudo rm /etc/apt/sources.list.d/mongodb-3.2.list
 - openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xvf secrets.tar
