@@ -26,9 +26,6 @@ install:
 - gem install liquid -v 3.0.6
 - gem install jekyll -v 3.1.6
 - gem install redcarpet
-- python2 -m pip install "IPython<6.0.0"
-- python2 -m pip install ipykernel
-- python2 -m ipykernel install --user
 script:
 - python -c "import matplotlib.pyplot"
 - make
