@@ -19,7 +19,7 @@ addons:
     - texlive-xetex
     - latex-xcolor
 install:
-- pip install --upgrade pip setuptools wheel
+- pip install --upgrade setuptools wheel
 - pip install -r requirements.txt
 - pip install git+https://github.com/jamespjh/greeter.git
 - pip install git+https://github.com/jakevdp/JSAnimation.git
