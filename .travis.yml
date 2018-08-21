@@ -48,7 +48,7 @@ after_success:
 - cd _site
 - git init
 - git checkout -b gh-pages
-- git config --global user.email "jamespjh@gmail.com"
+- git config --global user.email "rc-softdev@ucl.ac.uk"
 - git config --global user.name "Pushed by Travis CI"
 - git add .
 - git commit -m "Pushed by Travis"
