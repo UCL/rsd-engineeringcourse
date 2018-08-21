@@ -40,7 +40,7 @@ This course may not be audited.
 <li>List comprehensions</li>
 <li>Functions in Python</li>
 <li>Modules in Python</li>
-<li>An introduciton to classes</li>
+<li>An introduction to classes</li>
 </ul>
    </td>
    <td>
