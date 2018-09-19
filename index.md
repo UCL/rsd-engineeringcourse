@@ -3,14 +3,14 @@ title: Research Software Development with Python
 layout: default
 ---
 
-##Introduction
+## Introduction
 
 In this course, you will move beyond programming, to learn how to construct reliable, readable,
 efficient research software in a collaborative environment. The emphasis is on practical techniques,
 tips, and technologies to effectively build and maintain complex code.
 This is a intensive, practical course.
 
-##Pre-requisites
+## Pre-requisites
 
 * Prior knowledge of at least one programming language, including variables, control flow, and functions.
 * You are required to bring your own laptop to the course as the classrooms we are using do not have desktop computers.
@@ -18,7 +18,7 @@ This is a intensive, practical course.
 your computer.
 * Eligibility: This course is for UCL post-graduate students.
  
-##Registration
+## Registration
 
 Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers. Other UCL graduate students or post-doctoral staff can register at [UCL Market Place](http://onlinestore.ucl.ac.uk/) (search for MPHYG001).
 
@@ -26,7 +26,7 @@ Further information is on the [UCL EPSRC Centre for Doctoral Training in Medical
 
 This course may not be audited.
 
-##Synopsis
+## Synopsis
 
 <table>
  <tbody>
@@ -127,15 +127,15 @@ This course may not be audited.
   </tr>
  </tbody>
 </table>
-###Exercises
+
+### Exercises
 
 Examples and exercises for this course will be provided in Python.  
 Python will be introduced during this course, but we will assume you can already
 program. That means that you may find supplementary python content useful.
 
 
-Versions
---------
+## Versions
 
 You can find the course notes as HTML via the navigation bar to the left.
 
