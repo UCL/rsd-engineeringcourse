@@ -23,6 +23,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  email: rc-softdev@ucl.ac.uk
   keep-history: true
   local-dir: _site
   verbose: true
