@@ -124,7 +124,7 @@ Editor and shell
 ----------------
 
 The default text editor on OS X *textedit* should be sufficient for our use. Alternatively
-http://mac.appstorm.net/roundups/office-roundups/top-10-mac-text-editors/ lists a number of other good editors.
+[this link](http://mac.appstorm.net/roundups/office-roundups/top-10-mac-text-editors/) lists a number of other good editors.
 
 A new open source option is Github's Atom editor. You can get it from https://atom.io/
 However, note that this is still in somewhat early development.

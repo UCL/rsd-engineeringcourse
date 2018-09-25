@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 language: python
 python:
-- '3.4'
+- '3.6'
 cache:
   - pip
   - apt
@@ -18,6 +18,18 @@ addons:
     - texlive-generic-recommended
     - texlive-xetex
     - latex-xcolor
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  email: rc-softdev@ucl.ac.uk
+  keep-history: true
+  local-dir: _site
+  verbose: true
+  on:
+    branch: master
+
 install:
 - pip install --upgrade setuptools wheel
 - pip install -r requirements.txt
@@ -31,26 +43,7 @@ script:
 - python -c "import matplotlib.pyplot"
 - make
 before_install:
-# Remove the MongoDB repo as their GPG key has expired.
-# - sudo rm /etc/apt/sources.list.d/mongodb-3.2.list
-- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
-  -in secrets.tar.enc -out secrets.tar -d
-- tar -xvf secrets.tar
-- REPO=`git config remote.origin.url`
-- SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
-- eval `ssh-agent -s`
-- chmod 600 deploy_key
-- ssh-add deploy_key
 - sudo add-apt-repository -y ppa:mc3man/trusty-media
 - sudo apt-get -y update
 - sudo apt-get -y install ffmpeg
 after_success:
-- cd _site
-- git init
-- git checkout -b gh-pages
-- git config --global user.email "rc-softdev@ucl.ac.uk"
-- git config --global user.name "Pushed by Travis CI"
-- git add .
-- git commit -m "Pushed by Travis"
-- git remote add origin $SSH_REPO
-- git push -f -u origin gh-pages
