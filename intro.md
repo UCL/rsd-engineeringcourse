@@ -1,4 +1,4 @@
-##Introduction
+## Introduction
 
 ### Purpose
 
@@ -7,7 +7,7 @@ efficient research software in a collaborative environment. The emphasis is on p
 tips, and technologies to effectively build and maintain complex code.
 This is a intensive, practical course.
 
-##Synopsis
+## Synopsis
 
 ### Lesson 1
 
@@ -48,7 +48,7 @@ This is a intensive, practical course.
 * Working with command line arguments
 * Brief introduction to functional programming
 
-### Lesson 5
+### Lesson 5
 
 * Best practice in construction.
 * Comments.
@@ -68,7 +68,7 @@ This is a intensive, practical course.
 * Agile and Waterfall.
 * Functional and architectural design.
 
-### Lesson 7
+### Lesson 7
 
 * Tricks for not repeating yourself
 * Iterables and generators
@@ -81,7 +81,7 @@ This is a intensive, practical course.
 * IDEs and editors
 * Logging.
 
-### Lession 8
+### Lesson 8
 
 * Performance programming
 * Numpy.
@@ -96,23 +96,23 @@ This is a intensive, practical course.
 * GitHub pages
 * Creating servers
 
-### Lesson 10
+### Lesson 10
 
 * Solutions to exercises
 
 ## Course processes
 
-###Prerequisites
+### Prerequisites
 
 Prior knowledge of at least one programming language, including variables, control flow, and functions.
 
-###Exercises
+### Exercises
 
 Examples and exercises for this course will be provided in Python.  
 Python will be introduced during this course, but we will assume you can already
 program. That means that you may find supplementary python content useful.
 
-###Setup
+### Setup
 
 You are required to bring your own laptop to the course as the classrooms we are
  using do not have desktop computers.
