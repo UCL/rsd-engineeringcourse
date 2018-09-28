@@ -1,3 +1,4 @@
+ipython<7
 jupyter
 numpy
 scipy
