@@ -12,15 +12,15 @@ This is a intensive, practical course.
 
 ## Pre-requisites
 
-* Prior knowledge of at least one programming language, including variables, control flow, and functions.
-* You are required to bring your own laptop to the course as the classrooms we are using do not have desktop computers.
-* We have provided [setup](session99) instructions for installing the software needed for the course on
+* You need to have taken a formal course in at least one programming language, including variables, control flow, and functions. This could be a semester-long course, or a shorter workshop like Software Carpentry.
+* You are not required to bring your own laptop, as we will be using desktop computers in the Cluster Room.
+However, we have also provided [setup](session99) instructions if you want to install the software needed for the course on
 your computer.
 * Eligibility: This course is for UCL post-graduate students.
- 
+
 ## Registration
 
-Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers. Other UCL graduate students or post-doctoral staff can register at [UCL Market Place](http://onlinestore.ucl.ac.uk/) (search for MPHYG001).
+Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers.
 
 Further information is on the [UCL EPSRC Centre for Doctoral Training in Medical Imaging](http://medicalimaging-cdt.ucl.ac.uk/programmes) website.
 
@@ -130,7 +130,7 @@ This course may not be audited.
 
 ### Exercises
 
-Examples and exercises for this course will be provided in Python.  
+Examples and exercises for this course will be provided in Python.
 Python will be introduced during this course, but we will assume you can already
 program. That means that you may find supplementary python content useful.
 
