@@ -33,7 +33,7 @@ Git
 
 Install the [GitHub for Windows client](http://windows.github.com/). This comes with both a GUI
 client as well as the [Git Bash](https://gitforwindows.org/) terminal client which we will use during
-the curse. You should register with [Github](https://github.com) for an account and sign into the
+the course. You should register with [Github](https://github.com) for an account and sign into the
 GUI client with this account. This will automatically set-up
 [SSH based authentication](https://help.github.com/articles/generating-ssh-keys#platform-windows)
 for the terminal client. The terminal client comes in 3 different flavours based on Windows CMD
@@ -47,7 +47,7 @@ client. Sign in with your credentials and:
 *  Git Bash
 *  And Press Update to save.
 
-Verify that this is working by opening Git bash. The Shell window should have a title that
+Verify that this is working by opening Git Bash. The Shell window should have a title that
 starts with MINGW32.
 
 Editor
@@ -57,7 +57,7 @@ Unless you already use a specific editor which you are comfortable with we recom
 [Visual Studio Code](https://code.visualstudio.com/).
 
 Using VSCode to edit text files including code should be straight forward but in addition you
-could configure [git bash](https://code.visualstudio.com/docs/editor/integrated-terminal) and
+could configure [Git Bash](https://code.visualstudio.com/docs/editor/integrated-terminal) and
 [python prompt](https://code.visualstudio.com/docs/python/python-tutorial).
 
 

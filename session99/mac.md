@@ -36,7 +36,8 @@ Install [XCode](https://itunes.apple.com/us/app/xcode/id497799835) using the Mac
 
 Then, go to Xcode...Preferences...Downloads... and install the command line tools option.
 
-##Git
+Git
+---
 
 The XCode tools comes with Git so no need to do anything more.
 
