@@ -12,7 +12,7 @@ This is a intensive, practical course.
 ### Lesson 1
 
 * Why use scripting languages? 
-* Python. IPython and the IPython notebook.
+* Python. IPython and the Jupyter notebook.
 * Programming with lists. Data structures: arrays, dictionaries, and sets. 
 * Duck typing.
 * Modules.

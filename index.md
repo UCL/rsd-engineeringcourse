@@ -35,7 +35,7 @@ This course may not be audited.
 <h3>Introduction to Python</h3>
 <ul>
 <li>Why use scripting languages?</li>
-<li>Python. IPython and the IPython notebook.</li>
+<li>Python. IPython and the Jupyter notebook.</li>
 <li>Data structures: list, dictionaries, and sets. </li>
 <li>List comprehensions</li>
 <li>Functions in Python</li>

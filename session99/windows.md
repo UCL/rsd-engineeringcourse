@@ -17,7 +17,7 @@ Please download and install [Anaconda](https://www.anaconda.com/download/)
 Sophos
 ------
 
-To use the IPython notebook on a Windows computer with Sophos anti-virus installed it may be necessary to
+To use the Jupyter notebook on a Windows computer with Sophos anti-virus installed it may be necessary to
 open additional ports allowing communication between the notebook and its server.
 The [solution](http://stackoverflow.com/questions/13036197/ipython-notebook-getting-output) is:
 
@@ -25,7 +25,7 @@ The [solution](http://stackoverflow.com/questions/13036197/ipython-notebook-gett
 * Select "configure" > "Anti-virus" > "Authorization" from the menu at the top
 * Select the websites tab
 * click the "Add" button and add 127.0.0.1 and localhost to the "Authorized websites" list
-* restart computer (most likely not needed, just restart the IPython notebook)
+* restart computer (most likely not needed, just restart the Jupyter notebook)
 * output works now :)
 
 Git
