@@ -7,7 +7,7 @@ nose
 mako
 cython
 pyzmq
-matplotlib
+matplotlib>=2.1
 geopy
 matplotlib-venn
 pypng
