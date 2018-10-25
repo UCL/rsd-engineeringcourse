@@ -18,7 +18,7 @@ What we're installing
 For the software carpentry session on programming, we'll be using the language *Python* and in
 particular versions >= 3.5. We will use the *Enthought Canopy* python distribution which contains a good
 collection of the most common *Python* modules as well as *IPython* (an improved *Python*
-interpreter) and the IPython notebook (a useful web-based user interface that allows you to create
+interpreter) and the Jupyter notebook (a useful web-based user interface that allows you to create
 documents that combine text and *Python* code, executable with the same browser window).  We'll need
 *pip*, the package installer for *Python*, as well.
 
