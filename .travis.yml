@@ -40,6 +40,7 @@ install:
 
 script:
 - python -c "import matplotlib.pyplot"
+- ls ch04packaging/*ipynb
 - make
 before_install:
 # Remove the MongoDB repo as their GPG key has expired.
