@@ -1,11 +1,11 @@
-- personal: James
-  family: Hetherington
-  answer: "Hey, James Hetherington."
-- personal: James
-  family: Hetherington
+- personal: Eric
+  family: Idle
+  answer: "Hey, Eric Idle."
+- personal: Graham
+  family: Chapman
   polite: True
-  answer: "How do you do, James Hetherington."
-- personal: James
-  family: Hetherington
-  title: Dr
-  answer: "Hey, Dr James Hetherington."
+  answer: "How do you do, Graahm Chapman."
+- personal: Michael
+  family: Palin
+  title: CBE
+  answer: "Hey, CBE Mike Palin."

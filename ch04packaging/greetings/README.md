@@ -7,4 +7,4 @@ This is a very simple example package used as part of the UCL
 
 Usage:
     
-Invoke the tool with greet <FirstName> <Secondname>
+Invoke the tool with `greet <FirstName> <Secondname>`
