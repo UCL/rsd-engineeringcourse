@@ -18,3 +18,5 @@ pyyaml
 pytest-cov
 coverage
 imageio
+pycodestyle
+pylint
