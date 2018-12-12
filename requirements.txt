@@ -21,3 +21,4 @@ imageio
 pycodestyle
 pylint
 webcolors
+line_profiler
