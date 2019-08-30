@@ -17,6 +17,7 @@ addons:
     - texlive-latex-recommended
     - texlive-generic-recommended
     - texlive-generic-extra
+    - texlive-math-extra
     - texlive-xetex
     - latex-xcolor
     - lmodern
