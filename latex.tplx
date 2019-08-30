@@ -3,8 +3,13 @@
 % https://github.com/jupyter/nbconvert/issues/530#issuecomment-303034557
 %=====================================
 
-((*- extends 'article.tplx' -*))
-[unrelated template changes]
+% Default to the notebook output style
+((* if not cell_style is defined *))
+    ((* set cell_style = 'style_ipython.tplx' *))
+((* endif *))
+
+% Inherit from the specified cell style.
+((* extends cell_style *))
 ((* block packages *))
     % Hide [utf8x]{inputenc} as it should not be used with xetex.
     % Also hide ucs which conflicts with a bunch of stuff.
@@ -24,13 +29,6 @@
     \setTransitionsForGreek{\begingroup\substitutefont}{\endgroup}
 ((* endblock packages *))
 
-% Default to the notebook output style
-((* if not cell_style is defined *))
-    ((* set cell_style = 'style_ipython.tplx' *))
-((* endif *))
-
-% Inherit from the specified cell style.
-((* extends cell_style *))
 
 ((* block title *))
 \title{An introduction to Python Programming for Research}
