@@ -21,6 +21,7 @@ addons:
     - texlive-xetex
     - latex-xcolor
     - lmodern
+    - fonts-cmu
 
 deploy:
   provider: pages
