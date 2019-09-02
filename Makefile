@@ -6,7 +6,7 @@ PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
            --default-image-extension=png --highlight-style=zenburn --mathjax -V revealjs-url=http://lab.hakim.se/reveal-js
 
-NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(wildcard ch*/*.ipynb))
+NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(sort $(wildcard ch*/*.ipynb)))
 SVGS=$(wildcard ch*/*.svg)
 
 HTMLS=$(NOTEBOOKS:.ipynb=.html)
