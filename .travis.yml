@@ -22,6 +22,7 @@ addons:
     - latex-xcolor
     - lmodern
     - fonts-cmu
+    - inkscape
 
 deploy:
   provider: pages
