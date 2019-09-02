@@ -13,7 +13,8 @@ import os
 import string
 import sys
 
-from IPython import nbformat
+import nbformat
+
 def fix_images_paths(cells, filename):
     # find parent path
     path_filename = filename.split('/')
