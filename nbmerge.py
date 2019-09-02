@@ -21,7 +21,7 @@ def fix_images_paths(cells, filename):
 
     # fix paths
     for cell in cells:
-        if ("![" in cell['source'] and ".png)" in cell['source']):
+        if ("![" in cell['source'] and ".svg)" in cell['source']):
             source = cell['source']
             new_source = source
             # where the link starts
