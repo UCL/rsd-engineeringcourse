@@ -19,7 +19,6 @@ addons:
     - texlive-generic-extra
     - texlive-science
     - texlive-xetex
-    - texlive-latex-recommended
     - lmodern
     - fonts-cmu
     - inkscape
