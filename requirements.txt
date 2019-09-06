@@ -22,3 +22,5 @@ imageio
 pycodestyle
 pylint
 webcolors
+nbsphinx
+cloud_sptheme
