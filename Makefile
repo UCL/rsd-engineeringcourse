@@ -6,12 +6,13 @@ PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
            --default-image-extension=png --highlight-style=zenburn --mathjax -V revealjs-url=http://lab.hakim.se/reveal-js
 
-NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(wildcard ch*/*.ipynb))
+NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(sort $(wildcard ch*/*.ipynb)))
+SVGS=$(wildcard ch*/*.svg)
 
 HTMLS=$(NOTEBOOKS:.ipynb=.html)
 
 EXECUTED=$(NOTEBOOKS:.ipynb=.nbconvert.ipynb)
-
+PNGS=$(SVGS:.svg=.png)
 NBV2=$(NOTEBOOKS:.ipynb=.v2.ipynb)
 
 default: _site
@@ -28,8 +29,11 @@ default: _site
 %.png: %.dot Makefile
 	dot $< -T png -o $@
 
-%.png: %.uml Makefile
-   java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
+%.png: %.svg Makefile
+	inkscape -z -e $@ -w 600 $<
+
+%.png: %.uml plantuml.jar Makefile
+	java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
 
 %.html: %.nbconvert.ipynb Makefile jekyll.tpl
 	jupyter nbconvert --to html  --template jekyll.tpl --stdout $< > $@
@@ -40,14 +44,15 @@ default: _site
 %.nbconvert.ipynb: %.ipynb
 	jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
-notes.pdf: combined.ipynb Makefile
+notes.pdf: combined.ipynb $(PNGS) Makefile
 	jupyter nbconvert --to pdf --template latex.tplx $<
 	mv combined.pdf notes.pdf
 
 combined.ipynb: $(EXECUTED)
 	python nbmerge.py $^ $@
+	sed -i -e 's/\.svg/\.png/g' $@
 
-notes.tex: combined.ipynb Makefile
+notes.tex: combined.ipynb $(PNGS) Makefile
 	jupyter nbconvert --to latex --template latex.tplx $<
 	mv combined.tex notes.tex
 

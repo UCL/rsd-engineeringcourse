@@ -1,4 +1,5 @@
-ipython<7
+attrs>=17.4.0
+ipython
 jupyter
 numpy
 scipy
@@ -21,4 +22,3 @@ imageio
 pycodestyle
 pylint
 webcolors
-line_profiler

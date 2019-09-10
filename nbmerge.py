@@ -10,9 +10,29 @@ from __future__ import print_function
 
 import io
 import os
+import string
 import sys
 
-from IPython import nbformat
+import nbformat
+
+def fix_images_paths(cells, filename):
+    # find parent path
+    path_filename = filename.split('/')
+    full_path = '/'.join(path_filename[:-1]) + "/"
+
+    # fix paths
+    for cell in cells:
+        if ("![" in cell['source'] and ".svg)" in cell['source']):
+            source = cell['source']
+            new_source = source
+            # where the link starts
+            start = source.find("](")
+            if source[start+2:start+4] == './':
+                new_source = source[:start+2] + full_path + source[start+4:]
+            elif source[start+2] in string.ascii_letters:
+                new_source = source[:start+2] + full_path + source[start+2:]
+            cell['source'] = new_source
+    return cells
 
 def merge_notebooks(filenames, outfile):
     merged = None
@@ -22,6 +42,7 @@ def merge_notebooks(filenames, outfile):
         if merged is None:
             merged = nb
         else:
+            nb.cells = fix_images_paths(nb.cells, fname)
             # TODO: add an optional marker between joined notebooks
             # like an horizontal rule, for example, or some other arbitrary
             # (user specified) markdown cell)
