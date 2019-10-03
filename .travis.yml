@@ -51,7 +51,7 @@ script:
 before_install:
 # Remove the MongoDB repo as their GPG key has expired.
 # - sudo rm /etc/apt/sources.list.d/mongodb-3.2.list
-- openssl aes-256-cbc -K $encrypted_194007bb00f1_key -iv $encrypted_194007bb00f1_iv
+- openssl aes-256-cbc -K $encrypted_e058bed9e333_key -iv $encrypted_e058bed9e333_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar -xvf secrets.tar
 - REPO=`git config remote.origin.url`
