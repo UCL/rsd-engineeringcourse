@@ -97,6 +97,10 @@ Editor
 Many different text editors suitable for programming are available.  If you don't already have a
 favourite, you could look at [Visual Studio Code](https://code.visualstudio.com/).
 
+For a better git integration we suggest the [git
+graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+plulgin.
+
 Regardless of which editor you have chosen you should configure git to use it. Executing something
 like this in a terminal should work:
 
