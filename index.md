@@ -13,8 +13,8 @@ This is a intensive, practical course.
 ## Pre-requisites
 
 * You need to have taken a formal course in at least one programming language, including variables, control flow, and functions. This could be a semester-long course, or a shorter workshop like Software Carpentry.
-* You are not required to bring your own laptop, as we will be using desktop computers in the Cluster Room.
-However, we have also provided [setup](session99) instructions if you want to install the software needed for the course on
+* You are required to bring your own laptop.
+We have also provided [setup](session99) instructions for you to install the software needed for the course on
 your computer.
 * Eligibility: This course is for UCL post-graduate students.
 

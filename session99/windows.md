@@ -12,12 +12,12 @@ We recommend installing a complete scientific python distribution. One of these 
 [Anaconda](https://www.anaconda.com/distribution/).
 
 Please download and install [Anaconda](https://www.anaconda.com/download/)
-(Python 3.6 version).
+(Python 3.7 version).
 
 Sophos
 ------
 
-To use the Jupyter notebook on a Windows computer with Sophos anti-virus installed it may be necessary to
+To use the Jupyter lab or notebook on a Windows computer with Sophos anti-virus installed it may be necessary to
 open additional ports allowing communication between the notebook and its server.
 The [solution](http://stackoverflow.com/questions/13036197/ipython-notebook-getting-output) is:
 
@@ -35,7 +35,7 @@ Install the [GitHub for Windows client](http://windows.github.com/). This comes 
 client as well as the [Git Bash](https://gitforwindows.org/) terminal client which we will use during
 the course. You should register with [Github](https://github.com) for an account and sign into the
 GUI client with this account. This will automatically set-up
-[SSH based authentication](https://help.github.com/articles/generating-ssh-keys#platform-windows)
+[SSH based authentication](https://help.github.com/en/articles/connecting-to-github-with-ssh#platform-windows)
 for the terminal client. The terminal client comes in 3 different flavours based on Windows CMD
 (DOS like), Windows Powershell, and BASH. We will use the BASH client as this most closely resembles the
 Linux and OS X terminal used by other students. In order to configure this open the Github
@@ -60,11 +60,15 @@ Using VSCode to edit text files including code should be straight forward but in
 could configure [Git Bash](https://code.visualstudio.com/docs/editor/integrated-terminal) and
 [python prompt](https://code.visualstudio.com/docs/python/python-tutorial).
 
+For a better git integration we suggest the [git
+graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+plulgin.
+
 
 Testing your install
 -------------------------
 
-Check this works by opening the Github shell. Once you have a terminal open, type
+Check this works by opening the git bash shell. Once you have a terminal open, type
 
 ``` bash
 which code
@@ -82,7 +86,7 @@ opens the editor and the close it again.
 which git
 ```
 
-which should produce `/bin/git`. The ``which``
+which should produce `/bin/git`. The `which`
 command is used to figure out where a given program is located on disk.
 
 Telling Git about VS Code
@@ -112,4 +116,4 @@ Which should result in details of your installed python version.
 This should print the installed version of the python and git confirming that both are installed at
 working correctly.
 
-You should now have a working version of git, python, and notepad++, all accessible from your shell.
+You should now have a working version of git, python, and code, all accessible from your shell.
