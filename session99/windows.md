@@ -62,7 +62,7 @@ could configure [Git Bash](https://code.visualstudio.com/docs/editor/integrated-
 
 For a better git integration we suggest the [git
 graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-plulgin.
+plugin.
 
 
 Testing your install

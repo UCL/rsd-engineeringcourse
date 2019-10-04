@@ -137,7 +137,7 @@ we recommend to use [Visual Studio Code](https://code.visualstudio.com/).
 
 For a better git integration we suggest the [git
 graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-plulgin.
+plugin.
 
 To setup git to use *textedit* executing the following in a terminal should do.
 

@@ -99,7 +99,7 @@ favourite, you could look at [Visual Studio Code](https://code.visualstudio.com/
 
 For a better git integration we suggest the [git
 graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-plulgin.
+plugin.
 
 Regardless of which editor you have chosen you should configure git to use it. Executing something
 like this in a terminal should work:
@@ -110,4 +110,3 @@ git config --global core.editor NameofYourEditorHere
 
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing
 `bash`.
-
