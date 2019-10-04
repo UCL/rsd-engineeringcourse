@@ -48,7 +48,7 @@ client. Sign in with your credentials and:
 *  And Press Update to save.
 
 Verify that this is working by opening Git Bash. The Shell window should have a title that
-starts with MINGW32.
+starts with MINGW64.
 
 Editor
 -------
