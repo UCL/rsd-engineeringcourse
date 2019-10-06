@@ -2,24 +2,28 @@
 title: Mac OSX
 ---
 
-Mac
-===
+# Mac
 
-Upgrade OSX
----------
+
+## Upgrade OSX
+
 
 We do not recommend following this training on older versions of OSX without an app store: upgrade
 to at least OSX Mavericks.
 
-Anaconda
-----------
-
-Download [Anaconda](https://www.anaconda.com/download/#macos) with Python 3.6 version.
-Follow the defaults for the installation.
+## Git
 
 
-XCode and Command line tools
-----------------------------
+On a terminal you can install `git` by trying to run it:
+
+```bash
+git --version
+```
+
+If that throws you an error message, then most likely you will need to install XCode.
+
+### XCode and Command line tools
+
 
 Install the XCode command-line-tools by opening a terminal and run the following.
 
@@ -30,19 +34,15 @@ And follow the on screen instructions.
 
 You may also install Xcode from the Mac app store if you wish, but it is not needed.
 
-Pre Mavericks:
+*Pre Mavericks*:
 
 Install [XCode](https://itunes.apple.com/us/app/xcode/id497799835) using the Mac app store.
 
 Then, go to Xcode...Preferences...Downloads... and install the command line tools option.
 
-Git
----
 
-The XCode tools comes with Git so no need to do anything more.
+## Homebrew
 
-Homebrew
---------
 [Homebrew](brew.sh) is a package manager for OSX which enables the installation of a
 lot of software useful for scientific computing. It is required for some of the installations
 below. But not essential for Software Carpentry. Homebrew requires the Xcode tools above.
@@ -65,19 +65,17 @@ If you are already running MacPorts or another package manager for OSX we don't 
 installing homebrew.
 
 
-Python
-------
+## Python
 
 
 We recommend installing a complete scientific python distribution. One of these is
 [Anaconda](https://www.anaconda.com/distribution/).
 
 Please download and install [Anaconda](https://www.anaconda.com/download/)
-(Python 3.6 version).
+(Python 3.7 version).
 
 
-Python from Homebrew
---------------------
+### Python from Homebrew
 
 Alternatively if you wish to install python manually you can use Homebrew.
 OSX ships with python and some packages. However this has known limitations and we do not recommend it.
@@ -104,7 +102,7 @@ python --version
 Which should print:
 
 ```
-Python 3.6.1
+Python 3.7.x
 ```
 This will result in an installation of `python3` and `pip3` which you can use to have access to the latest python features which will be taught in this course.
 
@@ -131,11 +129,17 @@ installing them manually just in case.
 *  pytest
 
 
-Editor and shell
-----------------
+## Editor and shell
+
 
 The default text editor on OS X *textedit* should be sufficient for our use. Alternatively
 we recommend to use [Visual Studio Code](https://code.visualstudio.com/).
+Check [their setup page](https://code.visualstudio.com/docs/setup/mac) for detailed
+instructions.
+
+For a better git integration we suggest the [git
+graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+plugin.
 
 To setup git to use *textedit* executing the following in a terminal should do.
 

@@ -41,7 +41,7 @@ Python via Anaconda
 We recommend you use [Anaconda](https://anaconda.org/), a complete independent scientific python distribution.
 
 Download [Anaconda for linux](https://www.anaconda.com/download/#linux) with your web browser, choose
-the python 3.6 version.  Open a terminal window, go to the place where the file was downloaded  and type:
+the python 3.7 version.  Open a terminal window, go to the place where the file was downloaded  and type:
 
 ```bash
 bash Anaconda3-
@@ -96,6 +96,12 @@ Editor
 
 Many different text editors suitable for programming are available.  If you don't already have a
 favourite, you could look at [Visual Studio Code](https://code.visualstudio.com/).
+Check [their setup page](https://code.visualstudio.com/docs/setup/linux) for detailed
+instructions.
+
+For a better git integration we suggest the [git
+graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+plugin.
 
 Regardless of which editor you have chosen you should configure git to use it. Executing something
 like this in a terminal should work:
@@ -106,4 +112,3 @@ git config --global core.editor NameofYourEditorHere
 
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing
 `bash`.
-
