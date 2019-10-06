@@ -55,6 +55,8 @@ Editor
 
 Unless you already use a specific editor which you are comfortable with we recommend using
 [Visual Studio Code](https://code.visualstudio.com/).
+Check [their setup page](https://code.visualstudio.com/docs/setup/windows) for detailed
+instructions.
 
 Using VSCode to edit text files including code should be straight forward but in addition you
 could configure [Git Bash](https://code.visualstudio.com/docs/editor/integrated-terminal) and

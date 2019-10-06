@@ -134,6 +134,8 @@ installing them manually just in case.
 
 The default text editor on OS X *textedit* should be sufficient for our use. Alternatively
 we recommend to use [Visual Studio Code](https://code.visualstudio.com/).
+Check [their setup page](https://code.visualstudio.com/docs/setup/mac) for detailed
+instructions.
 
 For a better git integration we suggest the [git
 graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)

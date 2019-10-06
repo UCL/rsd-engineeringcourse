@@ -96,6 +96,8 @@ Editor
 
 Many different text editors suitable for programming are available.  If you don't already have a
 favourite, you could look at [Visual Studio Code](https://code.visualstudio.com/).
+Check [their setup page](https://code.visualstudio.com/docs/setup/linux) for detailed
+instructions.
 
 For a better git integration we suggest the [git
 graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
