@@ -3,6 +3,7 @@ ipython
 jupyter
 numpy
 scipy
+h5py
 pandas
 nose
 mako
