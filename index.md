@@ -22,8 +22,6 @@ your computer.
 
 Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers.
 
-Further information is on the [UCL EPSRC Centre for Doctoral Training in Medical Imaging](http://medicalimaging-cdt.ucl.ac.uk/programmes) website.
-
 This course may not be audited.
 
 ## Synopsis
