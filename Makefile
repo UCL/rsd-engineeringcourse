@@ -30,7 +30,7 @@ default: _site
 	dot $< -T png -o $@
 
 %.png: %.svg Makefile
-	inkscape -z -e $@ -w 600 $<
+	dbus-run-session inkscape -z -e $@ -w 600 $<
 
 %.png: %.uml plantuml.jar Makefile
 	java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
