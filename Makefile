@@ -63,7 +63,7 @@ master.zip: Makefile
 	rm -f master.zip
 	wget https://github.com/UCL-RITS/indigo-jekyll/archive/master.zip
 
-ready: indigo $(HTMLS) notes.pdf notebooks.zip
+ready: indigo $(HTMLS) # notes.pdf notebooks.zip
 
 indigo-jekyll-master: Makefile master.zip
 	rm -rf indigo-jekyll-master
