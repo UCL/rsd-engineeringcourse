@@ -30,6 +30,9 @@ include:
   - "ch04packaging/greetings/doc/_static"
   - "ch04packaging/greetings/doc/_modules"
 exclude:
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
   - "*/*.nbconvert.ipynb"
   - "*/*.v2.ipynb"
   - "combined_files"

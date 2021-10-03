@@ -1,0 +1,43 @@
+name: Build website
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  Build-website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2 # FIXME: add pip + latex + gems
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Install TeXLive
+        uses: DanySK/setup-texlive-action@0.1.1
+      - id: setup-python
+        name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        uses: py-actions/py-dependency-install@v2
+        with:
+          path: ".github/python/requirements.txt"
+      - name: Building notes
+        run: make ready
+      - name: Builds website
+        uses: helaili/jekyll-action@v2
+        with:
+          target_branch: 'gh-pages'
+          build_only: true
+      - name: Build website and deploy
+        if: github.ref == 'refs/heads/master'
+        uses: helaili/jekyll-action@v2
+        with:
+          target_branch: 'gh-pages'
+          token: ${{ secrets.GITHUB_TOKEN }}
