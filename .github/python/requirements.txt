@@ -1,0 +1,8 @@
+-r ../../requirements.txt
+git+https://github.com/jakevdp/JSAnimation.git
+nbconvert==5.6.1
+# https://github.com/jupyter/nbgrader/issues/1373#issuecomment-702798246
+jupyter-client==6.1.12
+# https://github.com/jupyter/jupyter_client/issues/637
+git+https://github.com/ucl-rits/greeter.git
+line_profiler
