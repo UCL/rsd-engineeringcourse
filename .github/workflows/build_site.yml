@@ -2,10 +2,10 @@ name: Build website
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   Build-website:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
           target_branch: 'gh-pages'
           build_only: true
       - name: Build website and deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: helaili/jekyll-action@v2
         with:
           target_branch: 'gh-pages'
