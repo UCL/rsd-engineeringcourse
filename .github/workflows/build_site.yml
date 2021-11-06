@@ -11,12 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2 # FIXME: add pip + latex + gems
+      - uses: actions/cache@v2 # FIXME: add apt(latex)
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '.github/python/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: Install TeXLive
         uses: DanySK/setup-texlive-action@0.1.1
       - id: setup-python
