@@ -2,10 +2,15 @@
 output-site
 output
 _site/
+build/
+workflow/
+vendor/
 .sconsign.dblite
 html/index.html
 pdf
 *.pyc
+*.nbconvert.ipynb
+*.html
 *.swp
 a.out
 html/reveal/.DS_Store
