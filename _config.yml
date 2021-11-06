@@ -20,9 +20,8 @@ crumbs:
   - link: http://www.ucl.ac.uk/isd/services/research-it/training
     text: Training
 
-markdown: redcarpet
-redcarpet:
-  extensions: ["strikethrough","tables"]
+kramdown:
+  hard_wrap: false
 
 
 include: # NOTE: This is not a path, but the directories name, wherever they are
