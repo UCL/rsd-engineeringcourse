@@ -11,12 +11,12 @@ In this course, you will move beyond programming, to learn how to construct reli
 1. Collaborating around code. Issue tracking. Code review and pull requests. Branches and merging
 1. Introduction to Python and Scientific programming
 1. Analysing and plotting Research data 
-1. Testing scientific software. Unit testing, regression testing. Test driven design. Expectations and assertions. Mocking. Build-and-test servers. Negative testing. Sensible error messages. Set Continuous Integration.
+1. Testing scientific software. Unit testing, regression testing. Test-driven design. Expectations and assertions. Mocking. Build-and-test servers. Negative testing. Sensible error messages. Setting up Continuous Integration.
 1. Documenting software projects. Managed logging. Debugging and debuggers. Coverage measurement. Finding errors in the past.
 1. Writing libraries and creating packages. Software licenses. Citing software. Software sustainability. Comments. Coding conventions. 
 1. Software as engineering. Pragmatic use of diagram languages. Requirements engineering. Agile and Waterfall. Functional and architectural design.
-1. Best practice in construction. Design and development. Object oriented design. 
-1. Analyse performance. Profiling code. Develop faster code.
+1. Best practice in construction. Design and development. Object-oriented design. 
+1. Analysing performance. Profiling code. Developing faster code.
 
 ## Prerequisites:
 
@@ -70,7 +70,7 @@ INFO[0001]   ☁  git clone 'https://github.com/helaili/jekyll-action' # ref=v2
 [Build website/Build-website]   ✅  Success - Builds website
 ```
 
-alternatively, if you want only run the jekyll build step once you've run the whole action, you can use the official jekyll's containers with:
+Alternatively, if you want to only run the jekyll build step once you've run the whole action, you can use the official jekyll containers with:
 
 ```bash
 $ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:3.1.6 jekyll serve
