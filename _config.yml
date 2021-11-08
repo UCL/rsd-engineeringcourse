@@ -25,10 +25,10 @@ redcarpet:
   extensions: ["strikethrough","tables"]
 
 
-include:
-  - "ch04packaging/greetings/doc/_static"
-  - "ch04packaging/greetings/doc/_static"
-  - "ch04packaging/greetings/doc/_modules"
+include: # NOTE: This is not a path, but the directories name, wherever they are
+  - _static
+  - _modules
+
 exclude:
   - vendor/
   - Gemfile
