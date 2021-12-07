@@ -10,6 +10,8 @@ defaults:
 
 baseurl: /rsd-engineeringcourse
 
+remote_theme: dpshelio/indigo-jekyll
+
 crumbs:
   - link: http://www.ucl.ac.uk/ISD
     text: ISD
@@ -20,10 +22,11 @@ crumbs:
   - link: http://www.ucl.ac.uk/isd/services/research-it/training
     text: Training
 
-markdown: redcarpet
-redcarpet:
-  extensions: ["strikethrough","tables"]
+kramdown:
+  hard_wrap: false
 
+plugins:
+  - jekyll-remote-theme
 
 include: # NOTE: This is not a path, but the directories name, wherever they are
   - _static

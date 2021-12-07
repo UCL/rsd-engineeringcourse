@@ -73,7 +73,7 @@ INFO[0001]   ☁  git clone 'https://github.com/helaili/jekyll-action' # ref=v2
 Alternatively, if you want to only run the jekyll build step once you've run the whole action, you can use the official jekyll containers with:
 
 ```bash
-$ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:3.1.6 jekyll serve
+$ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
 ```
 
 and open http://localhost:4000/rsd-engineeringcourse (or the link provided).

@@ -59,25 +59,7 @@ notes.tex: combined.ipynb $(PNGS) Makefile
 notebooks.zip: ${NBV2}
 	zip -r notebooks $^
 
-master.zip: Makefile
-	rm -f master.zip
-	wget https://github.com/UCL-RITS/indigo-jekyll/archive/master.zip
-
-ready: indigo $(HTMLS) # notes.pdf notebooks.zip
-
-indigo-jekyll-master: Makefile master.zip
-	rm -rf indigo-jekyll-master
-	unzip master.zip
-	touch indigo-jekyll-master
-
-indigo: indigo-jekyll-master Makefile
-	cp -r indigo-jekyll-master/indigo/images .
-	cp -r indigo-jekyll-master/indigo/js .
-	cp -r indigo-jekyll-master/indigo/css .
-	cp -r indigo-jekyll-master/indigo/_includes .
-	cp -r indigo-jekyll-master/indigo/_layouts .
-	cp -r indigo-jekyll-master/indigo/favicon* .
-	touch indigo
+ready:  $(HTMLS) # notes.pdf notebooks.zip
 
 plantuml.jar:
 	wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar
