@@ -1,8 +1,8 @@
-contact: http://www.ucl.ac.uk/research-it-services/partner-with-us
+contact: arc-teaching@ucl.ac.uk
 
-title: "MPHY0021: Research Software Engineering With Python"
+title: "COMP0023: Research Software Engineering With Python"
 includeleftnav: True
-short: MPHY0021
+short: COMP0023
 
 defaults:
   - scope: {path: ""}
@@ -13,13 +13,9 @@ baseurl: /rsd-engineeringcourse
 remote_theme: dpshelio/indigo-jekyll
 
 crumbs:
-  - link: http://www.ucl.ac.uk/ISD
-    text: ISD
-  - link: http://www.ucl.ac.uk/isd/services
-    text: Our services
-  - link: http://www.ucl.ac.uk/isd/services/research-it
-    text: Research IT
-  - link: http://www.ucl.ac.uk/isd/services/research-it/training
+  - link: https://www.ucl.ac.uk/arc
+    text: Advanced Research Computing
+  - link: https://www.ucl.ac.uk/advanced-research-computing/about-our-training
     text: Training
 
 kramdown:
