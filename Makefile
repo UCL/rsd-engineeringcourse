@@ -35,8 +35,8 @@ default: _site
 %.png: %.uml plantuml.jar Makefile
 	java -Djava.awt.headless=true -jar plantuml.jar -p < $< > $@
 
-%.html: %.nbconvert.ipynb Makefile jekyll.tpl
-	jupyter nbconvert --to html  --template jekyll.tpl --stdout $< > $@
+%.html: %.nbconvert.ipynb Makefile jekyll_template
+	jupyter nbconvert --to html  --template jekyll_template --stdout $< > $@
 
 %.v2.ipynb: %.nbconvert.ipynb
 	jupyter nbconvert --to notebook --nbformat 2 --stdout $< > $@
