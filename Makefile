@@ -45,7 +45,7 @@ default: _site
 	jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
 
 notes.pdf: combined.ipynb $(PNGS) Makefile
-	jupyter nbconvert --to pdf --template latex.tplx $<
+	jupyter nbconvert --to pdf --template latex_template $<
 	mv combined.pdf notes.pdf
 
 combined.ipynb: $(EXECUTED)
@@ -53,7 +53,7 @@ combined.ipynb: $(EXECUTED)
 	sed -i -e 's/\.svg/\.png/g' $@
 
 notes.tex: combined.ipynb $(PNGS) Makefile
-	jupyter nbconvert --to latex --template latex.tplx $<
+	jupyter nbconvert --to latex --template latex_template $<
 	mv combined.tex notes.tex
 
 notebooks.zip: ${NBV2}
