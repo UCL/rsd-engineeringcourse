@@ -1,0 +1,60 @@
+%=====================================
+% Solution about utf8x problem
+% https://github.com/jupyter/nbconvert/issues/530#issuecomment-303034557
+%=====================================
+
+% Default to the notebook output style
+((* if not cell_style is defined *))
+    ((* set cell_style = 'style_ipython.tex.j2' *))
+((* endif *))
+
+% Inherit from the specified cell style.
+((* extends cell_style *))
+((* block packages *))
+    % Hide [utf8x]{inputenc} as it should not be used with xetex.
+    % Also hide ucs which conflicts with a bunch of stuff.
+    % http://tex.stackexchange.com/a/39418
+    \makeatletter
+    \newcommand{\dontusepackage}[2][]{%
+      \@namedef{ver@#2.sty}{9999/12/31}%
+      \@namedef{opt@#2.sty}{#1}}
+    \makeatother
+    \dontusepackage[utf8x]{inputenc}
+    \dontusepackage[mathletters]{ucs}
+((( super() )))
+    \usepackage{unicode-math}
+    \usepackage{fontspec}
+    \usepackage[Latin,Greek]{ucharclasses}
+    \newfontfamily\substitutefont{CMU Serif}
+    \setTransitionsForGreek{\begingroup\substitutefont}{\endgroup}
+((* endblock packages *))
+
+
+((* block title *))
+\title{An introduction to Python Programming for Research}
+((* endblock title *))
+
+((* block author *))
+\author{James Hetherington}
+((* endblock author *))
+
+%===============================================================================
+% Latex Book
+%===============================================================================
+
+((* block predoc *))
+    ((( super() )))
+    ((* block tableofcontents *))\tableofcontents((* endblock tableofcontents *))
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+((* endblock predoc *))
+
+((* block docclass *))
+\documentclass{report}
+((* endblock docclass *))
+
+((* block markdowncell scoped *))
+((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter"]) )))
+((* endblock markdowncell *))
