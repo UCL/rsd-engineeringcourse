@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # Adds keys to work with other repositories used in this lesson (e.g., UCL/github-example)
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - uses: actions/cache@v2 # FIXME: add apt(latex)
         with:
           path: vendor/bundle
