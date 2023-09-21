@@ -1,5 +1,5 @@
 ---
-title: Research Software Development with Python
+title: Research Software Engineering with Python
 layout: default
 ---
 
@@ -21,8 +21,6 @@ your computer.
 ## Registration
 
 Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers.
-
-This course may not be audited.
 
 ## Synopsis
 
@@ -137,5 +135,5 @@ program. That means that you may find supplementary python content useful.
 
 You can find the course notes as HTML via the navigation bar to the left.
 
-The [notes](notes.pdf) are also available in a printable pdf format.
-(**temporarily unavailable!**)
+<!-- The [notes](notes.pdf) are also available in a printable pdf format. -->
+<!-- (**temporarily unavailable!**) -->
