@@ -30,30 +30,6 @@ This course may not be audited.
  <tbody>
   <tr>
    <td>
-<h3>Introduction to Python</h3>
-<ul>
-<li>Why use scripting languages?</li>
-<li>Python. IPython and the Jupyter notebook.</li>
-<li>Data structures: list, dictionaries, and sets. </li>
-<li>List comprehensions</li>
-<li>Functions in Python</li>
-<li>Modules in Python</li>
-<li>An introduction to classes</li>
-</ul>
-   </td>
-   <td>
-<h3>Research Data in Python</h3>
-<ul>
-<li>Working with files on the disk</li>
-<li>Interacting with the internet</li>
-<li>JSON and YAML</li>
-<li>Plotting with Matplotlib</li>
-<li>Animations with Matplotlib</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td>
 <h3>Version Control</h3>
 <ul>
 <li>Why use version control</li>
@@ -67,6 +43,30 @@ This course may not be audited.
 </ul>
    </td>
    <td>
+<h3>Introduction to Python</h3>
+<ul>
+<li>Why use scripting languages?</li>
+<li>Python. IPython and the Jupyter notebook.</li>
+<li>Data structures: list, dictionaries, and sets. </li>
+<li>List comprehensions</li>
+<li>Functions in Python</li>
+<li>Modules in Python</li>
+<li>An introduction to classes</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>
+<h3>Research Data in Python</h3>
+<ul>
+<li>Working with files on the disk</li>
+<li>Interacting with the internet</li>
+<li>JSON and YAML</li>
+<li>Plotting with Matplotlib</li>
+<li>Animations with Matplotlib</li>
+</ul>
+   </td>
+<td>
 <h3>Testing your code</h3>
 <ul>
 <li>Why test?</li>
