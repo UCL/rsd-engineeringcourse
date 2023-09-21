@@ -3,5 +3,5 @@ git+https://github.com/jakevdp/JSAnimation.git
 # https://github.com/jupyter/nbgrader/issues/1373#issuecomment-702798246
 jupyter-client==6.1.12
 # https://github.com/jupyter/jupyter_client/issues/637
-git+https://github.com/ucl-rits/greeter.git
+git+https://github.com/UCL-ARC-RSEing-with-Python/greeter.git
 line_profiler
