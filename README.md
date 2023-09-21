@@ -78,3 +78,16 @@ $ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/
 
 and open http://localhost:4000/rsd-engineeringcourse (or the link provided).
 Note that this is mounting the `bundle` directory where `act` will create them.
+
+# Migration from jupyter notebooks to py:percent
+
+Using `jupytext` we've converted all the jupyter notebooks into plain text python files (py:percent) with:
+
+```bash
+# First cleaned all outputs and commited it
+nbstripout --extra-keys metadata.kernelspec ch*/*ipynb
+# convert them
+find ./ -iname '*ipynb' -exec jupytext --opt notebook_metadata_filter="kernelspec,jupytext,jekyll" --to py:percent {} -o {}.py \;
+# then deleted the ipynb
+find ./ -iname '*ipynb' -delete
+```

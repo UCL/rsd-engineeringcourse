@@ -5,11 +5,12 @@ ROOT=""
 PANDOCARGS=-t revealjs -s -V theme=night --css=http://lab.hakim.se/reveal-js/css/theme/night.css \
 					 --css=$(ROOT)/css/ucl_reveal.css --css=$(ROOT)/site-styles/reveal.css \
            --default-image-extension=png --highlight-style=zenburn --mathjax -V revealjs-url=http://lab.hakim.se/reveal-js
-
+PRENOTEBOOKS=$(wildcard ch*/*.ipynb.py)
+NOTEBOOKS_DONE=$(PRENOTEBOOKS:.ipynb.py=.ipynb)
 NOTEBOOKS=$(filter-out %.v2.ipynb %.nbconvert.ipynb,$(sort $(wildcard ch*/*.ipynb)))
 SVGS=$(wildcard ch*/*.svg)
 
-HTMLS=$(NOTEBOOKS:.ipynb=.html)
+HTMLS=$(PRENOTEBOOKS:.ipynb.py=.html)
 
 EXECUTED=$(NOTEBOOKS:.ipynb=.nbconvert.ipynb)
 PNGS=$(SVGS:.svg=.png)
@@ -40,6 +41,9 @@ default: _site
 
 %.v2.ipynb: %.nbconvert.ipynb
 	jupyter nbconvert --to notebook --nbformat 2 --stdout $< > $@
+
+%.ipynb: %.ipynb.py
+	jupytext --to ipynb $< -o - > $@
 
 %.nbconvert.ipynb: %.ipynb
 	jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=120 --execute --stdout $< > $@
@@ -72,10 +76,14 @@ _site: ready
 preview: ready
 	jekyll serve --verbose
 
+worked: $(NOTEBOOKS_DONE)
+	find ./ -iname '*ipynb'
+
 clean:
 	rm -f ch*/generated/*.png
 	rm -rf ch*/*.html
 	rm -f ch*/*.pyc
+	rm -f ch*/*.ipynb
 	rm -f index.html
 	rm -rf _site
 	rm -rf images js css _includes _layouts favicon* master.zip indigo-jekyll-master
