@@ -1,8 +1,8 @@
 contact: arc-teaching@ucl.ac.uk
 
-title: "COMP0023: Research Software Engineering With Python"
+title: "COMP0233: Research Software Engineering With Python"
 includeleftnav: True
-short: COMP0023
+short: COMP0233
 
 defaults:
   - scope: {path: ""}
