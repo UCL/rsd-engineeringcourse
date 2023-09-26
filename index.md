@@ -1,5 +1,5 @@
 ---
-title: Research Software Development with Python
+title: Research Software Engineering with Python
 layout: default
 ---
 
@@ -22,36 +22,10 @@ your computer.
 
 Members of doctoral training schools, or Masters courses who offer this module as part of their programme should register through their course organisers.
 
-This course may not be audited.
-
 ## Synopsis
 
 <table>
  <tbody>
-  <tr>
-   <td>
-<h3>Introduction to Python</h3>
-<ul>
-<li>Why use scripting languages?</li>
-<li>Python. IPython and the Jupyter notebook.</li>
-<li>Data structures: list, dictionaries, and sets. </li>
-<li>List comprehensions</li>
-<li>Functions in Python</li>
-<li>Modules in Python</li>
-<li>An introduction to classes</li>
-</ul>
-   </td>
-   <td>
-<h3>Research Data in Python</h3>
-<ul>
-<li>Working with files on the disk</li>
-<li>Interacting with the internet</li>
-<li>JSON and YAML</li>
-<li>Plotting with Matplotlib</li>
-<li>Animations with Matplotlib</li>
-</ul>
-   </td>
-  </tr>
   <tr>
    <td>
 <h3>Version Control</h3>
@@ -67,6 +41,30 @@ This course may not be audited.
 </ul>
    </td>
    <td>
+<h3>Introduction to Python</h3>
+<ul>
+<li>Why use scripting languages?</li>
+<li>Python. IPython and the Jupyter notebook.</li>
+<li>Data structures: list, dictionaries, and sets. </li>
+<li>List comprehensions</li>
+<li>Functions in Python</li>
+<li>Modules in Python</li>
+<li>An introduction to classes</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>
+<h3>Research Data in Python</h3>
+<ul>
+<li>Working with files on the disk</li>
+<li>Interacting with the internet</li>
+<li>JSON and YAML</li>
+<li>Plotting with Matplotlib</li>
+<li>Animations with Matplotlib</li>
+</ul>
+   </td>
+<td>
 <h3>Testing your code</h3>
 <ul>
 <li>Why test?</li>
@@ -137,5 +135,5 @@ program. That means that you may find supplementary python content useful.
 
 You can find the course notes as HTML via the navigation bar to the left.
 
-The [notes](notes.pdf) are also available in a printable pdf format.
-(**temporarily unavailable!**)
+<!-- The [notes](notes.pdf) are also available in a printable pdf format. -->
+<!-- (**temporarily unavailable!**) -->
