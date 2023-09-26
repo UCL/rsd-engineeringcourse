@@ -3,7 +3,7 @@
 #   jekyll:
 #     display_name: Don't Repeat Yourself
 #   jupytext:
-#     notebook_metadata_filter: kernelspec,jupytext,jekyll
+#     notebook_metadata_filter: -kernelspec,jupytext,jekyll
 #     text_representation:
 #       extension: .py
 #       format_name: percent
