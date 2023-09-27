@@ -1,0 +1,3 @@
+[tool.jupytext]
+formats = "ipynb,py:percent"
+notebook_metadata_filter="-kernelspec,jupytext,jekyll"

@@ -29,7 +29,7 @@ You are required to bring your own laptop to the course as the classrooms we are
 
 # Contributing to this repository
 
-This repository contains the course notes as jupyter notebooks. This makes it a bit difficult to contribute and to review contributions. Please, only include changes in the cells modified and not other metadata that changes when running them.
+This repository contains the course notes as Jupyter notebooks converted into `py:percent` format. This allows to edit the files as plain text as well as jupyter notebooks. To edit them as jupyter notebooks you'll need to have installed jupytext and open the `ipynb.py` files as notebooks via right-click and select "open with" and "notebook" on the Jupyter file browser.
 
 ⚠ Do not run `make` locally on your computer! ⚠ 
 
@@ -78,3 +78,16 @@ $ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/
 
 and open http://localhost:4000/rsd-engineeringcourse (or the link provided).
 Note that this is mounting the `bundle` directory where `act` will create them.
+
+# Migration from jupyter notebooks to py:percent
+
+Using `jupytext` we've converted all the jupyter notebooks into plain text python files (py:percent) with:
+
+```bash
+# First cleaned all outputs and commited it
+nbstripout --extra-keys metadata.kernelspec ch*/*ipynb
+# convert them
+find ./ -iname '*ipynb' -exec jupytext --opt notebook_metadata_filter="kernelspec,jupytext,jekyll" --to py:percent {} -o {}.py \;
+# then deleted the ipynb
+find ./ -iname '*ipynb' -delete
+```

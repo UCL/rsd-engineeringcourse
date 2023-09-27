@@ -2,6 +2,7 @@ attrs>=17.4.0
 nbconvert>=6.0.0
 ipython
 jupyter
+jupytext
 numpy
 scipy
 h5py
