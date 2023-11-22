@@ -82,22 +82,38 @@
 # %autoreload 2
 
 # %% [markdown]
-# ### Using setuptools
+# ### Using pyproject.toml
 
 # %% [markdown]
+# Since June 2020, python's recommendation for creating a package is to specify package information in a `pyproject.toml` file.
+# Older projects used a `setup.py` file instead - and in fact the new `pyproject.toml` file in many ways mirrors this old format.
+# A lot of projects and packages have not yet switched over from `setup.py` to `pyproject.toml`, so don't be surprised to see a mixture of the two formats when you're looking at other people's packages.
+
+# %% [markdown]
+# For our `greetings` package, right now we are adding only the name of the package and its version number.
+# This information is included in the `project` section of our `pyproject.toml` file.
 #
-# To make python code into a package, we need to write a `setup.py` file. For now we are adding only the name of the package and its version number.
+# But we also need to tell users how to build the package from these specifications.
+# This information is specified in the `build-system` section of our `toml` file.
+# In this case, we'll be using `setuptools` to build our package, so we list it in the `requires` field.
+# We also need `setuptools_scm[toml]` so that `setuptools` can understand the settings we give it in our `.toml` file, and `wheel` to make the package distribution.
+#
+# Finally, we can set specific options for `setuptools` using additional sections in `pyproject.toml`: in this case, we will tell `setuptools` that it needs to find **and include** all of the files in our `greetings` folder.
 
 # %%
-# %%writefile greetings_repo/setup.py
+# %%writefile greetings_repo/pyproject.toml
 
-from setuptools import setup, find_packages
+[project]
+name = "Greetings"
+version = "0.1.0"
 
-setup(
-    name="Greetings",
-    version="0.1.0",
-    packages=find_packages(),
-)
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
+
+[tool.setuptools.packages.find]
+include = ["greetings*"]
+
+[tool.setuptools_scm]
 
 
 # %% [markdown]
@@ -109,7 +125,7 @@ setup(
 
 # %% [markdown]
 #
-# And the package will be then available to use everywhere on the system. But so far this package doesn't contain anythin and there's nothing we can run! We need to add some files first.
+# And the package will be then available to use everywhere on the system. But so far this package doesn't contain anything and there's nothing we can run! We need to add some files first.
 #
 
 # %% [markdown]
@@ -256,20 +272,25 @@ if __name__ == "__main__":
 # %% [markdown]
 # This allows us to create a command to execute part of our library. In this case when we execute `greet` on the terminal, we will be calling the `process` function under `greetings/command.py`.
 #
+# We can encode this into our package information by specifying the `project.scripts` field in our `pyproject.toml` file.
 
 # %%
-# %%writefile greetings_repo/setup.py
+# %%writefile greetings_repo/pyproject.toml
 
-from setuptools import setup, find_packages
+[project]
+name = "Greetings"
+version = "0.1.0"
 
-setup(
-    name="Greetings",
-    version="0.1.0",
-    packages=find_packages(),
-    entry_points={
-        'console_scripts': [
-            'greet = greetings.command:process'
-        ]})
+[project.scripts]
+greet = "greetings.command:process"
+
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
+
+[tool.setuptools.packages.find]
+include = ["greetings*"]
+
+[tool.setuptools_scm]
 
 # %% language="bash"
 # cd greetings_repo
@@ -294,7 +315,7 @@ setup(
 # ### Specify dependencies
 
 # %% [markdown]
-# Let's give some live to our output using ascii art
+# Let's give some life to our output using ascii art
 
 # %%
 # %%writefile greetings_repo/greetings/command.py
@@ -324,23 +345,29 @@ if __name__ == "__main__":
     process()
 
 # %% [markdown]
-# We use the setup.py file to specify the packages we depend on using `install_requires`:
+# We use the `dependencies` field of the `project` section in our `pyproject.toml` file to specify the packages we depend on.
+# We provide the names of the packages as a list of strings.
 
 # %%
-# %%writefile greetings_repo/setup.py
+# %%writefile greetings_repo/pyproject.toml
 
-from setuptools import setup, find_packages
+[project]
+name = "Greetings"
+version = "0.1.0"
+dependencies = [
+    "art",
+]
 
-setup(
-    name="Greetings",
-    version="0.1.0",
-    packages=find_packages(),
-    install_requires=['art', 'pyyaml'],
-    entry_points={
-        'console_scripts': [
-            'greet = greetings.command:process'
-        ]}    
-    )
+[project.scripts]
+greet = "greetings.command:process"
+
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
+
+[tool.setuptools.packages.find]
+include = ["greetings*"]
+
+[tool.setuptools_scm]
 
 # %% [markdown]
 # When installing the package now, pip will also install the dependencies automatically.
@@ -569,23 +596,36 @@ def test_greeter(fixture):
 # pytest --doctest-modules
 
 # %% [markdown]
-# Finally, if we don't want to include the tests when we distribute our software for our users, you can include that using the `exclude` option on `find_packages` on `setup.py`.
+# Finally, we typically don't want to include the tests when we distribute our software for our users.
+# We can make sure they are not included using the `exclude` option on when telling `setuptools` to find packages.
+#
+# Additionally, we can make sure that our README and LICENSE are included in our package metadata by declaring them in the `readme` and `license` fields under the `project` section.
+# If you're using a particularly common or standard license, you can even provide the name of the license, rather than the file, and your package builder will take care of the rest!
 
 # %%
-# %%writefile greetings_repo/setup.py
+# %%writefile greetings_repo/pyproject.toml
 
-from setuptools import setup, find_packages
+[project]
+name = "Greetings"
+version = "0.1.0"
+readme = "README.md"
+license = { file = "LICENSE.md" }
+dependencies = [
+    "art",
+    "pyyaml",
+]
 
-setup(
-    name="Greetings",
-    version="0.1.0",
-    packages=find_packages(exclude=['*.test']),
-    install_requires=['art', 'pyyaml'],
-    entry_points={
-        'console_scripts': [
-            'greet = greetings.command:process'
-        ]}    
-    )
+[project.scripts]
+greet = "greetings.command:process"
+
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
+
+[tool.setuptools.packages.find]
+include = ["greetings*"]
+exclude = ["tests*"]
+
+[tool.setuptools_scm]
 
 # %% [markdown]
 # ### Developer Install
