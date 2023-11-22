@@ -86,7 +86,7 @@
 
 # %% [markdown]
 # Since June 2020, python's recommendation for creating a package is to specify package information in a `pyproject.toml` file.
-# Older projects used a `setup.py` file instead - and in fact the new `pyproject.toml` file in many ways mirrors this old format.
+# Older projects used a `setup.py` or `setup.cfg` file instead - and in fact the new `pyproject.toml` file in many ways mirrors this old format.
 # A lot of projects and packages have not yet switched over from `setup.py` to `pyproject.toml`, so don't be surprised to see a mixture of the two formats when you're looking at other people's packages.
 
 # %% [markdown]
