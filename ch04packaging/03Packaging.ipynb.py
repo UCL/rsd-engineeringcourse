@@ -113,8 +113,8 @@ requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
 [tool.setuptools.packages.find]
 include = ["greetings*"]
 
-[tool.setuptools_scm]
-
+# Add setuptools_scm if you need to generate version numbers from the git hash
+#[tool.setuptools_scm]
 
 # %% [markdown]
 # We can now install this "package" with pip:
@@ -290,7 +290,8 @@ requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
 [tool.setuptools.packages.find]
 include = ["greetings*"]
 
-[tool.setuptools_scm]
+# Add setuptools_scm if you need to generate version numbers from the git hash
+#[tool.setuptools_scm]
 
 # %% language="bash"
 # cd greetings_repo
@@ -367,7 +368,8 @@ requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
 [tool.setuptools.packages.find]
 include = ["greetings*"]
 
-[tool.setuptools_scm]
+# Add setuptools_scm if you need to generate version numbers from the git hash
+#[tool.setuptools_scm]
 
 # %% [markdown]
 # When installing the package now, pip will also install the dependencies automatically.
@@ -625,7 +627,8 @@ requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel"]
 include = ["greetings*"]
 exclude = ["tests*"]
 
-[tool.setuptools_scm]
+# Add setuptools_scm if you need to generate version numbers from the git hash
+#[tool.setuptools_scm]
 
 # %% [markdown]
 # ### Developer Install
