@@ -24,12 +24,12 @@
 #   [Visual Studio](http://msdn.microsoft.com/en-us/library/bb483011.aspx)
 # * Linux: [DDD](https://www.gnu.org/software/ddd/)
 # * all platforms: [eclipse](http://www.eclipse.org), [gdb](http://www.sourceware.org/gdb/) (DDD and
-#   eclipse are GUIs for gdb)
+#   eclipse are GUIs for gdb), [dap](https://microsoft.github.io/debug-adapter-protocol/)
 # * python: [spyder](https://www.spyder-ide.org/),
-# *          [pdb](https://docs.python.org/3.6/library/pdb.html)
+#   [pdb](https://docs.python.org/3/library/pdb.html).
 # * R: [RStudio](http://www.rstudio.com/ide/docs/debugging/overview),
 #   [debug](http://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html),
-#   [browser](http://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html)
+#   [browser](http://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html).
 
 # %% [markdown]
 # ### Using the python debugger
