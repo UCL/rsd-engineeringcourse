@@ -10,18 +10,18 @@ jobs:
   Build-website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # Adds keys to work with other repositories used in this lesson (e.g., UCL/github-example)
-      - uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - uses: actions/cache@v2 # FIXME: add apt(latex)
+      - uses: actions/cache@v4 # FIXME: add apt(latex)
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '.github/python/requirements.txt') }}
@@ -31,23 +31,28 @@ jobs:
         uses: DanySK/setup-texlive-action@0.1.1
       - id: setup-python
         name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.12
       - name: Install dependencies
-        uses: py-actions/py-dependency-install@v2
-        with:
-          path: ".github/python/requirements.txt"
+        run: python -m pip install -r .github/python/requirements.txt
       - name: Building notes
         run: make ready
-      - name: Builds website
-        uses: helaili/jekyll-action@v2
+      - uses: ruby/setup-ruby@v1
         with:
-          target_branch: 'gh-pages'
-          build_only: true
-      - name: Build website and deploy
-        if: github.ref == 'refs/heads/main'
-        uses: helaili/jekyll-action@v2
+          ruby-version: '3.3'
+      - name: Install apt requirements
+        run: gem install bundler
+      - name: Install apt requirements
+        run: bundle exec jekyll build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          target_branch: 'gh-pages'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: _site
+      - name: Deploy to GitHub Pages
+        if: >
+          success()
+          && github.ref == 'refs/heads/main'
+          && github.repository == 'UCL/rsd-engineeringcourse'
+        id: deployment
+        uses: actions/deploy-pages@v4
