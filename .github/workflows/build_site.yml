@@ -41,9 +41,9 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-      - name: Install apt requirements
+      - name: Install bundler
         run: gem install bundler
-      - name: Install apt requirements
+      - name: Build website
         run: bundle exec jekyll build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
