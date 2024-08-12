@@ -238,7 +238,7 @@
 # %% [markdown]
 # ### Choose a licence
 #
-# See [GitHub's advice on how to choose a licence](http://choosealicense.com/).
+# See [GitHub's advice on how to choose a licence](http://choosealicense.com/) or [European Commision's Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/solution/joinup-licensing-assistant/jla-find-and-compare-software-licenses).
 
 # %% [markdown]
 # ### Open source does not equal free maintenance
