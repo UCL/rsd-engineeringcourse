@@ -41,8 +41,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-      - name: Install bundler
-        run: gem install bundler
+      - name: Install bundler and dependencies
+        run: |
+          gem install bundler
+          bundle install
       - name: Build website
         run: bundle exec jekyll build
       - name: Upload artifact
