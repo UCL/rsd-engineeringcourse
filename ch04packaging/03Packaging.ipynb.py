@@ -33,6 +33,10 @@
 #  - [Scientific Python cookie](https://github.com/scientific-python/cookie)
 #  - [Open Science Labs' scicookie](https://github.com/osl-incubator/scicookie)
 #  - Domain/ecosystem specific cookies like [pybamm-cookiecutter](https://github.com/pybamm-team/pybamm-cookiecutter) for battery modeling projects in Python exist too
+#
+# Finally, the packaging community regularly organises [PackagingCon](https://packaging-con.org) to discuss the packaging ecosystems
+# of multiple languages and operating systems at a single place.
+#
 
 # %% [markdown]
 # ### Distribution tools
