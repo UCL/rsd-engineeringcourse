@@ -129,7 +129,7 @@
 # In this case, we'll be using `hatch` to build our package, so we list it in the `requires` field. Technically speaking, `hatch` is the front-end (a CLI utility)
 # for the actual build-backend `hatchling`. `hatchling` is installed with hatch and can be specified as the `build-backend` in `pyproject.toml`.
 #
-# Finally, we can set specific options for `hatch` using additional sections in `pyproject.toml`: in this case, we will tell `hatch` that it needs to find **and include** all of the files in our `greetings` folder.
+# Finally, we can set specific options for `hatch` using additional sections in `pyproject.toml`: in this case, we will tell `hatch` that it needs to find **and include** all of the files in our `src` folder.
 # The best way to look at all the options of a build-backend is by going through its documentation.
 
 # %%
@@ -151,6 +151,7 @@ include = [
 # %% [markdown]
 # Some of the build-backends allow users to automate the package's version using VCS.
 # For instance, you might want to look into [`hatch-vcs`](https://github.com/ofek/hatch-vcs) to enable VCS versioning with `hatch`.
+#
 # We can now install this "package" with pip (make sure `hatch` is installed):
 
 # %% language="bash"
@@ -410,7 +411,7 @@ greet = "greetings.command:process"
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "greetings/",
+  "src/",
 ]
 
 
