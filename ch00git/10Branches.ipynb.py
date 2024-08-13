@@ -139,6 +139,7 @@ Mountains In Scotland
 # git diff Scotland.md
 
 # %% jupyter={"outputs_hidden": false} language="bash"
+# git add Scotland.md
 # git commit -am "Commit Aonach onto main branch"
 
 # %% [markdown]

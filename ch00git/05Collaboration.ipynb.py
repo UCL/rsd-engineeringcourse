@@ -114,6 +114,7 @@ Mountains In Scotland
 ==================
 
 * Ben Eighe
+* Ben Nevis
 * Cairngorm
 
 # %% jupyter={"outputs_hidden": false} language="bash"
@@ -188,6 +189,7 @@ Mountains In Wales
 # git diff
 
 # %% jupyter={"outputs_hidden": false} language="bash"
+# git add Wales.md
 # git commit -am "Translating from the Welsh"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
@@ -206,6 +208,7 @@ Mountains In Wales
 * Snowdon
 
 # %% jupyter={"outputs_hidden": false} language="bash"
+# git add Wales.md
 # git commit -am "Add a beacon"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
@@ -296,6 +299,7 @@ Mountains In Wales
 * Fan y Big
 
 # %% jupyter={"outputs_hidden": false} language="bash"
+# git add Wales.md
 # git commit -am "Add another Beacon"
 # git push
 
@@ -313,6 +317,7 @@ Mountains In Wales
 * Glyder Fawr
 
 # %% jupyter={"outputs_hidden": false} magic_args="--no-raise-error" language="bash"
+# git add Wales.md
 # git commit -am "Add Glyder"
 # git push
 
@@ -354,7 +359,7 @@ Mountains In Wales
 # Now commit the merged result:
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -a --no-edit # I added a No-edit for this non-interactive session. You can edit the commit if you like.
+# git commit -a --amend --no-edit # I added a No-edit for this non-interactive session. You can edit the commit if you like.
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git push
