@@ -43,17 +43,36 @@
 
 # %% [markdown]
 # Distribution tools allow one to obtain a working copy of someone else's package.
+# The package managers are usually CLI utilities that allow you to query inside
+# a repository of existing packages.
 #
-#  - Language-specific tools: 
-#    - python: PyPI,
-#    - ruby: Ruby Gems, 
-#    - perl: CPAN,
-#    - R: CRAN
+#  - Language specific package/library managers: 
+#    - python: [pip](https://pip.pypa.io), [pipx](https://pipx.pypa.io), [uv](https://github.com/astral-sh/uv), [conda](https://conda.org)
+#    - Julia: [Pkg](https://docs.julialang.org/en/v1/stdlib/Pkg/)
+#    - Rust: [Cargo](https://doc.rust-lang.org/cargo/)
+#    - R: using install.packages("package_name"), [devtools](https://cran.r-project.org/web/packages/devtools/index.html)
+#    - ruby: [gem](https://guides.rubygems.org/rubygems-basics/) 
+#    - perl: [cpan](https://metacpan.org/dist/CPAN/view/scripts/cpan), [cpanm](https://metacpan.org/dist/App-cpanminus/view/bin/cpanm), [cpanp](https://metacpan.org/dist/CPANPLUS/view/bin/cpanp)
 #  
-#  - Platform specific packagers e.g.:
+#  - Platform specific package/library managers e.g.:
 #    - [`brew`](https://brew.sh/) for MacOS, 
 #    - `apt`/`dnf`/`pacman` for Linux or 
 #    - [`choco`](https://chocolatey.org/) for Windows.
+#
+# Every language has a repository or a central database of packages submitted
+# by the developers.
+#
+#  - Language-specific repositories: 
+#    - python: [PyPI](https://pypi.org), [conda-forge](https://conda-forge.org)
+#    - Julia: [JuliaHub](https://juliahub.com/ui/Packages)
+#    - Rust: [Crates](https://crates.io)
+#    - R: [CRAN](https://www.cpan.org)
+#    - ruby: [RubyGems](https://rubygems.org) 
+#    - perl: [CPAN](https://www.cpan.org)
+#
+# The difference between the package management tools and the package repositories is
+# similar to the difference between Git and GitHub.
+#
 
 # %% [markdown]
 # ### Laying out a project
@@ -68,13 +87,12 @@
 # repository_name
 # |-- src
 # |   `-- package_name
-# |       |-- __init__.py
+# |       |-- __init__.py  # optional; required for exporting things under package's namespace
 # |       |-- python_file.py
 # |       |-- another_python_file.py
 # `-- tests
 #     |-- fixtures
 #     |   `-- fixture_file.yaml
-#     |-- __init__.py
 #     `-- test_python_file.py
 # |-- LICENSE.md
 # |-- CITATION.md
@@ -165,17 +183,12 @@ include = [
 
 # %% [markdown]
 #
-# To create a regular package, we needed to have `__init__.py` files on each subdirectory that we want to be able to import. This is, since version 3.3 and the introduction of [Implicit Namespaces Packages](https://www.python.org/dev/peps/pep-0420/), not needed anymore. However, if you want to use relative imports and `pytest`, then you [still need to have these files](https://github.com/pytest-dev/pytest/issues/1927).
+# To create a regular package, we needed to have `__init__.py` files on each subdirectory that we want to be able to import. This is, since version 3.3 and the introduction of [Implicit Namespaces Packages](https://www.python.org/dev/peps/pep-0420/), not needed anymore.
 #
 # The `__init__.py` files can contain any initialisation code you want to run when the (sub)module is imported.
 #
-# For this example, and because we are using relative imports in the tests, we are creating the needed `__init__.py` files.
-
-# %% language="bash"
+# For this example, we don't need to create the `__init__.py` files.
 #
-# touch greetings_repo/src/greetings/__init__.py
-
-# %% [markdown]
 # And we can copy the `greet` function from the [previous section](https://github-pages.ucl.ac.uk/rsd-engineeringcourse/ch04packaging/02Argparse.html) in the `greeter.py` file.
 
 # %%
@@ -514,28 +527,12 @@ Portions of the material are taken from [Software Carpentry](http://software-car
 # %% [markdown]
 # You may well want to formalise this using the [codemeta.json](https://codemeta.github.io/) standard or the [citation file format](http://citation-file-format.github.io/).
 
-# %% [markdown]
-# ### Define packages and executables
-
-# %% [markdown]
-# We need to create `__init__` files for the source and the tests.
-# ```bash
-# touch greetings_repo/tests/__init__.py
-# touch greetings_repo/src/greetings/__init__.py
-# ```
 
 # %% [markdown]
 # ### Write some unit tests
 
 # %% [markdown]
 # We can now write some tests to our library. 
-#
-# Remember, that we need to create the empty `__init__.py` files so that `pytest` can follow the relative imports.
-
-# %% language="bash"
-# touch greetings_repo/tests/__init__.py
-
-# %% [markdown]
 #
 # Separating the script from the logical module made this possible.
 #
@@ -651,7 +648,6 @@ def test_greeter(fixture):
 
 # %% [markdown]
 # Finally, we typically don't want to include the tests when we distribute our software for our users.
-# We can make sure they are not included using the `exclude` option on when telling `hatch` to find packages.
 # We can also add pytest as an "optional" dependency for the developers of our package.
 #
 # Additionally, we can make sure that our README and LICENSE are included in our package metadata by declaring them in the `readme` and `license` fields under the `project` section.
@@ -682,7 +678,6 @@ dev = ["pytest >= 6"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src*"]
-exclude = ["tests*"]
 
 
 # %% [markdown]
