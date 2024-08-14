@@ -13,6 +13,23 @@
 
 # %% [markdown]
 # ## Coding Conventions
+#
+# Let's import a few variables from context.py that will be used in the following lesson.
+
+# %%
+from context import (
+    sEntry,
+    iOffset,
+    entry,
+    offset,
+    anothervariable,
+    variable,
+    flag1,
+    flag2,
+    do_something,
+)
+
+# %% [markdown]
 # ### One code, many layouts:
 #
 # Consider the following fragment of python:
@@ -135,8 +152,6 @@ class class_name:
 #
 
 # %%
-sEntry = "10.0"
-iOffset = 1
 fNumber = float(sEntry) + iOffset
 
 # %% [markdown]
@@ -145,8 +160,6 @@ fNumber = float(sEntry) + iOffset
 # People may find this useful in languages like Python where the type is intrisic in the variable.
 
 # %%
-entry = "10.0"
-offset = 1
 number = float(entry) + offset
 
 # %% [markdown]
@@ -167,13 +180,6 @@ number = float(entry) + offset
 # The following two snippets do the same, but the second is separated into more steps, making it more readable.
 
 # %%
-anothervariable=1
-flag1 = True
-flag2 = False
-variable = 1
-anothervariable = 1
-def do_something(): pass
-
 anothervariable += 1
 if ((variable == anothervariable) and flag1 or flag2): do_something()
 
