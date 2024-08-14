@@ -59,7 +59,7 @@ Mountains In Wales
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git tag -a v1.0 -m "Release 1.0"
-# git push origin --delete v1.0  # clear the tag if it already exists
+# git push origin --delete v1.0  # clear the tag if it already exists on the remote origin
 # git push --tags
 
 # %% jupyter={"outputs_hidden": false}
