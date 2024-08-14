@@ -55,7 +55,8 @@ Mountains In the Pennines
 * Whernside
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add Whernside"
+# git add Pennines.md
+# git commit -m "Add Whernside"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git push -uf arc main

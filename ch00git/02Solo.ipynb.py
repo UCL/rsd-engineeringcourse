@@ -284,15 +284,6 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # cat index.md
 
 # %% [markdown]
-# ### Commit with a built-in-add
-
-# %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Change title"
-
-# %% [markdown]
-# This last command, `git commit -a` automatically adds changes to all tracked files to the staging area, as part of the commit command. So, if you never want to just add changes to some tracked files but not others, you can just use this and forget about the staging area!
-
-# %% [markdown]
 # ### Review of changes
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
@@ -334,9 +325,5 @@ note right of C: git add --update
 C->I: Add content of index.md
 note right of C: git commit -m "Add a lie"
 I->R: Commit change to index.md
-
-note right of C:  nano index.md
-note right of C: git commit -am "Change title"
-C->R: Add and commit change to index.md (and all tracked files)
 """
 wsd(message)

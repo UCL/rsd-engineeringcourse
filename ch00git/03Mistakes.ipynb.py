@@ -94,7 +94,8 @@ mountain or two depending on your definition.
 # git diff
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add a silly spelling"
+# git add index.md
+# git commit -m "Add a silly spelling"
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git log --date=short
@@ -166,7 +167,8 @@ I->C: update file to reverted version
 
 
 note right of C: vim index.md
-note right of C: git commit -am "Add another mistake"
+note right of C: git add index.md
+note right of C: git commit -m "Add another mistake"
 C->I: Add mistake
 I->R: Add mistake
 

@@ -48,7 +48,8 @@ Mountains In Wales
 * Cadair Idris
 
 # %% language="bash"
-# git commit -am "Add Cadair Idris"
+# git add Wales.md
+# git commit -m "Add Cadair Idris"
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git switch main # Switch to an existing branch (use `checkout` if you are using git older than 2.23)
@@ -140,7 +141,7 @@ Mountains In Scotland
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git add Scotland.md
-# git commit -am "Commit Aonach onto main branch"
+# git commit -m "Commit Aonach onto main branch"
 
 # %% [markdown]
 # Then this notation is useful to show the content of what's on what branch:
