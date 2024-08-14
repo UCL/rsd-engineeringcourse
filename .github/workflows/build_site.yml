@@ -55,6 +55,9 @@ jobs:
           path: _site
 
   deploy:
+    if: >
+      github.ref == 'refs/heads/main'
+      && github.repository == 'UCL/rsd-engineeringcourse'
     needs: build
     permissions:
       pages: write
@@ -65,8 +68,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
-        if: >
-          github.ref == 'refs/heads/main'
-          && github.repository == 'UCL/rsd-engineeringcourse'
         id: deployment
         uses: actions/deploy-pages@v4
