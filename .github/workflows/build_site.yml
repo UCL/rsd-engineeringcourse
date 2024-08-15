@@ -1,4 +1,4 @@
-name: Build website
+name: Build and deploy website
 on:
   push:
     branches:
@@ -6,8 +6,10 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
+
 jobs:
-  Build-website:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,10 +53,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  deploy:
+    if: >
+      github.ref == 'refs/heads/main'
+      && github.repository == 'UCL/rsd-engineeringcourse'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
-        if: >
-          success()
-          && github.ref == 'refs/heads/main'
-          && github.repository == 'UCL/rsd-engineeringcourse'
         id: deployment
         uses: actions/deploy-pages@v4
