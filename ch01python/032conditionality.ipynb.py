@@ -38,7 +38,7 @@
 # %%
 x = -3
 if x < 0:
-    print(x, "is negative")
+    print(f"{x} is negative")
     print("This is controlled")
 print("Always run this")
 
@@ -74,7 +74,7 @@ else:
 # Try editing the value of x here, and note which section of the code is run and which are not.
 
 # %%
-choice = "dlgkhdglkhgkjhdkjgh"
+choice = "low"
 
 if choice == "high":
     print(1)
@@ -99,7 +99,7 @@ else:
 "A" < "Z"
 
 # %%
-"UCL" > "King's"
+"UCL" > "KCL"
 
 # %% [markdown]
 # There's no automatic conversion of the **string** True to the **boolean variable** `True`:
@@ -139,8 +139,8 @@ if mytext2:
 
 # %%
 x = 3.2
-if not (x > 0 and type(x) == int):
-    print(x, "is not a positive integer")
+if not (x > 0 and isinstance(x, int)):
+    print(f"{x} is not a positive integer")
 
 # %% [markdown]
 # `not` also understands magic conversion from false-like things to True or False.
@@ -152,7 +152,7 @@ not not "Who's there!"  #  Thanks to Mysterious Student
 bool("")
 
 # %%
-bool("James")
+bool("Graham")
 
 # %%
 bool([])
@@ -164,7 +164,7 @@ bool(["a"])
 bool({})
 
 # %%
-bool({"name": "James"})
+bool({"name": "Graham"})
 
 # %%
 bool(0)
@@ -182,7 +182,7 @@ not 2 == 3
 [] == False
 
 # %%
-bool([]) == bool(False)
+bool([]) == False
 
 # %% [markdown]
 # ## Indentation
@@ -196,12 +196,25 @@ bool([]) == bool(False)
 # In the notebook, and most good editors, when you press `<tab>`, you get four spaces.
 #     
 
+# %% [markdown]
+# No indentation when it is expected, results in an error:
+
+# %%
+x = 2
+
+# %%
+if x > 0:
+print(x)
+
+# %% [markdown]
+# but:
+
 # %%
 if x > 0:
     print(x)
 
 # %% [markdown]
-# ##  Pass
+# ## Pass
 
 # %% [markdown]
 #
@@ -219,7 +232,6 @@ print("Hello")
 # %% [markdown]
 #
 #
-#
 # So the `pass` statement (or `...`) is used to do nothing.
 #
 #
@@ -227,5 +239,6 @@ print("Hello")
 
 # %%
 if x > 0:
+    # print x
     pass
 print("Hello")

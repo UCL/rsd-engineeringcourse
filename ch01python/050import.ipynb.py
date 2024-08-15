@@ -70,12 +70,12 @@ print(math)
 # So what libraries are available? Until you install more, you might have just the modules that come with Python, the *standard library*.
 
 # %% [markdown]
-# **Supplementary Materials**: Review the list of standard library modules: https://docs.python.org/3/library/
+# **Supplementary Materials**: Review the [list of standard library modules](https://docs.python.org/library/).
 
 # %% [markdown]
 # If you installed via Anaconda, then you also have access to a bunch of modules that are commonly used in research.
 #
-# **Supplementary Materials**: Review the list of modules that are packaged with Anaconda by default: http://docs.continuum.io/anaconda/pkg-docs.html (choose your operating system and see which packages have a tick mark)
+# **Supplementary Materials**: Review the [list of modules that are packaged with Anaconda by default on different architectures](http://docs.continuum.io/anaconda/pkg-docs.html) (choose your operating system and see which packages have a tick mark).
 #
 # We'll see later how to add more libraries to our setup.
 
@@ -95,9 +95,14 @@ print(math)
 # Things can be imported *from* modules to become part of the current module:
 
 # %%
+import math
+
+print(math.sin(math.pi))
+
+# %%
 from math import sin
 
-sin(math.pi)
+print(sin(math.pi))
 
 # %% [markdown]
 # Importing one-by-one like this is a nice compromise between typing and risk of name clashes.
@@ -110,15 +115,16 @@ pi = "pie"
 
 
 def sin(x):
-    print("eat " + x)
+    print(f"eat {x}")
 
-
+print(sin(pie))
+    
 from math import *
 
-sin(pi)
+print(sin(pi))
 
 # %% [markdown]
-# ##  Import and rename
+# ## Import and rename
 
 # %% [markdown]
 # You can rename things as you import them to avoid clashes or for typing convenience
@@ -126,7 +132,7 @@ sin(pi)
 # %%
 import math as m
 
-m.cos(0)
+print(m.cos(0))
 
 # %%
 pi = 3

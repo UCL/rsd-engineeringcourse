@@ -53,10 +53,10 @@ for letter in "Okay":
 "".join(sarcasm)
 
 # %% [markdown]
-# The above is a little puzzle, work through it to understand why it does what it does
+# The above is a little puzzle, work through it to understand why it does what it does.
 
 # %% [markdown]
-# ##  Dictionaries are Iterables
+# ## Dictionaries are Iterables
 
 # %% [markdown]
 # All sequences are iterables. Some iterables (things you can `for` loop over) are not sequences (things with you can do `x[5]` to), for example **sets**.
@@ -66,12 +66,12 @@ import datetime
 
 now = datetime.datetime.now()
 
-founded = {"James": 1976, "UCL": 1826, "Cambridge": 1209}
+founded = {"Eric": 1943, "UCL": 1826, "Cambridge": 1209}
 
 current_year = now.year
 
-for x in founded:
-    print(x, "is", current_year - founded[x], "years old.")
+for thing in founded:
+    print(f"{thing} is {current_year - founded[thing]} years old.")
 
 # %%
 thing = "UCL"
@@ -95,7 +95,7 @@ founded.items()
 #
 
 # %%
-triples=[
+triples = [
     [4, 11, 15], 
     [39, 4, 18]
 ]
@@ -130,11 +130,11 @@ for hedgehog, badger, fox in triples:
 
 # %%
 for name, year in founded.items():
-    print(name, "is", current_year - year, "years old.")
+    print(f"{name} is {current_year - year} years old.")
 
 # %%
 for name in founded:
-    print(name, "is", current_year - founded[name], "years old.")
+    print(f"{name} is {current_year - founded[name]} years old.")
 
 # %% [markdown]
 # ## Break, Continue

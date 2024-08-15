@@ -56,22 +56,10 @@ house = {
 # We can count the occupants and capacity like this:
 
 # %%
-for room_name in house:
-    print(room_name)
+capacity = 0
+occupancy = 0
+for name, room in house.items():
+    capacity += room['capacity']
+    occupancy += len(room['people'])
+print(f"House can fit {capacity} people, and currently has: {occupancy}.")
 
-# %%
-house
-
-# %%
-house.values()
-
-# %%
-running_total = 0
-
-for room_data in house.values():
-    running_total += len(room_data["people"])
-
-print(running_total)
-
-# %% [markdown]
-# As a side note, note how we included the values of `running_total` in the last line. This is a handy syntax for building strings that contain the values of variables. You can read more about it at this [Python String Formatting Best Practices guide](https://realpython.com/python-string-formatting/#2-new-style-string-formatting-strformat) or in the [official documentation](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).

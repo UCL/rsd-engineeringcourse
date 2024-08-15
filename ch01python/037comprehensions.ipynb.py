@@ -32,7 +32,8 @@ print(result)
 # is the same as
 
 # %%
-[2 ** x for x in range(10)]
+result = [2 ** x for x in range(10)]
+print(result)
 
 # %% [markdown]
 # You can do quite weird and cool things with comprehensions:
@@ -50,10 +51,11 @@ print(result)
 # Consider the following, and make sure you understand why it works:
 
 # %%
-"".join([letter for letter in "James Hetherington" if letter.lower() not in "aeiou"])
+"".join([letter for letter in "Eric Idle" 
+         if letter.lower() not in 'aeiou'])
 
 # %% [markdown]
-# ## Comprehensions versus building lists with `append`:
+# ## Comprehensions versus building lists with `append`
 
 # %% [markdown]
 # This code:
@@ -168,9 +170,11 @@ for element in map(str, range(10)):
 list(map(str, range(10)))
 
 # %% [markdown]
-# So I can write:
+# We can use `map` to process a set of `data` through a `analyse` function as:
 #     
 #     analysed_data = list(map(analyse, data))
+#
+# We'll learn more about `map` and similar functions when we discuss functional programming later in the course.
 
 # %% [markdown]
 # ## Exercise: Occupancy Dictionary

@@ -189,16 +189,16 @@ print(" ".join(name))
 # ## Tuples
 
 # %% [markdown]
-# A `tuple` is an immutable sequence:
-#
-#
-#
+# A `tuple` is an immutable sequence. It is like a list, execpt it cannot be changed. It is defined with round brackets.
 
 # %%
 my_tuple = ("Hello", "World")
 
 # %%
 my_tuple
+
+# %% [markdown]
+# Trying to modify one of its values will fail:
 
 # %%
 my_tuple[0] = "Goodbye"
@@ -217,7 +217,7 @@ fish[0] = "R"
 fish = "Rake"  ## OK!
 
 # %% [markdown]
-# *Supplementary material*: Try the [online memory visualiser](http://www.pythontutor.com/visualize.html#code=name%20%3D%20%20%22James%20Philip%20John%20Hetherington%22.split%28%22%20%22%29%0A%0Aname%5B0%5D%20%3D%20%22Dr%22%0Aname%5B1%3A3%5D%20%3D%20%5B%22Griffiths-%22%5D%0Aname.append%28%22PhD%22%29%0A%0Aname%20%3D%20%22Bilbo%20Baggins%22&cumulative=false&curInstr=0&heapPrimitives=true&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) for this one.
+# *Supplementary material*: Try the [online memory visualiser](http://www.pythontutor.com/visualize.html#code=name+%3D++%22Sir+Michael+Edward+Palin%22.split%28%22+%22%29%0A%0Aname%5B0%5D+%3D+%22Knight%22%0Aname%5B1%3A3%5D+%3D+%5B%22Mike-%22%5D%0Aname.append%28%22FRGS%22%29%0A%0Aname%20%3D%20%22King%20Arthur%22&&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=true&textReferences=false&py=3&rawInputLstJSON=%5B%5D&curInstr=0) for this one.
 
 # %% [markdown]
 # ## Memory and containers
@@ -290,6 +290,8 @@ z
 # %% [markdown]
 # Try the [visualiser](http://www.pythontutor.com/visualize.html#code=x%3D%5B%5B'a','b'%5D,'c'%5D%0Ay%3Dx%0Az%3Dx%5B0%3A2%5D%0A%0Ax%5B0%5D%5B1%5D%3D'd'%0Az%5B1%5D%3D'e'&cumulative=false&curInstr=5&heapPrimitives=true&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 # again.
+#
+# *Supplementary material*: The copies that we make through slicing are called *shallow copies*: we don't copy all the objects they contain, only the references to them. This is why the nested list in `x[0]` is not copied, so `z[0]` still refers to it. It is possible to actually create copies of all the contents, however deeply nested they are - this is called a *deep copy*. Python provides methods for that in its standard library, in the `copy` module. You can read more about that, as well as about shallow and deep copies, in the [library reference](https://docs.python.org/3/library/copy.html).
 
 # %% [markdown]
 # ## Identity versus equality

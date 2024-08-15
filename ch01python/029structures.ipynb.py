@@ -22,22 +22,24 @@
 # data. Later in the course, we'll see how we can define our own types, with their own attributes, properties, and methods. But probably the most common approach is to use nested structures of lists, dictionaries, and sets to model our data. For example, an address might be modelled as a dictionary with appropriately named fields:
 
 # %%
-UCL = {'City': 'London', 
-     'Street': 'Gower Street',
-     'Postcode': 'WC1E 6BT'}
+UCL = {
+    'City': 'London',
+    'Street': 'Gower Street',
+    'Postcode': 'WC1E 6BT'
+}
 
 # %%
-MyHouse = {
+Chapman_house = {
     'City': 'London',
-    'Street': 'Waterson Street',
-    'Postcode': 'E2 8HH'
+    'Street': 'Southwood ln',
+    'Postcode': 'N6 5TB'
 }
 
 # %% [markdown]
 # A collection of people's addresses is then a list of dictionaries:
 
 # %%
-addresses = [UCL, MyHouse]
+addresses = [UCL, Chapman_house]
 
 # %%
 addresses
@@ -46,10 +48,10 @@ addresses
 # A more complicated data structure, for example for a census database, might have a list of residents or employees at each address:
 
 # %%
-UCL["People"] = ["Clare", "James", "Owain"]
+UCL['people'] = ['Jeremy','Leonard', 'James', 'Henry']
 
 # %%
-MyHouse["People"] = ["Sue", "James"]
+Chapman_house["People"] = ["Graham", "David"]
 
 # %%
 addresses
@@ -90,9 +92,9 @@ print(leaders)
 # Create an example instance, in a notebook, of a simple structure for your maze:
 
 # %% [markdown]
-# * The living room can hold 2 people. James is currently there. You can go outside to the garden, or upstairs to the bedroom, or north to the kitchen.
+# * The living room can hold 2 people. Graham is currently there. You can go outside to the garden, or upstairs to the bedroom, or north to the kitchen.
 # * From the kitchen, you can go south to the living room. It fits 1 person.
-# * From the garden you can go inside to living room. It fits 3 people. Sue is currently there.
+# * From the garden you can go inside to living room. It fits 3 people. David is currently there.
 # * From the bedroom, you can go downstairs. You can also jump out of the window to the garden. It fits 2 people.
 
 # %% [markdown]
@@ -107,8 +109,8 @@ print(leaders)
 
 # %%
 cities = [
-    {"name": "London", "capacity": 8, "residents": ["Me", "Sue"]},
-    {"name": "Edinburgh", "capacity": 1, "residents": ["Dave"]},
+    {"name": "London", "capacity": 8, "residents": ["Graham", "David"]},
+    {"name": "Edinburgh", "capacity": 1, "residents": ["Henry"]},
     {"name": "Cardiff", "capacity": 1, "residents": []},
 ]
 
