@@ -43,7 +43,7 @@ Then, go to Xcode...Preferences...Downloads... and install the command line tool
 
 ## Homebrew
 
-[Homebrew](brew.sh) is a package manager for OSX which enables the installation of a
+[Homebrew](https://brew.sh) is a package manager for OSX which enables the installation of a
 lot of software useful for scientific computing. It is required for some of the installations
 below. But not essential for Software Carpentry. Homebrew requires the Xcode tools above.
 
@@ -69,7 +69,7 @@ installing homebrew.
 
 
 We recommend installing a complete scientific python distribution. One of these is
-[Anaconda](https://www.anaconda.com/distribution/).
+[Anaconda](https://anaconda.org/).
 
 Please download and install [Anaconda](https://www.anaconda.com/download/)
 (Python 3.7 version).
