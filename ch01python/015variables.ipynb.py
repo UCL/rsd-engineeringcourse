@@ -104,7 +104,7 @@ six
 Six
 
 # %% [markdown]
-# There is a special `None` keyword in Python which can be assigned to variables to indicate a variable with no-value. This is _not_ the same as an undefined variable:
+# There is a special `None` keyword in Python which can be assigned to variables to indicate a variable with no-value. This is _not_ the same as an undefined variable, and it's more like to an empty box:
 
 # %%
 nothing

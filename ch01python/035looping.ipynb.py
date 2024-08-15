@@ -156,7 +156,37 @@ for n in range(50):
     print(n)
 
 # %% [markdown]
-# These aren't useful that often, but are worth knowing about. There's also an optional `else` clause on loops, executed only if if the loop gets through all it's iterations without a `break`, but I've never found that useful.
+# These aren't useful that often, but are worth knowing about. There's also an optional `else` clause on loops, executed only if the loop gets through all its iterations without a `break` or `return`. This can help to keep the code cleaner avoiding to have a condition to check that something happened.
+
+
+# %% [markdown]
+# For example if someone goes to a cheese shop and wants a piece of cheese from one of their favourites could be written as it follows.
+
+# %%
+shop = ['Wenslydale (shop assistant)', 'Bazouki player', 'Customer']
+for cheese_type in ['red Leciester', 'Tilsit', 'Caerphilly']:
+    if found := cheese_type in shop:
+        print(f"Buy {cheese_type} and leave")
+
+if not found:
+    print("Left empty-handed")
+
+# %% [markdown]
+# Whereas using `else` the second `if` condition and the `found` variable wouldn't be needed:
+
+# %%
+shop = ['Wenslydale (shop assistant)', 'Bazouki player', 'Customer']
+for cheese_type in ['Red Leciester', 'Tilsit', 'Caerphilly']:
+    if cheese_type in shop:
+        print(f"Buy {cheese_type} and leave")
+        break
+else:
+    print("Left empty-handed")
+
+# %% [markdown]
+# Note that we've used the `:=` walrus operator (introduced in python 3.8 from [PEP572](https://peps.python.org/pep-0572/)).
+# The example above is based on [The Cheese Shop](http://www.montypython.50webs.com/scripts/Series_3/61.htm) sketch from the Monty Python. The sketch goes over a longer list of cheeses.
+
 
 # %% [markdown]
 # ## Exercise: the Maze Population

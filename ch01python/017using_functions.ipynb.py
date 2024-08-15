@@ -56,7 +56,7 @@ print(total_length)
 help(max)
 
 # %% [markdown]
-# In Jupyter notebooks an alternative way of displaying the documentation for a function is to write the function names followed by a question mark character `?`
+# In Jupyter notebooks and ipython consoles an alternative way of displaying the documentation for a function is to write the function names followed by a question mark character `?`
 
 # %%
 # max?

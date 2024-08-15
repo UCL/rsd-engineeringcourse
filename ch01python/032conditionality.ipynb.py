@@ -46,6 +46,9 @@ print("Always run this")
 # The **controlled** statements are indented. Once we remove the indent, the statements will once again happen regardless of whether the `if` statement is true of false.
 
 # %% [markdown]
+# As a side note, note how we included the values of `x` in the first print statement. This is a handy syntax for building strings that contain the values of variables. You can read more about it at this [Python String Formatting Best Practices guide](https://realpython.com/python-string-formatting/#2-new-style-string-formatting-strformat) or in the [official documentation](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).
+
+# %% [markdown]
 # ## Else and Elif
 
 # %% [markdown]
@@ -217,7 +220,7 @@ print("Hello")
 #
 #
 #
-# So the `pass` statement is used to do nothing.
+# So the `pass` statement (or `...`) is used to do nothing.
 #
 #
 #
