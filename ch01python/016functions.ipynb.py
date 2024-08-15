@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Functions 
+# # Functions 
 
 # %% [markdown]
-# ### Definition
+# ## Definition
 
 # %% [markdown]
 #
@@ -28,100 +28,86 @@
 def double(x):
     return x * 2
 
-print(double(5), double([5]), double('five'))
+
+# %%
+double(5)
+
+# %%
+double([5])
+
+# %%
+double("five")
 
 
 # %% [markdown]
-# ### Default Parameters
+# ## Default Parameters
 
 # %% [markdown]
 # We can specify default values for parameters:
 
 # %%
-def jeeves(name = "Sir"):
-    return f"Very good, {name}"
+def jeeves(name="Sir"):
+    return "Very good, " + name
 
 
 # %%
 jeeves()
 
 # %%
-jeeves('John')
+jeeves("James")
 
 
 # %% [markdown]
 # If you have some parameters with defaults, and some without, those with defaults **must** go later.
 
-# %% [markdown]
-# If you have multiple default arguments, you can specify neither, one or both:
-
 # %%
-def jeeves(greeting="Very good", name="Sir"):
-    return f"{greeting}, {name}"
+def product(x=5, y=7):
+    return x * y
 
 
 # %%
-jeeves()
+product(9)
 
 # %%
-jeeves("Hello")
+product(y=11)
 
 # %%
-jeeves(name = "John")
-
-# %%
-jeeves(greeting="Suits you")
-
-# %%
-jeeves("Hello", "Producer")
+product()
 
 
 # %% [markdown]
-# ### Side effects
+# ## Side effects
 
 # %% [markdown]
+#
 # Functions can do things to change their **mutable** arguments,
 # so `return` is optional.
 #
-# This is pretty awful style, in general, functions should normally be side-effect free.
 #
-# Here is a contrived example of a function that makes plausible use of a side-effect
+#
 
 # %%
 def double_inplace(vec):
     vec[:] = [element * 2 for element in vec]
 
-z = list(range(4))
+
+z = [1, 2, 3, 4]
 double_inplace(z)
 print(z)
-
-# %%
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-letters[:] = []
-
 
 # %% [markdown]
 # In this example, we're using `[:]` to access into the same list, and write it's data.
 #
-#     vec = [element*2 for element in vec]
+#     vec = [element * 2 for element in vec]
 #
 # would just move a local label, not change the input.
-
-# %% [markdown]
-# But I'd usually just write this as a function which **returned** the output:
-
-# %%
-def double(vec):
-    return [element * 2 for element in vec]
-
-
-# %% [markdown]
-# Let's remind ourselves of the behaviour for modifying lists in-place using `[:]` with a simple array:
+#
+# Let's remind ourselves of this behaviour with a simple array:
 
 # %%
 x = 5
 x = 7
-x = ['a', 'b', 'c']
+x = ["a", "b", "c"]
 y = x
 
 # %%
@@ -135,7 +121,21 @@ y
 
 
 # %% [markdown]
-# ### Early Return
+# ## Early Return
+
+# %%
+def isbigger(x, limit=20):
+    if x > limit:
+        return True
+    print("Got here")
+    return False
+
+
+isbigger(25, 15)
+
+# %%
+isbigger(40, 15)
+
 
 # %% [markdown]
 #
@@ -144,34 +144,30 @@ y
 #
 #
 
-# %% [markdown]
-# Here's a slightly more plausibly useful function-with-side-effects to extend a list with a specified padding datum.
-
 # %%
 def extend(to, vec, pad):
     if len(vec) >= to:
-        return # Exit early, list is already long enough.
-    
+        return
     vec[:] = vec + [pad] * (to - len(vec))
 
 
 # %%
-x = list(range(3))
-extend(6, x, 'a')
+x = [1, 2, 3]
+extend(6, x, "a")
 print(x)
 
 # %%
-z = range(9)
-extend(6, z, 'a')
+z = list(range(9))
+extend(6, z, "a")
 print(z)
 
 
 # %% [markdown]
-# ### Unpacking arguments
+# ## Unpacking arguments
 
 # %% [markdown]
 #
-# If a vector is supplied to a function with a '*', its elements
+# If a vector is supplied to a function with a `*`, its elements
 # are used to fill each of a function's arguments. 
 #
 #
@@ -179,13 +175,15 @@ print(z)
 
 # %%
 def arrow(before, after):
-    return f"{before} -> {after}"
+    return str(before) + " -> " + str(after)
 
-arrow(1, 3)
+
+print(arrow(1, 3))
 
 # %%
 x = [1, -1]
-arrow(*x)
+
+print(arrow(*x))
 
 # %% [markdown]
 #
@@ -198,17 +196,17 @@ arrow(*x)
 
 # %%
 charges = {"neutron": 0, "proton": 1, "electron": -1}
+
+# %%
+charges.items()
+
+# %%
 for particle in charges.items():
     print(arrow(*particle))
 
 
 # %% [markdown]
-#
-#
-#
-
-# %% [markdown]
-# ### Sequence Arguments
+# ## Sequence Arguments
 
 # %% [markdown]
 # Similiarly, if a `*` is used in the **definition** of a function, multiple
@@ -219,37 +217,23 @@ def doubler(*sequence):
     return [x * 2 for x in sequence]
 
 
-# %%
-doubler(1, 2, 3)
-
-# %%
-doubler(5, 2, "Wow!")
+print(doubler(1, 2, 3, "four"))
 
 
 # %% [markdown]
-# ### Keyword Arguments
+# ## Keyword Arguments
 
 # %% [markdown]
-# If two asterisks are used, named arguments are supplied inside the function as a dictionary:
+#
+# If two asterisks are used, named arguments are supplied as a dictionary:
+#
+#
+#
 
 # %%
 def arrowify(**args):
     for key, value in args.items():
-        print(f"{key} -> {value}")
+        print(key + " -> " + value)
+
 
 arrowify(neutron="n", proton="p", electron="e")
-
-
-# %% [markdown]
-# These different approaches can be mixed:
-
-# %%
-def somefunc(a, b, *args, **kwargs):
-    print("A:", a)
-    print("B:", b)
-    print("args:", args)
-    print("keyword args", kwargs)
-
-
-# %%
-somefunc(1, 2, 3, 4, 5, fish="Haddock")

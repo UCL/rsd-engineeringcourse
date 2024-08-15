@@ -12,9 +12,9 @@
 # ---
 
 # %% [markdown]
-# ## Variables
+# # Variables
 #
-# ### Variable assignment
+# ## Variable assignment
 #
 # Python has built-in support for arithmetic expressions and so can be used as a calculator. When we evaluate an expression in Python, the result is displayed, but not necessarily stored anywhere.
 
@@ -38,7 +38,7 @@ four
 greeting = "hello world"
 
 # %% [markdown]
-# ### Naming variables
+# ## Naming variables
 #
 # We can name variables with any combination of lower and uppercase characters, digits and underscores `_` providing the first character is not a digit and the name is not a [reserved keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords).
 
@@ -66,7 +66,27 @@ for = 4
 two_plus_two = 5
 
 # %% [markdown]
-# ### Undefined variables and `None` 
+# ## _Aside:_ Reading error messages
+
+# %% [markdown]
+# We have already seen a couple of examples of Python error messages. It is important, when learning to program, to develop an ability to read an error message and find, from what can initially seem like confusing noise, the bit of the error message which tells you where the problem is.
+#
+# For example consider the following
+
+# %%
+number_1 = 1
+number_2 = "2"
+sum_of_numbers = number_1 + number_2
+
+# %% [markdown]
+# We may not yet know what `TypeError` or `Traceback` refer to. However, we can see that the error happens on the _third_ line of our code cell. We can also see that the error message: 
+#
+# > `unsupported operand type(s) for +: 'int' and 'str'`
+#  
+# ...tells us something important. Even if we don't understand the rest, this is useful for debugging!
+
+# %% [markdown]
+# ## Undefined variables and `None` 
 #
 # If we try to evaluate a variable that hasn't ever been defined, we get an error. 
 
@@ -111,7 +131,7 @@ scary
 # [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/01-intro/index.html).
 
 # %% [markdown]
-# ### Reassignment and multiple labels
+# ## Reassignment and multiple labels
 
 # %% [markdown]
 # We can reassign a variable - that is change what is in the box the variable labels.
@@ -140,7 +160,7 @@ print(name)
 print(nom)
 
 # %% [markdown]
-# ### Variables and memory
+# ## Variables and memory
 #
 # We can now better understand our mental model of variables as labels and boxes: each box is a piece of space (an *address*) in computer memory. Each label (_variable_) is a reference to such a place and the data contained in the memory defines an _object_ in Python. Python objects come in different types - so far we have encountered both numeric (integer) and textual (string) types - more on this later.
 #
@@ -168,83 +188,8 @@ name = "Admiral Hopper"
 # _Supplementary materials_: The website [Python Tutor](https://pythontutor.com/) has a great interactive tool for visualizing how memory and references work in Python which is great for visualising memory and references. 
 # Try the [scenario we just looked at](https://pythontutor.com/visualize.html#code=name%20%3D%20%22Grace%20Hopper%22%0Anom%20%3D%20name%0Anom%20%3D%20%22Grace%20Brewster%20Murray%20Hopper%22%0Aname%20%3D%20%22Admiral%20Hopper%22&cumulative=false&curInstr=4&heapPrimitives=true&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false).
 
-
 # %% [markdown]
-# ### Objects and types
-
-# %% [markdown]
-# An object, like `name`, has a type. In the online python tutor example, we see that the objects have type "str".
-# `str` means a text object: Programmers call these 'strings'. 
-
-# %%
-type(name)
-
-# %% [markdown]
-# Depending on its type, an object can have different *properties*: data fields Inside the object.
-
-# %% [markdown]
-# Consider a Python complex number for example:
-
-# %%
-z = 3 + 1j
-
-# %% [markdown]
-# We can see what properties and methods an object has available using the `dir` function:
-
-# %%
-dir(z)
-
-# %% [markdown]
-# You can see that there are several methods whose name starts and ends with `__` (e.g. `__init__`): these are special methods that Python uses internally, and we will discuss some of them later on in this course. The others (in this case, `conjugate`, `img` and `real`) are the methods and fields through which we can interact with this object.
-
-# %%
-type(z)
-
-# %%
-z.real
-
-# %%
-z.imag
-
-# %% [markdown]
-# A property of an object is accessed with a dot.
-
-# %% [markdown]
-# The jargon is that the "dot operator" is used to obtain a property of an object.
-
-# %% [markdown]
-# When we try to access a property that doesn't exist, we get an error:
-
-# %%
-z.wrong
-
-# %% [markdown]
-# ### Reading error messages.
-
-# %% [markdown]
-# It's important, when learning to program, to develop an ability to read an error message and find, from in amongst
-# all the confusing noise, the bit of the error message which tells you what to change!
-
-# %% [markdown]
-# We don't yet know what is meant by `AttributeError`, or "Traceback".
-
-# %%
-z2 = 5 - 6j
-print("Gets to here")
-print(z.wrong)
-print("Didn't get to here")
-
-# %% [markdown]
-# But in the above, we can see that the error happens on the **third** line of our code cell.
-
-# %% [markdown]
-# We can also see that the error message: 
-# > 'complex' object has no attribute 'wrong' 
-#
-# ...tells us something important. Even if we don't understand the rest, this is useful for debugging!
-
-# %% [markdown]
-# ### Variables in notebooks and kernels
+# ## Variables in notebooks and kernels
 
 # %% [markdown]
 # When code cells are executed in a notebook, the variable names and values of the referenced objects persist between cells
@@ -267,7 +212,7 @@ number
 # %% [markdown]
 # In Jupyter terminology the Python process in which we run the code in a notebook in is termed a _kernel_. The _kernel_ stores the variable names and referenced objects created by any code cells in the notebook that have been previously run. The `Kernel` menu in the menu bar at the top of the JupyterLab interface has an option `Restart kernel...`. Running this will restart the kernel currently being used by the notebook, clearing any currently defined variables and returning the kernel to a 'clean' state. As you cannot restore a kernel once restarted a warning message is displayed asking you to confirm you wish to restart.
 #
-# ### Cell run order
+# ## Cell run order
 #
 # Cells do **not** have to be evaluated in the order they appear in a notebook.
 #

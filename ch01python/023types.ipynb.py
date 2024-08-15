@@ -12,332 +12,240 @@
 # ---
 
 # %% [markdown]
-# ## Types
+# # Types
 
 # %% [markdown]
-# We have seen that Python objects have a 'type':
+# We have so far encountered several different 'types' of Python object: 
+#
+# - integer numbers, for example `42`, 
+# - real numbers, for example `3.14`,
+# - strings, for example `"abc"`,
+# - functions, for example `print`,
+# - the special 'null'-value `None`. 
+#
+# The built-in function `type` when passed a single argument will return the type of the argument object. For example
 
 # %%
-type(5)
+type(42)
+
+# %%
+type("abc")
 
 # %% [markdown]
-# ### Floats and integers
+# ## Converting between types
+#
+# The Python type names such as `int` (integer numbers) and `str` (strings) can be used like functions to construct _instances_ of the type, typically by passing an object of another type which can be converted to the type being called. For example we can use `int` to convert a string of digits to an integer
+
+# %%
+int("123")
+
+# %%
+int("2") + int("2")
 
 # %% [markdown]
-# Python has two core numeric types, `int` for integer, and `float` for real number.
+# or to convert a decimal number to an integer (in this case by truncating off the decimal part)
 
 # %%
-one = 1
-ten = 10
-one_float = 1.0
-ten_float = 10.
+int(2.1)
 
 # %% [markdown]
-# The zero after a decimal point is optional - it is the **Dot** makes it a float. However, it is better to always include the zero to improve readability.
+# Conversely we can use `str` to convert numbers to strings
 
 # %%
-tenth= one_float / ten_float
+str(123)
 
 # %%
-tenth
-
-# %%
-type(one)
-
-# %%
-type(one_float)
+str(3.14)
 
 # %% [markdown]
-# The meaning of an operator varies depending on the type it is applied to!
+# ## Object attributes and methods
+#
+# Objects in Python have _attributes_: named values associated with the object and which are referenced to using the dot operator `.` followed by the attribute name, for example `an_object.attribute` would access (if it exists) the attribute named `attribute` of the object `an_object`. Each type has a set of pre-defined attributes. 
+#
+# Object attributes can reference arbitrary data associated with the object, or special functions termed _methods_ which have access to both any argument passed to them _and_ any other attributes of the object, and which are typically used to implement functionality connected to a particular object type.
+#
+# For example the `float` type used by Python to represent non-integer numbers (more on this in a bit) has attribute `real` and `imaginary` which can be used to access the real and imaginary components when considering the value as a [complex number](https://en.wikipedia.org/wiki/Complex_number)
 
 # %%
-print(1 + 2)  # returns an integer
-
-# %%
-print(1.0 + 2.0)  # returns a float
+a_number = 12.5
+print(a_number.real)
+print(a_number.imag)
 
 # %% [markdown]
-# The division by operator always returns a `float`, whether it's applied to `float`s or `int`s.
+# Objects of `str` type (strings) have methods `upper` and `lower` which both take no arguments, and respectively return the string in all upper case or all lower case characters
 
 # %%
-10 / 3
-
-# %%
-10.0 / 3
-
-# %%
-10 / 3.0
+a_string = "Hello world!"
+print(a_string.upper())
+print(a_string.lower())
 
 # %% [markdown]
-# To perform integer division we need to use the `divmod` function, which returns the quotiant and remainder of the division.
+# If you try to access an attribute not defined for a particular type you will get an error
 
 # %%
-quotiant, remainder = divmod(10, 3)
-print(f"{quotiant=}, {remainder=}")
+a_string.real
+
+# %%
+a_number.upper()
 
 # %% [markdown]
-# Note that if either of the input type are `float`, the returned values will also be `float`s.
+# We can list all of the attributes of an object by passing the object to the built-in `dir` function, for example
 
 # %%
-divmod(10, 3.0)
+print(dir(a_string))
 
 # %% [markdown]
-# There is a function for every built-in type, which is used to convert the input to an output of the desired type.
-
-# %%
-x = float(5)
-type(x)
-
-# %%
-divmod(10, float(3))
+# The attributes with names beginning and ending in double underscores `__` are special methods that implement the functionality associated with applying operators (and certain built-in functions) to objects of that type, and are generally not accessed directly.
+#
+# In Jupyter notebooks we can also view an objects properties using tab-completion by typing the object name followed by a dot `.` then hitting <kbd>tab</kbd>
 
 # %% [markdown]
-# I lied when I said that the `float` type was a real number. It's actually a computer representation of a real number
-# called a "floating point number". Representing $\sqrt 2$ or $\frac{1}{3}$ perfectly would be impossible in a computer, so we use a finite amount of memory to do it.
+# ## Operators
+#
+# Now that we know more about types, functions and methods we should look again at what happens when we write:
 
 # %%
-N = 10000.0
-sum([1 / N] * int(N))
+four = 2 + 2
 
 # %% [markdown]
+# The addition symbol `+` here is an example of what is termed an _operator_, in particular `+` is a _binary operator_ as it applies to pairs of values.
+#
+# We can think of the above code as equivalent to something like
+#
+# ```Python
+#     four = add(2, 2)
+# ```
+#
+# where `add` is the name of a function which takes two arguments and returns their sum.
+#
+# In Python, these functions _do_ exist, but they're actually _methods_ of the first input: they're the mysterious double-underscore `__` surrounded attributes we saw previously. For example the addition operator `+` is associated with a special method `__add__`
+
+# %%
+two = 2
+two.__add__(two)
+
+# %% [markdown]
+# The meaning of an operator varies for different types. For example for strings the addition operator `+` implements string concatenation (joining).
+
+# %%
+"Hello" + " " + "world"
+
+# %%
+"2" + "2"
+
+# %% [markdown]
+# Sometimes we get an error when a type doesn't have an operator:
+
+# %%
+"Hello" - "world"
+
+# %% [markdown]
+# The word "operand" means "thing that an operator operates on"!
+
+# %% [markdown]
+# Or when two types can't work together with an operator:
+
+# %%
+"2" + 5
+
+# %% [markdown]
+# Just as in mathematics, operators in Python have a built-in precedence, with brackets used to force an order of operations:
+
+# %%
+print(2 + 3 * 4)
+
+# %%
+print((2 + 3) * 4)
+
+# %% [markdown]
+# *Supplementary material*: [Python operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+
+# %% [markdown]
+# ## Floats and integers
+
+# %% [markdown]
+# Python has two core numeric types, `int` for integers, and `float` for real numbers.
+
+# %%
+integer_one = 1
+integer_ten = 10
+float_one = 1.0
+float_ten = 10.
+
+# %% [markdown]
+# Binary arithmetic operators applied to objects of `float` and `int` types will return a `float`
+
+# %%
+integer_one * float_ten
+
+# %%
+float_one + integer_one
+
+# %% [markdown]
+# In Python there are two division operators `/` and `//` which implement different mathematical operations. The _true division_ (or just _division_) operator `/` implements what we usually think of by division, such that for two `float` values `x` and `y` `z = x / y` is another `float` values such that `y * z` is (to within machine precision) equal to `x`. The _floor division_ operator `//` instead implements the operation of dividing and rounding down to the nearest integer.
+
+# %%
+float_one / float_ten
+
+# %%
+float_one / integer_ten
+
+# %%
+float_one // float_ten
+
+# %%
+integer_one // integer_ten
+
+# %%
+integer_one // float_ten
+
+# %% [markdown]
+# In reality the `float` type does not exactly represent real numbers (as being able to represent all real numbers to arbitrary precision is impossible in a object with uses a finite amount of memory) but instead represents real-numbers as a finite-precision 'floating-point' approximation. This has many important implications for the implementation of numerical algorithms. We will not have time to cover this topic here but the following resources can be used to learn more for those who are interested.
+#
 # *Supplementary material*:
 #
-# * [Python's documentation about floating point arithmetic](https://docs.python.org/tutorial/floatingpoint.html);
-# * [How floating point numbers work](http://floating-point-gui.de/formats/fp/);
-# * Advanced: [What Every Computer Scientist Should Know About Floating-Point Arithmetic](http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).
+# * [Floating point arithmetic in Python](https://docs.python.org/3/tutorial/floatingpoint.html)
+# * [Floating point guide](http://floating-point-gui.de/formats/fp/)
+# * Advanced: [What Every Computer Scientist Should Know About Floating-Point Arithmetic](http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 # %% [markdown]
-# ### Strings
+# ## Strings
 
 # %% [markdown]
-# Python has a built in `string` type, supporting many
-# useful methods.
+# Python built-in `string` type, supports many useful operators and methods. As we have seen already the addition operator can be used to concatenate strings
 
 # %%
-given = "Terry"
-family = "Jones"
+given = "Grace"
+family = "Hopper"
 full = given + " " + family
 
 # %% [markdown]
-# So `+` for strings means "join them together" - *concatenate*.
+# The multiplication operator `*` can be used to repeat strings
 
 # %%
+"Badger " * 3
+
+# %% [markdown]
+# Methods such as `upper` and `lower` can be used to alter the case of the string characters.
+
+# %%
+print(full.lower())
 print(full.upper())
 
 # %% [markdown]
-# As for `float` and `int`, the name of a type can be used as a function to convert between types:
+# The `replace` method can be used to replace characters
 
 # %%
-ten, one
-
-# %%
-print(ten + one)
-
-# %%
-print(float(str(ten) + str(one)))
+full.replace("c", "p")
 
 # %% [markdown]
-# We can remove extraneous material from the start and end of a string:
+# The `count` method can be used to count the occurences of particular characters in the string
+
+# %%
+full.count("p")
+
+# %% [markdown]
+# We can use `strip` to remove extraneous whitespace from the start and end of a string:
 
 # %%
 "    Hello  ".strip()
-
-# %% [markdown]
-# Note that you can write strings in Python using either single (`' ... '`) or double (`" ... "`) quote marks. The two ways are equivalent. However, if your string includes a single quote (e.g. an apostrophe), you should use double quotes to surround it:
-
-# %%
-"Terry's animation"
-
-# %% [markdown]
-# And vice versa: if your string has a double quote inside it, you should wrap the whole string in single quotes.
-
-# %%
-'"Wow!", said John.'
-
-# %% [markdown]
-# ### Lists
-
-# %% [markdown]
-# Python's basic **container** type is the `list`.
-
-# %% [markdown]
-# We can define our own list with square brackets:
-
-# %%
-[1, 3, 7]
-
-# %%
-type([1, 3, 7])
-
-# %% [markdown]
-# Lists *do not* have to contain just one type:
-
-# %%
-various_things = [1, 2, "banana", 3.4, [1,2] ]
-
-# %% [markdown]
-# We access an **element** of a list with an `int` in square brackets:
-
-# %%
-various_things[2]
-
-# %%
-index = 0
-various_things[index]
-
-# %% [markdown]
-# Note that list indices start from zero.
-
-# %% [markdown]
-# We can use a string to join together a list of strings:
-
-# %%
-name = ["Sir", "Michael", "Edward", "Palin"]
-print("==".join(name))
-
-# %% [markdown]
-# And we can split up a string into a list:
-
-# %%
-"Ernst Stavro Blofeld".split(" ")
-
-# %%
-"Ernst Stavro Blofeld".split("o")
-
-# %% [markdown]
-# And combine these:
-
-# %%
-"->".join("John Ronald Reuel Tolkein".split(" "))
-
-# %% [markdown]
-# A matrix can be represented by **nesting** lists -- putting lists inside other lists.
-
-# %%
-identity = [[1, 0], [0, 1]]
-
-# %%
-identity[0][0]
-
-# %% [markdown]
-# ... but later we will learn about a better way of representing matrices.
-
-# %% [markdown]
-# ### Ranges
-
-# %% [markdown]
-# Another useful type is range, which gives you a sequence of consecutive numbers. In contrast to a list, ranges generate the numbers as you need them, rather than all at once.
-#
-# If you try to print a range, you'll see something that looks a little strange: 
-
-# %%
-range(5)
-
-# %% [markdown]
-# We don't see the contents, because *they haven't been generatead yet*. Instead, Python gives us a description of the object - in this case, its type (range) and its lower and upper limits.
-
-# %% [markdown]
-# We can quickly make a list with numbers counted up by converting this range:
-
-# %%
-count_to_five = range(5)
-print(list(count_to_five))
-
-# %% [markdown]
-# Ranges in Python can be customised in other ways, such as by specifying the lower limit or the step (that is, the difference between successive elements). You can find more information about them in the [official Python documentation](https://docs.python.org/3/library/stdtypes.html#ranges).
-
-# %% [markdown]
-# ### Sequences
-
-# %% [markdown]
-# Many other things can be treated like `lists`. Python calls things that can be treated like lists `sequences`.
-
-# %% [markdown]
-# A string is one such *sequence type*.
-
-# %% [markdown]
-# Sequences support various useful operations, including:
-# - Accessing a single element at a particular index: `sequence[index]`
-# - Accessing multiple elements (a *slice*): `sequence[start:end_plus_one]`
-# - Getting the length of a sequence: `len(sequence)`
-# - Checking whether the sequence contains an element: `element in sequence`
-#
-# The following examples illustrate these operations with lists, strings and ranges.
-
-# %%
-print(count_to_five[1])
-
-# %%
-print("Palin"[2])
-
-# %%
-count_to_five = range(5)
-
-# %%
-count_to_five[1:3]
-
-# %%
-"Hello World"[4:8]
-
-# %%
-len(various_things)
-
-# %%
-len("Python")
-
-# %%
-name
-
-# %%
-"Edward" in name
-
-# %%
-3 in count_to_five
-
-# %% [markdown]
-# ### Unpacking
-
-# %% [markdown]
-# Multiple values can be **unpacked** when assigning from sequences, like dealing out decks of cards.
-
-# %%
-mylist = ['Hello', 'World']
-a, b = mylist
-print(b)
-
-# %%
-range(4)
-
-# %%
-zero, one, two, three = range(4)
-
-# %%
-two
-
-# %% [markdown]
-# If there is too much or too little data, an error results:
-
-# %%
-zero, one, two, three = range(7)
-
-# %%
-zero, one, two, three = range(2)
-
-# %% [markdown]
-# Python provides some handy syntax to split a sequence into its first element ("head") and the remaining ones (its "tail"):
-
-# %%
-head, *tail = range(4)
-print("head is", head)
-print("tail is", tail)
-
-# %% [markdown]
-# Note the syntax with the \*. The same pattern can be used, for example, to extract the middle segment of a sequence whose length we might not know:
-
-# %%
-one, *two, three = range(10)
-
-# %%
-print("one is", one)
-print("two is", two)
-print("three is", three)

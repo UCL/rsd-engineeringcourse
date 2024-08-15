@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Dictionaries
+# # Dictionaries
 
 # %% [markdown]
-# ### The Python Dictionary
+# ## The Python Dictionary
 
 # %% [markdown]
 # Python supports a container type called a dictionary.
@@ -28,154 +28,131 @@
 
 # %%
 names = "Martin Luther King".split(" ")
-
-# %%
 names[1]
 
 # %% [markdown]
 # In a dictionary, we look up an element using **another object of our choice**:
 
 # %%
-chapman = {"name": "Graham", "age": 48, 
-           "Jobs": ["Comedian", "Writer"] }
+me = {"name": "James", "age": 39, "Jobs": ["Programmer", "Teacher"]}
 
 # %%
-chapman
+print(me)
 
 # %%
-chapman['Jobs']
+print(me["Jobs"])
 
 # %%
-chapman['age']
-
-# %%
-type(chapman)
+print(type(me))
 
 # %% [markdown]
-# ### Keys and Values
+# ## Keys and Values
 
 # %% [markdown]
 # The things we can use to look up with are called **keys**:
 
 # %%
-chapman.keys()
+me.keys()
 
 # %% [markdown]
 # The things we can look up are called **values**:
 
 # %%
-chapman.values()
+me.values()
 
 # %% [markdown]
 # When we test for containment on a `dict` we test on the **keys**:
 
 # %%
-'Jobs' in chapman
+"Jobs" in me
 
 # %%
-'Graham' in chapman
+"James" in me
 
 # %%
-'Graham' in chapman.values()
+"James" in me.values()
 
 # %% [markdown]
-# ### Immutable Keys Only
+# ## Immutable Keys Only
 
 # %% [markdown]
 # The way in which dictionaries work is one of the coolest things in computer science:
-# the "hash table". The details of this are beyond the scope of this course, but we will consider some aspects in the section on performance programming. 
+# the "hash table". This is way beyond the scope of this course, but it has a consequence:
 #
-# One consequence of this implementation is that you can only use **immutable** things as keys.
+# You can only use **immutable** things as keys.
 
 # %%
-good_match = {
-    ("Lamb", "Mint"): True, 
-    ("Bacon", "Chocolate"): False
-   }
+good_match = {("Lamb", "Mint"): True, ("Bacon", "Chocolate"): False}
 
 # %% [markdown]
 # but:
 
 # %%
-illegal = {
-    ["Lamb", "Mint"]: True, 
-    ["Bacon", "Chocolate"]: False
-   }
+illegal = {[1, 2]: 3}
 
 # %% [markdown]
-# Remember -- square brackets denote lists, round brackets denote `tuple`s.
+# *Supplementary material*: You can start to learn about [the 'hash table'](https://www.youtube.com/watch?v=h2d9b_nEzoA). Though this video is **very** advanced I think it's really interesting!
 
 # %% [markdown]
-# ### No guarantee of order (before Python 3.7)
+# ## No guarantee of order
 
 # %% [markdown]
 #
-# Another consequence of the way dictionaries used to work is that there was no guaranteed order among the
-# elements. However, since Python 3.7, it's guaranteed that dictionaries return elements in the order in which they were inserted. Read more about [why that changed and how it is still fast](https://stackoverflow.com/a/39980744/1087595).
+# Another consequence of the way dictionaries work is that there's no guaranteed order among the
+# elements:
 #
 #
 #
 
 # %%
-my_dict = {'0': 0, '1':1, '2': 2, '3': 3, '4': 4}
+my_dict = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4}
 print(my_dict)
 print(my_dict.values())
 
 # %% [markdown]
-# ### Sets
+# ## Sets
 
 # %% [markdown]
 # A set is a `list` which cannot contain the same element twice.
-# We make one by calling `set()` on any sequence, e.g. a list or string.
 
 # %%
-name = "Graham Chapman"
-unique_letters = set(name)
-
-# %%
-unique_letters
-
-# %% [markdown]
-# Or by defining a literal like a dictionary, but without the colons:
-
-# %%
-primes_below_ten = { 2, 3, 5, 7}
-
-# %%
-type(unique_letters)
-
-# %%
-type(primes_below_ten)
+university = "University College London"
+unique_letters = set(university)
 
 # %%
 unique_letters
 
-# %% [markdown]
-# This will be easier to read if we turn the set of letters back into a string, with `join`:
+# %%
+print("".join(unique_letters))
 
 # %%
-"".join(unique_letters)
-
-# %% [markdown]
-# A set has no particular order, but is really useful for checking or storing **unique** values.
+"".join(["a", "b", "c"])
 
 # %% [markdown]
-# Set operations work as in mathematics:
+# It has no particular order, but is really useful for checking or storing **unique** values.
 
 # %%
-x = set("Hello")
-y = set("Goodbye")
-
-# %%
-x & y # Intersection
-
-# %%
-x | y # Union
-
-# %%
-y - x # y intersection with complement of x: letters in Goodbye but not in Hello
+alist = [1, 2, 3]
+is_unique = len(set(alist)) == len(alist)
+print(is_unique)
 
 # %% [markdown]
-# Your programs will be faster and more readable if you use the appropriate container type for your data's meaning.
-# Always use a set for lists which can't in principle contain the same data twice, always use a dictionary for anything
-# which feels like a mapping from keys to values.
+# ## Safe Lookup
+
+# %%
+x = {"a": 1, "b": 2}
+
+# %%
+x["a"]
+
+# %%
+x["fish"]
+
+# %%
+x.get("a")
+
+# %%
+x.get("fish")
+
+# %%
+x.get("fish", "tuna") == "tuna"
