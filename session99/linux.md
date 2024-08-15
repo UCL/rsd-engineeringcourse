@@ -63,24 +63,6 @@ which python
 
 shows a path where you installed anaconda.
 
-
-Python via Enthought Canopy
----------------------------
-
-Alternatively you may install a complete independent scientific python distribution. One of these is
-Enthought Canopy.
-
-The Enthought Canopy python distribution exists in two different versions. A basic free version with
-a limited number of packages (Canopy express) and a non free full version. The full version can be
-obtained free of charge for academic use. Register with
-[Enthought Scientific Computing](https://enthought.com/products/canopy/academic/) using your UCL
-e-mail address for an academic licence.
-
-You may then use your Enthought user account to sign into the installed Canopy application and
-activate the full academic version. Canopy comes with a package manager from where it is possible to
-install and update a large number of python packages. The packages installed by default should cover
-our needs.
-
 Git
 ---
 
