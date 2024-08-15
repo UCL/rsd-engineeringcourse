@@ -13,17 +13,24 @@
 
 # %% [markdown]
 # ## Coding Conventions
-
-# %% [markdown]
-# Let's import first the context for this chapter.
+#
+# Let's import a few variables from context.py that will be used in the following lesson.
 
 # %%
-from context import *
+from context import (
+    sEntry,
+    iOffset,
+    entry,
+    offset,
+    anothervariable,
+    variable,
+    flag1,
+    flag2,
+    do_something,
+)
 
 # %% [markdown]
 # ### One code, many layouts:
-
-# %% [markdown]
 #
 # Consider the following fragment of python:
 #
@@ -219,43 +226,48 @@ if ((variable_equality and flag1) or flag2):
 #
 # There are automated tools which enforce coding conventions and check for common mistakes.
 #
-# These are called **linters**. A popular one is [pycodestyle](https://pypi.org/project/pycodestyle/):
-#
-# E.g. `pip install pycodestyle` 
-#
-#
-#
+# These are called ** formatters** and **linters**. Some widely used linters and formatters in the Python ecosystem ar -
+#  - [pycodestyle](https://pypi.org/project/pycodestyle/): check your code against PEP8
+#  - [pylint](https://www.pylint.org/): useful information about the quality of your code
+#  - [black](https://github.com/psf/black): code formatter written in Python
+#  - [ruff](https://github.com/astral-sh/ruff): blazing fast code formatter and linter written in Rust with ideas borrowed from Pythonic linters and formatters
+
+
+# %% [markdown]
+# Most of such tools can be directly used on Python files / repositories using a CLI utility. For instance -
+
 
 # %% magic_args="--no-raise-error" language="bash"
 # pycodestyle species.py
 
-# %% [markdown]
-#
-#
-#
-# It is a good idea to run a linter before every commit, or include it in your CI tests.
-#
-#
-
-# %% [markdown]
-# There are other tools that help with linting that are worth mentioning.
-# With [pylint](https://www.pylint.org/) you can also get other useful information about the quality of your code:
-#
-# `pip install pylint` 
-#
-
 # %% magic_args="--no-raise-error" language="bash"
 # pylint species.py
 
+# %% magic_args="--no-raise-error" language="bash"
+# ruff check species.py
+
 # %% [markdown]
-# and with [black](https://black.readthedocs.io/) you can fix all the errors at once.
-# ```bash
-# black species.py
-# ```
 # These linters can be configured to choose which points to flag and which to ignore.
 #
 # Do not blindly believe all these automated tools! Style guides are **guides** not **rules**.
 
 # %% [markdown]
-# Finally, there are tools like [editorconfig](https://editorconfig.org/) to help sharing the conventions used within a project, where each contributor uses different IDEs and tools. There are also bots like [pep8speaks](https://pep8speaks.com/) that comments on contributors' pull requests suggesting what to change to follow the conventions for the project.
+#
+# It is a good idea to run a linter before every commit, or include it in your CI tests.
+#
+# [`pre-commit`](https://pre-commit.com) allows developers to add tools like linters and formatters
+# as git hooks, such that they run before every commit. The hooks can be installed locally using -
+# 
+# ```bash
+# pip install pre-commit
+# pre-commit install  # provided a .pre-commit-config.yaml is present in your repository
+# ```
+# 
+# This would run the checks every time a commit is created locally. The checks will only run on the files
+# modified by that commit.
+
+
+# %% [markdown]
+# Finally, there are tools like [editorconfig](https://editorconfig.org/) to help sharing the conventions used within a project, where each contributor uses different IDEs and tools.
+# There are also bots like [pep8speaks](https://pep8speaks.com/) and [pre-commit.ci](https://pre-commit.ci) that comments/run checks on contributors' pull requests suggesting what to change to follow the conventions for the project.
 #
