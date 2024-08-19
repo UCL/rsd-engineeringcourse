@@ -22,6 +22,7 @@
 import requests
 import math
 import IPython
+from IPython.display import Image
 
 # %% [markdown]
 # ## Download the data
@@ -190,45 +191,42 @@ print([quake['properties']['mag'] for quake in largest_magnitude_events])
 
 
 # %% [markdown]
-# ## Get a map at the point of the quakes
-#
-# There are various different web services which can be used to get map imagery, here we will [OpenStreetMap](https://www.openstreetmap.org/). Specifically we will get a pre-rendered map tile containing a location specified by latitude and longitude coordinates as a *portable network graphic* (PNG) image. [This page](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Python) on the OpenStreeMap wiki gives a Python implementation of a function `deg2num` to convert from a latitude-longitude pair in degrees plus a [zoom level](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Zoom_levels), to a pair of indices specifying a specific map tile. 
-
-# %%
-def deg2num(lat_deg, lon_deg, zoom):
-    lat_rad = math.radians(lat_deg)
-    n = 2.0 ** zoom
-    xtile = int((lon_deg + 180.0) / 360.0 * n)
-    ytile = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
-    return (xtile, ytile)
-
+# ## Get a map at the point of the quake
 
 # %% [markdown]
-# There are various [tile servers](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers) for the OpenStreetMap data with differing rendering styles and URL templates. Here we use the 'standard' style tiles for which an appropiate URL template is `http://a.tile.openstreetmap.org/{zoom}/{x}/{y}.png` where `{zoom}` indicates the zoom level and `{x}` and `{y}` the two components of tile number returned by `deg2num`. We can use Python [formatted string literals](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings) to populate the template with the appropriate values and use the `requests.get` function to request the image corresponding to the URL. Finally we can create an [`IPython.display.Image` object](https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html#IPython.display.Image) which will display the raw data corresponding to the contents of the image request as an image in the Jupyter Lab front end. We wrap this all in to a function `get_map_tile_at` to allow us to use it to display images for each of the largest magnitude earthquake events identified earlier.
+# We saw something similar in the [Greengraph example](../ch01python/010exemplar.html#More-complex-functions) [(notebook version)](../ch01python/010exemplar.ipynb#More-complex-functions) of the previous chapter.
 
 # %%
-def get_map_tile_at(latitude, longitude, zoom=10, satellite=False): 
-    x, y = deg2num(latitude, longitude, zoom)
-    tile_url = f"http://a.tile.openstreetmap.org/{zoom}/{x}/{y}.png"
-    response = requests.get(tile_url)
-    assert response.status_code == 200
-    return IPython.core.display.Image(response.content)
+def request_map_at(lat, long, satellite=True,
+                   zoom=10, size=(400, 400)):
+    base = "https://static-maps.yandex.ru/1.x/?"
 
+    params = dict(
+        z=zoom,
+        size="{},{}".format(size[0], size[1]),
+        ll="{},{}".format(long, lat),
+        l="sat" if satellite else "map",
+        lang="en_US"
+    )
+
+    return requests.get(base, params=params)
 
 # %% [markdown]
 # As a test we can check the map displayed for the coordinates of the [Prime meridian at the Royal Observatory Greenwich](https://geohack.toolforge.org/geohack.php?pagename=Prime_meridian_(Greenwich)&params=51_28_40.1_N_0_0_5.3_W_type:landmark_globe:earth_region:GB_scale:1000)
 
 # %%
-get_map_tile_at(latitude=51.477806, longitude=-0.001472, zoom=14) 
+map = request_map_at(lat=51.477806, long=-0.001472, zoom=14)
+Image(map.content)
 
 # %% [markdown]
 # ## Display the maps
 #
 # We can now finally show the maps for the locations of the maximum magnitude earthquake events. As additional check we also print the description under the `title` key in the `properties` dictionary for the event to check it tallies with the location shown in the displayed map.
 
-# %% jupyter={"outputs_hidden": false}
+# %%
 for quake in largest_magnitude_events:
     longitude = quake['geometry']['coordinates'][0]
     latitude = quake['geometry']['coordinates'][1]
     print(quake['properties']['title'])
-    display(get_map_tile_at(latitude, longitude, 12))
+    display(Image(request_map_at(latitude, longitude, 12).content))
+
