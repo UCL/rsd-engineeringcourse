@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jekyll:
-#     display_name: Dictionaries
+#     display_name: Dictionaries and Sets
 #   jupytext:
 #     notebook_metadata_filter: -kernelspec,jupytext,jekyll
 #     text_representation:
@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Dictionaries
+# # Dictionaries and Sets
 
 # %% [markdown]
-# ### The Python Dictionary
+# ## The Python Dictionary
 
 # %% [markdown]
 # Python supports a container type called a dictionary.
@@ -28,8 +28,6 @@
 
 # %%
 names = "Martin Luther King".split(" ")
-
-# %%
 names[1]
 
 # %% [markdown]
@@ -43,13 +41,13 @@ chapman = {"name": "Graham", "age": 48,
 chapman
 
 # %%
-chapman['Jobs']
+print(chapman["Jobs"])
 
 # %%
-chapman['age']
+print(chapman["age"])
 
 # %%
-type(chapman)
+print(type(chapman))
 
 # %% [markdown]
 # ### Keys and Values
@@ -70,22 +68,22 @@ chapman.values()
 # When we test for containment on a `dict` we test on the **keys**:
 
 # %%
-'Jobs' in chapman
+"Jobs" in chapman
 
 # %%
-'Graham' in chapman
+"Graham" in chapman
 
 # %%
-'Graham' in chapman.values()
+"Graham" in chapman.values()
 
 # %% [markdown]
 # ### Immutable Keys Only
 
 # %% [markdown]
 # The way in which dictionaries work is one of the coolest things in computer science:
-# the "hash table". The details of this are beyond the scope of this course, but we will consider some aspects in the section on performance programming. 
+# the "hash table". This is way beyond the scope of this course, but it has a consequence:
 #
-# One consequence of this implementation is that you can only use **immutable** things as keys.
+# You can only use **immutable** things as keys.
 
 # %%
 good_match = {
@@ -103,26 +101,50 @@ illegal = {
    }
 
 # %% [markdown]
-# Remember -- square brackets denote lists, round brackets denote `tuple`s.
+# *Supplementary material*: You can start to learn about [the 'hash table'](https://www.youtube.com/watch?v=h2d9b_nEzoA). Though this video is **very** advanced, it's really interesting!
 
 # %% [markdown]
-# ### No guarantee of order (before Python 3.7)
+# ### No guarantee of order
+#
+# Another consequence of the way dictionaries work is that there's no guaranteed order among the
+# elements:
 
-# %% [markdown]
-#
-# Another consequence of the way dictionaries used to work is that there was no guaranteed order among the
-# elements. However, since Python 3.7, it's guaranteed that dictionaries return elements in the order in which they were inserted. Read more about [why that changed and how it is still fast](https://stackoverflow.com/a/39980744/1087595).
-#
-#
-#
 
 # %%
-my_dict = {'0': 0, '1':1, '2': 2, '3': 3, '4': 4}
+my_dict = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4}
 print(my_dict)
 print(my_dict.values())
 
 # %% [markdown]
-# ### Sets
+# ### Safe Lookup
+#
+# Some times you want a program to keep working even when a key is looked up but it's not there.
+# Python dictionaries offers that through the `get` method.
+
+# %%
+x = {"a": 1, "b": 2}
+
+# %%
+x["a"]
+
+# %%
+x["fish"]
+
+# %%
+x.get("a")
+
+# %%
+x.get("fish")
+
+# %% [markdown]
+# By default `get` returns `None` if the key searched is not in the dictionary.
+# However, you can change that default by adding what's the value you want it to return.
+
+# %%
+x.get("fish", "tuna") == "tuna"
+
+# %% [markdown]
+# ## Sets
 
 # %% [markdown]
 # A set is a `list` which cannot contain the same element twice.
@@ -142,10 +164,9 @@ unique_letters
 primes_below_ten = { 2, 3, 5, 7}
 
 # %%
-type(unique_letters)
+print(type(unique_letters))
+print(type(primes_below_ten))
 
-# %%
-type(primes_below_ten)
 
 # %%
 unique_letters
@@ -154,10 +175,21 @@ unique_letters
 # This will be easier to read if we turn the set of letters back into a string, with `join`:
 
 # %%
-"".join(unique_letters)
+print("".join(unique_letters))
 
 # %% [markdown]
-# A set has no particular order, but is really useful for checking or storing **unique** values.
+# `join` uses the character give to be what joins the sequence given:
+
+# %%
+"-".join(["a", "b", "c"])
+
+# %% [markdown]
+# Note that a set has no particular order, but is really useful for checking or storing **unique** values.
+
+# %%
+alist = [1, 2, 3]
+is_unique = len(set(alist)) == len(alist)
+print(is_unique)
 
 # %% [markdown]
 # Set operations work as in mathematics:
@@ -179,3 +211,4 @@ y - x # y intersection with complement of x: letters in Goodbye but not in Hello
 # Your programs will be faster and more readable if you use the appropriate container type for your data's meaning.
 # Always use a set for lists which can't in principle contain the same data twice, always use a dictionary for anything
 # which feels like a mapping from keys to values.
+
