@@ -133,7 +133,7 @@ print("This text will be displayed\n")
 # ```
 #
 # For more information
-# [see this tutorial notebook in the official Jupyter documentation](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html).
+# [see this tutorial in the official Jupyter documentation](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html).
 #
 # #### Editing and running cells in the notebook
 #
@@ -212,6 +212,8 @@ def make_figure():
 
 
 # %% [markdown]
+# Note, in a real example, we could edit the file on disk using a code editor (or IDE) rather than using `%%writefile`
+#
 # We can use this code in the notebook by _importing_ the `draw_eight` module and then _calling_ the
 # `make_figure` function defined in the module.
 
@@ -220,6 +222,9 @@ import draw_eight  # Load the library
 fig = draw_eight.make_figure()
 
 # %% [markdown]
+# Note, we can import our `draw_eight` module in this notebook only if the file is in our current working directory (i.e. the folder this notebook is in).
+#
+# To allow us to import our module from anywhere on our computer, or to allow other people to reuse it on their own computer, we can create a [Python package](https://packaging.python.org/en/latest/).
 # We will cover how to import and use functionality from libraries, how to install third-party libraries
 # and how to write your own libraries that can be shared and used by other in this course.
 #
@@ -242,11 +247,17 @@ fig = draw_eight.make_figure()
 # Python scripts are well suited to for example for describing computationally demanding simulations or analyses
 # to run as long jobs on a remote server or cluster, or tasks where the input and output is mainly at the file level
 # - for instance batch processing a series of data files.
+
+# ### Python libraries/packages
+#
+# A package is a collection of modules that can be installed on our computer and easily shared with others. We will learn how to create packages later on in this course.
+#
+# There is a huge variety of available packages to do pretty much anything. For instance, try `import antigravity` or `import this`.
 #
 # ### IDEs
 # 
 # IDEs are Interactive Development Environments and it's what we will be using in this course.
-# We will be demonstrating it through [VS Code](https://code.visualstudio.com/) but you could use whichever you like, e.g., [spyder](https://www.spyder-ide.org/), [pycharm](https://www.jetbrains.com/pycharm/), ...).
-# We won't be using notebooks, except for this notes so you can download and experiment with them.
+# We will be demonstrating it through [VS Code](https://code.visualstudio.com/) but you could use whichever you like, *e.g.*, [spyder](https://www.spyder-ide.org/), [pycharm](https://www.jetbrains.com/pycharm/), ...).
+# We won't be using notebooks, except for these notes so you can download and experiment with them.
 # However, we will be learning how to build libraries, and they need to be composed of python files rather than notebooks.
 # When working with an IDE, you'll get access to a Python interpreter and you can run scripts directly from the interface as well as use tools like the debugger, test frameworks and git from within it.
