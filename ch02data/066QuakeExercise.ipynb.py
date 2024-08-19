@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# # Extended exercise: the biggest earthquake in the UK this century
+# # Classroom exercise: the biggest earthquake in the UK this century
 #
 # ## USGS earthquake catalog
 #

@@ -60,7 +60,7 @@
 # **Supplementary materials**: The code used to replace each character is the [ASCII](http://www.asciitable.com) code for it.
 
 # %% [markdown]
-# **Supplementary materials**: The escaping rules are quite subtle. See [the Wikipedia article on percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding).
+# **Supplementary materials**: The escaping rules are quite subtle. See [the Wikipedia article on percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). The standard library provides the [urlencode](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlencode) function that can take care of this for you.
 
 # %% [markdown]
 # ## Requests

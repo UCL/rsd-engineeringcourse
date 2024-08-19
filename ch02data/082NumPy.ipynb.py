@@ -94,7 +94,7 @@ for element in my_array:
 my_array.append(4)
 
 # %% [markdown]
-# NumPy arrays do not provide an `append` method. For NumPy arrays it is generally expected that you will not change the *size* of an array once it has been defined and the way arrays are stored in memory would make such resize operations inefficient. Python lists on the other can be efficiently appended to, joined and split. However, you gain a lot of functionality in return for this limitation.
+# For NumPy arrays it is generally expected that you will not change the *size* of an array once it has been defined and the way arrays are stored in memory would make such resize operations inefficient. Python lists on the other can be efficiently appended to, joined and split. However, you gain a lot of functionality in return for this limitation.
 #
 # ## Array creation routines
 #
