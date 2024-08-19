@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Using Libraries
+# # Using Libraries
 
 # %% [markdown]
-# ### Import
+# ## Import
 
 # %% [markdown]
 # To use a function or type from a python library, rather than a **built-in** function or type, we have to import the library.
@@ -48,14 +48,25 @@ dir(math)
 math.pi
 
 # %% [markdown]
-# You can always find out where on your storage medium a library has been imported from:
+# You can find out where on your storage medium a library has been imported from:
 
 # %%
-print(math.__file__[0:50])
-print(math.__file__[50:])
+print(math.__file__)
 
 # %% [markdown]
-# Note that `import` does *not* install libraries. It just makes them available to your current notebook session, assuming they are already installed. Installing libraries is harder, and we'll cover it later.
+# Some modules do not use the `__file__` attribute so you may get an error:
+#
+# ``` python
+# AttributeError: module 'modulename' has no attribute '__file__'
+# ```
+#
+# If this is the case `print(modulename)` should display a description of the module object which will include an indication if the module is a 'built-in' module written in C (in which case the file path will not be specified) or the file path to the module otherwise.
+
+# %%
+print(math)
+
+# %% [markdown]
+# Note that `import` does *not* install libraries from PyPI. It just makes them available to your current notebook session, assuming they are already installed. Installing libraries is harder, and we'll cover it later.
 # So what libraries are available? Until you install more, you might have just the modules that come with Python, the *standard library*.
 
 # %% [markdown]
@@ -64,12 +75,12 @@ print(math.__file__[50:])
 # %% [markdown]
 # If you installed via Anaconda, then you also have access to a bunch of modules that are commonly used in research.
 #
-# **Supplementary Materials**: Review the [list of modules that are packaged with Anaconda by default on different architectures](https://docs.anaconda.com/anaconda/packages/pkg-docs/) (modules installed by default are shown with ticks).
+# **Supplementary Materials**: Review the [list of modules that are packaged with Anaconda by default on different architectures](http://docs.continuum.io/anaconda/pkg-docs.html) (choose your operating system and see which packages have a tick mark).
 #
 # We'll see later how to add more libraries to our setup.
 
 # %% [markdown]
-# ### Why bother?
+# ## Why bother?
 
 # %% [markdown]
 # Why bother with modules? Why not just have everything available all the time?
@@ -77,7 +88,7 @@ print(math.__file__[50:])
 # The answer is that there are only so many names available! Without a module system, every time I made a variable whose name matched a function in a library, I'd lose access to it. In the olden days, people ended up having to make really long variable names, thinking their names would be unique, and they still ended up with "name clashes". The module mechanism avoids this.
 
 # %% [markdown]
-# ### Importing from modules
+# ## Importing from modules
 
 # %% [markdown]
 # Still, it can be annoying to have to write `math.sin(math.pi)` instead of `sin(pi)`.
@@ -85,11 +96,13 @@ print(math.__file__[50:])
 
 # %%
 import math
-math.sin(math.pi)
+
+print(math.sin(math.pi))
 
 # %%
 from math import sin
-sin(math.pi)
+
+print(sin(math.pi))
 
 # %% [markdown]
 # Importing one-by-one like this is a nice compromise between typing and risk of name clashes.
@@ -98,20 +111,31 @@ sin(math.pi)
 # It *is* possible to import **everything** from a module, but you risk name clashes.
 
 # %%
+pi = "pie"
+
+
+def sin(x):
+    print(f"eat {x}")
+
+print(sin(pie))
+    
 from math import *
-sin(pi)
+
+print(sin(pi))
 
 # %% [markdown]
-# ###  Import and rename
+# ## Import and rename
 
 # %% [markdown]
 # You can rename things as you import them to avoid clashes or for typing convenience
 
 # %%
 import math as m
-m.cos(0)
+
+print(m.cos(0))
 
 # %%
 pi = 3
 from math import pi as realpi
+
 print(sin(pi), sin(realpi))

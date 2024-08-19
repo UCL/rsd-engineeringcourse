@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Data structures
+# # Data structures
 
 # %% [markdown]
-# ### Nested Lists and Dictionaries
+# ## Nested Lists and Dictionaries
 
 # %% [markdown]
 # In research programming, one of our most common tasks is building an appropriate *structure* to model our complicated
@@ -29,7 +29,7 @@ UCL = {
 }
 
 # %%
-Chapman = {
+Chapman_house = {
     'City': 'London',
     'Street': 'Southwood ln',
     'Postcode': 'N6 5TB'
@@ -39,7 +39,7 @@ Chapman = {
 # A collection of people's addresses is then a list of dictionaries:
 
 # %%
-addresses = [UCL, Chapman]
+addresses = [UCL, Chapman_house]
 
 # %%
 addresses
@@ -51,7 +51,7 @@ addresses
 UCL['people'] = ['Jeremy','Leonard', 'James', 'Henry']
 
 # %%
-Chapman['people'] = ['Graham', 'David']
+Chapman_house["People"] = ["Graham", "David"]
 
 # %%
 addresses
@@ -63,46 +63,59 @@ addresses
 # We can go further, e.g.:
 
 # %%
-UCL['Residential'] = False
+UCL["Residential"] = False
 
 # %% [markdown]
 # And we can write code against our structures:
 
 # %%
-leaders = [place['people'][0] for place in addresses]
-leaders
+leaders = [place["People"][0] for place in addresses]
+print(leaders)
 
 # %% [markdown]
-# This was an example of a 'list comprehension', which have used to get data of this structure, and which we'll see more of in a moment...
+# This was an example of a 'list comprehension', which is used to get data of this structure, and which we'll see more of in a moment...
 
 # %% [markdown]
-# ### Exercise: a Maze Model.
+# ## Exercise: a Maze Model.
 
 # %% [markdown]
 # Work with a partner to design a data structure to represent a maze using dictionaries and lists.
 
 # %% [markdown]
 # * Each place in the maze has a name, which is a string.
-# * Each place in the maze has one or more people currently standing at it, by name.
+# * Each place in the maze has zero or more people currently standing at it, by name.
 # * Each place in the maze has a maximum capacity of people that can fit in it.
-# * From each place in the maze, you can go from that place to a few other places, using a direction like 'up', 'north', 
+# * For each place in the maze, you can go from that place to a few other places, using a direction like 'up', 'north', 
 # or 'sideways'
 
 # %% [markdown]
 # Create an example instance, in a notebook, of a simple structure for your maze:
 
 # %% [markdown]
-# * The front room can hold 2 people. Graham is currently there. You can go outside to the garden, or upstairs to the bedroom, or north to the kitchen.
-# * From the kitchen, you can go south to the front room. It fits 1 person.
-# * From the garden you can go inside to front room. It fits 3 people. David is currently there.
-# * From the bedroom, you can go downstairs to the front room. You can also jump out of the window to the garden. It fits 2 people.
+# * The living room can hold 2 people. Graham is currently there. You can go outside to the garden, or upstairs to the bedroom, or north to the kitchen.
+# * From the kitchen, you can go south to the living room. It fits 1 person.
+# * From the garden you can go inside to living room. It fits 3 people. David is currently there.
+# * From the bedroom, you can go downstairs. You can also jump out of the window to the garden. It fits 2 people.
 
 # %% [markdown]
 # Make sure that your model:
 #
-# * Allows empty rooms
+# * Allows empty rooms.
 # * Allows you to jump out of the upstairs window, but not to fly back up.
 # * Allows rooms which people can't fit in.
 
 # %% [markdown]
-# myhouse = [ "Your answer here" ]
+# As an example of a similar problem, the following code could be used to represent a collection of cities, each of which has a name, a maximum capacity, and potentially some people currently living there.
+
+# %%
+cities = [
+    {"name": "London", "capacity": 8, "residents": ["Graham", "David"]},
+    {"name": "Edinburgh", "capacity": 1, "residents": ["Henry"]},
+    {"name": "Cardiff", "capacity": 1, "residents": []},
+]
+
+# %% [markdown]
+# We can then check, for instance, how many people currently reside in the third city:
+
+# %%
+len(cities[2]["residents"])

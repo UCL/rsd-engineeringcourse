@@ -63,3 +63,11 @@ house = {
 # * Python allows code to continue over multiple lines, so long as sets of brackets are not finished.
 # * There is an **empty** person list in empty rooms, so the type structure is robust to potential movements of people.
 # * We are nesting dictionaries and lists, with string and integer data.
+
+# %%
+people_so_far = 0
+
+for room_name in house:
+    people_so_far = people_so_far + len(house[room_name]["people"])
+
+print(people_so_far)

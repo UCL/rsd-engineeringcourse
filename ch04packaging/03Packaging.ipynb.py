@@ -25,7 +25,7 @@
 # and complex packaging. Some of the recommended ones are listed below -
 #  - [Python Packaging User Guide](https://packaging.python.org/en/latest/)
 #  - [pyOpenSci Python Package Guide](https://www.pyopensci.org/python-package-guide/)
-#  - [Scientific Python Packaging Guide]https://learn.scientific-python.org/development/tutorials/packaging/
+#  - [Scientific Python Packaging Guide](https://learn.scientific-python.org/development/tutorials/packaging/)
 #
 # Besides the guides, there are numerous "cookie" templates available for developers. These templates
 # allow developers to generate an empty Python package following good practices and guidelines with a
@@ -97,7 +97,7 @@
 # |-- LICENSE.md
 # |-- CITATION.md
 # |-- README.md
-# `-- setup.py
+# `-- pyproject.toml
 # ```
 #
 #
@@ -147,7 +147,8 @@
 # In this case, we'll be using `hatch` to build our package, so we list it in the `requires` field. Technically speaking, `hatch` is the front-end (a CLI utility)
 # for the actual build-backend `hatchling`. `hatchling` is installed with hatch and can be specified as the `build-backend` in `pyproject.toml`.
 #
-# Finally, we can set specific options for `hatch` using additional sections in `pyproject.toml`: in this case, we will tell `hatch` that it needs to find **and include** all of the files in our `src` folder.
+# Finally, we can set specific options for `hatch` using additional sections in `pyproject.toml`: in this case, we will tell `hatch` that it needs to find **and include** all of the files in our `src/greetings` folder.
+# We could have skipped adding the directory manually if our package had a `__init__.py` file (more on this below).
 # The best way to look at all the options of a build-backend is by going through its documentation.
 
 # %%
@@ -161,9 +162,9 @@ build-backend = "hatchling.build"
 name = "Greetings"
 version = "0.1.0"
 
-[tool.hatch.build.targets.sdist]
-include = [
-  "src*",
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/greetings",
 ]
 
 # %% [markdown]
@@ -343,9 +344,9 @@ version = "0.1.0"
 [project.scripts]
 greet = "greetings.command:process"
 
-[tool.hatch.build.targets.sdist]
-include = [
-  "greetings/",
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/greetings",
 ]
 
 # %% language="bash"
@@ -422,9 +423,9 @@ dependencies = [
 [project.scripts]
 greet = "greetings.command:process"
 
-[tool.hatch.build.targets.sdist]
-include = [
-  "src/",
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/greetings",
 ]
 
 
@@ -676,8 +677,10 @@ greet = "greetings.command:process"
 [project.optional-dependencies]
 dev = ["pytest >= 6"]
 
-[tool.hatch.build.targets.sdist]
-include = ["src*"]
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/greetings",
+]
 
 
 # %% [markdown]

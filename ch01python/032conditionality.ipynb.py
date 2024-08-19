@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Control and Flow
+# # Control and Flow
 
 # %% [markdown]
-# ### Turing completeness
+# ## Turing completeness
 
 # %% [markdown]
 # Now that we understand how we can use objects to store and model our data, we only need to be able to control the flow of our
@@ -30,40 +30,32 @@
 # Once we have these, we can write computer programs to process information in arbitrary ways: we are *Turing Complete*!
 
 # %% [markdown]
-# ### Conditionality
+# ## Conditionality
 
 # %% [markdown]
 # Conditionality is achieved through Python's `if` statement:
 
 # %%
-x = 5
-
+x = -3
 if x < 0:
     print(f"{x} is negative")
+    print("This is controlled")
+print("Always run this")
 
 # %% [markdown]
-# The absence of output here means the if clause prevented the print statement from running.
-
-# %%
-x = -10
-
-if x < 0:
-    print(f"{x} is negative")
+# The **controlled** statements are indented. Once we remove the indent, the statements will once again happen regardless of whether the `if` statement is true of false.
 
 # %% [markdown]
-# The first time through, the print statement never happened.
+# As a side note, note how we included the values of `x` in the first print statement. This is a handy syntax for building strings that contain the values of variables. You can read more about it at this [Python String Formatting Best Practices guide](https://realpython.com/python-string-formatting/#2-new-style-string-formatting-strformat) or in the [official documentation](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).
 
 # %% [markdown]
-# The **controlled** statements are indented. Once we remove the indent, the statements will once again happen regardless. 
-
-# %% [markdown]
-# ### Else and Elif
+# ## Else and Elif
 
 # %% [markdown]
 # Python's if statement has optional elif (else-if) and else clauses:
 
 # %%
-x = 5
+x = -3
 if x < 0:
     print("x is negative")
 else:
@@ -78,22 +70,21 @@ elif x == 0:
 else:
     print("x is positive")
 
-
 # %% [markdown]
-# Try editing the value of x here, and note that other sections are found.
+# Try editing the value of x here, and note which section of the code is run and which are not.
 
 # %%
-choice = 'high'
+choice = "low"
 
-if choice == 'high':
+if choice == "high":
     print(1)
-elif choice == 'medium':
+elif choice == "medium":
     print(2)
 else:
     print(3)
 
 # %% [markdown]
-# ### Comparison
+# ## Comparison
 
 # %% [markdown]
 # `True` and `False` are used to represent **boolean** (true or false) values.
@@ -102,73 +93,60 @@ else:
 1 > 2
 
 # %% [markdown]
-# Comparison on strings is alphabetical.
+# Comparison on strings is alphabetical - letters earlier in the alphabet are 'lower' than later letters.
+
+# %%
+"A" < "Z"
 
 # %%
 "UCL" > "KCL"
 
 # %% [markdown]
-# But case sensitive:
-
-# %%
-"UCL" > "kcl"
-
-# %% [markdown]
-# There's no automatic conversion of the **string** True to true:
+# There's no automatic conversion of the **string** True to the **boolean variable** `True`:
 
 # %%
 True == "True"
 
 # %% [markdown]
-# In python two there were subtle implied order comparisons between types, but it was  bad style to rely on these.
-# In python three, you cannot compare these.
+# Be careful not to compare values of different types. At best, the language won't allow it and an issue an error, at worst it will allow it and do some behind-the-scenes conversion that may be surprising.
 
 # %%
-'1' < 2
-
-# %%
-'5' < 2
-
-# %%
-'1' > 2
+"1" < 2
 
 # %% [markdown]
-# Any statement that evaluates to `True` or `False` can be used to control an `if` Statement.
+# Any statement that evaluates to `True` or `False` can be used to control an `if` Statement. Experiment with numbers (integers and floats) - what is equivalent to `True`?
+
+# %%
+0 == False
 
 # %% [markdown]
-# ### Automatic Falsehood
+# ## Automatic Falsehood
 
 # %% [markdown]
 # Various other things automatically count as true or false, which can make life easier when coding:
 
 # %%
 mytext = "Hello"
-
-# %%
 if mytext:
     print("Mytext is not empty")
-    
 
-# %%
 mytext2 = ""
-
-# %%
 if mytext2:
     print("Mytext2 is not empty")
 
 # %% [markdown]
-# We can use logical not and logical and to combine true and false:
+# We can use logical `not` and logical `and` to combine true and false:
 
 # %%
 x = 3.2
 if not (x > 0 and isinstance(x, int)):
-    print(x,"is not a positive integer")
+    print(f"{x} is not a positive integer")
 
 # %% [markdown]
 # `not` also understands magic conversion from false-like things to True or False.
 
 # %%
-not not "Who's there!" # Thanks to Mysterious Student
+not not "Who's there!"  #  Thanks to Mysterious Student
 
 # %%
 bool("")
@@ -180,19 +158,22 @@ bool("Graham")
 bool([])
 
 # %%
-bool(['a'])
+bool(["a"])
 
 # %%
 bool({})
 
 # %%
-bool({'name': 'Graham'})
+bool({"name": "Graham"})
 
 # %%
 bool(0)
 
 # %%
 bool(1)
+
+# %%
+not 2 == 3
 
 # %% [markdown]
 # But subtly, although these quantities evaluate True or False in an if statement, they're not themselves actually True or False under ==:
@@ -204,7 +185,7 @@ bool(1)
 bool([]) == False
 
 # %% [markdown]
-# ### Indentation
+# ## Indentation
 
 # %% [markdown]
 # In Python, indentation is semantically significant.
@@ -233,12 +214,12 @@ if x > 0:
     print(x)
 
 # %% [markdown]
-# ###  Pass
+# ## Pass
 
 # %% [markdown]
 #
-# A statement expecting identation must have some indented code.
-# This can be annoying when commenting things out. (With `#`)
+# A statement expecting identation must have some indented code or it will create an error.
+# This can be annoying when commenting things out (with `#`) inside a loop or conditional statement.
 #
 #
 #
@@ -246,14 +227,12 @@ if x > 0:
 # %%
 if x > 0:
     # print x
-    
 print("Hello")
 
 # %% [markdown]
 #
 #
-#
-# So the `pass` statement is used to do nothing.
+# So the `pass` statement (or `...`) is used to do nothing.
 #
 #
 #
@@ -262,5 +241,4 @@ print("Hello")
 if x > 0:
     # print x
     pass
-
 print("Hello")
