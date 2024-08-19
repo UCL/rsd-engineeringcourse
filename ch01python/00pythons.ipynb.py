@@ -35,7 +35,7 @@
 # * Not just labour saving.
 # * Scripted research can be tested and reproduced.
 #
-# ### Sensible input - reasonable output
+# ### Sensible Input - Reasonable Output
 #
 # Programs are a rigorous way of describing data analysis for other researchers, as well as for computers.
 #
@@ -171,11 +171,6 @@ print("This text will be displayed\n")
 # wish to execute; we then execute this code by hitting  <kbd>enter</kbd> with any output from the
 # computation being displayed before returning to the prompt again.
 #
-# We will not further explore using Python via an interpreter in this course but if you wish to
-# learn more about such command-line interfaces we recommend you attend one of the
-# [Software Carpentry](https://software-carpentry.org/lessons/https://software-carpentry.org/lessons/)
-# workshops (sessions are regularly organised by [our group](http://rits.github-pages.ucl.ac.uk/software-carpentry/)),
-# which covers this and other skills for computationally based research.
 
 # %% [markdown]
 # ### Python libraries
@@ -246,3 +241,11 @@ fig = draw_eight.make_figure()
 # Python scripts are well suited to for example for describing computationally demanding simulations or analyses
 # to run as long jobs on a remote server or cluster, or tasks where the input and output is mainly at the file level
 # - for instance batch processing a series of data files.
+#
+# ### IDEs
+# 
+# IDEs are Interactive Development Environments and it's what we will be using in this course.
+# We will be demonstrating it through [VS Code](https://code.visualstudio.com/) but you could use whichever you like, e.g., [spyder](https://www.spyder-ide.org/), [pycharm](https://www.jetbrains.com/pycharm/), ...).
+# We won't be using notebooks, except for this notes so you can download and experiment with them.
+# However, we will be learning how to build libraries, and they need to be composed of python files rather than notebooks.
+# When working with an IDE, you'll get access to a Python interpreter and you can run scripts directly from the interface as well as use tools like the debugger, test frameworks and git from within it.

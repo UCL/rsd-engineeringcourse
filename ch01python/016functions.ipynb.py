@@ -47,7 +47,7 @@ double("five")
 
 # %%
 def jeeves(name="Sir"):
-    return "Very good, " + name
+    return f"Very good, {name}"
 
 
 # %%
@@ -91,16 +91,16 @@ def double_inplace(vec):
     vec[:] = [element * 2 for element in vec]
 
 
-z = [1, 2, 3, 4]
+z = [0, 1, 2, 3]  #  This could be simplified using list(range(4))
 double_inplace(z)
 print(z)
 
 # %% [markdown]
-# In this example, we're using `[:]` to access into the same list, and write it's data.
+# In this example, we're using `[:]` to access into the same list, and write its data. Whereas, if we do
 #
 #     vec = [element * 2 for element in vec]
 #
-# would just move a local label, not change the input.
+# would just move a local label, not change the input - *i.e.*, a new container is created and the label `vec` is moved from the old one to the new one.
 #
 # Let's remind ourselves of this behaviour with a simple array:
 
