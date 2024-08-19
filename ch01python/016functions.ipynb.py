@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# # Functions 
+# # Functions
 
 # %% [markdown]
 # ## Definition
@@ -146,22 +146,21 @@ y
 # Having multiple `return` statements is a common practice in programming.
 # These `return` statements can be placed far from each other, allowing a
 # function to return early if a specific condition is met.
-# 
-# For instance, the function below returns early if a number greater than
-# 20 is passed as an argument.
-# 
-# The dynamic typing of Python also makes it easy to return different types
-# of values based on different conditions, but such code is not considered
-# a good practice. It is also a good practice to have a default return value
-# in the function if it is returning something in the first place. For instance,
-# the function below could use an `elif` or an `else` condition for the second 
-# `return` statement, but that would not be a good practice. 
+#
+# For example, a function `isbigger` could be written as:
+# ```
+# def isbigger(x, limit=20):
+#     return x > limit
+# ```
+# However, what if you want to print a message on the screen when a smaller
+# value has been found? That's what we do below, where the function below
+# returns early if a number greater than given limit.
 
 # %%
 def isbigger(x, limit=20):
     if x > limit:
         return True
-    print("Got here")
+    print("Value is smaller")
     return False
 
 
@@ -170,6 +169,28 @@ isbigger(25, 15)
 # %%
 isbigger(40, 15)
 
+
+# %% [markdown]
+#
+# The dynamic typing of Python also makes it easy to return different types
+# of values based on different conditions, but such code is not considered
+# a good practice. It is also a good practice to have a default return value
+# in the function if it is returning something in the first place. For instance,
+# the function below could use an `elif` or an `else` condition for the second
+# `return` statement, but that would not be a good practice. In those cases,
+# Python would be using the implicit `return` statement. For example, what's
+# returned in the following example when the argument `x` is equal to the `limit`?
+
+# %%
+def isbigger(x, limit=20):
+    if x > limit:
+        return True
+    elif x < limit:
+        print("Value is smaller")
+        return False
+
+# %%
+# Write your own code to find out
 
 # %% [markdown]
 #
@@ -201,7 +222,7 @@ print(z)
 # %% [markdown]
 #
 # If a vector is supplied to a function with a `*`, its elements
-# are used to fill each of a function's arguments. 
+# are used to fill each of a function's arguments.
 #
 #
 #
