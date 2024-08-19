@@ -133,7 +133,7 @@ print("This text will be displayed\n")
 # ```
 #
 # For more information
-# [see this tutorial notebook in the official Jupyter documentation](https://nbviewer.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Working%20With%20Markdown%20Cells.ipynb).
+# [see this tutorial notebook in the official Jupyter documentation](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html).
 #
 # #### Editing and running cells in the notebook
 #
@@ -160,6 +160,7 @@ print("This text will be displayed\n")
 #
 # *Supplementary material*: Learn more about
 # [Jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html/).
+# [Jupyter lab](https://jupyter.org/).
 #
 # ### Python interpreters
 #

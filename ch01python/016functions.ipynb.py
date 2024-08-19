@@ -59,20 +59,28 @@ jeeves("James")
 
 # %% [markdown]
 # If you have some parameters with defaults, and some without, those with defaults **must** go later.
+#
+# If you have multiple default arguments, you can specify neither, one or both:
 
 # %%
-def product(x=5, y=7):
-    return x * y
+def jeeves(greeting="Very good", name="Sir"):
+    return f"{greeting}, {name}"
 
 
 # %%
-product(9)
+jeeves()
 
 # %%
-product(y=11)
+jeeves("Hello")
 
 # %%
-product()
+jeeves(name = "John")
+
+# %%
+jeeves(greeting="Suits you")
+
+# %%
+jeeves("Hello", "Producer")
 
 
 # %% [markdown]
@@ -83,8 +91,13 @@ product()
 # Functions can do things to change their **mutable** arguments,
 # so `return` is optional.
 #
+# This is pretty awful style, in general, functions should normally be side-effect free.
 #
+# Here is a contrived example of a function that makes plausible use of a side-effect.
 #
+# Note that the function below uses `[:]`. This is used to update the contents of
+# the list, and though this function is not returning anything, it's changing the
+# elements of the list.
 
 # %%
 def double_inplace(vec):
@@ -102,6 +115,13 @@ print(z)
 #
 # would just move a local label, not change the input - *i.e.*, a new container is created and the label `vec` is moved from the old one to the new one.
 #
+# A more common case would be to this as a function which **returned** the output:
+
+ # %%
+def double(vec):
+    return [element * 2 for element in vec]
+
+# %% [markdown]
 # Let's remind ourselves of this behaviour with a simple array:
 
 # %%
@@ -122,6 +142,20 @@ y
 
 # %% [markdown]
 # ## Early Return
+#
+# Having multiple `return` statements is a common practice in programming.
+# These `return` statements can be placed far from each other, allowing a
+# function to return early if a specific condition is met.
+# 
+# For instance, the function below returns early if a number greater than
+# 20 is passed as an argument.
+# 
+# The dynamic typing of Python also makes it easy to return different types
+# of values based on different conditions, but such code is not considered
+# a good practice. It is also a good practice to have a default return value
+# in the function if it is returning something in the first place. For instance,
+# the function below could use an `elif` or an `else` condition for the second 
+# `return` statement, but that would not be a good practice. 
 
 # %%
 def isbigger(x, limit=20):
@@ -141,13 +175,12 @@ isbigger(40, 15)
 #
 # Return without arguments can be used to exit early from a function
 #
-#
-#
+# Here's a slightly more plausibly useful function-with-side-effects to extend a list with a specified padding datum.
 
 # %%
 def extend(to, vec, pad):
     if len(vec) >= to:
-        return
+        return  # Exit early, list is already long enough.
     vec[:] = vec + [pad] * (to - len(vec))
 
 
@@ -175,7 +208,7 @@ print(z)
 
 # %%
 def arrow(before, after):
-    return str(before) + " -> " + str(after)
+    return f"{before} -> {after}"
 
 
 print(arrow(1, 3))
@@ -233,7 +266,20 @@ print(doubler(1, 2, 3, "four"))
 # %%
 def arrowify(**args):
     for key, value in args.items():
-        print(key + " -> " + value)
+        print(f"{key} -> {value}")
 
 
 arrowify(neutron="n", proton="p", electron="e")
+
+
+# %% [markdown]
+# These different approaches can be mixed:
+
+# %%
+def somefunc(a, b, *args, **kwargs):
+    print("A:", a)
+    print("B:", b)
+    print("args:", args)
+    print("keyword args", kwargs)
+
+somefunc(1, 2, 3, 4, 5, fish="Haddock")
