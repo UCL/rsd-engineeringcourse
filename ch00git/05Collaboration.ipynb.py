@@ -46,7 +46,6 @@ os.chdir(git_dir)
 
 # %% language="bash"
 # pwd
-# rm -rf github-example # cleanup after previous example
 # rm -rf partner_repo # cleanup after previous example
 #
 
@@ -114,6 +113,7 @@ Mountains In Scotland
 ==================
 
 * Ben Eighe
+* Ben Nevis
 * Cairngorm
 
 # %% jupyter={"outputs_hidden": false} language="bash"
@@ -188,7 +188,8 @@ Mountains In Wales
 # git diff
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Translating from the Welsh"
+# git add Wales.md
+# git commit -m "Translating from the Welsh"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git log --oneline
@@ -206,7 +207,8 @@ Mountains In Wales
 * Snowdon
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add a beacon"
+# git add Wales.md
+# git commit -m "Add a beacon"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git log --oneline
@@ -256,10 +258,12 @@ PR->P: working directory as at latest commit
 note left of P: edit Scotland.md
 note right of C: edit Wales.md
 
-note left of P: git commit -am "Add scotland"
+git add Scotland.md
+note left of P: git commit -m "Add scotland"
 P->PR: create commit with Scotland file
 
-note right of C: git commit -am "Add wales"
+git add Wales.md
+note right of C: git commit -m "Add wales"
 C->CR: create commit with Wales file
 
 note left of P: git push
@@ -296,7 +300,8 @@ Mountains In Wales
 * Fan y Big
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add another Beacon"
+# git add Wales.md
+# git commit -m "Add another Beacon"
 # git push
 
 # %% jupyter={"outputs_hidden": true}
@@ -313,7 +318,8 @@ Mountains In Wales
 * Glyder Fawr
 
 # %% jupyter={"outputs_hidden": false} magic_args="--no-raise-error" language="bash"
-# git commit -am "Add Glyder"
+# git add Wales.md
+# git commit -m "Add Glyder"
 # git push
 
 # %% [markdown]
@@ -354,7 +360,8 @@ Mountains In Wales
 # Now commit the merged result:
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -a --no-edit # I added a No-edit for this non-interactive session. You can edit the commit if you like.
+# git add Wales.md
+# git commit --no-edit # I added a No-edit for this non-interactive session. You can edit the commit if you like.
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git push
@@ -385,10 +392,12 @@ participant Cleese as C
 note left of P: edit the same line in wales.md
 note right of C: edit the same line in wales.md
     
-note left of P: git commit -am "update wales.md"
+note left of P: git add Wales.md
+note left of P: git commit -m "update wales.md"
 P->PR: add commit to local repo
     
-note right of C: git commit -am "update wales.md"
+note right of C: git add Wales.md
+note right of C: git commit -m "update wales.md"
 C->CR: add commit to local repo
     
 note left of P: git push

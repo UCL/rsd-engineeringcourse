@@ -125,7 +125,7 @@ Cumbria has some pretty hills, and lakes too.
 # ### Git will not by default commit your new file
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} magic_args="--no-raise-error" language="bash"
-# git commit -am "Try to add Lakeland"
+# git commit -m "Try to add Lakeland"
 
 # %% [markdown]
 # This didn't do anything, because we've not told git to track the new file yet.
@@ -135,7 +135,7 @@ Cumbria has some pretty hills, and lakes too.
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git add lakeland.md
-# git commit -am "Add lakeland"
+# git commit -m "Add lakeland"
 
 # %% [markdown]
 # Ok, now we have added the change about Cumbria to the file. Let's publish it to the origin repository.
@@ -184,7 +184,8 @@ mountain or two depending on your definition.
 # Because we "staged" only index.md, the changes to lakeland.md were not included in that commit.
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add Helvellyn"
+# git add lakeland.md
+# git commit -m "Add Helvellyn"
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git log --oneline
@@ -208,7 +209,8 @@ C->I: Add *only* the changes to index.md to the staging area
 note right of C: git commit -m "Include lakes"
 I->R: Make a commit from currently staged changes: index.md only
 
-note right of C: git commit -am "Add Helvellyn"
+note right of C: git add lakeland.md
+note right of C: git commit -m "Add Helvellyn"
 C->I: Stage *all remaining* changes, (lakeland.md)
 I->R: Make a commit from currently staged changes
 

@@ -59,6 +59,7 @@ Mountains In Wales
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git tag -a v1.0 -m "Release 1.0"
+# git push origin --delete v1.0  # clear the tag if it already exists on the remote origin
 # git push --tags
 
 # %% jupyter={"outputs_hidden": false}
@@ -68,10 +69,11 @@ Mountains In the Pennines
 ========================
 
 * Cross Fell
+* Ingleborough
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git add Pennines.md
-# git commit -am "Add Pennines"
+# git commit -m "Add Pennines"
 
 # %% [markdown]
 # You can also use tag names in the place of commmit hashes, such as to list the history between particular commits:
@@ -130,7 +132,7 @@ default: $(PDFS)
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git add Makefile
 # git add .gitignore
-# git commit -am "Add a makefile and ignore generated files"
+# git commit -m "Add a makefile and ignore generated files"
 # git push
 
 # %% [markdown]
@@ -225,7 +227,8 @@ Engerland is not very mountainous.
 But has some tall hills, and maybe a mountain or two depending on your definition.
 
 # %% jupyter={"outputs_hidden": false} language="bash"
-# git commit -am "Add github pages YAML frontmatter"
+# git add index.md
+# git commit -m "Add github pages YAML frontmatter"
 
 # %% [markdown]
 # ### The gh-pages branch
