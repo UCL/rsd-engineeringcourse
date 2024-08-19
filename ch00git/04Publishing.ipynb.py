@@ -125,7 +125,6 @@ Cumbria has some pretty hills, and lakes too.
 # ### Git will not by default commit your new file
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} magic_args="--no-raise-error" language="bash"
-# git add lakeland.md
 # git commit -m "Try to add Lakeland"
 
 # %% [markdown]

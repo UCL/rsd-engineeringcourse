@@ -46,7 +46,6 @@ os.chdir(git_dir)
 
 # %% language="bash"
 # pwd
-# rm -rf github-example # cleanup after previous example
 # rm -rf partner_repo # cleanup after previous example
 #
 
@@ -362,7 +361,7 @@ Mountains In Wales
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git add Wales.md
-# git commit -m "Resolve conflicts"  # commit the resolved changes
+# git commit --no-edit # I added a No-edit for this non-interactive session. You can edit the commit if you like.
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git push
