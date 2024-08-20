@@ -20,8 +20,9 @@
 #
 # MATLAB has typically been the most popular "language of technical computing", with strong built-in support for efficient numerical analysis with matrices (the *mat* in MATLAB is for matrix, not maths), and plotting.
 #
-# Other dynamic languages can be argued to have cleaner, more logical syntax, for example [Ruby](https://www.ruby-lang.org/en/) or [Scheme][scheme].
+# Other dynamic languages can be argued to have cleaner, more logical syntax, for example [Ruby][ruby] or [Scheme][scheme].
 #
+# [ruby]: https://www.ruby-lang.org/en/
 # [scheme]: https://en.wikipedia.org/wiki/Scheme_(programming_language)
 # But Python users developed three critical libraries, matching the power of MATLAB for scientific work:
 #

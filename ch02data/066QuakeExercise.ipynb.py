@@ -35,7 +35,7 @@ earthquake_catalog_api_url = "http://earthquake.usgs.gov/fdsnws/event/1/query"
 # %% jupyter={"outputs_hidden": false}
 query_parameters = {
     "format": "geojson",
-    "starttime": "2000-01-01",
+    "starttime": "2001-01-01",
     "maxlatitude": "60.830",
     "minlatitude": "49.877",
     "maxlongitude": "1.767",
@@ -84,3 +84,7 @@ print(quakes_response.text[:100])
 #   * Find the place of the biggest quake.
 #   * Form a <abbr title="Uniform Resource Locator">URL</abbr> for a map tile centered at that latitude and longitude (look back at the introductory example).
 #   * Display that map tile image.
+#
+# A couple of suggestions on how to tackle this exercise:
+# - make a smaller query (for example setting up the `endtime` parameter to only query a year), and
+# - open the result url `quakes_response.url` with the Firefox browser to easily understand the file structure.

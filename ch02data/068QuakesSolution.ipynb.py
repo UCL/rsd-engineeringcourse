@@ -19,8 +19,9 @@
 # We first import the modules we will need to get and plot the data. We will use the `requests` module to query the USGS earthquake catalog, the `math` module to do some coordinate conversion and the `IPython` module to display a map image.
 
 # %% jupyter={"outputs_hidden": false}
-import requests
 import math
+
+import requests
 import IPython
 from IPython.display import Image
 
@@ -33,7 +34,7 @@ from IPython.display import Image
 earthquake_catalog_api_url = "http://earthquake.usgs.gov/fdsnws/event/1/query"
 query_parameters = {
     "format": "geojson",
-    "starttime": "2000-01-01",
+    "starttime": "2001-01-01",
     "maxlatitude": "60.830",
     "minlatitude": "49.877",
     "maxlongitude": "1.767",
@@ -166,12 +167,26 @@ quakes_json['features'][0]['properties']['url']
 #
 # Now that we have a handle on the structure of the data, we are ready to search through the data to identify the largest magnitude earthquake event(s). We are interested in finding the element (or elements) in a sequence which maximises some property - this operation is termed the [$\arg\max$ in mathematics and computer science](https://en.wikipedia.org/wiki/Arg_max). While there is built-in `max` function in Python there is no corresponding `argmax` function, though several external libraries including the NumPy library which we encounter in a subsequent lesson do include an `argmax` function.
 #
+# As a first approach, we will set the first eartquake to be the largest and as we iterate over the others we will replace the first one with whatever is larger.
+
+# %%
+quakes = requests_json['features']
+
+largest_so_far = quakes[0]
+for quake in quakes:
+    if quake['properties']['mag'] > largest_so_far['properties']['mag']:
+        largest_so_far = quake
+largest_so_far['properties']['mag']
+
+# %% [markdown]
+# Great, this gives us the largest earthquake... but, what if there were multiple earthquakes with the same magnitude? 
+# Can we know it from the above result?
 # We will therefore loop over all of the event details in the `features` list and construct a list of the event or events for which the magnitude is currently the largest, creating a new list if the magnitude of the current event is larger than the previous largest or adding the event to the previous list if it has an equal magnitude. After iterating through all the events this list should contain the details of the event(s) with the largest magnitude. An example implementation of this approach is as follows.
 
 # %% jupyter={"outputs_hidden": false}
-largest_magnitude_events = [quakes_json['features'][0]]
+largest_magnitude_events = [quakes[0]]
 
-for quake in quakes_json['features']:
+for quake in quakes:
     if quake['properties']['mag'] > largest_magnitude_events[0]['properties']['mag']:
         largest_magnitude_events = [quake]
     elif quake['properties']['mag'] == largest_magnitude_events[0]['properties']['mag']:
