@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jekyll:
-#     display_name: CSV
+#     display_name: Tabular data
 #   jupytext:
 #     notebook_metadata_filter: -kernelspec,jupytext,jekyll
 #     text_representation:
@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Field and Record Data (Tabular data)
+# # Field and Record Data (Tabular data)
 #
 # Tabular data, that is data that is formatted as a table with a fixed number of rows and columns, is very common in a research context. A particularly simple and also popular file format for such data is [_delimited-separated value_ files](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
