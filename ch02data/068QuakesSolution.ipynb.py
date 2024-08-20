@@ -170,7 +170,7 @@ quakes_json['features'][0]['properties']['url']
 # As a first approach, we will set the first eartquake to be the largest and as we iterate over the others we will replace the first one with whatever is larger.
 
 # %%
-quakes = requests_json['features']
+quakes = quakes_json['features']
 
 largest_so_far = quakes[0]
 for quake in quakes:
@@ -212,26 +212,38 @@ print([quake['properties']['mag'] for quake in largest_magnitude_events])
 # We saw something similar in the [Greengraph example](../ch01python/010exemplar.html#More-complex-functions) [(notebook version)](../ch01python/010exemplar.ipynb#More-complex-functions) of the previous chapter.
 
 # %%
-def request_map_at(lat, long, satellite=True,
-                   zoom=10, size=(400, 400)):
-    base = "https://static-maps.yandex.ru/1.x/?"
+def deg2num(lat_deg, lon_deg, zoom):
+    """Convert latitude and longitude to XY tiles coordinates."""
+
+    lat_rad = math.radians(lat_deg)
+    n = 2.0 ** zoom
+    x_tiles_coord = int((lon_deg + 180.0) / 360.0 * n)
+    y_tiles_coord = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
+
+    return (x_tiles_coord, y_tiles_coord)
+
+def request_map_at(latitude, longitude, zoom=10, satellite=True):
+    """Retrieve a map from Google at a given location."""
+
+    base_url = "https://mt0.google.com/vt?"
+    x_coord, y_coord = deg2num(latitude, longitude, zoom)
 
     params = dict(
+        x=x_coord,
+        y=y_coord,
         z=zoom,
-        size="{},{}".format(size[0], size[1]),
-        ll="{},{}".format(long, lat),
-        l="sat" if satellite else "map",
-        lang="en_US"
     )
-
-    return requests.get(base, params=params)
+    if satellite:
+        params['lyrs'] = 's'
+    
+    return requests.get(base_url, params=params)
 
 # %% [markdown]
 # As a test we can check the map displayed for the coordinates of the [Prime meridian at the Royal Observatory Greenwich](https://geohack.toolforge.org/geohack.php?pagename=Prime_meridian_(Greenwich)&params=51_28_40.1_N_0_0_5.3_W_type:landmark_globe:earth_region:GB_scale:1000)
 
 # %%
-map = request_map_at(lat=51.477806, long=-0.001472, zoom=14)
-Image(map.content)
+map_response = request_map_at(51.477806, -0.001472, zoom=14)
+Image(map_response.content)
 
 # %% [markdown]
 # ## Display the maps
@@ -244,4 +256,3 @@ for quake in largest_magnitude_events:
     latitude = quake['geometry']['coordinates'][1]
     print(quake['properties']['title'])
     display(Image(request_map_at(latitude, longitude, 12).content))
-

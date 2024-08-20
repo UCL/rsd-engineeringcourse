@@ -30,6 +30,15 @@
 # * [NumPy](https://numpy.org/), a fast numeric computing library offering a flexible *n*-dimensional array type.
 # * [IPython](https://ipython.readthedocs.io/en/stable/overview.html), an interactive Python interpreter that later led to the [Jupyter notebook](https://jupyter.org/) interface.
 #
+# <details><summary>Who created those?</summary>
+# 
+# * [John D. Hunter](https://en.wikipedia.org/wiki/John_D._Hunter) created Matplotlib
+# * [Travis Oliphant](https://en.wikipedia.org/wiki/Travis_Oliphant) is the primary creator of NumPy, founding contributor of SciPy, and he's also the founder of Anaconda
+# * [Fernando Perez](https://en.wikipedia.org/wiki/Fernando_P%C3%A9rez_\(software_developer\)) created IPython
+# 
+# </details>
+# 
+# 
 # By combining a plotting library, a fast numeric library, and an easy-to-use interface allowing live plotting commands in a persistent environment, the powerful capabilities of MATLAB were matched by a free and open toolchain.
 #
 # We've learned about Matplotlib and IPython in this course already. NumPy is the last part of the trilogy.
@@ -532,6 +541,44 @@ a @ v
 
 # %%
 v @ v
+
+# %% [markdown]
+# We can alternatively use a built in function:
+
+# %%
+np.dot(a, b)
+
+# %% [markdown]
+# Though it is possible to represent this in the algebra of broadcasting and newaxis:
+
+# %%
+a[:, :, np.newaxis].shape
+
+# %%
+b[np.newaxis, :, :].shape
+
+# %%
+a[:, :, np.newaxis] * b[np.newaxis, :, :]
+
+# %%
+(a[:, :, np.newaxis] * b[np.newaxis, :, :]).sum(1)
+
+# %% [markdown]
+# Or if you prefer:
+
+# %%
+(a.reshape(3, 3, 1) * b.reshape(1, 3, 3)).sum(1)
+
+# %% [markdown]
+# We use broadcasting to generate $A_{ij}B_{jk}$ as a 3-d matrix:
+
+# %%
+a.reshape(3, 3, 1) * b.reshape(1, 3, 3)
+
+# %% [markdown]
+# Then we sum over the middle, $j$ axis, [which is the 1-axis of three axes numbered (0,1,2)] of this 3-d matrix. Thus we generate $\Sigma_j A_{ij}B_{jk}$.
+#
+# We can see that the broadcasting concept gives us a powerful and efficient way to express many linear algebra operations computationally.
 
 # %% [markdown]
 # ## Structured arrays
