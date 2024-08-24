@@ -97,18 +97,21 @@ data = np.random.uniform(low=0.0, high=100.0, size=1_000)
 f(data)
 
 # %%
-_ = jit_f(data)
+# %%timeit -n 1 -r 1
+_ = jit_f(data)  # compilation and run
 
 # %%
 # %%timeit
-jit_f(data)
+jit_f(data)  # just run
 
 # %% [markdown]
 # Surprisingly, the JITted function was slower than plain Python and NumPy
 # implementation! Why did this happen? Numba does not provide valuable performance
 # gains over pure Python or NumPy code for simple operations and small dataset.
 # The JITted function turned out to be slower than the non-JIT implementation
-# because of the compilation overhead. Let's try increasing the size of our
+# because of the compilation overhead. Note that the result from the compilation
+# run could be very noisy and could give a higher than real value, as mentioned
+# in the previous lessons. Let's try increasing the size of our
 # data and perform a non-NumPy list comprehension on the data.
 # 
 # The `jit` decorator with `nopython=True` is so widely used there exists an alias
@@ -131,8 +134,12 @@ def jit_f(x):
 f(data)
 
 # %%
+# %%timeit -n 1 -r 1
+_ = jit_f(data)  # compilation and run
+
+# %%
 # %%timeit
-jit_f(data)
+jit_f(data)  # just run
 
 # %% [markdown]
 # That was way faster than the non-JIT function! But, the result was still slower
@@ -169,8 +176,12 @@ xs = [(xmin + (xmax - xmin) * i / resolution) for i in range(resolution)]
 ys = [(ymin + (ymax - ymin) * i / resolution) for i in range(resolution)]
 
 # %%
+# %%timeit -n 1 -r 1
+data = [[mandel1(complex(x, y)) for x in xs] for y in ys]  # compilation and run
+
+# %%
 # %%timeit
-data = [[mandel1(complex(x, y)) for x in xs] for y in ys]
+data = [[mandel1(complex(x, y)) for x in xs] for y in ys]  # just run
 
 # %% [markdown]
 # The compiled code already beats our fastest NumPy implementation! It is not
@@ -203,7 +214,6 @@ values = xmatrix + 1j * ymatrix
 # %%timeit
 mandel_numpy(values)
 
-
 # %% [markdown]
 # That does not work. The error might be solvable or it might just be out of Numba's
 # scope. Numba does not distinguish between plain Python
@@ -212,6 +222,39 @@ mandel_numpy(values)
 # of Python loops and lists than with NumPy functions. Moreover, Numba only understands
 # a subset of Python and NumPy so it is possible that a NumPy snippet does not
 # work but a simplified Python loop does.
+
+# %% [markdown]
+# Let's make minor adjustments to fix the NumPy implementation and measure its
+# performance. We flatten the NumPy arrays and consider only the real part
+# while performing the comparison.
+# %%
+@njit
+def mandel_numpy(position,limit=50):
+    value = position.flatten()
+    diverged_at_count = np.zeros(position.shape).flatten()
+    while limit > 0:
+        limit -= 1
+        value = value**2 + position.flatten()
+        diverging = (value * np.conj(value)).real > 4
+        first_diverged_this_time = (np.logical_and(diverging, diverged_at_count == 0))
+        diverged_at_count[first_diverged_this_time] = limit
+        value[diverging] = 2
+
+    return diverged_at_count.reshape(position.shape)
+
+ymatrix, xmatrix = np.mgrid[ymin:ymax:ystep, xmin:xmax:xstep]
+values = xmatrix + 1j * ymatrix
+
+# %%
+# %%timeit -n 1 -r 1
+mandel_numpy(values)  # compilation and run
+
+# %%
+# %%timeit
+mandel_numpy(values)  # just run
+
+# %% [markdown]
+# The code performs similar to the plain Python example!
 
 # %% [markdown]
 # Numba also has functionalities to vectorize, parallelize, and strictly type check
@@ -287,16 +330,13 @@ df = df.to_dataframe()
 # %%
 df
 # The computation gave us a dask object and not the actual answer. Why is that?
-#  We can visualise the dask task graph using -
-
-# %% [markdown] 
 # Displaying the dataframe just displays the metadata of the variable, and not any
 # data. This is because of the "lazy" nature of dask. Dask has "lazy" execution,
 # which means that it will store the operations on the data and
 # create a task graph for the same, but will not execute the operations until a
 # user explicitly asks for the result. The metadata specifies `npartitions=10`,
 # which means that the dataframe is split into 10 parts that will be accessed parallely.
-# We can get explicitly tell dask to give us the dataframe values using `.compute()`.
+# We can explicitly tell dask to give us the dataframe values using `.compute()`.
 
 # %%
 df.compute()
@@ -316,14 +356,14 @@ new_df
 dask.visualize(new_df, filename="visualization.png")
 
 # %% [markdown] 
-# We can see that the task graph starts with 10 independent branches because out dataframe
+# We can see that the task graph starts with 10 independent branches because our dataframe
 # was split into 10 partitions at the start. Let's compute the answer.
 
 # %%
 new_df.compute()
 
 # %% [markdown] 
-# Similarly, one can peform such computations on arrays and selected Python data structures
+# Similarly, one can peform such computations on arrays and selected Python data structures.
 # 
 
 # #### Dask support in Scientific Python ecosystem
