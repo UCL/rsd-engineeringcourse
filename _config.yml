@@ -36,3 +36,7 @@ exclude:
   - "*/*.v2.ipynb"
   - "combined_files"
   - "combined.ipynb"
+  - jupyter-lite
+
+keep_files:
+  - jupyter-lite
