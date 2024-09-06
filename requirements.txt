@@ -26,3 +26,8 @@ pycodestyle
 pylint
 webcolors
 ruff
+numba
+dask
+mimesis
+dask-expr
+graphviz
