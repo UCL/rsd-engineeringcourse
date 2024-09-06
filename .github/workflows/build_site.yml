@@ -51,7 +51,7 @@ jobs:
         run: bundle exec jekyll build
       - name: Build the JupyterLite site
         run: |
-          find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees` | xargs rm -rf
+          find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees | xargs rm -rf
           mkdir content
           mkdir _site/jupyter-lite
           find ./ -wholename 'ch*/*.ipynb' -exec cp --parents {}  content \;
