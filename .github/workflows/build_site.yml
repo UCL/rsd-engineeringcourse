@@ -51,12 +51,10 @@ jobs:
         run: bundle exec jekyll build
       - name: Build the JupyterLite site
         run: |
-          rm -rf `find . -type d -name .pytest_cache`
-          rm -rf `find . -type d -name .ruff_cache`
-          rm -rf `find . -type d -name .doctrees`
+          find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees` | xargs rm -rf
           mkdir content
           mkdir _site/jupyter-lite
-          cp -R ch*/*.ipynb content
+          find ./ -wholename 'ch*/*.ipynb' -exec cp --parents {}  content \;
           jupyter lite build --contents content --output-dir _site/jupyter-lite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
