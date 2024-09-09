@@ -54,8 +54,8 @@ jobs:
           find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees | xargs rm -rf
           mkdir content
           mkdir _site/jupyter-lite
-          find ./ -wholename 'ch*/*.ipynb' -exec cp --parents {}  content \;
-          jupyter lite build --contents content --output-dir _site/jupyter-lite
+          find ch*/ -type f -name '*.ipynb' ! -name '*.nbconvert.ipynb' -exec rsync -R {} contents/ \;
+          jupyter lite build --contents contents --output-dir _site/jupyter-lite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
