@@ -87,5 +87,5 @@ session04/greetings/scripts/
 Gemfile.lock
 .env/
 polynomials.svg
-content/
+contents/
 .jupyterlite.doit.db
