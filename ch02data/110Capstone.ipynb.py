@@ -30,6 +30,9 @@
 
 # %%
 # %%writefile greengraph/graph.py
+# install geopy if it is not already installed
+%pip install geopy
+
 import numpy as np
 import geopy
 from matplotlib import pyplot as plt

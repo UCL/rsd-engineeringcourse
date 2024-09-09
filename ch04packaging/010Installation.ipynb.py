@@ -65,6 +65,9 @@
 # Now, close the Jupyter notebook if you have it open, and reopen it. Check your new library is installed with:
 
 # %%
+# install geopy if it is not already installed
+%pip install geopy
+
 import geopy
 geocoder = geopy.geocoders.Nominatim(user_agent="mphy0021") 
 
