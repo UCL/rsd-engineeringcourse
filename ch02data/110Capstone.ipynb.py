@@ -30,6 +30,10 @@
 
 # %%
 # %%writefile greengraph/graph.py
+
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
+
 # install geopy if it is not already installed
 %pip install geopy
 
@@ -90,6 +94,9 @@ from io import BytesIO
 
 import numpy as np
 import imageio.v3 as iio
+
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 
 class Map(object):

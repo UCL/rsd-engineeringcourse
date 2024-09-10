@@ -148,6 +148,9 @@ from numpy import linspace, log, sqrt, array, delete
 from numpy.fft import rfft,fft,fftfreq
 from scipy.interpolate import UnivariateSpline
 from scipy.signal import lombscargle
+
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 
 

@@ -122,6 +122,11 @@
 # %% [markdown]
 # Commands you can type will look like this, using the %%bash "magic" for the notebook.
 
+# **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
+# thread/process restriction), and the cells below might error out on the browser
+# (jupyterlite) version of this notebook
+
+
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # echo some output
 

@@ -21,6 +21,8 @@
 # We can use the [`requests` Python library](https://docs.python-requests.org/en/latest/) to simplify constructing the appropriate query string to add to the <abbr title="Uniform Resource Locator">URL</abbr> and to deal with sending the <abbr title="Hypertext Transfer Protocol">HTTP</abbr> request.
 
 # %% jupyter={"outputs_hidden": false}
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 
 # %% [markdown]

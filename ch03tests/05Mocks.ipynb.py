@@ -97,6 +97,8 @@ function()
 # For example, consider the following code that downloads a map from the internet:
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 
 def map_at(lat, long, satellite=False, zoom=12, 

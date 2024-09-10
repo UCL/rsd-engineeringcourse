@@ -84,6 +84,8 @@ class Particle:
 # Here's how we can use Python code to get an image back from YUML:
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 from IPython.display import Image
 

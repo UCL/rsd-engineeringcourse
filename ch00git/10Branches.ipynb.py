@@ -13,7 +13,11 @@
 
 # %% [markdown]
 # ## Branches
-#
+# 
+# **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
+# thread/process restriction), and the cells below might error out on the browser
+# (jupyterlite) version of this notebook
+# 
 # Branches are incredibly important to why `git` is cool and powerful.
 #
 # They are an easy and cheap way of making a second version of your software, which you work on in parallel,

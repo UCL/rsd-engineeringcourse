@@ -79,7 +79,7 @@
 #
 # In writing Greeter, we used the [docstring conventions from NumPy](https://numpy.org/doc/stable/docs/howto_document.html).
 # So we use the [`numpydoc`](https://numpydoc.readthedocs.io/en/latest/) sphinx extension to
-# support these (Note: you will need to install this extension for the later examples to work).
+# support these (**NOTE:** you will need to install this extension for the later examples to work).
 
 # %% [markdown]
 # ```python
