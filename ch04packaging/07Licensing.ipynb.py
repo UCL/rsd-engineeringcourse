@@ -239,6 +239,7 @@
 # ### Choose a licence
 #
 # See [GitHub's advice on how to choose a licence](http://choosealicense.com/) or [European Commision's Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/solution/joinup-licensing-assistant/jla-find-and-compare-software-licenses).
+# Further, [REUSE Software](https://reuse.software) makes checking what license a file is licensed under easy by defining a machine-readable format for license files. 
 
 # %% [markdown]
 # ### Open source does not equal free maintenance
