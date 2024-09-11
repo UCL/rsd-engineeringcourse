@@ -329,6 +329,8 @@ df = df.to_dataframe()
 
 # %%
 df
+
+# %% [markdown]
 # The computation gave us a dask object and not the actual answer. Why is that?
 # Displaying the dataframe just displays the metadata of the variable, and not any
 # data. This is because of the "lazy" nature of dask. Dask has "lazy" execution,
