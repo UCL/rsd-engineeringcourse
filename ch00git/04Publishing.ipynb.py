@@ -15,6 +15,11 @@
 # ## Publishing
 
 # %% [markdown]
+# **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
+# thread/process restriction), and the cells below might error out on the browser
+# (jupyterlite) version of this notebook
+
+# %% [markdown]
 # We're still in our working directory:
 
 # %% jupyter={"outputs_hidden": false}

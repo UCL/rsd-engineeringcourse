@@ -69,6 +69,8 @@
 # The Python [Requests](http://docs.python-requests.org/en/latest/) library can help us manipulate URLs and requesting the content associated with them. It is easier to use than the `urllib` library that is part of the standard library, and is included with Anaconda and Canopy. It sorts out escaping, parameter encoding, and so on for us.
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 
 # %% [markdown]

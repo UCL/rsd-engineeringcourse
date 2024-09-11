@@ -31,3 +31,7 @@ dask
 mimesis
 dask-expr
 graphviz
+jupyterlite-core
+jupyterlab
+notebook
+jupyterlite-pyodide-kernel

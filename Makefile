@@ -107,3 +107,4 @@ clean:
 	rm -f ch07dry/datasource*.yaml
 	rm -f ch07dry/example.yaml
 	rm -f notebooks.zip
+	rm -rf contents

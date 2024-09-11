@@ -49,6 +49,13 @@ jobs:
           bundle install
       - name: Build website
         run: bundle exec jekyll build
+      - name: Build the JupyterLite site
+        run: |
+          find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees | xargs rm -rf
+          mkdir contents
+          mkdir _site/jupyter-lite
+          find ch*/ -type f -name '*.ipynb' ! -name '*.nbconvert.ipynb' -exec rsync -R {} contents/ \;
+          jupyter lite build --contents contents --output-dir _site/jupyter-lite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

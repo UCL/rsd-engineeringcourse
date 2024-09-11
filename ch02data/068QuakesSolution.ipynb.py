@@ -21,6 +21,8 @@
 # %% jupyter={"outputs_hidden": false}
 import math
 
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 import IPython
 from IPython.display import Image

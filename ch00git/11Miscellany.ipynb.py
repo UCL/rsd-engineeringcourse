@@ -15,6 +15,11 @@
 # ## Git Stash
 
 # %% [markdown]
+# **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
+# thread/process restriction), and the cells below might error out on the browser
+# (jupyterlite) version of this notebook
+
+# %% [markdown]
 # Before you can `git pull`, you need to have committed any changes you have made. If you find you want to pull, but you're not ready to commit, you have to temporarily "put aside" your uncommitted changes.
 # For this, you can use the `git stash` command, like in the following example:
 

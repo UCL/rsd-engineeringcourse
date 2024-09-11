@@ -218,6 +218,7 @@ def make_figure():
 # `make_figure` function defined in the module.
 
 # %%
+# restart kernel on jupyterlite (browser) before running this
 import draw_eight  # Load the library
 fig = draw_eight.make_figure()
 

@@ -13,7 +13,11 @@
 
 # %% [markdown]
 # ## Working with multiple remotes
-#
+# 
+# **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
+# thread/process restriction), and the cells below might error out on the browser
+# (jupyterlite) version of this notebook
+# 
 # ### Distributed versus centralised
 #
 # Older version control systems (cvs, svn) were "centralised"; the history was kept only on a server,

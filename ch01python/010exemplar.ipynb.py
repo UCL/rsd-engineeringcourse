@@ -43,6 +43,12 @@
 # By combining them we can feel really powerful but doing minimum work ourselves. The python syntax to import someone else's library is "import".
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
+
+# install geopy if it is not already installed
+%pip install geopy
+
 import geopy # A python library for investigating geographic information.
 # https://pypi.org/project/geopy/
 

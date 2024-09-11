@@ -65,6 +65,12 @@
 # Now, close the Jupyter notebook if you have it open, and reopen it. Check your new library is installed with:
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
+
+# install geopy if it is not already installed
+%pip install geopy
+
 import geopy
 geocoder = geopy.geocoders.Nominatim(user_agent="mphy0021") 
 

@@ -25,6 +25,8 @@
 # We can request the CSV file text from the URL we used previously:
 
 # %%
+# sending requests to the web is not fully supported on jupyterlite yet, and the
+# cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
 # Request sunspots data from URL and extract response content as text
 sunspots_csv_text = requests.get('http://www.sidc.be/silso/INFO/snmtotcsv.php').text
