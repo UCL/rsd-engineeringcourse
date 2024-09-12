@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Refactoring
+# # Refactoring
 
 # %% [markdown]
 # Let's import first the context for this chapter.
@@ -26,7 +26,7 @@ from context import *
 # Instead of doing so, we could use a more robust approach to go from nasty ugly code to clean code in a safer way.
 
 # %% [markdown]
-# ### Refactoring
+# ## Refactoring
 
 # %% [markdown]
 #
@@ -39,7 +39,7 @@ from context import *
 #
 
 # %% [markdown]
-# ### A word from the Master
+# ## A word from the Master
 
 # %% [markdown]
 #
@@ -54,7 +54,7 @@ from context import *
 #
 
 # %% [markdown]
-# ### List of known refactorings
+# ## List of known refactorings
 
 # %% [markdown]
 #
@@ -64,7 +64,7 @@ from context import *
 #
 
 # %% [markdown]
-# ### Replace magic numbers with constants
+# ## Replace magic numbers with constants
 
 # %% [markdown]
 #
@@ -106,7 +106,7 @@ for i in range(resolution):
 #
 
 # %% [markdown]
-# ### Replace repeated code with a function
+# ## Replace repeated code with a function
 
 # %% [markdown]
 #
@@ -152,7 +152,7 @@ if can_see(starling, hawk):
 #
 
 # %% [markdown]
-# ### Change of variable name
+# ## Change of variable name
 
 # %% [markdown]
 #
@@ -183,7 +183,7 @@ if gene:
     transcribe(gene)
 
 # %% [markdown]
-# ### Separate a complex expression into a local variable
+# ## Separate a complex expression into a local variable
 
 # %% [markdown]
 #
@@ -211,7 +211,7 @@ if same_names and flags_OK:
     do_something()
 
 # %% [markdown]
-# ### Replace loop with iterator
+# ## Replace loop with iterator
 
 # %% [markdown]
 #
@@ -242,7 +242,7 @@ for value in data:
     sum += value
 
 # %% [markdown]
-# ### Replace hand-written code with library code
+# ## Replace hand-written code with library code
 
 # %% [markdown]
 #
@@ -279,7 +279,7 @@ xcoords = np.arange(start, end, step)
 #
 
 # %% [markdown]
-# ### Replace set of arrays with array of structures
+# ## Replace set of arrays with array of structures
 
 # %% [markdown]
 #
@@ -318,7 +318,7 @@ def can_see(source, target):
 #
 
 # %% [markdown]
-# ### Replace constants with a configuration file
+# ## Replace constants with a configuration file
 
 # %% [markdown]
 #
@@ -373,7 +373,7 @@ config = yaml.safe_load(open("config.yaml"))
 #
 
 # %% [markdown]
-# ### Replace global variables with function arguments
+# ## Replace global variables with function arguments
 
 # %% [markdown]
 #
@@ -413,7 +413,7 @@ class Hawk(object):
 
 
 # %% [markdown]
-# ### Merge neighbouring loops
+# ## Merge neighbouring loops
 
 # %% [markdown]
 #
@@ -448,7 +448,7 @@ for bird in birds:
 # Though there may be a case where all the nests need to be built before the birds can start laying eggs.
 
 # %% [markdown]
-# ### Break a large function into smaller units
+# ## Break a large function into smaller units
 
 # %% [markdown]
 #
@@ -494,7 +494,7 @@ def predate(predator, prey):
 
 
 # %% [markdown]
-# ### Separate code concepts into files or modules
+# ## Separate code concepts into files or modules
 
 # %% [markdown]
 #
@@ -539,7 +539,7 @@ class Two(object):
         self.child = One()
 
 # %% [markdown]
-# ### Refactoring is a safe way to improve code
+# ## Refactoring is a safe way to improve code
 
 # %% [markdown]
 #
@@ -552,7 +552,7 @@ class Two(object):
 #
 
 # %% [markdown]
-# ### Tests and Refactoring
+# ## Tests and Refactoring
 
 # %% [markdown]
 #
@@ -567,7 +567,7 @@ class Two(object):
 #
 
 # %% [markdown]
-# ### Refactoring Summary
+# ## Refactoring Summary
 
 # %% [markdown]
 #

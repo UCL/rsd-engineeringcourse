@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Packaging
+# # Packaging
 
 # %% [markdown]
 #
@@ -39,7 +39,7 @@
 #
 
 # %% [markdown]
-# ### Distribution tools
+# ## Distribution tools
 
 # %% [markdown]
 # Distribution tools allow one to obtain a working copy of someone else's package.
@@ -75,7 +75,7 @@
 #
 
 # %% [markdown]
-# ### Laying out a project
+# ## Laying out a project
 
 # %% [markdown]
 #
@@ -119,7 +119,7 @@
 # %autoreload 2
 
 # %% [markdown]
-# ### Using pyproject.toml
+# ## Using pyproject.toml
 
 # %% [markdown]
 # Since June 2020, python's recommendation for creating a package is to specify package information in a `pyproject.toml` file.
@@ -222,7 +222,7 @@ greet("Terry", "Gilliam")
 
 
 # %% [markdown]
-# ### Convert the script to a module
+# ## Convert the script to a module
 
 # %% [markdown]
 #
@@ -276,7 +276,7 @@ help(greet)
 # this on [the next section](./04documentation.html) ([notebook version](./04documentation.ipynb)).
 
 # %% [markdown]
-# ### Write an executable script
+# ## Write an executable script
 
 # %% [markdown]
 #
@@ -369,7 +369,7 @@ packages = [
 # greet Terry Gilliam --title Cartoonist
 
 # %% [markdown]
-# ### Specify dependencies
+# ## Specify dependencies
 
 # %% [markdown]
 # Let's give some life to our output using ascii art
@@ -440,7 +440,7 @@ packages = [
 # greet Terry Gilliam
 
 # %% [markdown]
-# ### Installing from GitHub
+# ## Installing from GitHub
 
 # %% [markdown]
 #
@@ -469,7 +469,7 @@ packages = [
 #
 
 # %% [markdown]
-# ### Write a readme file
+# ## Write a readme file
 
 # %% [markdown]
 # The readme file might look like this:
@@ -499,7 +499,7 @@ greeter.greet(user.name, user.lastname)
 ```
 
 # %% [markdown]
-# ### Write a license file
+# ## Write a license file
 
 # %% [markdown]
 # We will discus more about [licensing in a later section](https://github-pages.ucl.ac.uk/rsd-engineeringcourse/ch04packaging/07Licensing.html). For now let's assume we want to release this package into the public domain:
@@ -512,7 +512,7 @@ greeter.greet(user.name, user.lastname)
 This "greetings" example package is granted into the public domain.
 
 # %% [markdown]
-# ### Write a citation file
+# ## Write a citation file
 
 # %% [markdown]
 # A citation file will inform our users how we would like to be cited when refering to our software:
@@ -530,7 +530,7 @@ Portions of the material are taken from [Software Carpentry](http://software-car
 
 
 # %% [markdown]
-# ### Write some unit tests
+# ## Write some unit tests
 
 # %% [markdown]
 # We can now write some tests to our library. 
@@ -684,7 +684,7 @@ packages = [
 
 
 # %% [markdown]
-# ### Developer Install
+# ## Developer Install
 
 # %% [markdown]
 #
@@ -712,7 +712,7 @@ packages = [
 # ```
 
 # %% [markdown]
-# ### Distributing compiled code
+# ## Distributing compiled code
 
 # %% [markdown]
 #

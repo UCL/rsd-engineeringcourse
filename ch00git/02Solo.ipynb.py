@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Solo work with Git
+# # Solo work with Git
 
 # %% [markdown]
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
@@ -31,7 +31,7 @@ os.chdir(working_dir)
 working_dir
 
 # %% [markdown]
-# ### A first example file
+# ## A first example file
 #
 # So let's create an example file, and see how to start to manage a history of changes to it.
 
@@ -50,7 +50,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # cat index.md
 
 # %% [markdown]
-# ### Telling Git about the File
+# ## Telling Git about the File
 #
 # So, let's tell Git that `index.md` is a file which is important, and we would like to keep track of its history:
 
@@ -60,7 +60,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # %% [markdown]
 # Don't forget: Any files in repositories which you want to "track" need to be added with `git add` after you create them.
 #
-# ### Our first commit
+# ## Our first commit
 #
 # Now, we need to tell Git to record the first version of this file in the history of changes:
 
@@ -73,7 +73,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # There's a lot of output there you can ignore for now.
 
 # %% [markdown]
-# ### Configuring Git with your editor
+# ## Configuring Git with your editor
 #
 # If you don't type in the log message directly with -m "Some message", then an editor will pop up, to allow you
 # to edit your message on the fly.
@@ -102,7 +102,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # I'm going to be using `nano` as my editor, but you can use whatever editor you prefer. Find how to setup your favourite editor in [the setup chapter of Software Carpentry's Git lesson](https://swcarpentry.github.io/git-novice/02-setup.html).
 
 # %% [markdown]
-# ### Git log
+# ## Git log
 #
 # Git now has one change in its history:
 
@@ -113,7 +113,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # You can see the commit message, author, and date...
 
 # %% [markdown]
-# ### Hash Codes
+# ## Hash Codes
 #
 # The commit "hash code", e.g.
 #
@@ -124,7 +124,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # (This is a really long code, but whenever you need to use it, you can just use the first few characters, however many characters is long enough to make it unique, `c438` for example. )
 
 # %% [markdown]
-# ### Nothing to see here
+# ## Nothing to see here
 #
 # Note that git will now tell us that our "working directory" is up-to-date with the repository: there are no changes to the files that aren't recorded in the repository history:
 
@@ -150,7 +150,7 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # cat index.md
 
 # %% [markdown]
-# ### Unstaged changes
+# ## Unstaged changes
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git status
@@ -174,7 +174,7 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # Deleted lines are prefixed with a minus, added lines prefixed with a plus.
 
 # %% [markdown]
-# ### Staging a file to be included in the next commit
+# ## Staging a file to be included in the next commit
 #
 # To include the file in the next commit, we have a few choices. This is one of the things to be careful of with git: there are lots of ways to do similar things, and it can be hard to keep track of them all.
 
@@ -187,14 +187,14 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # Note that `git add` is the command we use to introduce git to a new file, but also the command we use to "stage" a file to be included in the next commit. 
 
 # %% [markdown]
-# ### The staging area
+# ## The staging area
 #
 # The "staging area" or "index" is the git jargon for the place which contains the list of changes which will be included in the next commit.
 #
 # You can include specific changes to specific files with `git add`, commit them, add some more files, and commit them. (You can even add specific changes within a file to be included in the index.)
 
 # %% [markdown]
-# ### Message Sequence Charts
+# ## Message Sequence Charts
 
 # %% [markdown]
 # In order to illustrate the behaviour of Git, it will be useful to be able to generate figures in Python
@@ -237,7 +237,7 @@ from wsd import wsd
 wsd("Sender->Recipient: Hello\n Recipient->Sender: Message received OK")
 
 # %% [markdown]
-# ### The Levels of Git
+# ## The Levels of Git
 
 # %% [markdown]
 # Let's make ourselves a sequence chart to show the different aspects of Git we've seen so far:
@@ -251,7 +251,7 @@ Working Directory -> Local Repository : git commit -a
 wsd(message)
 
 # %% [markdown]
-# ### Review of status
+# ## Review of status
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git status
@@ -266,7 +266,7 @@ wsd(message)
 # Great, we now have a file which contains a mistake.
 
 # %% [markdown]
-# ### Carry on regardless
+# ## Carry on regardless
 #
 # In a while, we'll use Git to roll back to the last correct version: this is one of the main reasons we wanted to use version control, after all! But for now, let's do just as we would if we were writing code, not notice our mistake and keep working...
 
@@ -289,7 +289,7 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # cat index.md
 
 # %% [markdown]
-# ### Review of changes
+# ## Review of changes
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git log | head
@@ -301,7 +301,7 @@ Mount Fictional, in Barsetshire, U.K. is the tallest mountain in the world.
 # git log --oneline
 
 # %% [markdown]
-# ### Git Solo Workflow
+# ## Git Solo Workflow
 
 # %% [markdown]
 # We can make a diagram that summarises the above story:

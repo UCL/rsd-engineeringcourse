@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Class design
+# # Class design
 
 # %% [markdown]
 #
@@ -58,7 +58,7 @@ class Particle:
 # ```
 
 # %% [markdown]
-# ### UML
+# ## UML
 
 # %% [markdown]
 #
@@ -70,7 +70,7 @@ class Particle:
 #
 
 # %% [markdown]
-# ### YUML
+# ## YUML
 
 # %% [markdown]
 # We can see a YUML model for a Particle class with `position` and `velocity` data and a `move()` method using
@@ -102,7 +102,7 @@ yuml("[Particle|position;velocity|move()]")
 # The representation of the `Particle` class defined above in UML is done with a box with three sections. The name of the class goes on the top, then the name of the member variables in the middle, and the name of the methods on the bottom. We will see later why this is useful.
 
 # %% [markdown]
-# ### Information Hiding
+# ## Information Hiding
 
 # %% [markdown]
 #
@@ -159,7 +159,7 @@ print(MyClass().__private_data) # Generates error
 
 
 # %% [markdown]
-# ### Property accessors
+# ## Property accessors
 
 # %% [markdown]
 #
@@ -256,7 +256,7 @@ assert(graham.name == "Graham Sherlock")
 # In database design, this is called [Normalisation](https://en.wikipedia.org/wiki/Database_normalization).
 
 # %% [markdown]
-# #### UML for private/public
+# ### UML for private/public
 
 # %% [markdown]
 # We prepend a `+`/`-` on public/private member variables and methods:
@@ -266,7 +266,7 @@ yuml("[Particle|+public;-private|+publicmethod();-privatemethod]")
 
 
 # %% [markdown]
-# ### Class Members
+# ## Class Members
 
 # %% [markdown]
 #
@@ -300,7 +300,7 @@ Counted.howMany()  # 6
 # ## Inheritance and Polymorphism
 
 # %% [markdown]
-# ### Object-based vs Object-Oriented
+# ## Object-based vs Object-Oriented
 
 # %% [markdown]
 #
@@ -312,7 +312,7 @@ Counted.howMany()  # 6
 #
 
 # %% [markdown]
-# ### Inheritance
+# ## Inheritance
 
 # %% [markdown]
 #
@@ -321,7 +321,7 @@ Counted.howMany()  # 6
 #
 
 # %% [markdown]
-# ### Ontology and inheritance
+# ## Ontology and inheritance
 
 # %% [markdown]
 #
@@ -335,7 +335,7 @@ Counted.howMany()  # 6
 #
 
 # %% [markdown]
-# ### Inheritance in python
+# ## Inheritance in python
 
 # %% [markdown]
 #
@@ -366,7 +366,7 @@ Eagle().hunt()
 
 
 # %% [markdown]
-# ### Inheritance terminology
+# ## Inheritance terminology
 
 # %% [markdown]
 # Here are two equivalents definition, one coming from C++ and another from Java:
@@ -384,7 +384,7 @@ Eagle().hunt()
 #
 
 # %% [markdown]
-# ### Inheritance and constructors
+# ## Inheritance and constructors
 
 # %% [markdown]
 # To use implicitly constructors from a *superclass*, we can use `super` as shown below.
@@ -404,7 +404,7 @@ class Person(Animal):
 # Read [Raymond Hettinger](https://twitter.com/raymondh)'s [article about `super`](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/) to see various real examples.
 
 # %% [markdown]
-# ### Inheritance UML diagrams
+# ## Inheritance UML diagrams
 
 # %% [markdown]
 # UML shows inheritance with an open triangular arrow pointing from subclass to superclass.
@@ -413,7 +413,7 @@ class Person(Animal):
 yuml("[Animal]^-[Bird],[Bird]^-[Eagle],[Bird]^-[Starling]%")
 
 # %% [markdown]
-# ### Aggregation vs Inheritance
+# ## Aggregation vs Inheritance
 
 # %% [markdown]
 #
@@ -424,7 +424,7 @@ yuml("[Animal]^-[Bird],[Bird]^-[Eagle],[Bird]^-[Starling]%")
 #
 
 # %% [markdown]
-# #### Aggregation in UML
+# ### Aggregation in UML
 
 # %% [markdown]
 # The Boids situation can be represented thus:
@@ -440,7 +440,7 @@ yuml("[Model]<>-*>[Boid],[Boid]position++->[Vector],[Boid]velocity++->[Vector]%"
 # The asterisk represents cardinality, a model may contain multiple Boids. This is a [one to many relationship](https://en.wikipedia.org/wiki/One-to-many_(data_model)). [Many to many relationship](https://en.wikipedia.org/wiki/Many-to-many_(data_model)) is shown with `*` on both sides.
 
 # %% [markdown]
-# #### Refactoring to inheritance
+# ### Refactoring to inheritance
 
 # %% [markdown]
 #
@@ -495,7 +495,7 @@ class Pet(Animal):
 
 
 # %% [markdown]
-# ### Polymorphism
+# ## Polymorphism
 
 # %%
 class Dog:
@@ -531,7 +531,7 @@ for animal in animals:
 #
 
 # %% [markdown]
-# ### Polymorphism and Inheritance
+# ## Polymorphism and Inheritance
 
 # %% [markdown]
 #
@@ -567,7 +567,7 @@ for animal in animals:
 
 
 # %% [markdown]
-# ### Undefined Functions and Polymorphism
+# ## Undefined Functions and Polymorphism
 
 # %% [markdown]
 #
@@ -591,7 +591,7 @@ Worm().noise() # Generates error
 
 
 # %% [markdown]
-# ### Refactoring to Polymorphism
+# ## Refactoring to Polymorphism
 
 # %% [markdown]
 #
@@ -620,7 +620,7 @@ class Animal:
 # which is better replaced by the code above.
 
 # %% [markdown]
-# ### Interfaces and concepts
+# ## Interfaces and concepts
 
 # %% [markdown]
 #
@@ -634,7 +634,7 @@ class Animal:
 #
 
 # %% [markdown]
-# ### Interfaces in UML
+# ## Interfaces in UML
 
 # %% [markdown]
 # Interfaces implementation (a common ancestor that doesn't do anything but defines methods to share) in UML is indicated thus:
@@ -643,7 +643,7 @@ class Animal:
 yuml("[<<Animal>>]^-.-[Dog]")
 
 # %% [markdown]
-# ### Further UML
+# ## Further UML
 
 # %% [markdown]
 #

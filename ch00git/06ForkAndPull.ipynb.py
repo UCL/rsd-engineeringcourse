@@ -12,9 +12,9 @@
 # ---
 
 # %% [markdown]
-# ## Fork and Pull
+# # Fork and Pull
 #
-# ### Different ways of collaborating 
+# ## Different ways of collaborating 
 #
 # We have just seen how we can work with others on GitHub: we add them as collaborators on our repositories and give them permissions to push changes. 
 #
@@ -31,7 +31,7 @@
 # The right way to do this is __forking Numpy's repository__. 
 
 # %% [markdown]
-# ### Forking a repository on GitHub
+# ## Forking a repository on GitHub
 #
 # By forking a repository, all you do is make a copy of it in your GitHub account, where you will have write permissions as well.
 #
@@ -40,7 +40,7 @@
 # Once you are happy with with the changes, GitHub also offers you a way to notify Numpy's developers of this changes so that they can include them in the official Numpy repository via starting a __Pull Request__.
 
 # %% [markdown]
-# ### Pull Request
+# ## Pull Request
 #
 # You can create a Pull Request and select those changes that you think can be useful for fixing Numpy's bug. 
 #
@@ -49,7 +49,7 @@
 # Once Numpy's developers are happy with your changes, they'll accept your Pull Request and merge the changes into their original repository, for everyone to use.
 
 # %% [markdown]
-# ### Practical example - Team up!
+# ## Practical example - Team up!
 #
 # We will be working in the same repository with one of you being the leader and the other being the collaborator. 
 #
@@ -161,7 +161,7 @@
 # Fork and Pull Request done!
 
 # %% [markdown]
-# ### Some Considerations
+# ## Some Considerations
 #
 # * Fork and Pull Request are things happening only on the repository's server side (GitHub in our case). Consequently, you can't do things like `git fork` or `git pull-request` from the local copy of a repository.
 #

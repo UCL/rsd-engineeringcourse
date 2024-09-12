@@ -12,9 +12,9 @@
 # ---
 
 # %% [markdown]
-# ## Using a debugger
+# # Using a debugger
 #
-# ### Stepping through the code
+# ## Stepping through the code
 #
 # Debuggers are programs that can be used to test other programs. They allow programmers to suspend execution of the target program and inspect variables at that point.
 #
@@ -32,7 +32,7 @@
 #   [browser](http://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html).
 
 # %% [markdown]
-# ### Using the python debugger
+# ## Using the python debugger
 
 # %% [markdown]
 # Unfortunately this doesn't work nicely in the notebook. But from the command line, you can run a python program with:
@@ -43,7 +43,7 @@
 # ```
 
 # %% [markdown]
-# ### Basic navigation:
+# ## Basic navigation:
 #
 # Basic command to navigate the code and the python debugger:
 #
@@ -59,7 +59,7 @@
 # The python debugger is **a python shell**: it can print and compute values, and even change the values
 # of the variables at that point in the program.
 #
-# ### Breakpoints
+# ## Breakpoints
 #
 # Break points tell debugger where and when to stop
 # We say
@@ -89,7 +89,7 @@ print(density) # We are now "inside" the energy function and can print any varia
 # Alternatively, break-points can be set on files: `b file.py:20` will stop on line 20 of `file.py`.
 
 # %% [markdown]
-# ### Post-mortem
+# ## Post-mortem
 #
 # Debugging when something goes wrong:
 #

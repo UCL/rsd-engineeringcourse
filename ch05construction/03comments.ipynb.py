@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Comments
+# # Comments
 
 # %% [markdown]
 # Let's import first the context for this chapter.
@@ -21,7 +21,7 @@
 from context import *
 
 # %% [markdown]
-# ### Why comment?
+# ## Why comment?
 
 # %% [markdown]
 #
@@ -32,7 +32,7 @@ from context import *
 #
 
 # %% [markdown]
-# ### Bad Comments
+# ## Bad Comments
 
 # %% [markdown]
 #
@@ -42,7 +42,7 @@ from context import *
 #
 
 # %% [markdown]
-# ### Comments which are obvious
+# ## Comments which are obvious
 
 # %%
 counter = counter + 1 # Increment the counter
@@ -50,7 +50,7 @@ for element in array: # Loop over elements
     pass
 
 # %% [markdown]
-# ### Comments which could be replaced by better style
+# ## Comments which could be replaced by better style
 
 # %% [markdown]
 # The following piece of code could be a part of a game to move a turtle in a certain direction, with a particular angular velocity and step size.
@@ -86,7 +86,7 @@ class Agent:
 #
 
 # %% [markdown]
-# ### Comments vs expressive code 
+# ## Comments vs expressive code 
 
 # %% [markdown]
 #
@@ -99,7 +99,7 @@ class Agent:
 #
 
 # %% [markdown]
-# ### Comments which belong in an issue tracker
+# ## Comments which belong in an issue tracker
 
 # %%
 x.clear() # Code crashes here sometimes
@@ -131,7 +131,7 @@ if x.safe_to_clear(): # Guard added as temporary workaround for #32
 #
 
 # %% [markdown]
-# ### Comments which only make sense to the author today
+# ## Comments which only make sense to the author today
 
 # %%
 agent.turn() # Turtle Power!
@@ -140,14 +140,14 @@ agents[:]=[]# Shredder!
 
 
 # %% [markdown]
-# ### Comments which are unpublishable
+# ## Comments which are unpublishable
 
 # %%
 # Stupid supervisor made me write this code
 # So I did it while very very drunk.
 
 # %% [markdown]
-# ### Good commenting: pedagogical comments
+# ## Good commenting: pedagogical comments
 
 # %% [markdown]
 #
@@ -174,7 +174,7 @@ def try_me_twice():
 
 
 # %% [markdown]
-# ### Good commenting: reasons and definitions
+# ## Good commenting: reasons and definitions
 
 # %% [markdown]
 #

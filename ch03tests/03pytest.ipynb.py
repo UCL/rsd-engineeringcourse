@@ -12,13 +12,13 @@
 # ---
 
 # %% [markdown]
-# ## Testing frameworks
+# # Testing frameworks
 # 
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
 # thread/process restriction), and the cells below might error out on the browser
 # (jupyterlite) version of this notebook
 # 
-# ### Why use testing frameworks?
+# ## Why use testing frameworks?
 
 # %% [markdown]
 # Frameworks should simplify our lives:
@@ -35,7 +35,7 @@
 # * Additional goodies, such as code coverage
 
 # %% [markdown]
-# ### Common testing frameworks
+# ## Common testing frameworks
 
 # %% [markdown]
 # * Language agnostic: [CTest](http://www.cmake.org/cmake/help/v2.8.12/ctest.html)
@@ -73,7 +73,7 @@
 #     * [pfunit](http://sourceforge.net/projects/pfunit/)(works with MPI)
 
 # %% [markdown]
-# ### pytest framework: usage
+# ## pytest framework: usage
 #
 # [pytest](https://docs.pytest.org/en/latest/) is a recommended python testing framework.
 
@@ -161,7 +161,7 @@ def test_no_overlap():
 # %% [markdown]
 # ## Testing with floating points
 #
-# ### Floating points are not reals
+# ## Floating points are not reals
 #
 #
 # Floating points are inaccurate representations of real numbers:
@@ -189,7 +189,7 @@ def test_no_overlap():
 # The result should be `2e-8`.
 
 # %% [markdown]
-# ### Comparing floating points
+# ## Comparing floating points
 #
 # Use the "approx", for a default of a relative tolerance of $10^{-6}$
 
@@ -208,7 +208,7 @@ assert 0.7 == approx(0.701 , rel=0.1, abs=0.1)
 # Choosing tolerances is a big area of [debate](https://software-carpentry.org/blog/2014/10/why-we-dont-teach-testing.html).
 
 # %% [markdown]
-# ### Comparing vectors of floating points
+# ## Comparing vectors of floating points
 #
 # Numerical vectors are best represented using [numpy](http://www.numpy.org/).
 

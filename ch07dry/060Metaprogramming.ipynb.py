@@ -12,13 +12,13 @@
 # ---
 
 # %% [markdown]
-# ## Metaprogramming
+# # Metaprogramming
 
 # %% [markdown]
 # Warning: Advanced topic!
 
 # %% [markdown]
-# ### Metaprogramming globals
+# ## Metaprogramming globals
 
 # %% [markdown]
 #
@@ -179,7 +179,7 @@ baskets['kiwis'].count
 #
 
 # %% [markdown]
-# ### Metaprogramming class attributes
+# ## Metaprogramming class attributes
 
 # %% [markdown]
 # We can metaprogram the attributes of a **module** using the globals() function.
@@ -286,7 +286,7 @@ x.birth_year.__name__
 
 
 # %% [markdown]
-# ### Metaprogramming function locals
+# ## Metaprogramming function locals
 
 # %% [markdown]
 # We can access the attribute dictionary for the local namespace inside a
@@ -313,7 +313,7 @@ terry.name
 
 
 # %% [markdown]
-# ### Metaprogramming warning!
+# ## Metaprogramming warning!
 
 # %% [markdown]
 #

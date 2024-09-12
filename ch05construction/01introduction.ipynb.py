@@ -15,9 +15,6 @@
 # # Construction
 
 # %% [markdown]
-# ## Construction
-
-# %% [markdown]
 #
 # Software *design* gets a lot of press (Object orientation, UML, design patterns).
 #
@@ -25,7 +22,7 @@
 #
 
 # %% [markdown]
-# ### Construction vs Design
+# ## Construction vs Design
 
 # %% [markdown]
 #
@@ -39,7 +36,7 @@
 #
 
 # %% [markdown]
-# ### Low-level design decisions
+# ## Low-level design decisions
 
 # %% [markdown]
 #
@@ -51,7 +48,7 @@
 #
 
 # %% [markdown]
-# ### Algorithms and structures
+# ## Algorithms and structures
 
 # %% [markdown]
 #
@@ -65,7 +62,7 @@
 #
 
 # %% [markdown]
-# ### Architectural design
+# ## Architectural design
 
 # %% [markdown]
 #
@@ -80,7 +77,7 @@
 #
 
 # %% [markdown]
-# ### Construction
+# ## Construction
 
 # %% [markdown]
 #
@@ -89,7 +86,7 @@
 #
 
 # %% [markdown]
-# ### Literate programming
+# ## Literate programming
 
 # %% [markdown]
 #
@@ -108,7 +105,7 @@
 #
 
 # %% [markdown]
-# ### Programming for humans
+# ## Programming for humans
 
 # %% [markdown]
 #
@@ -124,7 +121,7 @@
 #
 
 # %% [markdown]
-# ### Setup
+# ## Setup
 
 # %% [markdown]
 # This notebook is based on a number of fragments of code, with an implicit context.

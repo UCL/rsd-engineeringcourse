@@ -35,7 +35,7 @@
 # cells below might error out on the browser (jupyterlite) version of this notebook
 
 # install geopy if it is not already installed
-%pip install geopy
+%pip install -q geopy
 
 import numpy as np
 import geopy

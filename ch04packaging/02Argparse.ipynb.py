@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Argparse
+# # Argparse
 
 # %% [markdown]
 # This is the standard library for building programs with a command-line interface. Here we show a short introduction to it, but we recommend to read the [official tutorial](https://docs.python.org/3/howto/argparse.html).

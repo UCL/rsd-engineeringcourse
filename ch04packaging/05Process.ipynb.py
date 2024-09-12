@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Software Project Management
+# # Software Project Management
 
 # %% [markdown]
-# ### Software Engineering Stages
+# ## Software Engineering Stages
 
 # %% [markdown]
 #
@@ -27,7 +27,7 @@
 #
 
 # %% [markdown]
-# ### Requirements Engineering
+# ## Requirements Engineering
 
 # %% [markdown]
 #
@@ -44,7 +44,7 @@
 #
 
 # %% [markdown]
-# ### Functional and architectural design
+# ## Functional and architectural design
 
 # %% [markdown]
 #
@@ -55,7 +55,7 @@
 #
 
 # %% [markdown]
-# ### Waterfall
+# ## Waterfall
 
 # %% [markdown]
 #
@@ -65,7 +65,7 @@
 #
 
 # %% [markdown]
-# ### Why Waterfall?
+# ## Why Waterfall?
 
 # %% [markdown]
 #
@@ -75,7 +75,7 @@
 #
 
 # %% [markdown]
-# ### Problems with Waterfall
+# ## Problems with Waterfall
 
 # %% [markdown]
 #
@@ -90,7 +90,7 @@
 #
 
 # %% [markdown]
-# ### Software is not made of bricks
+# ## Software is not made of bricks
 
 # %% [markdown]
 #
@@ -122,7 +122,7 @@
 # -- Prof. [Anthony Finkelstein](http://www0.cs.ucl.ac.uk/staff/A.Finkelstein/), UCL Dean of Engineering, and Professor of Software Systems Engineering
 
 # %% [markdown]
-# ### The Agile Manifesto
+# ## The Agile Manifesto
 
 # %% [markdown]
 #
@@ -144,7 +144,7 @@
 #
 
 # %% [markdown]
-# ### Agile is not absence of process
+# ## Agile is not absence of process
 
 # %% [markdown]
 #
@@ -158,7 +158,7 @@
 #
 
 # %% [markdown]
-# ### Elements of an Agile Process
+# ## Elements of an Agile Process
 
 # %% [markdown]
 #
@@ -169,7 +169,7 @@
 #
 
 # %% [markdown]
-# ### Ongoing Design
+# ## Ongoing Design
 
 # %% [markdown]
 #
@@ -186,7 +186,7 @@
 #
 
 # %% [markdown]
-# ### Iterative Development
+# ## Iterative Development
 
 # %% [markdown]
 #
@@ -200,7 +200,7 @@
 #
 
 # %% [markdown]
-# ### Continuous Delivery
+# ## Continuous Delivery
 
 # %% [markdown]
 #
@@ -210,7 +210,7 @@
 #
 
 # %% [markdown]
-# ### Self-organising teams
+# ## Self-organising teams
 
 # %% [markdown]
 #
@@ -222,7 +222,7 @@
 #
 
 # %% [markdown]
-# ### Agile in Research
+# ## Agile in Research
 
 # %% [markdown]
 #
@@ -236,7 +236,7 @@
 #
 
 # %% [markdown]
-# ### Conclusion
+# ## Conclusion
 
 # %% [markdown]
 #

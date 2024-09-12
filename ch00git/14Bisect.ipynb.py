@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Debugging With Git Bisect
+# # Debugging With Git Bisect
 # 
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
 # thread/process restriction), and the cells below might error out on the browser
@@ -27,7 +27,7 @@
 # to find out which commit caused a bug.
 
 # %% [markdown]
-# ### An example repository
+# ## An example repository
 #
 # In a nice open source example, I found an arbitrary exemplar on github
 
@@ -62,7 +62,7 @@ os.chdir(bisect_dir)
 # python squares.py 2 # Error message
 
 # %% [markdown]
-# ### Bisecting manually
+# ## Bisecting manually
 
 # %% attributes={"classes": [" bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git bisect start
@@ -74,7 +74,7 @@ os.chdir(bisect_dir)
 # Bisect needs one known good and one known bad commit to get started
 
 # %% [markdown]
-# ### Solving Manually
+# ## Solving Manually
 
 # %% [markdown] attributes={"classes": [" bash"], "id": ""}
 # ``` bash
@@ -130,7 +130,7 @@ os.chdir(bisect_dir)
 # ```
 
 # %% [markdown]
-# ### Solving automatically
+# ## Solving automatically
 #
 # If we have an appropriate unit test, we can do all this automatically:
 #

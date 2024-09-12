@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Patterns
+# # Patterns
 
 # %% [markdown]
-# ### Class Complexity
+# ## Class Complexity
 #
 #
 # We've seen that using object orientation can produce quite complex class structures, with classes owning each other, instantiating each other,
@@ -28,7 +28,7 @@
 # > - To reuse functionality: should I use inheritance, or add class variable which it is delegated to?
 
 # %% [markdown]
-# #### Inheritance vs composition
+# ### Inheritance vs composition
 #
 # The last point is known as `is-a` vs `has-a` or inheritance vs composition.
 #
@@ -61,7 +61,7 @@
 # We've linked to an article which carries out a deep dive on this topic in the [other resources section](#Other-resources)
 
 # %% [markdown]
-# ### Design Patterns
+# ## Design Patterns
 
 # %% [markdown]
 #
@@ -74,7 +74,7 @@
 #
 
 # %% [markdown]
-# ### Reading a pattern
+# ## Reading a pattern
 
 # %% [markdown]
 #
@@ -93,7 +93,7 @@
 #
 
 # %% [markdown]
-# ### Introducing Some Patterns
+# ## Introducing Some Patterns
 
 # %% [markdown]
 #
@@ -111,7 +111,7 @@
 # check out another explanation from the [other resources section](#Other-resources)
 
 # %% [markdown]
-# ### Supporting code
+# ## Supporting code
 
 # %% pycharm={"name": "#%%\n"}
 # %matplotlib inline
@@ -136,7 +136,7 @@ def yuml(model):
 #
 
 # %% [markdown]
-# ### Strategy pattern example: sunspots
+# ## Strategy pattern example: sunspots
 
 # %% pycharm={"name": "#%%\n"}
 import csv
@@ -181,7 +181,7 @@ plt.ylabel("Sunspot number")
 
 
 # %% [markdown]
-# ### Sunspot cycle has periodicity
+# ## Sunspot cycle has periodicity
 
 # %% pycharm={"name": "#%%\n"}
 # Use Fast Fourier Transform
@@ -197,7 +197,7 @@ plt.xlabel("Real coefficients")
 
 
 # %% [markdown]
-# ### Years are not constant length
+# ## Years are not constant length
 
 # %% [markdown]
 # After we've started out analysis we realise there's a potential problem with this analysis:
@@ -217,7 +217,7 @@ plt.xlabel("Real coefficients")
 # by quadrature to find the mean frequency, or choosing the largest single value.
 
 # %% [markdown]
-# ### Number of child-classes can increase quickly
+# ## Number of child-classes can increase quickly
 
 # %% [markdown]
 # We could implement a base class for our common code between the different approaches,
@@ -393,7 +393,7 @@ plt.ylabel("Power")
 # * A class wants its subclasses to specify the objects it creates
 
 # %% [markdown]
-# ### Factory UML
+# ## Factory UML
 #
 
 # %% pycharm={"name": "#%%\n"}
@@ -405,7 +405,7 @@ yuml("[Product]^-[ConcreteProduct], "
 # This is all very abstract, so let's get a clearer idea of what that means with an example.
 
 # %% [markdown]
-# ### Initial Example
+# ## Initial Example
 
 # %% [markdown]
 # We have created code that can analyse imaging data from different types of instrument.
@@ -471,7 +471,7 @@ class GenericImage:
         return normalised_data
 
 # %% [markdown]
-# ### Implemented classes
+# ## Implemented classes
 #
 # Here are four example child classes that have implemented their own internal methods for normalising
 # the image data and creating a coloured image. We can use these in exactly the same way as our
@@ -666,7 +666,7 @@ yuml("[Director|Construct()]<>->[Builder| (a) BuildPart()],"+
 
 
 # %% [markdown]
-# ### Builder example
+# ## Builder example
 
 # %% [markdown]
 # Imagine that we have a large model with many parameters that we want to run.
@@ -686,7 +686,7 @@ class Model:
 
 
 # %% [markdown]
-# #### Builder preferred to complex constructor
+# ### Builder preferred to complex constructor
 
 # %% [markdown]
 # However, long constructors easily become very complicated.
@@ -743,7 +743,7 @@ class ModelBuilder:
 #
 
 # %% [markdown]
-# ### Using a builder
+# ## Using a builder
 
 # %% pycharm={"name": "#%%\n"}
 builder = ModelBuilder()
@@ -757,7 +757,7 @@ model = builder.finish()
 model.simulate()
 
 # %% [markdown]
-# ### Avoid staged construction without a builder.
+# ## Avoid staged construction without a builder.
 
 # %% [markdown]
 #
@@ -779,7 +779,7 @@ model.simulate()
 #
 
 # %% [markdown]
-# ### Other resources
+# ## Other resources
 #
 # There are a lot of design patterns and one explanation might not work well for all people so here are some extra
 # sources of information about them. Spending some time to understand them can pay off in the future so you don't

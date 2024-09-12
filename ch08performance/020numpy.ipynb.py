@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## NumPy for Performance
+# # NumPy for Performance
 
 # %% [markdown]
-# ### NumPy constructors
+# ## NumPy constructors
 
 # %% [markdown]
 # We saw previously that NumPy's core type is the `ndarray`, or N-Dimensional Array:
@@ -84,7 +84,7 @@ values = xmatrix + 1j * ymatrix
 print(values)
 
 # %% [markdown]
-# ### Arraywise Algorithms
+# ## Arraywise Algorithms
 
 # %% [markdown]
 # We can use this to apply the mandelbrot algorithm to whole *ARRAYS*
@@ -239,7 +239,7 @@ x
 # Note that we didn't compare two arrays to get our logical array, but an array to a scalar integer -- this was broadcasting again.
 
 # %% [markdown]
-# ### More Mandelbrot
+# ## More Mandelbrot
 
 # %% [markdown]
 # Of course, we didn't calculate the number-of-iterations-to-diverge, just whether the point was in the set.
@@ -306,7 +306,7 @@ data8 = mandel5(values)
 # Probably not worth the time I spent thinking about it!
 
 # %% [markdown]
-# ### NumPy Testing
+# ## NumPy Testing
 
 # %% [markdown]
 # Now, let's look at calculating those residuals, the differences between the different datasets.
@@ -370,7 +370,7 @@ np.testing.assert_allclose(data7, data1)
 
 
 # %% [markdown]
-# ### Arraywise operations are fast
+# ## Arraywise operations are fast
 
 # %% [markdown]
 # Note that we might worry that we carry on calculating the mandelbrot values for points that have already diverged.
@@ -414,7 +414,7 @@ plt.imshow(data8, interpolation='none')
 # Complicating your logic to avoid calculations sometimes therefore slows you down. The only way to know is to **measure**
 
 # %% [markdown]
-# ### Indexing with arrays
+# ## Indexing with arrays
 
 # %% [markdown]
 # We've been using Boolean arrays a lot to get access to some elements of an array. We can also do this with integers:
