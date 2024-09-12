@@ -12,15 +12,15 @@
 # ---
 
 # %% [markdown]
-# ## Software Licensing
+# # Software Licensing
 
 # %% [markdown]
-# ### Reuse
+# ## Reuse
 #
 # This course is distributed under the [Creative Commons By Attribution license](https://creativecommons.org/licenses/by/3.0/), which means you can modify and reuse the materials, so long as you credit [UCL Research IT Services](https://www.ucl.ac.uk/research-it-services/).
 
 # %% [markdown]
-# ### Disclaimer
+# ## Disclaimer
 #
 # Here we attempt to give some basic advice on choosing a licence for your software. But:
 #
@@ -33,7 +33,7 @@
 # Your department, or UCL, may have policies about applying licences to code you create while a UCL employee or student. This training doesn't address this issue, and does not represent UCL policy -- seek advice from your supervisor or manager if concerned.
 
 # %% [markdown]
-# ### Choose a licence
+# ## Choose a licence
 #
 # It is important to choose a licence and to create a *license file* to tell people what it is. 
 #
@@ -43,7 +43,7 @@
 # Your licence file should typically be called LICENSE.txt or similar. GitHub will offer to create a licence file automatically when you create a new repository.
 
 # %% [markdown]
-# ### Open source doesn't stop you making money
+# ## Open source doesn't stop you making money
 #
 # A common misconception about open source software is the thought that
 # open source means you can't make any money. This is *wrong*. 
@@ -57,7 +57,7 @@
 # * Server software, which open source client software interacts with. For example: [GitHub API clients](https://github.com/octokit/octokit.rb).
 
 # %% [markdown]
-# ### Plagiarism vs promotion
+# ## Plagiarism vs promotion
 #
 # Many researchers worry about people stealing their work if they open source their code. But often the biggest problem is not theft, but the fact no one is aware of your work.
 #
@@ -67,7 +67,7 @@
 # anonymity or theft.
 
 # %% [markdown]
-# ### Your code *is* good enough
+# ## Your code *is* good enough
 #
 # New coders worry that they'll be laughed at if they put their code online. Don't worry. Everyone, including people who've been coding for decades, 
 # writes shoddy code that is full of bugs.
@@ -79,7 +79,7 @@
 # Find a buddy, and get them to comment on it.
 
 # %% [markdown]
-# ### Worry about licence compatibility and proliferation
+# ## Worry about licence compatibility and proliferation
 #
 # Not all open source code can be used in all projects. Some licences are legally incompatible.
 #
@@ -94,7 +94,7 @@
 # using the [opensource.org proliferation report](http://opensource.org/proliferation-report).
 
 # %% [markdown]
-# ### Academic licence proliferation
+# ## Academic licence proliferation
 #
 # Academics often write their own licence terms for their software.
 #
@@ -116,14 +116,14 @@
 # future software ecosystem. Also, *Unless you are a lawyer, you cannot do this safely!*
 
 # %% [markdown]
-# ### Licences for code, content, and data.
+# ## Licences for code, content, and data.
 #
 # Licences designed for code should not be used to license data or prose.
 #
 # Don't use Creative Commons for software, or GPL for a book.
 
 # %% [markdown]
-# ### Licensing issues
+# ## Licensing issues
 #
 # * Permissive vs share-alike
 # * Non-commercial and academic Use Only
@@ -131,7 +131,7 @@
 # * Use as a web service
 
 # %% [markdown]
-# ### Permissive vs share-alike
+# ## Permissive vs share-alike
 #
 # Some licences require all derived software to be licensed under terms that are similarly free.
 # Such licences are called "Share Alike" or "Copyleft".
@@ -149,7 +149,7 @@
 # If you want to use code that has a copyleft licence, you'll have to release your code under such a licence.
 
 # %% [markdown]
-# ### Academic use only
+# ## Academic use only
 #
 # Some researchers want to make their code free for 'academic use only'.
 # None of the standard licences state this, and this is a reason why academic bespoke licences proliferate.
@@ -164,7 +164,7 @@
 # but offer the code under more permissive terms, allowing for commercial use, for a fee.
 
 # %% [markdown]
-# ### Patents
+# ## Patents
 #
 # Intellectual property law distinguishes copyright from patents. 
 # This is a complex field, which I am far from qualified to teach!
@@ -174,7 +174,7 @@
 # can't then go off and patent their contribution, some licences, such as the Apache licence, protect you from this.
 
 # %% [markdown]
-# ### Use as a web service
+# ## Use as a web service
 #
 # If I take copyleft code, and use it to host a web service, I have not sold the software.
 #
@@ -182,7 +182,7 @@
 # This "loophole" in the GPL is closed by the AGPL ("Affero GPL")
 
 # %% [markdown]
-# ### Library linking
+# ## Library linking
 #
 # If I use your code just as a library, without modifying it or including it directly in my own code, 
 # does the copyleft term of the GPL apply?
@@ -192,7 +192,7 @@
 # If you don't want it to, use the LGPL. ("Lesser GPL"). This has an exception for linking libraries.
 
 # %% [markdown]
-# ### Citing software
+# ## Citing software
 #
 # Almost all software licences require people to credit you for what they used ("attribution").
 #
@@ -218,7 +218,7 @@
 # }
 
 # %% [markdown]
-# ### Referencing the licence in every file
+# ## Referencing the licence in every file
 #
 # Some licences require that you include licence information in every file.
 # Others do not. 
@@ -236,13 +236,13 @@
 # [opensource.org](http://opensource.org/) for details of how to apply it to your software. For example, for the [GPL](http://opensource.org/licenses/GPL-3.0#howto).
 
 # %% [markdown]
-# ### Choose a licence
+# ## Choose a licence
 #
 # See [GitHub's advice on how to choose a licence](http://choosealicense.com/) or [European Commision's Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/solution/joinup-licensing-assistant/jla-find-and-compare-software-licenses).
 # Further, [REUSE Software](https://reuse.software) makes checking what license a file is licensed under easy by defining a machine-readable format for license files. 
 
 # %% [markdown]
-# ### Open source does not equal free maintenance
+# ## Open source does not equal free maintenance
 #
 # One common misunderstanding of open source software is that you'll automatically get loads of contributors from around the internets.
 # This is wrong. Most open source projects get no commits from anyone else.

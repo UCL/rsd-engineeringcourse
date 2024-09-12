@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Introduction
+# # Introduction
 
 # %% [markdown]
-# ### What's version control?
+# ## What's version control?
 #
 # Version control is a tool for __managing changes__ to a set of files.
 #
@@ -28,7 +28,7 @@
 # - ...
 
 # %% [markdown]
-# ### Why use version control?
+# ## Why use version control?
 #
 # - Better kind of __backup__.
 # - Review __history__ ("When did I introduce this bug?").
@@ -43,14 +43,14 @@
 # - "How can I submit a change to someone else's code?"
 # - "How can I merge my work with Sue's?"
 #
-# ### Git != GitHub
+# ## Git != GitHub
 #
 # - __Git__: version control system tool to manage source code history.
 #
 # - __GitHub__: hosting service for Git repositories.
 
 # %% [markdown]
-# ### How do we use version control?
+# ## How do we use version control?
 #
 # Do some programming, then commit our work:
 #
@@ -65,7 +65,7 @@
 # Mistake is undone.
 
 # %% [markdown]
-# ### What is version control? (Team version)
+# ## What is version control? (Team version)
 #
 # Graham             | Eric
 # ------------------ |------   
@@ -82,7 +82,7 @@
 # `my_vcs commit`    | ...
 
 # %% [markdown]
-# ### Scope
+# ## Scope
 #
 # This course will use the `git` version control system, but much of what you learn will be valid with other version control 
 # tools you may encounter, including subversion (`svn`) and mercurial (`hg`).

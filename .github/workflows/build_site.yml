@@ -38,7 +38,8 @@ jobs:
           python-version: 3.12
       - name: Install dependencies
         run: |
-          apt-get install python3-pydot graphviz
+          sudo apt-get update
+          sudo apt-get install python3-pydot graphviz
           python -m pip install -r .github/python/requirements.txt
       - name: Building notes
         run: make ready
