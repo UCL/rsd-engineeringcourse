@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## How to Test
+# # How to Test
 
 # %% [markdown]
-# ### Equivalence partitioning
+# ## Equivalence partitioning
 
 # %% [markdown]
 # Think hard about the different cases the code will run under: this is science, not coding!
@@ -115,7 +115,7 @@ show_fields((1.,1.,4.,4.),(4,4,4.5,4.5)) # Touching corner
 
 
 # %% [markdown]
-# ### Using our tests
+# ## Using our tests
 
 # %% [markdown]
 # OK, so how might our tests be useful?
@@ -219,7 +219,7 @@ assert overlap((1,1,4,4), (4,4,4.5,4.5)) == 0.0
 # Note, we reran our other tests, to check our fix didn't break something else. (We call that "fallout")
 
 # %% [markdown]
-# ### Boundary cases
+# ## Boundary cases
 
 # %% [markdown]
 # "Boundary cases" are an important area to test:
@@ -239,7 +239,7 @@ assert overlap((1,1,4,4), (4,4,4.5,4.5)) == 0.0
 # * What happens when a matrix/data-frame reaches one row, or one column?
 
 # %% [markdown]
-# ### Positive *and* negative tests
+# ## Positive *and* negative tests
 #
 # * **Positive tests**: code should give correct answer with various inputs
 # * **Negative tests**: code should crash as expected given invalid inputs, rather than lying
@@ -251,7 +251,7 @@ assert overlap((1,1,4,4), (4,4,4.5,4.5)) == 0.0
 # Testing should ensure that explicit failures do indeed happen.
 
 # %% [markdown]
-# ### Raising exceptions
+# ## Raising exceptions
 
 # %% [markdown]
 # In Python, we can signal an error state by raising an error:

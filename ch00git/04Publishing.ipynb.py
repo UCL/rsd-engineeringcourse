@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Publishing
+# # Publishing
 
 # %% [markdown]
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
@@ -31,7 +31,7 @@ os.chdir(working_dir)
 working_dir
 
 # %% [markdown]
-# ### Sharing your work
+# ## Sharing your work
 
 # %% [markdown]
 # So far, all our work has been on our own computer. But a big part of the point of version control is keeping your work safe, on remote servers. Another part is making it easy to share your work with the world In this example, we'll be using the "GitHub" cloud repository to store and publish our work. 
@@ -39,14 +39,14 @@ working_dir
 # If you have not done so already, you should create an account on [GitHub](https://github.com/): go to [GitHub's website](https://github.com/), fill in a username and password, and click on "sign up for GitHub". 
 
 # %% [markdown]
-# ### Creating a repository
+# ## Creating a repository
 #
 # Ok, let's create a repository to store our work. Hit "[new repository](https://github.com/new)" on the right of the github home screen.
 #
 # Fill in a short name, and a description. Choose a "public" repository. Don't choose to initialize the repository with a README. That will create a repository with content and we only want a placeholder where to upload what we've created locally.
 
 # %% [markdown]
-# ### Paying for GitHub
+# ## Paying for GitHub
 #
 # For this course, you should use public repositories in your personal account for your example work: it's good to share! GitHub is free for open source, but in general, charges a fee if you want to keep your work private. 
 #
@@ -57,7 +57,7 @@ working_dir
 # UCL pays for private GitHub repositories for UCL research groups: you can find the service details on the [Advanced Research Computing Centre's website](https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-2).
 
 # %% [markdown]
-# ### Adding a new remote to your repository
+# ## Adding a new remote to your repository
 #
 # Instructions will appear, once you've created the repository, as to how to add this new "remote" server to your repository, in the lower box on the screen. Mine say:
 
@@ -69,7 +69,7 @@ working_dir
 #       #You should copy the instructions from YOUR repository.
 
 # %% [markdown]
-# ### Remotes
+# ## Remotes
 #
 # The first command sets up the server as a new `remote`, called `origin`. 
 #
@@ -97,7 +97,7 @@ from wsd import wsd
 wsd(message)
 
 # %% [markdown]
-# ### Playing with GitHub
+# ## Playing with GitHub
 #
 # Take a few moments to click around and work your way through the GitHub interface. Try clicking on 'index.md' to see the content of the file: notice how the markdown renders prettily.
 #
@@ -107,7 +107,7 @@ wsd(message)
 # ## Working with multiple files
 
 # %% [markdown]
-# ### Some new content
+# ## Some new content
 #
 # So far, we've only worked with one file. Let's add another:
 
@@ -127,7 +127,7 @@ Cumbria has some pretty hills, and lakes too.
 # cat lakeland.md
 
 # %% [markdown]
-# ### Git will not by default commit your new file
+# ## Git will not by default commit your new file
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} magic_args="--no-raise-error" language="bash"
 # git commit -m "Try to add Lakeland"
@@ -136,7 +136,7 @@ Cumbria has some pretty hills, and lakes too.
 # This didn't do anything, because we've not told git to track the new file yet.
 
 # %% [markdown]
-# ### Tell git about the new file
+# ## Tell git about the new file
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git add lakeland.md

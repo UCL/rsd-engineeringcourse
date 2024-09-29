@@ -12,9 +12,9 @@
 # ---
 
 # %% [markdown]
-# ## Classroom exercise: energy calculation
+# # Classroom exercise: energy calculation
 #
-# ### Diffusion model in 1D
+# ## Diffusion model in 1D
 #
 # Description: A one-dimensional diffusion model. (Could be a gas of particles, or a bunch of crowded people in a corridor, or animals in a valley habitat...)
 #
@@ -46,7 +46,7 @@ ax.set_xlabel("Position $i$")
 # total energy.
 
 # %% [markdown]
-# ### Starting point
+# ## Starting point
 #
 # Create a Python module:
 
@@ -96,7 +96,7 @@ def test_energy():
 # Now, write your code (in `model.py`), and tests (in `test_model.py`), testing as you do.
 
 # %% [markdown]
-# ### Solution
+# ## Solution
 #
 # Don't look until after you've tried!
 
@@ -199,7 +199,7 @@ def test_derivative_no_self_energy():
 # pytest
 
 # %% [markdown]
-# ### Coverage
+# ## Coverage
 #
 # With py.test, you can use the ["pytest-cov" plugin](https://github.com/pytest-dev/pytest-cov) to measure test coverage
 

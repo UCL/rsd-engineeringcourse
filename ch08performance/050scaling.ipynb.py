@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Scaling for containers and algorithms
+# # Scaling for containers and algorithms
 
 # %% [markdown]
 # We've seen that NumPy arrays are really useful. Why wouldn't we always want to use them for data which is all the same type?
@@ -181,7 +181,7 @@ plot_time(time_lookup_middle_element_in_deque, counts)
 # ![Adding an element to a deque - memory representation](deque_memory.svg)
 
 # %% [markdown]
-# ### Dictionary performance
+# ## Dictionary performance
 
 # %% [markdown]
 # For another example, let's consider the performance of a dictionary versus a couple of other ways in which we could implement an associative array.

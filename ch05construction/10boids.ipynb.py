@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Exercise: Refactoring The Bad Boids
+# # Exercise: Refactoring The Bad Boids
 
 # %% [markdown]
-# ### Bad_Boids
+# ## Bad_Boids
 
 # %% [markdown]
 #
@@ -113,7 +113,7 @@ from IPython.display import HTML
 HTML(anim.to_jshtml())
 
 # %% [markdown]
-# ### Your Task
+# ## Your Task
 
 # %% [markdown]
 #
@@ -121,7 +121,7 @@ HTML(anim.to_jshtml())
 #
 
 # %% [markdown]
-# ### A regression test
+# ## A regression test
 
 # %% [markdown]
 #
@@ -147,7 +147,7 @@ HTML(anim.to_jshtml())
 # ```
 
 # %% [markdown]
-# ### Invoking the test
+# ## Invoking the test
 
 # %% [markdown]
 #
@@ -171,7 +171,7 @@ HTML(anim.to_jshtml())
 # ```
 
 # %% [markdown]
-# ### Make the regression test fail
+# ## Make the regression test fail
 
 # %% [markdown]
 # Check the tests pass:
@@ -192,7 +192,7 @@ HTML(anim.to_jshtml())
 # ```
 
 # %% [markdown]
-# ### Start Refactoring
+# ## Start Refactoring
 
 # %% [markdown]
 #

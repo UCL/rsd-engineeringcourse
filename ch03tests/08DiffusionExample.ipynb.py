@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Recap example: Monte-Carlo
+# # Recap example: Monte-Carlo
 
 # %% [markdown]
-# ### Problem: Implement and test a simple Monte-Carlo algorithm
+# ## Problem: Implement and test a simple Monte-Carlo algorithm
 #
 # Given an input function (energy) and starting point (density) and a temperature $T$: 
 #
@@ -37,7 +37,7 @@
 # * Use [matplotlib](http://matplotlib.org/) to plot density at each iteration, and make an animation
 
 # %% [markdown]
-# ### Solution
+# ## Solution
 
 # %% [markdown]
 # We need to break our problem down into pieces:

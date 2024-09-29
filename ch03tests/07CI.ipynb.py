@@ -12,11 +12,11 @@
 # ---
 
 # %% [markdown]
-# ## Continuous Integration
+# # Continuous Integration
 #
 # Continuous integration (CI) is a software development practice that involves integrating new code to a shared repository regularly (typically at least once a day). The integrated changes are then automatically checked by the CI system on test servers, which allows to detect problems early.
 #
-# ### Test servers
+# ## Test servers
 #
 # The test servers of the CI system might be configured to: 
 #
@@ -29,7 +29,7 @@
 # When configuring a CI system, it's important to weigh up the usefulness of the test settings you cover against the energy consumption that will incur from running the tests frequently. For example, you might want to set up the CI system to run a more extensive suite of tests when a PR to the `main` branch is opened, and only run a small number of important tests at every commit. You could also decide that you don't need to test your code for all Python versions, but only for an old version and a recent one.
 
 # %% [markdown]
-# ### Memory and profiling
+# ## Memory and profiling
 #
 # For compiled languages (C, C++, Fortran):
 # * Checking for memory leaks with [valgrind](http://valgrind.org/):

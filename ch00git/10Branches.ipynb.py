@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Branches
+# # Branches
 # 
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
 # thread/process restriction), and the cells below might error out on the browser
@@ -68,7 +68,7 @@ Mountains In Wales
 # cat Wales.md
 
 # %% [markdown]
-# ### Publishing branches
+# ## Publishing branches
 #
 # To let the server know there's a new branch use:
 
@@ -99,7 +99,7 @@ Mountains In Wales
 # git branch -vv
 
 # %% [markdown]
-# ### Find out what is on a branch
+# ## Find out what is on a branch
 #
 # In addition to using `git diff` to compare to the state of a branch,
 # you can use `git log` to look at lists of commits which are in a branch
@@ -157,7 +157,7 @@ Mountains In Scotland
 # Three dots means "everything which is not a common ancestor" of the two commits, i.e. the differences between them.
 
 # %% [markdown]
-# ### Merging branches
+# ## Merging branches
 
 # %% [markdown]
 # We can merge branches, and just as we would pull in remote changes, there may or may not be conflicts.
@@ -170,7 +170,7 @@ Mountains In Scotland
 # git log --graph --oneline HEAD~3..HEAD
 
 # %% [markdown]
-# ### Cleaning up after a branch
+# ## Cleaning up after a branch
 
 # %% jupyter={"outputs_hidden": false} language="bash"
 # git branch
@@ -193,7 +193,7 @@ Mountains In Scotland
 # git branch --remote
 
 # %% [markdown]
-# ### A good branch strategy
+# ## A good branch strategy
 #
 # * A `develop` or `main` branch: for general new code - (the cutting edge version of your software)
 # * `feature` branches: for specific new ideas. Normally branched out from `main`.
@@ -202,7 +202,7 @@ Mountains In Scotland
 # * A `production` branch: code used for active work. Normally it's the same than the latest release.
 
 # %% [markdown]
-# ### Grab changes from a branch
+# ## Grab changes from a branch
 #
 # Make some changes on one branch, switch back to another, and use:
 

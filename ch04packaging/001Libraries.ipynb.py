@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Libraries
+# # Libraries
 
 # %% [markdown]
-# ### Libraries are awesome
+# ## Libraries are awesome
 
 # %% [markdown]
 #
@@ -35,7 +35,7 @@
 # The chances are any algorithm you might want to use has already been programmed better by someone else.
 
 # %% [markdown]
-# ### Drawbacks of libraries.
+# ## Drawbacks of libraries.
 
 # %% [markdown]
 #
@@ -50,7 +50,7 @@
 #
 
 # %% [markdown]
-# ### Contribute, don't duplicate
+# ## Contribute, don't duplicate
 
 # %% [markdown]
 #
@@ -60,7 +60,7 @@
 #
 
 # %% [markdown]
-# ### How to choose a library
+# ## How to choose a library
 
 # %% [markdown]
 #
@@ -86,7 +86,7 @@
 #
 
 # %% [markdown]
-# ### Sensible Version Numbering
+# ## Sensible Version Numbering
 
 # %% [markdown]
 #
@@ -102,7 +102,7 @@
 #
 
 # %% [markdown]
-# ### The Python Standard Library
+# ## The Python Standard Library
 
 # %% [markdown]
 #
@@ -114,7 +114,7 @@
 #
 
 # %% [markdown]
-# ### The Python Package Index
+# ## The Python Package Index
 
 # %% [markdown]
 #

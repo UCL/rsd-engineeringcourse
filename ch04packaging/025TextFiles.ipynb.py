@@ -12,14 +12,14 @@
 # ---
 
 # %% [markdown]
-# ## Python not in the Notebook
+# # Python not in the Notebook
 
 # %% [markdown]
 # We will often want to save our Python classes, for use in multiple Notebooks.
 # We can do this by writing text files with a .py extension, and then `importing` them.
 
 # %% [markdown]
-# ### Writing Python in Text Files
+# ## Writing Python in Text Files
 
 # %% [markdown]
 # You can use a text editor like [VS Code](https://code.visualstudio.com/) or [Spyder](https://www.spyder-ide.org/). If you create your own Python files ending in `.py`, then you can import them with `import` just like external libraries.
@@ -164,7 +164,7 @@ from .maze import Maze # Python 3 relative import
 # In this case we are making it easier to import `Maze` as we are making it available one level above.
 
 # %% [markdown]
-# ### Loading Our Package
+# ## Loading Our Package
 
 # %% [markdown]
 # We just wrote the files, there is no "Maze" class in this notebook yet:
@@ -206,7 +206,7 @@ os.listdir(os.path.join(os.getcwd(), 'mazetool') )
 # on the fly when your `.py` files change. They may appear inside the `__pycache__` directory.
 
 # %% [markdown]
-# ### The Python Path
+# ## The Python Path
 
 # %% [markdown]
 # We want to `import` these from notebooks elsewhere on our computer:

@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Coding Conventions
+# # Coding Conventions
 #
 # Let's import a few variables from context.py that will be used in the following lesson.
 
@@ -30,7 +30,7 @@ from context import (
 )
 
 # %% [markdown]
-# ### One code, many layouts:
+# ## One code, many layouts:
 #
 # Consider the following fragment of python:
 #
@@ -67,7 +67,7 @@ def add_to_reaction(a_name,
 #
 
 # %% [markdown]
-# ### So many choices
+# ## So many choices
 
 # %% [markdown]
 #
@@ -77,7 +77,7 @@ def add_to_reaction(a_name,
 #
 
 # %% [markdown]
-# ### Layout
+# ## Layout
 
 # %%
 reaction = {
@@ -109,7 +109,7 @@ reaction2=(
 
 
 # %% [markdown]
-# ### Layout choices
+# ## Layout choices
 
 # %% [markdown]
 #
@@ -121,7 +121,7 @@ reaction2=(
 # Inconsistency will produce a mess in your code! Some choices will make your code harder to read, whereas others may affect the code. For example, if you copy/paste code with tabs in a place that's using spaces, they may appear OK in your screen but it will fail when running it.
 
 # %% [markdown]
-# ### Naming Conventions
+# ## Naming Conventions
 
 # %% [markdown]
 # [Camel case](https://en.wikipedia.org/wiki/Camel_case) is used in the following example, where class name is in UpperCamel, functions in lowerCamel and underscore_separation for variables names. This convention is used broadly in the python community.
@@ -142,7 +142,7 @@ class class_name:
 
 
 # %% [markdown]
-# ### Hungarian Notation
+# ## Hungarian Notation
 
 # %% [markdown]
 #
@@ -163,7 +163,7 @@ fNumber = float(sEntry) + iOffset
 number = float(entry) + offset
 
 # %% [markdown]
-# ### Newlines
+# ## Newlines
 
 # %% [markdown]
 #
@@ -174,7 +174,7 @@ number = float(entry) + offset
 #
 
 # %% [markdown]
-# ### Syntax Choices
+# ## Syntax Choices
 
 # %% [markdown]
 # The following two snippets do the same, but the second is separated into more steps, making it more readable.
@@ -195,7 +195,7 @@ if ((variable_equality and flag1) or flag2):
 # What about operator precedence? Being explicit helps to remind yourself what you are doing.
 
 # %% [markdown]
-# ### Syntax choices
+# ## Syntax choices
 
 # %% [markdown]
 #
@@ -205,7 +205,7 @@ if ((variable_equality and flag1) or flag2):
 #
 
 # %% [markdown]
-# ### Coding Conventions
+# ## Coding Conventions
 
 # %% [markdown]
 #
@@ -220,7 +220,7 @@ if ((variable_equality and flag1) or flag2):
 #
 
 # %% [markdown]
-# ### Lint
+# ## Lint
 
 # %% [markdown]
 #

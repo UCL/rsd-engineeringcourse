@@ -12,11 +12,11 @@
 # ---
 
 # %% [markdown]
-# ## Cython
+# # Cython
 # Cython can be viewed as an extension of Python where variables and functions are annotated with extra information, in particular types. The resulting Cython source code will be compiled into optimized C or C++ code, and thereby yielding substantial speed-up of slow Python code. In other words, Cython provides a way of writing Python with comparable performance to that of C/C++.
 
 # %% [markdown]
-# ### Start  Coding in Cython
+# ## Start Coding in Cython
 
 # %% [markdown]
 # Cython code must, unlike Python, be compiled. This happens in the following stages:
@@ -92,7 +92,7 @@ axarr[1].set_title('Cython')
 # We have improved the performance of a factor of 1.5 by just using the Cython compiler, **without changing the code**!
 
 # %% [markdown]
-# ### Cython with C Types
+# ## Cython with C Types
 # But we can do better by telling Cython what C data type we would use in the code. Note we're not actually writing C, we're writing Python with C types.
 
 # %% [markdown]
@@ -144,7 +144,7 @@ axarr[1].set_title('Cython')
 # %timeit a = call_typed_mandel_cython(complex(0, 0))
 
 # %% [markdown]
-# ### Cython with numpy ndarray
+# ## Cython with numpy ndarray
 # You can use NumPy from Cython exactly the same as in regular Python, but by doing so you are losing potentially high speedups because Cython has support for fast access to NumPy arrays. 
 
 # %%
@@ -203,7 +203,7 @@ numpy_cython_2 = np.vectorize(call_typed_mandel_cython)
 # %timeit numpy_cython_2(values) #  vectorize
 
 # %% [markdown]
-# ### Calling C functions from Cython
+# ## Calling C functions from Cython
 #
 # **Example: compare `sin()` from Python and C library**
 
