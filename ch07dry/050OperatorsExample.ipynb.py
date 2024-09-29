@@ -18,7 +18,7 @@
 # Warning: Advanced Topic!
 
 # %% [markdown]
-# ### Setup for this notebook
+# ## Setup for this notebook
 
 # %% [markdown]
 # We need to use a metaprogramming trick to make this teaching notebook work.
@@ -40,7 +40,7 @@ def extend(class_to_extend):
 
 
 # %% [markdown]
-# ### Operator overloading
+# ## Operator overloading
 
 # %% [markdown]
 #

@@ -12,9 +12,9 @@
 # ---
 
 # %% [markdown]
-# ## Rebasing
+# # Rebasing
 #
-# ### Rebase vs merge
+# ## Rebase vs merge
 #
 # A git *merge* is only one of two ways to get someone else's work into yours.
 # The other is called a rebase.
@@ -26,7 +26,7 @@
 #
 # Git will invent some new revisions, and the result will be a repository with an apparently linear history. This can be useful if you want a cleaner, non-branching history, but it has the risk of creating inconsistencies, since you are, in a way, "rewriting" history.
 #
-# ### An example rebase
+# ## An example rebase
 #
 # We've built a [repository to help visualise the difference between a merge and a rebase](https://github.com/UCL-ARC-RSEing-with-Python/wocky_rebase/blob/main/wocky.md).
 
@@ -137,7 +137,7 @@
 # ```
 
 # %% [markdown]
-# ### Fast Forwards
+# ## Fast Forwards
 #
 # If we want to continue with the translation, and now want to merge the rebased branch into the carollian branch, 
 # we get:
@@ -157,7 +157,7 @@
 #
 # The main branch was already **rebased on** the carollian branch, so this merge was just a question of updating *metadata* (moving the label for the carollian branch so that it points to the same commit main does): a "fast forward".
 #
-# ### Rebasing pros and cons
+# ## Rebasing pros and cons
 #
 # Some people like the clean, apparently linear history that rebase provides.
 #
@@ -187,7 +187,7 @@
 # ```
 
 # %% [markdown]
-# ### Using rebase to squash
+# ## Using rebase to squash
 
 # %% [markdown] attributes={"classes": [" bash"], "id": ""}
 # If we type 

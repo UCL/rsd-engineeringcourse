@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Mocking
+# # Mocking
 
 # %% [markdown]
-# ### Definition
+# ## Definition
 #
 # **Mock**: *verb*,
 #
@@ -30,14 +30,14 @@
 # - Replace a real object with a pretend object, which records how it is called, and can assert if it is called wrong
 
 # %% [markdown]
-# ### Mocking frameworks
+# ## Mocking frameworks
 #
 # * C: [CMocka](http://www.cmocka.org/)
 # * C++: [googletest](https://github.com/google/googletest)
 # * Python: [unittest.mock](http://docs.python.org/3/library/unittest.mock)
 
 # %% [markdown]
-# ### Recording calls with mock
+# ## Recording calls with mock
 #
 # Mock objects record the calls made to them:
 
@@ -80,7 +80,7 @@ function(1, "hello", {'a': True})
 function()
 
 # %% [markdown]
-# ### Using mocks to model test resources
+# ## Using mocks to model test resources
 
 # %% [markdown]
 # Often we want to write tests for code which interacts with remote resources. (E.g. databases, the internet, or data files.)
@@ -163,7 +163,7 @@ test_build_default_params()
 # passing "by accident", run the tests, then change it back!
 
 # %% [markdown]
-# ### Testing functions that call other functions
+# ## Testing functions that call other functions
 #
 # <div align="left">
 

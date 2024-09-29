@@ -12,10 +12,10 @@
 # ---
 
 # %% [markdown]
-# ## Documentation
+# # Documentation
 
 # %% [markdown]
-# ### Documentation is hard
+# ## Documentation is hard
 
 # %% [markdown]
 #
@@ -26,7 +26,7 @@
 #
 
 # %% [markdown]
-# ### Prefer readable code with tests and vignettes
+# ## Prefer readable code with tests and vignettes
 
 # %% [markdown]
 #
@@ -39,7 +39,7 @@
 #
 
 # %% [markdown]
-# ### Comment-based Documentation tools
+# ## Comment-based Documentation tools
 
 # %% [markdown]
 #
@@ -69,7 +69,7 @@
 # ## Example of using Sphinx
 
 # %% [markdown]
-# ### Write some docstrings
+# ## Write some docstrings
 
 # %% [markdown]
 # We're going to document our "greeter" example from the previous section using docstrings with Sphinx.
@@ -108,7 +108,7 @@
 # ```
 
 # %% [markdown]
-# ### Set up Sphinx
+# ## Set up Sphinx
 
 # %% [markdown]
 # Install Sphinx using the [appropiate instructions](https://www.sphinx-doc.org/en/master/usage/installation.html) for your system following the documentation online.
@@ -238,7 +238,7 @@ texinfo_documents = [
 ]
 
 # %% [markdown]
-# ### Define the root documentation page
+# ## Define the root documentation page
 
 # %% [markdown]
 #
@@ -263,7 +263,7 @@ Simple "Hello, James" module developed to teach research software engineering.
 
 
 # %% [markdown]
-# ###  Run sphinx
+# ##  Run sphinx
 
 # %% [markdown]
 #
@@ -275,7 +275,7 @@ Simple "Hello, James" module developed to teach research software engineering.
 # sphinx-build . doc
 
 # %% [markdown]
-# ### Sphinx output
+# ## Sphinx output
 
 # %% [markdown]
 # Sphinx's output is [html](./greetings/doc/index.html). We just created a simple single function's documentation, but Sphinx will create

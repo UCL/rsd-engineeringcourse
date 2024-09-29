@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Git Stash
+# # Git Stash
 
 # %% [markdown]
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
@@ -161,7 +161,7 @@ default: $(PDFS)
 # %% [markdown]
 # ## Hunks
 #
-# ### Git Hunks
+# ## Git Hunks
 #
 # A "Hunk" is one git change. This changeset has three hunks:
 
@@ -185,7 +185,7 @@ default: $(PDFS)
 # ```
 
 # %% [markdown]
-# ### Interactive add
+# ## Interactive add
 #
 # `git add` and `git reset` can be used to stage/unstage a whole file,
 # but you can use interactive mode to stage by hunk, choosing
@@ -206,7 +206,7 @@ default: $(PDFS)
 # %% [markdown]
 # ## GitHub pages
 #
-# ### Yaml Frontmatter
+# ## Yaml Frontmatter
 #
 # GitHub will publish repositories containing markdown as web pages, automatically. 
 #
@@ -236,7 +236,7 @@ But has some tall hills, and maybe a mountain or two depending on your definitio
 # git commit -m "Add github pages YAML frontmatter"
 
 # %% [markdown]
-# ### The gh-pages branch
+# ## The gh-pages branch
 #
 # GitHub creates github pages when you use a special named branch.
 #
@@ -258,7 +258,7 @@ os.chdir(working_dir)
 # http://UCL.github.io/github-example/
 
 # %% [markdown]
-# ### UCL layout for GitHub pages
+# ## UCL layout for GitHub pages
 #
 # You can use GitHub pages to make HTML layouts, here's an [example of how to do it](http://github.com/UCL/ucl-github-pages-example), 
 # and [how it looks](http://github-pages.ucl.ac.uk/ucl-github-pages-example). We won't go into the detail of this now,

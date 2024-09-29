@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Functional programming
+# # Functional programming
 
 # %% [markdown]
 # We have previously seen the object-oriented style of programming, and how to organise our code according to it using objects, classes and inheritance. While widely-adopted and very useful, this is not the only way of writing code. The [*functional paradigm*](https://en.wikipedia.org/wiki/Functional_programming), as the name suggests, emphasises functions as building blocks of programs.
@@ -23,7 +23,7 @@
 # However, being aware of different paradigms and styles gives you access to more techniques that you can use to write, structure and reason about your code.
 
 # %% [markdown]
-# ### Functions within functions
+# ## Functions within functions
 
 # %% [markdown]
 # Programs are composed of functions: they take data in (which we call
@@ -211,7 +211,7 @@ add(8)(5)
 # This may seem like an overly complicated process - and, in some cases, it is! However, this pattern of functions that return functions (or even take them as arguments!) can be very useful. In fact, it is the basis of decorators, a Python feature that we will discuss more [in this chapter](./025Iterators.html#Decorators) [[notebook](./025Iterators.ipynb#Decorators)].
 
 # %% [markdown]
-# ### Closures
+# ## Closures
 
 # %% [markdown]
 # You may have noticed something a bit weird:
@@ -247,7 +247,7 @@ name = "John"
 greet()
 
 # %% [markdown]
-# ### Map and Reduce
+# ## Map and Reduce
 
 # %% [markdown]
 # We often want to apply a function to each variable in an array, to return a new array. We can do this with a list comprehension:
@@ -401,7 +401,7 @@ my_max([2, 5, 10, -11, -5])
 #
 
 # %% [markdown]
-# ### Lambda Functions
+# ## Lambda Functions
 
 # %% [markdown]
 #
@@ -492,7 +492,7 @@ def my_max(data):
 my_max([2, 5, 10, -11, -5])
 
 # %% [markdown]
-# ### Using functional programming for numerical methods
+# ## Using functional programming for numerical methods
 
 # %% [markdown]
 #

@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Fixing mistakes
+# # Fixing mistakes
 
 # %% [markdown]
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
@@ -31,7 +31,7 @@ os.chdir(working_dir)
 working_dir
 
 # %% [markdown]
-# ### Referring to changes with HEAD and ^
+# ## Referring to changes with HEAD and ^
 #
 # The commit we want to revert to is the one before the latest.
 #
@@ -40,7 +40,7 @@ working_dir
 # We could use the hash code (e.g. 73fbeaf) to reference this, but you can also refer to the commit before the `HEAD` as `HEAD^`, the one before that as `HEAD^^`, the one before that as `HEAD~3`.
 
 # %% [markdown]
-# ### Reverting
+# ## Reverting
 #  
 # Ok, so now we'd like to undo the nasty commit with the lie about Mount Fictional.
 
@@ -51,7 +51,7 @@ working_dir
 # An editor may pop up, with some default text which you can accept and save. 
 
 # %% [markdown]
-# ### Conflicted reverts
+# ## Conflicted reverts
 #
 # You may, depending on the changes you've tried to make, get an error message here. 
 #
@@ -60,7 +60,7 @@ working_dir
 # If that happens, you need to manually edit the file to fix the problem. Skip ahead to the section on resolving conflicts, or ask a demonstrator to help.
 
 # %% [markdown]
-# ### Review of changes
+# ## Review of changes
 #
 # The file should now contain the change to the title, but not the extra line with the lie. Note the log:
 
@@ -68,7 +68,7 @@ working_dir
 # git log --date=short
 
 # %% [markdown]
-# ### Antipatch
+# ## Antipatch
 #
 # Notice how the mistake has stayed in the history.
 #
@@ -76,12 +76,12 @@ working_dir
 # This is nice: you have a record of the full story, including the mistake and its correction.
 
 # %% [markdown]
-# ### Rewriting history
+# ## Rewriting history
 #
 # It is possible, in git, to remove the most recent change altogether, "rewriting history". Let's make another bad change, and see how to do this.
 
 # %% [markdown]
-# ### A new lie
+# ## A new lie
 
 # %% jupyter={"outputs_hidden": false}
 # %%writefile index.md
@@ -106,7 +106,7 @@ mountain or two depending on your definition.
 # git log --date=short
 
 # %% [markdown]
-# ### Using reset to rewrite history
+# ## Using reset to rewrite history
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # git reset HEAD^
@@ -115,12 +115,12 @@ mountain or two depending on your definition.
 # git log --date=short
 
 # %% [markdown]
-# ### Covering your tracks
+# ## Covering your tracks
 #
 # The silly spelling *is no longer in the log*. This approach to fixing mistakes, "rewriting history" with `reset`, instead of adding an antipatch with `revert`, is dangerous, and we don't recommend it. But you may want to do it for small silly mistakes, such as to correct a commit message.
 
 # %% [markdown]
-# ### Resetting the working area
+# ## Resetting the working area
 #
 # When `git reset` removes commits, it leaves your working directory unchanged -- so you can keep the work in the bad change if you want. 
 

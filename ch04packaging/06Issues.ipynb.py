@@ -12,17 +12,17 @@
 # ---
 
 # %% [markdown]
-# ## Managing software issues
+# # Managing software issues
 
 # %% [markdown]
-# ### Issues
+# ## Issues
 #
 # Code has *bugs*. It also has *features*, things it should do.
 #
 # A good project has an organised way of managing these. Generally you should use an issue tracker.
 
 # %% [markdown]
-# ### Some Issue Trackers
+# ## Some Issue Trackers
 #
 # There are lots of good issue trackers.
 #
@@ -33,7 +33,7 @@
 # Commercial solutions include [Jira](https://www.atlassian.com/software/jira).
 
 # %% [markdown]
-# ### Anatomy of an issue
+# ## Anatomy of an issue
 #
 # * Reporter
 # * Description
@@ -44,7 +44,7 @@
 # * Severity
 
 # %% [markdown]
-# ### Reporting a Bug
+# ## Reporting a Bug
 #
 # The description should make the bug reproducible:
 #
@@ -54,13 +54,13 @@
 # If possible, submit a minimal reproducing code fragment - look at this detailed answer about [how to create a minimal example for $LaTeX$](https://tex.meta.stackexchange.com/a/3225/10934).
 
 # %% [markdown]
-# ### Owning an issue
+# ## Owning an issue
 #
 # * Whoever the issue is assigned to works next.
 # * If an issue needs someone else's work, assign it to them.
 
 # %% [markdown]
-# ### Status 
+# ## Status 
 #
 # * Submitted
 # * Accepted
@@ -68,7 +68,7 @@
 # * Blocked
 
 # %% [markdown]
-# ### Resolutions
+# ## Resolutions
 #
 # * Resolved
 # * Will Not Fix
@@ -76,7 +76,7 @@
 # * Not a bug (working as intended)
 
 # %% [markdown]
-# ### Bug triage
+# ## Bug triage
 #
 # Some organisations use a severity matrix based on:
 #
@@ -84,13 +84,13 @@
 # * Frequency [All users, most users, some users...]
 
 # %% [markdown]
-# ### The backlog
+# ## The backlog
 #
 # The list of all the bugs that need to be fixed or
 # features that have been requested is called the "backlog".
 
 # %% [markdown]
-# ### Development cycles
+# ## Development cycles
 #
 # Development goes in *cycles*.
 #
@@ -103,7 +103,7 @@
 # * Move these issues from the Backlog into the current cycle. (Aka Sprint)
 
 # %% [markdown]
-# ### GitHub issues
+# ## GitHub issues
 #
 # GitHub doesn't have separate fields for status, component, severity etc.
 # Instead, it just has labels, which you can create and delete.

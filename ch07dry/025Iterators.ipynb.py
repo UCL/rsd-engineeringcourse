@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Iterators and Generators
+# # Iterators and Generators
 
 # %% [markdown]
 # In Python, anything which can be iterated over is called an iterable:
@@ -41,7 +41,7 @@ for fruit in bowl:
 # how they work, when to use them, how to create our own.
 
 # %% [markdown]
-# ### Iterators
+# ## Iterators
 
 # %% [markdown]
 # Consider the basic python `range` function:
@@ -108,7 +108,7 @@ list(range(5))
 
 
 # %% [markdown]
-# ### Defining Our Own Iterable
+# ## Defining Our Own Iterable
 
 # %% [markdown]
 # When we write `next(a)`, under the hood Python tries to call the `__next__()` method of `a`. Similarly, `iter(a)` calls `a.__iter__()`.
@@ -169,7 +169,7 @@ for x in fib_iterator(5):
 sum(fib_iterator(1000))
 
 # %% [markdown]
-# ### A shortcut to iterables: the `__iter__` method
+# ## A shortcut to iterables: the `__iter__` method
 
 # %% [markdown]
 # In fact,  we don't always have to define both `__iter__` and `__next__`!
@@ -222,7 +222,7 @@ for pixel in image:
 # an iterator.
 
 # %% [markdown]
-# ### Generators
+# ## Generators
 
 # %% [markdown]
 # There's a fair amount of "boiler-plate" in the above class-based definition of
@@ -305,7 +305,7 @@ plt.plot(list(yield_fibs(20)))
 # Iterables and generators can be used to achieve complex behaviour, especially when combined with functional programming. In fact, Python itself contains some very useful language features that make use of these practices: context managers and decorators. We have already seen these in this class, but here we discuss them in more detail.
 
 # %% [markdown]
-# ### Context managers
+# ## Context managers
 
 # %% [markdown]
 # [We have seen before](../ch02data/060files.html#Closing-files) [[notebook](../ch02data/060files.ipynb#Closing-files)] that, instead of separately `open`ing and `close`ing a file, we can have
@@ -377,7 +377,7 @@ with verbose_context("Monty") as shouty:
 #
 
 # %% [markdown]
-# ### Decorators
+# ## Decorators
 
 # %% [markdown]
 #
@@ -442,7 +442,7 @@ hello("Cleese")
 # The remainder of this page contains an example of the flexibility of the features discussed above. Specifically, it shows how generators and context managers can be combined to create a testing framework like the one previously seen in the course.
 
 # %% [markdown]
-# ### Test generators
+# ## Test generators
 #
 #
 # A few weeks ago we saw a test which loaded its test cases from a YAML file and
@@ -476,7 +476,7 @@ def test_greeter():
 # Each time a function beginning with `test_` does a `yield` it results in another test.
 
 # %% [markdown]
-# ### Negative test contexts managers
+# ## Negative test contexts managers
 
 # %% [markdown]
 # We have seen this:
@@ -512,7 +512,7 @@ with reimplement_raises(AttributeError):
     x.foo()
 
 # %% [markdown]
-# ### Negative test decorators
+# ## Negative test decorators
 
 # %% [markdown]
 # Some frameworks, like `nose`, also implement a very nice negative test decorator, which lets us marks tests that we know should produce an exception:

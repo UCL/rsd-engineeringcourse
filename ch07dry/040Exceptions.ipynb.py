@@ -12,7 +12,7 @@
 # ---
 
 # %% [markdown]
-# ## Exceptions
+# # Exceptions
 
 # %% [markdown]
 #
@@ -53,7 +53,7 @@ inspect.getmro(TypeError)
 
 
 # %% [markdown]
-# ### Create your own Exception
+# ## Create your own Exception
 
 # %% [markdown]
 # When we were looking at testing, we saw that it is important for code to crash with a meaningful exception type when something is wrong.
@@ -136,7 +136,7 @@ print(user)
 # Therefore, we should be specific and catch only the type of error we want.
 
 # %% [markdown]
-# ### Managing multiple exceptions
+# ## Managing multiple exceptions
 
 # %% [markdown]
 # Let's create two credential files to read
@@ -288,7 +288,7 @@ f1(2)
 f1(3)
 
 # %% [markdown]
-# ### Design with Exceptions
+# ## Design with Exceptions
 
 # %% [markdown]
 #

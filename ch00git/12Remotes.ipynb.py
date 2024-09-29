@@ -12,13 +12,13 @@
 # ---
 
 # %% [markdown]
-# ## Working with multiple remotes
+# # Working with multiple remotes
 # 
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
 # thread/process restriction), and the cells below might error out on the browser
 # (jupyterlite) version of this notebook
 # 
-# ### Distributed versus centralised
+# ## Distributed versus centralised
 #
 # Older version control systems (cvs, svn) were "centralised"; the history was kept only on a server,
 # and all commits required an internet.
@@ -66,7 +66,7 @@ Mountains In the Pennines
 # git push -uf arc main
 
 # %% [markdown]
-# ### Referencing remotes
+# ## Referencing remotes
 #
 # You can always refer to commits on a remote like this:
 
@@ -91,7 +91,7 @@ Mountains In the Pennines
 # %% [markdown]
 # ## Hosting Servers
 #
-# ### Hosting a local server
+# ## Hosting a local server
 #
 # * Any repository can be a remote for pulls
 # * Can pull/push over shared folders or ssh
@@ -123,7 +123,7 @@ os.chdir(working_dir)
 # If you have a colleague on a shared file system, you can use this approach to collaborate through that file system.
 
 # %% [markdown]
-# ### Home-made SSH servers
+# ## Home-made SSH servers
 #
 # Classroom exercise: Try creating a server for yourself using a machine you can SSH to:
 

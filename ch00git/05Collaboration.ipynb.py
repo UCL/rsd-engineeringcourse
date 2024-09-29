@@ -12,14 +12,14 @@
 # ---
 
 # %% [markdown]
-# ## Collaboration
+# # Collaboration
 
 # %% [markdown]
 # **NOTE:** using bash/git commands is not fully supported on jupyterlite yet (due to single
 # thread/process restriction), and the cells below might error out on the browser
 # (jupyterlite) version of this notebook
 # 
-# ### Form a team
+# ## Form a team
 
 # %% [markdown]
 # Now we're going to get to the most important question of all with Git and GitHub: working with others.
@@ -27,7 +27,7 @@
 # Organise into pairs. You're going to be working on the website of one of the two of you, together, so decide who is going to be the leader, and who the collaborator.
 
 # %% [markdown]
-# ### Giving permission
+# ## Giving permission
 #
 # The leader needs to let the collaborator have the right to make changes to his code.
 #
@@ -36,7 +36,7 @@
 # Add the user name of your collaborator to the box. They now have the right to push to your repository.
 
 # %% [markdown]
-# ### Obtaining a colleague's code
+# ## Obtaining a colleague's code
 #
 # Next, the collaborator needs to get a copy of the leader's code. For this example notebook,
 # I'm going to be collaborating with myself, swapping between my two repositories.
@@ -78,7 +78,7 @@ os.chdir(partner_dir)
 # cat lakeland.md
 
 # %% [markdown]
-# ### Nonconflicting changes
+# ## Nonconflicting changes
 #
 # Now, both of you should make some changes. To start with, make changes to *different* files. This will mean your work doesn't "conflict". Later, we'll see how to deal with changes to a shared file.
 
@@ -135,7 +135,7 @@ Mountains In Scotland
 # git push
 
 # %% [markdown]
-# ### Rejected push
+# ## Rejected push
 
 # %% [markdown]
 # The other should then push, but should receive an error message:
@@ -154,7 +154,7 @@ os.chdir(working_dir)
 # git pull
 
 # %% [markdown]
-# ### Merge commits
+# ## Merge commits
 #
 # A window may pop up with a suggested default commit message. This commit is special: it is a *merge* commit. It is a commit which combines your collaborator's work with your own.
 
@@ -177,7 +177,7 @@ os.chdir(partner_dir)
 # ls
 
 # %% [markdown]
-# ### Nonconflicted commits to the same file
+# ## Nonconflicted commits to the same file
 #
 # Go through the whole process again, but this time, both of you should make changes to a single file, but make sure that you don't touch the same *line*. Again, the merge should work as before:
 
@@ -290,7 +290,7 @@ from wsd import wsd
 wsd(message)
 
 # %% [markdown]
-# ### Conflicting commits
+# ## Conflicting commits
 #
 # Finally, go through the process again, but this time, make changes which touch the same line.
 
@@ -334,7 +334,7 @@ Mountains In Wales
 # git pull
 
 # %% [markdown]
-# ### Resolving conflicts
+# ## Resolving conflicts
 #
 # Git couldn't work out how to merge the two different sets of changes.
 #
@@ -360,7 +360,7 @@ Mountains In Wales
 * Fan y Big
 
 # %% [markdown]
-# ### Commit the resolved file
+# ## Commit the resolved file
 #
 # Now commit the merged result:
 
@@ -384,7 +384,7 @@ os.chdir(working_dir)
 # git log --oneline --graph
 
 # %% [markdown]
-# ### Distributed VCS in teams with conflicts
+# ## Distributed VCS in teams with conflicts
 
 # %% jupyter={"outputs_hidden": false}
 message="""
@@ -430,7 +430,7 @@ M->SR: Download Cleese's resolution of conflict.
 wsd(message)
 
 # %% [markdown]
-# ### The Levels of Git
+# ## The Levels of Git
 
 # %% jupyter={"outputs_hidden": false}
 message="""
@@ -451,7 +451,7 @@ wsd(message)
 # %% [markdown]
 # ## Editing directly on GitHub
 #
-# ### Editing directly on GitHub
+# ## Editing directly on GitHub
 #
 # Note that you can also make changes in the GitHub website itself. Visit one of your files, and hit "edit".
 #
@@ -465,7 +465,7 @@ wsd(message)
 # %% [markdown]
 # ## Social Coding
 #
-# ### GitHub as a social network
+# ## GitHub as a social network
 #
 # In addition to being a repository for code, and a way to publish code, GitHub is a social network.  
 #

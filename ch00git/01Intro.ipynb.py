@@ -91,28 +91,28 @@
 # ## Practising with Git
 
 # %% [markdown]
-# ### Example Exercise
+# ## Example Exercise
 #
 # In this course, we will use, as an example, the development of a few text files containing a description of a topic of your choice. 
 #
 # This could be your research, a hobby, or something else. In the end, we will show you how to display the content of these files as a very simple website. 
 
 # %% [markdown]
-# ### Programming and documents
+# ## Programming and documents
 #
 # The purpose of this exercise is to learn how to use Git to manage program code you write, not simple text website content, but we'll just use these text files instead of code for now, so as not to confuse matters with trying to learn version control while thinking about programming too. 
 #
 # In later parts of the course, you will use the version control tools you learn today with actual Python code.
 
 # %% [markdown]
-# ### Markdown
+# ## Markdown
 #
 # The text files we create will use a simple "wiki" markup style called [markdown](http://daringfireball.net/projects/markdown/basics) to show formatting. This is the convention used in this file, too. 
 #
 # You can view the content of this file in the way Markdown renders it by looking on the [web](https://github.com/UCL/ucl_software_carpentry/blob/master/git/git_instructions.md), and compare the [raw text](https://raw.github.com/UCL/ucl_software_carpentry/master/git/git_instructions.md).
 
 # %% [markdown]
-# ### Displaying Text in this Tutorial
+# ## Displaying Text in this Tutorial
 #
 # This tutorial is based on use of the Git command line. So you'll be typing commands in the shell.
 
@@ -145,7 +145,7 @@ Some content here
 # On either Windows, Mac or Linux, we recommend [VS Code](https://code.visualstudio.com/).
 
 # %% [markdown]
-# ### Setting up somewhere to work
+# ## Setting up somewhere to work
 
 # %% attributes={"classes": [" Bash"], "id": ""} jupyter={"outputs_hidden": false} language="bash"
 # rm -rf learning_git/git_example # Just in case it's left over from a previous class; you won't need this
@@ -173,7 +173,7 @@ os.chdir(working_dir)
 # %% [markdown]
 # ## Solo work
 #
-# ### Configuring Git with your name and email
+# ## Configuring Git with your name and email
 #
 # First, we should configure Git to know our name and email address:
 
@@ -191,7 +191,7 @@ os.chdir(working_dir)
 # Historically, the default branch was named `master`. Nowadays, the community and most of the hosting sites have changed the default ([read about this change in GitHub](https://github.com/github/renaming/) and [Gitlab](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/).
 
 # %% [markdown]
-# ### Initialising the repository
+# ## Initialising the repository
 #
 # Now, we will tell Git to track the content of this folder as a git "repository".
 

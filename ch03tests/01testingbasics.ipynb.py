@@ -15,9 +15,6 @@
 # # Testing
 
 # %% [markdown]
-# ## Introduction
-
-# %% [markdown]
 # When programming, it is very important to know that the code we have written does what it was intended. Unfortunately, this step is often skipped in scientific programming, especially when developing code for our own personal work.
 #
 # Researchers sometimes check that their code behaves correctly by manually running it on some sample data and inspecting the results. However, it is much better and safer to automate this process, so the tests can be run often -- perhaps even after each new commit! This not only reassures us that the code behaves as it should at any given moment, it also gives us more flexibility to change it, because we have a way of knowing when we have broken something by accident.
@@ -25,7 +22,7 @@
 # In this chapter, we will mostly look at how to write **unit tests**, which check the behaviour of small parts of our code. We will work with a particular framework for Python code, but the principles we discuss are general. We will also look at how to use a debugger to locate problems in our code, and services that simplify the automated running of tests.
 
 # %% [markdown]
-# ### A few reasons not to do testing
+# ## A few reasons not to do testing
 
 # %% [markdown]
 # Sensibility                               | Sense
@@ -38,7 +35,7 @@
 #   **Will do it later**                    | *See above*
 
 # %% [markdown]
-# ### A few reasons to do testing
+# ## A few reasons to do testing
 #
 # * **laziness**: testing saves time
 # * **peace of mind**: tests (should) ensure code is correct
@@ -49,7 +46,7 @@
 # * **ease of modification**: since results can be tested
 
 # %% [markdown]
-# ### Not a panacea
+# ## Not a panacea
 #
 # > Trying to improve the quality of software by doing more testing is like trying to lose weight by
 # > weighing yourself more often.
@@ -64,7 +61,7 @@
 # If the test cases do not cover the bugs, things can go horribly wrong - an example for this is [Therac-25](https://en.wikipedia.org/wiki/Therac-25).
 
 # %% [markdown]
-# ### Tests at different scales
+# ## Tests at different scales
 #
 # Level of test               |Area covered by test
 # --------------------------  |----------------------
@@ -83,7 +80,7 @@
 # </div>
 
 # %% [markdown]
-# ### Legacy code hardening
+# ## Legacy code hardening
 #
 # * Very difficult to create unit-tests for existing code
 # * Instead we make a **regression test**
@@ -100,7 +97,7 @@
 # * Checks code is a similarly wrong on day N as day 0
 
 # %% [markdown]
-# ### Testing vocabulary
+# ## Testing vocabulary
 #
 # * **fixture**: input data
 # * **action**: function that is being tested
@@ -109,7 +106,7 @@
 # * **coverage**: proportion of all possible paths in the code that the tests take
 
 # %% [markdown]
-# ### Branch coverage:
+# ## Branch coverage:
 
 # %% [markdown] attributes={"classes": [" python"], "id": ""}
 # ```python
