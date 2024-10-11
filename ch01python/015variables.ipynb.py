@@ -128,7 +128,7 @@ scary
 
 # %% [markdown]
 # *Supplementary Materials*: There's more on variables at 
-# [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/01-intro/index.html).
+# [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/01-intro.html).
 
 # %% [markdown]
 # ## Reassignment and multiple labels
