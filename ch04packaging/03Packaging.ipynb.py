@@ -85,19 +85,23 @@
 #
 # ```
 # repository_name
-# |-- src
-# |   `-- package_name
-# |       |-- __init__.py  # optional; required for exporting things under package's namespace
-# |       |-- python_file.py
-# |       |-- another_python_file.py
-# `-- tests
-#     |-- fixtures
-#     |   `-- fixture_file.yaml
-#     `-- test_python_file.py
-# |-- LICENSE.md
-# |-- CITATION.md
-# |-- README.md
-# `-- pyproject.toml
+# ├── src
+# │   └── package_name
+# │       ├── __init__.py  # optional; required for exporting things under package's namespace
+# │       ├── python_file.py
+# │       └── another_python_file.py
+# ├── tests
+# │   ├── fixtures
+# │   │   └── fixture_file.yaml
+# │   └── test_python_file.py
+# ├── docs
+# │   ├── index.rst
+# │   ├── conf.py
+# │   └── ...
+# ├── LICENSE.md
+# ├── CITATION.md
+# ├── README.md
+# └── pyproject.toml
 # ```
 #
 #
@@ -546,20 +550,14 @@ Portions of the material are taken from [Software Carpentry](http://software-car
 # %%
 # %%writefile greetings_repo/tests/test_greeter.py
 
-import os
+from pathlib import Path
 
 import yaml
 
 from greetings.greeter import greet
 
 def test_greet():
-    with open(
-        os.path.join(
-            os.path.dirname(__file__),
-            'fixtures',
-            'samples.yaml'
-        )
-    ) as fixtures_file:
+    with open(Path(__file__).parent / 'fixtures' / 'samples.yaml') as fixtures_file:
         fixtures = yaml.safe_load(fixtures_file)
         for fixture in fixtures:
             answer = fixture.pop('answer')
@@ -607,7 +605,7 @@ def test_greet():
 # %%
 # %%writefile greetings_repo/tests/test_greeter.py
 
-import os
+from pathlib import Path
 
 import pytest
 import yaml
@@ -615,13 +613,7 @@ import yaml
 from greetings.greeter import greet
 
 def read_fixture():
-    with open(
-        os.path.join(
-            os.path.dirname(__file__),
-            'fixtures',
-            'samples.yaml'
-        )
-    ) as fixtures_file:
+    with open(Path(__file__).parent / 'fixtures' / 'samples.yaml') as fixtures_file:
         fixtures = yaml.safe_load(fixtures_file)
     return fixtures
 
@@ -645,6 +637,15 @@ def test_greeter(fixture):
 # %% magic_args="--no-raise-error" language="bash"
 #
 # cd greetings_repo
+# pytest --doctest-modules
+
+# %% [markdown]
+# The `ImportError` appears here `pytest` requires `__init__.py` files to discover test cases when using relative imports (though the library works fine without it).
+
+# %% magic_args="--no-raise-error" language="bash"
+#
+# cd greetings_repo
+# touch src/greetings/__init__.py
 # pytest --doctest-modules
 
 # %% [markdown]
