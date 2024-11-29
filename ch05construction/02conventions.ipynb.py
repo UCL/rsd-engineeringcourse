@@ -124,7 +124,7 @@ reaction2=(
 # ## Naming Conventions
 
 # %% [markdown]
-# [Camel case](https://en.wikipedia.org/wiki/Camel_case) is used for class names in the following example, while function and variable names follow snake_case (underscore_separation). This convention is widely used in the Python community, as stated in [PEP 8](https://pep8.org/).
+# [UpperCamel case](https://en.wikipedia.org/wiki/Camel_case) is used for class names in the following example, while function and variable names follow snake_case (underscore_separation). This convention is widely used in the Python community, as stated in [PEP 8](https://pep8.org/).
 
 # %%
 class ClassName:
