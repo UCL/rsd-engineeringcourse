@@ -5,3 +5,4 @@ jupyter-client==6.1.12
 # https://github.com/jupyter/jupyter_client/issues/637
 git+https://github.com/UCL-ARC-RSEing-with-Python/greeter.git
 line_profiler
+setuptools # seems cython needs distutils for building ipython magic
