@@ -6,4 +6,5 @@ title: Programming for Speed
 * Profiling
 * Scaling laws
 * NumPy
+* Miscellaneous libraries
 * Cython
