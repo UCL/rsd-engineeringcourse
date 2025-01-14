@@ -69,7 +69,7 @@ from StringIO import StringIO
 from matplotlib import image as img
 
 
-class Greengraph(object):
+class Greengraph:
     def __init__(self, start, end):
         self.start=start
         self.end=end
@@ -92,7 +92,7 @@ class Greengraph(object):
                     self.geolocate(self.end),
                     steps)]
 
-class Map(object):
+class Map:
     def __init__(self, lat, long, satellite=True,
            zoom=10, size=(400,400), sensor=False):
         base="http://maps.googleapis.com/maps/api/staticmap?"

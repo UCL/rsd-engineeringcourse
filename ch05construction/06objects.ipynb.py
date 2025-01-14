@@ -307,7 +307,7 @@ else:
 #
 
 # %%
-class Person(object):
+class Person:
     def __init__(self, birthday, name):
         self.birth_day = birthday[0]
         self.birth_month = birthday[1]
