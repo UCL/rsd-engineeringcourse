@@ -204,7 +204,7 @@ circus.add_occupant('Terry')
 # one is `__call__`, which overrides the `()` operator; this allows us to define classes that *behave like functions*! We call these **callables**.
 
 # %%
-class Greeter(object):
+class Greeter:
     def __init__(self, greeting):
         self.greeting = greeting
         

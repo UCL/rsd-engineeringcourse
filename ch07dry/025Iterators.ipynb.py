@@ -181,7 +181,7 @@ from numpy import array
 from matplotlib import pyplot as plt
 
 
-class MyImage(object):
+class MyImage:
     def __init__(self, pixels):
         self.pixels = array(pixels, dtype='uint8')
         self.channels = self.pixels.shape[2]

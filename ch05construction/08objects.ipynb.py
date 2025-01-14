@@ -187,7 +187,7 @@ assert(Person().name == "Graham Chapman")
 #
 
 # %%
-class Person(object):
+class Person:
     def __init__(self):
         self._first = "Graham"
         self._second = "Chapman"
@@ -217,7 +217,7 @@ assert(Person().name == "Graham Chapman")
 #
 
 # %%
-class Person(object):
+class Person:
     def __init__(self):
         self._name = "Graham Chapman"
         
@@ -235,7 +235,7 @@ assert(Person().name() == "Graham Chapman")
 # Another way could be to create a member variable `name` which holds the full name. However, this could lead to inconsistent data. If we create a `get_married` function, then the name of the person won't change!
 
 # %%
-class Person(object):
+class Person:
     def __init__(self, first, second):
         self._first = first
         self._second = second
