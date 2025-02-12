@@ -43,15 +43,10 @@ jobs:
           python -m pip install -r .github/python/requirements.txt
       - name: Building notes
         run: make ready
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-      - name: Install bundler and dependencies
-        run: |
-          gem install bundler
-          bundle install
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Build website
-        run: bundle exec jekyll build
+        uses: actions/jekyll-build-pages@v1
       - name: Build the JupyterLite site
         run: |
           find . -type d -name .pytest_cache -o -name .ruff_cache -o -name .doctrees | xargs rm -rf
@@ -61,8 +56,6 @@ jobs:
           jupyter lite build --contents contents --output-dir _site/jupyter-lite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
 
   deploy:
     if: >
