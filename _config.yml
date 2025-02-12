@@ -10,7 +10,7 @@ defaults:
 
 baseurl: /rsd-engineeringcourse
 
-remote_theme: dpshelio/indigo-jekyll
+remote_theme: UCL-ARC/indigo-jekyll
 
 crumbs:
   - link: https://www.ucl.ac.uk/arc
