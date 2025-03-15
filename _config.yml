@@ -15,8 +15,8 @@ remote_theme: UCL-ARC/indigo-jekyll
 crumbs:
   - link: https://www.ucl.ac.uk/arc
     text: Advanced Research Computing
-  - link: https://www.ucl.ac.uk/advanced-research-computing/about-our-training
-    text: Training
+  - link: https://www.ucl.ac.uk/advanced-research-computing/teaching
+    text: Teaching
 
 kramdown:
   hard_wrap: false
