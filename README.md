@@ -29,7 +29,8 @@ You are required to bring your own laptop to the course as the classrooms we are
 
 # Contributing to this repository
 
-This repository contains the course notes as Jupyter notebooks converted into `py:percent` format. This allows to edit the files as plain text as well as jupyter notebooks. To edit them as jupyter notebooks you'll need to have installed jupytext and open the `ipynb.py` files as notebooks via right-click and select "open with" and "notebook" on the Jupyter file browser.
+This site has been created using the static site generator Jekyll with the [indigo-jekyll](https://github.com/UCL-ARC/indigo-jekyll) template and it's deployed on github-pages.
+It contains the course notes as Jupyter notebooks converted into `py:percent` format. This allows to edit the files as plain text as well as jupyter notebooks. To edit them as jupyter notebooks you'll need to have installed jupytext and open the `ipynb.py` files as notebooks via right-click and select "open with" and "notebook" on the Jupyter file browser.
 
 ⚠ Do not run `make` locally on your computer! ⚠ 
 
