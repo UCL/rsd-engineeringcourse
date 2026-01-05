@@ -103,7 +103,7 @@ class Agent:
 
 # %%
 x.clear() # Code crashes here sometimes
-class Agent(object):
+class Agent:
     pass
     # TODO: Implement pretty-printer method
 

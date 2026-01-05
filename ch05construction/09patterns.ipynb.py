@@ -265,7 +265,7 @@ class Series:
 # Then, our analysis class which contains all methods *except* the numerical methods
 
 # %% pycharm={"name": "#%%\n"}
-class SunspotDataAnalyser(object):
+class SunspotDataAnalyser:
     def __init__(self, frequency_strategy):
         self.secs_per_year = (
                              datetime(2014, 1, 1) - datetime(2013, 1, 1)

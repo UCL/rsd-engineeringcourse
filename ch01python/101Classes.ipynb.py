@@ -24,7 +24,7 @@
 # It can be defined like:
 
 # %%
-class Room(object):
+class Room:
     pass
 
 
