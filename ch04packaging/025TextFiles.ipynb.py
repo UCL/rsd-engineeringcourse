@@ -47,7 +47,7 @@ if 'mazetool' not in os.listdir(os.getcwd()):
 from .room import Room
 from .person import Person
 
-class Maze(object):
+class Maze:
     def __init__(self, name):
         self.name = name
         self.rooms = []
@@ -92,7 +92,7 @@ class Maze(object):
 from .exit import Exit
 
 
-class Room(object):
+class Room:
     def __init__(self, name, capacity):
         self.name = name
         self.capacity = capacity
@@ -119,7 +119,7 @@ class Room(object):
 # %%
 # %%writefile mazetool/person.py
 
-class Person(object):
+class Person:
     def __init__(self, name, room = None):
         self.name=name
         self.room=room
@@ -143,7 +143,7 @@ class Person(object):
 # %%
 # %%writefile mazetool/exit.py
 
-class Exit(object):
+class Exit:
     def __init__(self, name, target):
         self.name = name
         self.target = target

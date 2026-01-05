@@ -117,6 +117,7 @@ Members of doctoral training schools, or Masters courses who offer this module a
 <li>Profiling</li>
 <li>Scaling laws</li>
 <li>NumPy</li>
+<li>Miscellaneous libraries</li>
 <li>Cython</li>
  </ul>
    </td>
