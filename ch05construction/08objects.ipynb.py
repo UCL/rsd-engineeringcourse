@@ -87,11 +87,11 @@ class Particle:
 # sending requests to the web is not fully supported on jupyterlite yet, and the
 # cells below might error out on the browser (jupyterlite) version of this notebook
 import requests
-from IPython.display import Image
+from IPython.display import SVG
 
 def yuml(model):
     result = requests.get("http://yuml.me/diagram/boring/class/" + model)
-    return Image(result.content)
+    return SVG(result.content)
 
 
 # %%
@@ -410,7 +410,7 @@ class Person(Animal):
 # UML shows inheritance with an open triangular arrow pointing from subclass to superclass.
 
 # %%
-yuml("[Animal]^-[Bird],[Bird]^-[Eagle],[Bird]^-[Starling]%")
+yuml("[Animal]^-[Bird],[Bird]^-[Eagle],[Bird]^-[Starling]")
 
 # %% [markdown]
 # ## Aggregation vs Inheritance
@@ -430,7 +430,7 @@ yuml("[Animal]^-[Bird],[Bird]^-[Eagle],[Bird]^-[Starling]%")
 # The Boids situation can be represented thus:
 
 # %%
-yuml("[Model]<>-*>[Boid],[Boid]position++->[Vector],[Boid]velocity++->[Vector]%")
+yuml("[Model]<>-*>[Boid],[Boid]position++->[Vector],[Boid]velocity++->[Vector]")
 
 
 # %% [markdown]
