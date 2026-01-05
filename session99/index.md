@@ -27,7 +27,7 @@ For the session on version control, we'll be using *Git* and the *Github* websit
 Eduroam
 -------
 
-We will be using UCL's [eduroam](http://www.ucl.ac.uk/isd/staff/wireless/eduroam) service to connect
+We will be using UCL's [eduroam](https://www.ucl.ac.uk/isd/services/get-connected/wi-fi/eduroam-wi-fi-ucl) service to connect
 to the internet for this work.
 
 So you should ensure you have eduroam installed and working.
