@@ -13,7 +13,7 @@ You should be familiar with fundamental \codeWord{git} functionality, workflow, 
 \begin{itemize}
   \item What a repository is.
   \item The staging area, and the \codeWord{add} command.
-  \item The repository history, what "a commit" is, the \codeWord{commit} command, and how to review history either graphically or via the \codeWord{log} command.
+  \item The repository history, what ``a commit'' is, the \codeWord{commit} command, and how to review history either graphically or via the \codeWord{log} command.
   \item Remotes, and the \codeWord{push}, \codeWord{pull}, and \codeWord{clone} commands.
   \item Branches, and the \codeWord{checkout} / \codeWord{switch}, \codeWord{branch} commands.
   \item Merges, the \codeWord{merge} command, and merge conflicts (how they arise, what they are, how they're resolved).
@@ -27,7 +27,7 @@ You should be aware of important metadata files that should be provided as part 
 In particular:
 
 \begin{itemize}
-  \item The \codeWord{README} file, and it's inclusion of the basic ``need-to-know'' introduction that a newcomer to the project requires.
+  \item The \codeWord{README} file, and its inclusion of the basic ``need-to-know'' introduction that a newcomer to the project requires.
         Or contains redirection to this information if it is hosted elsewhere.
   \item A \codeWord{LICENSE} file, to determine what can / cannot be done with the project.
   \item A \codeWord{CITATION} file, to ensure that appropriate credit is provided to the developers / maintainers, and the software can be easily referenced.
@@ -53,7 +53,7 @@ You should understand that there are different approaches to development; in par
 
 \subsection{Python Knowledge}
 
-You should have a firm grasp of the fundamentals of the Python language, including it's syntax.
+You should have a firm grasp of the fundamentals of the Python language, including its syntax.
 
 \begin{itemize}
   \item You should be able to write control-flow blocks, such as \codeWord{if}/\codeWord{elif}/\codeWord{else} blocks, \codeWord{for}-loops, and \codeWord{while}-loops.
@@ -128,7 +128,7 @@ You should know, understand, and be able to explain the principles of test-drive
 You should understand why it is important for all software projects to provide some form of documentation for both users and developers / maintainers.
 You should also know (in the abstract) what information you expect to find / provide within project documentation.
 
-You should be aware that there are existing tools for generating rich-format documentation (HTML / websites etc) from plain-text files and source code.
+You should be aware that there are existing tools for generating rich-format documentation (HTML / websites, etc) from plain-text files and source code.
 (You will likely have already encountered Sphinx during the assignment, which is one such tool).
 You should be able to explain why the generated documentation is not tracked by the repository it is stored in, as well as any additional integrations that a documentation build may have with concepts like continuous integration, developer practices, and PR review.
 
@@ -150,7 +150,7 @@ You should be able to write scripts that use functionality from a library / pack
 \subsection{Code Structure and Design}
 
 You should be able to recognise abstract design patterns in particular codebases, and be able to write code to adhere to a particular design pattern.
-You are not expected to memorise specific design patterns, but should be able to identify whether a design pattern is being used (or not) given it's description.
+You are not expected to memorise specific design patterns, but should be able to identify whether a design pattern is being used (or not) given its description.
 
 You should know what the term ``refactoring'' or ``to refactor'' means in the context of a software project.
 You should be able to explain why refactoring can be useful, and identify candidates for refactoring / undertake this yourself if given a particular codebase.
@@ -167,7 +167,7 @@ You should also be aware of any features that should already be in place before 
 You should be aware of the distinction between profiling and benchmarking code.
 
 Profiling is timing the execution of a particular block of code; with the interest being in exploring how long the program spends on each particular line of code or within specific sub-functions, and how frequently these parts of the codebase are reached by the program.
-Profiling is typically used to identify "bottlenecks" within the codebase, or to get an overview of the relative importance of improving the efficiency of one function over another.
+Profiling is typically used to identify ``bottlenecks'' within the codebase, or to get an overview of the relative importance of improving the efficiency of one function over another.
 For example; profiling may identify that a function \codeWord{f} is called 1000 times by some code, and takes 1 second to execute each time.
 Whereas another function \codeWord{g} might be called only once, but take 10 seconds to execute.
 In such a case, our conclusion from the profiling run might then be that we should actually focus on making a small 0.1 second improvement to \codeWord{f}'s runtime, as opposed to a 3 second improvement to \codeWord{g}'s, and should base our future design decisions on what helps \codeWord{f} run faster, rather than \codeWord{g}.
@@ -182,7 +182,7 @@ In each case, you should be able to infer a scaling relationship, and potentiall
 
 \begin{itemize}
   \item Power-law: $t$ scales $O(N^\alpha)$, so we expect that $t = \beta N^{\alpha}$ for some constants $\alpha, \beta$.
-        The term "polynomial growth" or "grows polynomially" is sometimes used for the case where $\alpha > 0$.
+        The term ``polynomial growth'' or ``grows polynomially'' is sometimes used for the case where $\alpha > 0$.
 
         This scaling relationship looks (visually) linear on a plot of $t$ (y-axis) against $N$ (x-axis) with \textbf{log-log axes}.
         Equivalently, we could write
