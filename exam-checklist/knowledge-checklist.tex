@@ -189,21 +189,25 @@ In each case, you should be able to infer a scaling relationship, and potentiall
         \begin{align*}
           \log t & = \alpha \log N + \log\beta
         \end{align*}
-        and check if we observe a linear trend when plotting $\log t$ (y-axis) against $\log N$ (x-axis) on normal axes.
+        and check if we observe a linear trend when plotting $\log t$ (y-axis) against $\log N$ (x-axis) on normal axes (see figure \ref{fig:power-law-quantity-estimation}).
         \begin{figure*}[h!]
           \centering
-          \includesvg[scale=0.45]{images/power-law-scaling.svg}
+          \includesvg[scale=0.75]{images/power-law-scaling.svg}
           \caption{
             \label{fig:power-law-quantity-estimation}
             Estimating the constants $\alpha ( = 1.5)$ and $\beta ( = 3)$ from a benchmarking plot (of $t = 3N^{1.5}$).
           }
         \end{figure*}
   \item Exponential: $t$ scales $O(\alpha^N)$, so we expect that $t = \beta \alpha^{N}$ for some constants $\alpha, \beta$.
-        This scaling relationship looks linear on a plot of $\log t$ (y-axis) against $N$ (x-axis) when using log-log axes.
-        The gradient of said linear line is an estimation for $\log \alpha$, and the y-axis intercept an estimation for $\log \beta$.
+        This scaling relationship looks linear on a plot of $\log t$ (y-axis) against $N$ (x-axis); though these plots also exhibit a "warm up" period for (relatively) small values of $N$ where the trend may not appear linear.
+        The gradient of said linear line is an estimation for $\log \alpha$, and the y-axis intercept an estimation for $\log \beta$ (see figure \ref{fig:exp-law-quantity-estimation}).
         \begin{figure*}[h!]
           \centering
-          \includegraphics[scale=0.25]{images/doge-exp-vs-power.jpg}
-          \caption{\label{fig:doge-scaling} Exponential growth is always faster than polynomial growth, even if polynomial growth starts off strong.}
+          \includesvg[scale=0.75]{images/exp-law-scaling.svg}
+          \caption{
+            \label{fig:exp-law-quantity-estimation}
+            Estimating the constants $\alpha (= 3)$ and $\beta (= 2)$ from a benchmarking plot (of $t= 2\times 3^N$).}
         \end{figure*}
+  \item \textbf{NOTE}: In the above, we denote by $\log$ the natural logarithm, sometimes also denoted by $\ln$.
+        However so long as you consistently use a single logarithm base throughout (for example $\log_10$ or $\log_2$ everywhere), the working and interpretation of the plots is the same
 \end{itemize}

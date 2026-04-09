@@ -1,13 +1,11 @@
 """
-This script generates the annotated benchmarking plot that appears in the exam knowledge checklist.
+This script generates the annotated benchmarking plots that appear in the exam knowledge checklist.
 
-It will overwrite whatever is inside ./images/power-law-scaling.svg after executing.
+It will overwrite whatever is inside ./images/power-law-scaling.svg & ./images/exp-law-scaling.svg after executing.
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
-
-N = np.logspace(0.0, 10.0, num=1000, base=10.0, dtype=float)
 
 
 def arrow_style(color: str = "black"):
@@ -23,6 +21,15 @@ def pl(x):
     return 3.0 * x**1.5
 
 
+def log_expl(x):
+    # t = 2 * 3^N
+    # ==> ln t = ln 2 + x ln 3, avoids overflows
+    return np.log(2) + x * np.log(3)
+
+
+## Power law figure generation
+
+N = np.logspace(0.0, 10.0, num=1000, base=10.0, dtype=float)
 data_pl = pl(N)
 
 f_pl, ax_pl = plt.subplots(1, 2)
@@ -152,3 +159,87 @@ ax_pl[1].annotate(
 f_pl.suptitle(r"Power law scaling, $t = 3N^{1.5}$")
 f_pl.tight_layout()
 f_pl.savefig("images/power-law-scaling.svg")
+
+## Exponential scaling figure generation
+
+N_exp = np.linspace(0.0, 10**3, num=1000, endpoint=False, dtype=float)
+data_expl = log_expl(N_exp)
+
+f_expl, ax_expl = plt.subplots(1, 2)
+ax_expl: tuple[plt.Axes]
+
+# Power-law, log-log axes
+
+ax_expl[0].plot(N_exp, data_expl, color="black")
+ax_expl[0].set_xlabel(r"$N$")
+ax_expl[0].set_ylabel(r"$\log t$")
+ax_expl[0].set_aspect("equal")
+ax_expl[0].set_xlim(0, 1000)
+ax_expl[0].set_ylim(0, 1200)
+ax_expl[0].grid(visible=True, which="both")
+
+ax_expl[0].annotate(
+    r"$\Delta y \approx 780$",
+    xy=(200, log_expl(200)),
+    xytext=(200, 800),
+    arrowprops=arrow_style("red"),
+    va="bottom",
+    ha="center",
+    color="red",
+)
+ax_expl[0].annotate(
+    "",
+    xy=(200, 1000),
+    xytext=(200, 850),
+    arrowprops=arrow_style("red"),
+    va="bottom",
+    ha="center",
+    color="red",
+)
+ax_expl[0].annotate(
+    r"$\Delta x = 700$",
+    xy=(900, log_expl(900)),
+    xytext=(500, log_expl(900)),
+    arrowprops=arrow_style("red"),
+    va="center",
+    ha="center",
+    color="red",
+)
+ax_expl[0].annotate(
+    "",
+    xy=(200, log_expl(900)),
+    xytext=(375, log_expl(900)),
+    arrowprops=arrow_style("red"),
+    ha="left",
+    va="center",
+)
+ax_expl[0].annotate(
+    r"$\frac{780}{700} \approx 1.114 \approx \log 3$",
+    xy=(700, 300),
+    color="red",
+    ha="center",
+    va="center",
+)
+
+ax_expl[1].plot(N_exp, data_expl, color="black")
+ax_expl[1].set_xlabel(r"$N$")
+ax_expl[1].set_ylabel(r"$\log t$")
+ax_expl[1].set_aspect("equal")
+ax_expl[1].set_xlim(0, 10)
+ax_expl[1].set_ylim(0, 12)
+ax_expl[1].set_title("Zoomed in near $N = 0$")
+ax_expl[1].grid(visible=True, which="both")
+
+ax_expl[1].annotate(
+    r"y-intercept at " "\n" r"$0.7 \approx \log 2$",
+    xy=(0, np.log(2)),
+    xytext=(6, 2),
+    arrowprops=arrow_style("blue"),
+    va="center",
+    ha="center",
+    color="blue",
+)
+
+f_expl.suptitle(r"Exponential scaling, $t = 2\times 3^{N}$")
+f_expl.tight_layout()
+f_expl.savefig("images/exp-law-scaling.svg")
