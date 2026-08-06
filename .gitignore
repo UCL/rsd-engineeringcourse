@@ -89,3 +89,5 @@ Gemfile.lock
 polynomials.svg
 contents/
 .jupyterlite.doit.db
+
+.vscode
