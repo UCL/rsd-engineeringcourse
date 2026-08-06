@@ -6,10 +6,13 @@
 \author{William Graham}
 \date{\today}
 
-\def\moduleGrade{g_{\mathrm{module}}}
-\def\courseworkGrade{g_{\mathrm{cw}}}
-\def\examGrade{g_{\mathrm{exam}}}
 \def\authoremail{arc.education+comp0233@ucl.ac.uk}
+\def\moduleGrade{g_{\mathrm{module}}}
+\def\examGrade{g_{\mathrm{exam}}}
+\def\courseworkGrade{g_{\mathrm{cw}}}
+\def\codebaseGrade{s_{\mathrm{codebase}}}
+\def\vivaGrade{s_{\mathrm{viva}}}
+\def\ipacWeight{w_{\mathrm{IPAC}}}
 
 \begin{document}
 
@@ -51,37 +54,8 @@ That is to say; if you achieve a grade of $\courseworkGrade \%$ in the coursewor
 $\courseworkGrade$ and $\examGrade$ are the marks that will appear in the breakdown on your degree transcript for COMP0233.
 However as mentioned above, they themselves may be calculated from the submissions that make up their respective components.
 
-\subsection{Exam Component}
+\include{exam}
 
-\begin{itemize}
-  \item When: takes place in the central UCL assessment period, usually around May.
-  \item What: computer-based exam conducted through UCL's WiseFlow platform.
-  \item Number of submissions: 1 (your filled in exam ``paper'').
-\end{itemize}
-
-The exam component of the module has the most straightforward composition: it has one submission (the exam itself, that you'll sit during the UCL central exam period), and your mark is calculated directly from your answers to the exam paper.
-
-The exam itself takes place on \href{https://ucldata.atlassian.net/wiki/spaces/ELearningStudentSupport/pages/63340834/WISEflow+AssessmentUCL+guidance+for+students}{UCL's WiseFlow platform (link requires UCL sign-in)}, though a practice exam is usually made available on Moodle for you to familiarise yourselves with the WiseFlow platform.
-On this platform, you will be required to type your answers into the designated answer-boxes for each question.
-The WiseFlow platform does not directly support code-editing nor native execution of Python code.
-To circumvent this, the exam paper will contain a clickable link to a JupyterLite instance that is hosting the codebase that you will be working with.
-Through this interface, you will be able to execute Python code, any existing tests, and browse the code files that we have provided to you.
-However, you \emph{will need to copy any code that you write} in response to a question back into WiseFlow's answer box once you have tested it and checked it runs - this is because only what gets submitted via WiseFlow will be sent to us for marking.
-
-Approximately a month before the exam, pre-reading material will be released.
-This will usually consist of a few pages of background material that gives you some context on the codebase you will be working on in the exam.
-Note that this pre-reading does not expose the codebase itself.
-The pre-reading will be available to you in the exam too, along with the course notes and links to the documentation pages for the various Python packages you may need to use in the exam.
-
-In the exam, you will be presented with three tasks, of which you must answer two.
-Each task is designed to take approximately 50 minutes, and you have two hours to complete the exam.
-We recommend that you take a few minutes at the start of the exam to read through each of the tasks in full, before deciding which ones to attempt.
-In general, you will be better off focusing your time on two tasks - even if you don't complete everything in them - compared to getting partway through all three tasks, for example.
-If you provide answers to more than two tasks; you will be required to indicate which tasks you want to contribute to your mark - \emph{we will not take your ``best two out of three'' tasks}.
-In the event that you attempt all three tasks and do not indicate which you would like us to mark, the first two tasks will be used to calculate your grade.
-
-\subsection{Group Coursework Component}
-
-% Figures \ref{fig:simpsons-interview} and \ref{fig:beaver-refactoring} were made using \href{https://imgflip.com/memegenerator}{ImgFlip}; \url{https://imgflip.com/memegenerator}.
+\include{coursework}
 
 \end{document}

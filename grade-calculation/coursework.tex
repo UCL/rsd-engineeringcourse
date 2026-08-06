@@ -1,0 +1,46 @@
+
+\subsection{Group Coursework Component}
+
+\begin{itemize}
+  \item When: 2nd half of term 1 (concurrent with classes and lectures).
+  \item What: A group project requiring you to develop a piece of software in Python.
+  \item Number of submissions: 3
+        \begin{itemize}
+          \item Your group's codebase and project repository.
+          \item Your \href{https://app.ipac-app.education/website/}{IPAC peer-evaluation} review.
+          \item Your attendance and performance at the group viva.
+        \end{itemize}
+\end{itemize}
+
+The coursework component of the module runs concurrently with the lectures and classes, in term 1.
+Partway through the year, you will be assigned to a group of 4-5 members, and will be asked to develop a piece of software in Python as detailed in the assignment's document.
+You will be expected to develop this software collaboratively with your group, and engage in good development practices as you have seen and learnt from the lectures and course notes.
+
+Your group will submit the final state of your project's repository via moodle.
+Markers - both automatic and human - will then examine your repository against a marking rubric to determine how many marks your group will be awarded, based on whether your project meets the specifications set out by the assignment document.
+This will give you a score $\codebaseGrade$, awarded to all members of your group, reflecting how well you addressed the functionality requirements of the assignment.
+$\codebaseGrade$ will have a maximum value of 50\% (of the overall component's marks).
+
+After the project repository is submitted, each member of your group will also submit an IPAC peer-evaluation, where you will provide feedback to your group members and discuss how well you felt the group worked together.
+The IPAC will then calculate an individual weight for you $\ipacWeight$, which is typically in the range $0.8$-$1.2$.
+Note that your IPAC weight may be different from that of your group-mates, but your group's weights will always average out to 1.
+
+Finally, your group will be required to attend an in-person viva.
+In this viva you will be asked a series of questions about the work you submitted, and your contributions to the software development workflow that your group undertook.
+In particular, in your group viva you will be expected to be able to:
+
+\begin{itemize}
+  \item Highlight and discuss any contributions you made to design decisions during the project; such as your contribution to issue discussions, or suggestions during your pull-request reviews.
+  \item Explain your contributions to the codebase through any pull-requests you authored, as well as evaluate and discuss alternatives that you (or your group) considered.
+  \item Justify your software development practices, and any contributions to the repository that reflect this.
+\end{itemize}
+
+You will be given an individual score $\vivaGrade$ from your performance in the viva, which will have a maximum value of 50\% (of the overall component's marks).
+
+Your grade for the coursework component $\courseworkGrade$ is then calculated as
+
+\begin{align*}
+  \courseworkGrade = (\codebaseGrade \times \ipacWeight) + \vivaGrade,
+\end{align*}
+
+being capped at $100\%$ in the event of overflow.
