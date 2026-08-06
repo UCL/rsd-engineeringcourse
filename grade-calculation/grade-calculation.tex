@@ -9,6 +9,7 @@
 \def\moduleGrade{g_{\mathrm{module}}}
 \def\courseworkGrade{g_{\mathrm{cw}}}
 \def\examGrade{g_{\mathrm{exam}}}
+\def\authoremail{arc.education+comp0233@ucl.ac.uk}
 
 \begin{document}
 
@@ -27,7 +28,38 @@
 
 \section{COMP0233: Module Assessment}
 
+From the academic year 2024/25, the module leads for COMP0233 decided to rework how the marks for the module assessments were calculated.
+Previously, the module had been assessed through two coursework components - one individual and one undertaken in a group.
+Each component had been marked out of 100, with a set proportion of those 100 marks being awarded for use of tooling, best practices, and testing, and the remaining proportion for the implementation and adherence to the code specifications in the assignment itself.
+This however meant that it was possible to attain very high marks in the module just by being good at programming in Python - but this is not the purpose of the module (though we understand that some people may be new to the language).
+Rather, the key learning outcomes from this module are the use of tools like git / GitHub, pytest (or other testing frameworks), and documentation generation software to improve how we approach and conduct software projects.
+
+Coincidentally, University College London (UCL) has introduced new programme assessment guidelines aimed at addressing a number of issues surrounding the use of AI in assignments.
+Whilst we are in favour of \textit{informed and sensible} use of AI in writing code, we must still take appropriate measures to ensure we comply with these new guidelines.
+As such, it was decided from 2024/25 to pilot a new method for awarding marks and grades for the assignments in this course.
+
+The purpose of this document is to clearly outline how your marks and grades for the components in this course will be computed; it does \textit{not} contain the specific mark criteria for these components (you should refer to the task specifications in the components themselves for this).
+
+From the 2026-2027 academic year onwards; COMP0233 comprises two assessment components, a group coursework and an in-person exam.
+Each component is weighted equally.
+That is to say; if you achieve a grade of $\courseworkGrade \%$ in the coursework component, and $\examGrade \%$ in the exam, then your overall percentage mark for COMP0233 ($\moduleGrade$) will be
+
+\begin{align*}
+  \moduleGrade = \frac{\courseworkGrade + \examGrade}{2}.
+\end{align*}
+
+$\courseworkGrade$ and $\examGrade$ are the marks that will appear in the breakdown on your degree transcript for COMP0233.
+However as mentioned above, they themselves may be calculated from the submissions that make up their respective components.
+
 \subsection{Exam Component}
+
+\begin{itemize}
+  \item When: takes place in the central UCL assessment period, usually around May.
+  \item What: computer-based exam conducted through UCL's WiseFlow platform.
+  \item Number of submissions: 1 (your filled in exam ``paper'').
+\end{itemize}
+
+
 
 \subsection{Group Coursework Component}
 
