@@ -23,9 +23,9 @@ Partway through the year, you will be assigned to a group of 4-5 members, and wi
 You will be expected to develop this software collaboratively with your group, and engage in good development practices as you have seen and learnt from the lectures and course notes.
 
 Your group will submit the final state of your project's repository via moodle.
-An automated marker will then examine your repository against a marking rubric (made public to you in the briefing document) to determine how many marks your group will be awarded, based on whether your project meets the specifications set out by the briefing document.
-This will give you a score $\codebaseGrade$, awarded to all members of your group, reflecting how well you addressed the functionality requirements of the assignment.
-$\codebaseGrade$ will have a maximum value of 50\% (of the overall component's marks).
+A marker will then examine your repository against a marking rubric (made public to you in the briefing document) to determine how many marks your group will be awarded, based on whether your project meets the specifications set out by the briefing document.
+This will give you a percentage-score $\codebaseGrade$, awarded to all members of your group, reflecting how well you addressed the functionality requirements of the assignment.
+$\codebaseGrade$ will be calculated \hyperref[sec:practices-implementation-weight]{using the practices and implementation methodology}, and makes up 50\% of your grade for the coursework in conjunction with the IPAC.
 
 After the project repository is submitted, each member of your group will also submit an IPAC peer-evaluation, where you will provide feedback to your group members and discuss how well you felt the group worked together.
 The IPAC will then calculate an individual weight for you $\ipacWeight$, which is typically in the range $0.8$-$1.2$.
@@ -41,12 +41,12 @@ In particular, in your group viva you will be expected to be able to:
   \item Justify your software development practices, and any contributions to the repository that reflect this.
 \end{itemize}
 
-You will be given an individual score $\vivaGrade$ from your performance in the viva, which will have a maximum value of 50\% (of the overall component's marks).
+You will be given an individual score $\vivaGrade$ from your performance in the viva, which will have a maximum value of 100\%.
 
 Your grade for the coursework component $\courseworkGrade$ is then calculated as
+\begin{align} \label{eq:coursework-grade-calculation}
+  \courseworkGrade = \frac{(\codebaseGrade \times \ipacWeight) + \vivaGrade}{2}.
+\end{align}
+Note that the quantities $(\codebaseGrade \times \ipacWeight)$ and $\vivaGrade$ are each capped at 100\% in the event of overflow (meaning that $\courseworkGrade$ is also capped at 100\%).
 
-\begin{align*}
-  \courseworkGrade = (\codebaseGrade \times \ipacWeight) + \vivaGrade,
-\end{align*}
-
-being capped at $100\%$ in the event of overflow.
+\input{practices-implementation.tex}
